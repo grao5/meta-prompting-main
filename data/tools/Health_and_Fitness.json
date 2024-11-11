@@ -1,0 +1,819 @@
+[
+    {
+        "name": "marks_men_points",
+        "description": "Fetches the men's marks corresponding to a given points value using the Scoring Tables API.",
+        "parameters": {
+            "points": {
+                "description": "A point value between 1 and 1400 to retrieve men's marks.",
+                "type": "int",
+                "default": "1400"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "hoscoscope",
+        "description": "Retrieves the horoscope for a specific sign and date using the Horostory API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the horoscope, formatted as 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": ""
+            },
+            "sign": {
+                "description": "The astrological sign for which to retrieve the horoscope.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "bodyfat_imperial",
+        "description": "Calculates the body fat percentage based on the provided height, gender, weight, and age using imperial units.",
+        "parameters": {
+            "height": {
+                "description": "The height of the person in inches.",
+                "type": "int",
+                "default": "77"
+            },
+            "gender": {
+                "description": "The gender of the person. Must be either 'male' or 'female'.",
+                "type": "str",
+                "default": "male"
+            },
+            "weight": {
+                "description": "The weight of the person in pounds.",
+                "type": "int",
+                "default": "180"
+            },
+            "age": {
+                "description": "The age of the person in years.",
+                "type": "int",
+                "default": "26"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "view_all_food_items",
+        "description": "Retrieves a comprehensive list of all available food items from the API with an optional limit on the number of items.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of food items to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "target_heart_rate",
+        "description": "Calculates the target heart rate range for cardiovascular exercise using the Karvonen method based on the user's age and fitness level.",
+        "parameters": {
+            "age": {
+                "description": "The age of the user in years.",
+                "type": "int",
+                "default": "27"
+            },
+            "fitness_level": {
+                "description": "The fitness level of the user. Acceptable values are \"beginner\", \"intermediate\", and \"advanced\".",
+                "type": "str",
+                "default": "beginner"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "cities_get_information_deprecated",
+        "description": "Fetches information about a specific city based on its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the city to get information for.",
+                "type": "str",
+                "default": "hW7vArorRd8cT9h6v"
+            },
+            "aqiindex": {
+                "description": "The AQI index to use (default is 'us'). Options are 'us' or 'cn'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "timezone": {
+                "description": "The timezone to use (default is 'Asia/Singapore').",
+                "type": "str, optional",
+                "default": "Asia/Singapore"
+            },
+            "lang": {
+                "description": "The language for the response (default is 'en_US').",
+                "type": "str, optional",
+                "default": "en_US"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "bodyfat",
+        "description": "Calculates the body fat percentage based on age, gender, weight, and height using the provided Toolbench RapidAPI key.",
+        "parameters": {
+            "age": {
+                "description": "The age of the person in years.",
+                "type": "int",
+                "default": "27"
+            },
+            "gender": {
+                "description": "The gender of the person. Possible values are 'male' or 'female'.",
+                "type": "str",
+                "default": "female"
+            },
+            "weight": {
+                "description": "The weight of the person. Expected to be in kilograms if unit is 'metric', otherwise in pounds.",
+                "type": "int",
+                "default": "78"
+            },
+            "height": {
+                "description": "The height of the person. Expected to be in centimeters if unit is 'metric', otherwise in inches.",
+                "type": "int",
+                "default": "165"
+            },
+            "unit": {
+                "description": "The desired units of measurement to use. Possible values are 'metric' (default) or 'imperial'.",
+                "type": "str, optional",
+                "default": "metric"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "ideal_body_weight",
+        "description": "Calculates the ideal body weight based on height, body frame size, gender, and optional formula.",
+        "parameters": {
+            "body_frame": {
+                "description": "The body frame size of the person. It can be one of the following values: \"small\", \"medium\", or \"large\".",
+                "type": "str",
+                "default": "medium"
+            },
+            "height": {
+                "description": "The height in centimeters (cm) of the person.",
+                "type": "int",
+                "default": "175"
+            },
+            "gender": {
+                "description": "The gender of the person. It can be either \"male\" or \"female\".",
+                "type": "str",
+                "default": "male"
+            },
+            "formula": {
+                "description": "The formula for ideal weight estimation. It can be either \"hamwi\" (default) or \"devine\".",
+                "type": "str, optional",
+                "default": "hamwi"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "get_workout_plan",
+        "description": "Fetches a workout plan based on specified criteria including time duration, target muscle, location, and available equipment.",
+        "parameters": {
+            "time": {
+                "description": "The duration of the workout.",
+                "type": "str",
+                "default": "30"
+            },
+            "equipment": {
+                "description": "The type of equipment available.",
+                "type": "str",
+                "default": "dumbbells"
+            },
+            "muscle": {
+                "description": "The target muscle group for the workout.",
+                "type": "str",
+                "default": "biceps"
+            },
+            "location": {
+                "description": "The location for the workout (e.g., gym, home).",
+                "type": "str",
+                "default": "gym"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "get_exercises",
+        "description": "Fetch a list of exercises from the MuscleWiki API with optional filters.",
+        "parameters": {
+            "force": {
+                "description": "Filter exercises by the type of force (e.g., push, pull). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Filter exercises by exercise name. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "muscle": {
+                "description": "Filter exercises by targeted muscle group. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "category": {
+                "description": "Filter exercises by exercise category. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "difficulty": {
+                "description": "Filter exercises by difficulty level. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "list_by_equipment",
+        "description": "Fetch a list of exercises by the type of equipment.",
+        "parameters": {
+            "type": {
+                "description": "The equipment type to filter exercises by.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "bmi_imperial",
+        "description": "Calculates the Body Mass Index (BMI) based on the provided height and weight parameters in imperial units (inches and pounds).",
+        "parameters": {
+            "height": {
+                "description": "The height in inches.",
+                "type": "int",
+                "default": "65"
+            },
+            "weight": {
+                "description": "The weight in pounds.",
+                "type": "int",
+                "default": "150"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "daily_water_intake",
+        "description": "Calculates the daily recommended water intake based on factors such as weight, activity level, and climate.",
+        "parameters": {
+            "weight": {
+                "description": "The weight of the individual in kilograms (kg).",
+                "type": "int",
+                "default": "60"
+            },
+            "activity_level": {
+                "description": "The activity level of the individual. Acceptable values are:",
+                "type": "str",
+                "default": "sedentary"
+            },
+            "climate": {
+                "description": "The climate in which the individual is located. Acceptable values are:",
+                "type": "str",
+                "default": "normal"
+            },
+            "unit": {
+                "description": "The unit of measurement for the water intake. Default is 'liters', specify 'ounces' to get the result in ounces.",
+                "type": "str, optional",
+                "default": "liters"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "team_list",
+        "description": "Fetches and returns a list of sports teams from the SportScore API.",
+        "parameters": {
+            "page": {
+                "description": "Page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "places_v2_list_by_map",
+        "description": "Fetches a list of places within a specified boundary box using the AirVisual API.",
+        "parameters": {
+            "nelat": {
+                "description": "North East latitude of the boundary.",
+                "type": "int",
+                "default": "40.95240778688068"
+            },
+            "nelon": {
+                "description": "North East longitude of the boundary.",
+                "type": "int",
+                "default": "-73.43762621283531"
+            },
+            "swlat": {
+                "description": "South West latitude of the boundary.",
+                "type": "int",
+                "default": "40.43539120253853"
+            },
+            "swlon": {
+                "description": "South West longitude of the boundary.",
+                "type": "int",
+                "default": "-74.41956583410503"
+            },
+            "x_user_lang": {
+                "description": "Language for the response. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            },
+            "x_units_pressure": {
+                "description": "Units for pressure measurement. Allowed values are 'mbar' or 'hg'. Defaults to 'mbar'.",
+                "type": "str, optional",
+                "default": "mbar"
+            },
+            "x_units_temperature": {
+                "description": "Units for temperature measurement. Allowed values are 'celsius' or 'fahrenheit'. Defaults to 'celsius'.",
+                "type": "str, optional",
+                "default": "celsius"
+            },
+            "x_user_timezone": {
+                "description": "User's timezone. Defaults to 'Asia/Singapore'.",
+                "type": "str, optional",
+                "default": "Asia/Singapore"
+            },
+            "x_aqi_index": {
+                "description": "Air Quality Index standard. Allowed values are 'us' or 'cn'. Defaults to 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "x_units_distance": {
+                "description": "Units for distance measurement. Allowed values are 'kilometer' or 'miles'. Defaults to 'kilometer'.",
+                "type": "str, optional",
+                "default": "kilometer"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "last_menstrual_period_lmp",
+        "description": "Calculates the estimated due date based on the user's last menstrual period (LMP).",
+        "parameters": {
+            "cycle_length": {
+                "description": "The average length of the user's menstrual cycle in days.",
+                "type": "str",
+                "default": "28"
+            },
+            "last_period_date": {
+                "description": "The date of the user's last menstrual period in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2023-01-01"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "cities_v2_get_measurements",
+        "description": "Fetches air quality and weather measurements for a specified city using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the city, as returned in the /v2/auto-complete endpoint.",
+                "type": "str",
+                "default": "hW7vArorRd8cT9h6v"
+            },
+            "x_units_distance": {
+                "description": "Unit of measurement for distance. One of 'miles' or 'kilometer'. Defaults to 'kilometer'.",
+                "type": "str, optional",
+                "default": "kilometer"
+            },
+            "x_units_pressure": {
+                "description": "Unit of measurement for pressure. One of 'hg' or 'mbar'. Defaults to 'mbar'.",
+                "type": "str, optional",
+                "default": "mbar"
+            },
+            "x_aqi_index": {
+                "description": "Air Quality Index standard to use. One of 'us' or 'cn'. Defaults to 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "x_units_temperature": {
+                "description": "Unit of measurement for temperature. One of 'fahrenheit' or 'celsius'. Defaults to 'celsius'.",
+                "type": "str, optional",
+                "default": "celsius"
+            },
+            "x_user_timezone": {
+                "description": "Timezone to use for the user. Defaults to 'Asia/Singapore'.",
+                "type": "str, optional",
+                "default": "Asia/Singapore"
+            },
+            "x_user_lang": {
+                "description": "Language for response. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "gethospitalsbyname",
+        "description": "Fetches a list of U.S. hospitals that match the given name using the RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The name or partial name of the hospital to search for.",
+                "type": "str",
+                "default": "presbyterian"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "list_by_body_part",
+        "description": "Fetch exercises based on the specified body part from the ExerciseDB API.",
+        "parameters": {
+            "bodypart": {
+                "description": "The body part for which to fetch exercises (e.g., chest, legs).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "v1_exercises",
+        "description": "Fetch up to 10 exercises from the API Ninjas Exercises API that satisfy the given search parameters.",
+        "parameters": {
+            "offset": {
+                "description": "Number of results to offset for pagination. Default is 0.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "muscle": {
+                "description": "Muscle group targeted by the exercise. Possible values include: 'abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'. Default is 'biceps'.",
+                "type": "str, optional",
+                "default": "biceps"
+            },
+            "type": {
+                "description": "Exercise type. Possible values include: 'cardio', 'olympic_weightlifting', 'plyometrics', 'powerlifting', 'strength', 'stretching', 'strongman'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "difficulty": {
+                "description": "Difficulty level of the exercise. Possible values include: 'beginner', 'intermediate', 'expert'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the exercise. This value can be partial (e.g., 'press' will match 'Dumbbell Bench Press').",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "generar_fhir_id_qr",
+        "description": "Converts a given FHIR ID into a QR code.",
+        "parameters": {
+            "fhir_id": {
+                "description": "The FHIR ID to be converted into a QR code.",
+                "type": "str",
+                "default": "a554c619-bc73-4080-9cc9-74da38789d48"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "apgar",
+        "description": "Makes a request to the APGAR scoring API and returns the observation result in JSON format.",
+        "parameters": {
+            "respirationscore": {
+                "description": "Score for the respiratory effort.",
+                "type": "str",
+                "default": ""
+            },
+            "skincolorscore": {
+                "description": "Score for the baby's skin color.",
+                "type": "str",
+                "default": ""
+            },
+            "heartrateinbpm": {
+                "description": "Heart rate of the baby in beats per minute.",
+                "type": "int",
+                "default": ""
+            },
+            "responsetoirritablestimuliscore": {
+                "description": "Score for the baby's response to irritable stimuli.",
+                "type": "str",
+                "default": ""
+            },
+            "activityscore": {
+                "description": "Score for the baby's muscle tone and activity.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "triage_virtual",
+        "description": "Determines if a patient should be attended via virtual consultation or in-person consultation based on their ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the patient.",
+                "type": "str",
+                "default": "me duele la cabeza"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "fertility_window_get",
+        "description": "Calculates the fertility window based on the first day of the last menstrual period and the cycle length by making a GET request to the pregnancy calculator API.",
+        "parameters": {
+            "menstrual_date": {
+                "description": "The date of the first day of the last menstrual period in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2023-06-01"
+            },
+            "cycle_length": {
+                "description": "The length of the menstrual cycle in days.",
+                "type": "int",
+                "default": "28"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "metric_kilograms",
+        "description": "Calculates the BMI (Body Mass Index) of an individual using metric measurements.",
+        "parameters": {
+            "weight": {
+                "description": "The weight of an individual in kilograms (kg).",
+                "type": "int",
+                "default": "150"
+            },
+            "height": {
+                "description": "The height of an individual in meters (m).",
+                "type": "int",
+                "default": "1.83"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "v1_caloriesburned",
+        "description": "Fetches the number of calories burned for a given activity using the API Ninjas Calories Burned API.",
+        "parameters": {
+            "activity": {
+                "description": "The name of the activity. Partial values are allowed (e.g., 'ski' will match both 'water skiing' and 'downhill skiing').",
+                "type": "str",
+                "default": "skiing"
+            },
+            "weight": {
+                "description": "Weight of the user in pounds (must be between 50 and 500). Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "duration": {
+                "description": "Duration of the activity in minutes (must be 1 or greater). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "imperial_pounds",
+        "description": "Calculates the Body Mass Index (BMI) of an individual using the imperial measurement system through an API.",
+        "parameters": {
+            "weight": {
+                "description": "The weight of the individual in pounds (lbs).",
+                "type": "int",
+                "default": "150"
+            },
+            "height": {
+                "description": "The height of the individual in inches (in).",
+                "type": "int",
+                "default": "68"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "weight_category",
+        "description": "Retrieve the weight category of an individual based on their BMI.",
+        "parameters": {
+            "bmi": {
+                "description": "Body Mass Index value for which to determine the weight category.",
+                "type": "int",
+                "default": "19.2"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "macronutrient_distribution",
+        "description": "Calculates the optimal distribution of macronutrients (carbohydrates, proteins, and fats) based on dietary preferences, body composition goals, and activity level.",
+        "parameters": {
+            "dietary_preferences": {
+                "description": "Represents the individual's dietary choices or restrictions, such as 'vegetarian', 'vegan', 'pescatarian', or 'gluten-free'.",
+                "type": "str",
+                "default": "vegan"
+            },
+            "body_composition_goal": {
+                "description": "The body composition goal, which can be 'weight_loss', 'maintenance', or 'muscle_gain'.",
+                "type": "str",
+                "default": "maintenance"
+            },
+            "activity_level": {
+                "description": "The activity level of the individual, which can be 'sedentary', 'moderately_active', or 'very_active'.",
+                "type": "str",
+                "default": "sedentary"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "bsa",
+        "description": "Calculates the Body Surface Area (BSA) based on weight and height using an external API.",
+        "parameters": {
+            "weightinkilograms": {
+                "description": "The weight of the individual in kilograms.",
+                "type": "int",
+                "default": ""
+            },
+            "heightincentrimetres": {
+                "description": "The height of the individual in centimeters.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "cities_v2_get_information",
+        "description": "Fetches information about a specific city using its identifier.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the city as returned by the `/v2/auto-complete` endpoint.",
+                "type": "str",
+                "default": "hW7vArorRd8cT9h6v"
+            },
+            "x_units_temperature": {
+                "description": "Unit for temperature. One of 'fahrenheit' or 'celsius'. Defaults to 'celsius'.",
+                "type": "str, optional",
+                "default": "celsius"
+            },
+            "x_aqi_index": {
+                "description": "AQI (Air Quality Index) standard. One of 'us' or 'cn'. Defaults to 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "x_user_timezone": {
+                "description": "User's timezone. Defaults to 'Asia/Singapore'.",
+                "type": "str, optional",
+                "default": "Asia/Singapore"
+            },
+            "x_user_lang": {
+                "description": "User's language. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            },
+            "x_units_pressure": {
+                "description": "Unit for pressure. One of 'hg' or 'mbar'. Defaults to 'mbar'.",
+                "type": "str, optional",
+                "default": "mbar"
+            },
+            "x_units_distance": {
+                "description": "Unit for distance. One of 'miles' or 'kilometer'. Defaults to 'kilometer'.",
+                "type": "str, optional",
+                "default": "kilometer"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "get_exercise_by_id",
+        "description": "Fetches an exercise from the MuscleWiki API using the provided exercise ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the exercise to fetch.",
+                "type": "str",
+                "default": "20"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "body_mass_index",
+        "description": "Calculates the Body Mass Index (BMI) based on the provided weight, height, and units.",
+        "parameters": {
+            "weight": {
+                "description": "The weight of the individual.",
+                "type": "int",
+                "default": "80"
+            },
+            "height": {
+                "description": "The height of the individual.",
+                "type": "int",
+                "default": "170"
+            },
+            "units": {
+                "description": "The units of measurement to be used. Possible values are 'metric' (default) or 'imperial'.",
+                "type": "str, optional",
+                "default": "metric"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "get_appointments",
+        "description": "Retrieves all appointments for a given date and clinic name from the API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which the appointments are requested in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2022.09.09"
+            },
+            "clinicname": {
+                "description": "The name of the clinic for which the appointments are requested.",
+                "type": "str",
+                "default": "DemoUser"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "basal_metabolic_rate_bmr",
+        "description": "Calculates the Basal Metabolic Rate (BMR) based on gender, age, height, weight, and optionally the equation for the calculation.",
+        "parameters": {
+            "gender": {
+                "description": "The gender, either 'male' or 'female'.",
+                "type": "str",
+                "default": "male"
+            },
+            "age": {
+                "description": "The age in years.",
+                "type": "int",
+                "default": "30"
+            },
+            "height": {
+                "description": "The height in centimeters.",
+                "type": "int",
+                "default": "175"
+            },
+            "weight": {
+                "description": "The weight in kilograms.",
+                "type": "int",
+                "default": "60"
+            },
+            "equation": {
+                "description": "The equation to use for the calculation. Valid options are 'mifflin' (default) and 'harris'.",
+                "type": "str, optional",
+                "default": "mifflin"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    },
+    {
+        "name": "stations_v2_get_measurements",
+        "description": "Retrieve measurements from a specific station by its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The station ID retrieved from the /v2/auto-complete endpoint.",
+                "type": "str",
+                "default": "Jmy9oL75KSZnsqi6L"
+            },
+            "x_user_timezone": {
+                "description": "The user's timezone. Default is 'Asia/Singapore'.",
+                "type": "str, optional",
+                "default": "Asia/Singapore"
+            },
+            "x_units_temperature": {
+                "description": "The unit for temperature, either 'fahrenheit' or 'celsius'. Default is 'celsius'.",
+                "type": "str, optional",
+                "default": "celsius"
+            },
+            "x_user_lang": {
+                "description": "The user's language. Default is 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            },
+            "x_units_pressure": {
+                "description": "The unit for pressure, either 'hg' or 'mbar'. Default is 'mbar'.",
+                "type": "str, optional",
+                "default": "mbar"
+            },
+            "x_units_distance": {
+                "description": "The unit for distance, either 'miles' or 'kilometer'. Default is 'kilometer'.",
+                "type": "str, optional",
+                "default": "kilometer"
+            },
+            "x_aqi_index": {
+                "description": "The AQI index standard, either 'us' or 'cn'. Default is 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            }
+        },
+        "domain": "Health_and_Fitness"
+    }
+]

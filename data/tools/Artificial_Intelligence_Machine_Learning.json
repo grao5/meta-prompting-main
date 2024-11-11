@@ -1,0 +1,411 @@
+[
+    {
+        "name": "get_models",
+        "description": "Fetches all models from a given manufacturer using the Toolbench RapidAPI service.",
+        "parameters": {
+            "manufacturer": {
+                "description": "The name of the manufacturer for which to retrieve models.",
+                "type": "str",
+                "default": "Audi"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "text_sentiment_analysis",
+        "description": "Analyzes the sentiment of the provided text using the Text Sentiment Analysis API.",
+        "parameters": {
+            "text": {
+                "description": "The text to be analyzed for sentiment.",
+                "type": "str",
+                "default": "have a good day"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "my_images_by_id",
+        "description": "Fetches generated images' information filtered by a unique ID.",
+        "parameters": {
+            "uniqueid": {
+                "description": "The unique ID used to filter the generated images.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "getdownloadurl",
+        "description": "Generates an mp3 download URL using a Text-to-Speech (TTS) engine for the provided text and voice.",
+        "parameters": {
+            "text": {
+                "description": "The text to be converted to speech.",
+                "type": "str",
+                "default": "Are you alright?"
+            },
+            "voice_name": {
+                "description": "The voice and language for the speech synthesis. Default is 'en-US-AriaNeural'.",
+                "type": "str, optional",
+                "default": "en-US-AriaNeural"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_a_conversation_turn",
+        "description": "Fetch a specific conversation turn by its ID and return its details.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the conversation turn to fetch.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_job_by_task_id",
+        "description": "Fetches the job and action job status associated with the given task ID from the MidJourney API.",
+        "parameters": {
+            "task_id": {
+                "description": "The unique identifier for the task. This ID will expire 24 hours after its creation.",
+                "type": "str",
+                "default": "6ddd8121-2ae4-af61-b73d-eaefc8318d09"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_session_messages",
+        "description": "Retrieve the message history for a specific character within a given session.",
+        "parameters": {
+            "character_id": {
+                "description": "Unique identifier for the character whose message history is being retrieved.",
+                "type": "str",
+                "default": "938545c6-ac0e-423b-93ba-39159fbfb866"
+            },
+            "session_id": {
+                "description": "Identifier for the session. Defaults to 'e5f6g7h8'.",
+                "type": "str, optional",
+                "default": "e5f6g7h8"
+            },
+            "page": {
+                "description": "Page number for pagination of the message history. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "page_size": {
+                "description": "Number of messages per page for pagination. Defaults to '40'.",
+                "type": "str, optional",
+                "default": "40"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "list_all_bot_category_groups",
+        "description": "Get a list of category groups that are linked to user-owned bots (not locked bots).",
+        "parameters": {
+            "category_group": {
+                "description": "Category group slug of the category group in the bot category group.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "dir": {
+                "description": "Direction of the ordering. Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "limit": {
+                "description": "The number of records to return. Default is 20.",
+                "type": "int, optional",
+                "default": 20
+            },
+            "order": {
+                "description": "The search field to order by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "is_id": {
+                "description": "The ID of the bot category group.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "bot": {
+                "description": "Bot slug of the bot in the bot category group.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "category_group_id": {
+                "description": "The ID of the category group.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "bot_id": {
+                "description": "The ID of the bot category group.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number of results to start from. Default is 1.",
+                "type": "int, optional",
+                "default": 1
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "scraper",
+        "description": "Fetches product data from the AliExpress API using the given product ID and RapidAPI key.",
+        "parameters": {
+            "productid": {
+                "description": "The ID of the product to scrape from AliExpress.",
+                "type": "str",
+                "default": "32984931216"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "list_all_conversation_turns",
+        "description": "Fetches and lists all conversation turns based on specified search parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The number of records to return. Default is 20.",
+                "type": "int, optional",
+                "default": 20
+            },
+            "conversation": {
+                "description": "The slug of the conversation. Conversations are linked to conversation turns.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "conversation_id": {
+                "description": "The ID of the conversation. Conversations are linked to conversation turns.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "dir": {
+                "description": "The direction of the ordering. Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "input": {
+                "description": "The input to the bot by the client for partial search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number of results to start from. Default is 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "output": {
+                "description": "The output from the bot in response to the client input for partial search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_id": {
+                "description": "The ID of the conversation turn.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "order": {
+                "description": "The search field to order by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "have_a_chat_with_our_bot",
+        "description": "Initiates a conversation with the Islam&AI Bot, utilizing chat history and an API key for authentication.",
+        "parameters": {
+            "question": {
+                "description": "The question to pose to the Islam&AI Bot.",
+                "type": "str",
+                "default": "What is Islam?"
+            },
+            "chathistory": {
+                "description": "The chat history to be included in the conversation. Defaults to a predefined string about a dua.",
+                "type": "str, optional",
+                "default": "What is Dua to recite when you see a miraculous thing like Islam & AI? | There is no specific dua (supplication) mentioned in the Quran or Hadith that is to be recited when witnessing a miracle. However, Muslims are encouraged to constantly remember Allah and express their gratitude to Him for the blessings and miracles they witness in their lives. In general, it is recommended to say 'Subhan Allah' (Glory be to Allah) when witnessing something amazing or miraculous"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_job_status",
+        "description": "Fetch the status and results of a job from the Large Text-to-Speech service using RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the job whose status and result need to be fetched.",
+                "type": "str",
+                "default": "5425b1c0-357b-47cf-a06c-69c5260ea890"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "chat_gpt_detector",
+        "description": "Detects whether the given text was generated by an AI model using the provided RapidAPI key.",
+        "parameters": {
+            "text": {
+                "description": "The text to be analyzed for AI-generated content.",
+                "type": "str",
+                "default": "Christmas is one of the most widely celebrated holidays in the world. It is a time of joy, love, and giving, and is traditionally celebrated on December 25th every year. The holiday has its roots in Christianity, where it commemorates the birth of Jesus Christ, but it is now celebrated by people of all religions and cultures.  Christmas is a time when families and friends come together to celebrate and enjoy each other's company. It is a time to share meals, exchange gifts, and participate in various traditions and activities. One of the most beloved traditions of Christmas is decorating a Christmas tree. This tradition originated in Germany and has since spread around the world. Families often decorate their trees with lights, ornaments, and tinsel.  Another beloved tradition is the exchange of gifts. Many people spend weeks or even months searching for the perfect gift for their loved ones. Giving and receiving gifts is a way to show love and appreciation for one another, and it is a way to bring joy to those around us.  Christmas is also a time for giving back to those in need. Many people donate their time, money, or resources to charities and organizations that help those who are less fortunate. This spirit of giving is one of the most important aspects of Christmas and helps to spread love and kindness to those who need it most.  In addition to these traditions, there are many other customs associated with Christmas. These include caroling, baking Christmas cookies, and watching Christmas movies. Each of these traditions brings a unique sense of joy and excitement to the holiday season.  In conclusion, Christmas is a time of joy, love, and giving. It is a time to come together with friends and family and celebrate the holiday season. While the holiday has its roots in Christianity, it is now celebrated by people of all cultures and religions around the world. Christmas traditions bring people together and create memories that will last a lifetime."
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_characters",
+        "description": "Retrieve a list of characters from the API, including both publicly available characters and those created by the user.",
+        "parameters": {
+            "page_size": {
+                "description": "Number of characters to retrieve per page. Defaults to 25.",
+                "type": "int, optional",
+                "default": "25"
+            },
+            "page": {
+                "description": "Page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "private": {
+                "description": "If True, return only the characters created by the user. If False, return all publicly available characters. If None, both types of characters are returned. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_an_answer_to_your_question",
+        "description": "Fetches an answer to an Islamic question using the Islam&AI bot from the provided API.",
+        "parameters": {
+            "question": {
+                "description": "The Islamic question to be answered.",
+                "type": "str",
+                "default": "What is Islam?"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_sessions",
+        "description": "Fetch a list of chat sessions and their corresponding `session_id` for a given character.",
+        "parameters": {
+            "character_id": {
+                "description": "The unique identifier of the character whose sessions are being retrieved.",
+                "type": "str",
+                "default": "938545c6-ac0e-423b-93ba-39159fbfb866"
+            },
+            "page_size": {
+                "description": "The number of sessions to retrieve per page. Defaults to 25.",
+                "type": "int, optional",
+                "default": "25"
+            },
+            "page": {
+                "description": "The page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "generatequiz",
+        "description": "Generates a quiz based on the specified topic using the Quizy API.",
+        "parameters": {
+            "topic": {
+                "description": "The topic for which the quiz needs to be generated.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "revise",
+        "description": "Revise and correct the given text using a specified content type and API key.",
+        "parameters": {
+            "content_type": {
+                "description": "The content type of the text to be processed.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "text": {
+                "description": "The text to be revised and corrected.",
+                "type": "str",
+                "default": "I has two eye"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "get_a_conversation",
+        "description": "Fetch details of a specific conversation using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the conversation to retrieve.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "gettraining",
+        "description": "Fetches the training status based on the given training UUID and API keys.",
+        "parameters": {
+            "x_api_key": {
+                "description": "API key for the Dream Diffusion service.",
+                "type": "str",
+                "default": "3f9a50f3-db4c-4b52-9b15-709fcaddb6a7"
+            },
+            "training_uuid": {
+                "description": "Unique identifier of the training whose status is being queried.",
+                "type": "str",
+                "default": "95a0cdaa-0b16-45f7-9da6-ce4f43835d0d"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "hashtags",
+        "description": "Generates hashtags from a given text using the specified content type and optional RapidAPI key.",
+        "parameters": {
+            "content_type": {
+                "description": "The type of content for which hashtags are to be generated.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "text": {
+                "description": "The text from which hashtags will be extracted.",
+                "type": "str",
+                "default": "My holidays in Summer"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    },
+    {
+        "name": "getgeneration",
+        "description": "Fetches the generation status and generated images from the Dream Diffusion API.",
+        "parameters": {
+            "x_api_key": {
+                "description": "The API key required for authorization to access the generation data.",
+                "type": "str",
+                "default": "3f9a50f3-db4c-4b52-9b15-709fcaddb6a7"
+            },
+            "generation_uuid": {
+                "description": "The unique identifier for the generation process.",
+                "type": "str",
+                "default": "c2d620eb-8d1a-4bda-b609-d2000858f22f"
+            }
+        },
+        "domain": "Artificial_Intelligence_Machine_Learning"
+    }
+]

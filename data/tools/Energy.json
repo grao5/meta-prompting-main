@@ -1,0 +1,92 @@
+[
+    {
+        "name": "retrieve_compensation",
+        "description": "Fetches the full compensation details associated with a given ID using the specified RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID for which to retrieve the compensation details.",
+                "type": "str",
+                "default": "0xF0F2e446EeD32236EA0c78a6E4a91Ed712654799"
+            }
+        },
+        "domain": "Energy"
+    },
+    {
+        "name": "get_specific_country",
+        "description": "Fetches fuel prices for a specific country from the RapidAPI endpoint.",
+        "parameters": {
+            "country": {
+                "description": "The name of the country for which to fetch fuel prices.",
+                "type": "str",
+                "default": "Germany"
+            }
+        },
+        "domain": "Energy"
+    },
+    {
+        "name": "co2_emission",
+        "description": "Fetches the carbon emissions in grams per Kilo-Watt-Hour for electricity in Germany based on the given date. Allows retrieving both the latest and historical data back to the year 2017.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve carbon emission data. Accepted formats include 'YYYY-MM-DD', 'MM/DD/YYYY', or Unix Timestamp (in milliseconds). Defaults to '2022-08-20'.",
+                "type": "str, optional",
+                "default": "2022-08-20"
+            }
+        },
+        "domain": "Energy"
+    },
+    {
+        "name": "caiso",
+        "description": "Fetches standardized CAISO (California Independent System Operator) data based on specified parameters.",
+        "parameters": {
+            "type": {
+                "description": "The type of data to retrieve. Must be one of \"co2\", \"fuelsource\", \"netdemand\", or \"all\". \"all\" will combine results for the three other types into a single CSV file.",
+                "type": "str",
+                "default": "co2"
+            },
+            "enddate": {
+                "description": "The end date for the data retrieval in the format 'YYYYMMDD'. Defaults to '20220901'.",
+                "type": "str, optional",
+                "default": "20220901"
+            },
+            "interval": {
+                "description": "The interval for the data points in minutes. Defaults to '30'.",
+                "type": "str, optional",
+                "default": "30"
+            },
+            "startdate": {
+                "description": "The start date for the data retrieval in the format 'YYYYMMDD'. Defaults to '20220101'.",
+                "type": "str, optional",
+                "default": "20220101"
+            }
+        },
+        "domain": "Energy"
+    },
+    {
+        "name": "ecoweather",
+        "description": "Retrieve historical weather data for a specified location within a given date range.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the geo-location in degrees.",
+                "type": "int",
+                "default": "8.80282"
+            },
+            "lat": {
+                "description": "Latitude of the geo-location in degrees.",
+                "type": "int",
+                "default": "49.3427818"
+            },
+            "is_from": {
+                "description": "Start date in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2021-12-31"
+            },
+            "to": {
+                "description": "End date in YYYY-MM-DD format. Defaults to '2022-09-31'.",
+                "type": "str, optional",
+                "default": "2022-09-31"
+            }
+        },
+        "domain": "Energy"
+    }
+]

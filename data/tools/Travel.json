@@ -1,0 +1,2388 @@
+[
+    {
+        "name": "auto_complete",
+        "description": "Fetch auto-complete suggestions for a given query using the Wayfair API.",
+        "parameters": {
+            "query": {
+                "description": "The term or phrase for which auto-complete suggestions are needed.",
+                "type": "str",
+                "default": "red pillow"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "properties_get_hotel_photos_deprecated",
+        "description": "This function fetches all available photos for a given hotel property using the specified RapidAPI key. ",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the property for which to retrieve photos.",
+                "type": "int",
+                "default": "1178275040"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "bus_detours",
+        "description": "Fetches the bus detours from the SEPTA API based on the specified route number.",
+        "parameters": {
+            "req1": {
+                "description": "The route number for which to retrieve detour information. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_cities",
+        "description": "Fetches a list of cities within a specified region of a country using the provided RapidAPI key.",
+        "parameters": {
+            "region_code": {
+                "description": "The code of the region for which to retrieve cities.",
+                "type": "str",
+                "default": "abr"
+            },
+            "country_code": {
+                "description": "The code of the country which contains the region.",
+                "type": "str",
+                "default": "ph"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "languages",
+        "description": "Fetch a list of the world's languages, optionally filtered and translated.",
+        "parameters": {
+            "lang_3": {
+                "description": "Filter by 3-letter ISO language code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "iso_a2": {
+                "description": "Filter by 2-letter country code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "Select fields to include in the result (e.g., 'iso_a2,lang_3,flag'). Defaults to 'iso_a2,lang_3,flag'.",
+                "type": "str, optional",
+                "default": "iso_a2,lang_3,flag"
+            },
+            "lang": {
+                "description": "Language code to translate the results into. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "stays_properties_detail_photos",
+        "description": "Fetch detailed photos of a specific property from the stays/properties/detail/photos endpoint using the Booking.com RapidAPI.",
+        "parameters": {
+            "language_code": {
+                "description": "The language code to use for the response. Default is 'en-us'.",
+                "type": "str",
+                "default": "en-us"
+            },
+            "id_detail": {
+                "description": "The ID of the property to fetch detail photos for. Default is 'cr/la-buena-vida-cabinas'.",
+                "type": "str",
+                "default": "cr/la-buena-vida-cabinas"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_hotel_chains",
+        "description": "Fetches a list of hotel chains from the Booking.com API.",
+        "parameters": {
+            "name": {
+                "description": "Hotel chain name to filter results by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "chain_id": {
+                "description": "Chain ID to filter results by.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_stations",
+        "description": "Retrieve the nearest electric vehicle charging stations within a specified distance.",
+        "parameters": {
+            "distance": {
+                "description": "The radius in miles to search for charging stations. Defaults to '100'.",
+                "type": "str, optional",
+                "default": "100"
+            },
+            "longitude": {
+                "description": "The longitude coordinate for the search location. Defaults to '2.4379392'.",
+                "type": "str, optional",
+                "default": "2.4379392"
+            },
+            "latitude": {
+                "description": "The latitude coordinate for the search location. Defaults to '44.351488'.",
+                "type": "str, optional",
+                "default": "44.351488"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "hotel_photos",
+        "description": "Fetches a list of photos for given hotels based on their IDs from the RapidAPI Priceline provider.",
+        "parameters": {
+            "hotel_ids": {
+                "description": "Comma-separated string of PPN hotel IDs (Semi Opaque Only).",
+                "type": "str",
+                "default": "700000000,700000001,700000002,700000003"
+            },
+            "image_size": {
+                "description": "The size of the images to be returned. Valid options are 'small' (60px), 'medium' (300 to 312px), or 'large' (500 to 800px). Defaults to 'medium'.",
+                "type": "str, optional",
+                "default": "medium"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "schedule",
+        "description": "Fetches the TV schedule based on the given parameters.",
+        "parameters": {
+            "country": {
+                "description": "An ISO country code to filter the schedule by country.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "An ISO formatted date to filter the schedule for a specific day.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "filter": {
+                "description": "A filter to specify whether to show only primetime shows. Default is 'primetime'.",
+                "type": "str, optional",
+                "default": "primetime"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_continent_continent_continent",
+        "description": "Fetches a list of webcams for a specified continent.",
+        "parameters": {
+            "continent": {
+                "description": "Continent code for which to fetch webcams. Possible values are:",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language code to localize the results, if available. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Content to be listed in the response. Possible values are:",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_limit_limit_offset",
+        "description": "Fetches a list of webcams with optional parameters for result slicing and localization.",
+        "parameters": {
+            "limit": {
+                "description": "Maximum number of webcams in the result list. The maximum allowable value is 50.",
+                "type": "int",
+                "default": ""
+            },
+            "offset": {
+                "description": "Offset for the first item in the result list. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "lang": {
+                "description": "Language to localize the results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Content fields to be listed in the response. Defaults to 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "properties_detail",
+        "description": "Retrieves detailed information about a property using the Idealista API.",
+        "parameters": {
+            "propertycode": {
+                "description": "The unique code of the property to retrieve details for, as obtained from the properties list endpoint.",
+                "type": "int",
+                "default": "19899037"
+            },
+            "country": {
+                "description": "The country code to use for the API request. One of the following: 'it', 'es', 'pt'. Defaults to 'it'.",
+                "type": "str, optional",
+                "default": "it"
+            },
+            "language": {
+                "description": "The language code to use for the API response. One of the following: 'en', 'es', 'it', 'pt', 'de', 'fr', 'ro', 'ru', 'pl', 'sv', 'fi', 'nb', 'nl'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list",
+        "description": "Fetches a full list of expired user details from the OnlyFans API.",
+        "parameters": {
+            "sort": {
+                "description": "Sorting order for the results.",
+                "type": "str",
+                "default": ""
+            },
+            "signend": {
+                "description": "End signature for authentication.",
+                "type": "str",
+                "default": ""
+            },
+            "signstart": {
+                "description": "Start signature for authentication.",
+                "type": "str",
+                "default": ""
+            },
+            "apptoken": {
+                "description": "Application token for API access.",
+                "type": "str",
+                "default": ""
+            },
+            "xbc": {
+                "description": "XBC token for API access.",
+                "type": "str",
+                "default": ""
+            },
+            "timezone": {
+                "description": "Timezone used for the query.",
+                "type": "str",
+                "default": "America/Los_Angeles"
+            },
+            "useragent": {
+                "description": "User agent string for the API request.",
+                "type": "str",
+                "default": ""
+            },
+            "field": {
+                "description": "Specific field to query for information.",
+                "type": "str",
+                "default": ""
+            },
+            "offset": {
+                "description": "Offset for pagination, must be divisible by 200.",
+                "type": "str",
+                "default": ""
+            },
+            "sess": {
+                "description": "Session identifier for the request.",
+                "type": "str",
+                "default": ""
+            },
+            "auth_id": {
+                "description": "Authentication ID for the user.",
+                "type": "str",
+                "default": "729369"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "visa_requirements",
+        "description": "Fetches visa requirements for a given passport and destination using the Toolbench RapidAPI.",
+        "parameters": {
+            "passport": {
+                "description": "The passport country code.",
+                "type": "str",
+                "default": "US"
+            },
+            "destination": {
+                "description": "The destination country code.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "autocomplete",
+        "description": "Search for train and public transport stations in Germany and across Europe using the RapidAPI service.",
+        "parameters": {
+            "query": {
+                "description": "The search query for train and public transport stations.",
+                "type": "str",
+                "default": "berlin"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "route_information",
+        "description": "Fetch route information from the BART API using the given command.",
+        "parameters": {
+            "cmd": {
+                "description": "The command to send to the BART API. Possible commands can be found at http://api.bart.gov/docs/overview/examples.aspx.",
+                "type": "str",
+                "default": "routes"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "results",
+        "description": "Fetch soccer match results for a specified date from the Msport API.",
+        "parameters": {
+            "date": {
+                "description": "The date of the soccer matches to retrieve results for (format: 'YYYY-MM-DD').",
+                "type": "str",
+                "default": "2023-01-30"
+            },
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "search_location",
+        "description": "Fetch Instagram locations based on a given keyword using the Toolbench API.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term to find relevant Instagram locations.",
+                "type": "str",
+                "default": "paris"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "bus_trolley_schedules",
+        "description": "Fetches bus or trolley schedules based on the provided parameters from the SEPTA API.",
+        "parameters": {
+            "req1": {
+                "description": "The stop ID for which the schedule is being requested.",
+                "type": "int",
+                "default": "17842"
+            },
+            "req2": {
+                "description": "The route number. Defaults to 17.",
+                "type": "int, optional",
+                "default": "17"
+            },
+            "req3": {
+                "description": "'i' for inbound or 'o' for outbound. Defaults to 'i'.",
+                "type": "str, optional",
+                "default": "i"
+            },
+            "req6": {
+                "description": "The number of results to return. Defaults to 7.",
+                "type": "int, optional",
+                "default": "7"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "bus_trolley_routes",
+        "description": "Fetches and returns the bus or trolley route stops information using the SEPTA API.",
+        "parameters": {
+            "req1": {
+                "description": "The route number to fetch stops information for.",
+                "type": "str",
+                "default": "23"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_administrative_divisions",
+        "description": "Retrieves geographical administrative division names to be used in the Listing by georef endpoint from the Airbnb API. The hierarchical structure of administrative divisions must be respected for accurate results, meaning `admin1` is needed for `admin2`, `admin2` is needed for `admin3`, and so on.",
+        "parameters": {
+            "countrycode": {
+                "description": "The ISO country code.",
+                "type": "str",
+                "default": "IT"
+            },
+            "admin2": {
+                "description": "The second-level administrative division. Requires `admin1` to be properly specified. Defaults to 'RM'.",
+                "type": "str, optional",
+                "default": "RM"
+            },
+            "admin1": {
+                "description": "The first-level administrative division. Defaults to '07'.",
+                "type": "str, optional",
+                "default": "07"
+            },
+            "admin4": {
+                "description": "The fourth-level administrative division. Requires `admin3`, `admin2`, and `admin1` to be properly specified. Defaults to '05809101'.",
+                "type": "str, optional",
+                "default": "05809101"
+            },
+            "admin3": {
+                "description": "The third-level administrative division. Requires `admin2` and `admin1` to be properly specified. Defaults to '058091'.",
+                "type": "str, optional",
+                "default": "058091"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_hotel_types",
+        "description": "Returns hotel type names and their translations from the Booking.com API.",
+        "parameters": {
+            "hotel_type_id": {
+                "description": "The ID of the specific hotel type to query. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "trip_details",
+        "description": "Fetches the details of a trip using the given trip UID from the Flixbus API.",
+        "parameters": {
+            "trip_uid": {
+                "description": "Unique identifier for the trip.",
+                "type": "str",
+                "default": "direct:110725991:2015:4188"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "listing_status",
+        "description": "Retrieve the availability status of a listing for a given month and year.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the listing.",
+                "type": "str",
+                "default": "619966061834034729"
+            },
+            "year": {
+                "description": "The year for which the status is to be retrieved.",
+                "type": "int",
+                "default": "2024"
+            },
+            "month": {
+                "description": "The month for which the status is to be retrieved.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_category_category_category",
+        "description": "Fetch a list of webcams based on specified categories.",
+        "parameters": {
+            "category": {
+                "description": "Comma-separated list of category names for which webcams are to be fetched. At least one category is required.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language code to localize the results, if available. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Specifies the content to be listed in the response. Possible values include 'webcams', 'categories', 'continents', 'countries', 'regions', 'properties'. Defaults to 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_locations",
+        "description": "Fetches geographical locations within a specified radius of the given longitude and latitude coordinates, optionally filtered by type.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude coordinate of the center point.",
+                "type": "int",
+                "default": "-75.33299748"
+            },
+            "lat": {
+                "description": "Latitude coordinate of the center point.",
+                "type": "int",
+                "default": "40.11043326"
+            },
+            "radius": {
+                "description": "Radius in miles from the center point within which to search for locations. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "type": {
+                "description": "Type of locations to filter; one of ['bus_stops', 'rail_stations', 'perk_locations', 'trolley_stops', 'sales_locations']. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_room_facility_types",
+        "description": "Fetches a list of room facility types from the Booking.com API based on given criteria.",
+        "parameters": {
+            "room_facility_type_id": {
+                "description": "ID of the specific room facility type to filter.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "facility_type_id": {
+                "description": "ID of the specific room facility type to filter.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "search_return_flights",
+        "description": "Retrieve all return flights for a given contract/return bundle from FlightDepartures using the getFlightReturns endpoint.",
+        "parameters": {
+            "sid": {
+                "description": "Session ID. A random string to identify the session, e.g., 'j10k11l12m13n14'.",
+                "type": "str",
+                "default": ""
+            },
+            "ppn_bundle": {
+                "description": "A unique ID used to identify a specific return rate bundle provided by FlightDepartures.",
+                "type": "str",
+                "default": ""
+            },
+            "convert_currency": {
+                "description": "The requested currency for the results, in ISO 4217 format. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_airports_by_city",
+        "description": "Retrieve a list of airports based on a specific city using the \"Get Airports By City\" API.",
+        "parameters": {
+            "city": {
+                "description": "Name of the city for which the airport details are to be retrieved.",
+                "type": "str",
+                "default": "dallas"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "hotel_details",
+        "description": "Fetches detailed information about a specified hotel from the Priceline API.",
+        "parameters": {
+            "hotel_id": {
+                "description": "The PPN Hotel ID identifying the desired property.",
+                "type": "str",
+                "default": "700008849"
+            },
+            "airport_limit": {
+                "description": "Limit the number of nearby airports included in the response.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "check_in": {
+                "description": "Check-in date in 'YYYY-MM-DD' or 'MM/DD/YYYY' format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "promo": {
+                "description": "Flag to include promotional data. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "photos": {
+                "description": "Flag to include photo data. Default is False.",
+                "type": "bool, optional",
+                "default": "1"
+            },
+            "videos": {
+                "description": "Flag to include video data. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "guest_score_breakdown": {
+                "description": "Flag to include guest score breakdown data. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "reviews": {
+                "description": "Flag to include hotel review data. Default is False.",
+                "type": "bool, optional",
+                "default": "1"
+            },
+            "city_limit": {
+                "description": "Limit the number of cities included in the response.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sid": {
+                "description": "Session ID. Default is 'iSiX639'.",
+                "type": "str, optional",
+                "default": "iSiX639"
+            },
+            "important_info": {
+                "description": "Flag to include extra details about the hotel. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "recent": {
+                "description": "Flag to include recent sales data. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "poi_limit": {
+                "description": "Limit the number of points of interest included in the response.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "plugins": {
+                "description": "Flag to include plugin information. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "image_size": {
+                "description": "The size of the images returned. Options are 'small', 'medium', or 'large'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "id_lookup": {
+                "description": "Flag to search non-PPN Hotel IDs. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "check_out": {
+                "description": "Check-out date in 'YYYY-MM-DD' or 'MM/DD/YYYY' format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency format for the results, in ISO 4217 format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "nearby": {
+                "description": "Flag to include nearby location data such as city, airport, and points of interest. Default is False.",
+                "type": "bool, optional",
+                "default": true
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_distance_by_city_state_country",
+        "description": "Retrieves the latitude, longitude, and calculated distance in miles between two locations specified by city, state, and country.",
+        "parameters": {
+            "country1": {
+                "description": "The country of the first location.",
+                "type": "str",
+                "default": "us"
+            },
+            "country2": {
+                "description": "The country of the second location.",
+                "type": "str",
+                "default": "us"
+            },
+            "state2": {
+                "description": "The state of the second location.",
+                "type": "str",
+                "default": "ca"
+            },
+            "city2": {
+                "description": "The city of the second location.",
+                "type": "str",
+                "default": "sacramento"
+            },
+            "city1": {
+                "description": "The city of the first location.",
+                "type": "str",
+                "default": "birmingham"
+            },
+            "state1": {
+                "description": "The state of the first location.",
+                "type": "str",
+                "default": "al"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_currency",
+        "description": "Fetches the currency information from the Airbnb Search API.",
+        "parameters": {
+            "language_code": {
+                "description": "The language code to use for retrieving the currency information from the API. Defaults to 'en-US'.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "download_chains",
+        "description": "Downloads a list of hotel chains using the provided API key and optional parameters.",
+        "parameters": {
+            "resume_key": {
+                "description": "An optional key to resume results from a given ID. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The limit on the number of results to return. Default is 100.",
+                "type": "int, optional",
+                "default": 100
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_property_property_property",
+        "description": "Retrieves a list of webcams based on the specified property.",
+        "parameters": {
+            "property": {
+                "description": "The property to filter webcams by. Multiple properties can be separated by comma. Possible values are \"editors\" (featured from the editors), \"hd\" (high resolution webcams), and \"live\" (webcams with a live stream). At least one property is required.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "Localizes the results to the specified language, if available. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Specifies the content to be listed in the response. Possible values are \"webcams\", \"categories\", \"continents\", \"countries\", \"regions\", \"properties\". Default is 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "download_states",
+        "description": "Downloads a list of states from the Priceline API using the provided parameters.",
+        "parameters": {
+            "limit": {
+                "description": "Limits the number of results returned by the API. Defaults to 100.",
+                "type": "int, optional",
+                "default": 100
+            },
+            "resume_key": {
+                "description": "A key to resume results from a specific ID. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "africa",
+        "description": "Fetch a list of African cities sorted by the given criteria from the Nomad List API.",
+        "parameters": {
+            "sort": {
+                "description": "Sort order, either 'asc' for ascending or 'desc' for descending. Defaults to 'desc'.",
+                "type": "str",
+                "default": "desc"
+            },
+            "sort_by": {
+                "description": "The attribute to sort by, such as 'overall_score', 'internet_speed', 'temperatureC', 'cost_for_family_in_usd', etc. Defaults to 'overall_score'.",
+                "type": "str",
+                "default": "overall_score"
+            },
+            "page": {
+                "description": "Page number for pagination. Defaults to '1'.",
+                "type": "str",
+                "default": "1"
+            },
+            "size": {
+                "description": "Number of results per page. Defaults to '20'.",
+                "type": "str",
+                "default": "20"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_cities_by_filter",
+        "description": "Fetches cities information based on the provided filter ID using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The filter ID used to specify which cities to fetch information for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_countries",
+        "description": "Fetches information about countries where Booking.com offers hotels.",
+        "parameters": {
+            "country": {
+                "description": "The country code for filtering the results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "properties_get_facilities",
+        "description": "Fetches the facilities of a property given its hotel ID.",
+        "parameters": {
+            "hotel_ids": {
+                "description": "The value of the hotel_id field from the properties/list API.",
+                "type": "int",
+                "default": "1528418"
+            },
+            "languagecode": {
+                "description": "The language code for the response. Default is 'en-us'. Possible values include en, en-us, ar, bg, ca, cs, da, de, el, es, es-ar, et, fi, fr, he, hr, hu, id, is, it, ja, ko, lt, lv, ms, nl, no, pl, pt, pt-br, ro, ru, sk, sl, sr, sv, th, tl, tr, uk, vi, zh, zh-tw.",
+                "type": "str, optional",
+                "default": "en-us"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "stays_properties_detail",
+        "description": "Fetch detailed information about a property from the Booking.com API.",
+        "parameters": {
+            "id_detail": {
+                "description": "The ID of the property to fetch details for. This ID is obtained from the `stays/properties/list` endpoint.",
+                "type": "str",
+                "default": "cr/playa-grande-inn"
+            },
+            "language_code": {
+                "description": "The language code for the returned information. Defaults to 'en-us'.",
+                "type": "str, optional",
+                "default": "en-us"
+            },
+            "currency_code": {
+                "description": "The currency code for the returned information. Defaults to 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "station_information",
+        "description": "Retrieves station information from the BART (Bay Area Rapid Transit) API.",
+        "parameters": {
+            "cmd": {
+                "description": "A command code that specifies the type of station information to retrieve. See examples at http://api.bart.gov/docs/overview/examples.aspx.",
+                "type": "str",
+                "default": "stns"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_country_country_country",
+        "description": "Fetches a list of webcams for the specified country or countries.",
+        "parameters": {
+            "country": {
+                "description": "Comma-separated ISO 3166-1-alpha-2 codes representing the country or countries of interest.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language to localize the results to, if available. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Content to be listed in the response. Default is 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "advisory_information",
+        "description": "Fetches advisory information from the BART API based on command and optional origin station.",
+        "parameters": {
+            "cmd": {
+                "description": "Command to specify the type of advisory information.",
+                "type": "str",
+                "default": "bsa"
+            },
+            "orig": {
+                "description": "Optional station filter using 4 character BART station abbreviations. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "hotels_search",
+        "description": "Searches for available hotels based on the provided filters and parameters.",
+        "parameters": {
+            "order_by": {
+                "description": "Criteria to order the search results.",
+                "type": "str",
+                "default": "popularity"
+            },
+            "adults_number": {
+                "description": "Number of adults for the hotel booking.",
+                "type": "int",
+                "default": "2"
+            },
+            "checkin_date": {
+                "description": "Check-in date in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2023-09-27"
+            },
+            "filter_by_currency": {
+                "description": "Currency to display prices in.",
+                "type": "str",
+                "default": "AED"
+            },
+            "dest_id": {
+                "description": "Destination ID for the hotel search.",
+                "type": "int",
+                "default": -553173
+            },
+            "locale": {
+                "description": "Locale setting for the search.",
+                "type": "str",
+                "default": "en-gb"
+            },
+            "checkout_date": {
+                "description": "Check-out date in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2023-09-28"
+            },
+            "units": {
+                "description": "Measurement units to use (e.g., metric or imperial).",
+                "type": "str",
+                "default": "metric"
+            },
+            "room_number": {
+                "description": "Number of rooms to book.",
+                "type": "int",
+                "default": "1"
+            },
+            "dest_type": {
+                "description": "Type of the destination (e.g., city, hotel, etc.).",
+                "type": "str",
+                "default": "city"
+            },
+            "include_adjacency": {
+                "description": "Whether to include hotels in nearby locations. Defaults to None.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "children_number": {
+                "description": "Number of children for the hotel booking. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "page_number": {
+                "description": "Page number for paginated results. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "children_ages": {
+                "description": "Comma-separated ages of the children. Defaults to '5,0'.",
+                "type": "str, optional",
+                "default": "5,0"
+            },
+            "categories_filter_ids": {
+                "description": "IDs for filtering search categories. Defaults to 'class::2,class::4,free_cancellation::1'.",
+                "type": "str, optional",
+                "default": "class::2,class::4,free_cancellation::1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_host_language_filters",
+        "description": "Fetches host language filters from the Airbnb API.",
+        "parameters": {
+            "languageid": {
+                "description": "The LanguageId for the desired response language. To obtain a LanguageId, call the getLanguages API and use the Id.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_orderby_order_sort",
+        "description": "Fetches a list of webcams ordered and sorted based on the specified parameters.",
+        "parameters": {
+            "sort": {
+                "description": "The sorting direction for the results. Possible values are \"asc\" (ascending) or \"desc\" (descending).",
+                "type": "str",
+                "default": ""
+            },
+            "order": {
+                "description": "The criterion by which the results will be ordered. Possible values are:",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language for localizing the results, if available. Default is \"en\".",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "The content to be listed in the response. Default is \"webcams:image,location\". Possible values include:",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_category",
+        "description": "Fetches a specific category from the hashtag5 API using the specified category ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the category to fetch.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "airport_info",
+        "description": "Fetches and returns detailed information about an airport using its IATA code from the Airports Info API.",
+        "parameters": {
+            "iata": {
+                "description": "The IATA code of the airport for which information is being requested.",
+                "type": "str",
+                "default": "JFK"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "hotel_reviews",
+        "description": "Fetches a list of hotel reviews based on the provided parameters using the Priceline API.",
+        "parameters": {
+            "hotel_id": {
+                "description": "The PPN Hotel ID identifying the desired property.",
+                "type": "str",
+                "default": "700022612"
+            },
+            "languages": {
+                "description": "Comma-separated language codes to filter the reviews by language. Defaults to 'en,fr'.",
+                "type": "str, optional",
+                "default": "en,fr"
+            },
+            "order_by": {
+                "description": "Comma-separated sorting order metrics. Valid options include creation_date, average_rating, or verified_guest followed by .asc or .desc.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of reviews to skip before starting to return results. Used in conjunction with `limit`. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limits the number of reviews returned. Defaults to 100.",
+                "type": "int, optional",
+                "default": 100
+            },
+            "only_verified_guests": {
+                "description": "If set to True, only includes reviews from verified guests. Defaults to None.",
+                "type": "bool, optional",
+                "default": false
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "amenities",
+        "description": "Retrieves amenities IDs and descriptions from the Airbnb Listings API, returning up to 50 results starting from the specified offset.",
+        "parameters": {
+            "offset": {
+                "description": "The index to start retrieving the amenities from.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_trip_plan",
+        "description": "Generates a trip plan based on the number of days and destination provided.",
+        "parameters": {
+            "days": {
+                "description": "The number of days for the trip.",
+                "type": "int",
+                "default": "3"
+            },
+            "destination": {
+                "description": "The destination for the trip.",
+                "type": "str",
+                "default": "London,UK"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "cities",
+        "description": "Fetches the average price of gas for major cities in a specified province in Canada using the Toolbench RapidAPI service.",
+        "parameters": {
+            "province": {
+                "description": "The name of the province in Canada for which to retrieve gas prices.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "review_filters_list",
+        "description": "Fetch supported options metadata for filtering hotel reviews.",
+        "parameters": {
+            "hotel_id": {
+                "description": "The unique identifier of the hotel from the properties list API.",
+                "type": "int",
+                "default": "1790664"
+            },
+            "languagecode": {
+                "description": "The language code for the response. Default is 'en-us'.",
+                "type": "str, optional",
+                "default": "en-us"
+            },
+            "filter_language": {
+                "description": "Comma-separated values of languages for filtering reviews. Default is 'en,nl'.",
+                "type": "str, optional",
+                "default": "en,nl"
+            },
+            "filter_customer_type": {
+                "description": "Comma-separated values of customer types to filter by. Default is 'couple,family_with_children'.",
+                "type": "str, optional",
+                "default": "couple,family_with_children"
+            },
+            "user_sort": {
+                "description": "Sorting preference for results. Default is 'sort_most_relevant'.",
+                "type": "str, optional",
+                "default": "sort_most_relevant"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_city_by_filter",
+        "description": "Fetches city data based on the given city ID through the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The city ID used to filter and retrieve city data.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "street",
+        "description": "Fetch a unique history or touristic AI-generated text for any street around the world using the StreetNarrator API.",
+        "parameters": {
+            "street": {
+                "description": "The name or identifier of the street for which the AI-generated text is required.",
+                "type": "str",
+                "default": "1600 Broadway, New York, NY 10019, United States"
+            },
+            "topics": {
+                "description": "Topics to focus on in the generated text, formatted as 'history:X,tourism:Y' where X and Y are weights. Defaults to 'history:1,tourism:1'.",
+                "type": "str, optional",
+                "default": "history:1,tourism:1"
+            },
+            "temperature": {
+                "description": "Degree of creativity of the AI's response. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "style": {
+                "description": "The style of the output text. Possible values include 'audioguide'. Defaults to 'audioguide'.",
+                "type": "str, optional",
+                "default": "audioguide"
+            },
+            "language": {
+                "description": "The language of the generated text. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "flightstatistics",
+        "description": "Fetches and returns statistics for a given flight number, with optional filtering by departure and arrival airports.",
+        "parameters": {
+            "flnr": {
+                "description": "The flight number to request statistics for.",
+                "type": "str",
+                "default": ""
+            },
+            "aptfrom": {
+                "description": "The IATA code of the departure airport. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "aptto": {
+                "description": "The IATA code of the arrival airport. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_room_types",
+        "description": "Returns data related to room types from the Booking.com API. This function optionally takes a room type ID and an API key to fetch specific room type details.",
+        "parameters": {
+            "room_type_id": {
+                "description": "The ID of the room type to be retrieved. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_train_live_status",
+        "description": "Get the current live status of a train using its train number and the journey start day.",
+        "parameters": {
+            "trainno": {
+                "description": "The train number whose live status is to be fetched.",
+                "type": "str",
+                "default": "19038"
+            },
+            "startday": {
+                "description": "The start day of the journey, represented as a string ranging from '0' to '4'. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "locations_v2_search_deprecated",
+        "description": "Searches for related locations and suggestions based on the provided query, locale, and currency.",
+        "parameters": {
+            "query": {
+                "description": "Name of the country, city, district, place, etc., to search for.",
+                "type": "str",
+                "default": "new york"
+            },
+            "locale": {
+                "description": "The language code for the search results. Defaults to 'en_US'.",
+                "type": "str, optional",
+                "default": "en_US"
+            },
+            "currency": {
+                "description": "The currency code for the search results. Defaults to 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "count_listings_by_market",
+        "description": "Retrieves the count of Airbnb listings in a specified market, with optional filters for the number of bedrooms and maximum guest capacity.",
+        "parameters": {
+            "market": {
+                "description": "The market or city to search for listings.",
+                "type": "str",
+                "default": "Tenerife"
+            },
+            "bedrooms": {
+                "description": "The number of bedrooms to filter the listings by. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "maxguestcapacity": {
+                "description": "The maximum guest capacity to filter the listings by. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "list_of_districts",
+        "description": "Fetches a list of districts from Booking.com where hotels are available, based on various optional filters.",
+        "parameters": {
+            "name": {
+                "description": "The name of the district.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "The country associated with the district.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "city_id": {
+                "description": "The city ID associated with the district.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "district_id": {
+                "description": "The district ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number for pagination purposes.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "airportstatistics",
+        "description": "Returns detailed airport statistics for a specified airport based on provided identifiers.",
+        "parameters": {
+            "ident": {
+                "description": "The ident of the airport, as returned by /airport/search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "localid": {
+                "description": "Local identifiers of the airport, available mostly for the US & CA (FAA-ID). Max length is 6.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "iata": {
+                "description": "The IATA code of the airport, must have a length of 3.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "icao": {
+                "description": "The ICAO code of the airport, must have a length of 4.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "airport_search",
+        "description": "Search for airports using the RapidAPI Flight Fare Search API.",
+        "parameters": {
+            "query": {
+                "description": "The search term to use for finding airports.",
+                "type": "str",
+                "default": "LHR"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "rental_availability",
+        "description": "Fetches the availability information for a specific rental property using the given rental ID.",
+        "parameters": {
+            "rentalid": {
+                "description": "The unique identifier of the rental property obtained from the Rental Search API in the Vacation Rentals collection.",
+                "type": "str",
+                "default": "VacationRentalReview-g60763-d24816619-Deluxe_Double_Queen_with_Balcony-New_York_City_New_York"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_fare",
+        "description": "Retrieves the fare details for a specified train number and route using the IRCTC RapidAPI service.",
+        "parameters": {
+            "trainno": {
+                "description": "The train number for which the fare is to be retrieved.",
+                "type": "int",
+                "default": "19038"
+            },
+            "tostationcode": {
+                "description": "The station code of the destination.",
+                "type": "str",
+                "default": "BVI"
+            },
+            "fromstationcode": {
+                "description": "The station code of the starting station.",
+                "type": "str",
+                "default": "ST"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "bus_trolley_locations",
+        "description": "Retrieves the current bus and trolley locations for a specified route.",
+        "parameters": {
+            "route": {
+                "description": "The route identifier for which to retrieve bus and trolley locations.",
+                "type": "str",
+                "default": "17"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "locations_v3_search",
+        "description": "Search for related locations and suggestions based on the provided query string using the RapidAPI 'locations/v3/search' endpoint.",
+        "parameters": {
+            "q": {
+                "description": "The query string representing names of countries, cities, districts, places, etc.",
+                "type": "str",
+                "default": "new york"
+            },
+            "langid": {
+                "description": "The language identifier. Default is 1033.",
+                "type": "int, optional",
+                "default": "1033"
+            },
+            "siteid": {
+                "description": "The site identifier. Default is 300000001.",
+                "type": "int, optional",
+                "default": "300000001"
+            },
+            "locale": {
+                "description": "The locale code. Default is 'en_US'.",
+                "type": "str, optional",
+                "default": "en_US"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "resort_view",
+        "description": "Fetches and returns information about a specific resort using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the resort to fetch information for.",
+                "type": "str",
+                "default": "whistler-blackcomb"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_airport_details_by_code",
+        "description": "Retrieves comprehensive information about an airport based on its IATA code using the \"Get Airport Details By Code\" API.",
+        "parameters": {
+            "code": {
+                "description": "The IATA code of the airport to retrieve details for.",
+                "type": "str",
+                "default": "DFW"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "middle_east",
+        "description": "Retrieves a list of Middle Eastern cities sorted based on specified criteria.",
+        "parameters": {
+            "page": {
+                "description": "The page number for pagination. Default is '1'.",
+                "type": "str",
+                "default": "1"
+            },
+            "sort": {
+                "description": "The sort order, either 'asc' for ascending or 'desc' for descending. Default is 'desc'.",
+                "type": "str",
+                "default": "desc"
+            },
+            "sort_by": {
+                "description": "The parameter by which to sort results, such as 'overall_score', 'internet_speed', 'temperatureC', or 'cost_for_family_in_usd'. Default is 'overall_score'.",
+                "type": "str",
+                "default": "overall_score"
+            },
+            "size": {
+                "description": "The number of entries per page. Default is '20'.",
+                "type": "str",
+                "default": "20"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_by_id",
+        "description": "Fetches a specific joke by its ID from the Manatee Jokes API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the joke to retrieve.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_property_type_filters",
+        "description": "Retrieves property type filters from the Airbnb API.",
+        "parameters": {
+            "languageid": {
+                "description": "The language ID for the requested response. To get the language ID, call the `getLanguages` API.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_region_region_region",
+        "description": "Fetch a list of webcams for the specified region(s) with optional parameters for language and content detail.",
+        "parameters": {
+            "region": {
+                "description": "A comma-separated list of ISO 3166-1-alpha-2 country codes and region codes separated by a dot.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language code to localize the results, if available. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Specifies the content details to include in the response. Default is 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "real_time_information",
+        "description": "Fetches real-time information from the BART API based on the provided command and origin station.",
+        "parameters": {
+            "cmd": {
+                "description": "Command parameter for the API request. Examples can be found at http://api.bart.gov/docs/overview/examples.aspx.",
+                "type": "str",
+                "default": "etd"
+            },
+            "orig": {
+                "description": "Specifies the station by its abbreviation. A list of station abbreviations can be found at http://api.bart.gov/docs/overview/abbrev.aspx. Use 'ALL' to get all current ETDs.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "airport_arrivals",
+        "description": "Fetch the flight arrivals for a specified airport on a given date, optionally filtered by carrier.",
+        "parameters": {
+            "airportcode": {
+                "description": "The IATA code of the airport.",
+                "type": "str",
+                "default": "LHR"
+            },
+            "carriercode": {
+                "description": "The IATA code of the airline carrier. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "The date for which to fetch the arrivals, in the format YYYY-MM-DD. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_bbox_ne_lat_ne_lng_sw_lat_sw_lng",
+        "description": "Returns a list of webcams within the specified bounding box defined by the north-east and south-west coordinates.",
+        "parameters": {
+            "ne_lat": {
+                "description": "North-east WGS84 latitude of the bounding box.",
+                "type": "int",
+                "default": ""
+            },
+            "sw_lng": {
+                "description": "South-west WGS84 longitude of the bounding box.",
+                "type": "int",
+                "default": ""
+            },
+            "sw_lat": {
+                "description": "South-west WGS84 latitude of the bounding box.",
+                "type": "int",
+                "default": ""
+            },
+            "ne_lng": {
+                "description": "North-east WGS84 longitude of the bounding box.",
+                "type": "int",
+                "default": ""
+            },
+            "lang": {
+                "description": "Localizes the results to the specified language, if available. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Specifies the content to be listed in the response. Default is 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "stays_auto_complete",
+        "description": "Fetches auto-complete suggestions for stays based on a given location.",
+        "parameters": {
+            "location": {
+                "description": "The location for which to get auto-complete suggestions.",
+                "type": "str",
+                "default": "ch"
+            },
+            "language_code": {
+                "description": "The language code for the results. Defaults to 'en-us'.",
+                "type": "str, optional",
+                "default": "en-us"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "search_cars_locations",
+        "description": "Searches for car rental locations by a given name using the Priceline API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the location to search for.",
+                "type": "str",
+                "default": "London"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "suggest",
+        "description": "Fetches autocomplete suggestions for a given search keyword using the specified API endpoint.",
+        "parameters": {
+            "keyword": {
+                "description": "The partial text entered by the user for which to fetch autocomplete suggestions.",
+                "type": "str",
+                "default": "facebook"
+            },
+            "lr": {
+                "description": "Language region for the suggestions, e.g., 'en-US'. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "schedules",
+        "description": "Fetch the golf schedule for the specified organization and year.",
+        "parameters": {
+            "orgid": {
+                "description": "Identifier for the golf organization. Choose '1' for PGA Tour or '2' for LIV Tour.",
+                "type": "str",
+                "default": ""
+            },
+            "year": {
+                "description": "The year for which the schedule is being requested.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "stateusaprice",
+        "description": "Fetches gas prices for a given state in the United States using the Toolbench RapidAPI.",
+        "parameters": {
+            "state": {
+                "description": "The two-letter abbreviation of the state for which to fetch gas prices.",
+                "type": "str",
+                "default": "WA"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_train_schedule",
+        "description": "Fetches the train schedule for a given train number using the IRCTC API.",
+        "parameters": {
+            "trainno": {
+                "description": "The train number for which the schedule is to be fetched.",
+                "type": "str",
+                "default": "12936"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "time",
+        "description": "Retrieves the current time token from the PubNub Network.",
+        "parameters": {
+            "callback": {
+                "description": "JSONP callback function name.",
+                "type": "str",
+                "default": "0"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "downalods_hotels",
+        "description": "Downloads a list of hotels based on various filters and returns the response.",
+        "parameters": {
+            "active_mer": {
+                "description": "Show hotels with Priceline rates.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "latitude_range_end": {
+                "description": "Endpoint of the latitude range; requires `latitude` to have a value.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "active_smop": {
+                "description": "Show hotels with semi-opaque rates.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "active_vmer": {
+                "description": "Show hotels with vacation merchant rates.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "state_code": {
+                "description": "Filter by the state code of the hotel.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "longitude_range_end": {
+                "description": "Endpoint of the longitude range; requires `longitude` to have a value.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "active_bkg": {
+                "description": "Show hotels with Booking rates.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "latitude": {
+                "description": "Filter by the latitude of the hotel.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hotelid_ppn": {
+                "description": "Filter by PPN hotel ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "longitude": {
+                "description": "Filter by the longitude of the hotel.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "property_type_ids": {
+                "description": "Filter by property type IDs. See the Property Type Filter Guide for more details.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cityid_ppn": {
+                "description": "Filter by PPN city ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hotel_address": {
+                "description": "Filter by the address of the hotel.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "resume_key": {
+                "description": "Resume results from the given ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "language": {
+                "description": "Language code in the format of 'xx-XX'. For example, en-US, es-ES, fr-FR, pt-BR.",
+                "type": "str, optional, default='fr-FR'",
+                "default": "fr-FR"
+            },
+            "limit": {
+                "description": "Limits the number of results returned in the response.",
+                "type": "int, optional, default=100",
+                "default": 100
+            },
+            "active_agd": {
+                "description": "Show hotels with Agoda rates.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_code": {
+                "description": "Filter by the country code of the hotel.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "changes_since": {
+                "description": "Filter hotels that have been updated on or after this date. Must be in ISO 8601 format (YYYY-MM-DDThh:mm:ss{UTC_Offset}).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "markets",
+        "description": "Retrieves the market countries supported by the service, used by suppliers to set fares based on the market (or country of purchase). The names of the markets returned are localized based on the provided locale.",
+        "parameters": {
+            "locale": {
+                "description": "Locale of the request. The names of the returned markets are localized based on this parameter.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "currencies",
+        "description": "Retrieves a list of currencies from the Booking.com API.",
+        "parameters": {
+            "language_code": {
+                "description": "The language code to use for the response. Defaults to 'en-us'.",
+                "type": "str",
+                "default": "en-us"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "download_cities",
+        "description": "Downloads a list of cities from the Priceline API.",
+        "parameters": {
+            "limit": {
+                "description": "Limits the number of results returned. Defaults to 500.",
+                "type": "int, optional",
+                "default": 500
+            },
+            "resume_key": {
+                "description": "Key to resume the results from a given ID. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "webcams_list_exclude_webcamid_webcamid",
+        "description": "This function retrieves a list of webcams excluding the specified webcam IDs.",
+        "parameters": {
+            "webcamid": {
+                "description": "Comma-separated list of webcam IDs to exclude from the result. At least one webcam ID must be provided.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language code to localize the results, if available. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "show": {
+                "description": "Content to be included in the response. Possible values are \"webcams:image,location\". Defaults to 'webcams:image,location'.",
+                "type": "str, optional",
+                "default": "webcams:image,location"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "properties_list",
+        "description": "List properties based on various filters and sorting options.",
+        "parameters": {
+            "locationexternalids": {
+                "description": "The location/externalID fields returned in auto-complete endpoint. Separated by comma for multiple locations. Example: '5002,6020'.",
+                "type": "str",
+                "default": "5002,6020"
+            },
+            "hasfloorplan": {
+                "description": "Filter properties that have a floor plan. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "areamin": {
+                "description": "Minimum area of the property. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "purpose": {
+                "description": "Purpose of the property, either 'for-rent' or 'for-sale'. Defaults to 'for-rent'.",
+                "type": "str, optional",
+                "default": "for-rent"
+            },
+            "hasvideo": {
+                "description": "Filter properties that have a video. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "haspanorama": {
+                "description": "Filter properties that have a panorama. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "furnishingstatus": {
+                "description": "Furnishing status of the property, either 'unfurnished' or 'furnished'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bathsmin": {
+                "description": "Minimum number of bathrooms. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Sorting criteria. One of 'price-desc', 'price-asc', 'city-level-score', 'date-desc', 'verified-score'. Defaults to 'city-level-score'.",
+                "type": "str, optional",
+                "default": "city-level-score"
+            },
+            "bathsmax": {
+                "description": "Maximum number of bathrooms. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Pagination index. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "agencyexternalids": {
+                "description": "The externalID fields for agencies. Separated by comma for multiple agencies. Example: '7737,5002'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hitsperpage": {
+                "description": "Number of results per page. Defaults to 25.",
+                "type": "int, optional",
+                "default": "25"
+            },
+            "roomsmin": {
+                "description": "Minimum number of rooms. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "roomsmax": {
+                "description": "Maximum number of rooms. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "categoryexternalid": {
+                "description": "Category ID of the property. Example: 4 for Apartment. Defaults to 4.",
+                "type": "int, optional",
+                "default": "4"
+            },
+            "rentfrequency": {
+                "description": "Rent frequency, either 'monthly', 'yearly', 'weekly', or 'daily'. Defaults to 'monthly'.",
+                "type": "str, optional",
+                "default": "monthly"
+            },
+            "lang": {
+                "description": "Language parameter, either 'en' or 'ar'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "pricemin": {
+                "description": "Minimum price. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "pricemax": {
+                "description": "Maximum price. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "areamax": {
+                "description": "Maximum area of the property. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "reviews_list",
+        "description": "Fetch a list of reviews related to a specific product from the Kohls API.",
+        "parameters": {
+            "productid": {
+                "description": "The webID of the product for which reviews are to be fetched.",
+                "type": "str",
+                "default": "4201989"
+            },
+            "limit": {
+                "description": "The maximum number of reviews to return. Default is 6.",
+                "type": "int, optional",
+                "default": "6"
+            },
+            "sort": {
+                "description": "Sorting order for the reviews, e.g., 'SubmissionTime:asc', 'Rating:desc'. Default is 'SubmissionTime:desc'.",
+                "type": "str, optional",
+                "default": "SubmissionTime:desc"
+            },
+            "offset": {
+                "description": "The number of items to skip before starting to collect the result set. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "stations",
+        "description": "Retrieves a list of weather stations and their metadata, optionally filtered by parameters such as limit and states. If no parameters are provided, all stations are returned. The function only returns active stations.",
+        "parameters": {
+            "limit": {
+                "description": "Limit the number of results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "states": {
+                "description": "Filter results by states (by abbreviation).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "listing_availability",
+        "description": "Retrieve listing availability and stay length rules for a specified month and year from the Airbnb API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve listing availability.",
+                "type": "int",
+                "default": "2024"
+            },
+            "is_id": {
+                "description": "The unique identifier for the listing.",
+                "type": "str",
+                "default": "619966061834034729"
+            },
+            "month": {
+                "description": "The month for which to retrieve listing availability.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "listing_details",
+        "description": "Retrieve listing details from Airbnb using the specified listing ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The listing ID to retrieve the details for.",
+                "type": "str",
+                "default": "619966061834034729"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "biggest_cities",
+        "description": "Fetches the biggest cities' data from the specified API using the provided ID and API key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID representing a specific query for biggest cities.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "search_airport",
+        "description": "Searches for an airport based on the provided query using the TripAdvisor API.",
+        "parameters": {
+            "query": {
+                "description": "Name of the location where the airport is situated.",
+                "type": "str",
+                "default": "london"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "searchstation",
+        "description": "Search for radio stations based on a provided keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The search keyword which could be a radio station name or a country name.",
+                "type": "str",
+                "default": "hello"
+            },
+            "order": {
+                "description": "The order in which to display the results. Use 'ASC' for ascending or 'DESC' for descending. Default is 'ASC'.",
+                "type": "str, optional",
+                "default": "ASC"
+            },
+            "page": {
+                "description": "The page number of the results to display. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The limit of items to display per page. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_distance_in_km",
+        "description": "Calculates the great-circle distance between two geographic coordinates in kilometers.",
+        "parameters": {
+            "latb": {
+                "description": "Latitude of the first coordinate.",
+                "type": "int",
+                "default": "34.0522"
+            },
+            "longb": {
+                "description": "Longitude of the first coordinate.",
+                "type": "int",
+                "default": "118.2437"
+            },
+            "longa": {
+                "description": "Longitude of the second coordinate.",
+                "type": "int",
+                "default": "86.8104"
+            },
+            "lata": {
+                "description": "Latitude of the second coordinate.",
+                "type": "int",
+                "default": "33.5186"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "download_airports",
+        "description": "Downloads a list of airports with IATA codes for flight search from the Priceline API.",
+        "parameters": {
+            "resume_key": {
+                "description": "An optional key to resume results from a given ID. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limits the number of results from the response. Defaults to 500.",
+                "type": "int, optional",
+                "default": 500
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "listings_by_lat_lng",
+        "description": "Retrieve Airbnb listings based on geographical coordinates, filtered by specified criteria.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the point from which to search for listings.",
+                "type": "int",
+                "default": "28.0852473"
+            },
+            "lng": {
+                "description": "Longitude of the point from which to search for listings.",
+                "type": "int",
+                "default": "-16.7349705"
+            },
+            "offset": {
+                "description": "The index to start the search from.",
+                "type": "int",
+                "default": "0"
+            },
+            "range": {
+                "description": "The range in meters from the latitude and longitude point to search within.",
+                "type": "int",
+                "default": "500"
+            },
+            "bedrooms": {
+                "description": "The number of bedrooms required in the listings. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "maxguestcapacity": {
+                "description": "The maximum guest capacity required in the listings. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "download_property_types",
+        "description": "Downloads a list of property types from the Priceline API.",
+        "parameters": {
+            "limit": {
+                "description": "Limits the number of results from the response. Defaults to 100.",
+                "type": "int, optional",
+                "default": 100
+            },
+            "resume_key": {
+                "description": "Resume results from the given ID. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_top_tier_stays_filter",
+        "description": "Gets top-tier stays filter from the Airbnb RapidAPI.",
+        "parameters": {
+            "languageid": {
+                "description": "Language identifier to get the response in the requested language. If not provided, defaults to None. To get a valid LanguageId, call the `getLanguages` API.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_timetable",
+        "description": "Fetches the timetable for a given FlixBus station and date using the Toolbench RapidAPI service.",
+        "parameters": {
+            "station_id": {
+                "description": "ID of the FlixBus station.",
+                "type": "str",
+                "default": "dcbd21fc-9603-11e6-9066-549f350fcb0c"
+            },
+            "date": {
+                "description": "Date for which to fetch the timetable, in the format DD.MM.YYYY.",
+                "type": "str",
+                "default": "15.05.2022"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "asia",
+        "description": "Fetches a list of Asian cities sorted by a specified criterion with pagination support.",
+        "parameters": {
+            "sort": {
+                "description": "The order of sorting. Can be 'asc' for ascending or 'desc' for descending. Default is 'desc'.",
+                "type": "str",
+                "default": "desc"
+            },
+            "sort_by": {
+                "description": "The criterion to sort the cities by. Examples include 'overall_score', 'internet_speed', 'temperatureC', 'cost_for_family_in_usd', etc. Default is 'overall_score'.",
+                "type": "str",
+                "default": "overall_score"
+            },
+            "size": {
+                "description": "The number of cities to include per page. Default is '20'.",
+                "type": "str",
+                "default": "20"
+            },
+            "page": {
+                "description": "The page number to retrieve. Default is '1'.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "properties_get_description",
+        "description": "Retrieve the description of a property based on its ID from the properties API.",
+        "parameters": {
+            "hotel_ids": {
+                "description": "The value of the hotel ID from the properties/list API.",
+                "type": "int",
+                "default": "1528418"
+            },
+            "check_out": {
+                "description": "The check-out date in 'YYYY-MM-DD' format. Default is '2019-03-15'.",
+                "type": "str, optional",
+                "default": "2019-03-15"
+            },
+            "languagecode": {
+                "description": "Language code for the description. Default is 'en-us'. Options include 'en', 'en-us', 'ar', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'es', 'es-ar', 'et', 'fi', 'fr', 'he', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'lt', 'lv', 'ms', 'nl', 'no', 'pl', 'pt', 'pt-br', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'th', 'tl', 'tr', 'uk', 'vi', 'zh', 'zh-tw'.",
+                "type": "str, optional",
+                "default": "en-us"
+            },
+            "check_in": {
+                "description": "The check-in date in 'YYYY-MM-DD' format. Default is '2019-03-13'.",
+                "type": "str, optional",
+                "default": "2019-03-13"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "listallairports",
+        "description": "Fetches a list of airports from the World Airports Directory API using the provided parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of airports to return.",
+                "type": "int",
+                "default": 20
+            },
+            "page": {
+                "description": "The page number to retrieve.",
+                "type": "int",
+                "default": 1
+            },
+            "sortby": {
+                "description": "The field and order to sort the results by in the format `field:order` (e.g., `name:asc`, `name:desc`).",
+                "type": "str",
+                "default": "name:asc"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_alerts",
+        "description": "Retrieves alert data from the SEPTA API using specified parameters.",
+        "parameters": {
+            "req1": {
+                "description": "A string representing the request parameter, defaults to 'all'.",
+                "type": "str",
+                "default": "all"
+            }
+        },
+        "domain": "Travel"
+    },
+    {
+        "name": "get_all_iata_airport_codes",
+        "description": "Retrieves IATA airport codes from the RapidAPI service.",
+        "parameters": {
+            "code": {
+                "description": "An optional code to filter the airport codes. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Travel"
+    }
+]

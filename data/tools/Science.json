@@ -1,0 +1,656 @@
+[
+    {
+        "name": "get_all_bodies_positions",
+        "description": "Fetches the positions of celestial bodies for a given location and date range using the Astronomy API.",
+        "parameters": {
+            "latitude": {
+                "description": "The latitude of the location for which to get the positions.",
+                "type": "int",
+                "default": "33.775867"
+            },
+            "longitude": {
+                "description": "The longitude of the location for which to get the positions.",
+                "type": "int",
+                "default": "-84.39733"
+            },
+            "from_date": {
+                "description": "The start date for the observation period in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2017-12-20"
+            },
+            "to_date": {
+                "description": "The end date for the observation period in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2017-12-21"
+            },
+            "elevation": {
+                "description": "The elevation of the location in meters. Defaults to 166.",
+                "type": "int, optional",
+                "default": "166"
+            },
+            "time": {
+                "description": "The specific time of day for the observation in the format 'HH:MM:SS'. Defaults to '12:00:00'.",
+                "type": "str, optional",
+                "default": "12:00:00"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "nearest_airport_from_postal_code",
+        "description": "Retrieves the nearest airport to a given postal code within a specified country.",
+        "parameters": {
+            "postal_code": {
+                "description": "The postal code for which to find the nearest airport.",
+                "type": "str",
+                "default": ""
+            },
+            "country_code": {
+                "description": "The two-digit country code corresponding to the postal code.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "get_entire_surah_chapter",
+        "description": "Fetches the entire Surah (chapter) of the Koran, including all verses and some additional information, based on the provided chapter ID.",
+        "parameters": {
+            "chapterid": {
+                "description": "The unique identifier for a Surah (chapter) in the Koran. Must be between 1 and 114, inclusive.",
+                "type": "int",
+                "default": "114"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "carbonfootprintfromcartravel",
+        "description": "Calculates the CO2 emissions in kilograms from a car journey using a specified vehicle type and distance.",
+        "parameters": {
+            "distance": {
+                "description": "The distance traveled by the car in kilometers.",
+                "type": "str",
+                "default": "100"
+            },
+            "vehicle": {
+                "description": "The type of car used for the journey. Options include:",
+                "type": "str",
+                "default": "SmallDieselCar"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "cleanhydrotocarbonfootprint",
+        "description": "Calculate the CO2 equivalent (CO2e) in kilograms from the consumption of clean hydro energy.",
+        "parameters": {
+            "energy": {
+                "description": "The source of the clean energy. Can be 'Solar', 'Wind', 'HydroElectric', 'Biomass', 'Geothermal', 'Tidal' or 'OtherCleanEnergy'.",
+                "type": "str",
+                "default": "Solar"
+            },
+            "consumption": {
+                "description": "The amount of energy consumed in kWh.",
+                "type": "str",
+                "default": "500"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "traditionalhydrotocarbonfootprint",
+        "description": "Calculates the CO2 equivalent (CO2e) emissions from the use of traditional hydroelectric power based on consumption and location.",
+        "parameters": {
+            "consumption": {
+                "description": "The KWH usage of hydroelectric power.",
+                "type": "str",
+                "default": "500"
+            },
+            "location": {
+                "description": "The country or continent providing the hydroelectric power. Can be one of \"USA\", \"Canada\", \"UK\", \"Europe\", \"Africa\", \"LatinAmerica\", \"MiddleEast\", or \"OtherCountry\".",
+                "type": "str",
+                "default": "UK"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "vehicles_models",
+        "description": "Fetches a list of vehicle models for a specified vehicle make using the Carbonsutra API.",
+        "parameters": {
+            "vehicle_make": {
+                "description": "The make of the vehicle to retrieve models for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "recordcount",
+        "description": "Retrieve a specified number of records from the CrossRef database using the RapidAPI service.",
+        "parameters": {
+            "rows": {
+                "description": "The number of records to retrieve.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "advanced",
+        "description": "Fetches advanced chess puzzles based on various search criteria from an external API.",
+        "parameters": {
+            "number_of_puzzles": {
+                "description": "Number of puzzles to fetch. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "themes": {
+                "description": "Comma-separated list of puzzle themes. Defaults to 'kingsideAttack,middlegame'.",
+                "type": "str, optional",
+                "default": "kingsideAttack,middlegame"
+            },
+            "theme_search_type": {
+                "description": "Specifies whether puzzles need to have all themes ('AND') or any theme ('OR'). Defaults to 'AND'.",
+                "type": "str, optional",
+                "default": "AND"
+            },
+            "number_of_moves": {
+                "description": "Total number of moves in the puzzles. Defaults to 4.",
+                "type": "int, optional",
+                "default": "4"
+            },
+            "opening_variation": {
+                "description": "The opening variation of the puzzles. Defaults to 'Kings_Gambit_Accepted_Abbazia_Defense'.",
+                "type": "str, optional",
+                "default": "Kings_Gambit_Accepted_Abbazia_Defense"
+            },
+            "rating": {
+                "description": "Rating of the puzzles. Defaults to '1200'.",
+                "type": "str, optional",
+                "default": "1200"
+            },
+            "opening_family": {
+                "description": "The opening family of the puzzles. Defaults to 'Kings_Gambit_Accepted'.",
+                "type": "str, optional",
+                "default": "Kings_Gambit_Accepted"
+            },
+            "max_deviation": {
+                "description": "Maximum allowable rating deviation.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "carbonfootprintfrommotorbike",
+        "description": "Calculates the CO2 emissions in kilograms (Kg) from a motorbike travel based on the type of motorbike and the distance traveled.",
+        "parameters": {
+            "type": {
+                "description": "The type of motorbike. Can be one of 'SmallMotorBike', 'MediumMotorBike', or 'LargeMotorBike'.",
+                "type": "str",
+                "default": "SmallMotorBike"
+            },
+            "distance": {
+                "description": "The distance traveled in kilometers (KM).",
+                "type": "str",
+                "default": "400"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "fueltoco2e",
+        "description": "Converts the given amount of fuel into CO2 equivalent in kilograms.",
+        "parameters": {
+            "type": {
+                "description": "The type of fuel. Valid values are 'Petrol', 'Diesel', 'LPG'.",
+                "type": "str",
+                "default": "Petrol"
+            },
+            "litres": {
+                "description": "The number of liters of fuel to convert.",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "dna2mrna",
+        "description": "Converts a DNA sequence into an mRNA sequence using the specified API.",
+        "parameters": {
+            "dna": {
+                "description": "The DNA sequence to be transformed into an mRNA sequence.",
+                "type": "str",
+                "default": "TACAAAGGCTAACGTCCTAGAGCTATT"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "get_range_of_verses",
+        "description": "Fetches a collection of Ayahs/Verses from a specific chapter/surah of the Quran along with original Arabic text, translation, transliteration, and verse ID in JSON format using the RapidAPI service.",
+        "parameters": {
+            "chapterid": {
+                "description": "The ID of the chapter/surah to retrieve.",
+                "type": "int",
+                "default": "63"
+            },
+            "range": {
+                "description": "The range of verses to fetch (e.g., \"1-10\").",
+                "type": "str",
+                "default": "1-4"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "airports_by_keyword",
+        "description": "Fetches a list of airport names and their IATA codes that match the given keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "A search term to match against airport names and IATA codes.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "carbonfootprintfrompublictransit",
+        "description": "Calculates the CO2 emissions in kilograms from the use of public transportation based on the distance traveled and type of transit.",
+        "parameters": {
+            "distance": {
+                "description": "The distance traveled in kilometers.",
+                "type": "str",
+                "default": "1000"
+            },
+            "type": {
+                "description": "The type of transportation, one of: 'Taxi', 'ClassicBus', 'EcoBus', 'Coach', 'NationalTrain', 'LightRail', 'Subway', 'FerryOnFoot', 'FerryInCar'.",
+                "type": "str",
+                "default": "Taxi"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "search_for_a_word_in_quran",
+        "description": "Search for a given keyword in the English translation of the Quran and return the verses containing the keyword and total matches in JSON format.",
+        "parameters": {
+            "searchterm": {
+                "description": "The keyword or phrase to search for in the Quran.",
+                "type": "str",
+                "default": "muhammad"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "treeequivalent",
+        "description": "Calculate the number of trees required to create a given weight of paper.",
+        "parameters": {
+            "weight": {
+                "description": "The weight of the paper.",
+                "type": "str",
+                "default": "200"
+            },
+            "unit": {
+                "description": "The unit of measurement for the weight (e.g., 'kg' or 'lb').",
+                "type": "str",
+                "default": "kg"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "v1_planets",
+        "description": "Fetch a list of planets that match the specified parameters. The results are limited to a maximum of 30; use the `offset` parameter for pagination to access more results.",
+        "parameters": {
+            "max_period": {
+                "description": "Maximum orbital period of the planet in Earth days.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_temperature": {
+                "description": "Maximum average surface temperature of the planet in Kelvin.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Number of results to offset for pagination.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_distance_light_year": {
+                "description": "Maximum distance the planet is from Earth in light years.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_distance_light_year": {
+                "description": "Minimum distance the planet is from Earth in light years.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_mass": {
+                "description": "Maximum mass of the planet in Jupiters (1 Jupiter = 1.898 \u00d7 10^27 kg).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_semi_major_axis": {
+                "description": "Maximum semi-major axis of the planet in astronomical units (AU).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_mass": {
+                "description": "Minimum mass of the planet in Jupiters (1 Jupiter = 1.898 \u00d7 10^27 kg).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_semi_major_axis": {
+                "description": "Minimum semi-major axis of the planet in astronomical units (AU).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the planet. Defaults to 'Mars'.",
+                "type": "str, optional",
+                "default": "Mars"
+            },
+            "min_temperature": {
+                "description": "Minimum average surface temperature of the planet in Kelvin.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_radius": {
+                "description": "Maximum average radius of the planet in Jupiters (1 Jupiter = 69911 km).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_radius": {
+                "description": "Minimum average radius of the planet in Jupiters (1 Jupiter = 69911 km).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_period": {
+                "description": "Minimum orbital period of the planet in Earth days.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "nitrous_endpoint",
+        "description": "Sends a GET request to the Nitrous Oxide API and returns the response data.",
+        "parameters": {
+            "nitrous": {
+                "description": "An optional query parameter to filter the results based on nitrous oxide levels.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "get_tamil_calendar_date",
+        "description": "Fetches the Tamil calendar date corresponding to the given English calendar date using the Yawin Indian Astrology API.",
+        "parameters": {
+            "date": {
+                "description": "The English calendar date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2023-04-14"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "methane_endpoint",
+        "description": "Fetches methane concentration data from the specified API endpoint using the RapidAPI service.",
+        "parameters": {
+            "methane": {
+                "description": "Optional parameter to specify a particular methane concentration. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "get_specific_ayah_verse",
+        "description": "Fetches a specific Ayah (verse) from a given chapter in the Quran, with details in JSON format.",
+        "parameters": {
+            "chapterid": {
+                "description": "The chapter (Surah) number to fetch the verse from. Must be between 1 and 114.",
+                "type": "int",
+                "default": "38"
+            },
+            "verseid": {
+                "description": "The verse (Ayah) number to fetch within the specified chapter. Must be a valid verse number within the chapter.",
+                "type": "int",
+                "default": "29"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "v1_stars",
+        "description": "Fetches a list of stars matching specified parameters with a maximum of 30 results per request. To access more than 30 results, use the offset parameter to paginate through multiple API calls.",
+        "parameters": {
+            "min_distance_light_year": {
+                "description": "Minimum distance of the star from Earth in light years.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_apparent_magnitude": {
+                "description": "Minimum apparent magnitude (brightness) of the star.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "constellation": {
+                "description": "Identifier of the constellation the star belongs to.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_apparent_magnitude": {
+                "description": "Maximum apparent magnitude (brightness) of the star.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Number of results to skip for pagination.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the star. Note that many star names contain Greek characters. Default is 'vega'.",
+                "type": "str, optional",
+                "default": "vega"
+            },
+            "max_absolute_magnitude": {
+                "description": "Maximum absolute magnitude (brightness) of the star.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_absolute_magnitude": {
+                "description": "Minimum absolute magnitude (brightness) of the star.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_distance_light_year": {
+                "description": "Maximum distance of the star from Earth in light years.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "convert_planet_angle_to_planet_degree",
+        "description": "Convert a planet angle to degree format using the Yawin Indian Astrology API.",
+        "parameters": {
+            "angle": {
+                "description": "The planet angle string to be converted (e.g., '67.34.0').",
+                "type": "str",
+                "default": "67.34.0"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "airqualityhealthindex",
+        "description": "Calculate the official air quality health index (AQHI) based on key air pollutant concentrations.",
+        "parameters": {
+            "o3": {
+                "description": "The ground-level ozone (O3) concentration in parts per billion (ppb).",
+                "type": "str",
+                "default": "10"
+            },
+            "no2": {
+                "description": "The nitrogen dioxide (NO2) concentration in parts per billion (ppb).",
+                "type": "str",
+                "default": "10"
+            },
+            "pm": {
+                "description": "The fine particulate matter (PM2.5) concentration in micrograms per cubic meter (\u00b5g/m\u00b3).",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "mrna2dna",
+        "description": "Transforms an mRNA sequence to its DNA sequence equivalent using the Toolbench RapidAPI service.",
+        "parameters": {
+            "mrna": {
+                "description": "The mRNA sequence to be transformed.",
+                "type": "str",
+                "default": "UACGUACG"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "distance",
+        "description": "Calculates the geodesic and great circle distances between two geographic points specified by their latitude and longitude coordinates.",
+        "parameters": {
+            "start_longitude": {
+                "description": "Longitude of the starting point.",
+                "type": "int",
+                "default": "12.482778"
+            },
+            "start_latitude": {
+                "description": "Latitude of the starting point.",
+                "type": "int",
+                "default": "41.893333"
+            },
+            "end_latitude": {
+                "description": "Latitude of the ending point.",
+                "type": "int",
+                "default": "40.416944"
+            },
+            "end_longitude": {
+                "description": "Longitude of the ending point.",
+                "type": "int",
+                "default": "-3.703333"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "evaluate",
+        "description": "Evaluates a mathematical expression using the given variables and their values through the RapidAPI service.",
+        "parameters": {
+            "variables": {
+                "description": "A comma-separated string listing the variables used in the expression.",
+                "type": "str",
+                "default": ""
+            },
+            "values": {
+                "description": "A comma-separated string listing the values corresponding to the variables.",
+                "type": "str",
+                "default": ""
+            },
+            "expression": {
+                "description": "The mathematical expression to be evaluated.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "mrna2aminoacid",
+        "description": "Transforms an mRNA sequence into a sequence of Amino Acids using the RapidAPI service.",
+        "parameters": {
+            "mrna": {
+                "description": "The mRNA sequence to be converted to an Amino Acid sequence.",
+                "type": "str",
+                "default": "AUGUUUCCGAUUGCAGGAUCUCGAUAA"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "dna2aminoacid",
+        "description": "Transforms a DNA sequence into a sequence of Amino Acids using the RapidAPI dna2protein service.",
+        "parameters": {
+            "dna": {
+                "description": "The DNA sequence to be transformed into Amino Acids.",
+                "type": "str",
+                "default": "TACAAAGGCTAACGTCCTAGAGCTATT"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "get_sun_rise_and_sun_set_time",
+        "description": "Fetches the sunrise and sunset times for a given date and location, optionally considering a specific timezone.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to find sunrise and sunset times in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2023-04-14"
+            },
+            "latitude": {
+                "description": "The latitude of the location.",
+                "type": "int",
+                "default": "12.9716"
+            },
+            "longitude": {
+                "description": "The longitude of the location.",
+                "type": "int",
+                "default": "77.5946"
+            },
+            "timezone": {
+                "description": "The timezone to consider for the sunrise and sunset times. Default is 'Asia/Calcutta'.",
+                "type": "str, optional",
+                "default": "Asia/Calcutta"
+            }
+        },
+        "domain": "Science"
+    },
+    {
+        "name": "distance_between_airports",
+        "description": "Calculates the distance between two airports given their IATA codes using the Toolbench API.",
+        "parameters": {
+            "iata_airport_to": {
+                "description": "The IATA code of the destination airport.",
+                "type": "str",
+                "default": ""
+            },
+            "iata_airport_from": {
+                "description": "The IATA code of the departure airport.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Science"
+    }
+]

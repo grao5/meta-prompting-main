@@ -1,0 +1,43 @@
+[
+    {
+        "name": "get_callback_url_status",
+        "description": "Check the status of a callback URL to determine if it can receive scan results via POST requests.",
+        "parameters": {
+            "callback_url": {
+                "description": "The URL to be checked for its ability to receive scan results.",
+                "type": "str",
+                "default": "https://my-callback-url.com"
+            }
+        },
+        "domain": "Cybersecurity"
+    },
+    {
+        "name": "get_scan_id",
+        "description": "Initiates a scan against a target URL and retrieves a scan ID.",
+        "parameters": {
+            "target": {
+                "description": "The URL of the target to be scanned.",
+                "type": "str",
+                "default": "tesla.com"
+            },
+            "callback_url": {
+                "description": "The URL to receive the scan results automatically via a POST request upon scan completion. Defaults to 'https://my-callback-url.com'.",
+                "type": "str, optional",
+                "default": "https://my-callback-url.com"
+            }
+        },
+        "domain": "Cybersecurity"
+    },
+    {
+        "name": "get_detect",
+        "description": "Detects and prevents XSS (Cross-Site Scripting) attacks in the input data by querying an external API.",
+        "parameters": {
+            "data": {
+                "description": "The input data to be checked for XSS.",
+                "type": "str",
+                "default": "John Doe"
+            }
+        },
+        "domain": "Cybersecurity"
+    }
+]

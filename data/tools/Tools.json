@@ -1,0 +1,1952 @@
+[
+    {
+        "name": "reverse_string",
+        "description": "Reverses the characters in a string.",
+        "parameters": {
+            "text": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "tanggal",
+        "description": "Converts a given Gregorian date to its Hijri equivalent using the Masehi-ke-Hijriyah API.",
+        "parameters": {
+            "tanggal": {
+                "description": "The Gregorian date to be converted to Hijri.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "infobox",
+        "description": "Fetches and returns a JSON object representation of the infobox for a given Wikipedia entry.",
+        "parameters": {
+            "wikiurl": {
+                "description": "The URL of the Wikipedia entry.",
+                "type": "str",
+                "default": "https://en.wikipedia.org/wiki/James_Bond"
+            },
+            "withname": {
+                "description": "Whether to include the name in the infobox. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "scrape_links",
+        "description": "Scrapes a specified number of links from the provided URL using the Scrapey Link Scraper API.",
+        "parameters": {
+            "url": {
+                "description": "The target URL from which to scrape links.",
+                "type": "str",
+                "default": "amazon.com"
+            },
+            "maxlinks": {
+                "description": "The maximum number of links to scrape. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "includequery": {
+                "description": "Whether to include query parameters in the links. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "ec",
+        "description": "Analyzes a given password based on a variety of parameters and returns the analysis.",
+        "parameters": {
+            "password": {
+                "description": "The password to be analyzed. It must be between 4 and 128 characters long.",
+                "type": "str",
+                "default": ""
+            },
+            "penalty": {
+                "description": "The penalty applied to each character that is part of a word, number sequence, alphabet sequence, etc. The penalty is a float number in the range [0, 1], with a default value of 0.25.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "outputformat": {
+                "description": "The format of the returned analysis. Allowed values are 'json', 'xml', and 'yaml'. The default value is 'xml'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "reqid": {
+                "description": "An identifier for this request. This string must match the regular expression `^(?i)[a-z0-9]{8,16}$`. If not provided, a randomly generated identifier will be assigned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "countpages",
+        "description": "Counts the number of website pages indexed by Google for a given URL using the specified RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the website to check the number of indexed pages.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "isbehindcdn",
+        "description": "Checks if a domain is fronted by a CDN provider using the RapidAPI service.",
+        "parameters": {
+            "domainname": {
+                "description": "The domain name to be checked.",
+                "type": "str",
+                "default": "example.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "check_a_url",
+        "description": "Check if a given URL is a known phishing attempt using the Exerra Phishing Check API.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be checked. Must be a valid HTTP(s) URL or a 400 error will be returned.",
+                "type": "str",
+                "default": "https://exerra.xyz"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_hsl",
+        "description": "Converts an HSL color code to other color codes such as Hex, RGB, and CMYK using the Convexity API.",
+        "parameters": {
+            "s": {
+                "description": "The saturation component of the HSL color code.",
+                "type": "int",
+                "default": "78"
+            },
+            "h": {
+                "description": "The hue component of the HSL color code.",
+                "type": "int",
+                "default": "250"
+            },
+            "l": {
+                "description": "The lightness component of the HSL color code.",
+                "type": "int",
+                "default": "45"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "t2g_kurs_check",
+        "description": "Checks the exchange rate of IDR to another currency on a given date.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to check the exchange rate, in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": ""
+            },
+            "valuta": {
+                "description": "The currency to which IDR exchange rate is checked.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "v1_whois",
+        "description": "Fetches the WHOIS information for a given domain using the API Ninjas Whois API.",
+        "parameters": {
+            "domain": {
+                "description": "The domain to retrieve WHOIS information for.",
+                "type": "str",
+                "default": "example.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "getpagespeed",
+        "description": "Fetch the page or website loading speed for a given URL using the RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the page or website to check the loading speed.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "is_prime",
+        "description": "Checks if a number is prime.",
+        "parameters": {
+            "num": {
+                "description": "The number to be checked.",
+                "type": "int"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_all_organizations_environment_admin",
+        "description": "Fetches organization information for all organizations in your Enterprise Hub.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of organizations to return. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of organizations to skip. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "status": {
+                "description": "The status of organizations to return (e.g., 'ACTIVE'). Defaults to 'ACTIVE'.",
+                "type": "str, optional",
+                "default": "ACTIVE"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "d_die",
+        "description": "Rolls a die with a given number of faces by making a request to an API.",
+        "parameters": {
+            "die": {
+                "description": "The number of faces on the die. Must be between 2 and 100.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "color_to_picture",
+        "description": "Creates a new image of a specified color using the given dimensions and color mode through the Color-to-Picture API.",
+        "parameters": {
+            "height": {
+                "description": "The height of the image in pixels. Default is '200'.",
+                "type": "str",
+                "default": "200"
+            },
+            "color": {
+                "description": "The color of the image in hex format (e.g., 'ff0000'). Default is 'ff0000'.",
+                "type": "str",
+                "default": "ff0000"
+            },
+            "width": {
+                "description": "The width of the image in pixels. Default is '200'.",
+                "type": "str",
+                "default": "200"
+            },
+            "mode": {
+                "description": "The mode of the image (e.g., 'L', 'RGB', 'RGBA'). Default is 'RGB'.",
+                "type": "str",
+                "default": "RGB"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_2_thumbnail_ready",
+        "description": "Generate a thumbnail of a specified size from a given URL by polling an API.",
+        "parameters": {
+            "size": {
+                "description": "The size of the thumbnail to generate. Options are:",
+                "type": "str",
+                "default": "m"
+            },
+            "url": {
+                "description": "The URL from which to generate the thumbnail.",
+                "type": "str",
+                "default": "http://www.mashape.com/"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "generate_a_qr_code_image",
+        "description": "Generate a QR Code image using the Qrickit API.",
+        "parameters": {
+            "d": {
+                "description": "Data for the QR Code (e.g., URL, text, vCard data, iCal data, etc.).",
+                "type": "str",
+                "default": "YourData"
+            },
+            "logotext": {
+                "description": "Header text, typically 15 to 35 characters maximum, displayed at the top of the QR Code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "t": {
+                "description": "Header text, typically 15 to 35 characters maximum, displayed at the top of the QR Code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fgdcolor": {
+                "description": "QR Code color in HTML Hex format (e.g., 'FFFFFF' for white, '000000' for black). Default is black ('000000').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "qrsize": {
+                "description": "Size of the QR Code image in pixels. Default is 150. Minimum is 80, maximum is 1480.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Set to 'jp' if the footer text contains Japanese characters, otherwise leave blank.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "e": {
+                "description": "Header text, typically 15 to 35 characters maximum, displayed at the top of the QR Code.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "addtext": {
+                "description": "Footer text, typically 15 to 60 characters maximum, displayed at the bottom of the QR Code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "txtcolor": {
+                "description": "Footer text color in HTML Hex format (e.g., 'FFFFFF' for white, '000000' for black). Default is black ('000000').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bgdcolor": {
+                "description": "Background color in HTML Hex format (e.g., 'FFFFFF' for white, '000000' for black). Default is white ('FFFFFF').",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "bulkgenerateguids",
+        "description": "Generates a bulk of GUIDs (Globally Unique Identifiers) using the GUID Generator API.",
+        "parameters": {
+            "batch_size": {
+                "description": "The number of GUIDs to generate. Must be between 1 and 10,000. Defaults to 20 if not specified.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "global_result_single",
+        "description": "Fetches global SEO keyword research data using the RapidAPI Keyword Research service.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword for which to perform the research.",
+                "type": "str",
+                "default": "email marketing"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "text_to_image",
+        "description": "Generate an image based on the input text using the specified style through the Toolbench RapidAPI.",
+        "parameters": {
+            "text": {
+                "description": "The text to convert into an image.",
+                "type": "str",
+                "default": "Daring treasure hunter, map and compass, standing in desolate desert, adventurous, detailed, high detail, portrait"
+            },
+            "style": {
+                "description": "The preset style for the image. Defaults to 'enhance'.",
+                "type": "str, optional",
+                "default": "enhance"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "analyze_v2",
+        "description": "Analyzes the page speed and generates a detailed report for the given URL using the specified parameters.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the webpage to be analyzed.",
+                "type": "str",
+                "default": "https://google.com"
+            },
+            "category": {
+                "description": "The category of analysis to be performed. Options include 'accessibility', 'best-practices', 'performance', 'seo', and 'pwa'. Defaults to 'performance'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "strategy": {
+                "description": "The strategy for analysis. Options include 'desktop' and 'mobile'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_hex",
+        "description": "Converts a hex color code to other color formats such as RGB, HSL, and CMYK using the Convexity API.",
+        "parameters": {
+            "hex": {
+                "description": "The hex color code to be converted.",
+                "type": "str",
+                "default": "ffffff"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "obtain_a_new_datacenter_proxy",
+        "description": "Obtain a new datacenter proxy using the provided API key. The proxy will only allow connections from a specified IP address or a list of countries.",
+        "parameters": {
+            "whitelist_ip": {
+                "description": "The IP address to whitelist for using the proxy. Allows an additional IP address besides the one making the API call.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "countries": {
+                "description": "A comma-separated list of country codes from which the proxy should be obtained. If not specified, the country is selected randomly.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "generate_uuid",
+        "description": "Generates one or more UUIDs using the given RapidAPI key and returns the result.",
+        "parameters": {
+            "quantity": {
+                "description": "The number of UUIDs to generate. Maximum of 50 UUIDs per request. Defaults to '25'.",
+                "type": "str",
+                "default": "25"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "rgb_to_hsl",
+        "description": "Converts RGB color values to HSL color values using the RapidAPI service.",
+        "parameters": {
+            "r": {
+                "description": "Red component of the RGB color (0-255).",
+                "type": "int",
+                "default": "127"
+            },
+            "g": {
+                "description": "Green component of the RGB color (0-255).",
+                "type": "int",
+                "default": "255"
+            },
+            "b": {
+                "description": "Blue component of the RGB color (0-255).",
+                "type": "int",
+                "default": "212"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "hsl_to_rgb",
+        "description": "Converts HSL color values to RGB color values using an external API.",
+        "parameters": {
+            "s": {
+                "description": "Saturation component of the HSL color value (0-100).",
+                "type": "int",
+                "default": "78"
+            },
+            "h": {
+                "description": "Hue component of the HSL color value (0-360).",
+                "type": "int",
+                "default": "250"
+            },
+            "l": {
+                "description": "Lightness component of the HSL color value (0-100).",
+                "type": "int",
+                "default": "45"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "search_content",
+        "description": "Searches for content based on a provided query using the RapidAPI content extractor.",
+        "parameters": {
+            "query": {
+                "description": "The search query string.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "email_qr_code",
+        "description": "Creates and returns a static QR code encoded with the provided email address. The QR code can be customized with various design parameters such as background color, eye pattern, error correction level, size, data gradient colors, and data patterns. When scanned, the QR code will prompt the user to send an email to the specified address.",
+        "parameters": {
+            "address": {
+                "description": "The email address to encode in the QR code.",
+                "type": "str",
+                "default": "marketing@scanova.io"
+            },
+            "background_color": {
+                "description": "The background color of the QR code. Defaults to '#FFFFFF'.",
+                "type": "str, optional",
+                "default": "#FFFFFF"
+            },
+            "eye_pattern": {
+                "description": "The pattern of the QR code eyes. Defaults to 'RECT_RECT'.",
+                "type": "str, optional",
+                "default": "RECT_RECT"
+            },
+            "error_correction": {
+                "description": "The error correction level of the QR code. Defaults to 'M'.",
+                "type": "str, optional",
+                "default": "M"
+            },
+            "size": {
+                "description": "The size of the QR code. Defaults to 'm'.",
+                "type": "str, optional",
+                "default": "m"
+            },
+            "data_gradient_start_color": {
+                "description": "The starting color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "data_gradient_style": {
+                "description": "The style of the data gradient. Defaults to 'None'.",
+                "type": "str, optional",
+                "default": "None"
+            },
+            "data_pattern": {
+                "description": "The pattern for the QR code data. Defaults to 'RECT'.",
+                "type": "str, optional",
+                "default": "RECT"
+            },
+            "eye_color_outer": {
+                "description": "The outer color of the QR code eyes. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "data_gradient_end_color": {
+                "description": "The ending color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "eye_color_inner": {
+                "description": "The inner color of the QR code eyes. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_date",
+        "description": "Convert a date to a specified calendar format using the Calendar Converter API.",
+        "parameters": {
+            "to": {
+                "description": "The target calendar format to which the date will be converted. Possible values are:",
+                "type": "str",
+                "default": ""
+            },
+            "date": {
+                "description": "The date to be converted, in \"yyyy-mm-dd\" format. Default is '1986-09-03'.",
+                "type": "str, optional",
+                "default": "1986-09-03"
+            },
+            "is_from": {
+                "description": "The calendar format of the input date. If not specified, the input date is assumed to be in Gregorian format.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "multiple_guids",
+        "description": "Generate multiple GUIDs by querying an external API.",
+        "parameters": {
+            "number": {
+                "description": "The number of GUIDs to generate (must be between 0 and 1000).",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "retrieve_proxy_information",
+        "description": "Retrieves proxy test result information for a given user request ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The user request ID received from the response of sending a proxy for checking.",
+                "type": "str",
+                "default": "6416ab3d3c01efbe45e97675"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "volume_from_to_number",
+        "description": "Converts a given volume from one unit to another using the RapidAPI Unit Conversion API.",
+        "parameters": {
+            "to": {
+                "description": "The unit to convert the volume to.",
+                "type": "str",
+                "default": "cubic kilometer"
+            },
+            "number": {
+                "description": "The numerical value of the volume to be converted.",
+                "type": "int",
+                "default": "60"
+            },
+            "is_from": {
+                "description": "The unit of the volume to be converted from.",
+                "type": "str",
+                "default": "cubic meter"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "measure_units",
+        "description": "Fetches an array of all units associated with a specific measurement type using the Measurement Unit Converter API.",
+        "parameters": {
+            "measure": {
+                "description": "The type of measurement for which units are to be fetched (e.g., 'length', 'weight').",
+                "type": "str",
+                "default": "length"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "hsl_to_hex",
+        "description": "Converts an HSL color code to its HEX color code using the Convexity RapidAPI service.",
+        "parameters": {
+            "s": {
+                "description": "The saturation component of the HSL color code.",
+                "type": "int",
+                "default": "78"
+            },
+            "h": {
+                "description": "The hue component of the HSL color code.",
+                "type": "int",
+                "default": "250"
+            },
+            "l": {
+                "description": "The lightness component of the HSL color code.",
+                "type": "int",
+                "default": "45"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "solat_time",
+        "description": "Fetches and returns the prayer times for a given zone using the Waktu Solat API.",
+        "parameters": {
+            "code": {
+                "description": "The zone code to get the prayer times for. This code can be obtained from the /solat/list endpoint of the API.",
+                "type": "str",
+                "default": "SWK07"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_invite_data",
+        "description": "Fetch detailed data for a given Discord invite code using the RapidAPI service.",
+        "parameters": {
+            "invite": {
+                "description": "The Discord invite code to fetch data for.",
+                "type": "str",
+                "default": "minecraft"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_coordinates",
+        "description": "This function sends a GET request to the \"/geocode\" endpoint to obtain the geographical coordinates of a given address using the RapidAPI service.",
+        "parameters": {
+            "address": {
+                "description": "The address or place to geocode. Defaults to '1600 Amphitheatre Parkway, Mountain View, CA'.",
+                "type": "str",
+                "default": "1600 Amphitheatre Parkway, Mountain View, CA"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_from_1337_x",
+        "description": "Fetches torrent data for a given search topic from the 1337x website using the RapidAPI service.",
+        "parameters": {
+            "searchtopic": {
+                "description": "The topic or keywords to search for torrents on 1337x.",
+                "type": "str",
+                "default": "cars"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "nal_query",
+        "description": "Converts a given number to its corresponding word representation in Spanish using the Numeros-a-Letras API.",
+        "parameters": {
+            "num": {
+                "description": "The number to be converted to words.",
+                "type": "str",
+                "default": "0"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "domain_check",
+        "description": "Checks the availability status of one or multiple domains using the RapidAPI service.",
+        "parameters": {
+            "domains": {
+                "description": "Comma-separated list of domains to check.",
+                "type": "str",
+                "default": "foo.com,example.org,somefoobardomain.io"
+            },
+            "domain": {
+                "description": "A specific domain name to check in addition to the list. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "v1_passwordgenerator",
+        "description": "Generates a random password string adhering to the specified parameters using the API Ninjas Password Generator API.",
+        "parameters": {
+            "exclude_special_chars": {
+                "description": "Whether to exclude special characters (e.g., `!@#$%^&*()`). Defaults to None, meaning special characters are included.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "exclude_numbers": {
+                "description": "Whether to exclude numbers from the password. Defaults to None, meaning numbers are included.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "length": {
+                "description": "The length of the generated password. Defaults to 16 if not specified.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "rgb_to_hsv",
+        "description": "Converts an RGB color code to an HSV color code using the Convexity API.",
+        "parameters": {
+            "r": {
+                "description": "Red component of the RGB color (0-255).",
+                "type": "int",
+                "default": "127"
+            },
+            "g": {
+                "description": "Green component of the RGB color (0-255).",
+                "type": "int",
+                "default": "255"
+            },
+            "b": {
+                "description": "Blue component of the RGB color (0-255).",
+                "type": "int",
+                "default": "212"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "inn_general_director",
+        "description": "Retrieves the general director information of a company based on its INN (tax identification number) using the Toolbench RapidAPI.",
+        "parameters": {
+            "inn": {
+                "description": "The INN number of the company.",
+                "type": "str",
+                "default": "7736050003"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "v_card_qr_code",
+        "description": "Creates a static QR code for a vCard with specified customization options and returns the response from the API.",
+        "parameters": {
+            "uname": {
+                "description": "The username for the vCard.",
+                "type": "str",
+                "default": "Tanisha"
+            },
+            "error_correction": {
+                "description": "The error correction level for the QR code. Defaults to 'M'.",
+                "type": "str, optional",
+                "default": "M"
+            },
+            "data_gradient_start_color": {
+                "description": "The start color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "eye_color_inner": {
+                "description": "The inner color of the QR code eyes. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "data_gradient_style": {
+                "description": "The style of the data gradient. Defaults to 'None'.",
+                "type": "str, optional",
+                "default": "None"
+            },
+            "data_gradient_end_color": {
+                "description": "The end color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "background_color": {
+                "description": "The background color of the QR code. Defaults to '#FFFFFF'.",
+                "type": "str, optional",
+                "default": "#FFFFFF"
+            },
+            "eye_color_outer": {
+                "description": "The outer color of the QR code eyes. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "eye_pattern": {
+                "description": "The pattern of the QR code eyes. Defaults to 'RECT_RECT'.",
+                "type": "str, optional",
+                "default": "RECT_RECT"
+            },
+            "size": {
+                "description": "The size of the QR code. Defaults to 'm'.",
+                "type": "str, optional",
+                "default": "m"
+            },
+            "data_pattern": {
+                "description": "The pattern of the QR code data. Defaults to 'RECT'.",
+                "type": "str, optional",
+                "default": "RECT"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "generate_qr",
+        "description": "Generates a QR code for a given URL using the QR Code Wizard API.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be encoded in the QR code.",
+                "type": "str",
+                "default": "www.google.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "photo_from_given_number",
+        "description": "Searches for a photo on the internet using the provided phone number and returns the photo in bytes if a match is found.",
+        "parameters": {
+            "phone": {
+                "description": "The phone number to search for.",
+                "type": "str",
+                "default": "+79999999999"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "specificcolorset",
+        "description": "Fetch a set of colors based on the input color name using the ColorMe API.",
+        "parameters": {
+            "colorname": {
+                "description": "The name of the base color to generate a set of colors from (e.g., \"yellow\", \"red\").",
+                "type": "str",
+                "default": "yellow"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "hex_to_hsv",
+        "description": "Converts a hex color code to an HSV color code using the Convexity API.",
+        "parameters": {
+            "hex": {
+                "description": "The hex color code to be converted.",
+                "type": "str",
+                "default": "ffffff"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "temperature_from_to_number",
+        "description": "Converts a temperature value from one unit to another using the RapidAPI Unit Conversion API.",
+        "parameters": {
+            "to": {
+                "description": "The target temperature unit.",
+                "type": "str",
+                "default": "celsius"
+            },
+            "number": {
+                "description": "The temperature value to be converted.",
+                "type": "int",
+                "default": "90"
+            },
+            "is_from": {
+                "description": "The original temperature unit.",
+                "type": "str",
+                "default": "fahrenheit"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_from_yts",
+        "description": "Fetches torrent data from YTS for a given search topic using RapidAPI.",
+        "parameters": {
+            "searchtopic": {
+                "description": "The topic or keyword to search for on YTS.",
+                "type": "str",
+                "default": "cars"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "tts",
+        "description": "Converts given text to speech in the specified language and returns the result in .mp3 format using the RapidAPI service.",
+        "parameters": {
+            "text": {
+                "description": "The text to be converted to speech.",
+                "type": "str",
+                "default": "hello world!"
+            },
+            "lang": {
+                "description": "Language code for the speech conversion. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_plus_one",
+        "description": "This function takes an integer `number` and uses the RapidAPI service to get the number incremented by one.",
+        "parameters": {
+            "number": {
+                "description": "The integer to be incremented.",
+                "type": "int",
+                "default": "15"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_rgb",
+        "description": "Converts an RGB color code to other color codes such as Hex, HSL, and CMYK using the RapidAPI service.",
+        "parameters": {
+            "r": {
+                "description": "The red component of the RGB color.",
+                "type": "int",
+                "default": "127"
+            },
+            "g": {
+                "description": "The green component of the RGB color.",
+                "type": "int",
+                "default": "255"
+            },
+            "b": {
+                "description": "The blue component of the RGB color.",
+                "type": "int",
+                "default": "212"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_1_shoot_thumbnail",
+        "description": "Generates a thumbnail image from a given URL using the Pagepeeker API. Optionally, the thumbnail can be refreshed.",
+        "parameters": {
+            "size": {
+                "description": "The desired size of the thumbnail. Options are:",
+                "type": "str",
+                "default": "m"
+            },
+            "url": {
+                "description": "The URL from which to generate the thumbnail.",
+                "type": "str",
+                "default": "http://www.mashape.com/"
+            },
+            "refresh": {
+                "description": "Set to '1' to force a refresh of the thumbnail. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "hex_to_rgb",
+        "description": "Converts a hex color code to an RGB color code using the Convexity API.",
+        "parameters": {
+            "hex": {
+                "description": "The hex color code to be converted.",
+                "type": "str",
+                "default": "ffffff"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "uuidv3_generator",
+        "description": "Generates a UUIDv3 based on the provided namespace and name using the Toolbench RapidAPI service.",
+        "parameters": {
+            "namespace": {
+                "description": "The namespace to use for generating the UUIDv3. Allowed values are 'dns', 'url', 'oid', 'x500', and 'nil'.",
+                "type": "str",
+                "default": "nil"
+            },
+            "name": {
+                "description": "The name to use for generating the UUIDv3.",
+                "type": "str",
+                "default": "test"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "verify_the_captcha",
+        "description": "Verifies the given CAPTCHA using the provided uuid and Toolbench RapidAPI key.",
+        "parameters": {
+            "captcha": {
+                "description": "The value of the CAPTCHA to be verified.",
+                "type": "str",
+                "default": "Captcha Text"
+            },
+            "uuid": {
+                "description": "The unique identifier for the CAPTCHA session.",
+                "type": "str",
+                "default": "UUID"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "check_if_text_contains_profanity",
+        "description": "Check if a given text contains profanity using the Purgomalum API.",
+        "parameters": {
+            "text": {
+                "description": "The text to be checked for profanity.",
+                "type": "str",
+                "default": "This is some test input"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_a_unit",
+        "description": "Converts a unit from one measurement to another using the Unit Measurement Conversion API.",
+        "parameters": {
+            "fromvalue": {
+                "description": "The value to be converted.",
+                "type": "str",
+                "default": "200"
+            },
+            "tounit": {
+                "description": "The unit to which the value should be converted.",
+                "type": "str",
+                "default": "kilogram"
+            },
+            "fromunit": {
+                "description": "The original unit of the value.",
+                "type": "str",
+                "default": "pound"
+            },
+            "type": {
+                "description": "The type/category of the units (e.g., length, mass).",
+                "type": "str",
+                "default": "weight"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "captcha_generator",
+        "description": "Generates a CAPTCHA image with optional customizations and returns the resulting data.",
+        "parameters": {
+            "fontname": {
+                "description": "The font to be used for the CAPTCHA text. Supported font names are 'sora', 'noto-sans', and 'ubuntu'. Default is 'sora'.",
+                "type": "str, optional",
+                "default": "sora"
+            },
+            "noise_number": {
+                "description": "The amount of noise to include in the CAPTCHA image. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "text": {
+                "description": "Custom text to be used as the CAPTCHA solution. If not provided, a random text solution will be generated.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "checker",
+        "description": "Checks the domain details for a given URL using the Toolbench RapidAPI.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the domain to be checked.",
+                "type": "str",
+                "default": "https://rapidapi.com/"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "transform_units_using_the_get_method",
+        "description": "Converts units using the GET method of the Unit Converter API.",
+        "parameters": {
+            "to": {
+                "description": "The unit to which the value will be converted. Default is 'Square mile'.",
+                "type": "str",
+                "default": "Square mile"
+            },
+            "type": {
+                "description": "The type of conversion (e.g., 'area', 'length'). Default is 'area'.",
+                "type": "str",
+                "default": "area"
+            },
+            "is_from": {
+                "description": "The unit from which the value will be converted. Default is 'Square kilometer'.",
+                "type": "str",
+                "default": "Square kilometer"
+            },
+            "value": {
+                "description": "The numerical value to be converted. Default is 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_from_piratebay",
+        "description": "Fetches search results from The Pirate Bay using the given search topic.",
+        "parameters": {
+            "searchtopic": {
+                "description": "The topic to search for on The Pirate Bay.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "keyword_research_api",
+        "description": "Fetch keyword research data from the SEO Keyword Research API via RapidAPI.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword for which to perform the research.",
+                "type": "str",
+                "default": "email marketing"
+            },
+            "country": {
+                "description": "The country code to limit the keyword research to a specific country.",
+                "type": "str",
+                "default": "in"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_mp3",
+        "description": "Converts a YouTube video to an MP3 file, with optional cutting based on start and end times.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the YouTube video.",
+                "type": "str",
+                "default": "UxxajLWwzqY"
+            },
+            "cut": {
+                "description": "If provided, will cut the MP3 file based on the sstart and send parameters. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sstart": {
+                "description": "The starting point for cutting the MP3. The format must be HH:MM:SS. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "send": {
+                "description": "The ending point for cutting the MP3. The format must be HH:MM:SS. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "simple_qr_code",
+        "description": "Generates a simple QR code for the given link with optional color customization using the RapidAPI Toolbench service.",
+        "parameters": {
+            "link": {
+                "description": "The URL that the QR code will direct to.",
+                "type": "str",
+                "default": "https://www.google.com/"
+            },
+            "color": {
+                "description": "The color of the QR code in hexadecimal format. Default is None, which results in the default color (#000).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_long_url",
+        "description": "Retrieve the long URL from a shortened URL using the Uptosite Link Shortener API.",
+        "parameters": {
+            "slug": {
+                "description": "The unique identifier for the shortened URL.",
+                "type": "str",
+                "default": "ntt-chrome"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "pressure_from_to_number",
+        "description": "This function converts a given pressure value from one unit to another using the RapidAPI Unit Conversion service.",
+        "parameters": {
+            "is_from": {
+                "description": "The unit of the pressure value to be converted from.",
+                "type": "str",
+                "default": "pascal"
+            },
+            "number": {
+                "description": "The pressure value to be converted.",
+                "type": "int",
+                "default": "100"
+            },
+            "to": {
+                "description": "The unit of the pressure value to be converted to.",
+                "type": "str",
+                "default": "decibar"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_referral_domains",
+        "description": "Retrieves a list of referral domains for a given domain using the Toolbench RapidAPI.",
+        "parameters": {
+            "domain": {
+                "description": "The domain to retrieve referral domains for.",
+                "type": "str",
+                "default": "getecz.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "commonports",
+        "description": "Fetches registered service names and transport protocol port numbers based on given parameters using the Toolbench RapidAPI service.",
+        "parameters": {
+            "port": {
+                "description": "The port number to query for (default is '53').",
+                "type": "str",
+                "default": "53"
+            },
+            "protocol": {
+                "description": "The transport protocol to query for (default is 'tcp').",
+                "type": "str",
+                "default": "tcp"
+            },
+            "service": {
+                "description": "The service name to query for (default is None).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "qrcodepro",
+        "description": "Generates a professional QR code with customizable properties and settings.",
+        "parameters": {
+            "text": {
+                "description": "The text to encode into the QR code.",
+                "type": "str",
+                "default": "https://www.digicatech.com"
+            },
+            "validate": {
+                "description": "Whether to validate the input text. Defaults to None.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "setlabel": {
+                "description": "Whether to set a label on the QR code. Defaults to None.",
+                "type": "bool, optional",
+                "default": false
+            },
+            "forecolor": {
+                "description": "The foreground color of the QR code in hexadecimal format without the # prefix. Defaults to '000000'.",
+                "type": "str, optional",
+                "default": "000000"
+            },
+            "type": {
+                "description": "The output file type for the QR code ('png', 'svg', or 'eps'). Defaults to 'svg'.",
+                "type": "str, optional",
+                "default": "svg"
+            },
+            "labeltext": {
+                "description": "The text to use as a label in the QR code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "size": {
+                "description": "The size of the output image in pixels, with a maximum of 4000. Defaults to 150.",
+                "type": "int, optional",
+                "default": "150"
+            },
+            "labelalign": {
+                "description": "The alignment of the label ('left', 'right', or 'center'). Defaults to 'center'.",
+                "type": "str, optional",
+                "default": "center"
+            },
+            "backcolor": {
+                "description": "The background color of the QR code in hexadecimal format without the # prefix. Defaults to 'FFFFFF'.",
+                "type": "str, optional",
+                "default": "FFFFFF"
+            },
+            "level": {
+                "description": "The error correction level of the QR code ('L', 'M', 'Q', 'H'). Defaults to 'M'.",
+                "type": "str, optional",
+                "default": "M"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_skin_from_uuid",
+        "description": "Fetches the Minecraft skin associated with a given UUID using the Toolbench RapidAPI.",
+        "parameters": {
+            "uuid": {
+                "description": "The UUID of the Minecraft player whose skin is being fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "unfurl",
+        "description": "Fetches and previews metadata for a given URL using the Unfurl API.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be unfurled.",
+                "type": "str",
+                "default": "youtube.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "birthday",
+        "description": "Fetches detailed information about a given birthday date using the DateClock API.",
+        "parameters": {
+            "date": {
+                "description": "The birthday date in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "1993-12-24"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_a_language",
+        "description": "Retrieve information about a programming language using Judge0 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the programming language to retrieve information for.",
+                "type": "str",
+                "default": "52"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "email_format",
+        "description": "Validates the format of an email using the RapidAPI email-checkup service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": "test@yahoo.com"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "date_converter_timezone",
+        "description": "Converts a given date to a specified timezone using the DateClock API and returns the response.",
+        "parameters": {
+            "format": {
+                "description": "Specifies the format of the output date. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "The date to be converted. Defaults to '7 Days Ago'.",
+                "type": "str, optional",
+                "default": "7 Days Ago"
+            },
+            "tz": {
+                "description": "The target timezone for the date conversion. Defaults to 'UTC+8'.",
+                "type": "str, optional",
+                "default": "UTC+8"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "phone_number_information",
+        "description": "Fetches public information about a given phone number from a specified API.",
+        "parameters": {
+            "phone": {
+                "description": "The phone number for which public information is to be fetched.",
+                "type": "str",
+                "default": "+79999999999"
+            },
+            "captchasid": {
+                "description": "The captcha session ID to be included in the query, if available.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "vkhash": {
+                "description": "The vkHash to be included in the query, if available.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "captcha": {
+                "description": "The captcha response to be included in the query, if available.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "qr_code_endpoint",
+        "description": "Generates a QR code for a given URL using the Toolbench RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be encoded in the QR code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "rgb_to_cmyk",
+        "description": "Converts an RGB color code to a CMYK color code using an external API.",
+        "parameters": {
+            "r": {
+                "description": "The red component of the RGB color code (0-255).",
+                "type": "int",
+                "default": "127"
+            },
+            "g": {
+                "description": "The green component of the RGB color code (0-255).",
+                "type": "int",
+                "default": "255"
+            },
+            "b": {
+                "description": "The blue component of the RGB color code (0-255).",
+                "type": "int",
+                "default": "212"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "sentences",
+        "description": "Fetches random sentences based on the specified constraints using the Jibber-Jabber API.",
+        "parameters": {
+            "maximumnumberofsentences": {
+                "description": "The maximum number of sentences to retrieve. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minimumwordlength": {
+                "description": "The minimum length of words in the sentences. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minimumnumberofsentences": {
+                "description": "The minimum number of sentences to retrieve. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "numberofsentences": {
+                "description": "The maximum number of sentences to retrieve. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "maximumnumberofwords": {
+                "description": "The maximum number of words per sentence. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minimumnumberofwords": {
+                "description": "The minimum number of words per sentence. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "numberofwords": {
+                "description": "The maximum number of words per sentence. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "wordlength": {
+                "description": "The minimum length of words in the sentences. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "maximumwordlength": {
+                "description": "The maximum length of words in the sentences. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "hex_to_cmyk",
+        "description": "Converts a hex color code to a CMYK color code using an API call to the Convexity service.",
+        "parameters": {
+            "hex": {
+                "description": "The hex color code to convert (e.g., \"#FFFFFF\").",
+                "type": "str",
+                "default": "ffffff"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "convert_from_one_unit_to_another",
+        "description": "Converts a given quantity from one unit to another using the RapidAPI measurement unit converter.",
+        "parameters": {
+            "to": {
+                "description": "The target unit for conversion. Can be specified in abbreviation, singular, or plural forms (e.g., 'km', 'kilometer', 'kilometers').",
+                "type": "str",
+                "default": "km"
+            },
+            "is_from": {
+                "description": "The source unit for conversion. Can be specified in abbreviation, singular, or plural forms (e.g., 'm', 'meter', 'meters').",
+                "type": "str",
+                "default": "m"
+            },
+            "value": {
+                "description": "The numeric value to be converted.",
+                "type": "int",
+                "default": "1200"
+            },
+            "measure": {
+                "description": "The type of measurement (e.g., 'length', 'mass').",
+                "type": "str",
+                "default": "length"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "list_specific_qr_code",
+        "description": "Fetches information about a specific registered QR code using the provided reference and RapidAPI key.",
+        "parameters": {
+            "ref": {
+                "description": "The reference identifier for the specific QR code.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "kda_calculator",
+        "description": "Calculates the Kill/Death/Assist (KDA) ratio for a player by making a request to an external API.",
+        "parameters": {
+            "deaths": {
+                "description": "The number of deaths.",
+                "type": "int",
+                "default": "1"
+            },
+            "assists": {
+                "description": "The number of assists.",
+                "type": "int",
+                "default": ""
+            },
+            "kills": {
+                "description": "The number of kills.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "username_to_uuid",
+        "description": "Converts a Minecraft username to a UUID by making an API request.",
+        "parameters": {
+            "username": {
+                "description": "The Minecraft username to convert to a UUID.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_from_eztv",
+        "description": "Fetches torrent search results from EZTV using the provided search topic.",
+        "parameters": {
+            "searchtopic": {
+                "description": "The topic to search for on EZTV.",
+                "type": "str",
+                "default": "cars"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_all_app_keys",
+        "description": "Fetch all keys for a specified application using the RapidAPI service.",
+        "parameters": {
+            "appid": {
+                "description": "The unique identifier for the specific application. Obtainable through the \"Get All Apps\" endpoint.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "between_checker",
+        "description": "Checks if a given date is between two specified dates using the DateClock API.",
+        "parameters": {
+            "to": {
+                "description": "The end date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "1 week ago"
+            },
+            "date": {
+                "description": "The date to check in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "Yesterday"
+            },
+            "is_from": {
+                "description": "The start date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "1980-06-06 00:00:00"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "website_url_qr_code",
+        "description": "Generates a static QR code (standard or custom-designed) encoded with the specified URL and customization options using the Scanova QR Code API.",
+        "parameters": {
+            "error_correction": {
+                "description": "Specifies error correction level. Default is 'H'.",
+                "type": "str",
+                "default": "H"
+            },
+            "eye_pattern": {
+                "description": "Specifies the eye pattern of the QR code. Default is 'RECT_RECT'.",
+                "type": "str",
+                "default": "RECT_RECT"
+            },
+            "data_gradient_style": {
+                "description": "Specifies the gradient style for the data modules. Default is 'None'.",
+                "type": "str",
+                "default": "None"
+            },
+            "format": {
+                "description": "Specifies the format of the QR code image. Default is 'png'.",
+                "type": "str",
+                "default": "png"
+            },
+            "size": {
+                "description": "Specifies the size of the QR code image. Default is 'm'.",
+                "type": "str",
+                "default": "m"
+            },
+            "eye_color_outer": {
+                "description": "Specifies the outer color of the eye modules. Default is '#000000'.",
+                "type": "str",
+                "default": "#000000"
+            },
+            "data_gradient_end_color": {
+                "description": "Specifies the end color of the gradient for data modules. Default is '#000000'.",
+                "type": "str",
+                "default": "#000000"
+            },
+            "data_gradient_start_color": {
+                "description": "Specifies the start color of the gradient for data modules. Default is '#000000'.",
+                "type": "str",
+                "default": "#000000"
+            },
+            "eye_color_inner": {
+                "description": "Specifies the inner color of the eye modules. Default is '#000000'.",
+                "type": "str",
+                "default": "#000000"
+            },
+            "url": {
+                "description": "The URL to be encoded in the QR code. Default is 'https://scanova.io'.",
+                "type": "str",
+                "default": "https://scanova.io"
+            },
+            "data_pattern": {
+                "description": "Specifies the data pattern of the QR code. Default is 'RECT'.",
+                "type": "str",
+                "default": "RECT"
+            },
+            "background_color": {
+                "description": "Specifies the background color of the QR code. Default is '#FFFFFF'.",
+                "type": "str",
+                "default": "#FFFFFF"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "echo_get",
+        "description": "Make a HTTP GET request to the echo API with specified content type and code.",
+        "parameters": {
+            "content_type": {
+                "description": "The content type to include in the request.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "code": {
+                "description": "The response code you would like to get in the response. Defaults to '201'.",
+                "type": "str, optional",
+                "default": "201"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "mass_from_to_number",
+        "description": "Converts a mass value from one unit to another using the RapidAPI unit conversion service.",
+        "parameters": {
+            "number": {
+                "description": "The numerical value of the mass to be converted.",
+                "type": "int",
+                "default": "100"
+            },
+            "is_from": {
+                "description": "The unit of mass to convert from (e.g., 'kg', 'lb').",
+                "type": "str",
+                "default": "gram"
+            },
+            "to": {
+                "description": "The unit of mass to convert to (e.g., 'kg', 'lb').",
+                "type": "str",
+                "default": "pound"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "password_generation",
+        "description": "Generates a set of 10 random passwords with the specified length using the Toolbench RapidAPI service.",
+        "parameters": {
+            "length": {
+                "description": "The desired length of the passwords. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "text_qr_code",
+        "description": "Generates a static QR code with specified text and custom design options, returning the generated QR code data.",
+        "parameters": {
+            "data": {
+                "description": "The text to be encoded in the QR code.",
+                "type": "str",
+                "default": "Word"
+            },
+            "size": {
+                "description": "The size of the QR code.",
+                "type": "str",
+                "default": "m"
+            },
+            "data_gradient_end_color": {
+                "description": "The end color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "eye_pattern": {
+                "description": "The pattern of the eye modules of the QR code. Defaults to 'RECT_RECT'.",
+                "type": "str, optional",
+                "default": "RECT_RECT"
+            },
+            "data_pattern": {
+                "description": "The pattern of the data modules of the QR code. Defaults to 'RECT'.",
+                "type": "str, optional",
+                "default": "RECT"
+            },
+            "data_gradient_start_color": {
+                "description": "The start color for the data gradient. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "error_correction": {
+                "description": "The error correction level. Defaults to 'M'.",
+                "type": "str, optional",
+                "default": "M"
+            },
+            "data_gradient_style": {
+                "description": "The style of the data gradient. Defaults to 'None'.",
+                "type": "str, optional",
+                "default": "None"
+            },
+            "eye_color_inner": {
+                "description": "The inner color of the eye modules. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "eye_color_outer": {
+                "description": "The outer color of the eye modules. Defaults to '#000000'.",
+                "type": "str, optional",
+                "default": "#000000"
+            },
+            "background_color": {
+                "description": "The background color of the QR code. Defaults to '#FFFFFF'.",
+                "type": "str, optional",
+                "default": "#FFFFFF"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "angle_from_to_number",
+        "description": "Converts an angle measurement from one unit to another using the Toolbench RapidAPI.",
+        "parameters": {
+            "number": {
+                "description": "The angle measurement value to be converted.",
+                "type": "int",
+                "default": "10"
+            },
+            "is_from": {
+                "description": "The unit of the input angle measurement (e.g., 'degrees').",
+                "type": "str",
+                "default": "radian"
+            },
+            "to": {
+                "description": "The unit to convert the angle measurement to (e.g., 'radians').",
+                "type": "str",
+                "default": "turn"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_podcast_episodes",
+        "description": "Fetch podcast episodes including audio, image, and description using the username of the podcast.",
+        "parameters": {
+            "username": {
+                "description": "The username of the anchor podcast user. For example, for the URL https://anchor.fm/financialfreedomtribe, the username is \"financialfreedomtribe\".",
+                "type": "str",
+                "default": "financialfreedomtribe"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_current_time_within_a_timezone",
+        "description": "Fetch the current time within a specified timezone using the RapidAPI World Clock API.",
+        "parameters": {
+            "time_zone": {
+                "description": "The timezone identifier for which to fetch the current time (see: https://www.timeanddate.com/time/zones/).",
+                "type": "str",
+                "default": "est"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "data_from_to_number",
+        "description": "Performs a data unit conversion from one unit to another using the RapidAPI service.",
+        "parameters": {
+            "number": {
+                "description": "The numerical value to be converted.",
+                "type": "int",
+                "default": "1024"
+            },
+            "to": {
+                "description": "The unit to convert the number to.",
+                "type": "str",
+                "default": "byte"
+            },
+            "is_from": {
+                "description": "The unit of the numerical value being converted from.",
+                "type": "str",
+                "default": "bit"
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_qr_code",
+        "description": "Generates a QR code using the given URL through the RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be encoded in the QR code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Tools"
+    },
+    {
+        "name": "get_supported_file_type",
+        "description": "Retrieves the supported file types for a given input file type using the All-In-One File Converter API.",
+        "parameters": {
+            "input": {
+                "description": "The input file type for which to retrieve the supported file types.",
+                "type": "str",
+                "default": "jpg"
+            }
+        },
+        "domain": "Tools"
+    }
+]

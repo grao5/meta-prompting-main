@@ -1,0 +1,107 @@
+[
+    {
+        "name": "get_the_latest_remote_jobs",
+        "description": "Fetches the latest 20 remote job listings from a specified company and/or category using the RapidAPI.",
+        "parameters": {
+            "company": {
+                "description": "The company name to filter job listings (default is 'shopify').",
+                "type": "str",
+                "default": "shopify"
+            },
+            "category": {
+                "description": "The job category to filter job listings (default is None).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Jobs"
+    },
+    {
+        "name": "generate_document_resume",
+        "description": "Generates a resume document using the provided degree, skills, and university information.",
+        "parameters": {
+            "degree": {
+                "description": "The degree to be included in the resume. Defaults to 'Information Systems'.",
+                "type": "str",
+                "default": "Information Systems"
+            },
+            "skills": {
+                "description": "The skills to be included in the resume. Defaults to 'Networking, Web Development'.",
+                "type": "str",
+                "default": "Networking, Web Development"
+            },
+            "university": {
+                "description": "The university to be included in the resume. Defaults to 'Michigan State University'.",
+                "type": "str",
+                "default": "Michigan State University"
+            }
+        },
+        "domain": "Jobs"
+    },
+    {
+        "name": "searchjobs",
+        "description": "Fetches a list of job postings from the Indeed API for Sweden.",
+        "parameters": {
+            "location": {
+                "description": "The city or state within Sweden to search for jobs.",
+                "type": "str",
+                "default": "Stockholm"
+            },
+            "offset": {
+                "description": "The starting point for pagination; must be increased by 10 to retrieve subsequent pages.",
+                "type": "int",
+                "default": "0"
+            },
+            "keyword": {
+                "description": "The search keyword (e.g., job title or skill).",
+                "type": "str",
+                "default": "python"
+            }
+        },
+        "domain": "Jobs"
+    },
+    {
+        "name": "generate_document_cover_letter",
+        "description": "Generates a cover letter document based on the provided job description and personal information using the AI Resume Generator API.",
+        "parameters": {
+            "jobdescription": {
+                "description": "Description of the job position. Default is \"Example Co. is looking for a Full Stack Web Developer to maintain and improve our custom web application. The solutions will require both frontend and backend skills. Our web application runs on a LEMP stack. LEMP stack experience is a bonus, but not required.\"",
+                "type": "str",
+                "default": "Example Co. is looking for a Full Stack Web Developer to maintain and improve our custom web application. The solutions will require both frontend and backend skills. Our web application runs on a LEMP stack. LEMP stack experience is a bonus, but not required."
+            },
+            "degree": {
+                "description": "Your degree. Default is \"Information Systems\".",
+                "type": "str",
+                "default": "Information Systems"
+            },
+            "university": {
+                "description": "Name of the university where you obtained your degree. Default is \"Michigan State University\".",
+                "type": "str",
+                "default": "Michigan State University"
+            },
+            "skills": {
+                "description": "List of relevant skills. Default is \"Networking, Web Development\".",
+                "type": "str",
+                "default": "Networking, Web Development"
+            },
+            "jobtitle": {
+                "description": "Title of the job you are applying for. Default is \"Full Stack Web Developer\".",
+                "type": "str",
+                "default": "Full Stack Web Developer"
+            }
+        },
+        "domain": "Jobs"
+    },
+    {
+        "name": "get_a_specific_remote_job_by_id",
+        "description": "Fetch detailed information about a specific remote job using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the job to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Jobs"
+    }
+]

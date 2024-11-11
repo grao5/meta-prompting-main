@@ -1,0 +1,441 @@
+[
+    {
+        "name": "get_news",
+        "description": "Fetches a list of news articles based on the specified category and region.",
+        "parameters": {
+            "category": {
+                "description": "The category of news to fetch.",
+                "type": "str",
+                "default": ""
+            },
+            "region": {
+                "description": "The region code for which to fetch news. Examples include 'us' for the United States and 'gb' for the United Kingdom.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_1_3_analyse",
+        "description": "Analyse a given period between start and end dates for a specified country and configuration.",
+        "parameters": {
+            "start_date": {
+                "description": "The start date in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2013-01-01"
+            },
+            "end_date": {
+                "description": "The end date in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2013-12-31"
+            },
+            "country_code": {
+                "description": "The ISO 3166-1 alpha-2 country code (2 letters).",
+                "type": "str",
+                "default": "US"
+            },
+            "end_time": {
+                "description": "The end time in 24-hour format (e.g., '18:15'). Defaults to '18:15'.",
+                "type": "str, optional",
+                "default": "18:15"
+            },
+            "start_time": {
+                "description": "The start time in 24-hour format (e.g., '09:14'). Defaults to '09:14'.",
+                "type": "str, optional",
+                "default": "09:14"
+            },
+            "profile_id": {
+                "description": "An identifier for a specific profile configuration. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "configuration": {
+                "description": "The name of the preset configuration to be used. Defaults to 'Federal holidays'.",
+                "type": "str, optional",
+                "default": "Federal holidays"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "feriados_dos_estados",
+        "description": "Retrieves the holidays for a given Brazilian state and year.",
+        "parameters": {
+            "estado": {
+                "description": "Abbreviation of the Brazilian state in uppercase letters.",
+                "type": "str",
+                "default": "MG"
+            },
+            "ano": {
+                "description": "Year for which to retrieve the holidays.",
+                "type": "str",
+                "default": "2023"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_1_3_add_working_hours",
+        "description": "Adds a specified amount of working hours to a given start date and time for a specified country.",
+        "parameters": {
+            "start_date": {
+                "description": "The start date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2013-12-31"
+            },
+            "country_code": {
+                "description": "The ISO country code (2 letters) specifying the country.",
+                "type": "str",
+                "default": "US"
+            },
+            "start_time": {
+                "description": "The start time in 24-hour format with leading zeros (e.g., '08:00').",
+                "type": "str",
+                "default": "08:15"
+            },
+            "increment_time": {
+                "description": "The amount of working time to add or remove from the start date and time in 'H:i' format (e.g., '1:00' for one hour, '30:15' for thirty hours and fifteen minutes, or '-0:45' for a negative increment). Defaults to '1815'.",
+                "type": "str, optional",
+                "default": 1815
+            },
+            "configuration": {
+                "description": "The name of the preset configuration to be used (e.g., 'Federal holidays'). Defaults to 'Federal holidays'.",
+                "type": "str, optional",
+                "default": "Federal holidays"
+            },
+            "profile_id": {
+                "description": "Optional profile identifier. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "live_events",
+        "description": "Retrieves a list of ongoing live events from the specified endpoint, optionally filtered by city, genre, and location.",
+        "parameters": {
+            "city": {
+                "description": "The city to filter the events by. Defaults to 'Firenze'.",
+                "type": "str",
+                "default": "Firenze"
+            },
+            "genre": {
+                "description": "The genre to filter the events by. Defaults to 'festival'.",
+                "type": "str",
+                "default": "festival"
+            },
+            "location": {
+                "description": "The location to filter the events by. Defaults to 'PIAZZA SANTA MARIA NOVELLA'.",
+                "type": "str",
+                "default": "PIAZZA SANTA MARIA NOVELLA"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "v1_holidays",
+        "description": "Fetches holidays for a given year and country using the API Ninjas Holidays endpoint.",
+        "parameters": {
+            "year": {
+                "description": "Calendar year between 2010 and 2030 (inclusive). Note: not all countries are guaranteed to have data going back to 2010.",
+                "type": "int",
+                "default": "2021"
+            },
+            "country": {
+                "description": "Country name or ISO 3166-2 country code (preferred).",
+                "type": "str",
+                "default": "us"
+            },
+            "type": {
+                "description": "Holiday type filter. Possible values include:",
+                "type": "str, optional",
+                "default": "federal_holiday"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_hebrew_month_and_date",
+        "description": "Fetches the Hebrew month, date, and holidays for a given Gregorian date.",
+        "parameters": {
+            "datestring": {
+                "description": "The Gregorian date in string format for which to get the Hebrew date and related information.",
+                "type": "str",
+                "default": "2021-03-30"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "public_holidays",
+        "description": "Fetches the public holidays for a given year and country.",
+        "parameters": {
+            "countrycode": {
+                "description": "The code of the country for which to fetch public holidays (e.g., 'US' for the United States).",
+                "type": "str",
+                "default": "US"
+            },
+            "year": {
+                "description": "The year for which to fetch public holidays.",
+                "type": "str",
+                "default": "2019"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "count_of_days",
+        "description": "Fetches the count of days in the current Hebrew year from a given date string or today's date.",
+        "parameters": {
+            "datestring": {
+                "description": "The date for which the number of days in the current Hebrew year is to be determined.",
+                "type": "str",
+                "default": "2021-03-30"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "is_holyday",
+        "description": "Checks if a given date is a holyday according to the Enoch Calendar API and retrieves associated scriptures and Sabbath status.",
+        "parameters": {
+            "datestring": {
+                "description": "The date string to check for holyday status.",
+                "type": "str",
+                "default": "2021-03-30"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_1_3_add_working_days",
+        "description": "Add or remove a specified number of working days to a given start date based on the specified country's working days and holidays.",
+        "parameters": {
+            "country_code": {
+                "description": "The ISO country code (2 letters). For available countries and configurations, see https://api.workingdays.org/api-countries.",
+                "type": "str",
+                "default": "US"
+            },
+            "start_date": {
+                "description": "The start date in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2013-12-31"
+            },
+            "increment": {
+                "description": "The number of working days to add or remove from the start date. Can be a positive or negative integer but not zero.",
+                "type": "int",
+                "default": 10
+            },
+            "include_start": {
+                "description": "Whether to include the start date in the count. Defaults to True if not specified. Set to False (\"false\" or \"0\") to start the count from the next working day (or previous working day if increment is negative).",
+                "type": "bool, optional",
+                "default": true
+            },
+            "configuration": {
+                "description": "The name of the preset configuration to be used. Defaults to 'Federal holidays'. For available configurations, see https://api.workingdays.org/api-countries.php.",
+                "type": "str, optional",
+                "default": "Federal holidays"
+            },
+            "profile_id": {
+                "description": "Custom profile ID if applicable.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_hebrew_date",
+        "description": "Fetches the Hebrew date for a given Gregorian date string using the RapidAPI service.",
+        "parameters": {
+            "datestring": {
+                "description": "The Gregorian date string for which to fetch the Hebrew date.",
+                "type": "str",
+                "default": "2021-03-17"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "events_detail",
+        "description": "Fetches and returns all data related to a specific event identified by its UUID from the 'art-openings-italy' API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the event, following the format of a universally unique identifier (UUID).",
+                "type": "str",
+                "default": "55daa408-d224-4b68-8b70-8800424d3e88"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_1_3_get_info_day",
+        "description": "Fetch detailed information about a specific day for a given country, using provided configuration and RapidAPI key.",
+        "parameters": {
+            "country_code": {
+                "description": "The ISO country code (2 letters).",
+                "type": "str",
+                "default": "US"
+            },
+            "date": {
+                "description": "The date to analyze, in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2013-12-31"
+            },
+            "configuration": {
+                "description": "The preset configuration to be used. Default is 'Federal holidays'.",
+                "type": "str, optional",
+                "default": "Federal holidays"
+            },
+            "profile_id": {
+                "description": "The profile ID for the query.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_calendar_components",
+        "description": "Fetches the calendar components to build the Hebrew month calendar for a given month and year.",
+        "parameters": {
+            "month": {
+                "description": "The Hebrew month number.",
+                "type": "int",
+                "default": "7"
+            },
+            "year": {
+                "description": "The year for the Hebrew calendar.",
+                "type": "int",
+                "default": "2021"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_current_status_for_given_flag",
+        "description": "Fetches the current status for a given flag code using the Toolbench RapidAPI service.",
+        "parameters": {
+            "code": {
+                "description": "The flag code for which the status is to be fetched.",
+                "type": "str",
+                "default": "WV"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_specific_event_information",
+        "description": "Fetch and return information for a specific event using the event identifier.",
+        "parameters": {
+            "eventidentifier": {
+                "description": "Unique identifier for the event to retrieve booking information.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_half_staff_events_for_given_flag",
+        "description": "Fetches all half-staff events for a given flag code using the specified RapidAPI key.",
+        "parameters": {
+            "code": {
+                "description": "The flag code for which to retrieve half-staff events.",
+                "type": "str",
+                "default": "NY"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "v1_historicalevents",
+        "description": "Fetches a list of up to 10 historical events that match the provided search parameters using API Ninjas Historical Events API.",
+        "parameters": {
+            "text": {
+                "description": "Query text to search events by. Use keywords or short phrases for best match results. Defaults to 'roman empire'.",
+                "type": "str",
+                "default": "roman empire"
+            },
+            "month": {
+                "description": "Integer representing the month (e.g., 3 for March). Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "day": {
+                "description": "Calendar day of the month. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "4-digit year (e.g., 1776). For BC/BCE years, use a negative integer (e.g., -351 for 351 BC). Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Number of results to offset (for pagination). Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_hebrew_month",
+        "description": "Fetches the Hebrew month for a given Gregorian date string using the Enoch Calendar API.",
+        "parameters": {
+            "datestring": {
+                "description": "The Gregorian date in 'YYYY-MM-DD' format for which to get the Hebrew month.",
+                "type": "str",
+                "default": "2021-03-17"
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "get_1_3_list_non_working_days",
+        "description": "Fetch the non-working days (weekend days, public holidays, and custom dates) between two specified dates for a given country.",
+        "parameters": {
+            "start_date": {
+                "description": "The start date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2013-01-01"
+            },
+            "end_date": {
+                "description": "The end date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2013-12-31"
+            },
+            "country_code": {
+                "description": "The ISO country code (2 letters). See available countries & configurations.",
+                "type": "str",
+                "default": "US"
+            },
+            "configuration": {
+                "description": "The name of the preset configuration to be used. Defaults to 'Federal holidays'.",
+                "type": "str, optional",
+                "default": "Federal holidays"
+            },
+            "profile_id": {
+                "description": "Custom profile ID for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Events"
+    },
+    {
+        "name": "is_sabbath_day",
+        "description": "Determines if the given date string or today's date is a Sabbath day using the Enoch Calendar API.",
+        "parameters": {
+            "datestring": {
+                "description": "The date string to check in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2021-03-23"
+            }
+        },
+        "domain": "Events"
+    }
+]

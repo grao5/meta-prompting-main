@@ -1,0 +1,1301 @@
+[
+    {
+        "name": "actors_list_most_popular_celebs",
+        "description": "Fetch the list of most popular celebrities from the online movie database API.",
+        "parameters": {
+            "currentcountry": {
+                "description": "The current country of the user. Accepts one of the following values: AR, AU, CA, CL, ES, DE, IT, MX, NZ, PT, ES, GB, US. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            },
+            "purchasecountry": {
+                "description": "The country where the user typically makes purchases. Accepts one of the following values: US, GB, DE, IN, IT, FR, JP, CA, ES. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            },
+            "homecountry": {
+                "description": "The home country of the user. Accepts one of the following values: US, GB, DE, IN, IT, FR, JP, CA, ES. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getprojects",
+        "description": "Fetches artificial intelligence projects from the specified page using the provided RapidAPI key.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the projects to retrieve.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "tirto_search",
+        "description": "Searches Tirto news data using the RapidAPI interface.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of search results to return.",
+                "type": "str",
+                "default": "10"
+            },
+            "q": {
+                "description": "The query string to search for in Tirto news articles.",
+                "type": "str",
+                "default": "banjir"
+            },
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "news_source",
+        "description": "Fetch the latest news stories for a given news source in chronological order.",
+        "parameters": {
+            "source_id": {
+                "description": "The identifier of the news source for which to retrieve the latest news stories.",
+                "type": "str",
+                "default": "bbc"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "nft_news",
+        "description": "Fetches up-to-date NFT news from the specified API.",
+        "parameters": {
+            "nftnews": {
+                "description": "A specific filter to narrow down NFT news. Default is None, meaning no specific filter.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "title_get_technical",
+        "description": "Fetches technical information for a movie or TV show using its tconst identifier and RapidAPI key.",
+        "parameters": {
+            "tconst": {
+                "description": "The unique identifier for a title, typically starting with 'tt', obtained from endpoints like /title/auto-complete or /title/find.",
+                "type": "str",
+                "default": "tt0944947"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "by_source_new",
+        "description": "Fetch the most recent 50 news items from a specific source using the Moka News API.",
+        "parameters": {
+            "source": {
+                "description": "The news source from which to retrieve the news items, taken from the available sources list.",
+                "type": "str",
+                "default": "cnn"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "search_news",
+        "description": "Search for news articles using a specified keyword and language.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for in news articles.",
+                "type": "str",
+                "default": "Joe Biden"
+            },
+            "language": {
+                "description": "The language of the news articles. Supported languages include:",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "actors_get_all_images",
+        "description": "Returns all images of a specific actor or actress based on their unique identifier (nconst).",
+        "parameters": {
+            "nconst": {
+                "description": "The unique identifier of the actor/actress. It typically starts with 'nm' followed by a series of numbers (e.g., 'nm0001667').",
+                "type": "str",
+                "default": "nm0001667"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "politician_goverlytics_id",
+        "description": "Retrieves information about a politician by their 'goverlytics_id' from the Goverlytics API.",
+        "parameters": {
+            "goverlytics_id": {
+                "description": "The unique identifier for a politician in the Goverlytics system.",
+                "type": "str",
+                "default": "437c7e15-c66a-4b46-af9b-07e9b1317190"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_news_from_one_news_source",
+        "description": "Fetches news articles from a specified news source and page number using the Sri Lanka News API.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve news articles from. Different news sources may have varying numbers of articles per page.",
+                "type": "int",
+                "default": 1
+            },
+            "source": {
+                "description": "The news source to retrieve articles from. Possible values include 'Lankadeepa.lk', 'Deshaya.lk', 'Ada.lk', 'BBCSinhala.com', 'Mawbima.lk'.",
+                "type": "str",
+                "default": "Ada.lk"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "theaters_list",
+        "description": "List theaters around a specified postal code or GEO location using the Flixster API.",
+        "parameters": {
+            "longitude": {
+                "description": "The GEO longitude to search for theaters.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "zipcode": {
+                "description": "The postal code to search for theaters. Default is '90002'.",
+                "type": "str, optional",
+                "default": "90002"
+            },
+            "latitude": {
+                "description": "The GEO latitude to search for theaters.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "radius": {
+                "description": "The radius (in miles) around the specified location to search for theaters. Default is 50.",
+                "type": "int, optional",
+                "default": "50"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "science",
+        "description": "Fetches science news from Google News using the provided language region and RapidAPI key.",
+        "parameters": {
+            "lr": {
+                "description": "The language region code (e.g., 'en-US') to filter the news articles.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_articles",
+        "description": "Fetch and filter Google News articles based on various criteria.",
+        "parameters": {
+            "language": {
+                "description": "The language code for the articles (e.g., 'EN' for English). Supported languages are: TR, EN, FR, DE, IT, ZH, ES, RU, KO, PT.",
+                "type": "str",
+                "default": ""
+            },
+            "sort": {
+                "description": "The sorting criterion for the articles. Possible values are 'date:asc', 'date:desc', '_score:asc', and '_score:desc'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "required_props": {
+                "description": "Comma-separated list of required properties that an article must have to be included in the results (e.g., 'title,image').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cursor": {
+                "description": "The cursor value for pagination, allowing navigation to the next set of articles.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to": {
+                "description": "The ISO 8601 date string (YYYY-MM-DDTHH:mm:ss) specifying the end date for the articles.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of articles to retrieve per request. The maximum limit is 100.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "is_from": {
+                "description": "The ISO 8601 date string (YYYY-MM-DDTHH:mm:ss) specifying the start date for the articles.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "The search query string to find specific articles. Use 'AND'/'OR' for multiple terms and '-' to exclude terms.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getstats",
+        "description": "Fetches the latest and historical coronavirus statistics data, including confirmed cases, deaths, and recovered cases, for a specified location.",
+        "parameters": {
+            "location": {
+                "description": "ISO 3166-2 location code (e.g., \"FR\" for France, \"US\" for the United States, \"US-CA\" for California state, or \"global\" for worldwide statistics).",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "asoy",
+        "description": "Fetches JSON results for All States, One Year (ASOY) for the specified US Presidential Election year.",
+        "parameters": {
+            "year": {
+                "description": "The election year to retrieve results for (e.g., 2008).",
+                "type": "int",
+                "default": "2000"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "kompas_detail",
+        "description": "Fetches detailed information from the Kompas news API using a specified GUID.",
+        "parameters": {
+            "guid": {
+                "description": "The unique identifier for the news article to fetch details for.",
+                "type": "str",
+                "default": ".xml.2023.06.20.114935178"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "tag_news",
+        "description": "Fetch the latest news stories for a given tag using the BizToc RapidAPI.",
+        "parameters": {
+            "tag": {
+                "description": "The tag for which to fetch the latest news stories.",
+                "type": "str",
+                "default": "apple"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_article_by_sid",
+        "description": "Retrieve the content of a news article based on the given article ID (`sid`).",
+        "parameters": {
+            "sid": {
+                "description": "The article ID for the news article to be retrieved.",
+                "type": "int",
+                "default": "565154"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "title_v2_get_business",
+        "description": "Retrieves box office information for a given movie title from the online movie database using the provided API key.",
+        "parameters": {
+            "tconst": {
+                "description": "The identifier for the movie title, starting with 'tt'. This value can be obtained from the `/title/auto-complete` or `/title/find` endpoints.",
+                "type": "str",
+                "default": "tt0796366"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "tags_trending",
+        "description": "Retrieve a list of trending tags for a given `page_id`, sorted by popularity.",
+        "parameters": {
+            "page_id": {
+                "description": "The ID of the page for which to retrieve trending tags.",
+                "type": "str",
+                "default": "main"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "vivanews_detail",
+        "description": "Fetches and returns the detailed news information from Vivanews by the given ID using the provided RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the Vivanews article to fetch details for.",
+                "type": "int",
+                "default": "1612364"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "actors_get_all_filmography",
+        "description": "Retrieves the complete filmography of a specified actor or actress using their unique identifier (nconst).",
+        "parameters": {
+            "nconst": {
+                "description": "Unique identifier for the actor or actress. This value starts with \"nm\" and can be obtained from endpoints such as .../actors/list-born-today or .../actors/list-most-popular-celebs.",
+                "type": "str",
+                "default": "nm0001667"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "world",
+        "description": "Fetches world news from Google News using the specified region and RapidAPI key.",
+        "parameters": {
+            "lr": {
+                "description": "The language and regional code to filter news, e.g., 'en-US'. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "vivanews_search",
+        "description": "Performs a search query on Vivanews through the RapidAPI endpoint.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve results from.",
+                "type": "int",
+                "default": "1"
+            },
+            "keyword": {
+                "description": "The search keyword to query.",
+                "type": "str",
+                "default": "banjir"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "title_get_parental_guide",
+        "description": "Fetches parental guide information for a specific movie from the online movie database.",
+        "parameters": {
+            "tconst": {
+                "description": "The unique identifier for the movie. It should start with 'tt' and can be obtained from the `/title/auto-complete` or `/title/find` endpoints. For example, 'tt0944947'.",
+                "type": "str",
+                "default": "tt0944947"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getbookcoverimage",
+        "description": "Fetches the book cover image for a given ISBN and language code from the RapidAPI service.",
+        "parameters": {
+            "isbn": {
+                "description": "The International Standard Book Number of the book.",
+                "type": "str",
+                "default": "9781526606198"
+            },
+            "languagecode": {
+                "description": "The language code for the book.",
+                "type": "str",
+                "default": "en"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_biden_articles_from_specific_newspaper",
+        "description": "Fetches all articles related to Biden from a specified newspaper using a given API key.",
+        "parameters": {
+            "newspaper": {
+                "description": "The name of the newspaper from which to fetch the articles.",
+                "type": "str",
+                "default": "boston_globe,new_york_times,cnn,washington_post,los_angeles_times,chicago_tribute"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "movies_get_opening",
+        "description": "Fetches the list of opening movies for a given country using the Flixster API.",
+        "parameters": {
+            "countryid": {
+                "description": "The country code for which to fetch opening movies. Defaults to 'usa'. Examples include 'afg', 'alb', 'dza', etc.",
+                "type": "str, optional",
+                "default": "usa"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "actors_list_born_today",
+        "description": "Fetches a list of actors and actresses born on a specific day and month from the Online Movie Database via the RapidAPI platform.",
+        "parameters": {
+            "month": {
+                "description": "The month of birth of the actors.",
+                "type": "int",
+                "default": "7"
+            },
+            "day": {
+                "description": "The day of birth of the actors.",
+                "type": "int",
+                "default": "27"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "news_latest_page",
+        "description": "Fetches the latest news stories in chronological order, filtered by the specified page ID.",
+        "parameters": {
+            "page_id": {
+                "description": "The identifier for the specific news page to filter the stories.",
+                "type": "str",
+                "default": "main"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "latest_articles",
+        "description": "Fetches the latest cryptocurrency news articles from the web, including sentiment analysis and keyword extraction.",
+        "parameters": {
+            "subject": {
+                "description": "The subject of the news articles (e.g., bitcoin, altcoin, ethereum, nft, blockchain, defi).",
+                "type": "str",
+                "default": "bitcoin"
+            },
+            "top_n_keywords": {
+                "description": "The number of keywords to extract from each article (default is 10).",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "max_articles": {
+                "description": "The maximum number of articles to retrieve in response (default is 10).",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "last_n_hours": {
+                "description": "The time window in hours for the latest news articles (default is 48 hours).",
+                "type": "int, optional",
+                "default": "48"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getprojectsbytopic",
+        "description": "Fetches artificial intelligence projects based on the specified topic and page number.",
+        "parameters": {
+            "topic": {
+                "description": "The topic to filter AI projects.",
+                "type": "str",
+                "default": "machine-learning"
+            },
+            "page": {
+                "description": "The page number of the results to fetch.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_indivisual_news_source_news",
+        "description": "Fetch news articles about climate change from a specific news source using the given newspaper ID.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The unique identifier of the newspaper to fetch news from.",
+                "type": "str",
+                "default": "guardian"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "repost",
+        "description": "Reposts an article to the Telegraph platform using the Telegraph API.",
+        "parameters": {
+            "article_url": {
+                "description": "URL of the article or blog post to be reposted.",
+                "type": "str",
+                "default": ""
+            },
+            "title": {
+                "description": "Title of the Telegraph post. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "author_url": {
+                "description": "URL of the author. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "author_name": {
+                "description": "Name of the author. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_specific_climate_change_news",
+        "description": "Fetch specific climate change news from a given newspaper.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the newspaper from which to fetch climate change news.",
+                "type": "str",
+                "default": "guardian"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "movies_get_popularity",
+        "description": "Fetches popular movies based on location parameters such as zipcode, radius, longitude, and latitude, using the Flixster API.",
+        "parameters": {
+            "zipcode": {
+                "description": "The postal code of the area to search in. Defaults to '90002'.",
+                "type": "str, optional",
+                "default": "90002"
+            },
+            "radius": {
+                "description": "The radius (in miles) around the given zipcode to include in the search. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "longitude": {
+                "description": "The geographical longitude to search movies around. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "latitude": {
+                "description": "The geographical latitude to search movies around. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_latest_article_list",
+        "description": "Fetches a list of the latest news articles for a specified language from the Malaysia Kini API.",
+        "parameters": {
+            "language": {
+                "description": "The language code for which to fetch the latest news articles. Supported languages include English ('en'), Malay ('my'), and Chinese ('zh').",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "newspaper_company_filter_for_news",
+        "description": "Fetches news articles from a specified newspaper company using RapidAPI.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the newspaper company to filter news from.",
+                "type": "str",
+                "default": "guardian"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getbookcoverurl",
+        "description": "Fetches the URL of a book cover image using the provided language code and ISBN.",
+        "parameters": {
+            "languagecode": {
+                "description": "The language code in which the book cover information is required.",
+                "type": "str",
+                "default": "en"
+            },
+            "isbn": {
+                "description": "The International Standard Book Number (ISBN) of the book.",
+                "type": "str",
+                "default": "9781526606198"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_individual_news_sources",
+        "description": "Fetches cryptocurrency news from a specific news source using the provided API key.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the specific news source to fetch news from.",
+                "type": "str",
+                "default": "CryptoNews"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "title_get_sound_tracks",
+        "description": "Fetches the sound tracks for a specific title from the online movie database.",
+        "parameters": {
+            "tconst": {
+                "description": "The title identifier, which should start with 'tt' (e.g., 'tt0944947'), typically obtained from the /title/auto-complete or /title/find endpoints.",
+                "type": "str",
+                "default": "tt0944947"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "actors_get_interesting_jobs",
+        "description": "Retrieves interesting jobs for a specified actor or actress using the RapidAPI service.",
+        "parameters": {
+            "nconst": {
+                "description": "The unique identifier for the actor/actress, which should start with \"nm\" (e.g., \"nm0001667\"). This can typically be found using the /actors/list-born-today or /actors/list-most-popular-celebs endpoints.",
+                "type": "str",
+                "default": "nm0001667"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "movies_get_dvds",
+        "description": "Fetches a list of DVDs based on the specified type of movie using the Flixster API.",
+        "parameters": {
+            "typemovie": {
+                "description": "The type of movie to filter DVDs by. Can be one of the following: 'NEW_RELEASE' or 'COMING_SOON'. Default is 'NEW_RELEASE'.",
+                "type": "str",
+                "default": "NEW_RELEASE"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "actors_get_awards_summary",
+        "description": "Retrieves the awards summary for a specified actor or actress using the IMDb API.",
+        "parameters": {
+            "nconst": {
+                "description": "The unique identifier for the actor or actress, typically starting with \"nm\" (e.g., 'nm0001667').",
+                "type": "str",
+                "default": "nm0001667"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "movies_get_upcoming",
+        "description": "Fetches a list of upcoming movies based on the specified parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The number of items to return, with a maximum of 100. Defaults to 100.",
+                "type": "int, optional",
+                "default": "100"
+            },
+            "countryid": {
+                "description": "The country identifier to filter the upcoming movies list. Defaults to 'usa'. Example values include 'afg', 'alb', 'dza', etc.",
+                "type": "str, optional",
+                "default": "usa"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "tirto_detail",
+        "description": "Fetch detailed information about a specific Tirto news article using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the Tirto news article to fetch details for.",
+                "type": "int",
+                "default": "1253421"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_individual_articles",
+        "description": "Retrieves individual articles from a specified newspaper using the RapidAPI service.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The unique identifier for the newspaper from which to retrieve the articles.",
+                "type": "str",
+                "default": "thetimes"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "article_page",
+        "description": "Fetches a page of articles based on the provided page ID, with an optional limit on the number of articles returned and a specified RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the page to fetch articles from.",
+                "type": "int",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The maximum number of articles to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_details_of_a_news_item",
+        "description": "Fetches the details of a news item including the title, image, body, and other properties from the specified API using the provided parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the news item.",
+                "type": "str",
+                "default": ".196030"
+            },
+            "title": {
+                "description": "The title of the news item.",
+                "type": "str",
+                "default": "mai-nishikata-game-between-the-suits-manga-resumes-after-2-years"
+            },
+            "date": {
+                "description": "The publication date of the news item.",
+                "type": "str",
+                "default": "2023-03-17"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "entertainment",
+        "description": "Fetches entertainment news from Google News using the provided language region.",
+        "parameters": {
+            "lr": {
+                "description": "Language region code in the format 'en-US'.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "kompas_search",
+        "description": "Performs a search on the Kompas news API using the provided parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The number of search results to retrieve.",
+                "type": "int",
+                "default": "10"
+            },
+            "page": {
+                "description": "The page number to retrieve in the paginated results.",
+                "type": "int",
+                "default": "1"
+            },
+            "command": {
+                "description": "The search command or keyword.",
+                "type": "str",
+                "default": "banjir"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "getfaqs",
+        "description": "Fetch FAQs for a specified page from the Election 2020 Smartable API.",
+        "parameters": {
+            "page": {
+                "description": "The identifier for the specific FAQ page to retrieve.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "find_by_title",
+        "description": "Fetches movie details based on the given title from the RapidAPI service.",
+        "parameters": {
+            "q": {
+                "description": "The title of the movie to search for.",
+                "type": "str",
+                "default": "game of thr"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_individual_news_from_source_news",
+        "description": "Fetches news about climate change from a specified news source.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the newspaper from which to fetch news.",
+                "type": "str",
+                "default": "guardian"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "politicians",
+        "description": "Fetches a list of politicians' data based on given filters.",
+        "parameters": {
+            "offset": {
+                "description": "The starting point in the list of results. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of results to return. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "active": {
+                "description": "Filter for active politicians. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "province": {
+                "description": "Filter politicians by province. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "municipality": {
+                "description": "Filter politicians by municipality. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "level_of_government": {
+                "description": "Filter politicians by level of government (e.g., federal, provincial, municipal). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_search_enterprise",
+        "description": "Perform a highly customizable search through the enterprise database with various filters and sorting options.",
+        "parameters": {
+            "q": {
+                "description": "The search query string. Should be URL-encoded.",
+                "type": "str",
+                "default": "Elon Musk"
+            },
+            "link_begins_with": {
+                "description": "Filter to include articles whose URLs start with this prefix.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "Sort the results by relevancy, date, or rank. Defaults to 'relevancy'.",
+                "type": "str, optional",
+                "default": "relevancy"
+            },
+            "topic": {
+                "description": "The topic to narrow down the articles. Accepts values like 'news', 'sport', 'tech', etc.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to": {
+                "description": "Upper boundary for the time range to search within.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to_rank": {
+                "description": "Upper boundary of the rank for news websites.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "from_rank": {
+                "description": "Lower boundary of the rank for news websites.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language of the search results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "page_size": {
+                "description": "Number of articles per page. Default is 50; maximum is 100.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "ranked_only": {
+                "description": "Limit search to top 1 million ranked sites. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sources": {
+                "description": "Comma-separated list of news sources to include.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "search_in": {
+                "description": "Limit search to either 'title' or 'summary' of articles.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "media": {
+                "description": "Include media information in the output. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": "True"
+            },
+            "is_from": {
+                "description": "Lower boundary for the time range to search within.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "ISO 3166-1 alpha-2 country code to narrow the search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "not_sources": {
+                "description": "Comma-separated list of news sources to exclude.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_latest_headlines",
+        "description": "Fetches the latest 100 headlines based on specified language, topic, and/or country, and optionally includes media information.",
+        "parameters": {
+            "lang": {
+                "description": "Specifies the language of the search. Allowed values include 'af', 'ar', 'bg', 'bn', 'ca', 'cn', 'cs', 'cy', 'da', 'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fr', 'gu', 'he', 'hi', 'hr', 'hu', 'id', 'it', 'ja', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr', 'ne', 'nl', 'no', 'pa', 'pl', 'pt', 'ro', 'ru', 'sk', 'sl', 'so', 'sq', 'sv', 'sw', 'ta', 'te', 'th', 'tl', 'tr', 'tw', 'uk', 'ur', 'vi'. Defaults to 'en'.",
+                "type": "str",
+                "default": "en"
+            },
+            "topic": {
+                "description": "The topic to which you want to restrict the articles. Accepted values are 'news', 'sport', 'tech', 'world', 'finance', 'politics', 'business', 'economics', 'entertainment', 'beauty', 'travel', 'music', 'food', 'science'. This parameter is experimental and not all articles may have a topic assigned.",
+                "type": "str",
+                "default": ""
+            },
+            "country": {
+                "description": "The country to which you want to narrow your search, specified using ISO 3166-1 alpha-2 codes. This parameter is experimental and is best used in conjunction with the 'lang' parameter.",
+                "type": "str",
+                "default": ""
+            },
+            "media": {
+                "description": "If set to 'True', adds additional media information to the output, including the main image and a comma-separated string of all images used in an article. Defaults to 'True'.",
+                "type": "str",
+                "default": "True"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "specific_publication_articles",
+        "description": "Fetches news articles from a specific publication using the provided newspaper ID.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the newspaper to fetch articles from.",
+                "type": "str",
+                "default": "guardian"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_aggregation",
+        "description": "Aggregates news article counts based on specified search criteria and time intervals.",
+        "parameters": {
+            "q": {
+                "description": "The search query string, which must be URL-encoded.",
+                "type": "str",
+                "default": "Apple"
+            },
+            "country": {
+                "description": "The country to narrow the search to, specified using ISO 3166-1 alpha-2 codes. This parameter is experimental and recommended to be used with the `lang` parameter.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "topic": {
+                "description": "The topic to filter articles by. Accepted values include `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`. This parameter is experimental.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sources": {
+                "description": "Comma-separated string of news sources to filter the search. Example: `nytimes.com,cnn.com`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "agg_by": {
+                "description": "Aggregation interval for the results. Accepts `day` (default) or `hour`.",
+                "type": "str, optional",
+                "default": "day"
+            },
+            "to_rank": {
+                "description": "Upper boundary of the rank of news websites to filter the search.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "media": {
+                "description": "When set to `True`, includes `media` and `media_content` fields in the output which provide information about images associated with the articles.",
+                "type": "str, optional",
+                "default": "True"
+            },
+            "lang": {
+                "description": "The language to filter the search. Acceptable values include language codes like `en` for English, `es` for Spanish, etc.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "not_sources": {
+                "description": "Comma-separated string of sources to exclude from the search. Example: `nytimes.com,cnn.com`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to": {
+                "description": "The end date and time to search until, in UTC. Various date formats are accepted.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "ranked_only": {
+                "description": "Limit the search to sources that are in the top 1 million online websites. Default is `True`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_from": {
+                "description": "The start date and time to search from, in UTC. Various date formats are accepted. The default is set to one week ago at midnight UTC.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "search_in": {
+                "description": "Defines where to search the provided query (in `title`, `summary`, or both). Default is both.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "from_rank": {
+                "description": "Lower boundary of the rank of news websites to filter the search. Lower rank indicates higher popularity.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "detik_search",
+        "description": "Search for news articles on detik.com using specified parameters.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the results to retrieve.",
+                "type": "int",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The number of results to return per page.",
+                "type": "int",
+                "default": "10"
+            },
+            "keyword": {
+                "description": "The keyword to search for in news articles.",
+                "type": "str",
+                "default": "detik"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_sources",
+        "description": "Fetches a list of supported news websites based on specified language, topic, and country.",
+        "parameters": {
+            "lang": {
+                "description": "Specifies the language of the search. Supported values are:",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "topic": {
+                "description": "Specifies the topic to filter the articles. Supported values are:",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Specifies the country to filter the articles. Accepts ISO 3166-1 alpha-2 country codes.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "filter_china_news_by_newspaper_company",
+        "description": "Fetches news articles from a specified Chinese newspaper company using the RapidAPI service.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The ID of the newspaper company from which to fetch news articles.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_search_free",
+        "description": "Search articles using the Newscatcher API.",
+        "parameters": {
+            "q": {
+                "description": "String to search for. Has to be URL-encoded.",
+                "type": "str",
+                "default": "Elon Musk"
+            },
+            "media": {
+                "description": "If set to 'True', adds two more variables to the output: `media` and `media_content`. `media` contains the main image published with the article, and `media_content` is a comma-separated string of all images used in the article.",
+                "type": "str, optional",
+                "default": "True"
+            },
+            "page": {
+                "description": "The number of the page to scroll through the results. Defaults to 1.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "ranked_only": {
+                "description": "Limits the search to sources within the top 1 million online websites. Defaults to 'True'. Set to 'False' to include unranked sources.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page_size": {
+                "description": "Specifies the number of articles to return per page. Defaults to 50, with a maximum of 100.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Specifies the language of the search. Defaults to 'en'. Allowed values include 'af', 'ar', 'bg', 'bn', 'ca', 'cn', 'cs', 'cy', 'da', 'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fr', 'gu', 'he', 'hi', 'hr', 'hu', 'id', 'it', 'ja', 'kn', 'ko', 'lt', 'lv', 'mk', 'ml', 'mr', 'ne', 'nl', 'no', 'pa', 'pl', 'pt', 'ro', 'ru', 'sk', 'sl', 'so', 'sq', 'sv', 'sw', 'ta', 'te', 'th', 'tl', 'tr', 'tw', 'uk', 'ur', 'vi'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "latest_tweets",
+        "description": "Fetch the latest crypto news tweets, including sentiment analysis and keyword extraction.",
+        "parameters": {
+            "top_n_keywords": {
+                "description": "The number of keywords to extract from each tweet. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "max_tweets": {
+                "description": "The maximum number of tweets to retrieve. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "last_n_hours": {
+                "description": "The time range in hours to look back for tweets. Default is 4.",
+                "type": "int, optional",
+                "default": "4"
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "v1_search",
+        "description": "Performs a customizable search through a news database with various filtering and sorting options.",
+        "parameters": {
+            "q": {
+                "description": "The search query string. This must be URL-encoded.",
+                "type": "str",
+                "default": "Elon Musk"
+            },
+            "not_sources": {
+                "description": "Comma-separated list of sources to exclude from the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language of the articles. Supported values include various language codes such as 'en', 'es', 'fr', etc. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "search_in": {
+                "description": "Scope of the search within articles. Options are 'title', 'summary', or both.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "Criteria for sorting the search results. Options include 'relevancy', 'date', and 'rank'. Defaults to 'relevancy'.",
+                "type": "str, optional",
+                "default": "relevancy"
+            },
+            "sources": {
+                "description": "Comma-separated list of sources to exclude from the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to": {
+                "description": "Date until which to search for articles.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country to narrow the search. Supports ISO 3166-1 alpha-2 codes.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "media": {
+                "description": "Whether to include media information in the results. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": "True"
+            },
+            "topic": {
+                "description": "Topic to restrict the search. Options include 'news', 'sport', 'tech', etc.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "from_rank": {
+                "description": "Lower boundary of the source rank.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "to_rank": {
+                "description": "Upper boundary of the source rank.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "page_size": {
+                "description": "Number of articles to return per page. Maximum is 100.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number for paginated results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "ranked_only": {
+                "description": "Limit to top-ranked sources only. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_from": {
+                "description": "Date from which to start the search.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "News_Media"
+    },
+    {
+        "name": "get_individual_source_news",
+        "description": "Fetches news articles related to police, crime, and accidents from a specified German newspaper.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The identifier of the newspaper from which to fetch news articles.",
+                "type": "str",
+                "default": "tag24"
+            }
+        },
+        "domain": "News_Media"
+    }
+]

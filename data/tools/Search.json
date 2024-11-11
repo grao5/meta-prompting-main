@@ -1,0 +1,669 @@
+[
+    {
+        "name": "states_search",
+        "description": "Searches for specific states by name and returns a list of states matching the search query. The search can be limited by country and sorted by specified criteria.",
+        "parameters": {
+            "q": {
+                "description": "The search query string representing the name of the state to search for.",
+                "type": "str",
+                "default": "ut"
+            },
+            "limit": {
+                "description": "The maximum number of state results to return. Defaults to '50'.",
+                "type": "str, optional",
+                "default": "50"
+            },
+            "sortorder": {
+                "description": "The order in which to sort results (e.g., 'asc' or 'desc'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sortby": {
+                "description": "The field by which to sort results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_id": {
+                "description": "The ID of the country to filter results by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_code": {
+                "description": "The code of the country to filter results by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_name": {
+                "description": "The name of the country to filter results by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "autosuggest",
+        "description": "Fetches and returns keyword autosuggestions from the RapidAPI service.",
+        "parameters": {
+            "q": {
+                "description": "The keyword to search for related suggestions. Default is 'rabbit'.",
+                "type": "str",
+                "default": "rabbit"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "vin_decoder_lite",
+        "description": "This function decodes a given Vehicle Identification Number (VIN) using the RapidAPI VIN Decoder Lite service and returns the decoded information.",
+        "parameters": {
+            "vin": {
+                "description": "The Vehicle Identification Number (VIN) to be decoded. It must be 17 characters long.",
+                "type": "str",
+                "default": "5YJ3E1EA6PF384836"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "vehicle_market_value_by_vin",
+        "description": "Fetches the market value of a vehicle based on its VIN (Vehicle Identification Number) using the Toolbench RapidAPI service.",
+        "parameters": {
+            "vin": {
+                "description": "The vehicle identification number to query.",
+                "type": "str",
+                "default": "5UXKR0C58JL074657"
+            },
+            "mileage": {
+                "description": "The current mileage of the vehicle. If not specified, the average mileage is used. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "period": {
+                "description": "Number of days to look back for sales data, with a maximum value of 365 days. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "vin_decoder_basic",
+        "description": "Decodes basic information from a Vehicle Identification Number (VIN) using the RapidAPI VIN decoder service.",
+        "parameters": {
+            "vin": {
+                "description": "The Vehicle Identification Number (VIN) to be decoded. Must be 17 characters long.",
+                "type": "str",
+                "default": "5YJ3E1EA6PF384836"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "suggestqueries",
+        "description": "Fetches suggestions based on the given query using the specified RapidAPI key.",
+        "parameters": {
+            "query": {
+                "description": "The search query for which suggestions are to be fetched.",
+                "type": "str",
+                "default": "How to"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "pagesblanches",
+        "description": "This function retrieves data from the Pages Blanches API for extracting email and phone information based on the given parameters.",
+        "parameters": {
+            "pbpage": {
+                "description": "The page number of the search results to retrieve.",
+                "type": "int",
+                "default": "1"
+            },
+            "pbkeyword": {
+                "description": "The search keyword or term for the Pages Blanches query.",
+                "type": "str",
+                "default": "Patrick"
+            },
+            "pblocation": {
+                "description": "The location to filter the search results.",
+                "type": "str",
+                "default": "Paris"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "getvideodetails",
+        "description": "Retrieve video details from YouTube using a specified video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the video to retrieve details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "getchannelplaylists",
+        "description": "Retrieve a comprehensive list of playlists associated with a specific YouTube channel.",
+        "parameters": {
+            "is_id": {
+                "description": "The YouTube channel ID for which to retrieve playlists.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "search_web",
+        "description": "Performs a text search on the web using the Google Search JSON API and returns search results in JSON format.",
+        "parameters": {
+            "q": {
+                "description": "The search query.",
+                "type": "str",
+                "default": "facebook"
+            },
+            "num": {
+                "description": "The number of search results to return. Valid values range from 1 to 20, inclusive. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "start": {
+                "description": "The index of the first result to return. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "gl": {
+                "description": "A two-letter country code to boost search results whose country of origin matches the parameter value. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "lr": {
+                "description": "Restricts the search to documents written in a particular language. Defaults to 'lang_en'.",
+                "type": "str, optional",
+                "default": "lang_en"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "get_d_tails_image",
+        "description": "Fetch detailed information about a specific image using the Toolbench RapidAPI.",
+        "parameters": {
+            "image": {
+                "description": "The identifier or name of the image to retrieve details for.",
+                "type": "str",
+                "default": "domaine-nc-api"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "reverse_search_by_image",
+        "description": "Perform a reverse image search using a specified image URL and return the search results.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the image to search by.",
+                "type": "str",
+                "default": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg"
+            },
+            "number": {
+                "description": "The maximum number of search results to return. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "search_image",
+        "description": "Performs an image search using the Google Search JSON API and returns a JSON response containing information about images that match the search query.",
+        "parameters": {
+            "q": {
+                "description": "The search query for finding images.",
+                "type": "str",
+                "default": "Newyork City"
+            },
+            "num": {
+                "description": "Number of search results to return. Valid values are between 1 and 20, inclusive. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "lr": {
+                "description": "Restricts the search to documents written in a particular language. Default is 'lang_en'.",
+                "type": "str, optional",
+                "default": "lang_en"
+            },
+            "start": {
+                "description": "The index of the first result to return. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "gl": {
+                "description": "A two-letter country code that boosts search results whose country of origin matches the parameter value. Default is 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "codes",
+        "description": "This function searches for information based on the provided code using the Postali API.",
+        "parameters": {
+            "code": {
+                "description": "The code to be searched.",
+                "type": "str",
+                "default": "66446"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "search_wikipedia",
+        "description": "Searches Wikipedia and returns the top K summarized information along with similar items. Additionally, images and coordinates with map links are provided when available.",
+        "parameters": {
+            "q": {
+                "description": "Query string to search for on Wikipedia.",
+                "type": "str",
+                "default": "Messi"
+            },
+            "topk": {
+                "description": "Number of top summarized items to return. Defaults to 3. Must be greater than 0.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "keywordsearch",
+        "description": "Fetches popular keywords for a given language and country from the Google Keyword Scraper API.",
+        "parameters": {
+            "glanguage": {
+                "description": "Alpha code for the language (e.g., 'en' for English, 'es' for Spanish).",
+                "type": "str",
+                "default": "en"
+            },
+            "gcountry": {
+                "description": "Alpha code for the country (e.g., 'us' for United States, 'de' for Germany).",
+                "type": "str",
+                "default": "ua"
+            },
+            "gkeyword": {
+                "description": "The keyword for which to fetch popular keywords.",
+                "type": "str",
+                "default": "ukraine war"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "get_trend_keyword",
+        "description": "Retrieve trending keywords for a specific date and geographic location using the given RapidAPI key.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve trending keywords. Defaults to '2023-05-18'.",
+                "type": "str",
+                "default": "2023-05-18"
+            },
+            "geo": {
+                "description": "The geographic location for which to retrieve trending keywords. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "searchcontent",
+        "description": "The function searches for videos, playlists, and channels on YouTube using the specified query and RapidAPI key.",
+        "parameters": {
+            "q": {
+                "description": "The search query for finding content on YouTube. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "cities_search",
+        "description": "Search for cities based on various criteria and return a list of matching cities.",
+        "parameters": {
+            "q": {
+                "description": "The query string to search for cities by name.",
+                "type": "str",
+                "default": "kan"
+            },
+            "page": {
+                "description": "The page number of the search results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "country_code": {
+                "description": "The country code to filter the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sortorder": {
+                "description": "The order in which to sort the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sortby": {
+                "description": "The attribute to sort the search results by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_name": {
+                "description": "The name of the country to filter the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country_id": {
+                "description": "The ID of the country to filter the search results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of search results to return.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "state_code": {
+                "description": "The state code to filter the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "state_id": {
+                "description": "The ID of the state to filter the search results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "state_name": {
+                "description": "The name of the state to filter the search results.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "vin_decoder_standard",
+        "description": "Decodes the given Vehicle Identification Number (VIN) using the VIN Decoder API.",
+        "parameters": {
+            "vin": {
+                "description": "The Vehicle Identification Number to decode. It must be 17 characters long.",
+                "type": "str",
+                "default": "5YJ3E1EA6PF384836"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "links_finder",
+        "description": "Fetches relevant links based on a given query using the ExplorArc's Link Finder API.",
+        "parameters": {
+            "query": {
+                "description": "The search query to find relevant links. Defaults to 'roadmap'.",
+                "type": "str",
+                "default": "roadmap"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "search_wikihow",
+        "description": "Searches for a 'how-to' question on WikiHow and returns summarized methods and steps.",
+        "parameters": {
+            "q": {
+                "description": "A 'how-to' question to search on WikiHow, e.g., 'find meaning in life', 'learn any language', 'play soccer', 'change an oil filter'.",
+                "type": "str",
+                "default": "be thankful"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "getchanneldetails",
+        "description": "Fetch detailed information and insights about a specific YouTube channel using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique ID of the YouTube channel to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "getcountrycode",
+        "description": "Retrieves all available country codes using the specified API.",
+        "parameters": {
+            "getcountrycodes": {
+                "description": "A flag to specify whether to retrieve country codes. Defaults to 'true'.",
+                "type": "str",
+                "default": "true"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "license_plate_lookup",
+        "description": "Perform a license plate lookup using the provided license plate number and state code.",
+        "parameters": {
+            "license_plate": {
+                "description": "The license plate number to look up.",
+                "type": "str",
+                "default": "S8TAN"
+            },
+            "state_code": {
+                "description": "The state code where the license plate is registered (e.g., 'TX' for Texas).",
+                "type": "str",
+                "default": "AL"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "searchoffers",
+        "description": "Gets all job offers from the given parameters.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for job offers.",
+                "type": "str",
+                "default": "Secretary"
+            },
+            "posted": {
+                "description": "The time frame for when the job offers were posted (e.g., 'last 24 hours', 'last 7 days').",
+                "type": "str",
+                "default": ""
+            },
+            "offset": {
+                "description": "The index offset for pagination of results.",
+                "type": "int",
+                "default": "0"
+            },
+            "location": {
+                "description": "The location to search for job offers.",
+                "type": "str",
+                "default": "Frankfurt"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "states_details",
+        "description": "Retrieves detailed information about a specific state using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the state for which to retrieve details.",
+                "type": "str",
+                "default": "4022"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "services",
+        "description": "Fetch a list of professional sellers for a specified service category from the Fiverr Pro Services API.",
+        "parameters": {
+            "category_name": {
+                "description": "The name of the service category to fetch professional sellers for.",
+                "type": "str",
+                "default": "Graphics  & Design: Logo Design"
+            },
+            "page": {
+                "description": "The page number of results to return. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "pagesjaunes",
+        "description": "This function extracts data from the \"Pages Jaunes\" (Yellow Pages) for a given location and keyword.",
+        "parameters": {
+            "pjpage": {
+                "description": "The page number to retrieve.",
+                "type": "int",
+                "default": "1"
+            },
+            "pjlocation": {
+                "description": "The location to search within \"Pages Jaunes\".",
+                "type": "str",
+                "default": "Paris"
+            },
+            "pjkeyword": {
+                "description": "The keyword to search for in \"Pages Jaunes\".",
+                "type": "str",
+                "default": "Restaurant"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "vin_decoder_extended",
+        "description": "Decodes the VIN (Vehicle Identification Number) and returns detailed information about the vehicle.",
+        "parameters": {
+            "vin": {
+                "description": "The Vehicle Identification Number (VIN) to decode. Must be 17 characters long.",
+                "type": "str",
+                "default": "5YJ3E1EA6PF384836"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "offerinfo",
+        "description": "Fetches job offer data from the Google Jobs API using the provided job URL.",
+        "parameters": {
+            "joburl": {
+                "description": "The URL of the job offer to retrieve information for.",
+                "type": "str",
+                "default": "https://www.google.com/search?ibp=htl%3Bjobs&q=developer+newyork&hl=en-US&kgs=e473f607e23ae72f&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&entrypoint=sh%2Fx%2Fim%2Ftextlists%2Fdetail&mysharpfpstate=tldetail&htivrt=jobs&htiq=developer+newyork&htidocid=6ak4txGw4C4AAAAAAAAAAA%3D%3D"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "youtube_keyword_search",
+        "description": "Performs a YouTube keyword search using the provided search query and optional parameters such as country code and language code. It sends a GET request to the YouTube keyword search API and returns the response in JSON format if possible, otherwise returns the raw response text.",
+        "parameters": {
+            "q": {
+                "description": "The search query.",
+                "type": "str",
+                "default": "foot"
+            },
+            "gl": {
+                "description": "The country code in Alpha-2 format. Default is 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "hl": {
+                "description": "The search language code in ISO 639-1 format. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "get_answer_to_question",
+        "description": "Fetches the answer to a given question from the Question Answered API using the provided RapidAPI key.",
+        "parameters": {
+            "questionasked": {
+                "description": "The question to be answered.",
+                "type": "str",
+                "default": "how far away is the sun from earth?"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "web_search_api",
+        "description": "Performs a web search using the Bing search engine API, and returns the search data and suggested keywords.",
+        "parameters": {
+            "size": {
+                "description": "The number of search results to return. Defaults to '30'.",
+                "type": "str, optional",
+                "default": "30"
+            },
+            "keyword": {
+                "description": "The search query keyword. Defaults to 'how-to-use-excel-for-free'.",
+                "type": "str, optional",
+                "default": "how-to-use-excel-for-free"
+            },
+            "page": {
+                "description": "The page number of the search results to retrieve. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "search_result",
+        "description": "Fetches location search results based on a search query and optional latitude and longitude parameters.",
+        "parameters": {
+            "q": {
+                "description": "The search query string.",
+                "type": "str",
+                "default": "pizza"
+            },
+            "latitude": {
+                "description": "Latitude to refine the search query. Defaults to '24.562394'.",
+                "type": "str, optional",
+                "default": "24.562394"
+            },
+            "longitude": {
+                "description": "Longitude to refine the search query. Defaults to '73.7124675'.",
+                "type": "str, optional",
+                "default": "73.7124675"
+            }
+        },
+        "domain": "Search"
+    },
+    {
+        "name": "license_plate_to_vin",
+        "description": "Converts a vehicle's license plate number to its corresponding VIN (Vehicle Identification Number).",
+        "parameters": {
+            "state_code": {
+                "description": "The state code where the license plate is registered (e.g., 'CA' for California).",
+                "type": "str",
+                "default": "AL"
+            },
+            "license_plate": {
+                "description": "The license plate number of the vehicle.",
+                "type": "str",
+                "default": "S8TAN"
+            }
+        },
+        "domain": "Search"
+    }
+]

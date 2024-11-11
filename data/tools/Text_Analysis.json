@@ -1,0 +1,448 @@
+[
+    {
+        "name": "difficulty",
+        "description": "Fetches weed strain information based on the difficulty of growing (easy, medium, or difficult).",
+        "parameters": {
+            "difficulty": {
+                "description": "The difficulty level of growing the strain. Acceptable values are 'easy', 'medium', or 'difficult'.",
+                "type": "str",
+                "default": "medium"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "get_php",
+        "description": "Fetch terminology extraction from a given text in a specified language using RapidAPI.",
+        "parameters": {
+            "text": {
+                "description": "The text from which to extract terminology.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language code for the text. Currently supported languages: en, fr, it.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "questionnaire_sentino",
+        "description": "Fetches a questionnaire from the Sentino API based on the NEO-90 inventory.",
+        "parameters": {
+            "content_type": {
+                "description": "The MIME type of the content being requested. Default is 'application/json'.",
+                "type": "str",
+                "default": "application/json"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "display_entities",
+        "description": "Displays the extracted named entities from the given text using a specified model and RapidAPI service.",
+        "parameters": {
+            "text": {
+                "description": "The text to extract entities from.",
+                "type": "str",
+                "default": "An October post from Dylan that may be saving you a Google search."
+            },
+            "model": {
+                "description": "The name of the model to use for entity extraction. If None, the default model will be used.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "spans": {
+                "description": "Specific spans to use for entity extraction. If None, entity extraction will be performed on the entire text.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "chat",
+        "description": "Communicates with the AI chatbot via RapidAPI and returns the chatbot's response.",
+        "parameters": {
+            "uid": {
+                "description": "User Identification for personalized response and response continuity.",
+                "type": "str",
+                "default": "user1"
+            },
+            "message": {
+                "description": "Message that the chatbot has to respond to.",
+                "type": "str",
+                "default": "What's your name?"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "getgender",
+        "description": "Determines the gender of a given name using the Toolbench RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The name for which to determine the gender.",
+                "type": "str",
+                "default": "Jane"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "v1_sentiment",
+        "description": "Performs sentiment analysis on the provided block of text using the API Ninjas sentiment analysis service.",
+        "parameters": {
+            "text": {
+                "description": "The input text for sentiment analysis, with a maximum length of 2000 characters.",
+                "type": "str",
+                "default": "It's a wonderful day!"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "read_text",
+        "description": "Filters and censors profanity or offensive words from a given text using an external API.",
+        "parameters": {
+            "check_word": {
+                "description": "The text to be checked for profanity or offensive words. Maximum length is 700 characters.",
+                "type": "str",
+                "default": "This example text contains no profanity / offensive word."
+            },
+            "add": {
+                "description": "Comma-separated list of additional words to be added to the profanity list. Case-insensitive and accepts up to 250 characters. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "range": {
+                "description": "The level of filtering range. It can be 'low', 'mid', or 'high'. Defaults to 'low'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "r": {
+                "description": "The replacement string to be used for censored words. Must be a valid punctuation mark and no longer than 1 character. Defaults to '*'.",
+                "type": "str, optional",
+                "default": "*"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "advance",
+        "description": "This function makes a GET request to the cleantalk1.p.rapidapi.com service with specified parameters and returns the response.",
+        "parameters": {
+            "fill_char": {
+                "description": "A character to fill within the text.",
+                "type": "str",
+                "default": "_"
+            },
+            "text": {
+                "description": "The text to be processed.",
+                "type": "str",
+                "default": "How about you?"
+            },
+            "add": {
+                "description": "Additional text or parameters to be included.",
+                "type": "str",
+                "default": "about"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "replace",
+        "description": "Sends a request to the CleanTalk API to process and replace certain elements in the given text.",
+        "parameters": {
+            "text": {
+                "description": "The text to be processed by the CleanTalk API.",
+                "type": "str",
+                "default": "What the fuck are you doing?"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "extract_fast",
+        "description": "Extracts and validates phone or cell numbers from the given text based on a specified country.",
+        "parameters": {
+            "country": {
+                "description": "Country name or ISO2/ISO3 code to identify the number format.",
+                "type": "str",
+                "default": "usa"
+            },
+            "text": {
+                "description": "Text containing the phone or cell numbers to be extracted and validated.",
+                "type": "str",
+                "default": "Real people with real answers in real time, 24/7.  1-800-266-8228, 1(800)266-8229"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "sentiment_analysis",
+        "description": "Analyzes the sentiment of a given text using Google's BERT sentiment analysis API, with optional language specification.",
+        "parameters": {
+            "text": {
+                "description": "The text to be analyzed for sentiment.",
+                "type": "str",
+                "default": "wah rumahnya bagus ya, tapi kok halamannya kotor sih?"
+            },
+            "lang": {
+                "description": "The language of the text. This can improve accuracy if specified. Defaults to 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "get_synthesize",
+        "description": "Synthesizes the provided text using the Speakeasy API and returns the corresponding audio URL or response.",
+        "parameters": {
+            "text": {
+                "description": "The text to be synthesized into speech.",
+                "type": "str",
+                "default": "The quick brown fox jumps over the lazy dog"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "retrieve_response",
+        "description": "Retrieve the response from the \"Rewriter\" endpoint using a given JOB ID.",
+        "parameters": {
+            "job_id": {
+                "description": "The JOB ID generated on the \"Rewriter\" endpoint.",
+                "type": "str",
+                "default": "1124817"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "translation",
+        "description": "Translates the given text into the specified language using the Toolbench RapidAPI service.",
+        "parameters": {
+            "content_type": {
+                "description": "The type of content being translated (e.g., 'text').",
+                "type": "str",
+                "default": "application/json"
+            },
+            "text": {
+                "description": "The text to be translated.",
+                "type": "str",
+                "default": "Tomorrow is another day"
+            },
+            "language": {
+                "description": "The target language for the translation.",
+                "type": "str",
+                "default": "french"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "extract_entities",
+        "description": "Extracts named entities from the provided text using the specified model and RapidAPI key.",
+        "parameters": {
+            "text": {
+                "description": "The text from which to extract named entities.",
+                "type": "str",
+                "default": "U.S. stocks rallied Thursday, with the Dow Jones Industrial Average up 2.9% in a tempestuous first half of the year."
+            },
+            "model": {
+                "description": "The model to use for named entity recognition. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "v1_randomword",
+        "description": "Fetches a random word from the API Ninjas Random Word API.",
+        "parameters": {
+            "type": {
+                "description": "The type of word to return. Possible values are 'noun', 'verb', 'adjective', 'adverb'. Defaults to 'verb'.",
+                "type": "str",
+                "default": "verb"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "rulesets",
+        "description": "Fetches the list of available rule sets for the specified language from the API.",
+        "parameters": {
+            "lang": {
+                "description": "A 2-letter ISO 639 language code specifying the language for which the available rule sets will be provided.",
+                "type": "str",
+                "default": "en"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "v1_textlanguage",
+        "description": "Determines the language of a given text using the API Ninjas Text Language API.",
+        "parameters": {
+            "text": {
+                "description": "The text for which the language needs to be identified.",
+                "type": "str",
+                "default": "hello world!"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "detect_offensive_message",
+        "description": "Detects hate speech and offensive language in the provided message using the specified API key.",
+        "parameters": {
+            "q": {
+                "description": "The message to be checked for offensive language.",
+                "type": "str",
+                "default": "son of a ***"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "wrt_transformer",
+        "description": "Processes text input to identify entities using the Walnut Entity Recognition API.",
+        "parameters": {
+            "payload": {
+                "description": "The text input to be processed.",
+                "type": "str",
+                "default": "I am Richard from New York and I work at Microsoft."
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "spellout",
+        "description": "Spells out a given number in the specified language using the provided rule set.",
+        "parameters": {
+            "data": {
+                "description": "The number to be spelled out.",
+                "type": "int",
+                "default": 123
+            },
+            "lang": {
+                "description": "The 2-letter ISO 639 language code specifying the language in which the number will be spelled out. Use the `/v1/languages` endpoint to list all supported languages.",
+                "type": "str",
+                "default": "en"
+            },
+            "ruleset": {
+                "description": "The name of the rule set to use for spelling out the number. Use the `/v1/rulesets` endpoint to list all supported rule sets for any given language.",
+                "type": "str",
+                "default": "spellout-cardinal"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "languagedetection",
+        "description": "Detect the language of a given text using the specified RapidAPI key and return the detected language code.",
+        "parameters": {
+            "text": {
+                "description": "The text for which the language needs to be detected.",
+                "type": "str",
+                "default": "How to Identify the Language of any Text"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "remove_profanity",
+        "description": "Removes profanity from the provided text using the PurgoMalum web service. Optionally, custom words can be added to the profanity list, and specific fill text or characters can be used to replace profanity.",
+        "parameters": {
+            "text": {
+                "description": "Input text to be processed for profanity.",
+                "type": "str",
+                "default": "This is some test input"
+            },
+            "add": {
+                "description": "A comma-separated list of words to add to the profanity list. Accepts letters, numbers, underscores (_), and commas (,). Maximum 10 words or 200 characters. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fill_text": {
+                "description": "Text used to replace any words matching the profanity list. Accepts letters, numbers, underscores (_), tildes (~), exclamation points (!), dashes/hyphens (-), equal signs (=), pipes (|), single quotes ('), double quotes (\"), asterisks (*), curly brackets ({ }), square brackets ([ ]), and parentheses (). Maximum length of 20 characters. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fill_char": {
+                "description": "Single character used to replace any words matching the profanity list, filling to the length of the word replaced. Accepts underscore (_), tilde (~), dash/hyphen (-), equal sign (=), pipe (|), and asterisk (*). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "sentiment",
+        "description": "Analyzes the sentiment of the given text using the VADER sentiment analysis tool through the RapidAPI platform.",
+        "parameters": {
+            "text": {
+                "description": "The input text whose sentiment needs to be analyzed.",
+                "type": "str",
+                "default": "I really hate this!"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "v1_profanityfilter",
+        "description": "Filters profanity from the given text using the API Ninjas Profanity Filter API. Returns the censored version of the text with bad words replaced by asterisks, and indicates whether the text contains profanity.",
+        "parameters": {
+            "text": {
+                "description": "The input text to be filtered. Maximum 1000 characters.",
+                "type": "str",
+                "default": "damn it"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "using_path_parameters",
+        "description": "This function makes a request to an API endpoint to split a given text based on specified parameters and returns the response.",
+        "parameters": {
+            "text": {
+                "description": "The input text to be split.",
+                "type": "str",
+                "default": ""
+            },
+            "max_size": {
+                "description": "The maximum size limit for the split text. Defaults to 1024.",
+                "type": "int, optional",
+                "default": 1024
+            },
+            "delimiter": {
+                "description": "The delimiter to be used for splitting the text. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "include_variations": {
+                "description": "Whether to include variations in the splitting process. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            }
+        },
+        "domain": "Text_Analysis"
+    },
+    {
+        "name": "classify",
+        "description": "Classifies input text using the IAB taxonomy via RapidAPI and returns the confidence score and IAB classification.",
+        "parameters": {
+            "text": {
+                "description": "The input text to be classified.",
+                "type": "str",
+                "default": "Bank of Americate all your financial and banking requirements satisfied here."
+            }
+        },
+        "domain": "Text_Analysis"
+    }
+]

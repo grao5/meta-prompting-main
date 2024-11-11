@@ -1,0 +1,46 @@
+[
+    {
+        "name": "show_history",
+        "description": "Shows all images you have uploaded in a pageable list.",
+        "parameters": {
+            "pagesize": {
+                "description": "The number of images to display per page, with a maximum of 100.",
+                "type": "int",
+                "default": "100"
+            },
+            "page": {
+                "description": "The page number to return, starting at 0.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Storage"
+    },
+    {
+        "name": "transform_your_images",
+        "description": "Apply various transformations to images using the Toolbench RapidAPI.",
+        "parameters": {
+            "grayscale": {
+                "description": "If True, convert the image to grayscale. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "rotate": {
+                "description": "Degrees to rotate the image. Defaults to 90.",
+                "type": "int, optional",
+                "default": "90"
+            },
+            "blur": {
+                "description": "Level of blurriness to apply to the image. Defaults to 4.",
+                "type": "int, optional",
+                "default": "4"
+            },
+            "resize": {
+                "description": "New dimensions for resizing the image in the format 'width,height'. Defaults to '100,100'.",
+                "type": "str, optional",
+                "default": "100,100"
+            }
+        },
+        "domain": "Storage"
+    }
+]

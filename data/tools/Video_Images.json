@@ -1,0 +1,826 @@
+[
+    {
+        "name": "getorderbyid",
+        "description": "Fetches the order details from the Petstore API using the provided order ID.",
+        "parameters": {
+            "orderid": {
+                "description": "The ID of the order to be fetched. Must be an integer between 1 and 10.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "convert",
+        "description": "Convert a specified amount from one currency to another using the RapidAPI currency converter.",
+        "parameters": {
+            "is_from": {
+                "description": "The currency code to convert from (e.g., 'USD').",
+                "type": "str",
+                "default": ""
+            },
+            "amount": {
+                "description": "The amount of currency to convert.",
+                "type": "int",
+                "default": "10"
+            },
+            "to": {
+                "description": "The currency code to convert to (e.g., 'EUR').",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "qr_code_image_generator",
+        "description": "Generates a QR code image from a given URL using the QR Code Generator API.",
+        "parameters": {
+            "url": {
+                "description": "The URL for which the QR code is to be generated.",
+                "type": "str",
+                "default": "https://rapidapi.com"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "search_for_any_category_or_star",
+        "description": "Search for images using a category keyword or pornstar name via the RapidAPI service.",
+        "parameters": {
+            "search": {
+                "description": "The category keyword or pornstar name to search for.",
+                "type": "str",
+                "default": "Natasha Nice"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "loginuser",
+        "description": "Logs a user into the system using the provided username and password.",
+        "parameters": {
+            "username": {
+                "description": "The user's username for login.",
+                "type": "str",
+                "default": "string"
+            },
+            "password": {
+                "description": "The user's password for login in clear text.",
+                "type": "str",
+                "default": "string"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "health",
+        "description": "Fetches health-related news from Google News using the provided language region and API key.",
+        "parameters": {
+            "lr": {
+                "description": "Language region for the news, e.g., 'en-US'.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "take_screenshot",
+        "description": "Take a screenshot of a webpage with various customizable options and return the URL of the saved image.",
+        "parameters": {
+            "targeturl": {
+                "description": "The URL of the webpage to capture.",
+                "type": "str",
+                "default": "https://www.mio-ip.it/"
+            },
+            "islandscape": {
+                "description": "Specifies if the viewport should be in landscape mode. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "proxycountry": {
+                "description": "The proxy country to route the request through. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "isfullyloaded": {
+                "description": "Specifies whether to consider navigation finished based on no more than 0 network connections for at least 500 ms. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "clickcount": {
+                "description": "Number of times to click on the selector. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "fullpage": {
+                "description": "Indicates if the screenshot should cover the entire page from header to footer. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "clickselector": {
+                "description": "CSS selector for the element to click. The element will be scrolled into view before clicking. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hastouch": {
+                "description": "Specifies if the viewport supports touch events. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "clickdelay": {
+                "description": "Delay (in milliseconds) before each click action. Default is 500.",
+                "type": "int, optional",
+                "default": "500"
+            },
+            "clickbutton": {
+                "description": "Specifies the mouse button to use for the click action (e.g., 'left' or 'right'). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "devicescalefactor": {
+                "description": "Device scaling factor to use. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "ismobile": {
+                "description": "Whether the meta viewport tag should be taken into account. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pagewidth": {
+                "description": "Width of the browser page in pixels. Default is 1024.",
+                "type": "int, optional",
+                "default": "1024"
+            },
+            "pageheight": {
+                "description": "Height of the browser page in pixels. Default is 1024.",
+                "type": "int, optional",
+                "default": "1024"
+            },
+            "removables": {
+                "description": "CSS selectors for HTML elements to be removed before taking the screenshot. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "getuserbyname",
+        "description": "Fetches user details by username from the specified API endpoint using the provided RapidAPI key.",
+        "parameters": {
+            "username": {
+                "description": "The username of the user to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "main_endpoint",
+        "description": "Fetches product information from the Amazon Pricing and Product Info API using the given ASIN and domain.",
+        "parameters": {
+            "asin": {
+                "description": "The Amazon Standard Identification Number of the product.",
+                "type": "str",
+                "default": "B07GR5MSKD"
+            },
+            "domain": {
+                "description": "The domain from which to fetch the product information (e.g., 'com', 'co.uk').",
+                "type": "str",
+                "default": "de"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "getimage",
+        "description": "Generates an image of a specified address and returns it as a base64 encoded string.",
+        "parameters": {
+            "output": {
+                "description": "The output format of the image. Default is 'image'.",
+                "type": "str",
+                "default": "image"
+            },
+            "type": {
+                "description": "The image type, either 'png' or 'jpeg'. Default is 'jpeg'.",
+                "type": "str",
+                "default": "jpeg"
+            },
+            "marker": {
+                "description": "Whether or not to display a marker on the image at the given address. 0 for no marker, 1 for marker. Default is 0.",
+                "type": "int",
+                "default": "0"
+            },
+            "zoom": {
+                "description": "The level of image zoom. Default is 1. Range is 0-5.",
+                "type": "int",
+                "default": "1"
+            },
+            "address": {
+                "description": "The address or location for which to generate the image. Default is 'Times Square'.",
+                "type": "str",
+                "default": "Times Square"
+            },
+            "width": {
+                "description": "The width of the image in pixels. Maximum is 1024. Default is 1024.",
+                "type": "int",
+                "default": "1024"
+            },
+            "height": {
+                "description": "The height of the image in pixels. Maximum is 1024. Default is 1024.",
+                "type": "int",
+                "default": "1024"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "copyright_free_images_api",
+        "description": "Fetch copyright-free images from an API based on a search term.",
+        "parameters": {
+            "search": {
+                "description": "The search term to query for free images.",
+                "type": "str",
+                "default": "wallpaper"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "getpetbyid",
+        "description": "Fetches the details of a pet by its ID from the Team Petstore API.",
+        "parameters": {
+            "petid": {
+                "description": "The ID of the pet to retrieve.",
+                "type": "int",
+                "default": 0
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "qr_code",
+        "description": "Generates a QR code for a given URL using the RapidAPI QR code generator service.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be encoded in the QR code.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "video_details",
+        "description": "Fetches all publicly available details about a YouTube video using the given video ID and an optional RapidAPI key for authentication.",
+        "parameters": {
+            "video_id": {
+                "description": "The unique identifier of the YouTube video.",
+                "type": "str",
+                "default": "PuQFESk0BrA"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "download",
+        "description": "Downloads a barcode of the specified type with the given data and optional size using the Toolbench RapidAPI service.",
+        "parameters": {
+            "type": {
+                "description": "The type of barcode to generate. Can be one of: 'qr_code', 'code_128a', 'code_128b', 'code_128c', 'code_25', 'code_25_interleaved', 'code_25_iata', 'code_39', 'code_93', 'gs1_128', 'ean_13', 'bookland', 'ean_8', 'upc_supplemental', 'codabar'.",
+                "type": "str",
+                "default": "qr_code"
+            },
+            "data": {
+                "description": "The data to encode in the barcode.",
+                "type": "str",
+                "default": "https://www.wynk182.com"
+            },
+            "size": {
+                "description": "The size of the barcode. Default is 5.",
+                "type": "int, optional",
+                "default": "5"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "take_image_screenshot",
+        "description": "Takes a screenshot of a specified website using given dimensions.",
+        "parameters": {
+            "width": {
+                "description": "The width of the screenshot in pixels. Defaults to 1024.",
+                "type": "int, optional",
+                "default": "1024"
+            },
+            "url": {
+                "description": "The URL of the website to be captured. Defaults to 'https://google.com'.",
+                "type": "str, optional",
+                "default": "https://google.com"
+            },
+            "height": {
+                "description": "The height of the screenshot in pixels. Defaults to 780.",
+                "type": "int, optional",
+                "default": "780"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "test_app_deepfry_get",
+        "description": "Sends a GET request to the deepfry endpoint of the RapidAPI Image Processing service with the specified URL and API key.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the image that you want to deepfry. Defaults to 'https://dagbot-is.the-be.st/logo.png'.",
+                "type": "str",
+                "default": "https://dagbot-is.the-be.st/logo.png"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "getresult",
+        "description": "Retrieves the result of a previously requested video rendering job using the given job ID.",
+        "parameters": {
+            "job_id": {
+                "description": "The ID of the previously requested rendering job.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "mlem_id",
+        "description": "Fetches a mlem image by its ID in JSON format using the Mlem API.",
+        "parameters": {
+            "mlemid": {
+                "description": "The ID of the mlem image to fetch.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "get_live_streams_livestreamid",
+        "description": "Retrieves live stream details using the given livestream ID from the RapidAPI service.",
+        "parameters": {
+            "livestreamid": {
+                "description": "The ID of the live stream to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "capture_screenshot",
+        "description": "Captures a screenshot of the specified website and returns the observation JSON or text from the API response.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the website to capture a screenshot of.",
+                "type": "str",
+                "default": "https://apple.com"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "detection_of_plates_and_faces",
+        "description": "Detects and blurs license plates and faces in a given image to protect personal data.",
+        "parameters": {
+            "image": {
+                "description": "The URL or path to the image file where license plates and faces detection and blurring need to be applied.",
+                "type": "str",
+                "default": "Base64 data of image"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "category",
+        "description": "Retrieves information about a specific category from the VOD app API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the category to retrieve information for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "locations",
+        "description": "Retrieves hierarchical geographical locations related to flights for a given locale.",
+        "parameters": {
+            "locale": {
+                "description": "Locale code for the desired geographical information. Example values can be retrieved from the `Locales` endpoint.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "image_stable_prompter",
+        "description": "Generates a prompt for stable diffusion using an image URL via the Toolbench RapidAPI.",
+        "parameters": {
+            "url": {
+                "description": "The full path of the image URL to be processed. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "random_mlem",
+        "description": "Fetches one random mlem image in JSON format based on the given optional parameters.",
+        "parameters": {
+            "brightness": {
+                "description": "Image brightness, can be 'dark' or 'bright'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "maxheight": {
+                "description": "Maximum height of the image.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minwidth": {
+                "description": "Minimum width of the image.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minheight": {
+                "description": "Minimum height of the image.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "tag": {
+                "description": "Tag to filter the mlem images.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "maxwidth": {
+                "description": "Maximum width of the image.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "orientation": {
+                "description": "Orientation of the image, can be 'square', 'landscape', or 'portrait'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "video_search",
+        "description": "Search for videos relevant to a given query using the Bing Video Search API.",
+        "parameters": {
+            "q": {
+                "description": "The user's search query string.",
+                "type": "str",
+                "default": ""
+            },
+            "safesearch": {
+                "description": "A filter used to eliminate results with adult content. Options include 'Off', 'Moderate', or 'Strict'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "mkt": {
+                "description": "The market where the results are coming from, typically the country where the user is located. The format is a language and country code (e.g., 'en-US').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "The number of video results to return in the response. The actual number delivered may be less than the requested count.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The zero-based offset that indicates the number of video results to skip before returning results.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "video_videoid",
+        "description": "Fetches video information and status from the video-builder API using the provided video ID and RapidAPI key.",
+        "parameters": {
+            "videoid": {
+                "description": "The unique identifier for the video.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "fedora_image_fedora_get",
+        "description": "Fetches data from the Fedora image API using the given URL and RapidAPI key.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the image to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "profile_image",
+        "description": "Generates a profile image URL based on the provided user name and retrieves the image information from the RapidAPI image service.",
+        "parameters": {
+            "name": {
+                "description": "The user's name or any other text to generate the profile image URL.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "get_user",
+        "description": "Retrieve information about an Instagram user.",
+        "parameters": {
+            "user": {
+                "description": "The username of the Instagram user to retrieve information for.",
+                "type": "str",
+                "default": "cristiano"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "live_room_bio",
+        "description": "Fetches the biography of a live room from the provided `name` using the RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The name of the live room for which to fetch the biography.",
+                "type": "str",
+                "default": "lil_eva"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "get_analysis",
+        "description": "Fetches website traffic and key metrics for a given domain using the RapidAPI service.",
+        "parameters": {
+            "domain": {
+                "description": "The domain to analyze, e.g., 'amazon.com'.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "get_video",
+        "description": "Fetches video data using a query string from the Playphrase API.",
+        "parameters": {
+            "q": {
+                "description": "The search query string.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "video_search_api",
+        "description": "Performs a search on the Petey Vid index using specified parameters and the Petey Vid Video Search API.",
+        "parameters": {
+            "q": {
+                "description": "The query string for the search (e.g., keywords or phrases).",
+                "type": "str",
+                "default": "trump"
+            },
+            "dur": {
+                "description": "The duration filter for the search (e.g., 'short', 'medium', 'long'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The sort order for the search results (e.g., 'relevance', 'date'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "media": {
+                "description": "The media filter for the search results, typically indicating media type (default is 'Y'). Defaults to 'Y'.",
+                "type": "str, optional",
+                "default": "Y"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "gen_image",
+        "description": "Generates an image based on specified parameters by making a request to the Thai Lottery Result Image API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to generate the image. Defaults to '01062564'.",
+                "type": "str",
+                "default": "01062564"
+            },
+            "bgimg": {
+                "description": "The background image to use. Optional.",
+                "type": "str",
+                "default": ""
+            },
+            "rmber": {
+                "description": "A flag indicating whether certain elements (like numbers) should be removed. Optional.",
+                "type": "bool",
+                "default": "1"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "list_movies",
+        "description": "List and search through all the available movies with various sorting, filtering, and ordering options.",
+        "parameters": {
+            "genre": {
+                "description": "Used to filter by a given genre (default is 'all'). See http://www.imdb.com/genre/ for a full list.",
+                "type": "str",
+                "default": "all"
+            },
+            "order_by": {
+                "description": "Orders the results by either 'asc' (Ascending) or 'desc' (Descending) order (default is 'desc').",
+                "type": "str",
+                "default": "desc"
+            },
+            "with_rt_ratings": {
+                "description": "If True, includes Rotten Tomatoes ratings in the results (default is None).",
+                "type": "bool",
+                "default": "false"
+            },
+            "sort_by": {
+                "description": "Sorts the results by the specified value, such as 'date_added' (default is 'date_added').",
+                "type": "str",
+                "default": "date_added"
+            },
+            "page": {
+                "description": "The page number to retrieve, useful for pagination (default is 1).",
+                "type": "int",
+                "default": "1"
+            },
+            "query_term": {
+                "description": "Used for movie search, matching on: Movie Title, IMDB Code, Actor Name/IMDb, or Director Name/IMDb Code (default is '0').",
+                "type": "str",
+                "default": "0"
+            },
+            "quality": {
+                "description": "Used to filter by a given quality, such as '720p', '1080p', etc. (default is 'all').",
+                "type": "str",
+                "default": "all"
+            },
+            "minimum_rating": {
+                "description": "Filters movies by a given minimum IMDb rating (default is 0).",
+                "type": "int",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The limit of results per page (default is 20).",
+                "type": "int",
+                "default": "20"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "generate_pdf",
+        "description": "Generates a PDF by capturing a screenshot of the provided website URL with specified dimensions using the Web Capture API.",
+        "parameters": {
+            "width": {
+                "description": "The width of the screenshot in pixels. Defaults to 1024.",
+                "type": "int, optional",
+                "default": "1024"
+            },
+            "height": {
+                "description": "The height of the screenshot in pixels. Defaults to 780.",
+                "type": "int, optional",
+                "default": "780"
+            },
+            "url": {
+                "description": "The URL of the website to capture. Defaults to 'https://google.com'.",
+                "type": "str, optional",
+                "default": "https://google.com"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "get_all_videos",
+        "description": "Fetches all videos associated with a specific user on Likee using the provided user ID and optional pagination parameters.",
+        "parameters": {
+            "uid": {
+                "description": "The unique identifier of the user whose videos are to be fetched. Can be found using the Get User Info endpoint.",
+                "type": "str",
+                "default": "962176076"
+            },
+            "pagesize": {
+                "description": "The number of videos per page. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            },
+            "count": {
+                "description": "The total number of videos to be fetched. Defaults to '4'.",
+                "type": "str, optional",
+                "default": "4"
+            },
+            "page": {
+                "description": "The page number to retrieve. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "qr_code_image_copy",
+        "description": "Generates a QR code image from the given URL using the QR Code API.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be encoded as a QR code.",
+                "type": "str",
+                "default": "www.duckduckgo.com"
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "image_anime_diffusion",
+        "description": "Generates anime-style images based on the given parameters using the Toolbench RapidAPI.",
+        "parameters": {
+            "steps": {
+                "description": "The number of diffusion steps, with a maximum of 50.",
+                "type": "int",
+                "default": "25"
+            },
+            "image_num": {
+                "description": "The number of images to generate, with a maximum of 4.",
+                "type": "int",
+                "default": "1"
+            },
+            "width": {
+                "description": "The width of the generated image(s), with a maximum of 1024 pixels.",
+                "type": "int",
+                "default": "512"
+            },
+            "cfg": {
+                "description": "The configuration scale for image generation, with a maximum of 20.",
+                "type": "int",
+                "default": "7.5"
+            },
+            "height": {
+                "description": "The height of the generated image(s), with a maximum of 1024 pixels.",
+                "type": "int",
+                "default": "512"
+            },
+            "prompt": {
+                "description": "A textual description of the desired image content.",
+                "type": "str",
+                "default": "1girl"
+            },
+            "negative_prompt": {
+                "description": "A textual description of elements to avoid in the image. This parameter is not required in version 2.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Video_Images"
+    },
+    {
+        "name": "show",
+        "description": "Fetch the details of an embed record using its unique slug.",
+        "parameters": {
+            "x_rapidapi_key": {
+                "description": "The RapidAPI key provided for API requests.",
+                "type": "str",
+                "default": "9846b8bf51mshf1d65a505b76988p188f2ajsn7136afeaa49f"
+            },
+            "x_rapidapi_host": {
+                "description": "The RapidAPI host to be used for the request.",
+                "type": "str",
+                "default": "vizor-ads.p.rapidapi.com"
+            },
+            "slug": {
+                "description": "The unique identifier for the embed record.",
+                "type": "str",
+                "default": "7dW8zGbP"
+            }
+        },
+        "domain": "Video_Images"
+    }
+]

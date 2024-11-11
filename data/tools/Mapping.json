@@ -1,0 +1,1158 @@
+[
+    {
+        "name": "get_fonts",
+        "description": "Fetch fonts for vector tiles using a specified range and font stack from the Mapilion API.",
+        "parameters": {
+            "range": {
+                "description": "The range of font unicode characters to fetch.",
+                "type": "str",
+                "default": "0-255"
+            },
+            "fontstack": {
+                "description": "The font stack to be used for the tiles.",
+                "type": "str",
+                "default": "Roboto Regular"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "fetch_by_region",
+        "description": "Fetches records by region from the Magical Taske API.",
+        "parameters": {
+            "region": {
+                "description": "The region for which to fetch records.",
+                "type": "str",
+                "default": "Central"
+            },
+            "limit": {
+                "description": "The maximum number of records to return.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "en_map_v1_z_x_y_png",
+        "description": "Download an English map tile as a PNG image from the RapidAPI offline-maptiles service.",
+        "parameters": {
+            "z": {
+                "description": "Zoom factor, between 0 and 19.",
+                "type": "int",
+                "default": "3"
+            },
+            "y": {
+                "description": "Y tile number.",
+                "type": "int",
+                "default": "3"
+            },
+            "x": {
+                "description": "X tile number.",
+                "type": "int",
+                "default": "6"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "fetch_details_of_multiple_records",
+        "description": "Fetches details of multiple records given their IDs using the Magical Taske API.",
+        "parameters": {
+            "is_id": {
+                "description": "A comma-separated string of record IDs for which to fetch details. Maximum 10 IDs allowed, no spaces between commas.",
+                "type": "str",
+                "default": "b4180336-ef07-453d-b833-807161aedf36,7cf78e19-57d2-4bce-8999-63aad8f0e70c"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "lookup_coordinates",
+        "description": "Converts US latitude and longitude coordinates into local city information by querying the Reverse Geocode Locator API.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude coordinate.",
+                "type": "int",
+                "default": "40.785091"
+            },
+            "long": {
+                "description": "The longitude coordinate.",
+                "type": "str",
+                "default": "-73.968285"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_vector_tile",
+        "description": "Fetches vector tiles based on the OpenMapTiles schema using the provided x, y, and z coordinates.",
+        "parameters": {
+            "x": {
+                "description": "The X coordinate of the tile.",
+                "type": "int",
+                "default": "0"
+            },
+            "y": {
+                "description": "The Y coordinate of the tile.",
+                "type": "int",
+                "default": "0"
+            },
+            "z": {
+                "description": "The zoom level of the tile.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "local_osm_v1_z_x_y_png",
+        "description": "Downloads an OpenStreetMap standard tile image for specified coordinates and zoom level.",
+        "parameters": {
+            "y": {
+                "description": "y tile number.",
+                "type": "int",
+                "default": "3"
+            },
+            "z": {
+                "description": "Zoom factor between 0 and 19.",
+                "type": "int",
+                "default": "3"
+            },
+            "x": {
+                "description": "x tile number.",
+                "type": "int",
+                "default": "6"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "search_zip_codes_in_mexico",
+        "description": "Performs a text search for zip codes in Mexico using the provided query string.",
+        "parameters": {
+            "q": {
+                "description": "The search query string to look up zip codes.",
+                "type": "str",
+                "default": "cerrada san mibuel"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "places_list_by_radius_nearby_search",
+        "description": "Fetches objects closest to a selected point filtered by optional parameters.",
+        "parameters": {
+            "lang": {
+                "description": "Language code (2 characters, ISO639-1). Available values include 'en' (English) and 'ru' (Russian).",
+                "type": "str",
+                "default": ""
+            },
+            "radius": {
+                "description": "Maximum distance from the selected point in meters.",
+                "type": "int",
+                "default": "500"
+            },
+            "lon": {
+                "description": "Longitude of the selected point.",
+                "type": "int",
+                "default": "38.364285"
+            },
+            "lat": {
+                "description": "Latitude of the selected point.",
+                "type": "int",
+                "default": "59.855685"
+            },
+            "src_attr": {
+                "description": "Source of the object attributes, multiple sources can be separated by commas. Defaults to None. Available values include 'osm', 'wikidata', 'snow', 'cultura.ru', 'rosnedra', 'user'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "The output format. Defaults to GeoJSON. Values can be 'json', 'geojson', or 'count'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "kinds": {
+                "description": "Object category, multiple categories can be separated by commas. Defaults to None. See object category hierarchy at 'https://dev.opentripmap.com/doc/en/'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "src_geom": {
+                "description": "Source of the object geometry. Defaults to None. Available values include 'osm', 'wikidata', 'snow', 'cultura.ru', 'rosnedra'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rate": {
+                "description": "Minimum rating of the object popularity. Defaults to None. Available values are '1', '2', '3', '1h', '2h', '3h'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Maximum number of returned objects. Defaults to None, with a maximum limit of 500.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Text string to search at the beginning of the object name (minimum 3 characters). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "routing",
+        "description": "Calculates a route based on specified waypoints and options using the Map Toolkit API.",
+        "parameters": {
+            "points": {
+                "description": "Waypoints defined as latitude and longitude pairs in the format `{lat},{lng}|{lat},{lng}...`. At least 2 points are required.",
+                "type": "str",
+                "default": "48.202596,16.369801|48.208373,16.370401"
+            },
+            "finish_instruction": {
+                "description": "Adds a finish instruction at the end of the route. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "language": {
+                "description": "Language for the given instructions in ISO 639-1 code format. Default is `en`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "voice_instructions": {
+                "description": "Enables voice instructions for text-to-speech engines. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "filename": {
+                "description": "The name of the file if the output `format` is `gpx` or `kml`. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "The format of the output. Default is `json`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "weighting": {
+                "description": "Weighting option for bike routes. Default is `networks`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "routetype": {
+                "description": "The type of route to calculate. Default is `bike`.",
+                "type": "str, optional",
+                "default": "bike"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "fetch_by_type_and_region",
+        "description": "Fetch records from the API based on the given type, limit, and region.",
+        "parameters": {
+            "type": {
+                "description": "The type of records to fetch. Refer to the README for accepted types.",
+                "type": "str",
+                "default": "Hill"
+            },
+            "limit": {
+                "description": "The maximum number of records to fetch.",
+                "type": "int",
+                "default": "5"
+            },
+            "region": {
+                "description": "The region from which to fetch records.",
+                "type": "str",
+                "default": "Eastern"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "findplacesnearby",
+        "description": "Find nearby places based on the given location, language, radius, and type.",
+        "parameters": {
+            "location": {
+                "description": "The latitude/longitude around which to retrieve places.",
+                "type": "str",
+                "default": "37.783366,-122.402325"
+            },
+            "language": {
+                "description": "The language in which to return results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "radius": {
+                "description": "The distance (in meters) within which to return results. Max = 10000 m. Defaults to 180.",
+                "type": "int, optional",
+                "default": "180"
+            },
+            "type": {
+                "description": "The type of places that are returned. Defaults to 'cafe'.",
+                "type": "str, optional",
+                "default": "cafe"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "geocodingsearch",
+        "description": "Performs a forward geocoding search using a free-form query string and optional parameters to specify query filters and output format.",
+        "parameters": {
+            "q": {
+                "description": "Free-form query string for the geocoding search.",
+                "type": "str",
+                "default": "New York City NY USA"
+            },
+            "countrycodes": {
+                "description": "Two-letter country code as defined in ISO 3166-1 alpha2 to restrict search to a specific country.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "json_callback": {
+                "description": "Name of JSON callback function for JSONP calls; use this when the format is set to JSON.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_text": {
+                "description": "Include a textual representation of the polygon geometry in the output.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "namedetails": {
+                "description": "Include detailed naming information in the output.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "viewbox": {
+                "description": "Specify a bounding box for the search area in the format 'x1,y1,x2,y2', where x is longitude and y is latitude.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "Output format of the response (e.g., JSON).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_geojson": {
+                "description": "Include GeoJSON representation of the polygon geometry in the output.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bounded": {
+                "description": "Use '1' to restrict the search area to the specified viewbox.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_svg": {
+                "description": "Include SVG representation of the polygon geometry in the output.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_kml": {
+                "description": "Include KML representation of the polygon geometry in the output.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_threshold": {
+                "description": "Simplification threshold for the polygon geometry.",
+                "type": "int, optional",
+                "default": "0.0"
+            },
+            "accept_language": {
+                "description": "Set the query and response language using two-letter language codes (e.g., 'en' or 'es') or a combination of language and region code (e.g., 'en-GB' or 'es-AR'). Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "addressdetails": {
+                "description": "Include detailed address information in the output.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "v1_reversegeocoding",
+        "description": "This function performs reverse geocoding using the API Ninjas service to obtain location information based on provided latitude and longitude coordinates.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude coordinate to be used for reverse geocoding.",
+                "type": "int",
+                "default": "47.6062"
+            },
+            "lon": {
+                "description": "The longitude coordinate to be used for reverse geocoding.",
+                "type": "int",
+                "default": "-122.3321"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_city_boundary_by_city_name",
+        "description": "Queries the boundary information for a given city name from a specified API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the city for which the boundary information is to be queried.",
+                "type": "str",
+                "default": "toronto"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "map_image_get",
+        "description": "Fetches a static map image for a specified location with given parameters such as width, height, center, and zoom level.",
+        "parameters": {
+            "width": {
+                "description": "Width of the map image. Must be between 1 and 999.",
+                "type": "int",
+                "default": "500"
+            },
+            "center": {
+                "description": "The center coordinates of the map (latitude,longitude).",
+                "type": "str",
+                "default": "35.681236,139.767125"
+            },
+            "zoom": {
+                "description": "The zoom level of the map. Must be between 6 and 19.",
+                "type": "int",
+                "default": "15"
+            },
+            "height": {
+                "description": "Height of the map image. Must be between 1 and 999.",
+                "type": "int",
+                "default": "500"
+            },
+            "datum": {
+                "description": "The geodetic system to use. Defaults to 'wgs84'. Options are:",
+                "type": "str, optional",
+                "default": "wgs84"
+            },
+            "coord_unit": {
+                "description": "The unit of latitude and longitude in the output data. Defaults to 'degree'. Options are:",
+                "type": "str, optional",
+                "default": "degree"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_style_json",
+        "description": "Retrieves the style JSON for the specified map style.",
+        "parameters": {
+            "style": {
+                "description": "The style identifier to retrieve the corresponding style JSON.",
+                "type": "str",
+                "default": "osm-bright"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "staticmaps",
+        "description": "Generates a static map image URL based on the given parameters.",
+        "parameters": {
+            "size": {
+                "description": "Size of the map. Format is usually `{width}x{height}`.",
+                "type": "str",
+                "default": "640x480"
+            },
+            "center": {
+                "description": "Center coordinates of the map. Format is `{latitude},{longitude}`.",
+                "type": "str",
+                "default": "48.20835,16.3725"
+            },
+            "zoom": {
+                "description": "Zoom level of the map.",
+                "type": "int",
+                "default": "11"
+            },
+            "bounds": {
+                "description": "Bounding box to define the map area instead of `center` and `zoom`. Format is `{north},{east},{south},{west}`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "geojson": {
+                "description": "GeoJSON geometry to include on the map. Format is `{attribute}:{value}[|{attribute}:{value} ...]`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "maptype": {
+                "description": "Type of the map, defining its appearance. Default is 'toursprung-terrain'.",
+                "type": "str, optional",
+                "default": "toursprung-terrain"
+            },
+            "path": {
+                "description": "Path to include on the map. Format is `{attribute}:{value}[|{attribute}:{value} ...]`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "delta_zoom": {
+                "description": "Zoom level adjustment if zoom is calculated automatically.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "kml": {
+                "description": "KML data to include on the map. Format is `{kml}?{attribute}={value}[&{attribute}={value} ...]`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "File format of the map image. Default is 'png'.",
+                "type": "str, optional",
+                "default": "png"
+            },
+            "marker": {
+                "description": "Marker to include on the map. Format is `{attribute}:{value}[|{attribute}:{value} ...]`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "factor": {
+                "description": "Image scaling factor.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_distance_between_two_h3_indexes",
+        "description": "Queries the distance between two H3 indexes using the VanitySoft UK Boundaries API.",
+        "parameters": {
+            "h3index1": {
+                "description": "The first H3 index for the distance query.",
+                "type": "str",
+                "default": "8d2baad9c6f073f"
+            },
+            "h3index2": {
+                "description": "The second H3 index for the distance query.",
+                "type": "str",
+                "default": "8d09a6b6ed2d37f"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "getstandardmaptile",
+        "description": "Fetch a standard map tile with labels in the local language from OpenStreetMap.",
+        "parameters": {
+            "y": {
+                "description": "Y-number of the tile.",
+                "type": "int",
+                "default": "3"
+            },
+            "x": {
+                "description": "X-number of the tile.",
+                "type": "int",
+                "default": "6"
+            },
+            "z": {
+                "description": "Zoom level (from 0 to 19).",
+                "type": "int",
+                "default": "3"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_raster_tile",
+        "description": "Retrieves a raster tile as a PNG image from a specified map style and coordinates. The tile can be used in mapping libraries like Leaflet.",
+        "parameters": {
+            "x": {
+                "description": "The tile's x-coordinate.",
+                "type": "int",
+                "default": "0"
+            },
+            "y": {
+                "description": "The tile's y-coordinate.",
+                "type": "int",
+                "default": "0"
+            },
+            "style_name": {
+                "description": "The name of the map style. Options include `kurviger-liberty` and `osm-bright`.",
+                "type": "str",
+                "default": "kurviger-liberty"
+            },
+            "z": {
+                "description": "The zoom level of the tile.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "mapimage",
+        "description": "Retrieves a map image with specified parameters such as coordinates, scale, size, and various display options.",
+        "parameters": {
+            "lonlat": {
+                "description": "The latitude and longitude in the format \"longitude,latitude\".",
+                "type": "str",
+                "default": "139.767231,35.681196"
+            },
+            "scale": {
+                "description": "The map scale. Valid range is from 6 to 21.",
+                "type": "int",
+                "default": "16"
+            },
+            "size": {
+                "description": "The image size in the format \"width,height\" in pixels.",
+                "type": "str",
+                "default": "320,240"
+            },
+            "icon": {
+                "description": "Icon settings in the format \"[icon_type,longitude,latitude]|...\". Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "centericon": {
+                "description": "Whether to display the center icon (on/off). Defaults to None (\"off\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "logo": {
+                "description": "Whether to display the brand logo (on/off). Defaults to None (\"off\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "landmarkicon": {
+                "description": "Whether to display landmark icons (on/off). Defaults to None (\"off\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "The output image format, either \"image/png\" or \"image/jpeg\". Defaults to \"image/png\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "resolution": {
+                "description": "The image resolution. \"1\" for standard size, \"2\" for double size. Defaults to \"1\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rotationangle": {
+                "description": "The angle to rotate the map. Valid range is from 0 to 359 degrees. Defaults to 0.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "routeresultid": {
+                "description": "The route result ID to display the route on the map. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "routeicon": {
+                "description": "Route icon settings, \"0\" for none, \"1\" for standard icons. Defaults to \"1\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "scaler": {
+                "description": "Whether to display the scale (on/off). Defaults to \"off\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bldgname": {
+                "description": "Whether to display building names (on/off). Defaults to \"off\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "contour": {
+                "description": "Whether to display contour lines (on/off). Defaults to \"on\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "target": {
+                "description": "The map display content. \"1\" for background, \"2\" for notes, \"3\" for both. Defaults to \"3\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "mapstyle": {
+                "description": "Map design parameter in the format \"[design]_[note_size]\". Defaults to \"std_pc\".",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_city_boundary_by_name",
+        "description": "Queries the city boundary information by the given city name using the Boundaries API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the city for which to query boundary information.",
+                "type": "str",
+                "default": "Karlsruhe"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "v1_geocoding",
+        "description": "Fetches geolocation information of a specified city using the API Ninjas Geocoding API.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city to geocode.",
+                "type": "str",
+                "default": "Seattle"
+            },
+            "country": {
+                "description": "The country name, 2-letter ISO country code, or 3-letter ISO country code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "state": {
+                "description": "The US state (for United States cities only).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_by_fsa_code",
+        "description": "Fetches geographical boundary information for a given Canadian Forward Sortation Area (FSA) code using the VanitySoft API.",
+        "parameters": {
+            "postal_fsa": {
+                "description": "A Canadian Forward Sortation Area (FSA) code, e.g., \"T6H\" or \"A0A\".",
+                "type": "str",
+                "default": "T6H"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "planet_vector_tiles",
+        "description": "Retrieves global planet vector tiles in Protocolbuffer Binary Format (PBF) from the specified map service.",
+        "parameters": {
+            "y": {
+                "description": "The y coordinate (tile row) of the map tile.",
+                "type": "str",
+                "default": "1"
+            },
+            "x": {
+                "description": "The x coordinate (tile column) of the map tile.",
+                "type": "str",
+                "default": "1"
+            },
+            "z": {
+                "description": "The zoom level of the map tile.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "map",
+        "description": "Fetches a map image in WMTS format based on the given parameters.",
+        "parameters": {
+            "tilerow": {
+                "description": "The WMTS tile row number (latitude direction).",
+                "type": "int",
+                "default": "25806"
+            },
+            "tilematrix": {
+                "description": "The tile matrix, specified in the format `[EPSG code]:[Scale value]`.",
+                "type": "str",
+                "default": "EPSG:3857:16"
+            },
+            "tilecol": {
+                "description": "The WMTS tile column number (longitude direction).",
+                "type": "int",
+                "default": "58211"
+            },
+            "rotationangle": {
+                "description": "Angle to rotate the map image. Valid range is 0 to 359, default is 0.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "mapstyle": {
+                "description": "Design of the map. Format is `[design]_[annotation size]`, default is `std_pc`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "landmarkicon": {
+                "description": "Display of landmark icons. `on` for display, `off` for hide, default is `off`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "resolution": {
+                "description": "Resolution of the map image. Values can be `1`, `2`, or `4`, default is `1`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "contour": {
+                "description": "Display of contour lines. `on` for display, `off` for hide, default is `on`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bldgname": {
+                "description": "Display of building names. `on` for display, `off` for hide, default is `off`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "logo": {
+                "description": "Display of brand logos. `on` for display, `off` for hide, default is `off`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "target": {
+                "description": "Display contents of the map. Values can be `1` for background only, `2` for annotations only, `3` for both, default is `3`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "Output image format. Values can be `image/png` or `image/jpeg`, default is `image/png`.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_postal_code_boundary_by_location",
+        "description": "Queries the boundary of a postal code based on the given geographic coordinates.",
+        "parameters": {
+            "longitude": {
+                "description": "The longitudinal coordinate of the location.",
+                "type": "int",
+                "default": "11.5835"
+            },
+            "latitude": {
+                "description": "The latitudinal coordinate of the location.",
+                "type": "int",
+                "default": "48.1633"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_ldu_boundary_by_h3index",
+        "description": "Queries for a Local Delivery Unit (LDU) boundary by its H3 index.",
+        "parameters": {
+            "h3ndex": {
+                "description": "The H3 index used to query the LDU boundary.",
+                "type": "int",
+                "default": "635775751926485631"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "fetch_by_type",
+        "description": "Fetches records from the RapidAPI endpoint based on the specified type and limit.",
+        "parameters": {
+            "type": {
+                "description": "The type of records to fetch. Refer to the API documentation for accepted types.",
+                "type": "str",
+                "default": "Forest"
+            },
+            "limit": {
+                "description": "The number of records to fetch.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_hexagon_by_h3index",
+        "description": "Queries a boundary for a given H3 index from the VanitySoft UK Boundaries API.",
+        "parameters": {
+            "h3index": {
+                "description": "The H3 index identifier for the hexagon to query.",
+                "type": "int",
+                "default": "635177333670728575"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_zip_code_in_mexico",
+        "description": "Fetches and returns data for a given zip code in Mexico using the Toolbench RapidAPI.",
+        "parameters": {
+            "zipcode": {
+                "description": "The Mexican zip code to retrieve data for.",
+                "type": "str",
+                "default": "32390"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "getmaptilewithspanishlabels",
+        "description": "Downloads a raster map tile with Spanish labels from MapTiles API.",
+        "parameters": {
+            "z": {
+                "description": "Zoom level, ranging from 0 to 19.",
+                "type": "int",
+                "default": "3"
+            },
+            "x": {
+                "description": "X-coordinate of the tile.",
+                "type": "int",
+                "default": "4"
+            },
+            "y": {
+                "description": "Y-coordinate of the tile.",
+                "type": "int",
+                "default": "2"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "place_properties",
+        "description": "Retrieves detailed information about a place using its unique identifier (xid) via the OpenTripMap API.",
+        "parameters": {
+            "xid": {
+                "description": "Unique identifier of the place in OpenTripMap.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "Two-letter language code (ISO 639-1), e.g., 'en' for English, 'ru' for Russian.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_hillshading_tile",
+        "description": "Fetches a hillshading raster tile as a PNG.",
+        "parameters": {
+            "x": {
+                "description": "The x coordinate of the tile.",
+                "type": "int",
+                "default": "756"
+            },
+            "version": {
+                "description": "The version of the hillshading tile, either 'v1' or 'v2'.",
+                "type": "str",
+                "default": "v2"
+            },
+            "z": {
+                "description": "The zoom level of the tile.",
+                "type": "int",
+                "default": "11"
+            },
+            "y": {
+                "description": "The y coordinate of the tile.",
+                "type": "int",
+                "default": "805"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_city_names_by_state",
+        "description": "This function queries a list of city names for a given state from the RapidAPI \"Boundaries\" service.",
+        "parameters": {
+            "state": {
+                "description": "The name of the state to query for city names.",
+                "type": "str",
+                "default": "berlin"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "get_tile_json",
+        "description": "Returns the tile JSON for the given style type from the Mapilion Vector and Raster Map Tiles API. ",
+        "parameters": {
+            "type": {
+                "description": "Style type for the tile JSON to be retrieved.",
+                "type": "str",
+                "default": "v3"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "search_zip_codes",
+        "description": "Searches for valid Mexican zip codes that start with the given digits using the Toolbench RapidAPI.",
+        "parameters": {
+            "codigo_postal": {
+                "description": "Starting digits of the postal code to search for.",
+                "type": "str",
+                "default": "646"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "reversegeocoding",
+        "description": "Perform reverse geocoding to find an address or place by latitude and longitude.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the location.",
+                "type": "int",
+                "default": "-87.6244212"
+            },
+            "lat": {
+                "description": "Latitude of the location.",
+                "type": "int",
+                "default": "41.8755616"
+            },
+            "json_callback": {
+                "description": "JSON callback function name for cross-domain requests.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_geojson": {
+                "description": "Include a GeoJSON polygon for the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of returned results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "accept_language": {
+                "description": "Response language in two-letter codes (e.g., 'en', 'es'). Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "polygon_kml": {
+                "description": "Include KML polygon in the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "zoom": {
+                "description": "Level of detail required for the address details.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_svg": {
+                "description": "Include SVG polygon in the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "addressdetails": {
+                "description": "Include full address breakdown in the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "namedetails": {
+                "description": "Include a list of alternative names in the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_threshold": {
+                "description": "Simplify the returned polygons to a threshold level.",
+                "type": "int, optional",
+                "default": "0.0"
+            },
+            "format": {
+                "description": "Format of the response (e.g., 'json', 'xml').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "polygon_text": {
+                "description": "Include a WKT polygon in the results.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "query_for_ldu_boundary",
+        "description": "Query the boundaries for a given LDU (Local Delivery Unit) postal code in Canada using the VanitySoft Canada Postal Boundaries API.",
+        "parameters": {
+            "postal_ldu": {
+                "description": "The LDU postal code to query.",
+                "type": "str",
+                "default": "L0R 1B7"
+            },
+            "resolution": {
+                "description": "The resolution of the boundary data. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "getmaptilewithenglishlabels",
+        "description": "Retrieves a raster map tile with English labels from the MapTiles API.",
+        "parameters": {
+            "x": {
+                "description": "X-coordinate of the tile.",
+                "type": "int",
+                "default": "6"
+            },
+            "z": {
+                "description": "Zoom level (ranging from 0 to 19).",
+                "type": "int",
+                "default": "3"
+            },
+            "y": {
+                "description": "Y-coordinate of the tile.",
+                "type": "int",
+                "default": "3"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "getmaptilewithfrenchlabels",
+        "description": "Fetches a raster map tile with French labels from the RapidAPI Map Tiles service.",
+        "parameters": {
+            "x": {
+                "description": "The x-coordinate of the map tile.",
+                "type": "int",
+                "default": "8"
+            },
+            "y": {
+                "description": "The y-coordinate of the map tile.",
+                "type": "int",
+                "default": "5"
+            },
+            "z": {
+                "description": "The zoom level of the map tile, ranging from 0 to 19.",
+                "type": "int",
+                "default": "4"
+            }
+        },
+        "domain": "Mapping"
+    },
+    {
+        "name": "nearby",
+        "description": "Retrieve nearby places sorted by distance from the given origin coordinates in ascending order.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the origin point.",
+                "type": "int",
+                "default": "-73.987719"
+            },
+            "lat": {
+                "description": "Latitude of the origin point.",
+                "type": "int",
+                "default": "40.749779"
+            },
+            "categories": {
+                "description": "Categories of places to search for. Default is 'catering.cafe'.",
+                "type": "str",
+                "default": "catering.cafe"
+            },
+            "radius": {
+                "description": "Search radius in meters. Default is 500, maximum is 50000.",
+                "type": "int",
+                "default": "500"
+            }
+        },
+        "domain": "Mapping"
+    }
+]

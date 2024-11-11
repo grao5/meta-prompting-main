@@ -1,0 +1,1186 @@
+[
+    {
+        "name": "get_data_entity_uid",
+        "description": "Fetches an entity record from the OFAC service using a unique identifier (UID).",
+        "parameters": {
+            "uid": {
+                "description": "The unique identifier of the entity to retrieve.",
+                "type": "int",
+                "default": "7178"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "check_1_param",
+        "description": "This function checks the validity of a given VAT number using the RapidAPI service.",
+        "parameters": {
+            "vat": {
+                "description": "The VAT number to be checked, including the country code.",
+                "type": "str",
+                "default": "SK2121316722"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "getlistings",
+        "description": "Retrieve a list of condominiums and townhouses in specified cities of Southwest Florida and the East Coast.",
+        "parameters": {
+            "sort": {
+                "description": "Defines how the listings should be sorted. Supported values are 'RELEVANCE' (best match), 'NEWEST' (newest first), 'PRICE_LOW' (cheapest first), and 'PRICE_HIGH' (most expensive first). Default is 'RELEVANCE'.",
+                "type": "str",
+                "default": "RELEVANCE"
+            },
+            "offset": {
+                "description": "For pagination. Specifies the starting point in the collection of listings. For example, to get the first set of items, set offset to 0. Default is 0.",
+                "type": "int",
+                "default": "0"
+            },
+            "price_max": {
+                "description": "The maximum price in US dollars for the condos and townhouses. Default is 250,000.",
+                "type": "int",
+                "default": "250000"
+            },
+            "city": {
+                "description": "The name of the city to search within. Supported cities include Cape Coral, Fort Myers, West Palm Beach, Lake Worth, Lantana, Boynton Beach, Delray Beach, Boca Raton, Pompano Beach, Fort Lauderdale, Naples, Tampa, and Saint Petersburg. Default is 'Cape Coral'.",
+                "type": "str",
+                "default": "Cape Coral"
+            },
+            "limit": {
+                "description": "The maximum number of items to return. Default is 50.",
+                "type": "int",
+                "default": "50"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "properties_get_broadband",
+        "description": "Fetch broadband information for a given property listing.",
+        "parameters": {
+            "listing_id": {
+                "description": "The ID of the property listing for which broadband information is to be retrieved. This value is typically obtained from the `/properties/list` endpoint.",
+                "type": "int",
+                "default": "56354192"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "getcompanies",
+        "description": "Fetches AI companies from a given page through the RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve companies from.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_all_companies_paginated",
+        "description": "Fetches a paginated list of all companies from the CAC database using the provided API key.",
+        "parameters": {
+            "page": {
+                "description": "The page number to fetch.",
+                "type": "int",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The number of companies to retrieve per page.",
+                "type": "int",
+                "default": "10"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_events",
+        "description": "Fetch the latest events for a specific company identified by `is_id`.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the company.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            },
+            "category": {
+                "description": "The category of events to filter by (default is 'MANAGEMENT_AND_TEAM,FINANCES_AND_CAPITAL,NEWS_AND_EVENTS').",
+                "type": "str, optional",
+                "default": "MANAGEMENT_AND_TEAM,FINANCES_AND_CAPITAL,NEWS_AND_EVENTS"
+            },
+            "since": {
+                "description": "The start date for fetching events in YYYY-MM-DD format (default is '2017-01-01').",
+                "type": "str, optional",
+                "default": "2017-01-01"
+            },
+            "size": {
+                "description": "The number of events to retrieve (default is 100).",
+                "type": "int, optional",
+                "default": "100"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "agents_get_profile",
+        "description": "Fetches the profile information for a real estate agent using their NRDS ID and advertiser ID.",
+        "parameters": {
+            "nrds_id": {
+                "description": "The NRDS ID of the agent, typically returned from the /agents/list endpoint.",
+                "type": "str",
+                "default": "150577018"
+            },
+            "advertiser_id": {
+                "description": "The advertiser ID of the agent, typically returned from the /agents/list endpoint.",
+                "type": "int",
+                "default": "1633379"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "geocoding",
+        "description": "Performs geocoding to convert an address into a standardized, normalized address and rooftop latitude/longitude coordinates using the RapidAPI service.",
+        "parameters": {
+            "address": {
+                "description": "The physical address to be geocoded.",
+                "type": "str",
+                "default": "1600 pennsylvania ave washington dc"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_financials",
+        "description": "Retrieves the financial key figures (balance sheet total, revenue, profit, number of employees) for a company with the given identifier.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the company for which financial data is to be retrieved.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "free_ofac_api",
+        "description": "This function performs an OFAC (Office of Foreign Assets Control) scan request using the Free OFAC Scan API and returns a response indicating whether a target is found.",
+        "parameters": {
+            "street_address": {
+                "description": "Street address of the individual or business entity. Defaults to '79 ul. Sadovnicheskaya'.",
+                "type": "str",
+                "default": "79 ul. Sadovnicheskaya"
+            },
+            "business_name": {
+                "description": "Name of the business entity. Defaults to 'SME Bank'.",
+                "type": "str",
+                "default": "SME Bank"
+            },
+            "first_name": {
+                "description": "First name(s) of the individual. Defaults to 'Gener'.",
+                "type": "str",
+                "default": "Gener"
+            },
+            "last_name": {
+                "description": "Last name(s) of the individual. Defaults to 'Garcia Molina'.",
+                "type": "str",
+                "default": "Garcia Molina"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "gstin",
+        "description": "Retrieve details about a GSTIN (GST number), including the latest return filing list, GST compliance classification, and HSN/SAC details.",
+        "parameters": {
+            "gstin": {
+                "description": "The GSTIN (GST number) to retrieve details for.",
+                "type": "str",
+                "default": "27AAJCM9929L1ZM"
+            },
+            "content_type": {
+                "description": "The content type for the request. Defaults to 'application/json'.",
+                "type": "str, optional",
+                "default": "application/json"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_random_question",
+        "description": "Fetches a random question from the API, with an optional parameter to specify the type of the challenge.",
+        "parameters": {
+            "type": {
+                "description": "The type of question to fetch. Options include 'funny' and 'dirty'. Defaults to 'dirty'.",
+                "type": "str",
+                "default": "dirty"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "cnpj",
+        "description": "Fetches company information based on the provided CNPJ (Brazilian company identifier).",
+        "parameters": {
+            "cnpj": {
+                "description": "The CNPJ number of the company to search for.",
+                "type": "str",
+                "default": "22543331000100"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "v1_ownersearch",
+        "description": "Performs a search on the owner name or postcode and returns details about the trademarks found for that owner. Duplicate owner results can be returned by this endpoint, especially when an owner had an address change.",
+        "parameters": {
+            "search_keyword": {
+                "description": "The search keyword (e.g., 'ferr' will return results for 'ferrari'). Defaults to 'netflix'. Use literal 'null' if you don't want to use this parameter.",
+                "type": "str",
+                "default": "netflix"
+            },
+            "postcode": {
+                "description": "The postcode to filter the search results (e.g., '95066'). Use literal 'null' if you don't want to use this parameter. Note that attorneys might omit postcodes from filings, so those results cannot be returned as they don't have postcode attached as metadata.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "list_users",
+        "description": "Fetches and returns a list of users associated with a specified account identifier from the RapidAPI service.",
+        "parameters": {
+            "aid": {
+                "description": "The account identifier for which the list of users is being fetched.",
+                "type": "str",
+                "default": ""
+            },
+            "page": {
+                "description": "The page offset for paginated results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "search_by_company_name",
+        "description": "Search for a company in the Uganda company register by its name.",
+        "parameters": {
+            "name": {
+                "description": "The name of the company to search for.",
+                "type": "str",
+                "default": "Uganda Airlines"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "categorize_job_title",
+        "description": "Categorizes a given job title using the Toolbench RapidAPI job title categorization service.",
+        "parameters": {
+            "title": {
+                "description": "The job title to be categorized.",
+                "type": "str",
+                "default": "Head of Finance"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "double_name_medium",
+        "description": "Generates a medium double name based on the provided query string.",
+        "parameters": {
+            "query": {
+                "description": "The query string for generating the double name. Maximum length is 50 characters.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "business_slogan",
+        "description": "Generates a business slogan for the given business name using the Toolbench RapidAPI.",
+        "parameters": {
+            "name": {
+                "description": "The name of the business for which to generate the slogan.",
+                "type": "str",
+                "default": "MyBusiness"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_device_asset_by_identifier",
+        "description": "Fetches device asset information using a specified identifier from an external system via RapidAPI.",
+        "parameters": {
+            "identifier": {
+                "description": "The unique identifier for the device asset.",
+                "type": "str",
+                "default": "71491234-A"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_a_random_quote_tagged_by_a_specific_tag",
+        "description": "Fetch a random quote tagged with a specific tag from the Self-Help Quotes API.",
+        "parameters": {
+            "tag": {
+                "description": "The specific tag to filter quotes.",
+                "type": "str",
+                "default": "money"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "validate_a_token",
+        "description": "Validates a token or a link ID to check if it is valid.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier for either a token or a link.",
+                "type": "str",
+                "default": ""
+            },
+            "t": {
+                "description": "The actual token or link to validate.",
+                "type": "str",
+                "default": "link"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "basic_search",
+        "description": "Performs a basic search for movie news articles using the `/news/basic/search` endpoint.",
+        "parameters": {
+            "q": {
+                "description": "The query term for the search, typically a keyword related to movie news.",
+                "type": "str",
+                "default": "superman"
+            },
+            "limit": {
+                "description": "The maximum number of results to return. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "offset": {
+                "description": "The number of results to skip before returning results. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "search_translations",
+        "description": "Fetch a list of translations from the translation memory ranked by quality and similarity.",
+        "parameters": {
+            "langpair": {
+                "description": "The language pair in the format `source|target`, using two ISO-639 language codes.",
+                "type": "str",
+                "default": "en|it"
+            },
+            "q": {
+                "description": "The text you wish to translate.",
+                "type": "str",
+                "default": "Hello World!"
+            },
+            "onlyprivate": {
+                "description": "If set to '1', only private matches will be returned. Defaults to '0' (disabled).",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "mt": {
+                "description": "Enables machine translation results. '1' (enabled) is the default, '0' disables it.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "de": {
+                "description": "A valid email address, recommended for high volume usage or use with CAT tools. Defaults to 'a@b.c'.",
+                "type": "str, optional",
+                "default": "a@b.c"
+            },
+            "key": {
+                "description": "API key to access private memories and customize API limits.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "house_prices_get_market_activity",
+        "description": "Fetches the market activity for a specified area using the Zoopla API.",
+        "parameters": {
+            "area": {
+                "description": "The value of suggestions/value JSON object returned from the .../auto-complete endpoint. This value must be used exactly as returned by the endpoint.",
+                "type": "str",
+                "default": "Greenwich Close, Crawley RH11"
+            },
+            "identifier": {
+                "description": "The value of suggestions/identifier JSON object returned from the .../auto-complete endpoint. This value must also be used exactly as returned by the endpoint. Defaults to 'west-sussex/crawley/greenwich-close'.",
+                "type": "str, optional",
+                "default": "west-sussex/crawley/greenwich-close"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "extract_info",
+        "description": "Retrieve detailed information about a book using its ID from the Project Gutenberg API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the book to retrieve information for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "og",
+        "description": "Fetches all the OpenGraph and Meta tags from a given website URL using the provided API key.",
+        "parameters": {
+            "url": {
+                "description": "The website URL to fetch the OpenGraph and Meta tags from. Defaults to 'https://protomol.explorarc.com/'.",
+                "type": "str",
+                "default": "https://protomol.explorarc.com/"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "house_prices_estimate",
+        "description": "Estimates house prices based on given criteria and returns a list of estimated prices.",
+        "parameters": {
+            "area": {
+                "description": "The area for which to estimate house prices, as defined by the auto-complete API.",
+                "type": "str",
+                "default": "Greenwich Close, Crawley RH11"
+            },
+            "property_type": {
+                "description": "The type of property. Options are 'detached', 'flat', 'terraced', 'semi_detached'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page_number": {
+                "description": "The page index for pagination. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "order_by": {
+                "description": "The attribute by which to order the results. Options are 'price_paid', 'last_sold', 'address', 'estimated_value'. Default is 'address'.",
+                "type": "str, optional",
+                "default": "address"
+            },
+            "page_size": {
+                "description": "The number of items per response. Maximum is 40. Default is 40.",
+                "type": "int, optional",
+                "default": "40"
+            },
+            "ordering": {
+                "description": "The order direction of the results. Options are 'ascending', 'descending'. Default is 'descending'.",
+                "type": "str, optional",
+                "default": "descending"
+            },
+            "identifier": {
+                "description": "A specific identifier from the auto-complete API to refine the search.",
+                "type": "str, optional",
+                "default": "west-sussex/crawley/greenwich-close"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "house_prices_get_points_of_interest",
+        "description": "Fetches the nearest points of interest for a given property using the Zoopla API.",
+        "parameters": {
+            "property_id": {
+                "description": "The ID of the property for which to retrieve points of interest. This is usually obtained from the `/house-prices/estimate` endpoint.",
+                "type": "int",
+                "default": "27175510"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "getwebsite",
+        "description": "Fetch the website URL for a given company name using RapidAPI.",
+        "parameters": {
+            "name": {
+                "description": "The company name for which to retrieve the website URL.",
+                "type": "str",
+                "default": "github"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "schools_list",
+        "description": "Fetches a list of schools around a specified geographical location.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude of the geographical location.",
+                "type": "int",
+                "default": "-37.79870933"
+            },
+            "lon": {
+                "description": "The longitude of the geographical location.",
+                "type": "str",
+                "default": "144.95324086"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "business_delta",
+        "description": "Calculates the number of business days between two given dates using the DaysAPI.",
+        "parameters": {
+            "second_date": {
+                "description": "The second date in the range. Defaults to '2021-09-16'.",
+                "type": "str, optional",
+                "default": "2021-09-16"
+            },
+            "first_date": {
+                "description": "The first date in the range. Defaults to '2021-09-08'.",
+                "type": "str, optional",
+                "default": "2021-09-08"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "categorize_website",
+        "description": "Fetches and returns the top categories for a given website using the Website Categorization API.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the website to be categorized.",
+                "type": "str",
+                "default": "vercel.com"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "ev",
+        "description": "Fetch data from the EV API with optional pagination support by specifying the page number.",
+        "parameters": {
+            "page": {
+                "description": "The page number for pagination, default is 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "email_extractor",
+        "description": "Extracts emails from the provided URL using the RapidAPI email scraper service.",
+        "parameters": {
+            "url": {
+                "description": "The URL from which to extract emails.",
+                "type": "str",
+                "default": "https://en.wikipedia.org/wiki/Email"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "item_by_id",
+        "description": "Fetch an item from the Hacker News API by its unique ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the item to retrieve.",
+                "type": "str",
+                "default": "10000"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "properties_get_running_costs",
+        "description": "Fetch the running costs associated with a given property listing from Zoopla API.",
+        "parameters": {
+            "listing_id": {
+                "description": "The ID of the property listing returned from the /properties/list endpoint.",
+                "type": "int",
+                "default": "56354192"
+            },
+            "category": {
+                "description": "The category of the property. Either 'residential' or 'commercial'. Default is 'residential'.",
+                "type": "str, optional",
+                "default": "residential"
+            },
+            "section": {
+                "description": "The section of the property. Either 'for-sale' or 'to-rent'. Default is 'to-rent'.",
+                "type": "str, optional",
+                "default": "to-rent"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_field_and_field_invite_id",
+        "description": "Fetches the field and field invite IDs for a given document from the SignNow API.",
+        "parameters": {
+            "document_id": {
+                "description": "The ID of the document for which to retrieve field and field invite IDs.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_jobs",
+        "description": "Retrieves the latest job postings for a given company identifier since a specified timestamp.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the company.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            },
+            "since": {
+                "description": "A timestamp to filter job postings. Defaults to '2017-01-01'.",
+                "type": "str, optional",
+                "default": "2017-01-01"
+            },
+            "size": {
+                "description": "The maximum number of job postings to return. Defaults to 100.",
+                "type": "int, optional",
+                "default": "100"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_financials_exists",
+        "description": "Checks if financial key figures for a company with the given identifier are available and returns the list of years for which these figures are available.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the company to check for financial data.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "city_data",
+        "description": "Fetches a list of cities using the Toolbench RapidAPI.",
+        "parameters": {
+            "count": {
+                "description": "The number of cities to retrieve. Defaults to 10. Maximum value is 1000.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "searchcnit",
+        "description": "Fetches information related to a French vehicle identification number (CNIT) using the specified license plate and function.",
+        "parameters": {
+            "plate": {
+                "description": "The vehicle license plate number to search for. Defaults to '021A13'.",
+                "type": "str",
+                "default": "021A13"
+            },
+            "function": {
+                "description": "The specific API function to call. Defaults to 'getktypefornumplatefrancemineplate'.",
+                "type": "str",
+                "default": "getktypefornumplatefrancemineplate"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "view_item",
+        "description": "Fetches an image and description of a catalog item based on provided credentials and identifiers.",
+        "parameters": {
+            "creds_datetime": {
+                "description": "UTC iso8601 formatted datetime of the credentials.",
+                "type": "str",
+                "default": ""
+            },
+            "creds_uuid": {
+                "description": "GUID representing the unique user identifier.",
+                "type": "str",
+                "default": ""
+            },
+            "creds_checksum": {
+                "description": "Checksum of the credentials for validation.",
+                "type": "str",
+                "default": ""
+            },
+            "socket_id": {
+                "description": "Socket in which the item is located.",
+                "type": "str",
+                "default": ""
+            },
+            "catalog_item_id": {
+                "description": "Identifier of the catalog item to fetch details for.",
+                "type": "str",
+                "default": ""
+            },
+            "format": {
+                "description": "Format of the request, can be either 'rest' or 'restx'.",
+                "type": "str",
+                "default": "rest"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "temp_upload_urls",
+        "description": "Generates temporary upload URLs for a given video on a specific account using the provided source name.",
+        "parameters": {
+            "source_name": {
+                "description": "The name of the source.",
+                "type": "str",
+                "default": ""
+            },
+            "video_id": {
+                "description": "The unique identifier for the video.",
+                "type": "str",
+                "default": ""
+            },
+            "account_id": {
+                "description": "The unique identifier for the account.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_role_ids",
+        "description": "Retrieves details for a specific document from the signNow API.",
+        "parameters": {
+            "document_id": {
+                "description": "The unique identifier for the document.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "read_a_link_or_token_by_its_id",
+        "description": "Fetches the content of a link or token by its ID using the Token2Go API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the link or token to be fetched.",
+                "type": "str",
+                "default": ""
+            },
+            "t": {
+                "description": "The type of content to fetch (either 'link' or 'token').",
+                "type": "str",
+                "default": "link"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "list_target_languages",
+        "description": "Retrieves a paginated list of target languages from the API.",
+        "parameters": {
+            "page": {
+                "description": "Return search results starting at a given page. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "per_page": {
+                "description": "Number of entries to be returned per page. Only values between 1 and 100 (inclusive) are allowed. Defaults to 100.",
+                "type": "int, optional",
+                "default": "100"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "format_number",
+        "description": "Formats a given phone number using the Phone Validator API and returns the standardized format of the phone number.",
+        "parameters": {
+            "phone": {
+                "description": "The phone number to be formatted.",
+                "type": "int",
+                "default": "34913353535"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "businessplan",
+        "description": "Generates a business plan for the given idea using the Business Starter API.",
+        "parameters": {
+            "idea": {
+                "description": "The business idea for which the plan will be generated.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_data",
+        "description": "Fetches the basic information of a company using its identifier from the German Company Data API.",
+        "parameters": {
+            "is_id": {
+                "description": "The Implisense identifier of the company.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_domaine",
+        "description": "Retrieves the details of a domain using an API, specific to domains registered in New Caledonia.",
+        "parameters": {
+            "ext": {
+                "description": "The domain extension, which can be one of the following:",
+                "type": "str",
+                "default": "NC"
+            },
+            "nom": {
+                "description": "The domain name to look up.",
+                "type": "str",
+                "default": "1012"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "fetch_email_of_a_person",
+        "description": "Fetch the email address of a person based on their first name, last name, and domain using the Email Finder API.",
+        "parameters": {
+            "first_name": {
+                "description": "The first name of the person whose email is being fetched.",
+                "type": "str",
+                "default": "John"
+            },
+            "domain": {
+                "description": "The domain associated with the email address.",
+                "type": "str",
+                "default": "google.com"
+            },
+            "last_name": {
+                "description": "The last name of the person whose email is being fetched.",
+                "type": "str",
+                "default": "Doe"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_company_domain",
+        "description": "Retrieve the domain associated with a given company name using the Toolbench RapidAPI.",
+        "parameters": {
+            "company_name": {
+                "description": "The name of the company whose domain is to be retrieved.",
+                "type": "str",
+                "default": "vercel"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "levels",
+        "description": "Fetches a list of levels from the Jet Set Radio API with options for sorting, limiting, and ordering the results.",
+        "parameters": {
+            "sortby": {
+                "description": "The field by which to sort the levels. Example values include 'name' and 'stats'. Default is 'name'.",
+                "type": "str",
+                "default": "name"
+            },
+            "limit": {
+                "description": "The maximum number of levels to return. Default is '5'.",
+                "type": "str",
+                "default": "5"
+            },
+            "orderby": {
+                "description": "The order in which to sort the results. Possible values are 'asc' for ascending and 'desc' for descending. Default is 'asc'.",
+                "type": "str",
+                "default": "asc"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "timeline",
+        "description": "Fetches the 100 most recent articles and their keywords using the Papercliff RapidAPI.",
+        "parameters": {
+            "is_from": {
+                "description": "Narrows down the results to articles published after the provided date-time in UTC. The format should be `yyyy-MM-dd'T'HH:mm`. Example value: `2022-09-18T13:45`. Date-times older than a week do not affect the result.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "terms": {
+                "description": "Narrows down the results to articles that contain all the provided keywords. The terms should consist of one to three words separated by a dash. Example value: `election-campaign`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Omits a number of articles from the result.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "to": {
+                "description": "Narrows down the results to articles published before the provided date-time in UTC. The format should be `yyyy-MM-dd'T'HH:mm`. Example value: `2022-09-18T15:30`. Date-times of the future do not affect the result.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_price_info_for_word_count",
+        "description": "Returns price information for translating a given number of words between specified languages and topic using the TextKing API.",
+        "parameters": {
+            "words": {
+                "description": "The number of words to translate.",
+                "type": "int",
+                "default": "3141"
+            },
+            "source_language": {
+                "description": "ISO 639 language code of the source language.",
+                "type": "str",
+                "default": "de"
+            },
+            "target_language": {
+                "description": "ISO 639 language code of the target language.",
+                "type": "str",
+                "default": "en"
+            },
+            "topic": {
+                "description": "A topic UUID for the translation context.",
+                "type": "str",
+                "default": "8576549a-097f-45b3-8c59-fb3d6a03147d"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "zipcode",
+        "description": "Fetches location information based on a given ZIP code using the ToolBench RapidAPI.",
+        "parameters": {
+            "zipcode": {
+                "description": "The ZIP code for which to fetch location information.",
+                "type": "str",
+                "default": "95124"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "companies_id_people",
+        "description": "Fetches and returns information about people associated with the company with the given identifier from the German company database using RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the company whose associated people's information is to be retrieved.",
+                "type": "str",
+                "default": "DEVFCLQFW054"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "house_prices_get_sales_history",
+        "description": "Retrieve the sales history for a given property using the Zoopla API.",
+        "parameters": {
+            "property_id": {
+                "description": "The identifier for the property for which to retrieve the sales history.",
+                "type": "int",
+                "default": "27175510"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "search_books",
+        "description": "Search for books on Project Gutenberg using a given search term and return the search results as JSON or text.",
+        "parameters": {
+            "term": {
+                "description": "The search term to use for finding books.",
+                "type": "str",
+                "default": "shakespeare"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_device_asset_by_identifier_copy",
+        "description": "Fetches device asset information by identifier using the provided RapidAPI key.",
+        "parameters": {
+            "identifier": {
+                "description": "The unique identifier for the device asset.",
+                "type": "str",
+                "default": "71491234-A"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "get_a_random_quote_from_a_specific_book",
+        "description": "Fetches a random quote from a specific self-help book using its book ID.",
+        "parameters": {
+            "book_id": {
+                "description": "The identifier for the specific book from which to fetch a random quote.",
+                "type": "str",
+                "default": "quiet"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "agencies_list",
+        "description": "Fetches a list of agencies or searches for agencies by name using the specified parameters.",
+        "parameters": {
+            "page": {
+                "description": "The page number for paging purposes. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "lang": {
+                "description": "Language for the response, either 'en' for English or 'ar' for Arabic. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "hitsperpage": {
+                "description": "Number of hits per page for paging purposes. Defaults to 25.",
+                "type": "int, optional",
+                "default": "25"
+            },
+            "query": {
+                "description": "Search term or phrase for filtering the agencies by name. Defaults to 'patriot'.",
+                "type": "str, optional",
+                "default": "patriot"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "properties_count",
+        "description": "Count the total number of properties available based on the given search parameters and filters.",
+        "parameters": {
+            "zipcodes": {
+                "description": "Postal codes, separated by commas for multiple values (e.g., '75,13'). Either `zipcodes` or `districtids` is required.",
+                "type": "str",
+                "default": "75"
+            },
+            "bedrooms": {
+                "description": "Filter by number of bedrooms (1-5), separated by commas for multiple values (e.g., '2,3').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "maximumlivingarea": {
+                "description": "Filter by maximum living area.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "rooms": {
+                "description": "Filter by number of bedrooms (1-5), separated by commas for multiple values (e.g., '2,3').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "maximumgroundarea": {
+                "description": "Filter by maximum ground area.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sortby": {
+                "description": "Sort by criterion. One of the following:",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "includenewconstructions": {
+                "description": "Whether to include new constructions in the listing.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "maximumprice": {
+                "description": "Filter by maximum price.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "transactiontype": {
+                "description": "Type of transaction. One of the following:",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "minimumgroundarea": {
+                "description": "Filter by minimum ground area.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "minimumfloor": {
+                "description": "Filter by minimum number of floors.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "districtids": {
+                "description": "District IDs, separated by commas for multiple values (e.g., '133051,133137'). Either `districtids` or `zipcodes` is required.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "minimumlivingarea": {
+                "description": "Filter by minimum living area.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "maximumfloor": {
+                "description": "Filter by maximum number of floors.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "realtytypes": {
+                "description": "Type of realty. One of the following:",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "check_endpoint",
+        "description": "Checks the abuse status and other details of the given IP address using the AbuseIPDB API.",
+        "parameters": {
+            "ipaddress": {
+                "description": "The IP address to be checked.",
+                "type": "str",
+                "default": "118.25.6.39"
+            },
+            "maxageindays": {
+                "description": "The maximum age of the reports in days (default is None). If not specified, reports up to 30 days old are returned. Must be between 1 and 365 if provided.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business"
+    },
+    {
+        "name": "addnumbers",
+        "description": "Adds two integers using an external API.",
+        "parameters": {
+            "vala": {
+                "description": "The first integer to be added.",
+                "type": "int",
+                "default": "10"
+            },
+            "valb": {
+                "description": "The second integer to be added.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Business"
+    }
+]

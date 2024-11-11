@@ -16,7 +16,7 @@ from .execute_code import execute_code_with_timeout
 class MetaPromptingScaffolding:
     def __init__(
         self,
-        language_model: OpenAI_LanguageModel,
+        language_model,
         generator_settings: Dict[str, Any],
         verifier_settings: Dict[str, Any],
         summarizer_settings: Dict[str, Any],

@@ -230,7 +230,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 class xlam_LanguageModel:
     """A language model using Salesforce's xLAM models."""
-
+    
     def __init__(
         self,
         model_name: str,

@@ -8,15 +8,54 @@ import retry
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 # Import the necessary classes from the utils folder
-from .language_model import OpenAI_LanguageModel
+from .language_model import OpenAI_LanguageModel, xlam_LanguageModel
 from .execute_code import execute_code_with_timeout
 
+
+'''
+Useful code: https://github.com/SalesforceAIResearch/xLAM/blob/dee27c4e3f47eea8266d0e504081ed07ed239181/xLAM/train/fm_datasets/base.py#L40
+ elif "mixtral" in tokenizer.name_or_path.lower():
+                self.BOT = tokenizer.bos_token if not tokenizer.add_bos_token else ""
+                self.EOP = "[/INST]"
+                self.EOT = tokenizer.eos_token if not tokenizer.add_eos_token else ""
+                # self._response_template = f"<|assistant|>\n"
+                self._response_template = self.EOP
+                self._instruction_template = "[INST]"
+
+
+might have to replace stop_token with implementation of stopping criteria for hugging face models.
+
+Code from gpt:# 
+# Example: Create a stopping criteria class if needed
+from transformers import StoppingCriteria
+
+class CustomStoppingCriteria(StoppingCriteria):
+    def __init__(self, stop_tokens):
+        self.stop_tokens = stop_tokens
+
+    def __call__(self, input_ids, scores, **kwargs):
+        return any(token in input_ids[-1] for token in self.stop_tokens)
+
+stopping_criteria = CustomStoppingCriteria(stop_tokens)
+
+meta_model_output = self.language_model.generate(
+    prompt_or_messages=formatted_prompt,
+    max_new_tokens=max_tokens,
+    stopping_criteria=[stopping_criteria],
+    num_return_sequences=num_return_sequences,
+    temperature=temperature,
+    top_p=top_p,
+    **kwargs,
+)
+
+
+'''
 
 # Define the MetaPromptingScaffolding class
 class MetaPromptingScaffolding:
     def __init__(
         self,
-        language_model,
+        language_model: Union[OpenAI_LanguageModel, xlam_LanguageModel],
         generator_settings: Dict[str, Any],
         verifier_settings: Dict[str, Any],
         summarizer_settings: Dict[str, Any],
@@ -95,6 +134,9 @@ class MetaPromptingScaffolding:
                     )
 
                 # Step 1: Generate an output from the meta model
+                # potential changes for xlam (sft mistral)
+                # max_tokens -> max_new_tokens
+                # 
                 meta_model_output = self.language_model.generate(
                     prompt_or_messages=entire_message_log,
                     stop_tokens=stop_tokens,
@@ -354,6 +396,8 @@ class MetaPromptingScaffolding:
                 trial_num=trial_num + 1,
                 **kwargs,
             )
+    
+    # ending of meta_model_generate function ^^
 
     @retry.retry(tries=7, delay=5)
     def generate(

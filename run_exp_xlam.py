@@ -6,6 +6,9 @@ import json
 from tap import Tap
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+# xLam is built on mistralai/Mixtral-8x7B-Instruct-v0.1 (https://github.com/SalesforceAIResearch/xLAM/blob/main/xLAM/train/scripts/sft_train_model_v1.py)
+# should look here if we encounter any issues with the code
+
 ### Jayden - Command to run the experiment:
 """
 python run_exp_xlam.py \
@@ -197,6 +200,8 @@ def run_model(
     inputs = tokenizer.apply_chat_template(final_message, add_generation_prompt=True, return_tensors="pt").to(meta_model.deivce)
     outputs = meta_model.generate(inputs, max_new_token=512, do_sample=False, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
     result = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+
+    
 
 
 

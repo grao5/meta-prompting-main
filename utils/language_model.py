@@ -224,156 +224,105 @@ class OpenAI_LanguageModel(LanguageModel):
 
 
 
-class xlam_LanguageModel(LanguageModel):
-    """A language model from xlam."""
+from typing import List, Union, Dict, Any, Optional
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+class xlam_LanguageModel:
+    """A language model using Salesforce's xLAM models."""
 
     def __init__(
         self,
         model_name: str,
-        api_key: str,
-        api_type: str,
-        api_version: str,
-        api_base: str,
+        device: Optional[str] = None,
         stop_tokens: Optional[List[str]] = None,
     ) -> None:
         """
-        Initialize the OpenAI API.
+        Initialize the xLAM model.
 
         Args:
-            model_name (str): The name of the model to use.
-            api_key (str): The API key to use.
-            api_type (str): The API type to use.
-            api_version (str): The API version to use.
-            api_base (str): The API base to use.
-            stop_tokens (Optional[List[str]], optional): The stop tokens to use. Defaults to None.
-
-        Raises:
-            ValueError: If the model name is not supported.
-
-        Returns:
-            None
+            model_name (str): The name of the xLAM model to use.
+            device (Optional[str], optional): The device to run the model on ('cpu' or 'cuda'). Defaults to None.
+            stop_tokens (Optional[List[str]], optional): Tokens to stop generation. Defaults to None.
         """
-        # Set the OpenAI API parameters
         self.model_name = model_name
-        self.api_key = api_key
-        self.api_type = api_type
-        self.api_version = api_version
-        self.api_base = api_base
         self.stop_tokens = stop_tokens
 
-        # Set the model type
-        self.model_type = "chat"
+        # Load the tokenizer and model
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(self.model_name)
 
-        # Set the client to None (by default)
-        self.client = None
-
-        ## OLD AZURE API CODE
-        if self.api_type == "azure":
-            openai.api_key = self.api_key
-            openai.api_type = self.api_type
-            openai.api_version = self.api_version
-            openai.api_base = self.api_base
-
-            if self.model_name in [
-                "code-davinci-002",
-                "text-davinci-002",
-                "text-davinci-003",
-            ]:
-                self.model_type = "completion"
-            elif self.model_name in [
-                "gpt-4",
-                "gpt-4-32k",
-                "gpt-35-turbo",
-                "gpt-4-0314",
-                "gpt-4-32k-0314",
-                "gpt-35-turbo-0314",
-                "gpt-4-0613",
-                "gpt-4-32k-0613",
-                "gpt-35-turbo-0613",
-                "gpt-35-turbo",
-            ]:
-                self.model_type = "chat"
-            else:
-                raise ValueError(f"Model {self.model_name} not supported.")
+        # Set device
+        if device is None:
+            self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         else:
-            ## NEW OPENAI API CODE SUPPORT
-            # Skipping model name validation for now
-            # Set up the client
-            self.client = OpenAI(
-                api_key=os.environ.get("OPENAI_API_KEY"),
-            )
+            self.device = device
+        self.model.to(self.device)
 
-    @retry.retry(tries=3, delay=1)
     def generate(
         self,
-        prompt_or_messages: Union[str, List[Dict[str, str]]],
-        stop_tokens: Optional[List[str]] = None,
+        prompt: str,
         max_tokens: int = 512,
         num_return_sequences: int = 1,
         temperature: float = 0.7,
-        top_p: Optional[float] = None,
+        top_p: float = 1.0,
         **kwargs: Any,
     ) -> List[str]:
         """
-        Generate text based on a prompt or messages.
+        Generate text based on a prompt.
 
         Args:
-            prompt_or_messages (Union[str, List[Dict[str, str]]]): The prompt or messages to generate text from.
-            stop_tokens (Optional[List[str]], optional): The stop tokens to use. Defaults to None.
-            max_tokens (int, optional): The maximum number of tokens to generate. Defaults to 512.
-            num_return_sequences (int, optional): The number of sequences to return. Defaults to 1.
-            temperature (float, optional): The temperature to use. Defaults to 0.7.
-            top_p (float, optional): The top p to use. Defaults to 1.0.
-            **kwargs (Any): Additional keyword arguments.
+            prompt (str): The input text prompt.
+            max_tokens (int, optional): Maximum number of tokens to generate. Defaults to 512.
+            num_return_sequences (int, optional): Number of sequences to return. Defaults to 1.
+            temperature (float, optional): Sampling temperature. Defaults to 0.7.
+            top_p (float, optional): Nucleus sampling probability. Defaults to 1.0.
+            **kwargs (Any): Additional generation parameters.
 
         Returns:
-            List[str]: The list of generated texts based on the prompt or messages.
+            List[str]: Generated text sequences.
         """
-        # Set the stop tokens
-        stop_tokens = stop_tokens or self.stop_tokens
+        # Encode the input prompt
+        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
 
-        print(f"Calling the language model with prompt: {prompt_or_messages}")
+        # Generate text
+        output_sequences = self.model.generate(
+            input_ids=inputs['input_ids'],
+            max_length=inputs['input_ids'].shape[1] + max_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            num_return_sequences=num_return_sequences,
+            pad_token_id=self.tokenizer.eos_token_id,
+            eos_token_id=self.tokenizer.eos_token_id,
+            **kwargs,
+        )
 
-        if self.api_type == "azure":
-            ## OLD AZURE API CODE
-            # Generate the text
-            if self.model_type == "chat":
-                response = openai.ChatCompletion.create(
-                    engine=self.model_name,
-                    messages=prompt_or_messages,
-                    max_tokens=max_tokens,
-                    temperature=temperature,
-                    top_p=top_p,
-                    n=num_return_sequences,
-                    stop=stop_tokens,
-                    **kwargs,
-                )
-                # Return the list of messages
-                return [message["message"]["content"] for message in response.choices]
-            else:
-                response = openai.Completion.create(
-                    engine=self.model_name,
-                    prompt=prompt_or_messages,
-                    max_tokens=max_tokens,
-                    temperature=temperature,
-                    top_p=top_p,
-                    n=num_return_sequences,
-                    stop=stop_tokens,
-                    **kwargs,
-                )
-                # Return the list of outputs
-                return [output["text"] for output in response.choices]
-        else:
-            ## NEW OPENAI API CODE SUPPORT
-            # Generate the text
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=prompt_or_messages,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                top_p=top_p,
-                n=num_return_sequences,
-                stop=stop_tokens,
-                **kwargs,
-            )
-            return [output.message.content for output in response.choices]
+        # Decode the generated sequences
+        generated_texts = [
+            self.tokenizer.decode(output_sequence, skip_special_tokens=True)
+            for output_sequence in output_sequences
+        ]
+
+        # Apply stop tokens if provided
+        if self.stop_tokens:
+            generated_texts = [
+                self._apply_stop_tokens(text) for text in generated_texts
+            ]
+
+        return generated_texts
+
+    def _apply_stop_tokens(self, text: str) -> str:
+        """
+        Truncate the text at the first occurrence of any stop token.
+
+        Args:
+            text (str): The generated text.
+
+        Returns:
+            str: Truncated text.
+        """
+        for stop_token in self.stop_tokens:
+            stop_index = text.find(stop_token)
+            if stop_index != -1:
+                return text[:stop_index]
+        return text

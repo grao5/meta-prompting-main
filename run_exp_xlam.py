@@ -6,6 +6,20 @@ import json
 from tap import Tap
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+### Jayden - Command to run the experiment:
+"""
+python run_exp_xlam.py \
+    --task_name "xlam_fc" \
+    --meta_config_path "prompts/meta-v0-2023-08-14-baseline.json" \
+    --output_directory "TEST-XLAM-META-PROMPTING" \
+    --question_prefix_or_path "prompts/meta-prompting-instruction.txt" \
+    --model_name "Salesforce/xLAM-1b-fc-r" \
+    --temperature 0.1 \
+    --include_expert_name_in_instruction \
+    --fresh_eyes \
+    --max_num 1
+"""
+
 sys.setrecursionlimit(100000)
 
 # Import joblib for parallel processing
@@ -18,7 +32,7 @@ from utils.meta_scaffolding import MetaPromptingScaffolding
 
 # Task description dictionary
 DESCRIPTION_DICT = {
-    "Toolbench": "Test MetaToolLLaMA"
+    "xlam_fc": "Please answer the following question."
 }
 
 # Template for generating expert identity
@@ -101,6 +115,7 @@ class Arguments(Tap):
 
 def run_model(
     meta_model,
+    tokenizer,
     datum,
     prefix_messages,
     task_description,
@@ -112,8 +127,14 @@ def run_model(
     # Print the type of datum
     print(f"This is datum: {datum}")
 
-    input = datum["input"]
-    target = datum["target"]
+    ### Previous
+    # input = datum["input"]
+    # target = datum["target"]
+
+    ### Current
+    query = datum["query"]
+    tools = datum["tools"] # TODO: (To Sharan) This needs to be further replaced by the toolset that has been specified by either GC or SC.
+    answers = datum["answers"]
 
     # Set the prompt (message list)
     messages = prefix_messages.copy()
@@ -139,7 +160,7 @@ def run_model(
         )
 
         # Create the text for the expert prompting using the expert identity, task description, and input
-        template_expert_prompting = f"{expert_identity}\n\nNow given the above identity background, please answer the following question:\n\nQuestion: {task_description}\n\n{input}"
+        template_expert_prompting = f"{expert_identity}\n\nNow given the above identity background, please answer the following question:\n\nQuestion: {task_description}\n\n{query}"
 
         # Append the expert prompting template to the prompt (message list)
         messages.append(
@@ -157,29 +178,37 @@ def run_model(
             }
         )
 
-    # Get the full message log from the meta model
-    message_log = meta_model.meta_model_generate(
-        prompt_or_messages=messages,
-        max_tokens=meta_model_settings["parameters"]["max_tokens"],
-        temperature=meta_model_settings["parameters"]["temperature"],
-        top_p=meta_model_settings["parameters"]["top_p"],
-        num_return_sequences=meta_model_settings["parameters"]["num_return_sequences"],
-        counter=0,
-        original_question=f"{task_description}\n\n{input}",
-    )
+    # Previous generate() call for meta-prompting and the corresponding output
+    # message_log = meta_model.meta_model_generate(
+    #     prompt_or_messages=messages,
+    #     max_tokens=meta_model_settings["parameters"]["max_tokens"],
+    #     temperature=meta_model_settings["parameters"]["temperature"],
+    #     top_p=meta_model_settings["parameters"]["top_p"],
+    #     num_return_sequences=meta_model_settings["parameters"]["num_return_sequences"],
+    #     counter=0,
+    #     original_question=f"{task_description}\n\n{input}",
+    # )
+    # output = message_log[-1]["content"]
 
-    output = message_log[-1]["content"]
+    # Current generate() call for xlam and the corresponding outputs
+    # TODO: This is the preliminary implementation of "xlam", not "meta-prompting".
+    #       This should be further modified so that the xlam follows the generation way of meta-prompting
+    final_message = {'role': 'user', 'content': messages}
+    inputs = tokenizer.apply_chat_template(final_message, add_generation_prompt=True, return_tensors="pt").to(meta_model.deivce)
+    outputs = meta_model.generate(inputs, max_new_token=512, do_sample=False, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
+    result = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+
+
 
     # Print the output
-    print(f"Final output: {output}")
-    print(f"Target: {target}")
+    print(f"Final output: {result}")
+    print(f"Target: {answers}")
     print("\n")
 
     return {
-        "input": input,
-        "target": target,
-        "message_log": message_log,
-        "output": output,
+        "input": query,
+        "target": answers,
+        "output": result,
     }
 
 
@@ -319,12 +348,12 @@ def main(args: Arguments) -> None:
 
     #xlam code
     model = AutoModelForCausalLM.from_pretrained(
-        "Salesforce/xLAM-1b-fc-r",
+        args.model_name,
         device_map="auto",
         torch_dtype="auto",
         trust_remote_code=True
     )
-    tokenizer = AutoTokenizer.from_pretrained("Salesforce/xLAM-1b-fc-r")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
 
 
     # Set the meta model parameters
@@ -361,6 +390,7 @@ def main(args: Arguments) -> None:
             # basically calling run_model with the specified arguments
             delayed(run_model)(
                 meta_model=meta_model,
+                tokenizer=tokenizer,
                 datum=datum,
                 prefix_messages=meta_model_message_list,
                 task_description=task_description,

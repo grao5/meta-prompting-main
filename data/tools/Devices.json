@@ -1,0 +1,195 @@
+[
+    {
+        "name": "dashboard",
+        "description": "Fetches the deployment and response dashboard for a specified survey using provided credentials and API keys.",
+        "parameters": {
+            "login_id": {
+                "description": "The login identifier for accessing the survey methods API.",
+                "type": "str",
+                "default": ""
+            },
+            "api_key": {
+                "description": "The API key associated with the user account.",
+                "type": "str",
+                "default": ""
+            },
+            "survey_code": {
+                "description": "The code identifying the specific survey whose dashboard is being fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "test",
+        "description": "Retrieves data from the PMI Jateng API and returns the response as a JSON or text.",
+        "parameters": {
+            "iniya": {
+                "description": "An optional query string parameter to be sent with the request. Defaults to 9.",
+                "type": "int, optional",
+                "default": "9"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "update",
+        "description": "Updates data on a specified endpoint using the provided information and RapidAPI key.",
+        "parameters": {
+            "info3": {
+                "description": "The third piece of information to be sent as a query parameter.",
+                "type": "str",
+                "default": "333"
+            },
+            "info1": {
+                "description": "The first piece of information to be sent as a query parameter.",
+                "type": "str",
+                "default": "111"
+            },
+            "info2": {
+                "description": "The second piece of information to be sent as a query parameter.",
+                "type": "str",
+                "default": "222"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "getphonesbybrandid",
+        "description": "Fetches all phone IDs for a specific brand using the given brand ID.",
+        "parameters": {
+            "brandid": {
+                "description": "The unique identifier for the brand whose phone IDs are to be retrieved.",
+                "type": "int",
+                "default": "237"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "get_specifications_by_custom_id",
+        "description": "Fetch specifications for a mobile phone using its custom ID via the Mobile Phone Specs Database API.",
+        "parameters": {
+            "phonecustomid": {
+                "description": "The custom ID of the mobile phone for which specifications are to be fetched.",
+                "type": "int",
+                "default": "103693"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "maclookup",
+        "description": "Looks up the manufacturer information for a given MAC address using the Toolbench RapidAPI service.",
+        "parameters": {
+            "mac_number": {
+                "description": "The MAC address for which to find the manufacturer. Supported formats include 'xx-xx-xx-xx-xx-xx', 'xx:xx:xx:xx:xx:xx', 'xxxx.xxxx.xxxx', and 'xxxxxxxxxxxx'.",
+                "type": "str",
+                "default": "14-AB-C5-D5-DA-F9"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "getphonedetails",
+        "description": "Fetches all specifications and photos for a given phone based on its ID.",
+        "parameters": {
+            "phoneid": {
+                "description": "The unique identifier of the phone.",
+                "type": "int",
+                "default": "1859"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "get_weak_certs",
+        "description": "Fetches weak certificates for a given firmware hash from the IoT Security API.",
+        "parameters": {
+            "firmware_hash": {
+                "description": "SHA2 hash of the device firmware.",
+                "type": "str",
+                "default": "52841661d61e00649451cc471e9b56d169df8041926b1252bb3fd0710c27b12c"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "get_expired_certs",
+        "description": "Fetches expired SSL/TLS certificates for a given firmware.",
+        "parameters": {
+            "firmware_hash": {
+                "description": "SHA2 hash of the device firmware.",
+                "type": "str",
+                "default": "ac7c090c34338ea6a3b335004755e24578e7e4eee739c5c33736f0822b64907e"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "list_all_models_by_phone_brand",
+        "description": "Fetches and returns a list of mobile phone models for a given phone brand using the specified RapidAPI key.",
+        "parameters": {
+            "brandname": {
+                "description": "The name of the phone brand for which to fetch model information.",
+                "type": "str",
+                "default": "Samsung"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "replies",
+        "description": "Fetch replies for a given Instagram comment.",
+        "parameters": {
+            "after": {
+                "description": "The cursor value after which to fetch the replies. This can be obtained from the `edge_threaded_comments.page_info.end_cursor` field in the response from the comments endpoint.",
+                "type": "str",
+                "default": ""
+            },
+            "commentid": {
+                "description": "The unique identifier for the comment. This can be obtained from the `node.id` field in the response from the comments endpoint.",
+                "type": "str",
+                "default": "17898559397187730"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "explore",
+        "description": "Fetches a list of recipes from the Worldwide Recipes API with optional pagination support.",
+        "parameters": {
+            "start": {
+                "description": "The starting point for pagination. Page 1 corresponds to start=0, Page 2 to start=20, and so on.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "get_phone_image_ids_by_custom_id",
+        "description": "Fetches up to 10 image IDs for a given phone using its custom ID.",
+        "parameters": {
+            "phonecustomid": {
+                "description": "The custom ID of the phone for which image IDs are to be fetched.",
+                "type": "int",
+                "default": "103693"
+            }
+        },
+        "domain": "Devices"
+    },
+    {
+        "name": "get_private_keys",
+        "description": "Fetches the private keys associated with a given firmware hash from the IoT VAS service using the provided RapidAPI key.",
+        "parameters": {
+            "firmware_hash": {
+                "description": "SHA2 hash of the device firmware.",
+                "type": "str",
+                "default": "90e3e68e1c61850f20c50e551816d47d484d7feb46890f5bc0a0e0dab3e3ba0b"
+            }
+        },
+        "domain": "Devices"
+    }
+]

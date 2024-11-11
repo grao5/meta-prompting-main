@@ -1,0 +1,548 @@
+[
+    {
+        "name": "get_id",
+        "description": "Fetches the ID of a movie based on the given search query from the RapidAPI similar movies service.",
+        "parameters": {
+            "q": {
+                "description": "The search string for the movie title.",
+                "type": "str",
+                "default": "titanic"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "search_torrents",
+        "description": "Search for torrents based on given keywords using the RapidAPI service.",
+        "parameters": {
+            "keywords": {
+                "description": "Keywords to search for torrents.",
+                "type": "str",
+                "default": "Meg 2 The Trench"
+            },
+            "quantity": {
+                "description": "Number of torrent results to return. Maximum value is 40.",
+                "type": "int",
+                "default": "40"
+            },
+            "page": {
+                "description": "Page number for paginated results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "basic_info",
+        "description": "Fetches detailed information about a cast member such as name, profession, birth and death year, bio, poster, and best titles.",
+        "parameters": {
+            "peopleid": {
+                "description": "The ID of the cast member whose details are to be fetched.",
+                "type": "str",
+                "default": "nm0000375"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_movies_by_cast_name",
+        "description": "Fetches movies associated with a given cast member's name from the IMDB API.",
+        "parameters": {
+            "cast_name": {
+                "description": "Name of the cast member to search for. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "actors_random",
+        "description": "Fetches a random list of actors from the Movies Database RapidAPI.",
+        "parameters": {
+            "limit": {
+                "description": "The number of random actors to retrieve. Defaults to None, and the API will use its default value if not specified.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "new_arrivals",
+        "description": "Fetch the latest arrivals from different platforms for a specified region.",
+        "parameters": {
+            "region": {
+                "description": "The region code to fetch the latest arrivals from. Use 'IN' for India and 'US' for the USA. Currently, only these two regions are supported.",
+                "type": "str",
+                "default": "US"
+            },
+            "page": {
+                "description": "The page number for paginated results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "search_by_name",
+        "description": "Searches for a movie by its title using the provided query string.",
+        "parameters": {
+            "query": {
+                "description": "The movie title or keyword to search for.",
+                "type": "str",
+                "default": "kong"
+            },
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "ott_providers",
+        "description": "Fetch information on OTT platforms supported in a given region.",
+        "parameters": {
+            "region": {
+                "description": "The region to get OTT platform information for. Use 'US' for USA and 'IN' for India.",
+                "type": "str",
+                "default": "IN"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_random",
+        "description": "Fetches a random list of movie titles from the Movies Database API based on the provided query parameters.",
+        "parameters": {
+            "startyear": {
+                "description": "The starting year range filter (e.g., 2020).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "genre": {
+                "description": "The genre filter (e.g., 'Drama').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "titletype": {
+                "description": "The type of title to filter by (e.g., 'movie').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Sorting order (e.g., 'year.incr' or 'year.decr').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The number of titles per page (default is 10, maximum is 10).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "info": {
+                "description": "Type of information to include (default is 'mini-info'; options include 'base_info', 'mini_info', 'image', etc.).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "endyear": {
+                "description": "The ending year range filter (e.g., 2020).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "The starting year range filter (e.g., 2020).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "list": {
+                "description": "The selected list type (e.g., 'most_pop_movies', 'most_pop_series', 'top_rated_series_250', etc.).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_id_main_actors",
+        "description": "Fetches the main actors of a title given its IMDb ID.",
+        "parameters": {
+            "is_id": {
+                "description": "IMDb ID of the title (e.g., 'tt0000002').",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_quote_by_year",
+        "description": "Fetches quotes from movies or TV shows for a given year.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve quotes.",
+                "type": "int",
+                "default": "1939"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "searchinventory",
+        "description": "Searches for available inventory in the system based on the provided search parameters.",
+        "parameters": {
+            "searchstring": {
+                "description": "An optional search string to look up inventory items. Defaults to 'string'.",
+                "type": "str",
+                "default": "string"
+            },
+            "limit": {
+                "description": "The maximum number of records to return. Defaults to 0, which means no limit.",
+                "type": "int",
+                "default": 0
+            },
+            "skip": {
+                "description": "The number of records to skip for pagination. Defaults to 0.",
+                "type": "int",
+                "default": 0
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "by_category",
+        "description": "Fetches the recent 50 news articles by category using the specified RapidAPI key.",
+        "parameters": {
+            "cat": {
+                "description": "The category of the news to fetch, e.g., 'Sport', 'World', etc.",
+                "type": "str",
+                "default": "Sport"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_genres",
+        "description": "Fetch a list of radio station genres using the provided keyword and RapidAPI key.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to filter genres. Defaults to 'music'.",
+                "type": "str",
+                "default": "music"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_seasons_seriesid",
+        "description": "Fetches the seasons information of a TV series from the Movies Database API using the given series ID.",
+        "parameters": {
+            "seriesid": {
+                "description": "The IMDb ID of the TV series for which to fetch seasons information.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_individual_quotes_by_quote_id",
+        "description": "Fetches individual quotes based on the given quote ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the quote to be retrieved.",
+                "type": "int",
+                "default": "4"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_movies_by_name",
+        "description": "python",
+        "parameters": {
+            "movie_name": {
+                "description": "The name of the movie to search for. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "search_by_genre",
+        "description": "Discover movies by genre using the RapidAPI.",
+        "parameters": {
+            "with_genres": {
+                "description": "The genre code to filter movies by. Defaults to '80'.",
+                "type": "str",
+                "default": "80"
+            },
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_one_anime_by_ranking",
+        "description": "Fetches the details of an anime based on its ranking from the Anime DB API.",
+        "parameters": {
+            "rank": {
+                "description": "The ranking position of the desired anime.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "search_by_title",
+        "description": "Search for Movies or TV Shows by title, with optional filters for year, media type, and limit on the number of results.",
+        "parameters": {
+            "s": {
+                "description": "The title of the Movie or TV Show to search for.",
+                "type": "str",
+                "default": "jaws"
+            },
+            "l": {
+                "description": "The maximum number of items to return. Accepts values from 1 to 100. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "y": {
+                "description": "The year to filter the search results (format YYYY). This will also include movies from the previous and next year. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "m": {
+                "description": "Filter by media type, either 'movie' or 'tv show'. Leave empty for both. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_movies_by_director",
+        "description": "Gets a list of movies by a specified director using the IMDb API.",
+        "parameters": {
+            "movie_director": {
+                "description": "The name of the director. If not provided, an empty query will be sent.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "advanced_search",
+        "description": "Performs an advanced search for movies or TV shows based on multiple filtering parameters such as release year, IMDb rating, genre, language, etc.",
+        "parameters": {
+            "start_year": {
+                "description": "The starting year for the search range. Valid values range from 1970 to 2020. Defaults to 1970.",
+                "type": "int, optional",
+                "default": "1970"
+            },
+            "page": {
+                "description": "The page number of the search results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "max_imdb": {
+                "description": "The maximum IMDb rating for the search results. Defaults to 7.",
+                "type": "int, optional",
+                "default": "7.8"
+            },
+            "type": {
+                "description": "The type of content to search for, either 'movie' or 'show'. Defaults to 'movie'.",
+                "type": "str, optional",
+                "default": "movie"
+            },
+            "sort": {
+                "description": "The sorting order of the results. Valid values are 'highestrated', 'lowestrated', 'latest', 'oldest'. Defaults to 'latest'.",
+                "type": "str, optional",
+                "default": "latest"
+            },
+            "min_imdb": {
+                "description": "The minimum IMDb rating for the search results. Defaults to 6.",
+                "type": "int, optional",
+                "default": "6"
+            },
+            "genre": {
+                "description": "The genre(s) of the content. Use comma-separated values for multiple genres (e.g., 'action,horror'). Defaults to 'action'.",
+                "type": "str, optional",
+                "default": "action"
+            },
+            "language": {
+                "description": "The language(s) of the content. Use comma-separated values for multiple languages (e.g., 'english,german'). Defaults to 'english'.",
+                "type": "str, optional",
+                "default": "english"
+            },
+            "end_year": {
+                "description": "The ending year for the search range. Valid values range from 1970 to 2020. Defaults to 2020.",
+                "type": "int, optional",
+                "default": "2020"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_id",
+        "description": "Fetches movie title details from the Movies Database API using the given IMDb ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The IMDb ID of the movie title (e.g., 'tt0000002').",
+                "type": "str",
+                "default": ""
+            },
+            "info": {
+                "description": "The type of information to retrieve (default: base-info). Options include 'base_info', 'mini_info', 'image', etc.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_a_specific_movie_by_id",
+        "description": "Fetch detailed information of a specific movie by its IMDb ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The IMDb ID of the specific movie to fetch.",
+                "type": "str",
+                "default": "top13"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_movies_by_year",
+        "description": "Fetches a list of movies released in a specified year from the IMDb API.",
+        "parameters": {
+            "movie_year": {
+                "description": "The year to filter movies by. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_movie_images_by_id",
+        "description": "Fetches a complete list of images associated with a given movie ID from the Cinema API.",
+        "parameters": {
+            "is_id": {
+                "description": "The movie ID for which to retrieve images.",
+                "type": "str",
+                "default": "tt0120338"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "additional_title_details",
+        "description": "Fetch additional details for a movie or TV show based on its IMDb ID.",
+        "parameters": {
+            "imdbid": {
+                "description": "The IMDb ID of the movie or TV show.",
+                "type": "str",
+                "default": "tt7286456"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "get_detailed_response",
+        "description": "Fetches detailed information for a given movie from the Advanced Movie Search API using the provided RapidAPI key.",
+        "parameters": {
+            "movie_id": {
+                "description": "The unique identifier for the movie whose details are to be fetched.",
+                "type": "int",
+                "default": "399566"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "fetch_movies",
+        "description": "Fetch a list of movies from 2000 to 2019 based on the selected genre and year using the specified RapidAPI key.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to fetch movies. Should be between 2000 and 2019.",
+                "type": "str",
+                "default": "2018"
+            },
+            "genre": {
+                "description": "The genre of the movies to fetch.",
+                "type": "str",
+                "default": "Comedy"
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_id_crew",
+        "description": "Fetches the crew details of a movie or a TV show from the Movies Database API using the provided IMDb ID.",
+        "parameters": {
+            "is_id": {
+                "description": "IMDb ID of the title (e.g., 'tt0000002').",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_id_aka",
+        "description": "Fetches alternative titles for an IMDb title using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "IMDb ID of the title (e.g., 'tt0000002').",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_series_seriesid",
+        "description": "Fetches information about a TV series using its IMDb ID from the Movies Database API.",
+        "parameters": {
+            "seriesid": {
+                "description": "The IMDb ID of the TV series.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    },
+    {
+        "name": "titles_x_titles_by_ids",
+        "description": "Fetch movie or series titles by their IMDB IDs.",
+        "parameters": {
+            "idslist": {
+                "description": "Comma-separated list of IMDB IDs (e.g., 'tt0001702,tt0001856,tt0001856').",
+                "type": "str",
+                "default": ""
+            },
+            "list": {
+                "description": "Comma-separated list of IMDB IDs (e.g., 'tt0001702,tt0001856,tt0001856').",
+                "type": "str",
+                "default": ""
+            },
+            "info": {
+                "description": "Structure of the information to be retrieved (e.g., 'base_info', 'mini_info', 'image'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Movies"
+    }
+]

@@ -1,0 +1,870 @@
+[
+    {
+        "name": "gettotalsolved",
+        "description": "Fetches the total number of questions solved by the given LeetCode user.",
+        "parameters": {
+            "username": {
+                "description": "The LeetCode username of the user whose solved questions are to be retrieved.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getmediumquestion",
+        "description": "Fetches the number of medium-level questions solved by the given user from the LeetCode API.",
+        "parameters": {
+            "username": {
+                "description": "The username of the LeetCode user whose medium-level questions solved count is to be fetched.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "memre_api_v1_study",
+        "description": "Retrieves learning items that a specific user should study using the Memre API.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user for whom to retrieve learning items.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "judget0",
+        "description": "Compiles and executes code using the Safe Exam API.",
+        "parameters": {
+            "code": {
+                "description": "The code to be compiled and executed. Defaults to 'print(\"Hello World\")'.",
+                "type": "str",
+                "default": "print(\"Hello World\")"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "gettotalactivedays",
+        "description": "Fetch the total active days of the user in the current year from the LeetCode API.",
+        "parameters": {
+            "username": {
+                "description": "The username of the user whose active days are to be fetched.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "kanji_english_meaning",
+        "description": "Fetches the English meaning for a given Kanji using the Kanji Alive API.",
+        "parameters": {
+            "kem": {
+                "description": "Simplified English meaning of the Kanji to search for.",
+                "type": "str",
+                "default": "parent"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getdefinition",
+        "description": "Retrieves the definition, pronunciation, and example usages of a given word using the Dictionary Data API.",
+        "parameters": {
+            "word": {
+                "description": "The word for which the definition, pronunciation, and example usages are retrieved.",
+                "type": "str",
+                "default": "dance"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "word_infos",
+        "description": "Fetch detailed information about a word from the Master Dictionary API using the provided RapidAPI key.",
+        "parameters": {
+            "word": {
+                "description": "The word to fetch information for.",
+                "type": "str",
+                "default": "hello"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "planet_list",
+        "description": "Fetches the list of planets surrounding a given star using the provided API key.",
+        "parameters": {
+            "starid": {
+                "description": "The ID of the star for which to fetch the planets. Defaults to '4'.",
+                "type": "str",
+                "default": "4"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "retrieve_user",
+        "description": "Retrieves details of a user based on the provided user ID from the rapidapi service.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user whose details are to be retrieved.",
+                "type": "str",
+                "default": "yKscUgpDShWKaf6zCLjyZw"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "numbers_translator",
+        "description": "Converts a numerical text string into its spelled-out form using an external API.",
+        "parameters": {
+            "text": {
+                "description": "Numerical text to be converted. Defaults to '23879908709817834'.",
+                "type": "str, optional",
+                "default": "23879908709817834"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "downloadmovie",
+        "description": "Downloads a movie in the specified format using the given parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "Unique identifier for the movie.",
+                "type": "str",
+                "default": "VXvX5"
+            },
+            "format": {
+                "description": "Format to download the movie in. Supported formats are 'mp4', 'webm', or 'flv'.",
+                "type": "str",
+                "default": "mp4"
+            },
+            "hq": {
+                "description": "If set to True, downloads a higher-quality version of the movie. This is only valid for 'mp4' format.",
+                "type": "bool, optional",
+                "default": "checked"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "define_a_word_search",
+        "description": "Fetches the definition of a specific word from the Urban Dictionary API.",
+        "parameters": {
+            "term": {
+                "description": "The word to define.",
+                "type": "str",
+                "default": "yeet"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "schoolname",
+        "description": "Fetches all data from a specific school by its name using the Toolbench RapidAPI.",
+        "parameters": {
+            "name": {
+                "description": "The name of the school for which data is to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getrank",
+        "description": "Fetches the contest rank of a LeetCode user.",
+        "parameters": {
+            "username": {
+                "description": "The LeetCode username whose contest rank is to be fetched.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "search_searchterm",
+        "description": "Search for a term using the Uncovered Treasure API and return the results.",
+        "parameters": {
+            "searchterm": {
+                "description": "The term to search for, e.g., \"God's plan\".",
+                "type": "str",
+                "default": ""
+            },
+            "callback": {
+                "description": "An optional JSONP callback parameter for the API request.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_math_fact",
+        "description": "Fetch a mathematical property or fact about a given number.",
+        "parameters": {
+            "number": {
+                "description": "The number for which the mathematical fact is to be retrieved.",
+                "type": "str",
+                "default": "1729"
+            },
+            "fragment": {
+                "description": "If set to 'True', returns the fact as a sentence fragment that can be easily included in a larger sentence. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "json": {
+                "description": "If set to 'True', returns the result in JSON format instead of plaintext. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getmaxstreak",
+        "description": "Retrieve the maximum streak of a user on LeetCode using the specified RapidAPI key.",
+        "parameters": {
+            "username": {
+                "description": "The username of the LeetCode user whose maximum streak is being retrieved.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "geteasyquestion",
+        "description": "Fetches the number of easy questions solved by a specified user from the LeetCode API.",
+        "parameters": {
+            "username": {
+                "description": "The LeetCode username of the user to fetch the information for.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_date_fact",
+        "description": "Fetches a fact about a specific day of the year from the Numbers API.",
+        "parameters": {
+            "month": {
+                "description": "The 1-indexed month (e.g., '6' for June).",
+                "type": "str",
+                "default": "6"
+            },
+            "day": {
+                "description": "The day of the month.",
+                "type": "str",
+                "default": "21"
+            },
+            "fragment": {
+                "description": "Adds \"?fragment=true\" to return the fact as a sentence fragment. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "json": {
+                "description": "Specify \"true\" to return the result as JSON instead of plaintext. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "study_list_macquarie",
+        "description": "Fetches kanji information based on a given list using the Kanjialive API.",
+        "parameters": {
+            "list": {
+                "description": "A string representing the specific chapters of Kanji to be queried (e.g., \"12-22\").",
+                "type": "str",
+                "default": "mac:c12"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "memre_api_v1_concepts_id",
+        "description": "Retrieve the details of a specific concept by its ID using the MEMRE API v1.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the concept to retrieve.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "memre_api_v1_users_user_id_learning_stats",
+        "description": "Fetches the most effective times of day for a user to study using the memre API.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user for whom to retrieve learning statistics.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_post_by_id",
+        "description": "Retrieves a post by its `post_id` using the FluentMe API.",
+        "parameters": {
+            "post_id": {
+                "description": "The unique identifier of the post to retrieve.",
+                "type": "str",
+                "default": "P36288"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "memre_api_v1_readiness",
+        "description": "Get the readiness status of a user for a specified item from the memre API.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user whose readiness status is being queried.",
+                "type": "str",
+                "default": ""
+            },
+            "item_id": {
+                "description": "The ID of the item for which the readiness status is being queried.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_trivia_fact",
+        "description": "Fetches a trivia fact about a given number from the Numbers API.",
+        "parameters": {
+            "number": {
+                "description": "The number for which to retrieve the trivia fact.",
+                "type": "str",
+                "default": "42"
+            },
+            "fragment": {
+                "description": "Whether to return the fact as a sentence fragment. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "notfound": {
+                "description": "Determines the behavior when a fact is not found for the specified number. Options are 'default', 'floor', or 'ceil'. Defaults to 'floor'.",
+                "type": "str, optional",
+                "default": "floor"
+            },
+            "json": {
+                "description": "Whether to return the result as JSON. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "school_detail",
+        "description": "Fetch detailed information about a school using the encrypted school ID (sekolah_id_enkrip).",
+        "parameters": {
+            "sekolah_id_enkrip": {
+                "description": "The encrypted ID of the school for which details are to be fetched. Default is '5DB43D89E6BFB0F76FBC'.",
+                "type": "str",
+                "default": "5DB43D89E6BFB0F76FBC"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getquestionsbyexam",
+        "description": "Fetches exam questions for a specified exam using the Tech Exams API.",
+        "parameters": {
+            "exam": {
+                "description": "The exam identifier for which the questions are to be retrieved.",
+                "type": "str",
+                "default": "PT0-001"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "radical_position",
+        "description": "This function queries the Kanji Alive API using the given radical position to retrieve relevant information.",
+        "parameters": {
+            "rpos": {
+                "description": "The radical position in Hiragana or Romaji.",
+                "type": "str",
+                "default": "hen"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getting_data",
+        "description": "This function retrieves supermarket sales data from three different cities using the provided RapidAPI keys.",
+        "parameters": {
+            "x_rapidapi_key": {
+                "description": "The RapidAPI key for accessing the `data_visualisation_` API. Defaults to 'demo'.",
+                "type": "str",
+                "default": "demo"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getmoviestatus",
+        "description": "Fetches the status of a movie using the HelioViewer API.",
+        "parameters": {
+            "is_id": {
+                "description": "Unique movie identifier (provided by the response to a `queueMovie` request).",
+                "type": "str",
+                "default": "VXvX5"
+            },
+            "format": {
+                "description": "Desired movie format (`mp4`, `webm`, or `flv`).",
+                "type": "str",
+                "default": "mp4"
+            },
+            "verbose": {
+                "description": "Whether to include extra metadata in the response. Defaults to None.",
+                "type": "bool, optional",
+                "default": "checked"
+            },
+            "callback": {
+                "description": "Wrap the response object in a function call of your choosing. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "token": {
+                "description": "Authentication token. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "radical_stroke_number",
+        "description": "Fetches advanced search results from the Kanji Alive API based on the radical stroke number.",
+        "parameters": {
+            "rs": {
+                "description": "The radical stroke number to search for. Should be a positive integer represented as a string.",
+                "type": "str",
+                "default": "7"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "topic_topic",
+        "description": "Fetches entries from a specific topic using the Uncovered Treasure API.",
+        "parameters": {
+            "topic": {
+                "description": "The topic for which to fetch entries.",
+                "type": "str",
+                "default": ""
+            },
+            "callback": {
+                "description": "The optional JSONP callback function name.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "onyomi_reading",
+        "description": "Fetches Kanji information based on the provided Onyomi (O-N) reading using the KanjiaLive API.",
+        "parameters": {
+            "on": {
+                "description": "The Onyomi reading of the Kanji, provided in Katakana or romaji.",
+                "type": "str",
+                "default": "\u30b7\u30f3"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "retrieve_group_results",
+        "description": "Retrieves the up-to-date results for a specified group using the Toolbench RapidAPI.",
+        "parameters": {
+            "group_id": {
+                "description": "The unique ID for the group which results are to be retrieved.",
+                "type": "str",
+                "default": "nYrK9udUc-UGvRS2kxaPtaB-0wzeHAJzM6vlL1te6wI"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "downloadscreenshot",
+        "description": "Downloads a custom screenshot generated using the `takeScreenshot` API endpoint.",
+        "parameters": {
+            "is_id": {
+                "description": "Unique screenshot identifier provided by the response to a `takeScreenshot` request.",
+                "type": "int",
+                "default": "3240748"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "kunyomi_reading",
+        "description": "Searches for kanji characters using the provided kunyomi reading.",
+        "parameters": {
+            "kun": {
+                "description": "The kunyomi reading of the kanji character, specified in Hiragana or romaji.",
+                "type": "str",
+                "default": "oya"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_language_by_id",
+        "description": "Fetches language details from the FluentMe API using a given language ID.",
+        "parameters": {
+            "language_id": {
+                "description": "The unique identifier for the language to be fetched.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "periodic_table",
+        "description": "python",
+        "parameters": {
+            "all": {
+                "description": "If provided, specifies the type of information to retrieve about all elements in the periodic table. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "star",
+        "description": "Fetches full information about a star given its ID from the Stars API using RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the star to fetch information about.",
+                "type": "str",
+                "default": "4"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "translate_to_old_english",
+        "description": "Translates the given text to Old English using the FunTranslations API.",
+        "parameters": {
+            "x_funtranslations_api_secret": {
+                "description": "API Key for accessing the FunTranslations Old English Translator.",
+                "type": "str",
+                "default": ""
+            },
+            "text": {
+                "description": "The text to be translated into Old English.",
+                "type": "str",
+                "default": "A hearty meal, a happy laughter is all we need."
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "verse_verse",
+        "description": "Fetches a biblical verse from the Uncovered Treasure API.",
+        "parameters": {
+            "verse": {
+                "description": "A commonly used English name with chapter number and optionally verse number (e.g., \"1 Corinthians 1\", \"1 Corinthians 1:5\", \"James 3\"). Ranged searches are not supported.",
+                "type": "str",
+                "default": "Acts 21:8"
+            },
+            "callback": {
+                "description": "An optional JSONP callback function name for the API response. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "gettalks",
+        "description": "Retrieve information about specific TED talks based on the provided parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "ID of a desired specific talk.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "audio_lang": {
+                "description": "Return talks which their audio language is the provided language. The provided value should be the language slug according to the /audio_languages endpoint.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "speaker": {
+                "description": "Return talks which at least one of their speakers is the provided speaker. The provided value should be the speaker slug according to the /speakers endpoint.",
+                "type": "str, optional",
+                "default": "yuval_noah_harari"
+            },
+            "publish_date": {
+                "description": "Return talks which were published on TED.com only on the exact provided date.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "topic": {
+                "description": "Return talks which at least one of their topics is the provided topic. The provided value should be the topic slug according to the /topics endpoint.",
+                "type": "str, optional",
+                "default": "politics"
+            },
+            "subtitle_lang": {
+                "description": "Return talks which have subtitles in the provided language. The provided value should be the language slug according to the /subtitle_languages endpoint.",
+                "type": "str, optional",
+                "default": "he"
+            },
+            "max_duration": {
+                "description": "Return talks which their duration in seconds is at most the provided value.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "to_publish_date": {
+                "description": "Return talks which were published on TED.com only before the provided date.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "from_publish_date": {
+                "description": "Return talks which were published on TED.com only after the provided date.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_duration": {
+                "description": "Return talks which their duration in seconds is at least the provided value.",
+                "type": "int, optional",
+                "default": "300"
+            },
+            "record_date": {
+                "description": "Return talks which were recorded only on the exact provided date.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "to_record_date": {
+                "description": "Return talks which were recorded only before the provided date.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "from_record_date": {
+                "description": "Return talks which were recorded only after the provided date.",
+                "type": "str, optional",
+                "default": "2017-01-01"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_score_by_id",
+        "description": "Fetches a score by `score_id` from the FluentMe API, optionally scaling the score based on the given `scale` parameter.",
+        "parameters": {
+            "score_id": {
+                "description": "The unique identifier of the score to fetch.",
+                "type": "str",
+                "default": "S38392182"
+            },
+            "scale": {
+                "description": "The maximum number of points for the recording and each word. Defaults to 90.",
+                "type": "int, optional",
+                "default": "90"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "gethardquestion",
+        "description": "Fetches the number of hard questions solved by a specified user on LeetCode using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The LeetCode username of the user whose hard question count is to be retrieved.",
+                "type": "str",
+                "default": "mujtabah258"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "retrieve_data",
+        "description": "Retrieve data from the Cameroon news API with optional query parameters.",
+        "parameters": {
+            "rank": {
+                "description": "The ranking criteria for the news data. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number to retrieve for the data. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "search": {
+                "description": "A search key to filter the news data. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_all_scores",
+        "description": "Retrieve a paginated list of all scores from the API.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "per_page": {
+                "description": "The number of scores per page. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_schedule",
+        "description": "Retrieves the schedule for specified League of Legends leagues using the provided RapidAPI key.",
+        "parameters": {
+            "leagueid": {
+                "description": "A string containing league IDs separated by '%2C' to filter schedules for multiple leagues.",
+                "type": "str",
+                "default": "98767991299243165%2C99332500638116286%2C98767991302996019"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_year_fact",
+        "description": "Fetch a fact about a given year from the Numbers API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the fact.",
+                "type": "str",
+                "default": "1492"
+            },
+            "fragment": {
+                "description": "If 'True', returns the fact as a fragment that can be easily included as part of a larger sentence. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "json": {
+                "description": "If 'True', returns the result in JSON format instead of plaintext. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "kanji_stroke_number",
+        "description": "Fetches Kanji characters using an advanced search based on stroke number.",
+        "parameters": {
+            "ks": {
+                "description": "Number of strokes for the Kanji character. Must be a positive integer.",
+                "type": "int",
+                "default": "16"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_all_verse_of_chapter_by_chapter_id",
+        "description": "Fetches all verses from a specific chapter in the Bhagavad Gita by chapter ID.",
+        "parameters": {
+            "chapterid": {
+                "description": "The ID of the chapter whose verses are to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "get_chapter_details_by_id",
+        "description": "Fetch details of a Bhagavad Gita chapter by its ID using the provided RapidAPI key.",
+        "parameters": {
+            "chapterid": {
+                "description": "The ID of the Bhagavad Gita chapter to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "retrieve_drill_details",
+        "description": "Retrieves details of a drill or course using the provided drill ID and RapidAPI key.",
+        "parameters": {
+            "drill_id": {
+                "description": "The ID of the drill or course to retrieve details for.",
+                "type": "str",
+                "default": "aD1yumG1SUyhyr3_SspN8w"
+            }
+        },
+        "domain": "Education"
+    },
+    {
+        "name": "getrandomwords",
+        "description": "Fetch random Ukrainian words based on specified criteria from an API.",
+        "parameters": {
+            "length": {
+                "description": "Exact length of the word. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "maxlength": {
+                "description": "Maximum length of the word. Defaults to 6.",
+                "type": "int, optional",
+                "default": "6"
+            },
+            "excludes": {
+                "description": "Letters that the word should not include. Defaults to '\u043a\u043b\u0438'.",
+                "type": "str, optional",
+                "default": "\u043a\u043b\u0438"
+            },
+            "minlength": {
+                "description": "Minimum length of the word. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "startswith": {
+                "description": "Letters that the word should start with. Defaults to '\u0432\u043e'.",
+                "type": "str, optional",
+                "default": "\u0432\u043e"
+            },
+            "endswith": {
+                "description": "Letters that the word should end with. Defaults to '\u044f'.",
+                "type": "str, optional",
+                "default": "\u044f"
+            },
+            "amount": {
+                "description": "Number of requested words. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "includes": {
+                "description": "Letters that the word should include. Defaults to '\u043e\u043b'.",
+                "type": "str, optional",
+                "default": "\u043e\u043b"
+            }
+        },
+        "domain": "Education"
+    }
+]

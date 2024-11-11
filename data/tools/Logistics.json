@@ -1,0 +1,215 @@
+[
+    {
+        "name": "latest",
+        "description": "Fetches the latest news from Google News for a specified language region.",
+        "parameters": {
+            "lr": {
+                "description": "Language region to get news for, e.g., 'en-US'.",
+                "type": "str",
+                "default": "en-US"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "getcity",
+        "description": "Retrieves a list of cities for a given ISO code using the RapidAPI service.",
+        "parameters": {
+            "iso": {
+                "description": "The ISO code representing the country.",
+                "type": "str",
+                "default": "iq"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "transactions",
+        "description": "python",
+        "parameters": {
+            "zipcode": {
+                "description": "The zipcode for which the transaction data is to be retrieved.",
+                "type": "str",
+                "default": "10019"
+            },
+            "page": {
+                "description": "The page number for pagination. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "pull_track",
+        "description": "Fetches tracking information for a shipment using a given AWB (Air Waybill) number.",
+        "parameters": {
+            "awb": {
+                "description": "The Air Waybill number to be tracked.",
+                "type": "str",
+                "default": "000-99999970"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "parse",
+        "description": "Parses GS1 barcode data using the GS1 Parser API and returns the parsed information.",
+        "parameters": {
+            "q": {
+                "description": "Machine- or human-readable GS1 barcode data.",
+                "type": "str",
+                "default": "(01)12345678901231(10)ABCD-123(30)27(11)211015"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "companies",
+        "description": "Fetch a specified quantity of companies for a given locale from the RapidAPI endpoint.",
+        "parameters": {
+            "quantity": {
+                "description": "The number of companies to retrieve.",
+                "type": "int",
+                "default": 100
+            },
+            "locale": {
+                "description": "The locale code for the data, e.g., 'en_US'.",
+                "type": "str",
+                "default": "en_US"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "track_package",
+        "description": "Tracks a package's shipping details using a provided tracking number and the Toolbench RapidAPI service.",
+        "parameters": {
+            "tracking_number": {
+                "description": "The tracking number of the package to be tracked.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "api_tracking",
+        "description": "Fetches tracking information for the provided Pack & Send reference number using the RapidAPI service.",
+        "parameters": {
+            "reference": {
+                "description": "The Pack & Send reference number for which tracking information is requested.",
+                "type": "str",
+                "default": "ReferenceNumberHere"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "carriers_detect",
+        "description": "Detects the carrier by providing a parcel tracking number using the TrackingMore API.",
+        "parameters": {
+            "trackingnumber": {
+                "description": "The tracking number of the parcel.",
+                "type": "str",
+                "default": "YT2003521266065328"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "cities_states_stateisocode",
+        "description": "Fetches the list of cities for a given state's ISO code using the specified RapidAPI key.",
+        "parameters": {
+            "stateisocode": {
+                "description": "The ISO code of the state for which the cities need to be retrieved.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "il",
+        "description": "Fetches data related to a specified Turkish province using the RapidAPI key.",
+        "parameters": {
+            "il": {
+                "description": "Province code for a Turkish province (from 1 to 81).",
+                "type": "int",
+                "default": "34"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "packages_v2_track",
+        "description": "Retrieves tracking information for a specific package using the TrackingMore API.",
+        "parameters": {
+            "trackingnumber": {
+                "description": "The tracking number of the package.",
+                "type": "str",
+                "default": "NY323068698GB"
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "count",
+        "description": "Fetches the total number of expired followers from an OnlyFans API endpoint.",
+        "parameters": {
+            "signstart": {
+                "description": "The start of the signature used for authorization.",
+                "type": "str",
+                "default": ""
+            },
+            "apptoken": {
+                "description": "The application token.",
+                "type": "str",
+                "default": ""
+            },
+            "signend": {
+                "description": "The end of the signature used for authorization.",
+                "type": "str",
+                "default": ""
+            },
+            "xbc": {
+                "description": "The XBC token.",
+                "type": "str",
+                "default": ""
+            },
+            "timezone": {
+                "description": "The timezone setting.",
+                "type": "str",
+                "default": "America/Los_Angeles"
+            },
+            "useragent": {
+                "description": "The user agent string.",
+                "type": "str",
+                "default": ""
+            },
+            "auth_id": {
+                "description": "The authentication ID.",
+                "type": "str",
+                "default": "729369"
+            },
+            "sess": {
+                "description": "The session ID.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Logistics"
+    },
+    {
+        "name": "retorna_dados_do_endere_o_atrav_s_do_cep",
+        "description": "Retrieves address information based on a given Brazilian postal code (CEP) using the specified RapidAPI key.",
+        "parameters": {
+            "cepnumber": {
+                "description": "The Brazilian postal code (CEP) for which to retrieve address information.",
+                "type": "str",
+                "default": "75094080"
+            }
+        },
+        "domain": "Logistics"
+    }
+]

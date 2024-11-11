@@ -1,0 +1,3396 @@
+[
+    {
+        "name": "get_search_user",
+        "description": "Fetches the search result for a specific username from the TikTok User API.",
+        "parameters": {
+            "is_id": {
+                "description": "The username or ID to search for.",
+                "type": "str",
+                "default": "therock"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_post",
+        "description": "Fetches the details of a TikTok post using the given `aweme_id` via the RapidAPI service.",
+        "parameters": {
+            "aweme_id": {
+                "description": "The unique identifier of the TikTok post to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtag_feed_video_posts_v2",
+        "description": "Fetches video posts related to a specific hashtag from a social media platform, providing metadata such as direct URLs, statistics, and more.",
+        "parameters": {
+            "name": {
+                "description": "Hashtag name to filter videos. Defaults to 'summer'.",
+                "type": "str, optional",
+                "default": "summer"
+            },
+            "limit": {
+                "description": "Maximum number of records to return. Defaults to 20; the maximum is 20.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor to fetch more videos. Use the value received from the previous request for continued pagination.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_highlight_item",
+        "description": "Fetch the highlight item from Instagram using the toolbench RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The Instagram ID for which to fetch the highlight items.",
+                "type": "str",
+                "default": "17934390836227915"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "vimeo",
+        "description": "Checks if a given Vimeo username is available using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Vimeo username to check for availability.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_pins",
+        "description": "Retrieves the Pinterest pins of a specified user.",
+        "parameters": {
+            "username": {
+                "description": "The Pinterest username whose pins are to be fetched.",
+                "type": "str",
+                "default": "0869178429hau"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "following_by_username",
+        "description": "Retrieve the list of users that the specified Instagram user is following, up to 1000 records.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to retrieve the following list.",
+                "type": "str",
+                "default": "therock"
+            },
+            "corsenabled": {
+                "description": "Whether CORS is enabled. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "nextmaxid": {
+                "description": "The next maximum ID for pagination. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "motivation_quote",
+        "description": "Fetches a motivational quote from the Olato Quotes API.",
+        "parameters": {
+            "quotes": {
+                "description": "Type of quotes to fetch. Default is 'random quotes'.",
+                "type": "str",
+                "default": "random quotes"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_by_rest_id",
+        "description": "Fetches user details from the RapidAPI Twitter endpoint using the provided user ID.",
+        "parameters": {
+            "user_id": {
+                "description": "The Twitter user ID for which to fetch details.",
+                "type": "str",
+                "default": "44196397"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_posts",
+        "description": "Fetches posts related to a specific music ID from the TikTok API.",
+        "parameters": {
+            "music_id": {
+                "description": "The ID of the music for which to fetch posts.",
+                "type": "str",
+                "default": ""
+            },
+            "count": {
+                "description": "Number of posts to fetch. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "offset": {
+                "description": "Number of posts to skip before starting to collect the posts. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "proxy": {
+                "description": "Proxy server to use for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "tweet_retweets",
+        "description": "Fetches the retweets for a given tweet.",
+        "parameters": {
+            "tweetid": {
+                "description": "The ID of the tweet for which to retrieve retweets.",
+                "type": "str",
+                "default": "1668868113725550592"
+            },
+            "count": {
+                "description": "The number of retweets to retrieve. Defaults to '20'.",
+                "type": "str, optional",
+                "default": "20"
+            },
+            "cursor": {
+                "description": "Cursor for pagination to fetch the next set of retweets.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "tweet_detail_conversation",
+        "description": "Fetches the details and conversation of a tweet using the provided tweet ID and optional cursor.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the tweet for which details and conversation need to be fetched.",
+                "type": "str",
+                "default": "1485953263040188416"
+            },
+            "cursor": {
+                "description": "The cursor value for pagination to fetch additional results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_tweets",
+        "description": "Fetches tweets for a specified user using the provided RapidAPI key.",
+        "parameters": {
+            "count": {
+                "description": "The number of tweets to retrieve.",
+                "type": "str",
+                "default": "20"
+            },
+            "user": {
+                "description": "The ID of the user whose tweets are to be fetched.",
+                "type": "str",
+                "default": "2455740283"
+            },
+            "cursor": {
+                "description": "The cursor for pagination. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_feed",
+        "description": "Fetch the feed of an Instagram user using the provided user ID via the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The user ID of the Instagram account to fetch the feed for.",
+                "type": "int",
+                "default": "25025320"
+            },
+            "max_id": {
+                "description": "The maximum ID for pagination in the feed. Defaults to '2796754904080592191_25025320'.",
+                "type": "str, optional",
+                "default": "2796754904080592191_25025320"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "net",
+        "description": "Checks if a .net domain name is registered using the RapidAPI 'check-username' service.",
+        "parameters": {
+            "name": {
+                "description": "The .net domain name to check for registration.",
+                "type": "str",
+                "default": "testdomain"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_hashtag",
+        "description": "Fetches detailed information about a specific Instagram hashtag using the provided API key.",
+        "parameters": {
+            "tag": {
+                "description": "The name of the hashtag to search for.",
+                "type": "str",
+                "default": "love"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_follow_list",
+        "description": "Fetches the follow list (followers or followings) of a TikTok user based on the given parameters.",
+        "parameters": {
+            "sec_uid": {
+                "description": "The unique ID of the TikTok user.",
+                "type": "str",
+                "default": "MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM"
+            },
+            "type": {
+                "description": "The type of follow list to fetch (\"followers\" or \"following\").",
+                "type": "str",
+                "default": ""
+            },
+            "maxcursor": {
+                "description": "The maximum cursor for pagination. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of results to fetch. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "mincursor": {
+                "description": "The minimum cursor for pagination. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_all_posts",
+        "description": "Retrieves a paginated list of all posts from the API.",
+        "parameters": {
+            "per_page": {
+                "description": "The number of posts to retrieve per page. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "page": {
+                "description": "The number of posts to retrieve per page. Defaults to 10.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_search",
+        "description": "Searches for music or audio names and retrieves artists' cover images and sound URLs.",
+        "parameters": {
+            "query": {
+                "description": "The search term for the music or audio, typically including the artist or movie name.",
+                "type": "str",
+                "default": "Titanic My Heart Will Go On"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "io",
+        "description": "Check if an .io domain with the given name is registered using the RapidAPI toolbench API.",
+        "parameters": {
+            "name": {
+                "description": "The domain name to check.",
+                "type": "str",
+                "default": "testdomain"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "wikipedia",
+        "description": "This function checks if a given username exists on Wikipedia using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check on Wikipedia.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "mass_messages",
+        "description": "Retrieves the last 100 mass messages from the OnlyFans API.",
+        "parameters": {
+            "timezone": {
+                "description": "The timezone to use for the messages.",
+                "type": "str",
+                "default": "America/Los_Angeles"
+            },
+            "useragent": {
+                "description": "The user agent string identifying the client's browser.",
+                "type": "str",
+                "default": ""
+            },
+            "auth_id": {
+                "description": "Authentication ID used for accessing the API.",
+                "type": "str",
+                "default": "729369"
+            },
+            "signstart": {
+                "description": "Start time for the signed request.",
+                "type": "str",
+                "default": ""
+            },
+            "signend": {
+                "description": "End time for the signed request.",
+                "type": "str",
+                "default": ""
+            },
+            "sess": {
+                "description": "Session identifier.",
+                "type": "str",
+                "default": ""
+            },
+            "xbc": {
+                "description": "Another session-related identifier.",
+                "type": "str",
+                "default": ""
+            },
+            "apptoken": {
+                "description": "Application token for API access.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "top_posts_by_subreddit",
+        "description": "Fetches the top posts from a specific subreddit within a given time frame using the Reddit API.",
+        "parameters": {
+            "time": {
+                "description": "The time frame for fetching top posts. Options include `hour`, `day`, `week`, `month`, `year`, and `all`.",
+                "type": "str",
+                "default": "year"
+            },
+            "subreddit": {
+                "description": "The subreddit name from which to fetch top posts, e.g., `memes`.",
+                "type": "str",
+                "default": "memes"
+            },
+            "cursor": {
+                "description": "A cursor for pagination to fetch additional posts. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_followers_by_username",
+        "description": "Retrieves the information of 12 followers for a given Instagram username using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch followers information.",
+                "type": "str",
+                "default": "therock"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getuservideos",
+        "description": "Fetch a list of the most recent user-generated videos that have been publicly shared to YouTube.",
+        "parameters": {
+            "num": {
+                "description": "Number of shared user-generated videos to include in the response. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "since": {
+                "description": "Optionally truncate result set if this ISO 8601 combined UTC date and time is reached.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "force": {
+                "description": "Optionally bypass cache to retrieve the most up-to-date data.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "callback": {
+                "description": "Wrap the response object in a function call of your choosing.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "top_popular_posts",
+        "description": "Fetches the top popular posts from Reddit based on the specified time frame.",
+        "parameters": {
+            "time": {
+                "description": "The time frame for fetching popular posts. It can be one of the following: 'hour', 'day', 'week', 'month', 'year', or 'all'.",
+                "type": "str",
+                "default": "year"
+            },
+            "cursor": {
+                "description": "A cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "global_search_by_query",
+        "description": "Performs a global search on Instagram based on the given query.",
+        "parameters": {
+            "query": {
+                "description": "The search term to be used in the Instagram search.",
+                "type": "str",
+                "default": "iq"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_reply_comment_by_id",
+        "description": "Fetch a list of reply comments from TikTok for a given comment and video ID.",
+        "parameters": {
+            "cid": {
+                "description": "The ID of the comment for which to fetch reply comments.",
+                "type": "int",
+                "default": "7178309240628658970"
+            },
+            "aweme_id": {
+                "description": "The ID of the TikTok video associated with the comment.",
+                "type": "int",
+                "default": "7178094165614464282"
+            },
+            "count": {
+                "description": "The number of reply comments to retrieve, with a maximum value of 30. Default is 5.",
+                "type": "int, optional",
+                "default": "5"
+            },
+            "cursor": {
+                "description": "The cursor position for paginating through the comments. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "igtv",
+        "description": "Fetch IGTV channel details for a given Instagram username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username to fetch IGTV details for. Defaults to 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            },
+            "nextmaxid": {
+                "description": "Pagination identifier for fetching next set of results.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_data_by_name",
+        "description": "Fetches user data from TikTok Solutions API for a given username.",
+        "parameters": {
+            "username": {
+                "description": "The username of the TikTok user whose data is to be retrieved.",
+                "type": "str",
+                "default": "mrbeast"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "trending_challenges",
+        "description": "Fetches the trending challenges from the TikTok API.",
+        "parameters": {
+            "cursor": {
+                "description": "The position to start fetching results from. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "proxy": {
+                "description": "The proxy server to use for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "The number of results to return. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_9gag",
+        "description": "Checks if a given username is available on 9gag using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on 9gag.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_dm_conversations",
+        "description": "Fetches direct message conversations and messages from the Twitter API using the provided session and optional parameters.",
+        "parameters": {
+            "twttr_session": {
+                "description": "The session token for authenticating with the Twitter API.",
+                "type": "str",
+                "default": ""
+            },
+            "twttr_proxy": {
+                "description": "Optional proxy URL to route the request through.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cursor": {
+                "description": "Optional cursor token to paginate through the result set.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "love_quote",
+        "description": "Fetches and returns love quotes from the olato-quotes API.",
+        "parameters": {
+            "quotes": {
+                "description": "Specific quotes to search for. Defaults to 'random quotes'.",
+                "type": "str",
+                "default": "random quotes"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_metadata_information",
+        "description": "Fetch and return metadata information for a specified TikTok user, such as number of followers, followings, avatar URL, description, and more.",
+        "parameters": {
+            "username": {
+                "description": "The TikTok username to fetch metadata for (e.g., \"amazon\").",
+                "type": "str",
+                "default": "tiktok"
+            },
+            "fresh": {
+                "description": "If set to '1', forces the API to return fresh (non-cached) data. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_music_music_id",
+        "description": "Fetches music information by music ID using the provided RapidAPI key.",
+        "parameters": {
+            "music_id": {
+                "description": "The ID of the music to fetch information for.",
+                "type": "str",
+                "default": "6928004115846924290"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "playlist_posts",
+        "description": "Fetch posts from TikTok for a specific user and playlist.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID or secret UID of the user.",
+                "type": "str",
+                "default": "6896921279983977474"
+            },
+            "playlist_id": {
+                "description": "The ID of the playlist.",
+                "type": "str",
+                "default": "6974449062670027522"
+            },
+            "offset": {
+                "description": "The offset for pagination. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "full_info_with_url",
+        "description": "Fetches detailed information about a TikTok video, including author info, video statistics, and metadata, using the provided URL.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the TikTok video to fetch information for.",
+                "type": "str",
+                "default": "https://www.tiktok.com/@mehdi_amri_10/video/7060576901613587718"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_follower",
+        "description": "Retrieves the followers of a specified TikTok user using the provided API key.",
+        "parameters": {
+            "user_id": {
+                "description": "The unique identifier of the TikTok user whose followers are to be retrieved.",
+                "type": "str",
+                "default": "107955"
+            },
+            "count": {
+                "description": "The number of followers to retrieve. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cursor": {
+                "description": "The cursor for pagination (to fetch the next set of followers). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_hashtags",
+        "description": "Search for Instagram hashtags by keyword using the RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The keyword to search hashtags for.",
+                "type": "str",
+                "default": "fitness"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "gettrendinglenses",
+        "description": "Fetches the trending lenses from Snapchat using the RapidAPI service.",
+        "parameters": {
+            "cursor": {
+                "description": "A cursor for pagination. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "us",
+        "description": "Fetches current or historical national average gas price data for the US.",
+        "parameters": {
+            "date": {
+                "description": "The date for which historical gas price data is to be fetched, in the format 'YYYY-MM-DD'. If not provided, current gas price data is returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "generate_shield",
+        "description": "Generates a shield using the Shields API and returns the response.",
+        "parameters": {
+            "name": {
+                "description": "The name parameter to be included in the query string. Defaults to 'google'.",
+                "type": "str",
+                "default": "google"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getmusic",
+        "description": "Fetches all TikTok videos that are using a specific music track along with information about the original music.",
+        "parameters": {
+            "getmusic": {
+                "description": "The identifier or name of the music track to search for on TikTok.",
+                "type": "str",
+                "default": "6818239458366753542"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_sticker",
+        "description": "Fetches information related to specific stickers given their IDs from the RapidAPI service.",
+        "parameters": {
+            "sticker_ids": {
+                "description": "Comma-separated string of sticker IDs to fetch information for.",
+                "type": "str",
+                "default": "1108584,1108584"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "steam",
+        "description": "Checks the availability of a given username on Steam using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on Steam.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "song_info",
+        "description": "Retrieve basic information about a song from a given track URL using the SoundCloud API.",
+        "parameters": {
+            "track_url": {
+                "description": "The URL of the track for which the information is to be retrieved.",
+                "type": "str",
+                "default": "https://soundcloud.com/user-977421934/the-phoenix"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_search_keyword",
+        "description": "Search for a keyword using RapidAPI and return related hashtags and places.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for on Instagram.",
+                "type": "str",
+                "default": "los angeles"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_related_video_with_keywords",
+        "description": "Fetches a list of related videos based on the provided keywords from the TikTok API.",
+        "parameters": {
+            "keywords": {
+                "description": "The search keywords to find related videos.",
+                "type": "str",
+                "default": "Beautiful Girl"
+            },
+            "count": {
+                "description": "The number of videos to return. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            },
+            "publish_time": {
+                "description": "Filter videos by their publish time. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "cursor": {
+                "description": "The cursor for pagination. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "region": {
+                "description": "The region to filter videos. Refer to the TikTok region list for details. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "sort_type": {
+                "description": "Sort type for the videos. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_channel_description",
+        "description": "Fetches the channel description from the Twitch API using the provided user ID.",
+        "parameters": {
+            "userid": {
+                "description": "The ID of the user whose channel description is to be fetched.",
+                "type": "str",
+                "default": "julie"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "api_analyze",
+        "description": "Analyzes user data on TikTok, including engagement, hashtags, mentions, and recent videos.",
+        "parameters": {
+            "sec_user_id": {
+                "description": "The unique security user ID of the TikTok user to analyze.",
+                "type": "str",
+                "default": "MS4wLjABAAAA-VASjiXTh7wDDyXvjk10VFhMWUAoxr8bgfO1kAL1-9s"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtag_feed_video_posts",
+        "description": "Fetches a feed of video posts associated with a specific hashtag from the TikTok API.",
+        "parameters": {
+            "fresh": {
+                "description": "By setting this value to 1, the function will return fresh (non-cached) data. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "name": {
+                "description": "The hashtag name to query, e.g., 'summer'. Default is 'summer'.",
+                "type": "str, optional",
+                "default": "summer"
+            },
+            "limit": {
+                "description": "The maximum number of records to return. Default is None, which typically defaults to 20. The maximum permissible value is 20.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor for fetching more video posts. Use the cursor received from the previous request to get subsequent results. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_info_by_user_id",
+        "description": "Fetch Instagram user information by user ID using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The Instagram user ID for which the information is to be fetched.",
+                "type": "int",
+                "default": "18527"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_sign_prediction_for_today_by_name",
+        "description": "Fetches the zodiac sign prediction for today based on the provided sign name using the RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The name of the zodiac sign for which the prediction is requested.",
+                "type": "str",
+                "default": "Aries"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_videos",
+        "description": "Retrieves videos for a specified TikTok user using their `secUid` and `user_id`. Optionally, a cursor can be provided for pagination.",
+        "parameters": {
+            "secuid": {
+                "description": "The secUid of the TikTok user.",
+                "type": "str",
+                "default": "MS4wLjABAAAAsY6EjWejsVbCjir7Vdy-uNX364xNywkQSLqqoV5Hcnt7v3CVToFzfIgcdpQ_iW3D"
+            },
+            "user_id": {
+                "description": "The unique identifier of the TikTok user.",
+                "type": "str",
+                "default": "6676352751163032582"
+            },
+            "cursor": {
+                "description": "Cursor for pagination to get the subsequent set of videos. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_favorite_list",
+        "description": "Retrieve the favorite video list for a TikTok user using their unique identifier.",
+        "parameters": {
+            "sec_uid": {
+                "description": "The unique identifier of the TikTok user whose favorite list is to be retrieved.",
+                "type": "str",
+                "default": "MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_basic_details_dp",
+        "description": "Retrieves basic details and Instagram display picture (DP) download link for a given user.",
+        "parameters": {
+            "is_id": {
+                "description": "Username or profile link of the Instagram account.",
+                "type": "str",
+                "default": "deepikapadukone"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_related_profiles_by_user_id",
+        "description": "Fetches related profiles for a given Instagram user ID using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The Instagram user ID for which to fetch related profiles.",
+                "type": "int",
+                "default": "18527"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_followers_list",
+        "description": "Fetches the list of followers for a TikTok user using the provided API parameters.",
+        "parameters": {
+            "fresh": {
+                "description": "If set to 1, forces the API to return fresh data instead of cached data. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "sec_uid": {
+                "description": "A secure user ID that can be obtained from the User Information endpoint. Using `sec_uid` makes the request faster than using `username`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor for fetching the next batch of followers.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Number of follower records to return. The default is 100, and the maximum is 100.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "username": {
+                "description": "TikTok username, such as 'amazon'. Using `sec_uid` instead of `username` will result in a faster request. Defaults to 'tiktok'.",
+                "type": "str, optional",
+                "default": "tiktok"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_feed_video_posts_v2",
+        "description": "Fetches user feed video posts from TikTok using version 2 of the API.",
+        "parameters": {
+            "limit": {
+                "description": "Limit the number of records returned. Defaults to 30, with a maximum of 30.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor for getting additional videos. Use the value of `max_cursor` from the previous request response to fetch more videos.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "username": {
+                "description": "The username of the TikTok influencer. For example, `'charlidamelio'`. Defaults to `'tiktok'`.",
+                "type": "str, optional",
+                "default": "tiktok"
+            },
+            "sec_uid": {
+                "description": "The secondary unique ID for faster request processing. It can be obtained from the User Information endpoint. For example: `'MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM'`.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_reel_by_media_id",
+        "description": "Retrieves reel information given a specific media ID from Instagram using the RapidAPI service.",
+        "parameters": {
+            "media_id": {
+                "description": "The unique identifier for the Instagram media.",
+                "type": "str",
+                "default": "3089561820519690447"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "trending_feed_video_posts_v2",
+        "description": "Fetch trending video posts from a social media feed using the V2 endpoint.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of records to return. Defaults to 12. Must not exceed 12.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor. Use this to fetch the next batch of videos by providing the value received in the previous request's response.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "video_no_watermark",
+        "description": "Retrieves a video without a watermark from a given URL using the Toolbench RapidAPI service.",
+        "parameters": {
+            "video_url": {
+                "description": "The URL of the video to be retrieved without watermark.",
+                "type": "str",
+                "default": "https://www.tiktok.com/@tiktok/video/7173042191730740523"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_media_by_user_id",
+        "description": "Fetches Instagram user media based on the provided user ID using the specified RapidAPI key.",
+        "parameters": {
+            "count": {
+                "description": "The number of media posts to retrieve.",
+                "type": "int",
+                "default": "12"
+            },
+            "is_id": {
+                "description": "The Instagram user ID for which to fetch media.",
+                "type": "int",
+                "default": "18527"
+            },
+            "end_cursor": {
+                "description": "The cursor for pagination to fetch the next set of media posts. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_users_detail_info",
+        "description": "Fetch detailed user information from the TikTok Video Feature Summary API.",
+        "parameters": {
+            "unique_id": {
+                "description": "The unique identifier for the user. Default is 'voyagel'.",
+                "type": "str",
+                "default": "voyagel"
+            },
+            "user_id": {
+                "description": "The user ID. Default is '107955'.",
+                "type": "str",
+                "default": "107955"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "popular_posts",
+        "description": "Fetches popular posts from Reddit based on the given sort type.",
+        "parameters": {
+            "sort": {
+                "description": "The sorting method for the posts. Accepted values are 'new' and 'hot'.",
+                "type": "str",
+                "default": "new"
+            },
+            "cursor": {
+                "description": "An optional cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "instagram",
+        "description": "Checks the availability of a given Instagram username using RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username to be checked.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "download_video_or_reel",
+        "description": "Downloads Facebook video or reel links in HD and SD formats.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the Facebook video or reel to be downloaded.",
+                "type": "str",
+                "default": "https://www.facebook.com/antarikshTV/videos/958242908874442/"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "emoji",
+        "description": "Fetches the emoji associated with a given name using the Emoji API.",
+        "parameters": {
+            "name": {
+                "description": "The name for which the emoji is to be fetched.",
+                "type": "str",
+                "default": "cat_face"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "list_comments",
+        "description": "Fetches comments for the specified TikTok post using the given parameters.",
+        "parameters": {
+            "aweme_id": {
+                "description": "The ID of the TikTok post for which to retrieve comments.",
+                "type": "str",
+                "default": ""
+            },
+            "count": {
+                "description": "The number of comments to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "cursor": {
+                "description": "The position from where to start retrieving comments. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "proxy": {
+                "description": "The proxy server to use for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_information",
+        "description": "Fetch music information from Instagram using the provided audio cluster ID.",
+        "parameters": {
+            "musicid": {
+                "description": "The Instagram audio cluster ID.",
+                "type": "str",
+                "default": "514041080820366"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_media_info_by_url",
+        "description": "Fetches Instagram media information based on the given URL.",
+        "parameters": {
+            "link": {
+                "description": "The URL link to the specific Instagram media.",
+                "type": "str",
+                "default": "https://www.instagram.com/p/CqIbCzYMi5C/"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "challenge",
+        "description": "Fetch the challenge details from TikTok based on a provided hashtag.",
+        "parameters": {
+            "hashtag": {
+                "description": "The hashtag of the challenge to fetch details for.",
+                "type": "str",
+                "default": "fyp"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "list_replies_by_comment",
+        "description": "Fetches replies to a specific comment on a given TikTok video using the RapidAPI service.",
+        "parameters": {
+            "aweme_id": {
+                "description": "The ID of the TikTok video.",
+                "type": "str",
+                "default": ""
+            },
+            "comment_id": {
+                "description": "The ID of the comment for which replies are being retrieved.",
+                "type": "str",
+                "default": ""
+            },
+            "count": {
+                "description": "The number of replies to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "cursor": {
+                "description": "The starting point for pagination. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "proxy": {
+                "description": "Proxy server to use for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "video_data",
+        "description": "Retrieves video data for a given video ID from YouTube using the RapidAPI service.",
+        "parameters": {
+            "video_id": {
+                "description": "The ID of the YouTube video for which to retrieve data.",
+                "type": "str",
+                "default": "hs1W2KQluWA"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_pin_info",
+        "description": "Fetches information about a Pinterest pin using its shortcode.",
+        "parameters": {
+            "shortcode": {
+                "description": "The shortcode for the Pinterest pin.",
+                "type": "str",
+                "default": "39Nfim2"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "searchfollowers",
+        "description": "Search the followers of a specific Instagram user based on a query.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the Instagram user whose followers will be searched.",
+                "type": "str",
+                "default": "25025320"
+            },
+            "query": {
+                "description": "The search query to filter the followers.",
+                "type": "str",
+                "default": "fake"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getlensitem",
+        "description": "Fetches lens item information from the Snapchat RapidAPI using the provided lens ID and API key.",
+        "parameters": {
+            "lens_id": {
+                "description": "The ID of the lens item to retrieve.",
+                "type": "str",
+                "default": "41a72e9ae9a44f8891327ce6cf1c344d"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_music",
+        "description": "Searches for music based on the provided keywords using the TikTok API.",
+        "parameters": {
+            "keywords": {
+                "description": "The search terms to look for in the music database.",
+                "type": "str",
+                "default": "thuyen quyen remix"
+            },
+            "count": {
+                "description": "The number of results to return, with a maximum of 30. Defaults to 5.",
+                "type": "int, optional",
+                "default": "5"
+            },
+            "cursor": {
+                "description": "The cursor for pagination to get the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtag_metadata_information",
+        "description": "Retrieves metadata information for a given hashtag using the RapidAPI Toolbench.",
+        "parameters": {
+            "hashtag": {
+                "description": "The name of the hashtag for which to retrieve metadata. For example: 'summer'.",
+                "type": "str",
+                "default": "summer"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "sign_info",
+        "description": "Fetches and returns the sign information from the OnlyFans API using the provided user agent and RapidAPI key.",
+        "parameters": {
+            "useragent": {
+                "description": "The user agent string to be used in the API request.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_post_post_id_comments",
+        "description": "Fetch comments for a given post ID from the Tokapi mobile API.",
+        "parameters": {
+            "post_id": {
+                "description": "The ID of the post for which to fetch comments.",
+                "type": "str",
+                "default": "6977747303692078337"
+            },
+            "count": {
+                "description": "The number of comments to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": 10
+            },
+            "offset": {
+                "description": "The offset for fetching comments, used for pagination. Defaults to 0.",
+                "type": "int, optional",
+                "default": 0
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_highlights_list",
+        "description": "Fetches the list of Instagram highlights for a given user ID using the Toolbench API.",
+        "parameters": {
+            "userid": {
+                "description": "The Instagram user ID for which to fetch the highlights.",
+                "type": "str",
+                "default": "25025320"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_activity_pins",
+        "description": "Retrieve activity pins for a given Pinterest username using the Pinterest Scraper API.",
+        "parameters": {
+            "username": {
+                "description": "The Pinterest username for which to retrieve activity pins.",
+                "type": "str",
+                "default": "nasa"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "trending_tags_from_country",
+        "description": "Fetches trending tags from a specified country using the Hashtag5 API.",
+        "parameters": {
+            "country_name": {
+                "description": "The name of the country for which to fetch trending tags.",
+                "type": "str",
+                "default": "United States"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_sticker_sticker_id",
+        "description": "Fetches the sticker information for a given sticker ID using the TokAPI service.",
+        "parameters": {
+            "sticker_id": {
+                "description": "The ID of the sticker to fetch information for.",
+                "type": "str",
+                "default": "1108584"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_profile_info",
+        "description": "Fetches the profile information from Pinterest for a given username using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Pinterest username for which the profile information is to be retrieved.",
+                "type": "str",
+                "default": "nasa"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "register_device_information",
+        "description": "Registers a device by sending its information to a specified endpoint.",
+        "parameters": {
+            "aid": {
+                "description": "App identifier for the device.",
+                "type": "int",
+                "default": "1180"
+            },
+            "version": {
+                "description": "Version code of the app. Defaults to '250304'.",
+                "type": "str, optional",
+                "default": "250304"
+            },
+            "os": {
+                "description": "Operating system version of the device. Defaults to '7.1.2'.",
+                "type": "str, optional",
+                "default": "7.1.2"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "match",
+        "description": "Fetch the detailed information of an individual tennis match using the provided match ID from the Tennis Live Data API.",
+        "parameters": {
+            "match_id": {
+                "description": "The unique identifier for the tennis match to retrieve information for.",
+                "type": "int",
+                "default": "10535"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getprofilebyuserid",
+        "description": "Fetches the profile information of an Instagram user given their user ID.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the Instagram user whose profile is to be retrieved.",
+                "type": "str",
+                "default": "1190758433"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "shopify",
+        "description": "Checks the availability of a given username on Shopify using the Toolbench RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on Shopify.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "song_download",
+        "description": "Downloads a song from the provided SoundCloud URL using the specified RapidAPI key.",
+        "parameters": {
+            "track_url": {
+                "description": "The URL of the SoundCloud track to be downloaded.",
+                "type": "str",
+                "default": "https://soundcloud.com/user-977421934/the-phoenix"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "language_by_id",
+        "description": "Fetches language information from the API based on the provided language identifier and optional filters.",
+        "parameters": {
+            "lang": {
+                "description": "A 2-letter ISO language code used to fetch the language data.",
+                "type": "str",
+                "default": "sv"
+            },
+            "lang_3": {
+                "description": "An optional 3-letter ISO language code filter.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "iso_a2": {
+                "description": "An optional 2-letter country code filter.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "A comma-separated string specifying the fields to be included in the response. Default is 'iso_a2,lang_3,flag'.",
+                "type": "str, optional",
+                "default": "iso_a2,lang_3,flag"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "similar_hashtags",
+        "description": "Fetches related hashtags for a given keyword using the Hashtag API.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword for which related hashtags are to be fetched.",
+                "type": "str",
+                "default": "insta"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "post_count",
+        "description": "Fetches the total post count for a given hashtag using the Toolbench RapidAPI service.",
+        "parameters": {
+            "tag": {
+                "description": "The hashtag for which the post count is to be fetched.",
+                "type": "str",
+                "default": "insta"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_likes_by_userid",
+        "description": "Fetches all likes of a user from Twitter using the provided user ID.",
+        "parameters": {
+            "userid": {
+                "description": "The userId of the Twitter user. This can be obtained by converting a username to a userId or by searching for a user and extracting the restId.",
+                "type": "str",
+                "default": "44196397"
+            },
+            "cursor": {
+                "description": "A cursor value for pagination. Use this to navigate to the next or previous page of results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "The number of results to return per request. Defaults to '20'.",
+                "type": "str, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_challenge",
+        "description": "Searches for challenges on TikTok based on the given keywords.",
+        "parameters": {
+            "keywords": {
+                "description": "The keywords to search for TikTok challenges.",
+                "type": "str",
+                "default": "Su That La"
+            },
+            "cursor": {
+                "description": "The cursor for the next page of search results. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of search results to return. Defaults to 5.",
+                "type": "int, optional",
+                "default": "5"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "jokes_random",
+        "description": "Retrieves a random Chuck Norris joke in JSON format from the specified API.",
+        "parameters": {
+            "category": {
+                "description": "Specifies the category of the random joke. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_replies",
+        "description": "Fetches the replies of a specified Twitter user.",
+        "parameters": {
+            "user": {
+                "description": "The user ID of the Twitter user whose replies are to be fetched.",
+                "type": "str",
+                "default": "2455740283"
+            },
+            "count": {
+                "description": "The number of replies to fetch.",
+                "type": "str",
+                "default": "20"
+            },
+            "cursor": {
+                "description": "The pagination cursor for retrieving subsequent sets of replies. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "feeds_by_secuid",
+        "description": "Fetches feeds from TikTok using a given secUid.",
+        "parameters": {
+            "schematype": {
+                "description": "The schema type for the feeds request.",
+                "type": "str",
+                "default": "1"
+            },
+            "username": {
+                "description": "The username of the TikTok account.",
+                "type": "str",
+                "default": "therock"
+            },
+            "secuid": {
+                "description": "The security UID of the TikTok account.",
+                "type": "str",
+                "default": "MS4wLjABAAAAM3R2BtjzVT-uAtstkl2iugMzC6AtnpkojJbjiOdDDrdsTiTR75-8lyWJCY5VvDrZ"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "dribbble",
+        "description": "Checks the availability of a given username on Dribbble using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on Dribbble.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "video_post_metadata",
+        "description": "Fetch metadata for a single TikTok video post.",
+        "parameters": {
+            "video": {
+                "description": "The URL of the TikTok video post. For example: 'https://www.tiktok.com/@charlidamelio/video/7137423965982592302'.",
+                "type": "str",
+                "default": "https://www.tiktok.com/@charlidamelio/video/7010108194051640582"
+            },
+            "fresh": {
+                "description": "If set to 1, force the return of fresh data (not cached). Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "highlights",
+        "description": "Fetches the Instagram story highlights for a given username using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch story highlights. Defaults to 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_stream_game_name",
+        "description": "Fetch the current game name of a Twitch stream for a given user ID.",
+        "parameters": {
+            "userid": {
+                "description": "The Twitch user ID for which to fetch the current game name.",
+                "type": "str",
+                "default": "xqcow"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtag_data_by_name",
+        "description": "Fetches data for a specified TikTok hashtag using the given challenge name.",
+        "parameters": {
+            "challenge_name": {
+                "description": "The name of the TikTok hashtag challenge to retrieve data for.",
+                "type": "str",
+                "default": "food"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_twitter",
+        "description": "Search Twitter based on the specified type, count, and query criteria, with optional cursor for pagination and API key for authorization.",
+        "parameters": {
+            "type": {
+                "description": "The type of search to perform (Top, Latest, Videos, Photos, or People).",
+                "type": "str",
+                "default": "Top"
+            },
+            "count": {
+                "description": "The number of search results to return.",
+                "type": "str",
+                "default": "20"
+            },
+            "query": {
+                "description": "The search query string.",
+                "type": "str",
+                "default": "Mr Beast"
+            },
+            "cursor": {
+                "description": "The cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_category",
+        "description": "Fetches a list of trending categories from the Tokapi Mobile API using specified query parameters.",
+        "parameters": {
+            "count": {
+                "description": "Number of categories to fetch. Defaults to 10.",
+                "type": "int",
+                "default": 10
+            },
+            "offset": {
+                "description": "Offset for pagination. Defaults to 0.",
+                "type": "int",
+                "default": 0
+            },
+            "region": {
+                "description": "Region code for filtering categories. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_individual_result_by_id",
+        "description": "Fetches individual result data by a given ID from the Robbery Data API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the individual whose result data is to be fetched.",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "highlight_items",
+        "description": "Fetches highlight items for a given highlight ID from a private Instagram API using RapidAPI.",
+        "parameters": {
+            "highlightid": {
+                "description": "The ID of the highlight to fetch information for. Default is 'highlight:18064021144190483'.",
+                "type": "str",
+                "default": "highlight:18064021144190483"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "tag_search",
+        "description": "Fetches news articles based on the provided tag from the India Today API.",
+        "parameters": {
+            "tag": {
+                "description": "The tag or keyword to search for in the news articles.",
+                "type": "str",
+                "default": "India"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "tiktok_url_shortener",
+        "description": "This function shortens a TikTok URL using the ScrapTik API and allows for optional specification of device and proxy.",
+        "parameters": {
+            "url": {
+                "description": "The TikTok URL to shorten.",
+                "type": "str",
+                "default": "https://m.tiktok.com/v/6977803984228584709.html"
+            },
+            "device": {
+                "description": "The type of device for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "tok_proxy": {
+                "description": "The proxy to use for the request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "session",
+        "description": "Fetches the session details for a given `session_id` from the Races endpoint on the F1 Live Motorsport Data API. This includes information such as drivers' times, session weather, speed traps, and session status and is updated throughout each session.",
+        "parameters": {
+            "session_id": {
+                "description": "The ID of the session for which details are being retrieved.",
+                "type": "int",
+                "default": "2757"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "feeds",
+        "description": "Fetch recent TikTok feeds for a given user.",
+        "parameters": {
+            "schematype": {
+                "description": "The type of schema to use for the query.",
+                "type": "str",
+                "default": "1"
+            },
+            "username": {
+                "description": "The TikTok username for which to fetch recent feeds.",
+                "type": "str",
+                "default": "tiktok"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_highlights_tray_by_user_id",
+        "description": "Fetches the highlight tray of a specific Instagram user identified by their user ID using the RapidAPI service.",
+        "parameters": {
+            "user_id": {
+                "description": "The unique identifier of the Instagram user.",
+                "type": "int",
+                "default": "25025320"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "comment_list",
+        "description": "Fetches a list of comments for a specified TikTok video using the given API.",
+        "parameters": {
+            "aweme_id": {
+                "description": "The ID of the TikTok video.",
+                "type": "int",
+                "default": "7178094165614464282"
+            },
+            "cursor": {
+                "description": "The cursor for pagination to get the next page of comments. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of comments to fetch. Maximum is 30. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_tweets_replies_by_screen_name",
+        "description": "Fetches the tweets and replies of a specified user by their screen name using the Twitter API.",
+        "parameters": {
+            "username": {
+                "description": "The screen name of the user whose tweets and replies are to be fetched.",
+                "type": "str",
+                "default": "elonmusk"
+            },
+            "cursor": {
+                "description": "The cursor for pagination, if any. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of tweets and replies to fetch. Defaults to '40'.",
+                "type": "str, optional",
+                "default": "40"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtagmedias",
+        "description": "Fetches media related to a specific hashtag from the Instagram API using RapidAPI.",
+        "parameters": {
+            "hash_tag": {
+                "description": "The hashtag to query for media.",
+                "type": "str",
+                "default": "cat"
+            },
+            "next_cursor": {
+                "description": "A cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getmusiclenses",
+        "description": "Fetches music lenses from the Snapchat API.",
+        "parameters": {
+            "cursor": {
+                "description": "A string to navigate through paginated results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_pins",
+        "description": "Search for Pinterest pins based on a given keyword using the specified RapidAPI key.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term used to find relevant Pinterest pins.",
+                "type": "str",
+                "default": "nasa"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "validate_username",
+        "description": "Validates an Instagram username using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username to be validated.",
+                "type": "str",
+                "default": "lelepons"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "mediainfo",
+        "description": "Fetch media information from Instagram using the provided short code.",
+        "parameters": {
+            "short_code": {
+                "description": "The short code of the Instagram media post.",
+                "type": "str",
+                "default": "CA_ifcxMjFR"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_id_by_username",
+        "description": "Fetch the Instagram user ID associated with a given username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which the user ID needs to be retrieved.",
+                "type": "str",
+                "default": "abdallhdev"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "api_userinfo",
+        "description": "Fetches the avatar, followers count, likes count, and videos count of a TikTok user by user ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the TikTok user.",
+                "type": "str",
+                "default": "6867450947363636225"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "genderify_v3",
+        "description": "Predict and detect the gender (male or female) based on the given name or email address using the Genderify API. Names are supported in over 160 countries.",
+        "parameters": {
+            "text": {
+                "description": "The name or email address to analyze for gender prediction.",
+                "type": "str",
+                "default": "ayumihamasaki@gmail.com"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "telegram_channel_info",
+        "description": "Fetch realtime information about a public Telegram Channel.",
+        "parameters": {
+            "channel": {
+                "description": "The @username of the Telegram channel.",
+                "type": "str",
+                "default": "telegram"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_quotes_by_source",
+        "description": "Fetches quotes from a given source using the Quotes API on RapidAPI.",
+        "parameters": {
+            "source": {
+                "description": "The source from which to fetch quotes.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "medias",
+        "description": "Retrieves media posts from a specified Instagram user using the Instagram RapidAPI.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the Instagram user whose media posts are to be retrieved.",
+                "type": "str",
+                "default": "25025320"
+            },
+            "batch_size": {
+                "description": "The number of media posts to retrieve in a single batch, ranging from 1 to 50. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "next_cursor": {
+                "description": "The cursor for fetching the next set of media posts in pagination. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "patreon",
+        "description": "Check the availability of a given username on Patreon using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to be checked on Patreon.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "random_meme",
+        "description": "Fetches a random meme from a specified genre and type using the given RapidAPI key.",
+        "parameters": {
+            "genre": {
+                "description": "The genre of the meme. Default is 'memes'. Available genres include 'anime', 'dnd', 'history', 'historyani', 'memes', 'politics', 'science', 'lotr', and 'ww2'.",
+                "type": "str",
+                "default": "memes"
+            },
+            "type": {
+                "description": "The type of the meme. Default is 'top'. Available types include 'top', 'hot', and 'new'.",
+                "type": "str",
+                "default": "top"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_highlight_by_id",
+        "description": "Fetches all images and videos of a specific Instagram highlight by its ID.",
+        "parameters": {
+            "highlightid": {
+                "description": "The ID of the Instagram highlight.",
+                "type": "str",
+                "default": "highlight:18042967741398634"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "searchzodiacbysign",
+        "description": "Fetches information about a zodiac sign from the Zodiac API.",
+        "parameters": {
+            "sign": {
+                "description": "The zodiac sign to search for. Ensure the first letter is capitalized.",
+                "type": "str",
+                "default": "Gemini"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "top_posts_by_username",
+        "description": "Fetches the top posts by a specific Reddit username within a specified time frame.",
+        "parameters": {
+            "username": {
+                "description": "The Reddit username to fetch top posts for.",
+                "type": "str",
+                "default": "GoldenChrysus"
+            },
+            "time": {
+                "description": "The time period to consider for top posts. Allowed values are 'hour', 'day', 'week', 'month', 'year', 'all'.",
+                "type": "str",
+                "default": "all"
+            },
+            "cursor": {
+                "description": "A cursor for pagination to retrieve the next set of results.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "video_comment_replies",
+        "description": "Fetches the replies to a specific comment on a TikTok video using the provided API key.",
+        "parameters": {
+            "comment_id": {
+                "description": "The ID of the comment for which to retrieve replies.",
+                "type": "str",
+                "default": "7136269575881360155"
+            },
+            "video_id": {
+                "description": "The ID of the video containing the comment.",
+                "type": "str",
+                "default": "7136263711043374341"
+            },
+            "cursor": {
+                "description": "Cursor for pagination to fetch additional replies. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "list_user_followers",
+        "description": "Fetches a user's followers from SoundCloud using the specified parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of items to return. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offsettoken": {
+                "description": "A string token used for pagination to get the next page of data. Defaults to None. If specified, the `user` parameter will be ignored.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "user": {
+                "description": "The URL or ID of the SoundCloud user. Defaults to 'https://soundcloud.com/atlantic-records-uk'.",
+                "type": "str, optional",
+                "default": "https://soundcloud.com/atlantic-records-uk"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "advance_profile",
+        "description": "Retrieves an advanced profile from Instagram, optionally with email or phone if available.",
+        "parameters": {
+            "ig": {
+                "description": "The Instagram handle of the user whose profile is to be retrieved.",
+                "type": "str",
+                "default": "therock"
+            },
+            "response_type": {
+                "description": "Specifies the type of response desired.",
+                "type": "str",
+                "default": "info"
+            },
+            "corsenabled": {
+                "description": "Specifies if CORS is enabled. Default is 'false'.",
+                "type": "str, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "video_post_comments",
+        "description": "Fetches comments for a specified video post from the TikTok API.",
+        "parameters": {
+            "video_id": {
+                "description": "The ID of the video for which to fetch comments.",
+                "type": "str",
+                "default": "7137423965982592302"
+            },
+            "fresh": {
+                "description": "Set to 1 to force the API to return fresh data (not cached). Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "Number of comments to return. Defaults to 50. Maximum is 150.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "max_cursor": {
+                "description": "Pagination cursor for navigating through pages of comments. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "generate_a_face",
+        "description": "Generates a face image using an AI service and returns the result as a JSON object or text. It utilizes the Toolbench RapidAPI service.",
+        "parameters": {
+            "ai": {
+                "description": "The AI model identifier to be used for face generation.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_metadata",
+        "description": "Fetch metadata for a given music track from TikTok.",
+        "parameters": {
+            "music": {
+                "description": "The TikTok music URL. For example: 'https://www.tiktok.com/music/Streets-x-Kiss-it-better-7090403288818584347'.",
+                "type": "str",
+                "default": "https://www.tiktok.com/music/Streets-x-Kiss-it-better-7090403288818584347"
+            },
+            "fresh": {
+                "description": "Set to 1 to force the API to return fresh data instead of cached data. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_misinformation_score_account_twitter_account_get",
+        "description": "Retrieves the misinformation score for a given Twitter account using the Mescal API.",
+        "parameters": {
+            "twitter_account": {
+                "description": "The Twitter account ID for which to retrieve the misinformation score.",
+                "type": "str",
+                "default": "{}"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_channel_broadcaster_type",
+        "description": "Fetch the broadcaster type of a Twitch channel using the given user ID.",
+        "parameters": {
+            "userid": {
+                "description": "The user ID of the Twitch channel to get the broadcaster type for.",
+                "type": "str",
+                "default": "julie"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_image",
+        "description": "Retrieve an image by its file ID using the specified RapidAPI key.",
+        "parameters": {
+            "fileid": {
+                "description": "The ID of the image file to retrieve.",
+                "type": "str",
+                "default": "639f7fda5ec4b33ef2e476b8"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "profile_publications",
+        "description": "Fetches publications from an Instagram profile using the RapidAPI Instagram Scraper.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username to fetch publications for. Default is 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            },
+            "nextmaxid": {
+                "description": "The nextMaxId parameter for pagination in Instagram API. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "view_profile_picture",
+        "description": "Retrieve the full HD profile picture of a specified Instagram user by their username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username of the user whose profile picture is to be retrieved.",
+                "type": "str",
+                "default": "instagram"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "pinterest",
+        "description": "Checks the availability of a Pinterest username using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Pinterest username to check for availability.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "etsy",
+        "description": "Checks if a given username is available on Etsy using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to be checked for availability on Etsy.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_medias",
+        "description": "Fetches media posts for a specified Instagram user.",
+        "parameters": {
+            "user_id": {
+                "description": "The Instagram user ID for which to fetch media posts.",
+                "type": "str",
+                "default": "13460080"
+            },
+            "next_max_id": {
+                "description": "Pagination parameter for fetching the next set of media posts. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_stories_by_pk",
+        "description": "Fetches user stories based on the given primary key from the Instagram API.",
+        "parameters": {
+            "pk": {
+                "description": "The primary key of the user for which stories are to be fetched.",
+                "type": "int",
+                "default": "18428658"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "category_tags",
+        "description": "Fetch a list of tags for a given category ID using the toolbench_rapidapi key.",
+        "parameters": {
+            "is_id": {
+                "description": "The category ID to fetch tags for.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_greet",
+        "description": "Generates a greeting message based on the provided name and cringe level, using the RapidAPI greet generator.",
+        "parameters": {
+            "name": {
+                "description": "The name to be included in the greeting.",
+                "type": "str",
+                "default": "Amir"
+            },
+            "cringelevel": {
+                "description": "The level of cringiness for the greeting.",
+                "type": "str",
+                "default": "5"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "followers_by_username",
+        "description": "Fetches the followers list for a given Instagram username using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch the followers.",
+                "type": "str",
+                "default": "therock"
+            },
+            "nextmaxid": {
+                "description": "The ID to fetch the next page of results (used for pagination). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "corsenabled": {
+                "description": "A flag to enable CORS. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "feed_by_username",
+        "description": "Fetches the current Instagram feed for a given username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch the feed.",
+                "type": "str",
+                "default": "therock"
+            },
+            "raw": {
+                "description": "If set to True or '1', returns the raw, unprocessed data feed. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_hashtag_posts_hashtag_id",
+        "description": "Fetches videos associated with a specific hashtag ID using the provided API key.",
+        "parameters": {
+            "hashtag_id": {
+                "description": "The ID of the hashtag to search for.",
+                "type": "str",
+                "default": "2878999"
+            },
+            "count": {
+                "description": "The number of videos to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": 10
+            },
+            "offset": {
+                "description": "The offset for pagination. Use the 'cursor' value from a previous response where 'hasMore' is 1 for the next set of results. Defaults to 0.",
+                "type": "int, optional",
+                "default": 0
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "trending_feed_video_posts",
+        "description": "Fetches the current trending video posts from a social media platform using the specified API.",
+        "parameters": {
+            "limit": {
+                "description": "The number of records to return in the response. Defaults to None, which returns up to 20 records.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "search_hashtag",
+        "description": "Fetch Instagram hashtags related to a given keyword using the Toolbench RapidAPI.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for associated Instagram hashtags.",
+                "type": "str",
+                "default": "love"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "profile_igtv",
+        "description": "Fetches the IGTV channel profile information for a given Instagram username using the RapidAPI Instagram Scraper.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username to fetch the IGTV profile for. Default is 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            },
+            "nextmaxid": {
+                "description": "The next max ID for pagination, if any. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "behence",
+        "description": "Check the availability of a given username on Behance using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on Behance.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "soundcloud",
+        "description": "Checks the availability of a given Soundcloud username using the RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Soundcloud username to check for availability.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_lookup",
+        "description": "Fetches a detailed overview of available PeerReach data for a given Twitter user.",
+        "parameters": {
+            "screen_name": {
+                "description": "The Twitter handle of the user to look up.",
+                "type": "str",
+                "default": "fredwilson"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_by_username",
+        "description": "Fetches user data from Instagram using a given username via the Toolbench RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch user data.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_reel_by_shortcode",
+        "description": "Fetch information about an Instagram reel using its shortcode.",
+        "parameters": {
+            "shortcode": {
+                "description": "The unique identifier for the Instagram reel.",
+                "type": "str",
+                "default": "CrgVBtHr3DP"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "check_phone_number",
+        "description": "Checks whether a given phone number is a valid WhatsApp number.",
+        "parameters": {
+            "phone": {
+                "description": "The WhatsApp phone number to be checked, including the country code.",
+                "type": "int",
+                "default": "34605797764"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_feed_video_posts",
+        "description": "Fetches the current user feed of video posts from the social media platform.",
+        "parameters": {
+            "username": {
+                "description": "The influencer's username (e.g., 'charlidamelio'). Using `sec_uid` instead of `username` will speed up the request. Default is 'amazon'.",
+                "type": "str",
+                "default": "amazon"
+            },
+            "limit": {
+                "description": "The number of records to return. Default is 100. The maximum number of records is 500.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_cursor": {
+                "description": "Pagination cursor for fetching additional videos. Use the `max_cursor` value received from the previous request to get more videos.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sec_uid": {
+                "description": "A unique identifier for the user, which speeds up the request. Can be obtained from the User Information endpoint.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "The country code to filter the feed.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "dev_to",
+        "description": "Checks the availability of a given username on Dev.to using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The username to check for availability on Dev.to.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "profile_info",
+        "description": "Retrieves profile information from Instagram using the Toolbench RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which profile information is to be retrieved. Defaults to 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "location_information",
+        "description": "Fetch Instagram location information using a location ID.",
+        "parameters": {
+            "locationid": {
+                "description": "The Instagram location ID to retrieve information for.",
+                "type": "str",
+                "default": "331004901"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_post_likes",
+        "description": "Fetches the likes for a specific post on Twitter using the given post ID.",
+        "parameters": {
+            "count": {
+                "description": "The number of likes to fetch.",
+                "type": "str",
+                "default": "40"
+            },
+            "pid": {
+                "description": "The post ID for which to fetch likes.",
+                "type": "str",
+                "default": "1552735248026411010"
+            },
+            "cursor": {
+                "description": "A cursor for paginating through the results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_session_info",
+        "description": "Fetches session information using the provided session ID and RapidAPI key.",
+        "parameters": {
+            "session_id": {
+                "description": "The unique identifier for the session.",
+                "type": "str",
+                "default": "1685369452715x643061726475037300"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_media_download_link",
+        "description": "Fetches an Instagram media download link for a given post, TV, or reel link.",
+        "parameters": {
+            "link": {
+                "description": "The URL link of the Instagram media (post, TV, or reel).",
+                "type": "str",
+                "default": "https://www.instagram.com/p/CqIbCzYMi5C/"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "getlenscreators",
+        "description": "Fetches Lens creators from the Snapchat API using the provided parameters.",
+        "parameters": {
+            "cursor": {
+                "description": "A cursor indicating the starting point for fetching Lens creators. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "hashtag_metadata_information_v2",
+        "description": "Fetch metadata information for a given hashtag using the V2 endpoint.",
+        "parameters": {
+            "hashtag": {
+                "description": "The name of the hashtag to retrieve metadata for. For example: **summer**",
+                "type": "str",
+                "default": "summer"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "rising_popular_posts",
+        "description": "Fetches rising popular posts from a specified Reddit API endpoint.",
+        "parameters": {
+            "cursor": {
+                "description": "A string to paginate through results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "real_time_user_search",
+        "description": "Perform a real-time search for social media influencers based on a given keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The search keyword. For example: 'amazon'.",
+                "type": "str",
+                "default": "amazon"
+            },
+            "skip": {
+                "description": "The number of records to skip in the search results. Useful for paginating results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of records to return. Default is 30, and the maximum allowed value is 30.",
+                "type": "int, optional",
+                "default": "30"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_info",
+        "description": "Retrieve music information using a given music ID from the TikTok API.",
+        "parameters": {
+            "music_id": {
+                "description": "The ID of the music track to retrieve information for.",
+                "type": "str",
+                "default": "6761543137128089601"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "profile_stories",
+        "description": "Fetch the Instagram stories for a specific profile using the provided RapidAPI key.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to fetch stories. Defaults to 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_new_hashtags",
+        "description": "Fetches 1000 newly generated Instagram hashtags based on the specified page number.",
+        "parameters": {
+            "page": {
+                "description": "The page number for the hashtag query, ranging from 0 to 9.",
+                "type": "str",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "top_comments_by_username",
+        "description": "Fetches the top comments by a specific Reddit username within a given time frame.",
+        "parameters": {
+            "time": {
+                "description": "The time frame for which to fetch top comments. Choices include 'hour', 'day', 'week', 'month', 'year', or 'all'.",
+                "type": "str",
+                "default": "year"
+            },
+            "username": {
+                "description": "The Reddit username for which to fetch the top comments.",
+                "type": "str",
+                "default": "GoldenChrysus"
+            },
+            "cursor": {
+                "description": "A cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "following_by_pk",
+        "description": "Fetches the Instagram following list for a given user by their primary key (PK). ",
+        "parameters": {
+            "pk": {
+                "description": "The primary key of the Instagram user whose following list is to be fetched.",
+                "type": "str",
+                "default": "232192182"
+            },
+            "corsenabled": {
+                "description": "Enables Cross-Origin Resource Sharing (CORS). Defaults to 'false'.",
+                "type": "str, optional",
+                "default": "false"
+            },
+            "nextmaxid": {
+                "description": "The maximum ID for pagination to fetch subsequent pages of the following list. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_follower_list",
+        "description": "Fetches the follower list for a specified user from the TikTok API.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user whose followers are to be fetched.",
+                "type": "str",
+                "default": "107955"
+            },
+            "count": {
+                "description": "The number of followers to retrieve, with a maximum of 200. Defaults to '50'.",
+                "type": "str, optional",
+                "default": "50"
+            },
+            "time": {
+                "description": "A timestamp indicating the starting point for the followers list. If there are more followers to retrieve, this value should be updated. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_stories_by_username",
+        "description": "Fetch all stories of an Instagram account given its username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to retrieve stories.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "jokes_search",
+        "description": "Conducts a free text search for jokes based on the provided query.",
+        "parameters": {
+            "query": {
+                "description": "The search term used to filter jokes.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_all_channel_infos",
+        "description": "Fetches the channel information for a given Twitch user by their username or ID.",
+        "parameters": {
+            "userid": {
+                "description": "The username or ID of the Twitch user whose channel information is to be retrieved.",
+                "type": "str",
+                "default": "samueletienne"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_username_by_user_id",
+        "description": "Fetches the Instagram username associated with a given user ID using the specified RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The Instagram user ID.",
+                "type": "int",
+                "default": "18527"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_tagged_media_by_user_id",
+        "description": "Fetches the media in which an Instagram user is tagged by user ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The Instagram user ID whose tagged media is to be fetched.",
+                "type": "int",
+                "default": "18527"
+            },
+            "count": {
+                "description": "The number of media items to fetch.",
+                "type": "int",
+                "default": "12"
+            },
+            "end_cursor": {
+                "description": "The cursor for pagination to fetch the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "top_music",
+        "description": "Fetch the top music tracks from the API.",
+        "parameters": {
+            "kapi_proxy": {
+                "description": "Proxy to be used for the API call. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "Number of tracks to fetch. Defaults to '20'.",
+                "type": "str, optional",
+                "default": "20"
+            },
+            "pcursor": {
+                "description": "Pagination cursor if paginated results are required. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "language": {
+                "description": "Language code for the results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "country": {
+                "description": "Country code for the results. Defaults to 'ma'.",
+                "type": "str, optional",
+                "default": "ma"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "music_videos",
+        "description": "Fetches videos associated with a specific music ID from the TikTok Scraper API.",
+        "parameters": {
+            "music_id": {
+                "description": "The unique identifier of the music for which to fetch videos.",
+                "type": "str",
+                "default": "6862966224016377857"
+            },
+            "cursor": {
+                "description": "The pagination cursor for fetching the next set of results. Default is '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "playlist_info",
+        "description": "Fetches information about a SoundCloud playlist using the RapidAPI service.",
+        "parameters": {
+            "playlist_url": {
+                "description": "The URL of the SoundCloud playlist to fetch information for.",
+                "type": "str",
+                "default": "https://soundcloud.com/vghc3eihbsdq/sets/almost-lover"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "tweets_by_userid",
+        "description": "Fetches the most recent tweets of a specified user, with optional pagination and count control.",
+        "parameters": {
+            "userid": {
+                "description": "The userId of the user whose tweets are to be fetched.",
+                "type": "str",
+                "default": "44196397"
+            },
+            "cursor": {
+                "description": "Cursor for pagination. Use to navigate to the next page of tweets. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "Number of tweets to fetch. Default is '20'.",
+                "type": "str, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "messages_from_telegram_channel",
+        "description": "Fetches the last 10 messages or a specific message from a given public Telegram channel.",
+        "parameters": {
+            "channel": {
+                "description": "The @username of the public Telegram channel.",
+                "type": "str",
+                "default": "telegram"
+            },
+            "idmessage": {
+                "description": "The ID of a specific message to retrieve. If not provided, the function will return the last 10 messages.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "list_of_memes",
+        "description": "Fetches a list of memes based on the specified genre and type from the RapidAPI service.",
+        "parameters": {
+            "genre": {
+                "description": "The genre of memes to retrieve. Default is 'memes'. Available genres include:",
+                "type": "str, optional",
+                "default": "memes"
+            },
+            "type": {
+                "description": "The type of memes to retrieve. Default is 'top'. Available types include:",
+                "type": "str, optional",
+                "default": "top"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_feed_recommended",
+        "description": "Fetches the recommended feed from the RapidAPI Tokapi mobile version.",
+        "parameters": {
+            "pull_type": {
+                "description": "The type of loading feed. Use 0 for initial loading, 2 to load more, and 8 to reload. Defaults to 0.",
+                "type": "int, optional",
+                "default": 0
+            },
+            "region": {
+                "description": "The region code to fetch the feed for. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v2_user_affiliates",
+        "description": "Fetches the user affiliates data from the Twitter API v2 endpoint using given parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "User ID for which to fetch affiliates data.",
+                "type": "int",
+                "default": "34743251"
+            },
+            "count": {
+                "description": "Number of results to return. Default is 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "cursor": {
+                "description": "Cursor for pagination of results. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "youtube_video_details",
+        "description": "Fetches detailed information about a YouTube video using the provided video ID or URL.",
+        "parameters": {
+            "is_id": {
+                "description": "The video ID or video URL for a YouTube video. Examples include:",
+                "type": "str",
+                "default": "SmM0653YvXU"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "shorten",
+        "description": "Shortens a given long URL using the Bitly API and returns the shortened URL or an error message.",
+        "parameters": {
+            "longurl": {
+                "description": "The long URL to be shortened.",
+                "type": "str",
+                "default": "http://www.mashape.com"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "real_time_hashtag_search",
+        "description": "Searches for live hashtags on social media based on a given keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for related hashtags.",
+                "type": "str",
+                "default": "blah"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "feed_hot",
+        "description": "Fetches hot feed data from the specified API.",
+        "parameters": {
+            "kapi_proxy": {
+                "description": "Proxy for the kapi endpoint. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country code for the feed. Default is 'ma'.",
+                "type": "str, optional",
+                "default": "ma"
+            },
+            "count": {
+                "description": "Number of items to fetch. Default is '30'.",
+                "type": "str, optional",
+                "default": "30"
+            },
+            "language": {
+                "description": "Language code for the feed. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "pcursor": {
+                "description": "Cursor for pagination. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "check_usernames_on_all_platforms",
+        "description": "Checks if the given username is available on various platforms using the Toolbench RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The username to be checked for availability.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "success_quote",
+        "description": "Fetches a success quote from the RapidAPI Olato Quotes service.",
+        "parameters": {
+            "quotes": {
+                "description": "A specific quote to search for. Defaults to 'random quotes'.",
+                "type": "str",
+                "default": "random quotes"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "minecraft",
+        "description": "Check if a given Minecraft username is available using the Toolbench RapidAPI service.",
+        "parameters": {
+            "username": {
+                "description": "The Minecraft username to be checked for availability.",
+                "type": "str",
+                "default": "username"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_favorite_video_by_id",
+        "description": "Retrieve favorite videos by mix ID from the TikTok API.",
+        "parameters": {
+            "mixid": {
+                "description": "The ID of the mix for which to retrieve favorite videos.",
+                "type": "int",
+                "default": "7200829644763941674"
+            },
+            "cursor": {
+                "description": "The cursor for pagination to get the next page of results. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of videos to retrieve, with a maximum of 30. Defaults to 30.",
+                "type": "int, optional",
+                "default": "30"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_user_followings",
+        "description": "Fetches the followings of a user from the Twitter API.",
+        "parameters": {
+            "count": {
+                "description": "The number of followings to fetch.",
+                "type": "str",
+                "default": "20"
+            },
+            "user": {
+                "description": "The Twitter user identifier.",
+                "type": "str",
+                "default": "2455740283"
+            },
+            "cursor": {
+                "description": "The pagination cursor for fetching more data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "telegram_group_info",
+        "description": "Retrieves real-time information about a public Telegram group such as title, photo, description, members, and online members.",
+        "parameters": {
+            "group": {
+                "description": "The @username of the Telegram group for which information is being requested.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "api_exist",
+        "description": "Checks if a TikTok user exists given a username.",
+        "parameters": {
+            "username": {
+                "description": "The TikTok username to check for existence.",
+                "type": "str",
+                "default": "charlidamelio"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "v1_music_posts_music_id",
+        "description": "Fetches posts associated with a specific music ID from the Tokapi API.",
+        "parameters": {
+            "music_id": {
+                "description": "Unique identifier for the music whose posts are to be fetched.",
+                "type": "str",
+                "default": "6928004115846924290"
+            },
+            "offset": {
+                "description": "The starting point for the set of results to be fetched. Used for paginated responses. Defaults to 0.",
+                "type": "int, optional",
+                "default": 0
+            },
+            "count": {
+                "description": "The number of results to return in the response. Defaults to 20.",
+                "type": "int, optional",
+                "default": 20
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "generate_signature",
+        "description": "Generates a signature for a given TikTok API URL using the specified RapidAPI key.",
+        "parameters": {
+            "url": {
+                "description": "The TikTok API URL for which to generate the signature.",
+                "type": "str",
+                "default": "https://www.tiktok.com/node/share/user/@therock"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_stream_mature_content_status",
+        "description": "Fetches the mature content status of a Twitch stream for a given user.",
+        "parameters": {
+            "userid": {
+                "description": "The Twitch username or ID of the user whose stream status is to be checked.",
+                "type": "str",
+                "default": "julie"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "org",
+        "description": "Check if a .org domain with the given name is registered using the Toolbench RapidAPI service.",
+        "parameters": {
+            "name": {
+                "description": "The name of the domain to check.",
+                "type": "str",
+                "default": "testdomain"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "profile_highlights",
+        "description": "Fetches the Instagram profile highlights for a given username using the specified RapidAPI key.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username whose profile highlights are to be fetched. Defaults to 'kimkardashian'.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_info_by_username",
+        "description": "Retrieve all information of an Instagram account by username.",
+        "parameters": {
+            "username": {
+                "description": "The Instagram username for which to retrieve information.",
+                "type": "str",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "publications",
+        "description": "Fetches the publications for the specified Instagram user using the RapidAPI service.",
+        "parameters": {
+            "nextmaxid": {
+                "description": "The maximum ID for the next page of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "username": {
+                "description": "The Instagram username to fetch publications for. Defaults to 'kimkardashian'.",
+                "type": "str, optional",
+                "default": "kimkardashian"
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "get_music",
+        "description": "Fetches music data from the TikTok API using the given music ID.",
+        "parameters": {
+            "music_id": {
+                "description": "The identifier for the music track to fetch from TikTok.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "user_followings",
+        "description": "Fetches the list of followings for a given TikTok user.",
+        "parameters": {
+            "user_id": {
+                "description": "The unique ID of the TikTok user whose followings are to be fetched.",
+                "type": "str",
+                "default": "107955"
+            },
+            "count": {
+                "description": "The number of followings to retrieve. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cursor": {
+                "description": "The cursor for pagination. Use this to fetch the next set of followings. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Social"
+    },
+    {
+        "name": "download_youtube_video",
+        "description": "Downloads a YouTube video given its URL using the Toolbench RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the YouTube video to be downloaded.",
+                "type": "str",
+                "default": "https://youtube.com/shorts/8E5Pxn5AVGE?feature=share"
+            }
+        },
+        "domain": "Social"
+    }
+]

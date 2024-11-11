@@ -1,0 +1,1345 @@
+[
+    {
+        "name": "catalog_albums",
+        "description": "Fetch catalog album data from the Billboard API for a specified week.",
+        "parameters": {
+            "week": {
+                "description": "The week for which to fetch the catalog albums chart in the format 'YYYY-MM-DD'. Defaults to '2022-10-08'.",
+                "type": "str",
+                "default": "2022-10-08"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artist_100",
+        "description": "Fetches the Billboard Artist 100 chart data for a specified week.",
+        "parameters": {
+            "week": {
+                "description": "The week for which to fetch the chart data in 'YYYY-MM-DD' format. Defaults to the most recent week.",
+                "type": "str",
+                "default": "2022-10-08"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "getallquotes",
+        "description": "Fetch all quotes from the Radio World API with optional pagination and API key.",
+        "parameters": {
+            "limit": {
+                "description": "The number of quotes to fetch per page. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "page": {
+                "description": "The page number to fetch. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "greatest_of_all_time_hot_100_songs",
+        "description": "Retrieves the Greatest of All Time Hot 100 Songs chart from the Billboard API.",
+        "parameters": {
+            "range": {
+                "description": "A string specifying the range of results to return, formatted as 'start-end'. Defaults to '1-10'.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "top_artists",
+        "description": "Fetch the YEAR-END Top Artists chart information from the Billboard API for a specified year.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the Top Artists chart information in YYYY format. Defaults to '2022'.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "bolivia_songs",
+        "description": "Fetches the Bolivia Songs chart information for a given range and date.",
+        "parameters": {
+            "range": {
+                "description": "The range of the chart to fetch.",
+                "type": "str",
+                "default": "1-10"
+            },
+            "date": {
+                "description": "The date for which the chart information is required, in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2022-05-07"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_global_200_year_end",
+        "description": "Fetch the YEAR-END Billboard Global 200 chart information for a given year.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to fetch the chart data, in the format 'YYYY'. Defaults to '2022'.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "albums_get_related_artist",
+        "description": "Fetches related artist information for a given album using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The value of the 'albums->id', 'id', or 'albumadamid' field returned from various Shazam API endpoints.",
+                "type": "str",
+                "default": "850569437"
+            },
+            "l": {
+                "description": "The language code to return results in. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_global_excl_us",
+        "description": "Fetches the Billboard Global Excl. US chart for a specified date using the RapidAPI service.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the Billboard Global Excl. US chart, formatted as 'YYYY-MM-DD'. Available data starts from September 19, 2020.",
+                "type": "str",
+                "default": "2020-09-19"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_album_tracks",
+        "description": "Fetches a list of tracks for a given album from the Spotify API, with optional pagination support.",
+        "parameters": {
+            "albumid": {
+                "description": "The unique identifier for the album.",
+                "type": "str",
+                "default": "5Otajf16kZ0zkVZWhu7LtO"
+            },
+            "limit": {
+                "description": "The maximum number of tracks to return per request. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of tracks to skip before starting to collect the result set. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "playlist_extraction",
+        "description": "Retrieves information about songs in a playlist from YouTube, Spotify, or SoundCloud using the RapidAPI service.",
+        "parameters": {
+            "search": {
+                "description": "The search query for the playlist.",
+                "type": "str",
+                "default": "https://www.youtube.com/playlist?list=PLXFwTY00FRUUZzL_Vjhy-bE8WIao3eyOi"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "retrieve_file",
+        "description": "Retrieves a file from the server using the provided file path and API key.",
+        "parameters": {
+            "path": {
+                "description": "The path of the file to be retrieved. This path is typically obtained by replacing the /p/ path in the /merge and /edit endpoint responses with /f/ or /d/.",
+                "type": "str",
+                "default": "ABCDEF"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "view_song_copy",
+        "description": "Retrieves detailed information about a song using the specified parameters.",
+        "parameters": {
+            "https_only": {
+                "description": "Indicates if the request should use HTTPS only.",
+                "type": "str",
+                "default": "1"
+            },
+            "wmid": {
+                "description": "Identifier for the user or session making the request.",
+                "type": "str",
+                "default": "161445361"
+            },
+            "songid": {
+                "description": "Identifier for the song whose information is being retrieved.",
+                "type": "str",
+                "default": "ttEleQJoxgCuNOIbUuRh7Q=="
+            },
+            "s": {
+                "description": "Signature or token required for the API call.",
+                "type": "str",
+                "default": "fe7cc2de3cfcc4efd457838a9521e7e9"
+            },
+            "song_preview_kbps": {
+                "description": "Bitrate for the song preview.",
+                "type": "str",
+                "default": "320"
+            },
+            "lang": {
+                "description": "Desired language for the response.",
+                "type": "str",
+                "default": "id"
+            },
+            "country": {
+                "description": "Country code where the request is made from.",
+                "type": "str",
+                "default": "id"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "concerts",
+        "description": "Fetches concert information using the Spotify API through RapidAPI, filtered by the specified geographical location.",
+        "parameters": {
+            "gl": {
+                "description": "The geographical location filter to apply when fetching concert information.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_artist",
+        "description": "Fetches detailed information about an artist from the YouTube Music API, including their top releases such as songs, albums, singles, videos, and related artists.",
+        "parameters": {
+            "channel_id": {
+                "description": "The YouTube channel ID of the artist. Defaults to 'UCedvOgsKFzcK3hA5taf3KoQ'.",
+                "type": "str, optional",
+                "default": "UCedvOgsKFzcK3hA5taf3KoQ"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "hot_100_songs",
+        "description": "Fetch the Billboard YEAR-END Hot 100 Songs chart information for a specified year.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the chart, in YYYY format. Defaults to '2022'.",
+                "type": "str, optional",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "shazam_songs_list_similarities",
+        "description": "Fetches similar songs using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the song for which similar songs are to be fetched.",
+                "type": "str",
+                "default": "track-similarities-id-424767377"
+            },
+            "locale": {
+                "description": "The language code for the results. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_song_related",
+        "description": "Fetches related content for a song using the YouTube Music API.",
+        "parameters": {
+            "browse_id": {
+                "description": "The unique identifier for the song being queried.",
+                "type": "str",
+                "default": "MPTRt_ZXONnvFeQpN"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_artist_s_albums",
+        "description": "Fetches and returns basic details about the albums of an artist from a given Spotify URL.",
+        "parameters": {
+            "spotify_url": {
+                "description": "The URL of the artist's Spotify page.",
+                "type": "str",
+                "default": "https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_weekly_top_albums",
+        "description": "Fetches the weekly top albums from Spotify for a given date and region.",
+        "parameters": {
+            "date": {
+                "description": "The date in `YYYY-MM-DD` format for which to retrieve the top albums. Leave blank to get the latest chart.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region code (ISO 3166 alpha-2, e.g., `US`) for which to retrieve the top albums. Defaults to `global`.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_futured_playlists",
+        "description": "Fetch featured playlists for a specific country and timestamp from Spotify.",
+        "parameters": {
+            "timestamp": {
+                "description": "Date of the featured playlists in the format 'yyyy-mm-dd'.",
+                "type": "str",
+                "default": "2022-03-23"
+            },
+            "country": {
+                "description": "Country code to fetch playlists for. Must be one of the following:",
+                "type": "str",
+                "default": "US"
+            },
+            "offset": {
+                "description": "Number of items to skip (default is 0).",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "Maximum number of items to return (default is 20, max is 50).",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "india_songs",
+        "description": "Fetch the India Songs chart information for a given date and range from the Billboard API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which the chart information is requested, formatted as 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of chart positions to retrieve.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "related_artists",
+        "description": "Fetches related artists for a given artist ID using the Spotify RapidAPI.",
+        "parameters": {
+            "artist_id": {
+                "description": "The Spotify ID of the artist to find related artists for.",
+                "type": "str",
+                "default": "0EmeFodog0BfCgMzAIvKQp"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_podcast_metadata",
+        "description": "Fetch full details of a podcast using its Show ID from Spotify's metadata API.",
+        "parameters": {
+            "showid": {
+                "description": "The unique identifier for the podcast show.",
+                "type": "str",
+                "default": "4oTBzqC3DHbaKNFq2YXpQw"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_home_page_overview",
+        "description": "Fetches trending information displayed on the Spotify home page as an incognito visitor.",
+        "parameters": {
+            "region": {
+                "description": "Region code (ISO 3166 alpha-2) for localized results. Defaults to `None`, which will fallback to `US` if unsupported.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "referents",
+        "description": "Fetch referents, which are sections of content items (songs or web pages) where annotations are attached, using various filter options.",
+        "parameters": {
+            "song_id": {
+                "description": "ID of a song to get referents for. Default is '2396871'.",
+                "type": "str, optional",
+                "default": "2396871"
+            },
+            "page": {
+                "description": "Paginated offset, for example, per_page=5&page=3 returns items 11\u201315.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "created_by_id": {
+                "description": "ID of a user to get referents for.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "text_format": {
+                "description": "Format for text bodies related to the document. One or more of `dom`, `plain`, `markdown`, and `html`, separated by commas (defaults to html).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "per_page": {
+                "description": "Number of results to return per request.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "web_page_id": {
+                "description": "ID of a web page to get referents for.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "top_artists_male",
+        "description": "Fetches the YEAR-END Top Artists - Male chart information from the Billboard API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the chart information in 'YYYY' format. Defaults to '2022' if not provided.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_global_200",
+        "description": "Fetch Billboard Global 200 chart information for a specific date.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the chart information, in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2020-09-19"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "iceland_songs",
+        "description": "Fetches the Iceland Songs chart information from the Billboard API for a specific date and range.",
+        "parameters": {
+            "date": {
+                "description": "The date for which the chart information is requested, in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of the chart information to fetch.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_200",
+        "description": "Retrieves the Billboard 200 chart for a specified date.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the Billboard 200 chart, formatted as 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2021-07-07"
+            },
+            "range": {
+                "description": "The range of chart positions to return (default is '1-10'). Use '1-200' to get all results.",
+                "type": "str, optional",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "independent_albums",
+        "description": "Retrieves the Independent Albums chart for a specified week from the Billboard API.",
+        "parameters": {
+            "week": {
+                "description": "The week for which to retrieve the chart, in the format 'YYYY-MM-DD'. If not provided, defaults to the previous week. If the provided date is not a Saturday, it will default to the preceding Saturday of that week.",
+                "type": "str, optional",
+                "default": "2022-10-08"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "songs_v2_get_details",
+        "description": "Gets detailed information about a specific song using the given song ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the song to retrieve details for.",
+                "type": "str",
+                "default": "1217912247"
+            },
+            "l": {
+                "description": "The language code for the response (default is 'en-US').",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "new_releases",
+        "description": "Retrieves new music releases from Spotify based on the given country code.",
+        "parameters": {
+            "country": {
+                "description": "The country code to fetch new releases for. Example values include 'US', 'CA', 'SE', 'IN', 'UK'.",
+                "type": "str",
+                "default": "us"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "all_songs_from_artist",
+        "description": "Retrieves all songs by the specified artist using the Toolbench RapidAPI service.",
+        "parameters": {
+            "artist": {
+                "description": "The name of the artist whose songs are to be retrieved.",
+                "type": "str",
+                "default": "Halsey"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "youtube_topviews_artist_nationality",
+        "description": "Fetches the top viewed music video by artists of the given nationality from YouTube.",
+        "parameters": {
+            "nationality": {
+                "description": "The nationality of the artist.",
+                "type": "str",
+                "default": "vietnamese"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artists_get_summary",
+        "description": "Fetches summary information related to an artist from the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The value of 'artist->adamid' field returned in various Shazam API endpoints such as /search or /songs/get-details.",
+                "type": "str",
+                "default": "567072"
+            },
+            "l": {
+                "description": "The language code for the response. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_user_playlists",
+        "description": "Retrieve a list of playlists for a given user from the YouTube Music API.",
+        "parameters": {
+            "params": {
+                "description": "Pagination or filter parameters to customize the playlists retrieval.",
+                "type": "str",
+                "default": "6gPgAUdxVUJXcFlCQ3BNQkNpUjVkRjl3WVdkbFgzTnVZWEJ6YUc5MFgyMTFjMmxqWDNCaFoyVmZjbVZuYVc5dVlXd1NIMDEzUzBGTWVWcENhM2h2WVhkRFJFbFBZM2h6Vms1M0xWY3paM05wVW1jYVNnQUFaVzRBQVVaU0FBRkdVZ0FCQUVaRmJYVnphV05mWkdWMFlXbHNYMkZ5ZEdsemRBQUJBVU1BQUFFQUFBRUJBRlZETkRSb1ltVlNiME5hVmxaTlZtYzFlakJHWmtsM2R3QUI4dHF6cWdvR1FBRklBRkFx"
+            },
+            "user_id": {
+                "description": "The unique identifier of the user whose playlists are to be retrieved.",
+                "type": "str",
+                "default": "UC44hbeRoCZVVMVg5z0FfIww"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_playlist_tracks_and_episodes",
+        "description": "Lists tracks and episodes in a specified Spotify playlist.",
+        "parameters": {
+            "playlistid": {
+                "description": "The ID of the playlist to list contents from.",
+                "type": "str",
+                "default": "5782GLkrpvN8zbJQRjMaSW"
+            },
+            "offset": {
+                "description": "The number of items to skip before starting to collect results. Defaults to `0`.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of items to return. Defaults to `100`.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "shazam_songs_get_details",
+        "description": "Fetches song details from the Shazam API using a given song ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The value of the 'id' field returned by the /search endpoint on Shazam.",
+                "type": "str",
+                "default": "40333609"
+            },
+            "locale": {
+                "description": "The language code (default is 'en-US').",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "france_songs",
+        "description": "Fetch the France Songs chart information for a given date and range.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the chart, formatted as YYYY-MM-DD.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of positions to retrieve from the chart (e.g., '1-10' for top 10 songs).",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "top_labels",
+        "description": "Fetch the YEAR-END Top Labels chart information from the Billboard API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the top labels chart. Format should be YYYY. Defaults to '2022'.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "girl_groups",
+        "description": "Fetch information about K-pop girl groups based on various query parameters.",
+        "parameters": {
+            "q": {
+                "description": "The search query to find specific girl groups.",
+                "type": "str",
+                "default": "Twice"
+            },
+            "by": {
+                "description": "The field by which to search for girl groups. Default is 'Group Name'. Possible values include:",
+                "type": "str, optional",
+                "default": "Group Name"
+            },
+            "limit": {
+                "description": "The maximum number of results to return. Default is to return all available results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of results to skip before starting to return results. Default is 0.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "youtube_topviews_year",
+        "description": "Retrieves the top-viewed YouTube videos for a specified year or for all time.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the top-viewed YouTube videos. Use an empty string to retrieve all-time top views.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_hot_100",
+        "description": "Fetch the Billboard Hot 100 chart data for a given date and range.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch the chart data in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2022-07-07"
+            },
+            "range": {
+                "description": "The range of chart positions to return, specified in the format 'start-end'. Default is '1-10'.",
+                "type": "str, optional",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "netherlands_songs",
+        "description": "Fetch the Netherlands Songs chart information from the Billboard API.",
+        "parameters": {
+            "range": {
+                "description": "The range of the chart to fetch.",
+                "type": "str",
+                "default": "1-10"
+            },
+            "date": {
+                "description": "The date of the chart in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2022-05-07"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "brazil_songs",
+        "description": "Fetches the Brazil Songs chart information for a given date and range.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch the chart data, in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of chart data to retrieve.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "albums_get_details",
+        "description": "Fetch detailed information of an album using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the album. This value can be obtained from the 'id' field returned in /shazam-songs/get-details, /artists/get-albums, /artists/get-summary, /artists/get-latest-release, or from the 'albumadamid' field in /songs/v2/detect, /songs/detect endpoints.",
+                "type": "str",
+                "default": "850576570"
+            },
+            "l": {
+                "description": "The language code for the details. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "hot_trending_songs_powered_by_twitter",
+        "description": "Fetch the HOT TRENDING SONGS POWERED BY TWITTER chart information for a specific date and range using the Toolbench RapidAPI key.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch the chart information, formatted as 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2021-11-06"
+            },
+            "range": {
+                "description": "The range of the chart, with a maximum value between 1-20.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artist_details_single",
+        "description": "Fetch details of a single Spotify artist using the artist's ID.",
+        "parameters": {
+            "artist_id": {
+                "description": "The Spotify ID of the artist whose details are to be fetched.",
+                "type": "str",
+                "default": "52wBYviD0Fnactl1q7ibdT"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "slovakia_songs",
+        "description": "Fetches Slovakia Songs chart information for a given date range.",
+        "parameters": {
+            "range": {
+                "description": "The range of songs to retrieve from the chart.",
+                "type": "str",
+                "default": "1-10"
+            },
+            "date": {
+                "description": "The date for which to retrieve the chart information, in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2022-05-07"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_artist_albums",
+        "description": "Fetches and returns information about an artist's albums from the YouTube Music API.",
+        "parameters": {
+            "channel_id": {
+                "description": "The unique identifier for the artist's channel.",
+                "type": "str",
+                "default": "UCedvOgsKFzcK3hA5taf3KoQ"
+            },
+            "params": {
+                "description": "Parameters required to fetch artist details, typically obtained from the `get_artist` function.",
+                "type": "str",
+                "default": "6gPgAUdxVUJXcFlCQ3BNQkNpUjVkRjl3WVdkbFgzTnVZWEJ6YUc5MFgyMTFjMmxqWDNCaFoyVmZjbVZuYVc5dVlXd1NIMDEzUzBGTWVWcENhM2h2WVhkRFJFbFBZM2h6Vms1NlR6QlNVWE5wVW1jYVNnQUFaVzRBQVVaU0FBRkdVZ0FCQUVaRmJYVnphV05mWkdWMFlXbHNYMkZ5ZEdsemRBQUJBVU1BQUFFQUFBRUJBRlZETUhZMlJuTlJTRTVmUVRGR09EWmlSbkpZWDNwb2R3QUI4dHF6cWdvR1FBRklBRkFV"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "fetch_track_details",
+        "description": "Fetches the details of a specific track using the provided track ID from the latest Spotify downloader API.",
+        "parameters": {
+            "track_id": {
+                "description": "The unique identifier of the track to fetch details for.",
+                "type": "str",
+                "default": "2gAKyzcfFIlMYdJ2b836At"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "charts_track",
+        "description": "Fetch a list of popular songs from a specified chart using the Shazam API.",
+        "parameters": {
+            "listid": {
+                "description": "The identifier for the chart list, as returned by the `/charts/list` endpoint. Defaults to `None`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pagesize": {
+                "description": "The number of items to fetch per response, with a maximum of 20. Defaults to `20`.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "startfrom": {
+                "description": "The starting index for paging through the results. Defaults to `0`.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "locale": {
+                "description": "The language code for the results. Defaults to `'en-US'`.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "top_artists_duo_group",
+        "description": "Fetches the YEAR-END Top Artists - Duo/Group chart information for a given year.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the chart information in the format 'YYYY'. Defaults to '2022' if not provided.",
+                "type": "str",
+                "default": "2022"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_album_metadata",
+        "description": "Fetches full metadata details of a specified album using the Spotify Scraper API.",
+        "parameters": {
+            "albumid": {
+                "description": "The unique ID of the album for which metadata is to be retrieved.",
+                "type": "str",
+                "default": "5Otajf16kZ0zkVZWhu7LtO"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "gethomepage",
+        "description": "Fetch limited radio station data to display on the homepage.",
+        "parameters": {
+            "limit": {
+                "description": "The number of radio stations to retrieve. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_top_tracks",
+        "description": "Fetches the weekly or daily top tracks from Spotify for a specified region and date.",
+        "parameters": {
+            "region": {
+                "description": "The region code in ISO 3166 alpha-2 format (e.g., 'US'). Defaults to 'global'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "type": {
+                "description": "The time span for the chart. Defaults to 'weekly'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "The date in 'YYYY-MM-DD' format. Leave blank to get the latest chart.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "u_k_songs",
+        "description": "Fetches the U.K. Songs chart information for a specific date and range from the Billboard API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which the chart information is requested, in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of the chart data to fetch.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artists_get_top_songs",
+        "description": "Fetches the top songs of a specified artist using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the artist, which can be obtained from various Shazam API endpoints.",
+                "type": "str",
+                "default": "567072"
+            },
+            "l": {
+                "description": "The language code for the response. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_new_releases",
+        "description": "Fetch new album releases from Spotify for a specified country.",
+        "parameters": {
+            "country": {
+                "description": "A standardized country code (e.g., 'US' for United States, 'CA' for Canada). Full list of supported country codes includes: AD, AE, AG, AL, AM, AO, AR, AT, AU, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BN, BO, BR, BS, BT, BW, BZ, CA, CD, CG, CH, CI, CL, CM, CO, CR, CV, CW, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ES, ET, FI, FJ, FM, FR, GA, GB, GD, GE, GH, GM, GN, GQ, GR, GT, GW, GY, HK, HN, HR, HT, HU, ID, IE, IL, IN, IQ, IS, IT, JM, JO, JP, KE, KG, KH, KI, KM, KN, KR, KW, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MG, MH, MK, ML, MN, MO, MR, MT, MU, MV, MW, MX, MY, MZ, NA, NE, NG, NI, NL, NO, NP, NR, NZ, OM, PA, PE, PG, PH, PK, PL, PS, PT, PW, PY, QA, RO, RS, RW, SA, SB, SC, SE, SG, SI, SK, SL, SM, SN, SR, ST, SV, SZ, TD, TG, TH, TJ, TL, TN, TO, TR, TT, TV, TW, TZ, UA, UG, US, UY, UZ, VC, VE, VN, VU, WS, XK, ZA, ZM, ZW.",
+                "type": "str",
+                "default": "US"
+            },
+            "limit": {
+                "description": "Maximum number of album releases to return (default is 20; maximum allowed is 50).",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "offset": {
+                "description": "The number of items to skip before starting to collect the result set (default is 0).",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_top_artists",
+        "description": "Fetches the top artists from Spotify based on the specified criteria.",
+        "parameters": {
+            "type": {
+                "description": "Time span for the chart, either `weekly` or `daily`. Defaults to `weekly`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "Date for the chart in `YYYY-MM-DD` format. Leave blank to get the latest chart.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Region code in ISO 3166 alpha-2 format (e.g., `US`). Defaults to `global`.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_episode_downloadable_audio",
+        "description": "Fetches the full details of a given podcast episode. Provides a downloadable URL of the full audio if available.",
+        "parameters": {
+            "episodeid": {
+                "description": "The unique identifier for the podcast episode.",
+                "type": "str",
+                "default": "3LEK1k9KaFRLAmPwMbj3o9"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artis_info",
+        "description": "Fetches and returns album information for an artist based on the given parameters.",
+        "parameters": {
+            "num": {
+                "description": "Number of albums to fetch information for.",
+                "type": "int",
+                "default": "6"
+            },
+            "lang": {
+                "description": "Language code for the response data.",
+                "type": "str",
+                "default": "id"
+            },
+            "index": {
+                "description": "Index position from which to start fetching the album data.",
+                "type": "int",
+                "default": "0"
+            },
+            "country": {
+                "description": "Country code for the artist.",
+                "type": "str",
+                "default": "id"
+            },
+            "is_id": {
+                "description": "ID of the artist whose albums information is to be fetched.",
+                "type": "str",
+                "default": "K0wfT9L1dhOcY3%2BWa%2BQY%2BA%3D%3D"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "downloader",
+        "description": "This function searches for MP3 music using the given keywords and returns the results from the specified page.",
+        "parameters": {
+            "keywords": {
+                "description": "The search keywords for finding MP3 music.",
+                "type": "str",
+                "default": "Ella Baila Sola "
+            },
+            "page": {
+                "description": "The page number of the search results to retrieve. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "greatest_of_all_time_songs_of_the_summer",
+        "description": "Fetches the Greatest of All Time Songs of the Summer chart from the Billboard API.",
+        "parameters": {
+            "range": {
+                "description": "The range of songs to retrieve. Default is '1-10'.",
+                "type": "str, optional",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "singapore_songs",
+        "description": "Fetches the Singapore Songs chart information from the Billboard API.",
+        "parameters": {
+            "range": {
+                "description": "The range of chart information to fetch.",
+                "type": "str",
+                "default": "1-10"
+            },
+            "date": {
+                "description": "The date of the chart in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2022-05-07"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artists_get_details",
+        "description": "Retrieve detailed information about an artist using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the artist. This value can be obtained from various Shazam API endpoints, such as 'artist->adamid' from /search, /songs/v2/detect, or /songs/get-details, or 'artists->id' from /shazam-songs/get-details, /albums/get-details, or /albums/get-related-artist.",
+                "type": "str",
+                "default": "567072"
+            },
+            "l": {
+                "description": "The language code for the response. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "song_by_id",
+        "description": "Fetches a song's details by its unique identifier from the Halsey Lyrics Snippets API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the song to be retrieved.",
+                "type": "str",
+                "default": "63b7b10efac0fba0d5e1d187"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "artists_get_latest_release",
+        "description": "Gets the latest release of an artist using the Shazam API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the artist. This is the value of the 'artist->adamid' field returned by various endpoints such as .../search, .../songs/v2/detect, or .../songs/get-details.",
+                "type": "str",
+                "default": "567072"
+            },
+            "l": {
+                "description": "The language code. Defaults to 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "annotation_versions",
+        "description": "Gets the versions of an annotation from the Genius Song Lyrics API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the annotation.",
+                "type": "str",
+                "default": "9234498"
+            },
+            "text_format": {
+                "description": "Format for text bodies related to the annotation. Options include `dom`, `plain`, `markdown`, and `html`. Defaults to `html`.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "tangga_lagu",
+        "description": "Fetches the top tracks from the specified music chart.",
+        "parameters": {
+            "index": {
+                "description": "The starting index of the track list.",
+                "type": "int",
+                "default": "0"
+            },
+            "num": {
+                "description": "The number of tracks to retrieve.",
+                "type": "int",
+                "default": "50"
+            },
+            "lang": {
+                "description": "The language of the tracks.",
+                "type": "str",
+                "default": "id"
+            },
+            "country": {
+                "description": "The country of the music chart.",
+                "type": "str",
+                "default": "id"
+            },
+            "is_id": {
+                "description": "The unique identifier for the specific music chart.",
+                "type": "int",
+                "default": "33"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "web_page_lookup",
+        "description": "Fetches metadata about a web page, including Genius's ID for the page, which can be used to look up associated referents.",
+        "parameters": {
+            "raw_annotatable_url": {
+                "description": "The full URL of the web page (including protocol).",
+                "type": "str",
+                "default": "https://www.youtube.com/"
+            },
+            "og_url": {
+                "description": "The URL specified by an og:url <meta> tag in the page's <head>.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "canonical_url": {
+                "description": "The URL specified by a canonical <link> tag in the page's <head>.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "text_format": {
+                "description": "Format for text bodies related to the document. One or more of `dom`, `plain`, `markdown`, and `html`, separated by commas (defaults to html).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "south_africa_songs",
+        "description": "Fetch the South Africa Songs chart information for a specific date range.",
+        "parameters": {
+            "date": {
+                "description": "The date in the format 'YYYY-MM-DD' for which to retrieve the chart information.",
+                "type": "str",
+                "default": "2022-05-07"
+            },
+            "range": {
+                "description": "The range of the chart positions to be retrieved.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "hungary_songs",
+        "description": "Fetches the Hungary Songs chart information from the Billboard API for the specified date and range.",
+        "parameters": {
+            "range": {
+                "description": "The range of the songs chart to fetch.",
+                "type": "str",
+                "default": "1-10"
+            },
+            "date": {
+                "description": "The date for which to retrieve the songs chart, in the format YYYY-MM-DD.",
+                "type": "str",
+                "default": "2022-05-07"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "list_podcast_episodes",
+        "description": "Gets a list of episodes for a given podcast show from the Spotify Scraper API.",
+        "parameters": {
+            "showid": {
+                "description": "The unique identifier of the podcast show.",
+                "type": "str",
+                "default": "4oTBzqC3DHbaKNFq2YXpQw"
+            },
+            "limit": {
+                "description": "The maximum number of items returned per request. Defaults to `100`.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of items to skip before starting to collect the result set. Defaults to `0`.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "user_contributions_transcriptions",
+        "description": "Fetches user transcription contributions from the Genius Song Lyrics API.",
+        "parameters": {
+            "is_id": {
+                "description": "The user ID whose contributions are to be fetched.",
+                "type": "str",
+                "default": "1"
+            },
+            "next_cursor": {
+                "description": "The pagination cursor for fetching the next set of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "text_format": {
+                "description": "The format for text bodies related to the document, can be one or more of `dom`, `plain`, `markdown`, and `html`, separated by commas. Defaults to 'html'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "per_page": {
+                "description": "The number of results to return per request. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "sort": {
+                "description": "The sorting method for the results, can be 'popularity' or 'chronologically'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_playlist_album_metadata",
+        "description": "Fetches full metadata of a playlist or album from SoundCloud.",
+        "parameters": {
+            "playlist": {
+                "description": "The URL or ID of the playlist or album to fetch metadata for.",
+                "type": "str",
+                "default": "https://soundcloud.com/edsheeran/sets/tour-edition-1"
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "get_playlist_metadata",
+        "description": "Fetches full details of a Spotify playlist using RapidAPI.",
+        "parameters": {
+            "playlistid": {
+                "description": "The ID of the Spotify playlist.",
+                "type": "str",
+                "default": "5782GLkrpvN8zbJQRjMaSW"
+            },
+            "limit": {
+                "description": "The maximum number of items to return. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The number of items to skip before starting to return results. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Music"
+    },
+    {
+        "name": "billboard_u_s_afrobeats_songs",
+        "description": "Fetch the BILLBOARD U.S. AFROBEATS SONGS chart information for a given date and range.",
+        "parameters": {
+            "date": {
+                "description": "The date in the format 'YYYY-MM-DD' for which the chart information is to be fetched.",
+                "type": "str",
+                "default": "2022-04-16"
+            },
+            "range": {
+                "description": "The range of songs to be included in the chart, with a maximum range of 1-50.",
+                "type": "str",
+                "default": "1-10"
+            }
+        },
+        "domain": "Music"
+    }
+]

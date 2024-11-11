@@ -1,0 +1,3179 @@
+[
+    {
+        "name": "find_peak_element",
+        "description": "Finds a peak element in a list of integers.",
+        "parameters": {
+            "nums": {
+                "description": "The list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "light_travel_time",
+        "description": "Calculate the time taken for light to travel from one celestial body to another.",
+        "parameters": {
+            "distance_in_light_years": {
+                "description": "The distance between the two celestial bodies in light years.",
+                "type": "int",
+                "default": 299792458
+            },
+            "speed_of_light": {
+                "description": "The speed of light in vacuum, in m/s. Default value is 299792458 m/s.",
+                "type": "int",
+                "default": 299792458
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "structural_analysis",
+        "description": "Performs structural analysis on a building based on its ID, floor numbers, and analysis mode.",
+        "parameters": {
+            "building_id": {
+                "description": "The unique identifier of the building.",
+                "type": "str",
+                "default": "static"
+            },
+            "floor_numbers": {
+                "description": "The list of floor numbers to be analyzed.",
+                "type": "List[int]",
+                "default": "static"
+            },
+            "analysis_mode": {
+                "description": "The mode of analysis, either \"static\" or \"dynamic\". Defaults to \"static\".",
+                "type": "str, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "reserve_hotel_room",
+        "description": "Reserves a hotel room with the specified details.",
+        "parameters": {
+            "room_type": {
+                "description": "The type of room to reserve.",
+                "type": "str"
+            },
+            "nightly_rate": {
+                "description": "The nightly rate for the room.",
+                "type": "float"
+            },
+            "checkin_date": {
+                "description": "The check-in date in the format 'YYYY-MM-DD'.",
+                "type": "str"
+            },
+            "checkout_date": {
+                "description": "The check-out date in the format 'YYYY-MM-DD'.",
+                "type": "str"
+            },
+            "guest_id": {
+                "description": "The unique identifier for the guest.",
+                "type": "str"
+            },
+            "promo_code": {
+                "description": "A promotional code for a discount. Defaults to None.",
+                "type": "str, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "simulate_query_database",
+        "description": "Simulates querying a database based on certain conditions.",
+        "parameters": {
+            "table": {
+                "description": "Name of the table to query.",
+                "type": "str"
+            },
+            "conditions": {
+                "description": "Conditions for the query, each condition is a dictionary.",
+                "type": "list"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "place_safeway_order",
+        "description": "Order specified items from a Safeway location.",
+        "parameters": {
+            "location": {
+                "description": "The location of the Safeway store, e.g., 'Palo Alto, CA'.",
+                "type": "str"
+            },
+            "items": {
+                "description": "List of items to order.",
+                "type": "list"
+            },
+            "quantity": {
+                "description": "Quantity of each item in the order list.",
+                "type": "list"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_standard_deviation",
+        "description": "Calculates the standard deviation of a list of numbers.",
+        "parameters": {
+            "numbers": {
+                "description": "The list of numbers.",
+                "type": "List[Union[int, float]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "future_investment_value",
+        "description": "Calculates the future value of an investment based on the present value, annual interest rate, and number of years.",
+        "parameters": {
+            "present_value": {
+                "description": "The present value of the investment.",
+                "type": "float"
+            },
+            "annual_interest_rate": {
+                "description": "The annual interest rate as a decimal (e.g., 0.05 for 5%).",
+                "type": "float"
+            },
+            "years": {
+                "description": "The number of years the investment will grow.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "binary_addition",
+        "description": "Adds two binary numbers and returns the result as a binary string.",
+        "parameters": {
+            "a": {
+                "description": "The first binary number.",
+                "type": "str"
+            },
+            "b": {
+                "description": "The second binary number.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "create_histogram",
+        "description": "Create a histogram based on provided data.",
+        "parameters": {
+            "data": {
+                "description": "The data for which histogram needs to be plotted.",
+                "type": "list",
+                "default": 10
+            },
+            "bins": {
+                "description": "The number of equal-width bins in the range. Default is 10.",
+                "type": "int",
+                "default": 10
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_leap_year",
+        "description": "Checks if a year is a leap year.",
+        "parameters": {
+            "year": {
+                "description": "The year to check.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_dna_sequence",
+        "description": "Retrieves the DNA sequence for a given sequence ID from the NCBI Nucleotide database.",
+        "parameters": {
+            "sequence_id": {
+                "description": "The unique identifier for the DNA sequence.",
+                "type": "str",
+                "default": "fasta"
+            },
+            "file_format": {
+                "description": "The format of the returned sequence. Allowed values: \"fasta\" (default) or \"gb\".",
+                "type": "str, optional"
+            },
+            "upstream_bases": {
+                "description": "The number of bases upstream of the sequence to include. Defaults to 0.",
+                "type": "int, optional",
+                "default": "fasta"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "predict_forest_area",
+        "description": "Predicts the change in forest area over a specified number of years.",
+        "parameters": {
+            "location": {
+                "description": "The geographic location for the prediction.",
+                "type": "str"
+            },
+            "num_years": {
+                "description": "The number of years into the future to make the prediction.",
+                "type": "int"
+            },
+            "include_humans": {
+                "description": "Whether to include the impact of human activities in the prediction. Defaults to False.",
+                "type": "bool, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "project_investment_growth",
+        "description": "Projects the growth of an investment over a specified number of years.",
+        "parameters": {
+            "principal": {
+                "description": "The initial investment amount.",
+                "type": "float",
+                "default": true
+            },
+            "annual_addition": {
+                "description": "The amount added to the investment annually.",
+                "type": "float",
+                "default": true
+            },
+            "years": {
+                "description": "The number of years to project the investment growth.",
+                "type": "int"
+            },
+            "return_rate": {
+                "description": "The annual return rate as a decimal (e.g., 0.07 for 7%).",
+                "type": "float"
+            },
+            "inflation": {
+                "description": "A list of annual inflation rates as decimals.",
+                "type": "List[float]"
+            },
+            "inflation_adjusted": {
+                "description": "Whether to adjust the final value for inflation. Defaults to True.",
+                "type": "bool, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_ip_zipcode",
+        "description": "Retrieves the ZIP code of a given IP address using the ip-api.com API.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to locate.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "project_population",
+        "description": "Projects the population size after a specified number of years.",
+        "parameters": {
+            "current_pop": {
+                "description": "The current population size.",
+                "type": "int",
+                "default": 1.2
+            },
+            "num_years": {
+                "description": "The number of years into the future to make the projection.",
+                "type": "int",
+                "default": 1.2
+            },
+            "annual_growth": {
+                "description": "The annual population growth rate as a percentage. Defaults to 1.2.",
+                "type": "float, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "assess_diabetes_risk",
+        "description": "Assesses the risk of developing type 2 diabetes based on body mass index (BMI) and physical activity level.",
+        "parameters": {
+            "weight_lbs": {
+                "description": "Body weight in pounds.",
+                "type": "int"
+            },
+            "height_inches": {
+                "description": "Height in inches.",
+                "type": "int"
+            },
+            "activity": {
+                "description": "Physical activity level. Allowed values: \"sedentary\", \"lightly active\", \"moderately active\", or \"very active\".",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "predict_evolution_rate",
+        "description": "Predict the evolutionary rate for a specific species for a given timeframe.",
+        "parameters": {
+            "species": {
+                "description": "The species that the evolution rate will be predicted for.",
+                "type": "str",
+                "default": "Darwin"
+            },
+            "years": {
+                "description": "Number of years for the prediction.",
+                "type": "int",
+                "default": "Darwin"
+            },
+            "model": {
+                "description": "The model used to make the prediction, options: 'Darwin', 'Lamarck', default is 'Darwin'.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_minimum_rotated_sorted_array",
+        "description": "Finds the minimum element in a rotated sorted array.",
+        "parameters": {
+            "nums": {
+                "description": "The rotated sorted array.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_n_largest_numbers",
+        "description": "Finds the n largest numbers in a list.",
+        "parameters": {
+            "nums": {
+                "description": "The list of numbers.",
+                "type": "List[int]"
+            },
+            "n": {
+                "description": "The number of largest numbers to find.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_age",
+        "description": "Calculates the age based on the birthdate.",
+        "parameters": {
+            "birthdate": {
+                "description": "The birthdate in the format 'YYYY-MM-DD'.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_first_non_repeating_char",
+        "description": "Finds the first non-repeating character in a string.",
+        "parameters": {
+            "s": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "longest_common_prefix",
+        "description": "Finds the longest common prefix among a list of strings.",
+        "parameters": {
+            "strs": {
+                "description": "The list of strings.",
+                "type": "List[str]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_palindrome",
+        "description": "Checks if a string is a palindrome.",
+        "parameters": {
+            "text": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "draw_cards",
+        "description": "Shuffles a standard deck of 52 cards and draws a specified number of cards from the top.",
+        "parameters": {
+            "num_draw": {
+                "description": "The number of cards to be drawn. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "min_meeting_rooms",
+        "description": "Finds the minimum number of meeting rooms required to accommodate all meetings.",
+        "parameters": {
+            "intervals": {
+                "description": "A list of meeting time intervals, where each interval is represented as [start_time, end_time].",
+                "type": "List[List[int]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_valid_sudoku",
+        "description": "Checks if a 9x9 Sudoku board is valid.",
+        "parameters": {
+            "board": {
+                "description": "The Sudoku board represented as a 2D list of strings.",
+                "type": "List[List[str]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_electric_field",
+        "description": "Calculate the electric field produced by a charge at a certain distance.",
+        "parameters": {
+            "charge": {
+                "description": "Charge in coulombs producing the electric field.",
+                "type": "int",
+                "default": 8.854e-12
+            },
+            "distance": {
+                "description": "Distance from the charge in meters where the field is being measured.",
+                "type": "int",
+                "default": 8.854e-12
+            },
+            "permitivity": {
+                "description": "Permitivity of the space where field is being calculated, default is 8.854e-12.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "polygon_area_shoelace",
+        "description": "Calculates the area of a polygon using the shoelace formula.",
+        "parameters": {
+            "vertices": {
+                "description": "A list of polygon vertices represented as tuples (x, y).",
+                "type": "List[Tuple[float, float]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "california_alimony",
+        "description": "Calculates the total alimony one spouse would have to pay to the other in California over a given duration.",
+        "parameters": {
+            "payor_monthly_income": {
+                "description": "The monthly gross income of the payor spouse.",
+                "type": "int"
+            },
+            "recipient_monthly_income": {
+                "description": "The monthly gross income of the recipient spouse.",
+                "type": "int"
+            },
+            "duration_years": {
+                "description": "The duration of the alimony in years.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "greatest_common_divisor",
+        "description": "Computes the greatest common divisor (GCD) of two non-negative integers.",
+        "parameters": {
+            "a": {
+                "description": "The first non-negative integer.",
+                "type": "int"
+            },
+            "b": {
+                "description": "The second non-negative integer.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "analyze_social_group_dynamics",
+        "description": "Analyzes the social dynamics within a group based on the personality traits and group size.",
+        "parameters": {
+            "total": {
+                "description": "The total group size.",
+                "type": "int"
+            },
+            "extroverts": {
+                "description": "The number of extroverted members in the group.",
+                "type": "int"
+            },
+            "introverts": {
+                "description": "The number of introverted members in the group.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_valid_ip_address",
+        "description": "Checks if a string is a valid IP address (IPv4).",
+        "parameters": {
+            "ip": {
+                "description": "The string to check.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "merge_dictionaries",
+        "description": "Merges two dictionaries into a single dictionary.",
+        "parameters": {
+            "dict1": {
+                "description": "The first dictionary.",
+                "type": "Dict"
+            },
+            "dict2": {
+                "description": "The second dictionary.",
+                "type": "Dict"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_longest_word",
+        "description": "Finds the longest word in a list of words.",
+        "parameters": {
+            "words": {
+                "description": "A list of words.",
+                "type": "List[str]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "split_list",
+        "description": "Splits a list into chunks of a specified size.",
+        "parameters": {
+            "lst": {
+                "description": "The input list.",
+                "type": "List"
+            },
+            "chunk_size": {
+                "description": "The size of each chunk.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "remove_duplicates",
+        "description": "Removes duplicate elements from a list while preserving the order.",
+        "parameters": {
+            "lst": {
+                "description": "The input list.",
+                "type": "List"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "probability_of_consecutive_rolls",
+        "description": "Calculates the probability of rolling a specific value on a die consecutively for a given number of rolls.",
+        "parameters": {
+            "target_value": {
+                "description": "The desired value to be rolled.",
+                "type": "int",
+                "default": 6
+            },
+            "num_rolls": {
+                "description": "The number of consecutive rolls.",
+                "type": "int",
+                "default": 6
+            },
+            "num_sides": {
+                "description": "The number of sides on the die. Defaults to 6.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "average",
+        "description": "Calculates the arithmetic mean of a list of numbers.",
+        "parameters": {
+            "numbers": {
+                "description": "The list of numbers.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_power_of_two",
+        "description": "Checks if a number is a power of two.",
+        "parameters": {
+            "num": {
+                "description": "The number to check.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_distance",
+        "description": "Calculates the Euclidean distance between two points in n-dimensional space.",
+        "parameters": {
+            "point1": {
+                "description": "The coordinates of the first point.",
+                "type": "List[float]"
+            },
+            "point2": {
+                "description": "The coordinates of the second point.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "integrate",
+        "description": "Calculate the area under a curve for a specified function between two x values.",
+        "parameters": {
+            "function": {
+                "description": "The function to integrate, represented as a string. For example, 'x^3'",
+                "type": "str",
+                "default": "trapezoid"
+            },
+            "start_x": {
+                "description": "The starting x-value to integrate over.",
+                "type": "int",
+                "default": "trapezoid"
+            },
+            "end_x": {
+                "description": "The ending x-value to integrate over.",
+                "type": "int"
+            },
+            "method": {
+                "description": "The method of numerical integration to use. Choices are 'trapezoid' or 'simpson'.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "monthly_mortgage_payment",
+        "description": "Calculates the monthly mortgage payment based on the loan amount, annual interest rate, and loan term.",
+        "parameters": {
+            "loan_amount": {
+                "description": "The total amount of the loan.",
+                "type": "float"
+            },
+            "annual_interest_rate": {
+                "description": "The annual interest rate as a decimal (e.g., 0.05 for 5%).",
+                "type": "float"
+            },
+            "loan_term_years": {
+                "description": "The loan term in years.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "geocode_city",
+        "description": "Retrieves the latitude and longitude coordinates of a given city using the Maps.co Geocoding API.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_pokemon_move_info",
+        "description": "Retrieves information about a Pok\u00e9mon's move using the Pok\u00e9API.",
+        "parameters": {
+            "pokemon_name": {
+                "description": "The name of the Pok\u00e9mon.",
+                "type": "str",
+                "default": "run"
+            },
+            "move_name": {
+                "description": "The name of the move to check. Defaults to \"run\".",
+                "type": "str, optional",
+                "default": "run"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_holidays_by_year",
+        "description": "Retrieves the list of public holidays for a given year and country using the Nager.Date API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the holidays.",
+                "type": "int"
+            },
+            "country_code": {
+                "description": "The two-letter ISO 3166-1 alpha-2 country code.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "flatten_list",
+        "description": "Flattens a nested list into a single-level list.",
+        "parameters": {
+            "nested_list": {
+                "description": "The nested list to be flattened.",
+                "type": "List"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_factorial",
+        "description": "Calculates the factorial of a non-negative integer.",
+        "parameters": {
+            "n": {
+                "description": "The non-negative integer.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "dice_roll_probability",
+        "description": "Calculates the probability of rolling a specific sum with a given number of dice, each having a certain number of faces.",
+        "parameters": {
+            "target_sum": {
+                "description": "The target sum to calculate the probability for.",
+                "type": "int",
+                "default": 6
+            },
+            "num_dice": {
+                "description": "The number of dice being rolled.",
+                "type": "int",
+                "default": 6
+            },
+            "num_faces": {
+                "description": "The number of faces on each die. Defaults to 6.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_valid_palindrome",
+        "description": "Checks if a string is a valid palindrome, considering only alphanumeric characters and ignoring case.",
+        "parameters": {
+            "s": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "wire_resistance",
+        "description": "Calculates the resistance of a wire based on its length, cross-sectional area, and material resistivity.",
+        "parameters": {
+            "length_m": {
+                "description": "The length of the wire in meters.",
+                "type": "int",
+                "default": "copper"
+            },
+            "area_sq_m": {
+                "description": "The cross-sectional area of the wire in square meters.",
+                "type": "float",
+                "default": "copper"
+            },
+            "material": {
+                "description": "The material of the wire. Allowed values: \"copper\" (default) or \"aluminum\".",
+                "type": "str, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "cosine_similarity",
+        "description": "Calculates the cosine similarity between two vectors.",
+        "parameters": {
+            "vector_a": {
+                "description": "The first vector.",
+                "type": "List[float]"
+            },
+            "vector_b": {
+                "description": "The second vector.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "max_points_on_line",
+        "description": "Finds the maximum number of points that lie on the same straight line.",
+        "parameters": {
+            "points": {
+                "description": "A list of points represented as tuples (x, y).",
+                "type": "List[Tuple[int, int]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "cell_density",
+        "description": "Calculates the cell density based on the optical density (OD) and dilution factor.",
+        "parameters": {
+            "od": {
+                "description": "The optical density of the sample.",
+                "type": "float",
+                "default": 1000000000.0
+            },
+            "dilution": {
+                "description": "The dilution factor applied to the sample.",
+                "type": "int",
+                "default": 1000000000.0
+            },
+            "factor": {
+                "description": "The calibration factor for converting OD to cell density. Defaults to 1e9.",
+                "type": "float, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_next_greater_element",
+        "description": "Finds the next greater element for each element in a list.",
+        "parameters": {
+            "nums": {
+                "description": "The list of numbers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "batting_average",
+        "description": "Calculates the batting average of a baseball player based on the number of hits and at-bats.",
+        "parameters": {
+            "num_hits": {
+                "description": "The number of hits.",
+                "type": "int",
+                "default": 3
+            },
+            "num_at_bats": {
+                "description": "The number of at-bats.",
+                "type": "int",
+                "default": 3
+            },
+            "precision": {
+                "description": "The number of decimal places to round the batting average. Defaults to 3.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "triangle_area",
+        "description": "Computes the area of a triangle given its base and height.",
+        "parameters": {
+            "base": {
+                "description": "The length of the base of the triangle.",
+                "type": "float"
+            },
+            "height": {
+                "description": "The height of the triangle.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_pairs_with_sum",
+        "description": "Finds all pairs of integers in a list that sum up to a target value.",
+        "parameters": {
+            "nums": {
+                "description": "The list of integers.",
+                "type": "List[int]"
+            },
+            "target": {
+                "description": "The target sum value.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_calorie_intake",
+        "description": "Calculates the recommended daily calorie intake and macronutrient distribution based on personal characteristics and goals.",
+        "parameters": {
+            "weight_kg": {
+                "description": "Body weight in kilograms.",
+                "type": "float"
+            },
+            "height_cm": {
+                "description": "Height in centimeters.",
+                "type": "float"
+            },
+            "age": {
+                "description": "Age in years.",
+                "type": "int"
+            },
+            "sex": {
+                "description": "Biological sex, either 'male' or 'female'.",
+                "type": "str"
+            },
+            "activity_level": {
+                "description": "Activity level on a scale of 1 to 5 (1 = sedentary, 5 = extremely active).",
+                "type": "int"
+            },
+            "goal": {
+                "description": "Fitness goal, either 'lose', 'maintain', or 'gain'.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_hotel_available",
+        "description": "Checks the availability of a hotel for a given date range.",
+        "parameters": {
+            "hotel": {
+                "description": "The name of the hotel.",
+                "type": "str"
+            },
+            "city": {
+                "description": "The city where the hotel is located.",
+                "type": "str"
+            },
+            "checkin": {
+                "description": "The check-in date in the format \"YYYY-MM-DD\".",
+                "type": "str"
+            },
+            "checkout": {
+                "description": "The check-out date in the format \"YYYY-MM-DD\".",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_anagram",
+        "description": "Checks if two words are anagrams of each other.",
+        "parameters": {
+            "word1": {
+                "description": "The first word.",
+                "type": "str"
+            },
+            "word2": {
+                "description": "The second word.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "count_vowels",
+        "description": "Counts the number of vowels in a given text.",
+        "parameters": {
+            "text": {
+                "description": "The input text.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_grade",
+        "description": "Calculates the weighted average grade based on scores and their corresponding weights.",
+        "parameters": {
+            "scores": {
+                "description": "A list of scores.",
+                "type": "List[float]"
+            },
+            "weights": {
+                "description": "A list of weights corresponding to each score.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "binary_search",
+        "description": "Performs binary search on a sorted list to find the index of a target value.",
+        "parameters": {
+            "arr": {
+                "description": "The sorted list of integers.",
+                "type": "List[int]"
+            },
+            "target": {
+                "description": "The target value to search for.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_valid_parentheses",
+        "description": "Checks if a string contains valid parentheses.",
+        "parameters": {
+            "s": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "bacterial_growth",
+        "description": "Calculates the bacterial population after a given time based on the initial population and growth rate.",
+        "parameters": {
+            "initial_population": {
+                "description": "The initial bacterial population.",
+                "type": "int",
+                "default": 20
+            },
+            "growth_rate": {
+                "description": "The growth rate per unit time.",
+                "type": "float",
+                "default": 20
+            },
+            "time": {
+                "description": "The time elapsed.",
+                "type": "float"
+            },
+            "doubling_time": {
+                "description": "The doubling time of the bacteria in minutes. Defaults to 20.",
+                "type": "float, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "factorial",
+        "description": "Computes the factorial of a non-negative integer.",
+        "parameters": {
+            "n": {
+                "description": "The non-negative integer to compute the factorial of.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_duplicate_number",
+        "description": "Finds the duplicate number in a list of integers.",
+        "parameters": {
+            "nums": {
+                "description": "The list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_max_subarray_sum",
+        "description": "Finds the maximum sum of a contiguous subarray within a list of integers.",
+        "parameters": {
+            "nums": {
+                "description": "The input list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_range",
+        "description": "Helper function to format the range string.",
+        "parameters": {
+            "start": {
+                "description": "The start of the range.",
+                "type": "int"
+            },
+            "end": {
+                "description": "The end of the range.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "count_occurrences",
+        "description": "Counts the occurrences of each element in a list and returns a dictionary with the counts.",
+        "parameters": {
+            "lst": {
+                "description": "The input list.",
+                "type": "List"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_power",
+        "description": "Checks if a number is a power of a given base.",
+        "parameters": {
+            "num": {
+                "description": "The number to check.",
+                "type": "int"
+            },
+            "base": {
+                "description": "The base to check against.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "density",
+        "description": "Calculates the density of an object given its mass and volume.",
+        "parameters": {
+            "mass": {
+                "description": "The mass of the object.",
+                "type": "float"
+            },
+            "volume": {
+                "description": "The volume of the object.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "word_frequency",
+        "description": "Calculates the frequency of each word in a text.",
+        "parameters": {
+            "text": {
+                "description": "The input text.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_subset",
+        "description": "Checks if one set is a subset of another set.",
+        "parameters": {
+            "set1": {
+                "description": "The first set.",
+                "type": "set"
+            },
+            "set2": {
+                "description": "The second set.",
+                "type": "set"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "sort_numbers",
+        "description": "Sorts a list of numbers in ascending or descending order.",
+        "parameters": {
+            "numbers": {
+                "description": "The list of numbers to be sorted.",
+                "type": "List[float]"
+            },
+            "descending": {
+                "description": "If True, sorts the numbers in descending order. Defaults to False.",
+                "type": "bool, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "whole_foods_order",
+        "description": "Places an order at Whole Foods.",
+        "parameters": {
+            "store_location": {
+                "description": "The location of the Whole Foods store.",
+                "type": "str"
+            },
+            "item_list": {
+                "description": "A list of items to order.",
+                "type": "list"
+            },
+            "order_size": {
+                "description": "The size of the order. Allowed values: \"small\", \"medium\", or \"large\".",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_longest_palindromic_substring",
+        "description": "Finds the longest palindromic substring in a string.",
+        "parameters": {
+            "s": {
+                "description": "The input string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_quarterly_dividend",
+        "description": "Calculates the quarterly dividend per share based on the total dividend payout and the number of outstanding shares.",
+        "parameters": {
+            "total_dividend": {
+                "description": "The total dividend payout in USD.",
+                "type": "int"
+            },
+            "num_shares": {
+                "description": "The number of outstanding shares.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_sum_of_cubes",
+        "description": "Checks if a number is the sum of the cubes of its digits.",
+        "parameters": {
+            "num": {
+                "description": "The number to check.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "final_velocity",
+        "description": "Calculates the final velocity of an object given its initial velocity, acceleration, and time.",
+        "parameters": {
+            "initial_velocity": {
+                "description": "The initial velocity of the object.",
+                "type": "float"
+            },
+            "acceleration": {
+                "description": "The acceleration of the object.",
+                "type": "float"
+            },
+            "time": {
+                "description": "The time elapsed.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "neuronal_activity_rate",
+        "description": "Calculates the neuronal activity rate based on the synaptic input rate, synaptic weight, and decay constant.",
+        "parameters": {
+            "synaptic_input_rate": {
+                "description": "The rate of synaptic inputs per second.",
+                "type": "int",
+                "default": 1.0
+            },
+            "synaptic_weight": {
+                "description": "The weight of the synaptic input, denoting its influence. Defaults to 1.0.",
+                "type": "float, optional",
+                "default": 0.1
+            },
+            "decay_constant": {
+                "description": "The rate at which the neuron's potential decays. Defaults to 0.1.",
+                "type": "float, optional",
+                "default": 1.0
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "cagr",
+        "description": "Calculates the Compound Annual Growth Rate (CAGR) of an investment.",
+        "parameters": {
+            "start_value": {
+                "description": "The initial value of the investment.",
+                "type": "float"
+            },
+            "end_value": {
+                "description": "The final value of the investment.",
+                "type": "float"
+            },
+            "years": {
+                "description": "The number of years between the initial and final values.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_angle",
+        "description": "Calculates the angle between the hour and minute hands of a clock.",
+        "parameters": {
+            "hour": {
+                "description": "The hour value (1-12).",
+                "type": "int"
+            },
+            "minute": {
+                "description": "The minute value (0-59).",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "generate_random_string",
+        "description": "Generates a random string of specified length and character types.",
+        "parameters": {
+            "length": {
+                "description": "The length of the random string.",
+                "type": "int",
+                "default": true
+            },
+            "uppercase": {
+                "description": "Include uppercase letters. Defaults to True.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "lowercase": {
+                "description": "Include lowercase letters. Defaults to True.",
+                "type": "bool, optional",
+                "default": true
+            },
+            "digits": {
+                "description": "Include digits. Defaults to True.",
+                "type": "bool, optional"
+            },
+            "special_chars": {
+                "description": "Include special characters. Defaults to False.",
+                "type": "bool, optional",
+                "default": true
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_missing_ranges",
+        "description": "Finds the missing ranges between lower and upper in a sorted list of integers.",
+        "parameters": {
+            "nums": {
+                "description": "The sorted list of integers.",
+                "type": "List[int]"
+            },
+            "lower": {
+                "description": "The lower bound.",
+                "type": "int"
+            },
+            "upper": {
+                "description": "The upper bound.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "mean_confidence_interval",
+        "description": "Calculates the confidence interval for a sample mean.",
+        "parameters": {
+            "std_dev": {
+                "description": "The standard deviation of the sample.",
+                "type": "float",
+                "default": 0.95
+            },
+            "sample_size": {
+                "description": "The size of the sample.",
+                "type": "int",
+                "default": 0.95
+            },
+            "mean": {
+                "description": "The mean of the sample.",
+                "type": "float"
+            },
+            "confidence": {
+                "description": "The desired confidence level. Default is 0.95.",
+                "type": "float, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_valid_email",
+        "description": "Checks if an email address is valid.",
+        "parameters": {
+            "email": {
+                "description": "The email address to validate.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "fibonacci",
+        "description": "Calculates the nth Fibonacci number.",
+        "parameters": {
+            "n": {
+                "description": "The position of the Fibonacci number.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "reverse_words",
+        "description": "Reverses the order of words in a sentence.",
+        "parameters": {
+            "sentence": {
+                "description": "The input sentence.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_armstrong_number",
+        "description": "Checks if a number is an Armstrong number.",
+        "parameters": {
+            "num": {
+                "description": "The number to check.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "prime_factorization",
+        "description": "Computes the prime factorization of a positive integer.",
+        "parameters": {
+            "number": {
+                "description": "The positive integer to factorize.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "circle_area",
+        "description": "Computes the area of a circle given its radius.",
+        "parameters": {
+            "radius": {
+                "description": "The radius of the circle.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "std_deviation",
+        "description": "Calculates the standard deviation of a list of numbers.",
+        "parameters": {
+            "numbers": {
+                "description": "The list of numbers.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "count_bits",
+        "description": "Counts the number of set bits (1's) in the binary representation of a number.",
+        "parameters": {
+            "num": {
+                "description": "The input number.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "least_common_multiple",
+        "description": "Computes the least common multiple (LCM) of two positive integers.",
+        "parameters": {
+            "a": {
+                "description": "The first positive integer.",
+                "type": "int"
+            },
+            "b": {
+                "description": "The second positive integer.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "fibonacci_numbers",
+        "description": "Generates the first n Fibonacci numbers.",
+        "parameters": {
+            "n": {
+                "description": "The number of Fibonacci numbers to generate.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_majority_element",
+        "description": "Finds the majority element in a list, which appears more than \u230an / 2\u230b times.",
+        "parameters": {
+            "nums": {
+                "description": "The input list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_missing_number",
+        "description": "Finds the missing number in a list of integers from 0 to n.",
+        "parameters": {
+            "nums": {
+                "description": "The list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "binomial_probability",
+        "description": "Calculates the probability of getting exactly k successes in n independent trials,",
+        "parameters": {
+            "n": {
+                "description": "The total number of trials.",
+                "type": "int"
+            },
+            "k": {
+                "description": "The number of successes.",
+                "type": "int"
+            },
+            "p": {
+                "description": "The probability of success in each trial.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "permutation_count",
+        "description": "Calculates the number of permutations of k elements from a set of n elements.",
+        "parameters": {
+            "n": {
+                "description": "The total number of elements in the set.",
+                "type": "int"
+            },
+            "k": {
+                "description": "The number of elements to choose for the permutation.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_investment_return",
+        "description": "Calculates the return on investment based on the initial deposit amount, annual interest rate, and investment period.",
+        "parameters": {
+            "initial_amount": {
+                "description": "The initial deposit amount.",
+                "type": "int"
+            },
+            "interest_rate": {
+                "description": "The annual interest rate provided by the bank.",
+                "type": "float"
+            },
+            "num_years": {
+                "description": "The number of years the money is invested.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "solve_quadratic",
+        "description": "Computes the roots of a quadratic equation given its coefficients.",
+        "parameters": {
+            "a": {
+                "description": "The coefficient of the quadratic term (x^2).",
+                "type": "float"
+            },
+            "b": {
+                "description": "The coefficient of the linear term (x).",
+                "type": "float"
+            },
+            "c": {
+                "description": "The constant term.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "format_date",
+        "description": "Converts a date string from one format to another.",
+        "parameters": {
+            "date": {
+                "description": "The date string to convert.",
+                "type": "str"
+            },
+            "input_format": {
+                "description": "The format of the input date string.",
+                "type": "str"
+            },
+            "output_format": {
+                "description": "The desired format of the output date string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "potential_energy",
+        "description": "Calculates the electrostatic potential energy given the charge and voltage.",
+        "parameters": {
+            "charge": {
+                "description": "The electric charge.",
+                "type": "float"
+            },
+            "voltage": {
+                "description": "The electric potential difference (voltage).",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_order_total",
+        "description": "Calculates the total cost of an order based on the items, quantities, and prices.",
+        "parameters": {
+            "items": {
+                "description": "A list of item names.",
+                "type": "List[str]"
+            },
+            "quantities": {
+                "description": "A list of corresponding quantities for each item.",
+                "type": "List[int]"
+            },
+            "prices": {
+                "description": "A list of corresponding prices for each item.",
+                "type": "List[float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_files",
+        "description": "Finds all files with a specific extension in a directory and its subdirectories.",
+        "parameters": {
+            "directory": {
+                "description": "The directory to search in.",
+                "type": "str"
+            },
+            "extension": {
+                "description": "The file extension to search for.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_anagram_phrase",
+        "description": "Checks if two phrases are anagrams of each other, ignoring whitespace and punctuation.",
+        "parameters": {
+            "phrase1": {
+                "description": "The first phrase.",
+                "type": "str"
+            },
+            "phrase2": {
+                "description": "The second phrase.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "compound_interest",
+        "description": "Calculates the compound interest of an investment.",
+        "parameters": {
+            "principal": {
+                "description": "The initial investment amount.",
+                "type": "float",
+                "default": 1
+            },
+            "rate": {
+                "description": "The annual interest rate expressed as a decimal.",
+                "type": "float",
+                "default": 1
+            },
+            "time": {
+                "description": "The time in years for which the investment is held.",
+                "type": "float"
+            },
+            "n": {
+                "description": "The number of times interest is compounded per year. Defaults to 1.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "numerical_derivative",
+        "description": "Estimates the derivative of a function at a given point using the central difference formula.",
+        "parameters": {
+            "function": {
+                "description": "The function to calculate the derivative of.",
+                "type": "Callable[[float], float]"
+            },
+            "x": {
+                "description": "The point at which to estimate the derivative.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "matrix_multiply",
+        "description": "Multiplies two matrices.",
+        "parameters": {
+            "matrix_a": {
+                "description": "The first matrix.",
+                "type": "List[List[float]]"
+            },
+            "matrix_b": {
+                "description": "The second matrix.",
+                "type": "List[List[float]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_card_game_probability",
+        "description": "Calculate the probability of drawing a certain number of desired cards from a deck.",
+        "parameters": {
+            "total_cards": {
+                "description": "Total number of cards in the deck.",
+                "type": "int"
+            },
+            "desired_cards": {
+                "description": "Number of cards in the deck that satisfy the conditions.",
+                "type": "int"
+            },
+            "cards_drawn": {
+                "description": "Number of cards drawn from the deck.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "linear_regression_prediction",
+        "description": "Predicts the y-value for a given x-value using linear regression.",
+        "parameters": {
+            "x_values": {
+                "description": "The x-coordinates of the data points.",
+                "type": "List[float]"
+            },
+            "y_values": {
+                "description": "The y-coordinates of the data points.",
+                "type": "List[float]"
+            },
+            "target_x": {
+                "description": "The x-value for which to predict the y-value.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "can_attend_all_meetings",
+        "description": "Determines if a person can attend all meetings given a list of meeting time intervals.",
+        "parameters": {
+            "intervals": {
+                "description": "A list of meeting time intervals, where each interval is represented as [start_time, end_time].",
+                "type": "List[List[int]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "euclidean_distance",
+        "description": "Computes the Euclidean distance between two points in a 2D plane.",
+        "parameters": {
+            "point_a": {
+                "description": "The coordinates of the first point (x, y).",
+                "type": "Tuple[float, float]"
+            },
+            "point_b": {
+                "description": "The coordinates of the second point (x, y).",
+                "type": "Tuple[float, float]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_rotation",
+        "description": "Checks if one string is a rotation of another string.",
+        "parameters": {
+            "str1": {
+                "description": "The first string.",
+                "type": "str"
+            },
+            "str2": {
+                "description": "The second string.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "independent_samples_t_test",
+        "description": "Conducts a two-sample independent t-test and returns the t-statistic, p-value, and conclusion.",
+        "parameters": {
+            "sample1": {
+                "description": "The first sample of observations.",
+                "type": "List[float]",
+                "default": 0.05
+            },
+            "sample2": {
+                "description": "The second sample of observations.",
+                "type": "List[float]",
+                "default": 0.05
+            },
+            "alpha": {
+                "description": "The significance level of the test. Defaults to 0.05.",
+                "type": "float, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "expand_around_center",
+        "description": "Helper function to expand around a center for finding palindromic substrings.",
+        "parameters": {
+            "s": {
+                "description": "The input string.",
+                "type": "str"
+            },
+            "left": {
+                "description": "The left index of the center.",
+                "type": "int"
+            },
+            "right": {
+                "description": "The right index of the center.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "tsv6",
+        "description": "Fetches the variable list within the specified category of a merged data subset along with the metadata.",
+        "parameters": {
+            "dataset": {
+                "description": "The dataset identifier.",
+                "type": "str",
+                "default": "frim1"
+            },
+            "category": {
+                "description": "The category to filter the data.",
+                "type": "str",
+                "default": "factor"
+            },
+            "subset": {
+                "description": "The data subset identifier.",
+                "type": "str",
+                "default": "activome"
+            },
+            "format": {
+                "description": "The desired output format. Default is 'tsv'.",
+                "type": "str, optional",
+                "default": "tsv"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_vehicle_information",
+        "description": "Fetch vehicle information from the Mexican Vehicle Registry using the provided license plate number and optional RapidAPI key.",
+        "parameters": {
+            "plates": {
+                "description": "The license plate number for which to retrieve the vehicle information.",
+                "type": "str",
+                "default": "Y20BBG"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "ilod_status_ilod_ticket_get",
+        "description": "Fetches the result of an ILOD (Industry Level of Development) check using a given ticket.",
+        "parameters": {
+            "ticket": {
+                "description": "The ticket identifier for the ILOD check.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_ecoindex_analysis_list_version_ecoindexes_get",
+        "description": "Fetches a list of ecoindex analysis based on the specified version and query filters. The results are ordered by ascending date.",
+        "parameters": {
+            "version": {
+                "description": "Engine version used to run the analysis (e.g., 'v0' or 'v1').",
+                "type": "str",
+                "default": "v1"
+            },
+            "size": {
+                "description": "Number of elements per page. Defaults to 50.",
+                "type": "int, optional",
+                "default": 50
+            },
+            "host": {
+                "description": "Host name to filter the results by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date_from": {
+                "description": "Start date for filtering results (format: 'YYYY-MM-DD').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "date_to": {
+                "description": "End date for filtering results (format: 'YYYY-MM-DD').",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_quotes_by_genre",
+        "description": "Fetches a list of quotes for a given genre from the Quotsy API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the genre to fetch quotes for.",
+                "type": "str",
+                "default": "love"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "compatibility",
+        "description": "Calculates the compatibility between two astrological signs using the Horoscope Astrology API.",
+        "parameters": {
+            "sign1": {
+                "description": "The first astrological sign. Options include:",
+                "type": "str",
+                "default": "Libra"
+            },
+            "sign2": {
+                "description": "The second astrological sign. Options include:",
+                "type": "str",
+                "default": "Aries"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "is_perfect_square",
+        "description": "Checks if a number is a perfect square.",
+        "parameters": {
+            "num": {
+                "description": "The number to check.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "trapezoidal_integration",
+        "description": "Calculates the definite integral of a function using the trapezoidal rule.",
+        "parameters": {
+            "func": {
+                "description": "The function to integrate, expressed as a string (e.g., \"x**2 + 2*x\").",
+                "type": "str",
+                "default": 10000
+            },
+            "a": {
+                "description": "The lower limit of integration.",
+                "type": "float",
+                "default": 10000
+            },
+            "b": {
+                "description": "The upper limit of integration.",
+                "type": "float"
+            },
+            "n": {
+                "description": "The number of subdivisions for the trapezoidal approximation. Defaults to 10000.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_kth_smallest_number",
+        "description": "Finds the kth smallest number in a list.",
+        "parameters": {
+            "nums": {
+                "description": "The list of numbers.",
+                "type": "List[int]"
+            },
+            "k": {
+                "description": "The position (1-based index) of the smallest number to find.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_equilibrium_index",
+        "description": "Finds the equilibrium index of a list, where the sum of elements on the left is equal to the sum of elements on the right.",
+        "parameters": {
+            "arr": {
+                "description": "The input list of integers.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "merge_sorted_lists",
+        "description": "Merges two sorted lists into a single sorted list.",
+        "parameters": {
+            "list1": {
+                "description": "The first sorted list.",
+                "type": "List[int]"
+            },
+            "list2": {
+                "description": "The second sorted list.",
+                "type": "List[int]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "tsv4",
+        "description": "Retrieves the entry list of a specified subset from a dataset using the odem API.",
+        "parameters": {
+            "subset": {
+                "description": "The identifier of the data subset to retrieve.",
+                "type": "str",
+                "default": "activome"
+            },
+            "dataset": {
+                "description": "The identifier of the dataset to query.",
+                "type": "str",
+                "default": "frim1"
+            },
+            "format": {
+                "description": "The output format for the response. Defaults to 'tsv'.",
+                "type": "str, optional",
+                "default": "tsv"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "convert_cooking_measurements",
+        "description": "Converts a quantity of a cooking ingredient from one measurement unit to another.",
+        "parameters": {
+            "quantity": {
+                "description": "The quantity of the item to convert.",
+                "type": "float"
+            },
+            "from_unit": {
+                "description": "The unit of the input quantity (e.g., 'cup', 'gram').",
+                "type": "str"
+            },
+            "to_unit": {
+                "description": "The unit to which the quantity should be converted (e.g., 'ounce', 'kilogram').",
+                "type": "str"
+            },
+            "item": {
+                "description": "The cooking ingredient being converted (e.g., 'flour', 'sugar').",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "calculate_median",
+        "description": "Calculates the median of a list of numbers.",
+        "parameters": {
+            "numbers": {
+                "description": "The list of numbers.",
+                "type": "List[Union[int, float]]"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "note_duration",
+        "description": "Calculates the duration between two musical notes based on their frequencies and the tempo.",
+        "parameters": {
+            "freq1": {
+                "description": "The frequency of the first note in Hz.",
+                "type": "int",
+                "default": 120
+            },
+            "freq2": {
+                "description": "The frequency of the second note in Hz.",
+                "type": "int",
+                "default": 120
+            },
+            "bpm": {
+                "description": "The tempo of the music in beats per minute. Defaults to 120.",
+                "type": "int, optional"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_city_from_zipcode",
+        "description": "Retrieves the city name for a given ZIP code using the Ziptastic API.",
+        "parameters": {
+            "zipcode": {
+                "description": "The ZIP code to look up.",
+                "type": "str"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "chi_square_independence_test",
+        "description": "Performs a Chi-Square test for independence on a 2x2 contingency table.",
+        "parameters": {
+            "contingency_table": {
+                "description": "A 2x2 contingency table represented as a list of lists.",
+                "type": "List[List[int]]",
+                "default": 0.05
+            },
+            "significance_level": {
+                "description": "The significance level for the Chi-Square test. Defaults to 0.05.",
+                "type": "float, optional",
+                "default": 0.05
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "displacement",
+        "description": "Calculates the displacement of an object given its initial velocity, acceleration, and time.",
+        "parameters": {
+            "initial_velocity": {
+                "description": "The initial velocity of the object.",
+                "type": "float"
+            },
+            "acceleration": {
+                "description": "The acceleration of the object.",
+                "type": "float"
+            },
+            "time": {
+                "description": "The time elapsed.",
+                "type": "float"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "investment_profit",
+        "description": "Calculates the profit from an investment based on the initial amount, annual return rate, and time.",
+        "parameters": {
+            "amount": {
+                "description": "The initial investment amount.",
+                "type": "float"
+            },
+            "rate": {
+                "description": "The annual return rate expressed as a decimal.",
+                "type": "float"
+            },
+            "years": {
+                "description": "The number of years the investment is held.",
+                "type": "int"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "v1_babynames",
+        "description": "Fetches a list of baby names from the API Ninjas Baby Names API endpoint.",
+        "parameters": {
+            "popular_only": {
+                "description": "Whether to only return popular (top 10%) of names. Must be either 'true' or 'false'. Defaults to 'true' if not set.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "gender": {
+                "description": "The gender for the baby names. Must be one of the following: 'boy', 'girl', or 'neutral'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "web_snapshot",
+        "description": "Fetches a snapshot of a webpage as an image using the Pragmavant API.",
+        "parameters": {
+            "accept": {
+                "description": "The MIME type that is acceptable for the response.",
+                "type": "str",
+                "default": "image/png"
+            },
+            "source": {
+                "description": "The URL of the webpage to capture.",
+                "type": "str",
+                "default": "https://www.yahoo.com"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_quotes_by_specific_author",
+        "description": "Fetch quotes from a specified author using the World of Quotes API.",
+        "parameters": {
+            "author": {
+                "description": "Name of the author whose quotes are to be fetched.",
+                "type": "str",
+                "default": "Albert Einstein"
+            },
+            "page": {
+                "description": "Page number for pagination. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "limit": {
+                "description": "Number of quotes to retrieve per request. Maximum is 20. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "file_digest",
+        "description": "Calculates the digest/checksum for a given file by making a request to the pragmavantapi via RapidAPI.",
+        "parameters": {
+            "source": {
+                "description": "The URL of the file for which the digest/checksum is to be calculated.",
+                "type": "str",
+                "default": "http://google.com"
+            },
+            "cache_key": {
+                "description": "An optional cache key for quicker lookup. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "mensajes_2",
+        "description": "Fetches messages for student number 2 using the provided RapidAPI key and authorization details.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required for API access.",
+                "type": "str",
+                "default": "1234567890"
+            },
+            "authoriza": {
+                "description": "An additional authorization token. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "recitations_by_juz_number",
+        "description": "Fetches a list of ayah recitations for a specified juz number.",
+        "parameters": {
+            "recitation_id": {
+                "description": "The ID of the recitation.",
+                "type": "int",
+                "default": ""
+            },
+            "juz_number": {
+                "description": "The number of the juz for which to fetch ayah recitations.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "qr_endpoint",
+        "description": "Generates a QR code for the given URL using the RapidAPI QR code service.",
+        "parameters": {
+            "url": {
+                "description": "The website URL to encode in the QR code. Defaults to 'www.google.com'.",
+                "type": "str",
+                "default": "www.google.com"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_specific_dog_breed",
+        "description": "Fetch detailed information about a specific dog breed.",
+        "parameters": {
+            "slug": {
+                "description": "The identifier for the specific dog breed.",
+                "type": "str",
+                "default": "shiba-inu"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_qoute",
+        "description": "Fetch a quote by its ID using the Quotsy API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the quote to be retrieved.",
+                "type": "str",
+                "default": "00667985-3375-4b1b-abb0-60bcfa70a80f"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "token_id",
+        "description": "Fetches the information of a Token by its address using the Uniswap V2 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The address or ID of the Token to fetch information for.",
+                "type": "str",
+                "default": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "topic",
+        "description": "Fetches topics from the Quotes Diffusion API with optional pagination and search functionality.",
+        "parameters": {
+            "page": {
+                "description": "Page number for pagination. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "search": {
+                "description": "Custom search term to filter topics. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "getcodeplaygroundlink",
+        "description": "Generates a link to the code playground for a specific contract using the provided contract address and name, and an optional API key.",
+        "parameters": {
+            "contract_address": {
+                "description": "The address of the smart contract.",
+                "type": "str",
+                "default": "0x011b6f1425389550"
+            },
+            "contract_name": {
+                "description": "The name of the smart contract.",
+                "type": "str",
+                "default": "NWayUtilityCoin"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "recitations_by_chapter_number",
+        "description": "Fetches a list of ayah recitations for a specific Surah (chapter) based on the given chapter number and recitation ID.",
+        "parameters": {
+            "chapter_number": {
+                "description": "The chapter (Surah) number for which to fetch the ayah recitations.",
+                "type": "int",
+                "default": ""
+            },
+            "recitation_id": {
+                "description": "The recitation ID to specify the reciter.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "find_favicon",
+        "description": "Find the favicon for a given URL using the RapidAPI favicon finder service.",
+        "parameters": {
+            "url": {
+                "description": "The URL for which to find the favicon.",
+                "type": "str",
+                "default": "https://www.google.com/"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_gas_price",
+        "description": "Retrieves the best estimate for the gas price to use in a transaction on a specified blockchain network.",
+        "parameters": {
+            "chainid": {
+                "description": "The ID of the blockchain network to retrieve the gas price estimate for.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_screenshot_version_ecoindexes_id_screenshot_get",
+        "description": "Returns the screenshot of the webpage analysis for a given version and analysis ID, if it exists.",
+        "parameters": {
+            "version": {
+                "description": "Engine version used to run the analysis (e.g., 'v0' or 'v1').",
+                "type": "str",
+                "default": "v1"
+            },
+            "is_id": {
+                "description": "Identifier of the analysis for which to retrieve the screenshot.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "tsv1",
+        "description": "Fetch metadata attributes for all subsets of a given dataset from the ODAM API.",
+        "parameters": {
+            "dataset": {
+                "description": "The identifier for the dataset whose metadata is to be fetched.",
+                "type": "str",
+                "default": "frim1"
+            },
+            "format": {
+                "description": "The desired format of the response (e.g., 'tsv', 'json'). Defaults to 'tsv'.",
+                "type": "str, optional",
+                "default": "tsv"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "numerology",
+        "description": "Calculates the numerology information of a given name by making a request to the horoscope-astrology API using RapidAPI.",
+        "parameters": {
+            "n": {
+                "description": "The name for which numerology information is to be calculated.",
+                "type": "str",
+                "default": "7"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "image_convert",
+        "description": "Convert an image to a specified format and resize it.",
+        "parameters": {
+            "accept": {
+                "description": "The content type to accept in the response (default is 'image/png').",
+                "type": "str",
+                "default": "image/png"
+            },
+            "format": {
+                "description": "The format to convert the image to (default is 'jpeg').",
+                "type": "str",
+                "default": "jpeg"
+            },
+            "source": {
+                "description": "The URL of the source image to be converted.",
+                "type": "str",
+                "default": ""
+            },
+            "height": {
+                "description": "The desired height of the converted image (default is 300 pixels).",
+                "type": "int",
+                "default": "300"
+            },
+            "width": {
+                "description": "The desired width of the converted image (default is 300 pixels).",
+                "type": "int",
+                "default": "300"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "exclusiveness_callerid",
+        "description": "This function checks the exclusiveness status associated with the given `callerid` by making a request to the \"most-exclusive-api\" on RapidAPI.",
+        "parameters": {
+            "callerid": {
+                "description": "A unique string identifying the requester. It should be alphanumeric with allowed characters [a-zA-Z0-9_-] and have a maximum length of 32 characters.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "exists_exists_ticket_get",
+        "description": "Checks if a ticket exists using the provided RapidAPI key.",
+        "parameters": {
+            "ticket": {
+                "description": "The ticket identifier to be checked.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "getdetails",
+        "description": "Fetch the details associated with a given Australian Business Number (ABN) from the katzion-test API.",
+        "parameters": {
+            "abn": {
+                "description": "The Australian Business Number to fetch details for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "entreprise_par_rid",
+        "description": "Fetches and returns company information from New Caledonia using the provided RID.",
+        "parameters": {
+            "rid": {
+                "description": "The RID of the company to look up.",
+                "type": "str",
+                "default": "0132720"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "tsv",
+        "description": "Fetches a subset list of a dataset from the specified API along with its metadata.",
+        "parameters": {
+            "dataset": {
+                "description": "The identifier of the dataset to query.",
+                "type": "str",
+                "default": "frim1"
+            },
+            "format": {
+                "description": "The output format of the data. Defaults to 'tsv'.",
+                "type": "str, optional",
+                "default": "tsv"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "daily_horoscope",
+        "description": "Fetches the daily horoscope for a given zodiac sign and day using the RapidAPI Horoscope Astrology service.",
+        "parameters": {
+            "sunsign": {
+                "description": "The zodiac sign for which to fetch the horoscope. Possible values include 'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'.",
+                "type": "str",
+                "default": "libra"
+            },
+            "day": {
+                "description": "The day for which to fetch the horoscope. Possible values include 'Today', 'Yesterday', 'Tomorrow', 'Week', 'Month', 'Year'.",
+                "type": "str",
+                "default": "today"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "ayah_recitations",
+        "description": "Fetches the list of recitations for a specific Ayah by its key and recitation ID.",
+        "parameters": {
+            "recitation_id": {
+                "description": "The ID of the recitation.",
+                "type": "int",
+                "default": ""
+            },
+            "ayah_key": {
+                "description": "The key of the Ayah, which is a combination of the Surah number and Ayah number (e.g., '1:1' for the first Ayah of the first Surah).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "evaluate_expression",
+        "description": "Evaluates a mathematical expression using an external API and returns the result.",
+        "parameters": {
+            "expression": {
+                "description": "The mathematical expression to be evaluated.",
+                "type": "str",
+                "default": "$950 - 10% discount"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "pair_id",
+        "description": "Fetches information of a pair using the given pair address from the Uniswap V2 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The address of the pair.",
+                "type": "str",
+                "default": "0xb011eeaab8bf0c6de75510128da95498e4b7e67f"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "recitations_by_page_number",
+        "description": "Fetches a list of ayah recitations for a given Madani Mushaf page.",
+        "parameters": {
+            "recitation_id": {
+                "description": "The identifier for the specific recitation.",
+                "type": "int",
+                "default": ""
+            },
+            "page_number": {
+                "description": "The page number in the Madani Mushaf for which ayah recitations are to be fetched.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_single_item",
+        "description": "Fetches a single item from the Tibia items database for a given world and item name.",
+        "parameters": {
+            "world": {
+                "description": "The name of the world to search in.",
+                "type": "str",
+                "default": "Bona"
+            },
+            "nameitem": {
+                "description": "The name of the item to fetch.",
+                "type": "str",
+                "default": "Sliver"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "dns",
+        "description": "Fetches DNS records for a given domain using the RapidAPI domain checker service.",
+        "parameters": {
+            "domain": {
+                "description": "The domain for which DNS records are to be retrieved.",
+                "type": "str",
+                "default": "rapidapi.com"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "hijos",
+        "description": "Retrieves the list of children (hijos) from the Colegio Santa Ana API.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required for accessing the API.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_host_list_version_hosts_get",
+        "description": "Fetch a list of hosts that ran an EcoIndex analysis, ordered by the number of requests made.",
+        "parameters": {
+            "version": {
+                "description": "Engine version used to run the analysis (v0 or v1).",
+                "type": "str",
+                "default": "v1"
+            },
+            "q": {
+                "description": "Filter for partial host name. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date_from": {
+                "description": "Start date for filtering elements (format: YYYY-MM-DD). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "size": {
+                "description": "Number of elements per page. Defaults to 50.",
+                "type": "int, optional",
+                "default": 50
+            },
+            "date_to": {
+                "description": "End date for filtering elements (format: YYYY-MM-DD). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "tsv2",
+        "description": "Fetches values from a specified data subset within a dataset using the ODAM RapidAPI.",
+        "parameters": {
+            "subset": {
+                "description": "Identifier for the data subset.",
+                "type": "str",
+                "default": "samples"
+            },
+            "dataset": {
+                "description": "Identifier for the dataset.",
+                "type": "str",
+                "default": "frim1"
+            },
+            "limit": {
+                "description": "Limits the number of lines in the output table. Defaults to 10. A value of 0 means no limit.",
+                "type": "int, optional",
+                "default": 10
+            },
+            "debug": {
+                "description": "Debug status. When set to a non-zero value, debug mode is enabled. Defaults to 0.",
+                "type": "int, optional",
+                "default": 0
+            },
+            "format": {
+                "description": "Output format. Defaults to 'tsv'.",
+                "type": "str, optional",
+                "default": "tsv"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "sign",
+        "description": "Fetch horoscope information for a given astrological sign using the Horoscope Astrology API.",
+        "parameters": {
+            "s": {
+                "description": "The astrological sign to fetch information for. Valid options include 'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', and 'pisces'.",
+                "type": "str",
+                "default": "libra"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "syntax_status_syntax_ticket_get",
+        "description": "Fetch the result of a syntax check using a provided ticket from the IFC BIM Services API via RapidAPI.",
+        "parameters": {
+            "ticket": {
+                "description": "The unique identifier for the syntax check result to be retrieved.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_quotes_by_specific_category",
+        "description": "Fetch a collection of quotes from a specific category using the World of Quotes API. It supports pagination and allows customizing the number of quotes returned per page.",
+        "parameters": {
+            "category": {
+                "description": "The category of quotes to fetch.",
+                "type": "str",
+                "default": "age"
+            },
+            "page": {
+                "description": "The page number for pagination. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "limit": {
+                "description": "The maximum number of quotes to fetch per page. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_quote_of_the_day",
+        "description": "Fetches the quote of the day from the World of Quotes API. The quote can optionally be filtered by a specific author or category.",
+        "parameters": {
+            "author": {
+                "description": "The author of the quote. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "category": {
+                "description": "The category of the quote, e.g., 'inspirational'. Defaults to 'inspirational'.",
+                "type": "str, optional",
+                "default": "inspirational"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "etablissement_par_ridet",
+        "description": "Fetches and returns information about an establishment in New Caledonia based on its Ridet number.",
+        "parameters": {
+            "ridet": {
+                "description": "The Ridet number of the establishment.",
+                "type": "str",
+                "default": "0132720001"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "mensajes",
+        "description": "This function fetches messages from the Colegio Santa Ana API.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required for the API request.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "web_pdf",
+        "description": "Takes a webpage URL and returns a snapshot based on the specified accept headers.",
+        "parameters": {
+            "accept": {
+                "description": "The format in which the snapshot is to be returned (e.g., image/png, application/pdf).",
+                "type": "str",
+                "default": "image/pdf"
+            },
+            "source": {
+                "description": "The URL of the webpage to snapshot.",
+                "type": "str",
+                "default": "https://www.msn.com"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "swap_id",
+        "description": "Fetch the information of a Swap from the given Swap ID using the Uniswap V2 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the Swap to fetch information for.",
+                "type": "str",
+                "default": "0xd259f882f051c3ef49a6f79e0a634be47ff643513c418ca753c93dcca8d4d675-0"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "api_v1_fastings",
+        "description": "Fetches a list of sunnah fastings based on provided filters.",
+        "parameters": {
+            "day": {
+                "description": "Day of the month to filter the fastings.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "Year to filter the fastings.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "month": {
+                "description": "Month to filter the fastings.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "category_id": {
+                "description": "Category ID to filter the fastings.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "type_id": {
+                "description": "Type ID to filter the fastings.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "file_content_type",
+        "description": "Determines the content type of a file from a given URL source using the Pragmavant API.",
+        "parameters": {
+            "source": {
+                "description": "The URL of the file for which the content type needs to be determined.",
+                "type": "str",
+                "default": "http://google.com"
+            },
+            "cache_key": {
+                "description": "A cache key to use for caching the request. Defaults to 'c7b920f57e553df2bb68272f61570210'.",
+                "type": "str, optional",
+                "default": "c7b920f57e553df2bb68272f61570210"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "getcodecontent",
+        "description": "Fetches the content of a contract using the provided contract address and name from the given API.",
+        "parameters": {
+            "contract_address": {
+                "description": "The address of the contract to fetch.",
+                "type": "str",
+                "default": "0x011b6f1425389550"
+            },
+            "contract_name": {
+                "description": "The name of the contract to fetch.",
+                "type": "str",
+                "default": "NWayUtilityCoin "
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "v1_facts",
+        "description": "Fetches random facts from the API Ninjas Facts API.",
+        "parameters": {
+            "limit": {
+                "description": "The number of facts to return, between 1 and 30. Default is 1.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "transaction_id",
+        "description": "Retrieve the information of a transaction using its ID from the Uniswap V2 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the transaction to retrieve information for.",
+                "type": "str",
+                "default": "0xd259f882f051c3ef49a6f79e0a634be47ff643513c418ca753c93dcca8d4d675"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "mensajes_1",
+        "description": "Fetches messages for student 1 from the Colegio Santa Ana API using the provided authorization token and API key.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token to access the API.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "qr_code_gen",
+        "description": "Generates a QR code for the given URL using the Simple Cheap QR Code Generator API.",
+        "parameters": {
+            "url": {
+                "description": "The URL for which to generate the QR code.",
+                "type": "str",
+                "default": "www.google.com"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "etablissements_d_une_entreprise",
+        "description": "Fetch the establishments of a company in New Caledonia using the RID provided.",
+        "parameters": {
+            "rid": {
+                "description": "The unique identifier (RID) of the company.",
+                "type": "str",
+                "default": "0132720"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_token_price_history_between_dates",
+        "description": "Retrieves the price history of a token between two specified dates in USD.",
+        "parameters": {
+            "startdate": {
+                "description": "The starting unix timestamp (in seconds) for the price history.",
+                "type": "int",
+                "default": ""
+            },
+            "chainid": {
+                "description": "The specific network the desired token resides on.",
+                "type": "int",
+                "default": "1"
+            },
+            "address": {
+                "description": "The address of the desired token.",
+                "type": "str",
+                "default": ""
+            },
+            "enddate": {
+                "description": "The ending unix timestamp (in seconds) for the price history.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_event_logs_filtered_by_topic",
+        "description": "Fetch event logs filtered by topics for a given blockchain network and address.",
+        "parameters": {
+            "chainid": {
+                "description": "The ID of the blockchain network from which to fetch logs.",
+                "type": "int",
+                "default": "1"
+            },
+            "address": {
+                "description": "The address to fetch logs from.",
+                "type": "str",
+                "default": ""
+            },
+            "topics": {
+                "description": "The topics to filter the logs by.",
+                "type": "str",
+                "default": ""
+            },
+            "endblock": {
+                "description": "The block number to stop fetching logs. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "startblock": {
+                "description": "The block number to start fetching logs. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "comunicado_2",
+        "description": "Fetches the second communication for a student from the colegio Santa Ana using RapidAPI.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required to access the API.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "inasistencias_1",
+        "description": "Retrieves the attendance records for a specific student (ID: 1) from the Colegio Santa Ana API.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required for accessing the API.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_nft_owner",
+        "description": "Fetches the owner of a specific ERC-721 NFT using the provided chain ID, NFT contract address, and NFT ID.",
+        "parameters": {
+            "chainid": {
+                "description": "The chain ID of the blockchain network on which the NFT resides.",
+                "type": "int",
+                "default": "1"
+            },
+            "nftaddress": {
+                "description": "The address of the NFT contract.",
+                "type": "str",
+                "default": ""
+            },
+            "nftid": {
+                "description": "The unique identifier of the specific NFT.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "getcodestructure",
+        "description": "Fetch the code structure of a smart contract given its name and address using the Toolbench RapidAPI.",
+        "parameters": {
+            "contract_name": {
+                "description": "The name of the smart contract.",
+                "type": "str",
+                "default": "NWayUtilityCoin"
+            },
+            "contract_address": {
+                "description": "The address of the smart contract.",
+                "type": "str",
+                "default": "0x011b6f1425389550"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "get_a_daily_horoscope",
+        "description": "Fetches the daily horoscope for a given horoscope sign using the specified language and RapidAPI key.",
+        "parameters": {
+            "signid": {
+                "description": "The identifier for the horoscope sign.",
+                "type": "str",
+                "default": "aquario"
+            },
+            "langid": {
+                "description": "The language identifier for the horoscope.",
+                "type": "str",
+                "default": "pt"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "getcode_relatedcontracts",
+        "description": "Fetches related contract information from the RapidAPI service.",
+        "parameters": {
+            "contract_address": {
+                "description": "The address of the contract.",
+                "type": "str",
+                "default": "0x097bafa4e0b48eef"
+            },
+            "contract_name": {
+                "description": "The name of the contract.",
+                "type": "str",
+                "default": "CharityNFT"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "disciplina_2",
+        "description": "Retrieves disciplinary information for a specific student using the given authorization token.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token required to access the API.",
+                "type": "str",
+                "default": "1234567890"
+            }
+        },
+        "domain": "Other"
+    },
+    {
+        "name": "disciplina_1",
+        "description": "Retrieves discipline information for a student with ID 1 from the Colegio Santa Ana API.",
+        "parameters": {
+            "authorization": {
+                "description": "Authorization token required to access the API.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Other"
+    }
+]

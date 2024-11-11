@@ -1,0 +1,91 @@
+[
+    {
+        "name": "get_web_detection",
+        "description": "Detects web information for a given image using the Toolbench RapidAPI.",
+        "parameters": {
+            "image": {
+                "description": "The URL of the image to be analyzed.",
+                "type": "str",
+                "default": "https://avatars.mds.yandex.net/get-mpic/5215925/img_id4862938180215999126.jpeg/orig"
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "nsfw_image_classification",
+        "description": "Classifies whether the image content at the given URL is inappropriate or not using the NSFW Image Classification API.",
+        "parameters": {
+            "link": {
+                "description": "The URL of the image to be analyzed.",
+                "type": "str",
+                "default": "https://cdn77-pic.xvideos-cdn.com/videos/thumbs169poster/c5/d0/e4/c5d0e4cd6124e1d2f5b3add1f582ca13/c5d0e4cd6124e1d2f5b3add1f582ca13.30.jpg"
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "get_label_detection",
+        "description": "This function interacts with the RapidAPI Label Detection service to get label information for a given image URL. ",
+        "parameters": {
+            "image": {
+                "description": "The URL of the image to be analyzed.",
+                "type": "str",
+                "default": "https://m.media-amazon.com/images/I/71k6XnjuwkL._AC_SL1500_.jpg"
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "get_person_by_id",
+        "description": "Fetches the information of a person from the system using their `person_id`.",
+        "parameters": {
+            "person_id": {
+                "description": "The unique identifier of the person whose information is to be retrieved.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "get_media_info",
+        "description": "Retrieve information about a media item from Instagram API by providing the media ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the media item to retrieve information for.",
+                "type": "str",
+                "default": "2789566164107201469_25025320"
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "keywords",
+        "description": "Fetches keywords from a given text using the AI Writer API.",
+        "parameters": {
+            "content_type": {
+                "description": "The content type of the text (e.g. 'application/json').",
+                "type": "str",
+                "default": "application/json"
+            },
+            "text": {
+                "description": "The text from which to extract keywords.",
+                "type": "str",
+                "default": "Italy is in Europe"
+            }
+        },
+        "domain": "Visual_Recognition"
+    },
+    {
+        "name": "get_info_from_vin",
+        "description": "Retrieves vehicle information from a VIN (Vehicle Identification Number) using the RapidAPI service.",
+        "parameters": {
+            "vin": {
+                "description": "The Vehicle Identification Number to decode.",
+                "type": "str",
+                "default": "19UYA42601A019296"
+            }
+        },
+        "domain": "Visual_Recognition"
+    }
+]

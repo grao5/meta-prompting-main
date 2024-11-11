@@ -1,0 +1,124 @@
+[
+    {
+        "name": "facebook_ad_copy",
+        "description": "Generates a Facebook ad copy using AI based on the provided description and name.",
+        "parameters": {
+            "description": {
+                "description": "The description to be used for generating the ad copy.",
+                "type": "str",
+                "default": "Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services."
+            },
+            "name": {
+                "description": "The name to be used for generating the ad copy.",
+                "type": "str",
+                "default": "Apple"
+            }
+        },
+        "domain": "Advertising"
+    },
+    {
+        "name": "social_media_caption",
+        "description": "Generates catchy captions for social media based on the provided name and description.",
+        "parameters": {
+            "name": {
+                "description": "The name associated with the social media content.",
+                "type": "str",
+                "default": "Apple"
+            },
+            "description": {
+                "description": "A brief description of the social media content.",
+                "type": "str",
+                "default": "Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services."
+            }
+        },
+        "domain": "Advertising"
+    },
+    {
+        "name": "extract_sitemap_xml_as_json",
+        "description": "Fetches and parses a sitemap.xml file from the given URL and returns its content in JSON format.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the sitemap.xml file to be fetched and parsed.",
+                "type": "str",
+                "default": "https://www.sitemaps.org/sitemap.xml"
+            },
+            "meta": {
+                "description": "If True, includes meta information for each URL in the sitemap. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "breadcrumbs": {
+                "description": "If True, includes breadcrumb information for each URL in the sitemap. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "categories": {
+                "description": "If True, includes category information for each URL in the sitemap. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            }
+        },
+        "domain": "Advertising"
+    },
+    {
+        "name": "v1",
+        "description": "Retrieves filtered observations from the Version 1 endpoint based on specified time and filters.",
+        "parameters": {
+            "time": {
+                "description": "Select one of the following timeframes:",
+                "type": "str",
+                "default": "today"
+            },
+            "filter1": {
+                "description": "Can be a specific user, type, or tag (e.g., url, domain, ip, sha256, md5 for type, and phishing, ransomware, CobaltStrike for tag). Default is 'phishing'.",
+                "type": "str, optional",
+                "default": "phishing"
+            },
+            "filter2": {
+                "description": "Can be a specific user, type, or tag (e.g., url, domain, ip, sha256, md5 for type, and phishing, ransomware, CobaltStrike for tag). Default is 'url'.",
+                "type": "str, optional",
+                "default": "url"
+            }
+        },
+        "domain": "Advertising"
+    },
+    {
+        "name": "estimate",
+        "description": "Estimates the video view performance of a YouTube channel using the given channel type and channel name.",
+        "parameters": {
+            "channeltype": {
+                "description": "The type of the channel (e.g., 'youtube').",
+                "type": "str",
+                "default": "youtube"
+            },
+            "channelname": {
+                "description": "The username of the channel to look up for the performance estimation.",
+                "type": "str",
+                "default": "@chrispirillo"
+            }
+        },
+        "domain": "Advertising"
+    },
+    {
+        "name": "artists",
+        "description": "Returns a list of music artists who contributed to JSR/JSRF.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of items to return. Default is '5'.",
+                "type": "str, optional",
+                "default": "5"
+            },
+            "sortby": {
+                "description": "The field to sort the items by. Possible values include any field on the document (e.g., 'name', 'stats'). Default is 'name'.",
+                "type": "str, optional",
+                "default": "name"
+            },
+            "orderby": {
+                "description": "The order to sort the items in. Possible values are 'asc' (ascending) and 'desc' (descending). Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            }
+        },
+        "domain": "Advertising"
+    }
+]

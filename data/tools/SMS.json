@@ -1,0 +1,251 @@
+[
+    {
+        "name": "get_analytics",
+        "description": "Retrieve detailed statistics for your account using the specified parameters through the API.",
+        "parameters": {
+            "p": {
+                "description": "The API Key to authenticate the API request.",
+                "type": "str",
+                "default": ""
+            },
+            "start": {
+                "description": "The start date for the statistics in the format YYYY-MM-DD. Defaults to 30 days ago if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "label": {
+                "description": "Filter data by a specific label. Allowed values: 'all' (default) or a specific label.",
+                "type": "str, optional",
+                "default": "all"
+            },
+            "end": {
+                "description": "The end date for the statistics in the format YYYY-MM-DD. Defaults to the current date if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "subaccounts": {
+                "description": "Specifies which account data to retrieve. Allowed values: 'only_main' (default), 'all', or a specific subaccount ID.",
+                "type": "str, optional",
+                "default": "only_main"
+            },
+            "group_by": {
+                "description": "Specifies the grouping of the data.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "get_webhooks",
+        "description": "Retrieves all existing webhooks using the provided API key and optional RapidAPI key.",
+        "parameters": {
+            "p": {
+                "description": "API key from Sms77.io.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "get_pricing",
+        "description": "Retrieves pricing information for a specified country or all countries.",
+        "parameters": {
+            "p": {
+                "description": "API Key from Sms77.io.",
+                "type": "str",
+                "default": ""
+            },
+            "country": {
+                "description": "An ISO Code representing the country you wish to retrieve the pricing for. If not specified, the prices for all countries will be returned. Examples include 'de' for Germany, 'uk' for Great Britain, and 'fr' for France.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "The format of the response: either 'JSON' or 'CSV'. Defaults to 'JSON'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "getupdates",
+        "description": "Fetch updates about newly received messages from the server, starting from a given message ID and optionally waiting for incoming messages for a specified time.",
+        "parameters": {
+            "start_id": {
+                "description": "The ID from which to start fetching updates. Set to zero for the first call to retrieve all updates.",
+                "type": "int",
+                "default": "0"
+            },
+            "time_out": {
+                "description": "The time-out period (in seconds) for the server to wait for incoming messages before returning. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "get_sender_id",
+        "description": "Returns the list of all Sender IDs that are registered for the given account to send SMS.",
+        "parameters": {
+            "clientid": {
+                "description": "The Client ID associated with the account. You can obtain the Client ID at https://app.rivet.solutions/ApiDocument/ApiDocs once your account is created.",
+                "type": "str",
+                "default": "clientid"
+            },
+            "apikey": {
+                "description": "The API key associated with the account. You can obtain the API key at https://app.rivet.solutions/ApiDocument/ApiDocs once your account is created.",
+                "type": "str",
+                "default": "apikey"
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "sendsms",
+        "description": "Sends an SMS message using the Rivet SMS service.",
+        "parameters": {
+            "senderid": {
+                "description": "The sender ID assigned by Rivet SMS. Obtain it from https://app.rivet.solutions/Management/ManageSenderID.",
+                "type": "str",
+                "default": "sender id"
+            },
+            "clientid": {
+                "description": "The Rivet SMS API client ID. Obtain it from https://app.rivet.solutions/ApiDocument/ApiDocs#.",
+                "type": "str",
+                "default": "client id"
+            },
+            "mobilenumbers": {
+                "description": "The recipient mobile numbers in the format '971223344566'. Multiple recipients can be specified, separated by commas. Include the country code without preceding 00 or +.",
+                "type": "str",
+                "default": "971009900990"
+            },
+            "message": {
+                "description": "The content of the SMS message to be sent.",
+                "type": "str",
+                "default": "your message"
+            },
+            "apikey": {
+                "description": "The Rivet SMS API key. Obtain it from https://app.rivet.solutions/ApiDocument/ApiDocs#.",
+                "type": "str",
+                "default": "api key"
+            },
+            "content_type": {
+                "description": "The content type of the message. Defaults to 'application/json'.",
+                "type": "str, optional",
+                "default": "application/json"
+            },
+            "is_unicode": {
+                "description": "Indicates whether the message should be sent with Unicode encoding. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "scheduletime": {
+                "description": "Specifies the scheduled time to send the message in the format 'yyyy-MM-dd HH:MM'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "groupid": {
+                "description": "Valid group ID of the current user for group messages. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_flash": {
+                "description": "Indicates whether the message is a flash message. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "validatetest",
+        "description": "Validate any phone number from any country using the given RapidAPI key.",
+        "parameters": {
+            "number": {
+                "description": "Phone number to be validated. This can be provided in two formats:",
+                "type": "str",
+                "default": "+59894887766"
+            },
+            "country": {
+                "description": "ISO 3166-1 alpha-2 code of the country in capital letters. This is optional if the number parameter starts with the + symbol. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "settag",
+        "description": "Sets a new tag for the SMS receive service using the provided RapidAPI key.",
+        "parameters": {
+            "tag": {
+                "description": "The value of the new tag, with a maximum length of 16 characters.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "view_sms_history",
+        "description": "Retrieves all received SMS messages for a given phone number and country ID.",
+        "parameters": {
+            "number": {
+                "description": "The phone number for which to view SMS messages.",
+                "type": "str",
+                "default": "79034134722"
+            },
+            "countryid": {
+                "description": "The country ID associated with the phone number.",
+                "type": "str",
+                "default": "7"
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "get_contacts",
+        "description": "Retrieves all contacts using the provided API key and returns the response in either JSON or CSV format.",
+        "parameters": {
+            "p": {
+                "description": "API Key from Sms77.io.",
+                "type": "str",
+                "default": ""
+            },
+            "json": {
+                "description": "Specifies whether to return the response in JSON format. If not provided, the response will be in CSV format.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "validate_phonenumber",
+        "description": "Validates a phone number using the WhatsApp Checker Pro API.",
+        "parameters": {
+            "phone": {
+                "description": "The phone number to be validated.",
+                "type": "str",
+                "default": "PhoneNumber"
+            }
+        },
+        "domain": "SMS"
+    },
+    {
+        "name": "get_number_by_country_id",
+        "description": "Fetches the list of currently available numbers for a given country ID.",
+        "parameters": {
+            "countryid": {
+                "description": "The ID of the country for which to fetch the available numbers.",
+                "type": "str",
+                "default": "7"
+            }
+        },
+        "domain": "SMS"
+    }
+]

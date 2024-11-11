@@ -1,0 +1,1525 @@
+[
+    {
+        "name": "live_giveaways_by_type",
+        "description": "Retrieve live giveaways from the GamerPower API based on the specified type.",
+        "parameters": {
+            "type": {
+                "description": "The type of giveaways to retrieve (e.g., game, loot, beta).",
+                "type": "str",
+                "default": "game"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "royal_matches",
+        "description": "Fetch recent royal matches from the Trackmania API.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the results to fetch, where each page contains a defined number of results. The default is `0`.",
+                "type": "int",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The maximum number of results to return. The default is `50`.",
+                "type": "int",
+                "default": "50"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "v1_trivia",
+        "description": "Fetches trivia questions from the API Ninjas Trivia API endpoint.",
+        "parameters": {
+            "limit": {
+                "description": "The number of trivia questions to return. Must be between 1 and 30. Default is 1.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "category": {
+                "description": "The category of trivia questions to filter by. Possible values are:",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "getgamelist",
+        "description": "Fetches a list of games from the EvoSiss Game Database API, returning their IDs and series names in JSON format.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve from the game list.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "matchmaking_matches",
+        "description": "Fetch recent matchmaking matches with optional pagination and result limit.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of match results to return. Default is 50.",
+                "type": "int",
+                "default": "50"
+            },
+            "page": {
+                "description": "The page number for pagination, each containing 50 results. Default is 0.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_event_detail",
+        "description": "Fetches detailed information about a specific event or match from the League of Legends Esports API using the provided match ID.",
+        "parameters": {
+            "matchid": {
+                "description": "The ID of the match or event for which details are to be fetched.",
+                "type": "str",
+                "default": "107458367241084543"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "regular_dice_rolls",
+        "description": "This function simulates rolling a specified number of dice for a specified number of times using the Dice Roll Simulator API.",
+        "parameters": {
+            "rolls": {
+                "description": "The number of times to roll the dice. Default is 2.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "dice": {
+                "description": "The number of dice to roll each time. Default is 3.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_pokemon_data_by_name",
+        "description": "Fetches data for a specified Pokemon using its name from the Pokemon Unite API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the Pokemon for which data is to be fetched.",
+                "type": "str",
+                "default": "Azumarill"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_item_by_id",
+        "description": "Fetches an RPG item by its ID using the Toolbench RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the RPG item to retrieve.",
+                "type": "str",
+                "default": "6383989636a233ea35d1e566"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "regular_dice",
+        "description": "Roll a specified number of regular dice using the RapidAPI Dice Roll Simulator.",
+        "parameters": {
+            "dice": {
+                "description": "Number of dice to roll. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "csw21",
+        "description": "Search for words using the Collins Scrabble Words 2021 lexicon via the Word Tree API.",
+        "parameters": {
+            "input": {
+                "description": "A series of at least 4 letters (a-z, case-insensitive). No other characters should be included or no meaningful results will be returned.",
+                "type": "str",
+                "default": "ANAGRAMS"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_player_info",
+        "description": "Fetches and returns information about a Valorant esports player using the RapidAPI service.",
+        "parameters": {
+            "playerid": {
+                "description": "The unique identifier of the player.",
+                "type": "str",
+                "default": "93"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "season_wins_leaderboard_mw_2",
+        "description": "Fetches season wins information for a specified number of players on the MW 2 leaderboard.",
+        "parameters": {
+            "limit": {
+                "description": "Number of players to fetch the leaderboard information for, ranging from 1 to 2000.",
+                "type": "int",
+                "default": "2000"
+            },
+            "season": {
+                "description": "The season for which to fetch the wins information. Defaults to 's1'.",
+                "type": "str, optional",
+                "default": "s1"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_a_specific_item_by_id",
+        "description": "Fetches a specific item from an API using its id.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the item to fetch.",
+                "type": "str",
+                "default": "99020"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_all_servers",
+        "description": "Fetches a list of Minecraft servers with an optional limit on the number of servers returned.",
+        "parameters": {
+            "limit": {
+                "description": "A string representing the maximum number of servers to return.",
+                "type": "str",
+                "default": "2000"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "gamebans",
+        "description": "Fetches game bans for a specified E-Sports game using the provided game ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the E-Sports game for which you want to retrieve the ban details.",
+                "type": "int",
+                "default": 359554
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "playstationdeals",
+        "description": "Fetches PlayStation deals based on the specified count, using the provided RapidAPI key.",
+        "parameters": {
+            "count": {
+                "description": "The number of games to fetch from the deals list. The minimum value is 0, and the maximum value depends on the total number of games available.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_raids_by_level",
+        "description": "Fetches all guardian raids for a specified level.",
+        "parameters": {
+            "level": {
+                "description": "The level of the guardian raids to retrieve information for.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_charades_word",
+        "description": "Fetch a random charades word with the specified difficulty level using the Toolbench RapidAPI.",
+        "parameters": {
+            "difficulty": {
+                "description": "The difficulty level of the charades word (e.g., 'easy', 'medium', 'hard'). If not provided, a random difficulty level will be used.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "gamesdata",
+        "description": "Fetches data for a specific game using its APP_ID from the Steam Games Data API.",
+        "parameters": {
+            "app_id": {
+                "description": "The unique identifier for the game whose data is to be fetched.",
+                "type": "int",
+                "default": "1581770"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "gameslist",
+        "description": "Retrieves a list of games on special discount offers from the specified region.",
+        "parameters": {
+            "region": {
+                "description": "The region code to fetch the game offers from.",
+                "type": "str",
+                "default": "US"
+            },
+            "start": {
+                "description": "The starting index for the list of games.",
+                "type": "int",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of games to retrieve starting from the `start` index.",
+                "type": "int",
+                "default": "10"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_username_point_blank",
+        "description": "Fetch the username associated with a given Point Blank ID using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The Point Blank ID to look up.",
+                "type": "str",
+                "default": "blackforster"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_a_specific_champion_s_base_stats",
+        "description": "Fetches the base stats of a specified League of Legends champion using the provided RapidAPI key.",
+        "parameters": {
+            "name": {
+                "description": "The name of the champion whose base stats are to be retrieved.",
+                "type": "str",
+                "default": "ekko"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_card_by_slug",
+        "description": "Fetches card information by slug from the Hearthstone API.",
+        "parameters": {
+            "slug": {
+                "description": "The slug identifier for the card.",
+                "type": "str",
+                "default": "a-light-in-the-darkness"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_a_specific_item",
+        "description": "Fetches a specific item from the Lost Ark API using the provided item name.",
+        "parameters": {
+            "name": {
+                "description": "The name of the item to retrieve from the Lost Ark API.",
+                "type": "str",
+                "default": "Hollowfruit"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_price_history_by_id",
+        "description": "Retrieve the price history for a given item ID from the Steam Market API.",
+        "parameters": {
+            "is_id": {
+                "description": "The item ID for which to retrieve the price history.",
+                "type": "str",
+                "default": "730---Dreams %26 Nightmares Case"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_clips",
+        "description": "Fetch the latest 50 clips of a specified Twitch channel.",
+        "parameters": {
+            "name": {
+                "description": "The name of the Twitch channel to fetch clips from.",
+                "type": "str",
+                "default": "jakubloveshorror"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "custom_dice_rolls",
+        "description": "Roll any number of dice with a specified number of sides a specified number of times using the Dice Roll Simulator API.",
+        "parameters": {
+            "dice": {
+                "description": "The number of dice to roll. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "sides": {
+                "description": "The number of sides on each die. Defaults to 8.",
+                "type": "int, optional",
+                "default": "8"
+            },
+            "rolls": {
+                "description": "The number of times to roll the dice. Defaults to '2'.",
+                "type": "str, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "custom_dice",
+        "description": "Roll a specified number of dice with a specified number of sides using the RapidAPI Dice Roll Simulator.",
+        "parameters": {
+            "dice": {
+                "description": "The number of dice to roll. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "sides": {
+                "description": "The number of sides on each die. Defaults to 8.",
+                "type": "int, optional",
+                "default": "8"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "live_giveaways_by_platform_type_sorted",
+        "description": "Fetches all live giveaways filtered by platform and type, and sorts them based on the specified criteria.",
+        "parameters": {
+            "platform": {
+                "description": "Platform for which to fetch giveaways (default is 'steam').",
+                "type": "str",
+                "default": "steam"
+            },
+            "sort_by": {
+                "description": "Criteria to sort the giveaways by (default is 'popularity').",
+                "type": "str",
+                "default": "popularity"
+            },
+            "type": {
+                "description": "Type of giveaways to filter (default is 'loot').",
+                "type": "str",
+                "default": "loot"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_game",
+        "description": "Returns game data for a given game ID using the specified RapidAPI key.",
+        "parameters": {
+            "gameid": {
+                "description": "The unique identifier of the game to retrieve data for.",
+                "type": "str",
+                "default": "107458367241215654"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_pictionary_word",
+        "description": "Retrieve a random Pictionary word with a specified difficulty level from the Toolbench RapidAPI.",
+        "parameters": {
+            "difficulty": {
+                "description": "The difficulty level of the word to retrieve (e.g., \"easy\", \"medium\", \"hard\"). If not provided, a random difficulty will be used.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "blocks",
+        "description": "Retrieves information about a specific Minecraft block using the Toolbench API.",
+        "parameters": {
+            "block_id": {
+                "description": "The ID of the Minecraft block to retrieve information for. Defaults to 'minecraft:stone'.",
+                "type": "str",
+                "default": "minecraft:stone"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "live_giveaways_by_platform",
+        "description": "Fetches live giveaways for a specified gaming platform using the GamerPower API.",
+        "parameters": {
+            "platform": {
+                "description": "The gaming platform to fetch giveaways for (e.g., pc, steam, epic-games-store, uplay, gog, itch.io, ps4, xbox-one, switch, android, ios, vr, battlenet).",
+                "type": "str",
+                "default": "pc"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_character_skills",
+        "description": "Fetches the list of skills for a given character from the Lost Ark API.",
+        "parameters": {
+            "character_name": {
+                "description": "The name of the Lost Ark character whose skills are to be fetched.",
+                "type": "str",
+                "default": "Scrapper"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "top_players_by_matchmaking",
+        "description": "Fetch the top players by their matchmaking rank from the TrackMania API.",
+        "parameters": {
+            "limit": {
+                "description": "The number of results to be returned. Default is `50`.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "page": {
+                "description": "The page number for the results, each containing 50 results. Default is `0`.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "custom_die",
+        "description": "Simulates rolling a custom die with a specified number of sides using the RapidAPI service.",
+        "parameters": {
+            "sides": {
+                "description": "The number of sides on the custom die. Default is 8.",
+                "type": "int, optional",
+                "default": "8"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_teams_and_players",
+        "description": "Fetches teams and players information from the League of Legends Esports API. This function can filter results based on the team name or team ID.",
+        "parameters": {
+            "name": {
+                "description": "The name of the team to filter by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_id": {
+                "description": "The ID of the team to filter by. Defaults to 'lng-esports'.",
+                "type": "str, optional",
+                "default": "lng-esports"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "user_aliases",
+        "description": "Gets a list of user aliases and the timestamps when they were changed.",
+        "parameters": {
+            "is_id": {
+                "description": "The Steam ID of the user for whom the aliases are retrieved.",
+                "type": "str",
+                "default": "sindex"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_cards",
+        "description": "Fetches a list of Hearthstone cards from the API.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve. Defaults to '1'.",
+                "type": "str",
+                "default": "1"
+            },
+            "pagesize": {
+                "description": "The number of cards to retrieve per page. Defaults to '1'.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "game_lookup",
+        "description": "Fetches detailed information for a specific game from the CheapShark API, including a list of all deals associated with the game.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the game to look up.",
+                "type": "int",
+                "default": "612"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "commanderskills",
+        "description": "Fetches the details of a specific commander skill from the RapidAPI service.",
+        "parameters": {
+            "skill": {
+                "description": "The specific commander skill to query. If not provided, the function will use a default value.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "skill_rating_mw_2_ranked",
+        "description": "Fetches the Skill Ratings of the top players ranked in Modern Warfare 2 (MW 2) leaderboard.",
+        "parameters": {
+            "limit": {
+                "description": "Maximum number of top-ranked players to retrieve, defaults to '250'. Must be a number between 1 and 250.",
+                "type": "str",
+                "default": "250"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "build_word_ladders",
+        "description": "Builds a word ladder between the given start word and end word using the specified dictionary.",
+        "parameters": {
+            "endword": {
+                "description": "The word that the word ladder must end with.",
+                "type": "str",
+                "default": ""
+            },
+            "startword": {
+                "description": "The word that the word ladder must start with.",
+                "type": "str",
+                "default": ""
+            },
+            "dictionary": {
+                "description": "The dictionary edition to use for building the word ladder. Defaults to the 2019 edition of Collins Dictionary if not specified.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "search_for_a_champion",
+        "description": "Search for a League of Legends champion based on various criteria and return the champion data.",
+        "parameters": {
+            "releasedate": {
+                "description": "Release date of the champion.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the champion. Default is 'zed'.",
+                "type": "str, optional",
+                "default": "zed"
+            },
+            "resource": {
+                "description": "Resource type of the champion.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rp": {
+                "description": "Riot Points cost of the champion.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "blueessence": {
+                "description": "Blue Essence cost of the champion.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "attribute": {
+                "description": "Attribute of the champion.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "roll",
+        "description": "Rolls a set of dice using an external API and returns the results.",
+        "parameters": {
+            "sides": {
+                "description": "The number of sides on the die.",
+                "type": "int",
+                "default": "6"
+            },
+            "count": {
+                "description": "The number of times to roll each die. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "advantage": {
+                "description": "If set to True, rolls each die twice and takes the higher result. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "modifier": {
+                "description": "A modifier to apply to the total of each die roll. Defaults to 5.",
+                "type": "int, optional",
+                "default": "5"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "games_by_category_or_tag",
+        "description": "Fetches a list of games based on the given category or tag from the MMO Games API.",
+        "parameters": {
+            "category": {
+                "description": "The category or tag of the games to fetch (e.g., \"mmorpg\", \"shooter\", \"pvp\", \"mmofps\").",
+                "type": "str",
+                "default": "shooter"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "getplatformlist",
+        "description": "Fetches the list of platforms with their IDs and names from the API endpoint as JSON.",
+        "parameters": {
+            "page": {
+                "description": "Page number to retrieve the platform list from the API.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_items_ids_by_query",
+        "description": "Retrieve item IDs from the Steam market using a text query.",
+        "parameters": {
+            "query": {
+                "description": "The text query used to search for items on the Steam market.",
+                "type": "str",
+                "default": "case"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "specific_skin",
+        "description": "Retrieves details such as name, price, icon, class, and weapon for a specific Counter-Strike skin in field-tested condition (prices in USD).",
+        "parameters": {
+            "skin_name": {
+                "description": "The name of the Counter-Strike skin, with underscores instead of spaces. Example: 'AK-47_Redline'.",
+                "type": "str",
+                "default": "AK-47_Slate"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "players_185_225_233_110_30015",
+        "description": "Retrieves the list of players currently online from the specified V Rising game server.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address of the game server.",
+                "type": "str",
+                "default": "185.225.233.110"
+            },
+            "port": {
+                "description": "The port number of the game server.",
+                "type": "str",
+                "default": "30015"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "totd_tracks_by_page",
+        "description": "Fetches the Track of the Day (TOTD) tracks from the Trackmania API by page number.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve. Default is 0.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "random_skin_from_class",
+        "description": "Fetches information about a random Counter-Strike skin from a specified class using the CS Skin API.",
+        "parameters": {
+            "class_name": {
+                "description": "The class of Counter-Strike skin to retrieve, e.g., \"Rifle\".",
+                "type": "str",
+                "default": "Knife"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "played",
+        "description": "Fetches the most recently played CS:GO matches from the RapidAPI service.",
+        "parameters": {
+            "content_type": {
+                "description": "The content type for the request. Default is 'application/json'.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "limit": {
+                "description": "The number of matches to retrieve. Default is 10.",
+                "type": "int",
+                "default": "10"
+            },
+            "page": {
+                "description": "The page number of the results to retrieve. Default is 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "random_skin_from_weapon",
+        "description": "Retrieves information for a random Counter-Strike skin from a specified weapon.",
+        "parameters": {
+            "weapon_name": {
+                "description": "The name of the weapon for which to retrieve a random skin.",
+                "type": "str",
+                "default": "AWP"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "name_to_uuid",
+        "description": "Convert a Minecraft username to a UUID using the Toolbench RapidAPI.",
+        "parameters": {
+            "name": {
+                "description": "The Minecraft username to be converted to a UUID.",
+                "type": "str",
+                "default": "Kara_Danvers"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "alldetails_185_225_233_110_30015",
+        "description": "Retrieves all details from a server given its IP address and port using the VRising Server Query API.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address of the server.",
+                "type": "str",
+                "default": "185.225.233.110"
+            },
+            "port": {
+                "description": "The port number of the server.",
+                "type": "str",
+                "default": "30015"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "card",
+        "description": "Draw a card from a regular 52-card playing deck using the RapidAPI card draw simulator.",
+        "parameters": {
+            "suit": {
+                "description": "The suit of the card to draw (e.g., 'hearts', 'diamonds', 'clubs', 'spades'). Default is 'all' to allow any suit.",
+                "type": "str",
+                "default": "all"
+            },
+            "value": {
+                "description": "The value of the card to draw (e.g., 'A', '2', 'K'). Default is 'A'.",
+                "type": "str",
+                "default": "A"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "specific_giveaway_details",
+        "description": "Fetch details from a specific giveaway using the giveaway ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the giveaway to fetch details for.",
+                "type": "str",
+                "default": "525"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "show_moves",
+        "description": "Fetches and returns the moves of a specific character from the Marvel vs Capcom 2 API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the character whose moves are to be retrieved.",
+                "type": "str",
+                "default": "Akuma"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "filter_group_giveaways",
+        "description": "Filters and groups giveaways based on the provided platform and type, using the provided API key to make the request.",
+        "parameters": {
+            "platform": {
+                "description": "The platform for which to filter the giveaways (e.g., 'pc', 'ps4', 'xbox').",
+                "type": "str",
+                "default": "epic-games-store.steam.android"
+            },
+            "type": {
+                "description": "The type of giveaway to filter (default is 'game.loot').",
+                "type": "str, optional",
+                "default": "game.loot"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "range",
+        "description": "Fetches random chess puzzles within a specified rating range.",
+        "parameters": {
+            "number_of_puzzles": {
+                "description": "The number of puzzles to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "max_deviation": {
+                "description": "The maximum possible rating deviation. Defaults to 100.",
+                "type": "int, optional",
+                "default": "100"
+            },
+            "min": {
+                "description": "The minimum rating a puzzle can have. Defaults to 1200.",
+                "type": "int, optional",
+                "default": "1200"
+            },
+            "max": {
+                "description": "The maximum rating a puzzle can have. Defaults to 1600.",
+                "type": "int, optional",
+                "default": "1600"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_latest_activity_by_id",
+        "description": "Retrieves the most recent activity associated with a given ID from the Steam Market and Store API.",
+        "parameters": {
+            "is_id": {
+                "description": "The specific ID to fetch the latest activity for.",
+                "type": "str",
+                "default": "730---Dreams %26 Nightmares Case"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_all_imbuements_items",
+        "description": "Fetch all imbuement items for a specified Tibia game world using the RapidAPI endpoint.",
+        "parameters": {
+            "world": {
+                "description": "The name of the Tibia game world for which to fetch imbuement items.",
+                "type": "str",
+                "default": "Bona"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "top_players_by_royal",
+        "description": "Fetch the top players by their royal rank from the Trackmania API.",
+        "parameters": {
+            "page": {
+                "description": "The result page, each containing 50 results. Default page is `0`.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The number of results to return. Default limit is `50`.",
+                "type": "int, optional",
+                "default": "50"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "list_of_games",
+        "description": "Fetches a list of games that contain the given title or match the specified Steam App ID. The response includes the cheapest current deal for each game.",
+        "parameters": {
+            "title": {
+                "description": "The title of the game to search for. Defaults to 'batman'.",
+                "type": "str, optional",
+                "default": "batman"
+            },
+            "exact": {
+                "description": "Flag to allow only exact string matches for the `title` parameter. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The maximum number of games to return, up to 60. Defaults to 60.",
+                "type": "int, optional",
+                "default": "60"
+            },
+            "steamappid": {
+                "description": "The Steam App ID of the game to search for. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "games_by_platform_category_sorted",
+        "description": "Fetches and returns a list of games filtered by platform and category, and sorted based on a given parameter.",
+        "parameters": {
+            "sort_by": {
+                "description": "Criterion to sort the games by. Defaults to 'release-date'.",
+                "type": "str",
+                "default": "release-date"
+            },
+            "platform": {
+                "description": "The platform to filter games by. Defaults to 'browser'.",
+                "type": "str",
+                "default": "browser"
+            },
+            "category": {
+                "description": "The category to filter games by. Defaults to 'mmorpg'.",
+                "type": "str",
+                "default": "mmorpg"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_taboo_words_from_word",
+        "description": "Fetches a list of taboo words associated with the given word using a specified API.",
+        "parameters": {
+            "word": {
+                "description": "The word for which to retrieve taboo words.",
+                "type": "str",
+                "default": "laptop"
+            },
+            "forbiddenwordlimit": {
+                "description": "The number of taboo words to return, defaults to 5 and has a maximum of 10.",
+                "type": "int, optional",
+                "default": "5"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "cards",
+        "description": "This function draws multiple cards from a regular 52-card playing deck using the Card Draw Simulator API.",
+        "parameters": {
+            "value": {
+                "description": "The value of the card(s) to draw (e.g., 'A', '2', '3', ... 'K'). Defaults to 'all'.",
+                "type": "str, optional",
+                "default": "all"
+            },
+            "suit": {
+                "description": "The suit of the card(s) to draw (e.g., '\u2660', '\u2663', '\u2665', '\u2666'). Defaults to '\u2660'.",
+                "type": "str, optional",
+                "default": "\u2660"
+            },
+            "back": {
+                "description": "Indicates whether to draw the back of the card. Defaults to 'false'.",
+                "type": "str, optional",
+                "default": "false"
+            },
+            "pulls": {
+                "description": "The number of cards to draw. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "search_all_players",
+        "description": "Search for players using a given query string on the Trackmania API.",
+        "parameters": {
+            "search_query": {
+                "description": "The search query used to search for players. Must be at least 4 characters long.",
+                "type": "str",
+                "default": "Riolu"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_result_from_category",
+        "description": "Fetches a random result from a specified category, including a main phrase and taboo words. You can control the number of taboo words returned using the `forbiddenwordlimit` parameter.",
+        "parameters": {
+            "category": {
+                "description": "The category from which to fetch the result.",
+                "type": "str",
+                "default": "actors"
+            },
+            "forbiddenwordlimit": {
+                "description": "The number of taboo words to be returned, defaults to 5 and has a maximum of 10.",
+                "type": "int, optional",
+                "default": "5"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "user_groups_list",
+        "description": "Fetches a listing of all the public and private groups a user is a part of on the Steam Community platform.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the user on the Steam Community platform.",
+                "type": "str",
+                "default": "sindex"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "retrieve_buy_sell_informations_by_id",
+        "description": "Retrieve the latest Buy/Sell orders placed on the Steam Store for a given item ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The item ID for which to retrieve the buy/sell orders.",
+                "type": "str",
+                "default": "730---Dreams %26 Nightmares Case"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "search_for_a_item",
+        "description": "Searches for an item in a League of Legends database based on given criteria.",
+        "parameters": {
+            "champsynergy": {
+                "description": "The champion synergy to filter items by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "itemsynergy": {
+                "description": "The item synergy to filter items by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "price": {
+                "description": "The price category to filter items by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "The name of the item to search for. Defaults to 'sword'.",
+                "type": "str, optional",
+                "default": "sword"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "uuid_to_name",
+        "description": "Convert a Minecraft UUID to a player name using the Toolbench API.",
+        "parameters": {
+            "uuid": {
+                "description": "The Minecraft UUID you want to convert to a player name.",
+                "type": "str",
+                "default": "069a79f444e94726a5befca90e38aaf5"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "user_friends_list",
+        "description": "Retrieve a full listing of in-game, online, and offline friends of a user from the Steam community using RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The user's Steam ID for whom the friends list is to be retrieved.",
+                "type": "str",
+                "default": "sindex"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_imbuements_for_lich_shroud_death_protection",
+        "description": "Fetches all imbuements for the Lich Shroud (Death Protection) from the Tibia items API.",
+        "parameters": {
+            "world": {
+                "description": "The name of the Tibia world for which to fetch the imbuements.",
+                "type": "str",
+                "default": "Adra"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "group_profile",
+        "description": "Fetches the profile information of a Steam community group using the provided group ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the Steam community group.",
+                "type": "str",
+                "default": "l4d"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "show_character",
+        "description": "Fetch details about a character and their traits from the Marvel vs. Capcom 2 API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the character to retrieve information about.",
+                "type": "str",
+                "default": "Cabel"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "eventgames",
+        "description": "Fetches games associated with a specific E-Sports event using the event ID and RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the E-Sports event for which to retrieve game details.",
+                "type": "int",
+                "default": 10945127
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "heroes_data",
+        "description": "Fetches detailed data on Dota 2 heroes, including names, images, videos, roles, abilities, and talents, in the specified language.",
+        "parameters": {
+            "language": {
+                "description": "The language code in which to retrieve hero data (supports up to 20 languages).",
+                "type": "str",
+                "default": ""
+            },
+            "is_id": {
+                "description": "The unique identifier for the specific hero.",
+                "type": "str",
+                "default": "37"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "totd_tracks_by_date",
+        "description": "Retrieves the Track of the Day (TOTD) tracks for a given month and year from the Trackmania API.",
+        "parameters": {
+            "month": {
+                "description": "The month for which to retrieve TOTD tracks.",
+                "type": "int",
+                "default": "6"
+            },
+            "year": {
+                "description": "The year for which to retrieve TOTD tracks.",
+                "type": "int",
+                "default": "2022"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "list_all_pokemons",
+        "description": "Retrieve a list of Pokemon from the Pokemon Unite API with pagination options.",
+        "parameters": {
+            "pagesize": {
+                "description": "The number of Pokemons to retrieve per page. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            },
+            "page": {
+                "description": "The page number to retrieve. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "sort_live_giveaways",
+        "description": "Fetches and sorts live giveaways from the GamerPower API based on a given criterion.",
+        "parameters": {
+            "sort_by": {
+                "description": "The criterion by which to sort the giveaways. Options might include 'date', 'value', or 'popularity'. Default is 'value'.",
+                "type": "str",
+                "default": "value"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "latest_price",
+        "description": "Fetches the latest price for the given item ID and timestep from the OSRS Live Prices API.",
+        "parameters": {
+            "timestep": {
+                "description": "The timestep for which to retrieve the latest price.",
+                "type": "str",
+                "default": "5m"
+            },
+            "itemid": {
+                "description": "The ID of the item for which to fetch the latest price.",
+                "type": "int",
+                "default": "314"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_stored_word_from_any_category",
+        "description": "Retrieve a random phrase and associated taboo words from stored categories, optionally limiting the number of taboo words.",
+        "parameters": {
+            "forbiddenwordlimit": {
+                "description": "The maximum number of taboo words to be returned. Defaults to 6, with a maximum of 10.",
+                "type": "int, optional",
+                "default": "6"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_items_by_query",
+        "description": "Fetch RPG item details based on provided query parameters such as rank, slot, rarity, name, and type from the RPG Items API.",
+        "parameters": {
+            "rank": {
+                "description": "The rank of the item (default is '1').",
+                "type": "str",
+                "default": "1"
+            },
+            "slot": {
+                "description": "The inventory slot type of the item (default is 'chest').",
+                "type": "str",
+                "default": "chest"
+            },
+            "rarity": {
+                "description": "The rarity of the item (default is 'common').",
+                "type": "str",
+                "default": "common"
+            },
+            "name": {
+                "description": "The name of the item (default is 'Linen Cloth Robe').",
+                "type": "str",
+                "default": "Linen Cloth Robe"
+            },
+            "type": {
+                "description": "The type of the item (default is 'armor').",
+                "type": "str",
+                "default": "armor"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_imbuements_for_precision_distance_skillboost",
+        "description": "Fetches imbuement items for the Precision Distance Skillboost from the specified world in the Tibia game using a given RapidAPI key.",
+        "parameters": {
+            "world": {
+                "description": "The name of the game world to query for imbuements.",
+                "type": "str",
+                "default": "Adra"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_username_valorant",
+        "description": "Retrieves the Valorant username details using the provided Riot ID and Tag by querying the Toolbench RapidAPI service.",
+        "parameters": {
+            "tag": {
+                "description": "The tag associated with the Valorant username.",
+                "type": "str",
+                "default": "123"
+            },
+            "riot_id": {
+                "description": "The Riot ID of the Valorant username.",
+                "type": "str",
+                "default": "ucup"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_one_set_by_id",
+        "description": "Returns information about a single Pok\u00e9mon TCG set by retrieving data using the set ID.",
+        "parameters": {
+            "setid": {
+                "description": "The ID of the Pok\u00e9mon TCG set for which information is to be retrieved.",
+                "type": "str",
+                "default": "33ee55f4-30d0-4900-850f-36a351fb9719"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_many_sets",
+        "description": "Fetches multiple sets of Pok\u00e9mon TCG cards based on provided query parameters.",
+        "parameters": {
+            "series": {
+                "description": "The series to which the sets belong (default is 'sword-and-shield').",
+                "type": "str, optional",
+                "default": "sword-and-shield"
+            },
+            "limit": {
+                "description": "The maximum number of sets to return (default is 20).",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "fromid": {
+                "description": "The starting ID from which to return sets (default is None).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "set": {
+                "description": "The specific set to return (default is 'vivid-voltage').",
+                "type": "str, optional",
+                "default": "vivid-voltage"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "playercount_185_225_233_110_30015",
+        "description": "Gets the player count from a server given its IP and port using the V Rising Server Query API.",
+        "parameters": {
+            "port": {
+                "description": "The port number of the server.",
+                "type": "str",
+                "default": "30015"
+            },
+            "ip": {
+                "description": "The IP address of the server.",
+                "type": "str",
+                "default": "185.225.233.110"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "videogames_news_search",
+        "description": "Searches for current and historical news related to video games from top sources based on the given query and optional filters.",
+        "parameters": {
+            "query": {
+                "description": "The query text to search for in the news articles.",
+                "type": "str",
+                "default": "GTA"
+            },
+            "page": {
+                "description": "The page number to retrieve, for paginating through results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "to_date": {
+                "description": "The latest date for articles in ISO 8601 format (e.g., \"2022-03-15\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "The field by which to sort the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "from_date": {
+                "description": "The earliest date for articles in ISO 8601 format (e.g., \"2022-03-15\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "per_page": {
+                "description": "The number of results to return per page.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_vods",
+        "description": "Fetches the VODs (Video on Demand) for a specific tournament from the League of Legends Esports API.",
+        "parameters": {
+            "tournamentid": {
+                "description": "The ID of the tournament for which to fetch VODs. Defaults to '107458367237283414'.",
+                "type": "str, optional",
+                "default": "107458367237283414"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_history_of_item",
+        "description": "Retrieves the history of a specified item from the Tibia Items API for a given date.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve the item history. Expected formats: 'yyyy-MM-dd' or 'yyyy-MM'.",
+                "type": "str",
+                "default": "2022-01"
+            },
+            "key": {
+                "description": "The unique identifier for the item, formatted as 'NameItem::World::TypeItem'.",
+                "type": "str",
+                "default": "Gold Token::Wizera::Valuable"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_username_higgs_domino",
+        "description": "Fetches the username for a given Higgs Domino ID using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The Higgs Domino ID for which the username is requested.",
+                "type": "int",
+                "default": "55666"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_tournaments_for_league",
+        "description": "Fetches all tournaments associated with a specified League of Legends league ID using the RapidAPI service.",
+        "parameters": {
+            "leagueid": {
+                "description": "The ID of the league for which to retrieve tournaments. Defaults to '101097443346691685'.",
+                "type": "str, optional",
+                "default": "101097443346691685"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_imbuements_for_vampirism_life_steal",
+        "description": "Fetches all imbuements for the Vampirism (Life steal) type in the specified world.",
+        "parameters": {
+            "world": {
+                "description": "The name of the world for which to retrieve imbuement information.",
+                "type": "str",
+                "default": "Adra"
+            }
+        },
+        "domain": "Gaming"
+    },
+    {
+        "name": "get_imbuements_for_strike_critical_damage",
+        "description": "Fetches all imbuement details for \"Strike\" (Critical Damage) from the specified world using the Tibia Items API.",
+        "parameters": {
+            "world": {
+                "description": "The game world for which to fetch imbuement details.",
+                "type": "str",
+                "default": "Libertabra"
+            }
+        },
+        "domain": "Gaming"
+    }
+]

@@ -1,0 +1,1741 @@
+[
+    {
+        "name": "get_product",
+        "description": "Fetches product details from an API using the given product ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The product ID for which to retrieve details.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "qrcode",
+        "description": "Generate a QR code based on the provided data string using the QR Code Generator API.",
+        "parameters": {
+            "data": {
+                "description": "The input data to be converted into a QR code.",
+                "type": "str",
+                "default": "Hello World!"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "users",
+        "description": "Fetch all users from the specified API endpoint.",
+        "parameters": {
+            "connection_string": {
+                "description": "The connection string used to connect to the API.",
+                "type": "str",
+                "default": "the code gotten from the web"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search",
+        "description": "Perform a Google search and retrieve the search results using the specified parameters.",
+        "parameters": {
+            "q": {
+                "description": "The search query term.",
+                "type": "str",
+                "default": "liverpool"
+            },
+            "gl": {
+                "description": "The geographic location of the search results (e.g., 'US'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cr": {
+                "description": "The country of the search results (e.g., 'countryUS'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "tbs": {
+                "description": "The time-based search parameters (e.g., 'qdr:d' for past 24 hours). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "num": {
+                "description": "The number of search results to return. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "start": {
+                "description": "The index of the first result to return. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "hl": {
+                "description": "The language of the search results (e.g., 'en'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_post_comments",
+        "description": "Fetch comments for a given Twitter post using its post ID.",
+        "parameters": {
+            "pid": {
+                "description": "The post ID for which to retrieve comments.",
+                "type": "str",
+                "default": "1552735248026411010"
+            },
+            "count": {
+                "description": "The number of comments to retrieve.",
+                "type": "str",
+                "default": "40"
+            },
+            "cursor": {
+                "description": "Cursor for pagination to retrieve the next set of comments. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_profile",
+        "description": "Fetches the user profile from the Pinterest API using the provided username.",
+        "parameters": {
+            "username": {
+                "description": "The Pinterest username for which to retrieve the profile information.",
+                "type": "str",
+                "default": "0869178429hau"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_following_list",
+        "description": "Retrieves the list of users that a specific TikTok user is following.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the TikTok user whose following list is to be retrieved.",
+                "type": "str",
+                "default": "107955"
+            },
+            "count": {
+                "description": "The number of following users to retrieve, with a maximum value of 200. Defaults to '50'.",
+                "type": "str, optional",
+                "default": "50"
+            },
+            "time": {
+                "description": "The time parameter for loading the next page if there are more followers to retrieve. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "image_search",
+        "description": "Search for images using a given URL and retrieve visual matches, knowledge graph information, products and prices, and text and object detections.",
+        "parameters": {
+            "url": {
+                "description": "URL of an image to perform Google Lens search.",
+                "type": "str",
+                "default": "https://i.imgur.com/HBrB8p0.png"
+            },
+            "country": {
+                "description": "The country code for the search. Defaults to 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "language": {
+                "description": "The language code for the results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_video_urls",
+        "description": "Retrieves video or shorts URLs from YouTube using a provided video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The YouTube video ID for which the URLs are to be fetched.",
+                "type": "str",
+                "default": "ppCIVJE3my4"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "playlist",
+        "description": "Fetch the details of a YouTube playlist using the provided API key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the YouTube playlist.",
+                "type": "str",
+                "default": "PLV3BLrRejJR_8XjiMrbev1_7RjIZTg1qb"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "location_search",
+        "description": "Search for locations by name using the Foreca Weather API.",
+        "parameters": {
+            "query": {
+                "description": "The name of the location to search for.",
+                "type": "str",
+                "default": "mumbai"
+            },
+            "lang": {
+                "description": "The language for the results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "country": {
+                "description": "The country code to filter the search results. Defaults to 'in'.",
+                "type": "str, optional",
+                "default": "in"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "sources",
+        "description": "Fetches a list of all the organizations from which information is collected.",
+        "parameters": {
+            "json_callback": {
+                "description": "If using JSONP, specify the function name here.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "qr_code_image",
+        "description": "Generates a QR Code image of a specified size for a given URL.",
+        "parameters": {
+            "size": {
+                "description": "The size of the QR code image. Default is 5.",
+                "type": "int, optional",
+                "default": "5"
+            },
+            "url": {
+                "description": "The URL to be encoded in the QR code. Default is 'www.google.com'.",
+                "type": "str, optional",
+                "default": "www.google.com"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "user_follower_list",
+        "description": "Fetches the follower list of a specified TikTok user.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the TikTok user whose followers are to be fetched.",
+                "type": "str",
+                "default": "107955"
+            },
+            "time": {
+                "description": "The start time for fetching followers. Default is '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "count": {
+                "description": "The number of followers to fetch. Maximum is 200. Default is '50'.",
+                "type": "str, optional",
+                "default": "50"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_all_details",
+        "description": "Fetches all details of a YouTube video, stream, or shorts including captions, audio-only files, video-only files, and stream URL if available.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique ID of the YouTube video/stream/shorts.",
+                "type": "str",
+                "default": "ppCIVJE3my4"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "video",
+        "description": "Fetches all available information for a specific YouTube video using the provided video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the YouTube video.",
+                "type": "str",
+                "default": "dQw4w9WgXcQ"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_suggestions",
+        "description": "Fetches search suggestions for a given query using the Cheap YouTube API through RapidAPI.",
+        "parameters": {
+            "q": {
+                "description": "The search query for which to fetch suggestions.",
+                "type": "str",
+                "default": "crypto"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_a_random_color",
+        "description": "Fetches a random color or a specified number of random colors from the sRGB color space using the Toolbench RapidAPI.",
+        "parameters": {
+            "quantity": {
+                "description": "The number of colors to return. The maximum is 50. Defaults to 2. Values greater than 50 will default to 50, and values less than 1 will result in an empty array.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "countries",
+        "description": "List or search for countries of the world in different languages. This function allows filtering and specifying the fields to return for each country, such as ISO codes, currency details, and dial codes.",
+        "parameters": {
+            "currency": {
+                "description": "Filter by the currency name in the chosen language.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "dial_code": {
+                "description": "Filter by the country's dial code.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "currency_code": {
+                "description": "Filter by the 3-letter currency code (ISO).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "Specify which fields to return for each country. Defaults to 'currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code'.",
+                "type": "str, optional",
+                "default": "currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code"
+            },
+            "iso_a2": {
+                "description": "Filter by the 2-letter ISO country code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Search string for the country name, can be partial.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of results returned. Defaults to 250.",
+                "type": "int, optional",
+                "default": "250"
+            },
+            "continent_code": {
+                "description": "Filter by the 2-letter region/continent code (e.g., 'eu', 'na', 'sa', 'as', 'af', 'oc', 'an').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "iso_a3": {
+                "description": "Filter by the 3-letter ISO country code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency_num_code": {
+                "description": "Filter by the 3-digit numeric currency code (ISO).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language selection ISO 639-1 code. Overrides the Accept-Language header. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_products_in_category",
+        "description": "Fetches products in a specified category from the demo project's catalog.",
+        "parameters": {
+            "skip": {
+                "description": "The number of items to skip for pagination.",
+                "type": "int",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of items to return for pagination.",
+                "type": "int",
+                "default": ""
+            },
+            "category": {
+                "description": "The category from which to retrieve products.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "check",
+        "description": "Checks and returns SSL information for a given domain. Optionally, additional information can be requested by setting the extended property.",
+        "parameters": {
+            "domain": {
+                "description": "The domain name to check SSL information for.",
+                "type": "str",
+                "default": "test.com"
+            },
+            "extended": {
+                "description": "Optional; Set to 'true' for additional information. Default is 'true'.",
+                "type": "str",
+                "default": "true"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_products",
+        "description": "Fetches a list of products from an external API with optional query parameters for limiting and skipping items in the response.",
+        "parameters": {
+            "limit": {
+                "description": "The number of products to return.",
+                "type": "int",
+                "default": ""
+            },
+            "skip": {
+                "description": "The number of products to skip in the response.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "generate",
+        "description": "Generate a face with given optional parameters for ethnicity, gender, and age.",
+        "parameters": {
+            "ethnicity": {
+                "description": "Ethnic phenotype for the face. Options include 'european', 'african', 'west_asian', 'south_asian', 'east_asian', 'southeast_asian', and 'latin_american'. Defaults to 'european'.",
+                "type": "str, optional",
+                "default": "european"
+            },
+            "gender": {
+                "description": "Gender of the face. Options include 'male' and 'female'. Defaults to 'female'.",
+                "type": "str, optional",
+                "default": "female"
+            },
+            "age": {
+                "description": "Age group of the face. Options include '10s', '20s', '30s', '40s', '50s', and '60s'. Defaults to '20s'.",
+                "type": "str, optional",
+                "default": "20s"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "movie_details_json",
+        "description": "Fetches detailed information about a specific movie from the YTS API.",
+        "parameters": {
+            "movie_id": {
+                "description": "The ID of the movie.",
+                "type": "int",
+                "default": ""
+            },
+            "with_cast": {
+                "description": "If True, includes information about the cast. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "with_images": {
+                "description": "If True, includes image URLs. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_random_named_color",
+        "description": "Fetches a specified number of random named colors from the Colorful API.",
+        "parameters": {
+            "quantity": {
+                "description": "The number of colors to return. Defaults to 2. Maximum is 50. Values below 1 will return an empty list. If not specified, returns 2 colors.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "main",
+        "description": "Makes a GET request to the NeuroNet NLP API with the given text and returns the observation.",
+        "parameters": {
+            "text": {
+                "description": "The input text to be processed by the NeuroNet NLP API.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "shows_id",
+        "description": "Fetches show information from the TVMaze API using a given show ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the show to retrieve information for.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "sticker_roulette",
+        "description": "Fetches a randomly selected sticker from Giphy's sticker collection. Optionally, it allows the selection to be limited to a specific tag. The function interacts with the Giphy API to retrieve the sticker.",
+        "parameters": {
+            "tag": {
+                "description": "The tag to limit the scope of the sticker search. Should be URL encoded and can include phrases separated by hyphens.",
+                "type": "str",
+                "default": "oops"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_channel_points_context",
+        "description": "Fetches the channel points context for a given Twitch channel using the provided RapidAPI key.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel for which to fetch the channel points context.",
+                "type": "str",
+                "default": "xqc"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "random",
+        "description": "Fetch a random quote, optionally based on custom search terms, using the Toolbench API.",
+        "parameters": {
+            "search": {
+                "description": "A search term to filter the quotes. If None, a completely random quote is returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_order",
+        "description": "Fetches the order information for a given order ID using the Toolbench RapidAPI.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the order to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "title_details",
+        "description": "Fetch detailed information about a movie or TV show from the OTT Details API using the IMDb ID.",
+        "parameters": {
+            "imdbid": {
+                "description": "The IMDb ID of the movie or TV show to fetch details for.",
+                "type": "str",
+                "default": "tt9904802"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "web_search",
+        "description": "Performs a web search using the specified query and parameters, and returns the search results.",
+        "parameters": {
+            "q": {
+                "description": "Search query string.",
+                "type": "str",
+                "default": "word cup"
+            },
+            "num": {
+                "description": "Number of search results to return. Valid values are integers between 1 and 20, inclusive. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "start": {
+                "description": "The index of the first result to return. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "gl": {
+                "description": "Two-letter country code to boost search results from that country. Defaults to 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "lr": {
+                "description": "Restricts the search to documents written in a particular language. Defaults to 'lang_en'.",
+                "type": "str, optional",
+                "default": "lang_en"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "translate",
+        "description": "Translates input text from one language to another using the provided RapidAPI service.",
+        "parameters": {
+            "text": {
+                "description": "The text to translate.",
+                "type": "str",
+                "default": "If you don\u2019t know what language the text is written in, our API will detect the language of the original request."
+            },
+            "tolang": {
+                "description": "The target language code for the translation.",
+                "type": "str",
+                "default": "fr"
+            },
+            "fromlang": {
+                "description": "The source language code. If not specified, the API will attempt to detect the source language automatically. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "images",
+        "description": "Fetches the URLs for a specified number of random WikiHow images.",
+        "parameters": {
+            "count": {
+                "description": "The number of image URLs to retrieve (maximum 100).",
+                "type": "int",
+                "default": "3"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get",
+        "description": "Fetches and returns delivery status data from the e-commerce delivery status API.",
+        "parameters": {
+            "getdata": {
+                "description": "An optional query string to include in the API request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "go",
+        "description": "Retrieves creative recipes based on a search query using the Recipe64 RapidAPI.",
+        "parameters": {
+            "q": {
+                "description": "Search query for the recipes.",
+                "type": "str",
+                "default": "taco"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_info",
+        "description": "Fetches information about an Instagram user using their user ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The user ID of the Instagram account.",
+                "type": "int",
+                "default": "25025320"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "image_generation_endpoint",
+        "description": "Generates an image using the Bruzu API with the specified width, height, and background image URL. The API key for the Toolbench RapidAPI is also required to authenticate the request.",
+        "parameters": {
+            "width": {
+                "description": "The width of the generated image. Defaults to 500.",
+                "type": "int, optional",
+                "default": "500"
+            },
+            "backgroundimage": {
+                "description": "The URL of the background image. Defaults to 'https://source.unsplash.com/500x500/'.",
+                "type": "str, optional",
+                "default": "https://source.unsplash.com/500x500/"
+            },
+            "height": {
+                "description": "The height of the generated image. Defaults to 500.",
+                "type": "int, optional",
+                "default": "500"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_streamer_info",
+        "description": "Retrieves information about a Twitch streamer using the provided channel name.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel for which information is being retrieved.",
+                "type": "str",
+                "default": "xqc"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "video_info",
+        "description": "Fetches video information from YouTube using the provided video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the YouTube video for which the information is to be fetched.",
+                "type": "str",
+                "default": "dQw4w9WgXcQ"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "trending_gifs",
+        "description": "Fetch currently trending GIFs from Giphy.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of results to return. Defaults to 25 if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rating": {
+                "description": "Restricts results to the specified rating (y, g, pg, pg-13, or r).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_title",
+        "description": "Searches for books by a given title using the Open Library API.",
+        "parameters": {
+            "title": {
+                "description": "The title of the book to search for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_posts",
+        "description": "Fetches posts for a specified user from the 9gag API.",
+        "parameters": {
+            "username": {
+                "description": "The username of the 9gag user whose posts are to be fetched.",
+                "type": "str",
+                "default": "kleido007"
+            },
+            "counter": {
+                "description": "The pagination counter for subsequent requests. Defaults to None for the first request.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "after": {
+                "description": "The pagination marker for subsequent requests. Defaults to None for the first request.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_chat_restrictions",
+        "description": "Fetches chat restrictions for a given Twitch channel using the Toolbench RapidAPI.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel to fetch chat restrictions for.",
+                "type": "str",
+                "default": "xqc"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_character_by_id",
+        "description": "Fetches an individual character by ID from the Riordanverse API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the character to fetch.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "sticker_translate",
+        "description": "Translates a given term or phrase into a sticker using the Giphy API.",
+        "parameters": {
+            "s": {
+                "description": "The term or phrase to translate into a sticker.",
+                "type": "str",
+                "default": "hungry"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "simple",
+        "description": "Formats a given phone number using the Toolbench RapidAPI phone formatter service.",
+        "parameters": {
+            "phone": {
+                "description": "The phone number to be formatted. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "regions",
+        "description": "Returns a collection of supported regions for the specified IETF BCP 47 language tag.",
+        "parameters": {
+            "language": {
+                "description": "Language code in BCP 47 format.",
+                "type": "str",
+                "default": "us"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "categories",
+        "description": "Fetches categories from the AliExpress unofficial API, optionally filtered by locale and country.",
+        "parameters": {
+            "locale": {
+                "description": "The locale to filter categories by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "The country to filter categories by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_video_info",
+        "description": "Gets video download links and other relevant information in JSON format for a given YouTube video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The YouTube video ID for which to fetch information.",
+                "type": "str",
+                "default": "UxxajLWwzqY"
+            },
+            "geo": {
+                "description": "The country code in ISO 3166 format of the end user. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "sticker_search",
+        "description": "Searches for animated stickers on Giphy using a search query and optional parameters.",
+        "parameters": {
+            "q": {
+                "description": "Search query term or phrase.",
+                "type": "str",
+                "default": "cat"
+            },
+            "limit": {
+                "description": "Number of results to return, with a maximum of 100. Defaults to 25.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Results offset, defaults to 0.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rating": {
+                "description": "Limit results to those rated (y, g, pg, pg-13, or r).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "detail",
+        "description": "Fetches detailed historical transactions for a given address using the RapidAPI Real Estate Records API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID value obtained from the summary API call corresponding to the given address.",
+                "type": "str",
+                "default": "6144a05f3afc5ca06e88a2ab"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "movies_id",
+        "description": "Fetch metadata for a specified movie from a given platform and region using the RapidAPI service.",
+        "parameters": {
+            "platform": {
+                "description": "Retrieve sources from the specified platform.",
+                "type": "str",
+                "default": "ios"
+            },
+            "is_id": {
+                "description": "The ID of the movie. You can also use a TMDb ID.",
+                "type": "int",
+                "default": "508947"
+            },
+            "region": {
+                "description": "Retrieve the sources' deep link from this region.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "sticker_trending",
+        "description": "Fetches the latest trending stickers from Giphy using the specified parameters.",
+        "parameters": {
+            "s": {
+                "description": "The term or phrase to translate into a sticker.",
+                "type": "str",
+                "default": "hungry"
+            },
+            "limit": {
+                "description": "The number of results to return, with a maximum of 100. Defaults to 25.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "The results offset, defaults to 0.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fmt": {
+                "description": "The format in which to return results, either 'html' or 'json'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rating": {
+                "description": "The content rating to limit results to, one of 'y', 'g', 'pg', 'pg-13', or 'r'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "channel",
+        "description": "Fetches details and videos of a YouTube channel using the RapidAPI YouTube V3 alternative.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the YouTube channel to fetch details for.",
+                "type": "str",
+                "default": "UCTwECeGqMZee77BjdoYtI2Q"
+            },
+            "x_cachebypass": {
+                "description": "Cache bypass parameter; must be passed as '1' if used.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "token": {
+                "description": "Pagination token for fetching additional results beyond the first page.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "Parameter to sort the channel videos. Available options are 'newest', 'oldest', and 'popular'. Defaults to 'newest'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "reels_downloader",
+        "description": "Downloads Instagram reels or posts using a given link and RapidAPI key.",
+        "parameters": {
+            "link": {
+                "description": "The URL of the Instagram media (reel or post) to be downloaded.",
+                "type": "str",
+                "default": "https://www.instagram.com/reels/CsinDvAgoYA/"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "getgamelevel",
+        "description": "Fetches a game level from the Roomtek Music Trivia API.",
+        "parameters": {
+            "level": {
+                "description": "The level to fetch. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "output": {
+                "description": "The output format type, either 'xml' or 'json'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "random_quote",
+        "description": "Fetches random quotes filtered by length and tags from the Semantic Quotes API.",
+        "parameters": {
+            "max_length": {
+                "description": "Maximum length of the quotes. Defaults to 4000.",
+                "type": "int, optional",
+                "default": 4000
+            },
+            "tags": {
+                "description": "Comma-separated tags for filtering quotes. Examples include 'faith', 'god', 'humor', 'hope', 'inspirational', 'love', 'life', 'motivational', 'philosophy', 'religion', 'science', 'spirituality', 'success', 'truth', 'wisdom', 'poetry'. Defaults to 'inspirational,motivational'.",
+                "type": "str, optional",
+                "default": "inspirational,motivational"
+            },
+            "min_length": {
+                "description": "Minimum length of the quotes. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "Number of quotes to return. Defaults to 3.",
+                "type": "int, optional",
+                "default": 3
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_post_data_download_video_photo",
+        "description": "Fetches detailed data for a given post, including a download link for any videos associated with the post.",
+        "parameters": {
+            "post_id": {
+                "description": "The unique identifier of the post. Defaults to 'adPXX3Q'.",
+                "type": "str",
+                "default": "adPXX3Q"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_posts_from_page",
+        "description": "Fetches posts from a specified category on a 9gag page.",
+        "parameters": {
+            "category": {
+                "description": "The category of posts to fetch, as supported by the /get_pages endpoint.",
+                "type": "str",
+                "default": "trending"
+            },
+            "counter": {
+                "description": "Counter for pagination; leave blank for the first request. For subsequent requests, provide the counter value from the previous response.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "after": {
+                "description": "Pagination parameter to fetch posts after a certain point; leave blank for the first request. For subsequent requests, provide the after value from the previous response.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_user",
+        "description": "Searches for a user on Pinterest using a given keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term used to find users on Pinterest.",
+                "type": "str",
+                "default": "Trang Bui"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "venue_search",
+        "description": "Searches for venues based on latitude, longitude, and optional radius using the Wiman API.",
+        "parameters": {
+            "latitude": {
+                "description": "The latitude of the location to search.",
+                "type": "str",
+                "default": "44.484994"
+            },
+            "longitude": {
+                "description": "The longitude of the location to search.",
+                "type": "str",
+                "default": "11.327333"
+            },
+            "radius": {
+                "description": "The search radius in kilometers. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_users",
+        "description": "Search for users on TikTok based on the provided keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for users on TikTok.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_channel_panels",
+        "description": "Fetches the channel panels for a specified Twitch channel using the Twitch API.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel to retrieve panels for.",
+                "type": "str",
+                "default": "xQc"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "user_followers",
+        "description": "Fetches the follower count for a given Spotify user using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The user ID for which to fetch the follower count.",
+                "type": "str",
+                "default": "nocopyrightsounds"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_info_user",
+        "description": "Fetch information about a TikTok user using the provided username.",
+        "parameters": {
+            "username": {
+                "description": "The TikTok username for which to retrieve information.",
+                "type": "str",
+                "default": "tiktok"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_tiktok_video_info",
+        "description": "Fetches detailed information about a TikTok video, including options for HD quality and no watermark.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the TikTok video. It can be in the format of a TikTok ID or a direct TikTok video link.",
+                "type": "str",
+                "default": "https://vm.tiktok.com/ZTRvK8Fn4/"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_video_list_by_keywords",
+        "description": "Search for videos on TikTok by specified keywords and additional filtering options.",
+        "parameters": {
+            "keywords": {
+                "description": "Keywords to search videos for.",
+                "type": "str",
+                "default": "\u8e0a\u3063\u3066\u307f\u305f"
+            },
+            "sort_type": {
+                "description": "Criterion for sorting results. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "publish_time": {
+                "description": "Time filter for when videos were posted. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "cursor": {
+                "description": "Pagination cursor for navigating results. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "region": {
+                "description": "ISO region code to filter results by location. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "count": {
+                "description": "Number of results to retrieve. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "movies",
+        "description": "Fetches the basic metadata for all movies available for playback in a specific region. The results can be sorted by popularity or in alphabetical order. ",
+        "parameters": {
+            "limit": {
+                "description": "Number of records to return per request. Optional, default is 5, and the maximum is 100.",
+                "type": "int",
+                "default": "5"
+            },
+            "sources": {
+                "description": "Filter records by source. Multiple sources can be comma-separated. Optional, default is 'netflix,hulu'. Possible values include free, tv_everywhere, subscription, purchase, and specific sources such as netflix or hulu.",
+                "type": "str",
+                "default": "netflix,hulu"
+            },
+            "region": {
+                "description": "Filter results by region. Optional, default is 'US'. Possible values include 'US', 'FR'.",
+                "type": "str",
+                "default": "US"
+            },
+            "offset": {
+                "description": "Number of records to skip. Optional, default is 0.",
+                "type": "int",
+                "default": "0"
+            },
+            "sort": {
+                "description": "Method to sort the records. Optional, default is 'popularity'. Possible values are 'alphabetical' and 'popularity'.",
+                "type": "str",
+                "default": "popularity"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_gifs_by_id",
+        "description": "Fetches multiple GIF details from Giphy by their IDs.",
+        "parameters": {
+            "ids": {
+                "description": "A comma-separated string of GIF IDs.",
+                "type": "str",
+                "default": "feqkVgjJpYtjy,7rzbxdu0ZEXLy"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_channel_goals",
+        "description": "Fetches the goals for a specified Twitch channel using the provided RapidAPI key.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel for which to retrieve goals.",
+                "type": "str",
+                "default": "shadoune666"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "shows_id_episodes",
+        "description": "Retrieve a list of episodes for a specific show from the given platform.",
+        "parameters": {
+            "platform": {
+                "description": "The platform from which to retrieve the episodes (e.g., 'ios', 'android', 'androidtv', 'web').",
+                "type": "str",
+                "default": "ios"
+            },
+            "is_id": {
+                "description": "The ID of the show.",
+                "type": "int",
+                "default": "82856"
+            },
+            "offset": {
+                "description": "The number of records to skip in the results. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "region": {
+                "description": "The region to filter the episodes by (e.g., 'US', 'FR'). Default is 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "limit": {
+                "description": "The number of records to return per request, with a maximum of 100. Default is 25.",
+                "type": "int, optional",
+                "default": "25"
+            },
+            "sort": {
+                "description": "The order to sort the records by. Use 'regular' for default order or 'reverse' for most recent episodes first. Default is 'regular'.",
+                "type": "str, optional",
+                "default": "regular"
+            },
+            "season": {
+                "description": "The specific season for which to retrieve episodes. If not specified, episodes from all seasons will be retrieved. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "search_author",
+        "description": "Search for an author using the Open Library API.",
+        "parameters": {
+            "author": {
+                "description": "The name of the author to search for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "user_post_videos",
+        "description": "Fetches the post videos of a TikTok user using the specified parameters.",
+        "parameters": {
+            "count": {
+                "description": "The number of videos to fetch, with a maximum limit of 35. Default is '10'.",
+                "type": "str",
+                "default": "10"
+            },
+            "unique_id": {
+                "description": "The unique identifier of the TikTok user. Default is '@tiktok'.",
+                "type": "str",
+                "default": "@tiktok"
+            },
+            "cursor": {
+                "description": "The cursor position for pagination. Default is '0'.",
+                "type": "str",
+                "default": "0"
+            },
+            "user_id": {
+                "description": "The user ID of the TikTok user. Default is '107955'.",
+                "type": "str",
+                "default": "107955"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_posts_from_category",
+        "description": "Fetch posts from a specified category using the 9gag API. Optionally, provide a counter and after parameter for pagination in subsequent requests. ",
+        "parameters": {
+            "category": {
+                "description": "The category of posts to fetch.",
+                "type": "str",
+                "default": "sports"
+            },
+            "counter": {
+                "description": "Leave blank for the first request. For subsequent requests, provide the counter received from the previous request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "after": {
+                "description": "Leave blank for the first request. For subsequent requests, provide the after parameter received from the previous request. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "collection",
+        "description": "Fetches TLE (Two-Line Element) data from the TLE API based on the specified search query.",
+        "parameters": {
+            "search": {
+                "description": "The search term to query the API. Defaults to 'ISS'.",
+                "type": "str",
+                "default": "ISS"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "posts",
+        "description": "Fetches posts of a creator from the Patreon API using the given parameters.",
+        "parameters": {
+            "creator_id": {
+                "description": "The ID of the creator whose posts are to be fetched.",
+                "type": "int",
+                "default": "2416483"
+            },
+            "cursor": {
+                "description": "The cursor for pagination to the next page of results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "amount": {
+                "description": "The number of posts to return. Defaults to 10. Maximum is 500.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "comments",
+        "description": "Fetch comments from a YouTube video using the provided video ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The YouTube video ID to fetch comments for.",
+                "type": "str",
+                "default": "dQw4w9WgXcQ"
+            },
+            "sort_by": {
+                "description": "Criteria to sort comments by. Options are \"top\" or \"new\". Defaults to \"top\".",
+                "type": "str, optional",
+                "default": "top"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "trending",
+        "description": "Fetches the trending NFT collections from OpenSea.",
+        "parameters": {
+            "time": {
+                "description": "The time frame for which to fetch trending NFTs. Defaults to 'ONE_HOUR'.",
+                "type": "str",
+                "default": "ONE_HOUR"
+            },
+            "chain": {
+                "description": "The blockchain chain to filter the NFTs by. If None, results are not filtered by chain. Defaults to None.",
+                "type": "str",
+                "default": ""
+            },
+            "sortby": {
+                "description": "The criteria by which to sort the NFTs. Defaults to 'ONE_HOUR_VOLUME'.",
+                "type": "str",
+                "default": "ONE_HOUR_VOLUME"
+            },
+            "count": {
+                "description": "The number of trending NFTs to fetch. Defaults to 100.",
+                "type": "int",
+                "default": "100"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "verify",
+        "description": "Verifies an email address by normalizing it and optionally checking SMTP and suggesting a valid domain.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be verified.",
+                "type": "str",
+                "default": "cognitive.camp@gmail.com"
+            },
+            "checksmtp": {
+                "description": "Whether to check the SMTP server on port 25. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            },
+            "suggestdomain": {
+                "description": "Whether to suggest a valid domain if the provided one is incorrect. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "images_search",
+        "description": "Searches for images using the Bing Search API, based on the provided keyword and optional parameters for size and page number.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term to find related images.",
+                "type": "str",
+                "default": "wallpapers"
+            },
+            "size": {
+                "description": "The size of the images to be retrieved. Default is '30'.",
+                "type": "str, optional",
+                "default": "30"
+            },
+            "page": {
+                "description": "The page number of the search results to retrieve. Default is '0'.",
+                "type": "str, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "items",
+        "description": "Fetches item details from the Codester API using the specified item ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The item ID for which details are to be fetched.",
+                "type": "str",
+                "default": "40946"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_feed_video_list_by_region",
+        "description": "Fetches a list of feed videos from TikTok for a given region.",
+        "parameters": {
+            "region": {
+                "description": "The region code for which to fetch the feed video list.",
+                "type": "str",
+                "default": "JP"
+            },
+            "count": {
+                "description": "The number of videos to fetch, with a default of '10'. Maximum of 20 videos can be fetched.",
+                "type": "str, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "check_movie_status",
+        "description": "Check the status of a movie session using the provided VSID via the RapidAPI service.",
+        "parameters": {
+            "vsid": {
+                "description": "The video session ID obtained from the Start Movie Session API call response.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_favorite_videos",
+        "description": "Fetches a list of favorite videos for a given user from the TikTok video feature summary API.",
+        "parameters": {
+            "cursor": {
+                "description": "Position in the list to start fetching the videos from. Defaults to '0'.",
+                "type": "str",
+                "default": "0"
+            },
+            "user_id": {
+                "description": "The user ID for which to fetch favorite videos. Defaults to '6741307595983946754'.",
+                "type": "str",
+                "default": "6741307595983946754"
+            },
+            "unique_id": {
+                "description": "The unique identifier for the user, can be either a username or handle (e.g., 'voyagel' or '@voyagel'). Defaults to 'voyagel'.",
+                "type": "str",
+                "default": "voyagel"
+            },
+            "count": {
+                "description": "The number of favorite videos to fetch. Defaults to '10'.",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "url",
+        "description": "Fetches data from the Magic Eden API by bypassing with the provided URL and RapidAPI key.",
+        "parameters": {
+            "url": {
+                "description": "The full Magic Eden URL to be used in the request.",
+                "type": "str",
+                "default": "https://api-mainnet.magiceden.io/idxv2/getListedNftsByCollectionSymbol?collectionSymbol=meta_tattoo_club&direction=2&field=1&limit=20&offset=0&mode=all"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_channel_leaderboards",
+        "description": "Fetches the leaderboards for a specified Twitch channel using the provided RapidAPI key.",
+        "parameters": {
+            "channel": {
+                "description": "The name of the Twitch channel to get leaderboards for. Defaults to 'shadoune666'.",
+                "type": "str",
+                "default": "shadoune666"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "trending_music_gaming_news_movies",
+        "description": "Fetches trending videos based on the specified type and region using the Cheap YouTube API on RapidAPI.",
+        "parameters": {
+            "type": {
+                "description": "The category of videos to fetch. Options include \"music\", \"gaming\", \"news\", and \"movies\". Defaults to 'gaming'.",
+                "type": "str",
+                "default": "gaming"
+            },
+            "region": {
+                "description": "The ISO 3166 country code specifying the region. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "job_details",
+        "description": "Fetch detailed information about a specific job using its Job Id. Optionally, include additional publisher details such as the website URL and favicon.",
+        "parameters": {
+            "job_id": {
+                "description": "The Job Id for which to fetch details. Multiple Job Ids can be provided separated by commas.",
+                "type": "str",
+                "default": "fFunVwyb9l4AAAAAAAAAAA=="
+            },
+            "extended_publisher_details": {
+                "description": "If set to True, includes additional publisher details such as the website URL and favicon. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "all",
+        "description": "Returns the complete history of a package from dispatch to the latest status.",
+        "parameters": {
+            "colisid": {
+                "description": "The ID of the package to be tracked.",
+                "type": "str",
+                "default": "CA107308006SI"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_user_id",
+        "description": "Fetches the user ID for a given Twitch channel using the Twitch API.",
+        "parameters": {
+            "channel": {
+                "description": "The Twitch channel name for which to fetch the user ID.",
+                "type": "str",
+                "default": "xqc"
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_all_characters",
+        "description": "Fetches and returns a list of characters from the Riordanverse API with optional query parameters for limiting the results, skipping a number of characters, or searching for characters containing a specific substring.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of characters to return. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "search": {
+                "description": "A substring to search within character names. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "skip": {
+                "description": "The number of characters to skip from the start. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "get_san_francisco_chronicle_news",
+        "description": "Fetches news from the San Francisco Chronicle using the given keyword.",
+        "parameters": {
+            "sfchronicle": {
+                "description": "A keyword to filter news articles. If provided, only articles containing this keyword will be fetched. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "list_movies_json",
+        "description": "Lists and searches through all available movies with various filters and sorting options. The function can return results with Rotten Tomatoes ratings and allows filtering by multiple criteria such as IMDb rating, genre, and quality, among others.",
+        "parameters": {
+            "with_rt_ratings": {
+                "description": "If True, includes Rotten Tomatoes ratings in the results.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "minimum_rating": {
+                "description": "An integer between 0 and 9 (inclusive) to filter movies by a given minimum IMDb rating.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "An integer between 1 and 50 (inclusive) to limit the number of results per page.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "An unsigned integer to see the next page of movies. For example, limit=15 and page=2 will show movies 15-30.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "query_term": {
+                "description": "A string used for movie search that matches on movie title, IMDb code, actor name, or director name.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "order_by": {
+                "description": "A string ('desc' or 'asc') to order the results by either descending or ascending order.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "genre": {
+                "description": "A string to filter movies by a given genre (see http://www.imdb.com/genre/ for the full list).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "quality": {
+                "description": "A string ('720p', '1080p', '3D') to filter movies by a given quality.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "A string ('title', 'year', 'rating', 'peers', 'seeds', 'download_count', 'like_count', 'date_added') to sort the results by the chosen value.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "episode",
+        "description": "Fetches data for a single episode from the VOD app API using the provided episode house number and API key.",
+        "parameters": {
+            "episodehousenumber": {
+                "description": "The unique identifier for the specific episode to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Media"
+    },
+    {
+        "name": "kitten",
+        "description": "Fetches a kitten image of specified width and height using the Placekitten API.",
+        "parameters": {
+            "width": {
+                "description": "The width of the kitten image.",
+                "type": "str",
+                "default": "200"
+            },
+            "height": {
+                "description": "The height of the kitten image.",
+                "type": "str",
+                "default": "300"
+            }
+        },
+        "domain": "Media"
+    }
+]

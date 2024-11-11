@@ -1,0 +1,1149 @@
+[
+    {
+        "name": "obd2_code",
+        "description": "Retrieve the human-readable version of a requested OBD2 code using the Toolbench RapidAPI.",
+        "parameters": {
+            "code": {
+                "description": "The OBD2 code to be translated into human-readable format.",
+                "type": "str",
+                "default": "P0001"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_kfc_locations",
+        "description": "Fetches a list of KFC locations from the KFC Locations API for a given page number.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve, with each page typically containing 10 results.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "search_country",
+        "description": "Search for a country to see if they have an active pageant contest.",
+        "parameters": {
+            "search": {
+                "description": "The search string to query for active pageant contests in a country.",
+                "type": "str",
+                "default": "philippines"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_kfc_locations_by_state_and_city",
+        "description": "Retrieve KFC locations for a given state and city with pagination support.",
+        "parameters": {
+            "state": {
+                "description": "The state where KFC locations are being queried.",
+                "type": "str",
+                "default": "CA"
+            },
+            "city": {
+                "description": "The city where KFC locations are being queried.",
+                "type": "str",
+                "default": "San Jose"
+            },
+            "page": {
+                "description": "The page number for the results, with each page containing 10 results.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_sample_userprofile",
+        "description": "Generates fake user profile sample data using an external API.",
+        "parameters": {
+            "count": {
+                "description": "The number of profiles to generate. Defaults to 2. Maximum value is 1000.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "locale": {
+                "description": "The locale to use for generating user profiles. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_contest",
+        "description": "Fetch details of a single pageant contest by its ID from the PageantDB API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the pageant contest to fetch details for.",
+                "type": "int",
+                "default": "35"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "strain_type",
+        "description": "Fetches a list of results based on the specified strain type from the Weed Strain API.",
+        "parameters": {
+            "straintype": {
+                "description": "The type of strain to search for (e.g., Indica, Sativa, Hybrid).",
+                "type": "str",
+                "default": "Hybrid"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "airplanes_by_brand",
+        "description": "Fetches all airplanes by a specified brand from the airplanes database.",
+        "parameters": {
+            "brand": {
+                "description": "The brand of airplanes to fetch information for.",
+                "type": "str",
+                "default": "Airbus"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "data_breach_checker_endpoint",
+        "description": "Checks if the given email has been compromised in any known data breaches using the Data Breach Checker API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be checked for data breaches.",
+                "type": "str",
+                "default": "example@xyz.com"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "order_by_descending",
+        "description": "Fetches a list of resources from the Cat Breed Database API sorted in descending order based on the provided ordering parameter.",
+        "parameters": {
+            "ordering": {
+                "description": "The criterion by which to sort the list in descending order.",
+                "type": "str",
+                "default": "-breedName"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "cpf",
+        "description": "Fetches information of a partner or administrator based on their CPF (Cadastro de Pessoas F\u00edsicas).",
+        "parameters": {
+            "cpf": {
+                "description": "The CPF number of the partner or administrator.",
+                "type": "str",
+                "default": "09336443291"
+            },
+            "nome": {
+                "description": "The name of the partner or administrator. Providing the name can improve the chances of finding the data.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "theme_detail",
+        "description": "Fetches the details of a theme using its ID from the specified API.",
+        "parameters": {
+            "dtid": {
+                "description": "The ID of the theme to be fetched.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "models_by_make_id_year_category",
+        "description": "Retrieves motorcycle models based on year, category, and make ID.",
+        "parameters": {
+            "year": {
+                "description": "The year of the motorcycle models to retrieve.",
+                "type": "int",
+                "default": "2015"
+            },
+            "category": {
+                "description": "The category of the motorcycle models to retrieve.",
+                "type": "str",
+                "default": "Sport"
+            },
+            "make": {
+                "description": "The make ID of the motorcycle models to retrieve.",
+                "type": "int",
+                "default": "100"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "order_by_ascending",
+        "description": "Fetches a list of all cats sorted in ascending order by a specified attribute.",
+        "parameters": {
+            "ordering": {
+                "description": "The attribute by which to order the list of cats, e.g., 'name'.",
+                "type": "str",
+                "default": "breedName"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_kfc_locations_by_state",
+        "description": "Fetches all KFC locations in a specified state using the given RapidAPI key and returns the results.",
+        "parameters": {
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "int",
+                "default": "0"
+            },
+            "state": {
+                "description": "The two-letter state code for which to fetch KFC locations.",
+                "type": "str",
+                "default": "AZ"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "specifications_by_group",
+        "description": "Fetches specified groups of specifications for a given motorcycle article from the Motorcycle Specs Database API.",
+        "parameters": {
+            "specs": {
+                "description": "The type of specification group to fetch (e.g., engineAndTransmission, chassisSuspensionBrakesAndWheels, physicalMeasuresAndCapacities, otherSpecifications).",
+                "type": "str",
+                "default": "engineAndTransmission"
+            },
+            "article": {
+                "description": "The identifier for the motorcycle article.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_by_origin",
+        "description": "Fetches plants by their origin using the specified RapidAPI key.",
+        "parameters": {
+            "origin": {
+                "description": "The origin of the plants to retrieve. Default is 'Asia'.",
+                "type": "str",
+                "default": "Asia"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "industry_list",
+        "description": "Gets a list of industries based on the provided alias from the specified API.",
+        "parameters": {
+            "alias": {
+                "description": "An alias used to specify which industry list to fetch.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_media_links",
+        "description": "Fetches media links associated with a given watch ID from the Watch Database API.",
+        "parameters": {
+            "watchid": {
+                "description": "The unique identifier for the watch whose media links are to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "veiculo_tipo_id_marca",
+        "description": "Retrieves a listing of vehicles for a given brand from an API.",
+        "parameters": {
+            "veiculo_tipo": {
+                "description": "The type of vehicle (e.g., \"carros\", \"motos\").",
+                "type": "str",
+                "default": "carros"
+            },
+            "id_marca": {
+                "description": "The ID of the vehicle brand.",
+                "type": "str",
+                "default": "6"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "consumer_phone_search",
+        "description": "Search for people in the Data Axle database based on the provided criteria.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of results to return.",
+                "type": "str",
+                "default": "20"
+            },
+            "packages": {
+                "description": "The data packages or filters to apply to the search.",
+                "type": "str",
+                "default": "standard_v2"
+            },
+            "query": {
+                "description": "The phone number to search for. Defaults to '(206) 555-1212'.",
+                "type": "str, optional",
+                "default": "(206) 555-1212"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "historic_event_by_year",
+        "description": "Fetches historical events for a given year using the World History Timeline API.",
+        "parameters": {
+            "year": {
+                "description": "The year for which historical events are to be fetched.",
+                "type": "str",
+                "default": "400"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "domain_detail",
+        "description": "Fetches the domain detail for a given domain ID using the RapidAPI service.",
+        "parameters": {
+            "did": {
+                "description": "The domain ID for which the details are to be fetched.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "specifications_by_year_make_model",
+        "description": "Retrieves motorcycle specifications for a given make, model, and year from the Motorcycle Specs Database.",
+        "parameters": {
+            "make": {
+                "description": "The manufacturer of the motorcycle.",
+                "type": "str",
+                "default": "BMW"
+            },
+            "model": {
+                "description": "The model of the motorcycle.",
+                "type": "str",
+                "default": "F 800 GS Trophy"
+            },
+            "year": {
+                "description": "The production year of the motorcycle.",
+                "type": "str",
+                "default": "2012"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "domain_reputation",
+        "description": "Evaluate the reputation of a given domain using the Toolbench RapidAPI service.",
+        "parameters": {
+            "domainname": {
+                "description": "The domain name to be evaluated.",
+                "type": "str",
+                "default": "whoisxmlapi.com"
+            },
+            "outputformat": {
+                "description": "The response output format. Acceptable values are 'XML' or 'JSON'. Defaults to 'JSON'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "mode": {
+                "description": "The mode for the API check. Acceptable values are 'fast' (some heavy tests and data collectors will be disabled) or 'full' (all data and tests will be processed). Defaults to 'fast'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "origin",
+        "description": "Fetches a list of cat breeds originating from a specified country using the Cat Breed Database API.",
+        "parameters": {
+            "origin": {
+                "description": "The country of origin to filter cat breeds.",
+                "type": "str",
+                "default": "egypt"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_geo_location_of_ip_address",
+        "description": "Retrieve the geographical location and other details of a given IP address using the Toolbench RapidAPI.",
+        "parameters": {
+            "ip": {
+                "description": "The IPV4 address for which geographical information is to be retrieved.",
+                "type": "str",
+                "default": "34.89.89.28"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_by_latin_name",
+        "description": "Retrieves information about plants that match the provided Latin plant name using the House Plants API.",
+        "parameters": {
+            "latin_name": {
+                "description": "The Latin name of the plant to search for. Defaults to 'philodendron'. This parameter accepts only [a-zA-Z] characters.",
+                "type": "str",
+                "default": "philodendron"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_teas",
+        "description": "Fetches all types of teas from the RapidAPI endpoint, optionally limited to a specified number.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of tea types to retrieve. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_hsn_tsn",
+        "description": "Fetch HSN/TSN data for a specified car query from the HSN-TSN API.",
+        "parameters": {
+            "query": {
+                "description": "The search query for the car.",
+                "type": "str",
+                "default": "Audi A6"
+            },
+            "year": {
+                "description": "The year of the car. Defaults to 2018.",
+                "type": "int, optional",
+                "default": "2018"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "breed_type",
+        "description": "Fetches information about dog breeds of a specific type using the Dog Breed DB API.",
+        "parameters": {
+            "breedtype": {
+                "description": "The type of dog breed to fetch information about.",
+                "type": "str",
+                "default": "Mixed Breed Dogs"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "search_by_engine",
+        "description": "Search for airplanes that have engines matching the given keyword.",
+        "parameters": {
+            "engine_icontains": {
+                "description": "Keyword to search for in the airplane engine descriptions.",
+                "type": "str",
+                "default": "rolls"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "models_by_make",
+        "description": "Fetch all motorcycle models by the given make name using the RapidAPI service.",
+        "parameters": {
+            "make": {
+                "description": "The name of the motorcycle manufacturer (e.g., 'BMW').",
+                "type": "str",
+                "default": "Yamaha"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "view_user_list",
+        "description": "Retrieves the list of favorite libraries for a given user based on their user ID.",
+        "parameters": {
+            "userid": {
+                "description": "The unique identifier of the user.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "all_strains_descending",
+        "description": "Fetches a list of all weed strains ordered in a specified descending order from the RapidAPI Weed Strain API.",
+        "parameters": {
+            "ordering": {
+                "description": "The attribute by which to order the strains in descending order (e.g., 'name', 'thc', etc.).",
+                "type": "str",
+                "default": "-strain"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "detail_info",
+        "description": "Fetches detailed information of an application using its slug from the SuggestUse API.",
+        "parameters": {
+            "slug": {
+                "description": "The application's unique identifier used to fetch its details.",
+                "type": "str",
+                "default": "dropbox"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "search_philosopher_by_name",
+        "description": "Searches for a philosopher by their name using the specified API key and returns the result.",
+        "parameters": {
+            "name": {
+                "description": "The name of the philosopher to search for. Defaults to 'Friedrich Nietzsche'.",
+                "type": "str",
+                "default": "Friedrich Nietzsche"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "airplanes_ordered_by_descending",
+        "description": "Fetches all airplanes ordered by a specified field in descending order from the AirplanesDB API.",
+        "parameters": {
+            "ordering": {
+                "description": "The field by which to order the airplanes in descending order.",
+                "type": "str",
+                "default": "-plane"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "data_by_id",
+        "description": "Fetches case data by ID from the MongoDB Wix API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the case to be fetched.",
+                "type": "str",
+                "default": "61183bc9d86b1bf415412ea4"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_by_climate",
+        "description": "Fetches plants based on the given climate of their natural habitat.",
+        "parameters": {
+            "climate": {
+                "description": "The climate type to filter plants by. Defaults to 'Tropical'.",
+                "type": "str",
+                "default": "Tropical"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_u_54_athlete_ranking",
+        "description": "Fetches the under-54 athlete ranking for Taekwondo from the provided RapidAPI service.",
+        "parameters": {
+            "country": {
+                "description": "The country to filter the athlete rankings. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_countrywise_city_data",
+        "description": "Fetches a list of cities for a given country using an API, based on provided parameters.",
+        "parameters": {
+            "iso3": {
+                "description": "A 3-character ISO3 country code. Default is 'IND'.",
+                "type": "str",
+                "default": "IND"
+            },
+            "country": {
+                "description": "The country name. Default is 'IND'.",
+                "type": "str",
+                "default": "IND"
+            },
+            "count": {
+                "description": "The maximum number of results to return. Default is 2.",
+                "type": "int",
+                "default": "2"
+            },
+            "iso2": {
+                "description": "A 2-character ISO2 country code. Default is 'IN'.",
+                "type": "str",
+                "default": "IN"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "search_roman_god_by_name",
+        "description": "Searches for a Roman God by name to get a description about them.",
+        "parameters": {
+            "god": {
+                "description": "The name of the Roman God to search for.",
+                "type": "str",
+                "default": "jupiter"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "whois_history_v1",
+        "description": "Fetches the WHOIS history for a specified domain.",
+        "parameters": {
+            "domainname": {
+                "description": "The domain for which historic WHOIS data is requested.",
+                "type": "str",
+                "default": "google.com"
+            },
+            "createddateto": {
+                "description": "Search domains created before this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "createddatefrom": {
+                "description": "Search domains created after this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "outputformat": {
+                "description": "Response output format, either \"XML\" or \"JSON\". Defaults to \"JSON\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "expireddateto": {
+                "description": "Search domains expired before this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "updateddateto": {
+                "description": "Search domains updated before this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "mode": {
+                "description": "Mode of operation; \"preview\" to return the number of domains (free) or \"purchase\" to return the actual domain list (limited to 10,000 and costs 50 DRS credits). Defaults to \"preview\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "updateddatefrom": {
+                "description": "Search domains updated after this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "expireddatefrom": {
+                "description": "Search domains expired after this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sincedate": {
+                "description": "Search for activities detected since this date. Format: \"YYYY-MM-DD\".",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "veiculo_tipo",
+        "description": "Fetches vehicle brands for the specified type of vehicle from the Veiculos API.",
+        "parameters": {
+            "veiculo_tipo": {
+                "description": "The type of vehicle for which to fetch brands. Possible values are \"carros\", \"motos\", and \"caminhoes\".",
+                "type": "str",
+                "default": "carros"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "specifications_by_make_model",
+        "description": "Fetches the specifications of a motorcycle given its make and model using the Motorcycle Specs Database API.",
+        "parameters": {
+            "make": {
+                "description": "The manufacturer of the motorcycle.",
+                "type": "str",
+                "default": "Aprilia"
+            },
+            "model": {
+                "description": "The model of the motorcycle.",
+                "type": "str",
+                "default": "Dorsoduro 1200"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_airplane",
+        "description": "Fetches details of a single airplane using its ID from the Airplane Database API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the airplane to retrieve details for.",
+                "type": "int",
+                "default": "76"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_strain",
+        "description": "Fetches detailed information for a single strain by its ID using the Weed Strain API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the strain for which details are to be fetched.",
+                "type": "int",
+                "default": "45"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_watches_by_brand_family_model",
+        "description": "Fetches a list of watches based on brand name, family, and model using the provided RapidAPI key.",
+        "parameters": {
+            "brandname": {
+                "description": "The brand name of the watch.",
+                "type": "str",
+                "default": "Omega"
+            },
+            "model": {
+                "description": "The model name of the watch.",
+                "type": "str",
+                "default": "2005.75.00"
+            },
+            "family": {
+                "description": "The family category of the watch.",
+                "type": "str",
+                "default": "Aqua Terra"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_dog_breed",
+        "description": "Fetches details of a single dog breed from the DogBreedDB API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the dog breed to fetch details for.",
+                "type": "int",
+                "default": "47"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_country",
+        "description": "Fetch all details of a country by its ID from the PageantDB API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the country to retrieve details for.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_u_58_athlete_ranking",
+        "description": "Fetches the Under-58kg athlete ranking for Taekwondo from the RapidAPI Taekwondo API.",
+        "parameters": {
+            "country": {
+                "description": "The name of the country to filter the athlete rankings by. If not provided, rankings from all countries are returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_family_by_brand_name",
+        "description": "Fetches all family names associated with a given brand name from the watch database via the RapidAPI service.",
+        "parameters": {
+            "brandname": {
+                "description": "The name of the brand for which to fetch family names.",
+                "type": "str",
+                "default": "Omega"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "business_phone_search",
+        "description": "Search for relevant businesses in the Data Axle database based on the given parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of results to return.",
+                "type": "str",
+                "default": "20"
+            },
+            "query": {
+                "description": "The search query for finding businesses.",
+                "type": "str",
+                "default": "4162287300"
+            },
+            "packages": {
+                "description": "The specific data packages to include in the search.",
+                "type": "str",
+                "default": "standard_v1"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "cpfobliterado",
+        "description": "This function searches for information about an obliterated CPF (Brazilian individual taxpayer registry identification) using the provided name and CPF. It utilizes the RapidAPI service to perform the lookup.",
+        "parameters": {
+            "nome": {
+                "description": "The name of the partner or administrator.",
+                "type": "str",
+                "default": "WERNER ROMERA SUFFERT"
+            },
+            "cpf": {
+                "description": "The obliterated CPF code.",
+                "type": "str",
+                "default": "***960701**"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_restaurant_locations",
+        "description": "Fetches a list of restaurant locations from the RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve data from.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "veiculo_tipo_id_marca_id_modelo",
+        "description": "Sends a GET request to the veiculos API to retrieve vehicle information based on the type, brand, and model provided.",
+        "parameters": {
+            "id_marca": {
+                "description": "The ID of the vehicle's brand.",
+                "type": "str",
+                "default": "6"
+            },
+            "id_modelo": {
+                "description": "The ID of the vehicle's model.",
+                "type": "str",
+                "default": "43"
+            },
+            "veiculo_tipo": {
+                "description": "The type of the vehicle (e.g., car, bike).",
+                "type": "str",
+                "default": "carros"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "dinotest",
+        "description": "Tests the specified endpoint using the provided RapidAPI key and returns the response.",
+        "parameters": {
+            "num": {
+                "description": "The endpoint number to be tested.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "detalhes_empresa",
+        "description": "Retrieves detailed information about a company using its CNPJ.",
+        "parameters": {
+            "cnpj": {
+                "description": "The CNPJ of the company.",
+                "type": "str",
+                "default": "45973106000100"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "models_by_make_id",
+        "description": "Fetch the list of motorcycle models by make ID from the Motorcycle Specs Database.",
+        "parameters": {
+            "is_id": {
+                "description": "The make ID for which to fetch the model list.",
+                "type": "str",
+                "default": "485"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "movie_suggestions",
+        "description": "Fetches movie suggestions related to a given movie.",
+        "parameters": {
+            "movie_id": {
+                "description": "The ID of the movie for which to get related suggestions. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_by_common_name",
+        "description": "Retrieves all plants that match a given common plant name using the House Plants API on RapidAPI.",
+        "parameters": {
+            "common_name": {
+                "description": "Common name of the plant to search for. Default is 'coralberry'.",
+                "type": "str",
+                "default": "coralberry"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "single_cat_breed",
+        "description": "Fetches details of a single cat breed using the provided breed ID from the Cat Breed Database API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the cat breed to fetch details for.",
+                "type": "int",
+                "default": "34"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "airplanes_ordered_by_ascending",
+        "description": "Fetches a list of airplanes ordered by a specified attribute in ascending order.",
+        "parameters": {
+            "ordering": {
+                "description": "The attribute by which to order the airplanes (e.g., 'name', 'model').",
+                "type": "str",
+                "default": "plane"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_schema_by_name",
+        "description": "Fetches and returns the schema details for a given schema name from the MongoDB Wix API.",
+        "parameters": {
+            "schemaname": {
+                "description": "The name of the schema for which details are to be fetched.",
+                "type": "str",
+                "default": "car"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "ip_netblock_v2",
+        "description": "Fetch exhaustive information on IP range (v2) by using various filters like ASN, limit, organization, output format, mask, and IP. The function communicates with an external API to obtain the required data.",
+        "parameters": {
+            "asn": {
+                "description": "Get ranges by Autonomous System Number (ASN). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Max count of returned records. Acceptable values: 1 - 1000. Default is 100 if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "org": {
+                "description": "Find IP Netblocks containing specified search terms in their netblock or organization fields. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "outputformat": {
+                "description": "Response output format. Acceptable values are 'XML' or 'JSON'. Defaults to 'JSON' if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "mask": {
+                "description": "Get ranges by CIDR. Acceptable values: 0 - 128 (0 - 32 for IPv4). Default is 128 if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "ip": {
+                "description": "Get ranges by IPv4/IPv6 address or by CIDR. Default is '8.8.8.8'.",
+                "type": "str, optional",
+                "default": "8.8.8.8"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "production_years_by_model_id",
+        "description": "Retrieves the production years for a motorcycle model based on its model ID from the Motorcycle Specs Database API.",
+        "parameters": {
+            "modelid": {
+                "description": "The unique identifier of the motorcycle model.",
+                "type": "str",
+                "default": "15894"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "consulta_por_cnpj",
+        "description": "Fetches data and information for a given CNPJ.",
+        "parameters": {
+            "cnpj": {
+                "description": "The CNPJ number to be queried.",
+                "type": "str",
+                "default": "15754475000140"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "consulta_dados_societ_rios",
+        "description": "Fetches the data of a partner (socio) associated with the given socioeconomic ID (id_socio).",
+        "parameters": {
+            "id_socio": {
+                "description": "The socioeconomic ID of the partner to be queried.",
+                "type": "str",
+                "default": "CONTATOS_ID_SOCIO"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_all_models_by_brand_and_family",
+        "description": "Fetches all watch models by given brand and family from the Watch Database API.",
+        "parameters": {
+            "family": {
+                "description": "The family name of the watch models to retrieve.",
+                "type": "str",
+                "default": "Aqua Terra"
+            },
+            "brandname": {
+                "description": "The brand name of the watch models to retrieve.",
+                "type": "str",
+                "default": "Omega"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "get_sample_businessprofile",
+        "description": "Fetches fake-generated Business Profile sample data using a specified API.",
+        "parameters": {
+            "locale": {
+                "description": "The locale to set language and regional details of the generated profiles. Defaults to 'en'.",
+                "type": "str",
+                "default": "en"
+            },
+            "count": {
+                "description": "The number of profiles to generate. The maximum count is 1000. Defaults to 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "mouldinformation",
+        "description": "Retrieves mould information for a given tenant ID using the specified RapidAPI key.",
+        "parameters": {
+            "tenantid": {
+                "description": "The ID of the tenant for which mould information is to be retrieved.",
+                "type": "str",
+                "default": "TNTgielleplast"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "verify_pan_card",
+        "description": "Verifies the details of a PAN Card using a government database through an API.",
+        "parameters": {
+            "x_rapid_api": {
+                "description": "The X-RapidAPI host value required for the API query.",
+                "type": "str",
+                "default": "rapid-api-database"
+            },
+            "pannumber": {
+                "description": "The PAN Card number to be verified.",
+                "type": "str",
+                "default": "FNLPM8635N"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "veiculo_tipo_id_marca_id_modelo_id_modelo_ano",
+        "description": "Fetches vehicle information based on the provided type, brand, model, and year using the RapidAPI service.",
+        "parameters": {
+            "id_modelo_ano": {
+                "description": "The year of the vehicle model.",
+                "type": "str",
+                "default": "1995-1"
+            },
+            "veiculo_tipo": {
+                "description": "The type of the vehicle (e.g., car, motorcycle, etc.).",
+                "type": "str",
+                "default": "carros"
+            },
+            "id_marca": {
+                "description": "The brand ID of the vehicle.",
+                "type": "str",
+                "default": "6"
+            },
+            "id_modelo": {
+                "description": "The model ID of the vehicle.",
+                "type": "str",
+                "default": "43"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "search_all_cars",
+        "description": "Fetches a list of vehicles from an API based on the provided vehicle type.",
+        "parameters": {
+            "vehicle_type": {
+                "description": "Type of vehicle to fetch details for (e.g., 'car' or 'bike').",
+                "type": "str",
+                "default": "car"
+            }
+        },
+        "domain": "Database"
+    },
+    {
+        "name": "fur_color",
+        "description": "Fetches a list of all dogs that have the specified fur color using the DogBreedDB API.",
+        "parameters": {
+            "furcolor_icontains": {
+                "description": "The fur color to search for in the dog breed database.",
+                "type": "str",
+                "default": "white"
+            }
+        },
+        "domain": "Database"
+    }
+]

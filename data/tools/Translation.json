@@ -1,0 +1,111 @@
+[
+    {
+        "name": "v1_dictionary",
+        "description": "Fetches the definition of a given word using the API Ninjas Dictionary API.",
+        "parameters": {
+            "word": {
+                "description": "The word to look up.",
+                "type": "str",
+                "default": "bright"
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "dictionary_examples_temporarily_unavailable",
+        "description": "Fetch dictionary examples for a given query and language using the RapidAPI service.",
+        "parameters": {
+            "q": {
+                "description": "The query string to search for dictionary examples.",
+                "type": "str",
+                "default": ""
+            },
+            "language": {
+                "description": "The language code for the dictionary examples.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "dictionary_synonyms_temporarily_unavailable",
+        "description": "Fetches synonyms from a dictionary API for a given word in the specified language.",
+        "parameters": {
+            "language": {
+                "description": "The language for which the synonyms are to be fetched.",
+                "type": "str",
+                "default": ""
+            },
+            "q": {
+                "description": "The word for which synonyms are being requested.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "get_voice",
+        "description": "Generates a voice response from the given text using the Anime Voice Waifu AI via RapidAPI.",
+        "parameters": {
+            "text": {
+                "description": "The text to be converted into voice.",
+                "type": "str",
+                "default": ""
+            },
+            "speaker": {
+                "description": "The speaker's voice to use for conversion. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "transliterate_any_to_latin",
+        "description": "Transliterates the given text from any language to Latin script using the RapidAPI Webit Language Transliterate API.",
+        "parameters": {
+            "text": {
+                "description": "The text to be transliterated to Latin script.",
+                "type": "str",
+                "default": "\u3053\u3093\u306b\u3061\u306f\u3002"
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "bilingual_dictionary",
+        "description": "Queries a powerful multi-language bilingual neural translation dictionary, supporting 80+ languages, to get translations.",
+        "parameters": {
+            "q": {
+                "description": "The word or comma-separated words (up to 10 words per request) to seek bilingual translations for.",
+                "type": "str",
+                "default": "merci, poisson, beaucoup"
+            },
+            "is_from": {
+                "description": "The ISO 639-1 language code of the source language. Supported languages include 'ar', 'az', 'be', 'bg', 'ca', 'ce', 'cs', 'cy', 'da', 'de', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fr', 'gl', 'he', 'hi', 'hr', 'hu', 'hy', 'id', 'it', 'ja', 'ka', 'kk', 'ko', 'la', 'lt', 'lv', 'mk', 'ms', 'nl', 'nn', 'no', 'pl', 'pt', 'ro', 'ru', 'sh', 'sk', 'sl', 'sr', 'sv', 'ta', 'tg', 'th', 'tr', 'tt', 'uk', 'ur', 'uz', 'vi', 'vo', 'zh'.",
+                "type": "str",
+                "default": "fr"
+            },
+            "to": {
+                "description": "The ISO 639-1 language code of the target language. The same set of supported languages as `is_from`.",
+                "type": "str",
+                "default": "en"
+            }
+        },
+        "domain": "Translation"
+    },
+    {
+        "name": "fast_language_detection",
+        "description": "Detects the language of a given text using the RapidAPI Translate API.",
+        "parameters": {
+            "text": {
+                "description": "The text for which to detect the language.",
+                "type": "str",
+                "default": "this is accurate and it can improve if it's longer"
+            }
+        },
+        "domain": "Translation"
+    }
+]

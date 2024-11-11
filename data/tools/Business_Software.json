@@ -1,0 +1,442 @@
+[
+    {
+        "name": "recommend",
+        "description": "Fetches a recommendation for a given experiment ID using the Toolbench RapidAPI service.",
+        "parameters": {
+            "experiment_id": {
+                "description": "The ID of the experiment for which to fetch recommendations.",
+                "type": "int",
+                "default": "12234"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "software_assets",
+        "description": "Fetch details of SaaS/Software tools based on specified feature tags or software name.",
+        "parameters": {
+            "q": {
+                "description": "Query string representing the list of feature tags or the name of the software for which details are to be fetched.",
+                "type": "str",
+                "default": "email-marketing, landing-pages"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "read_user",
+        "description": "Fetch user details from the IronWifi API using the provided user ID.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the user to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "get_case_by_id",
+        "description": "Fetch the case payload from the Yardillo API using the given case ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the case to fetch.",
+                "type": "str",
+                "default": "611c0765e9308692195b8538"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "city_list",
+        "description": "Fetches a list of valid cities for a given province using the Canadian Gas Prices API.",
+        "parameters": {
+            "province": {
+                "description": "The name of the province for which to fetch the list of cities.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "label_templates",
+        "description": "Fetches a list of label templates filtered by various parameters such as paper format, brand, label size, and shape.",
+        "parameters": {
+            "format": {
+                "description": "The paper format, either 'Letter' (8.5 inch by 11 inch) or 'A4' (210 mm by 297 mm).",
+                "type": "str",
+                "default": "letter"
+            },
+            "brand": {
+                "description": "The name of the label manufacturer. Default is 'avery'. Possible values include 'Avery', 'Herma', 'Onlinelabels', 'Uline', 'Megastar', 'Sheetlabels'.",
+                "type": "str, optional",
+                "default": "avery"
+            },
+            "height": {
+                "description": "The height of the label.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "code": {
+                "description": "A string representing approximate label sizes in the format [width]x[height]. Default is '2x2'.",
+                "type": "str, optional",
+                "default": "2x2"
+            },
+            "width": {
+                "description": "The width of the label.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "shape": {
+                "description": "The shape of the label. Valid values include 'square', 'rectangle', 'circle', 'oval'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "label_template_brands",
+        "description": "Returns the list of blank label sheet brands supported by Ecardify on the given date.",
+        "parameters": {
+            "format": {
+                "description": "The paper size format, which can be either \"Letter\" (8.5 inch by 11 inch) or \"A4\" (210 mm by 297 mm).",
+                "type": "str",
+                "default": "a4"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "get_all_images_of_an_collection",
+        "description": "Fetches all images from a specified collection using the Pulsar6 API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the collection to retrieve images from.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "similar",
+        "description": "Search for visually similar images to a given image ID from a previous search result.",
+        "parameters": {
+            "image_id": {
+                "description": "The image ID of the image from the search results for which to find visually similar images.",
+                "type": "str",
+                "default": "7TJ6HT2DAUMDFITP4LSIJLWICKWRCQOE"
+            },
+            "number": {
+                "description": "The number of similar images to retrieve. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "logo_api",
+        "description": "Fetches the logo for a given domain using the RapidAPI logo service.",
+        "parameters": {
+            "domain": {
+                "description": "The domain name for which the logo is to be fetched.",
+                "type": "str",
+                "default": "amazon.com"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "read_vault_by_name",
+        "description": "Fetches vault details by the given vault name using the Yardillo API.",
+        "parameters": {
+            "name": {
+                "description": "The name of the vault to fetch details for.",
+                "type": "str",
+                "default": "Vault_ESBHI"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "read_group",
+        "description": "Fetches information of a specific group from the IronWiFi API using the given group ID.",
+        "parameters": {
+            "group_id": {
+                "description": "The ID of the group to retrieve information for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "list_folder_contents",
+        "description": "Retrieves the contents of a specified Github repository folder using the Git Pager API.",
+        "parameters": {
+            "repo": {
+                "description": "The repository name in the format 'owner/repo'. Defaults to 'gina305/switch-code'.",
+                "type": "str",
+                "default": "gina305/switch-code"
+            },
+            "path": {
+                "description": "The filepath within the repository. Defaults to '/'.",
+                "type": "str",
+                "default": "/"
+            },
+            "key": {
+                "description": "The access token for Github API authentication.",
+                "type": "str",
+                "default": "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"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "label_sizes",
+        "description": "Fetches a list of label sizes in the specified format from the RapidAPI service.",
+        "parameters": {
+            "format": {
+                "description": "The paper size format. Can be either \"Letter\" for 8.5 inch by 11 inch, or \"A4\" for 210 mm by 297 mm.",
+                "type": "str",
+                "default": "letter"
+            },
+            "shape": {
+                "description": "The label shape. Defaults to 'square'.",
+                "type": "str, optional",
+                "default": "square"
+            },
+            "brand": {
+                "description": "The label manufacturer's name. Defaults to 'avery'. Possible values include \"Avery\", \"Herma\", \"Onlinelabels\", \"Uline\", \"Megastar\", and \"Sheetlabels\".",
+                "type": "str, optional",
+                "default": "avery"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "convert_url_to_image",
+        "description": "Converts a URL to an image by making a GET request to the Cloudlayer.io API.",
+        "parameters": {
+            "url": {
+                "description": "The URL to be converted to an image.",
+                "type": "str",
+                "default": "https://google.com"
+            },
+            "timeout": {
+                "description": "The request timeout in milliseconds. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "get_campaign_lead_from_id",
+        "description": "Retrieve lead information from a campaign using its ID via the Fomo API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the campaign to retrieve the lead information from.",
+                "type": "str",
+                "default": "Lead"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "search_company_by_name",
+        "description": "Search for company information by name using the RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "int",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The maximum number of results per page.",
+                "type": "int",
+                "default": "10"
+            },
+            "companyname": {
+                "description": "The name of the company to search for.",
+                "type": "str",
+                "default": "ESK GLOBAL SERVICES LIMITED"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "check_wordpress",
+        "description": "Checks whether the specified URL is running WordPress using the provided User-Agent and RapidAPI key.",
+        "parameters": {
+            "user_agent": {
+                "description": "The User-Agent string to include in the request headers.",
+                "type": "str",
+                "default": ""
+            },
+            "url": {
+                "description": "The URL of the website to check for WordPress.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "get_product_reviews",
+        "description": "Retrieves reviews for a specific product associated with a given app key from Yotpo.",
+        "parameters": {
+            "count": {
+                "description": "The number of reviews to fetch.",
+                "type": "str",
+                "default": "3"
+            },
+            "page": {
+                "description": "The page number to fetch reviews from.",
+                "type": "str",
+                "default": "1"
+            },
+            "app_key": {
+                "description": "The application key assigned after signing up with Yotpo (www.yotpo.com).",
+                "type": "str",
+                "default": "B02uug6tF2uEA0Denhj0c9PV73y5PEOuKFmTCGb1"
+            },
+            "domain_key": {
+                "description": "The unique identifier of the product.",
+                "type": "str",
+                "default": "92431514"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "download_zip",
+        "description": "Downloads a ZIP file of images from a specified collection using the provided RapidAPI key.",
+        "parameters": {
+            "collectionid": {
+                "description": "The ID of the image collection to download.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "getprofile",
+        "description": "Retrieve the profile information of a specified Snapchat user using the RapidAPI.",
+        "parameters": {
+            "username": {
+                "description": "The Snapchat username of the profile to retrieve.",
+                "type": "str",
+                "default": "brentrivera"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "get_campaign_from_url",
+        "description": "Fetches campaign data from the Fomo API based on a specified campaign ID and optional URL.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the campaign.",
+                "type": "str",
+                "default": "Lead"
+            },
+            "url": {
+                "description": "The URL to be included in the query. Defaults to 'gogofodo.com'.",
+                "type": "str, optional",
+                "default": "gogofodo.com"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "search_company_by_email",
+        "description": "Searches for companies associated with a given email using the B2B Hint RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to search for associated companies.",
+                "type": "str",
+                "default": "rsing@tesla.com"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "proxy_get",
+        "description": "Fetches a list of proxies based on specified parameters.",
+        "parameters": {
+            "type": {
+                "description": "The type of proxy to retrieve. Possible values are 'http', 'https', 'socks4', 'socks5'. Default is 'http'.",
+                "type": "str",
+                "default": "http"
+            },
+            "country": {
+                "description": "A two-letter country code to filter proxies by country. For more information about country codes, refer to https://www.nationsonline.org/oneworld/country_code_list.htm. Default is 'US'.",
+                "type": "str",
+                "default": "US"
+            },
+            "anonymity": {
+                "description": "The level of anonymity required. Possible values are 'high', 'anonymous', 'transparent'. Default is 'high'.",
+                "type": "str",
+                "default": "high"
+            }
+        },
+        "domain": "Business_Software"
+    },
+    {
+        "name": "viewrecords",
+        "description": "Fetch records from a specified Zoho Creator view or report using the Zoho Creator API.",
+        "parameters": {
+            "scope": {
+                "description": "The scope of the request, indicating what data the request is allowed to access.",
+                "type": "str",
+                "default": "creatorapi"
+            },
+            "authtoken": {
+                "description": "Authentication token for accessing the Zoho Creator API.",
+                "type": "str",
+                "default": "longTextStringFromAccounts"
+            },
+            "applinkname": {
+                "description": "The unique link name of the Zoho Creator application.",
+                "type": "str",
+                "default": "mrp"
+            },
+            "zc_ownername": {
+                "description": "The owner name of the Zoho Creator account.",
+                "type": "str",
+                "default": "ownerName"
+            },
+            "viewlinkname": {
+                "description": "The specific view or report from which to fetch records.",
+                "type": "str",
+                "default": "Contact_Details"
+            },
+            "raw": {
+                "description": "Whether to fetch raw data. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "criteria": {
+                "description": "Criteria to filter the records. Defaults to '(Country == \"US\")'.",
+                "type": "str, optional",
+                "default": "(Country == \"US\")"
+            },
+            "startindex": {
+                "description": "The starting index for fetching records. Defaults to '0'.",
+                "type": "str, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The maximum number of records to fetch. Defaults to '100'.",
+                "type": "str, optional",
+                "default": "100"
+            }
+        },
+        "domain": "Business_Software"
+    }
+]

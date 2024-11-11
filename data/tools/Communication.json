@@ -1,0 +1,495 @@
+[
+    {
+        "name": "email_id",
+        "description": "Validates an email address using the Toolbench API and returns the validation result.",
+        "parameters": {
+            "email": {
+                "description": "The email address to validate.",
+                "type": "str",
+                "default": "test@gmail.com"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "postalcode",
+        "description": "Fetches location information for a given US postal code using the Toolbench API service.",
+        "parameters": {
+            "postal_code": {
+                "description": "The postal code or zip code for which to fetch location information.",
+                "type": "str",
+                "default": "33166"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "getstatus",
+        "description": "Fetches the status of the current session for a given phone ID from the Maytapi WhatsApp API.",
+        "parameters": {
+            "phone_id": {
+                "description": "The unique identifier for the phone whose session status is to be queried.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "article_index",
+        "description": "Fetches an indexed list of articles from the RapidAPI endpoint with an optional limit on the number of articles returned.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of articles to return. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "getmessage",
+        "description": "Retrieves message details based on the provided message ID using the Toolbench RapidAPI service.",
+        "parameters": {
+            "message_id": {
+                "description": "The unique identifier of the message to retrieve.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "user_login",
+        "description": "Logs in a user with the given username and password, and returns a JSON object containing the account's session key.",
+        "parameters": {
+            "username": {
+                "description": "Username for the user account. For US domestic users, this should be a 10-digit number. For international users, use the full E.164 format (e.g., US: 5555555555, E.164: +1155555555555).",
+                "type": "str",
+                "default": ""
+            },
+            "password": {
+                "description": "Password associated with the username.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "get_1_obter_c_digo_do_chat_code_to_chat",
+        "description": "This function retrieves the chat code by querying the \"compras-net\" API using the provided UASG code and process number.",
+        "parameters": {
+            "co_uasg": {
+                "description": "Code of the UASG (Unified System of General Services Code) of the organization.",
+                "type": "int",
+                "default": "980369"
+            },
+            "numprp": {
+                "description": "Number of the process to be consulted.",
+                "type": "int",
+                "default": "632021"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "retrieve_audio_file",
+        "description": "Retrieve an audio file in MP3 format from a previously submitted text-to-speech conversion.",
+        "parameters": {
+            "transactionid": {
+                "description": "The transaction ID for the previously submitted text-to-speech conversion.",
+                "type": "str",
+                "default": "string"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "queue",
+        "description": "Retrieve the queue information of a phone using the specified phone ID.",
+        "parameters": {
+            "phone_id": {
+                "description": "The ID of the phone for which queue information is to be retrieved.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "api_whois",
+        "description": "Fetch WHOIS data for a given IP address, host, or URL using the RapidAPI service.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to query WHOIS information for. Defaults to '8.8.8.8'.",
+                "type": "str, optional",
+                "default": "8.8.8.8"
+            },
+            "host": {
+                "description": "The host name to query WHOIS information for. Defaults to 'google.com'.",
+                "type": "str, optional",
+                "default": "google.com"
+            },
+            "url": {
+                "description": "The URL to query WHOIS information for. Defaults to 'http://google.com'.",
+                "type": "str, optional",
+                "default": "http://google.com"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "stickers_trending",
+        "description": "Fetches trending stickers or creators from the Mojitok sticker store API.",
+        "parameters": {
+            "include": {
+                "description": "Specifies whether to include 'STICKER_PACK' or 'CREATOR' information in the response. Defaults to 'STICKER_PACK'.",
+                "type": "str",
+                "default": "STICKER_PACK"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "advanced_phone_number_lookup",
+        "description": "Retrieves advanced technical information about a phone number, including validity, approximate location, timezone, carrier, line type, ported status, robocall/spam score, and more.",
+        "parameters": {
+            "dialcode": {
+                "description": "The phone number dial code to retrieve information for.",
+                "type": "str",
+                "default": "+16502530000"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "message_send",
+        "description": "Sends an SMS message using the SensSMS API.",
+        "parameters": {
+            "password": {
+                "description": "Your SensSMS API key.",
+                "type": "str",
+                "default": ""
+            },
+            "to": {
+                "description": "Destination phone number.",
+                "type": "int",
+                "default": ""
+            },
+            "text": {
+                "description": "Content of the SMS message.",
+                "type": "str",
+                "default": ""
+            },
+            "action": {
+                "description": "The action type for the API call.",
+                "type": "str",
+                "default": "message_send"
+            },
+            "username": {
+                "description": "Your SensSMS username.",
+                "type": "str",
+                "default": ""
+            },
+            "is_from": {
+                "description": "The sender of the message. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "report_mask": {
+                "description": "The report mask for SMS status updates. Defaults to 19.",
+                "type": "int, optional",
+                "default": "19"
+            },
+            "report_url": {
+                "description": "URL for receiving SMS status reports. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "getscreen",
+        "description": "Fetches a screenshot of the screen in the current session for the given phone ID.",
+        "parameters": {
+            "phone_id": {
+                "description": "The unique identifier of the phone whose screen session is to be captured.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "contacts",
+        "description": "Fetches the contacts list from a specified WhatsApp instance using the Maytapi API.",
+        "parameters": {
+            "phone_id": {
+                "description": "The unique identifier for the phone instance in the Maytapi WhatsApp service.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "redeploy",
+        "description": "Redeploys a Docker instance of the specified phone. This function can be used to reboot the instance if the phone is experiencing unexpected problems.",
+        "parameters": {
+            "phone_id": {
+                "description": "The unique identifier of the phone whose Docker instance is to be redeployed.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "v1_qrcode",
+        "description": "Generates a QR code image using the API Ninjas QR Code API, based on the specified input parameters.",
+        "parameters": {
+            "data": {
+                "description": "Data to encode in the QR code.",
+                "type": "str",
+                "default": "https://api-ninjas.com"
+            },
+            "format": {
+                "description": "Image format to return. Must be one of the following: png, jpg, jpeg, eps, svg.",
+                "type": "str",
+                "default": "png"
+            },
+            "size": {
+                "description": "Size of the QR code image to generate. The output will be a square image with (size x size) dimensions. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "fg_color": {
+                "description": "Foreground color of the QR code. Must be a 6-digit hex color (e.g., 00ff00 for green). Defaults to None (black).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bg_color": {
+                "description": "Background color of the QR code. Must be a 6-digit hex color (e.g., 00ff00 for green). Defaults to None (white).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "get_2_mensagens_do_chat_chat_message",
+        "description": "Fetches chat messages from the \"compras-net\" API based on the given chat code.",
+        "parameters": {
+            "cod": {
+                "description": "The chat code to fetch messages for.",
+                "type": "int",
+                "default": "1104281"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "basic_phone_number_validation",
+        "description": "Validates and formats a phone number using the Toolbench RapidAPI service.",
+        "parameters": {
+            "dialcode": {
+                "description": "The phone number to be validated and formatted.",
+                "type": "str",
+                "default": "+12125551234"
+            },
+            "country_code": {
+                "description": "The ISO 3166-1 alpha-2 country code. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "carrier_endpoint",
+        "description": "Retrieves carrier information for a given phone number using the RapidAPI service.",
+        "parameters": {
+            "phonenumber": {
+                "description": "The phone number for which to look up carrier information.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "usuarios",
+        "description": "Fetches user data from the RapidAPI Pizza Allapala service.",
+        "parameters": {
+            "is_id": {
+                "description": "The user ID to fetch data for. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "weather_dataset",
+        "description": "Fetches weather data from the Weather Dataset API using provided parameters.",
+        "parameters": {
+            "data": {
+                "description": "The specific weather data to query from the API. Defaults to '1'.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "v1_validatephone",
+        "description": "Validates a given phone number and returns metadata using the API Ninjas Validate Phone API.",
+        "parameters": {
+            "number": {
+                "description": "The phone number to validate. If `country` is not specified, the phone number must include the 3-digit country code prefix.",
+                "type": "str",
+                "default": "+12065550100"
+            },
+            "country": {
+                "description": "The 2-letter ISO-3166 country code corresponding to the phone number.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "purgequeue",
+        "description": "Clears the send message queue for a given phone ID using the Maytapi WhatsApp API.",
+        "parameters": {
+            "phone_id": {
+                "description": "The ID of the phone whose message queue is to be purged.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "get_an_answer",
+        "description": "Fetches an answer based on the given query parameters from a specific API endpoint.",
+        "parameters": {
+            "page": {
+                "description": "The page number to fetch. Default is '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The number of items per page. Default is '10'.",
+                "type": "str, optional",
+                "default": "10"
+            },
+            "status": {
+                "description": "The status of the dialogue (e.g., 'approved' or 'analyzing'). Default is 'approved'.",
+                "type": "str, optional",
+                "default": "approved"
+            },
+            "answer": {
+                "description": "The pre-defined response for the initial speech of the dialogue. Default is 'Hi, how are you?'.",
+                "type": "str, optional",
+                "default": "Hi, how are you?"
+            },
+            "is_id": {
+                "description": "The unique identifier of the dialogue. Default is '5ec47b3d8958430d6a6d5898'.",
+                "type": "str, optional",
+                "default": "5ec47b3d8958430d6a6d5898"
+            },
+            "speech": {
+                "description": "The initial speech input for which an answer is sought. Default is 'Hi'.",
+                "type": "str, optional",
+                "default": "Hi"
+            },
+            "user": {
+                "description": "The unique identifier of the user who created the dialogue. Default is '5ec479048958430d6a6d5895'.",
+                "type": "str, optional",
+                "default": "5ec479048958430d6a6d5895"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "account_balance",
+        "description": "Fetch the Binance Coin (BNB) balance for a given address on the Binance Smart Chain.",
+        "parameters": {
+            "address": {
+                "description": "The address for which you want to fetch the BNB balance.",
+                "type": "str",
+                "default": "0x0000000000000000000000000000000000000123"
+            },
+            "network": {
+                "description": "The network to use, either 'mainnet' or 'testnet'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "get_response",
+        "description": "Generates an automatic custom response based on the type and brand of a business and a given review.",
+        "parameters": {
+            "business_type": {
+                "description": "The type of the business (e.g., \"Restaurant\").",
+                "type": "str",
+                "default": "Restaurant"
+            },
+            "business_brand": {
+                "description": "The brand of the business (e.g., \"Fuzi\").",
+                "type": "str",
+                "default": "Fuzi"
+            },
+            "avis": {
+                "description": "The review text (e.g., \"Merci pour votre accueil, c'\u00e9tait parfait\").",
+                "type": "str",
+                "default": "C'\u00e9tait excellent"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "getaccount",
+        "description": "Retrieves a list of accounts from the specified projects using the provided API key.",
+        "parameters": {
+            "keyapi": {
+                "description": "The API key required for authorization to access the list of accounts.",
+                "type": "str",
+                "default": "KJaASDASD"
+            }
+        },
+        "domain": "Communication"
+    },
+    {
+        "name": "teams",
+        "description": "Fetches a list of teams that match the given parameters from the API.",
+        "parameters": {
+            "estimatebill": {
+                "description": "Flag indicating whether to return a cost estimate based on the provided parameters. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "competitionstageid": {
+                "description": "The identifier of the competition stage in which teams compete. Use the 'Get Competitions' operation to find valid identifiers. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "countryid": {
+                "description": "The identifier of the country from which the teams originate. Use the 'Get Countries' operation to find valid identifiers. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "namelike": {
+                "description": "A full or partial name of a team (case-insensitive). Minimum length is 4 characters. Defaults to 'liverp'.",
+                "type": "str, optional",
+                "default": "liverp"
+            }
+        },
+        "domain": "Communication"
+    }
+]

@@ -1,0 +1,1438 @@
+[
+    {
+        "name": "auto_complete_deprecating",
+        "description": "Fetch auto-complete suggestions for a given query from the specified API.",
+        "parameters": {
+            "query": {
+                "description": "The term or phrase for which to get suggestions.",
+                "type": "str",
+                "default": "bikini tops"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "qnas_list",
+        "description": "Fetches a list of questions and answers related to a specific product from the RapidAPI Kohls service.",
+        "parameters": {
+            "productid": {
+                "description": "The identifier of the product for which to list questions and answers.",
+                "type": "str",
+                "default": "4201989"
+            },
+            "sort": {
+                "description": "The sorting order of the results. Default is 'SubmissionTime:desc'. Options include 'LastApprovedAnswerSubmissionTime:desc', 'LastApprovedAnswerSubmissionTime:asc', 'SubmissionTime:desc', and 'SubmissionTime:asc'.",
+                "type": "str, optional",
+                "default": "SubmissionTime:desc"
+            },
+            "offset": {
+                "description": "The offset for paging through the results. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The maximum number of results to return. Default is 6.",
+                "type": "int, optional",
+                "default": "6"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "products_get_reviews",
+        "description": "Fetches brief reviews of a product from the Shein API.",
+        "parameters": {
+            "goods_spu": {
+                "description": "The value of 'productRelationID' returned in the /products/list or /products/search endpoints. Defaults to 'm22022854841'.",
+                "type": "str, optional",
+                "default": "m22022854841"
+            },
+            "cat_id": {
+                "description": "The value of 'cat_id' returned in the /products/list or /products/search endpoints. Defaults to '1727'.",
+                "type": "str, optional",
+                "default": "1727"
+            },
+            "sku": {
+                "description": "The value of 'goods_sn' returned in the /products/list or /products/search endpoints. Defaults to 'rm2202285484176751'.",
+                "type": "str, optional",
+                "default": "rm2202285484176751"
+            },
+            "currency": {
+                "description": "The 3-letter currency code. Defaults to 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            },
+            "goods_id": {
+                "description": "The value of 'goods_id' field returned in the /products/list or /products/search endpoints. Defaults to '10196865'.",
+                "type": "str, optional",
+                "default": "10196865"
+            },
+            "language": {
+                "description": "The 2-letter language code. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "country": {
+                "description": "The 2-letter country code. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_likecounts_by_itemids_styleids",
+        "description": "Retrieves like counts for specified item IDs and style IDs from the Zappos API.",
+        "parameters": {
+            "siteid": {
+                "description": "The ID representing the site.",
+                "type": "int",
+                "default": "1"
+            },
+            "itemids": {
+                "description": "The IDs representing the items/styles.",
+                "type": "int",
+                "default": "15651"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "products_v2_list_recommended",
+        "description": "This function retrieves a list of recommended products from the Target API based on a given store ID and TCINs.",
+        "parameters": {
+            "store_id": {
+                "description": "The ID of the store for which to get recommendations. This value should match the location ID returned from a previous call to the stores/list endpoint.",
+                "type": "int",
+                "default": "911"
+            },
+            "tcins": {
+                "description": "The TCINs (Target.com Item Numbers) for which to get product recommendations. This value should come from a previous call to the products/list endpoint.",
+                "type": "int",
+                "default": "54191097"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "products_search",
+        "description": "Search for products by a specified keyword and optional filters, with support for pagination and sorting.",
+        "parameters": {
+            "keyword": {
+                "description": "The term or phrase to search for related products.",
+                "type": "str",
+                "default": "light shaded room"
+            },
+            "filters": {
+                "description": "Filters to apply to the product search results. Multiple filters can be specified using the format `key~value`. For example, 'colorList~White&masterClID~180'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "curpage": {
+                "description": "The current page number for paginated results. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "itemsperpage": {
+                "description": "The number of items to display per page. Default is 48.",
+                "type": "int, optional",
+                "default": "48"
+            },
+            "sortby": {
+                "description": "The field by which to sort the results. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_1688_product_detail",
+        "description": "Fetches detail of a product from 1688 using the provided product ID and RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the product to fetch details for from 1688.",
+                "type": "int",
+                "default": 601513403951
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_reviews",
+        "description": "Fetches and paginates through product reviews on Amazon for a given product.",
+        "parameters": {
+            "asin": {
+                "description": "Product ASIN for which to get reviews.",
+                "type": "str",
+                "default": "B07ZPKN6YR"
+            },
+            "query": {
+                "description": "Search query to filter reviews.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort_by": {
+                "description": "Sort order for reviews. Default is `TOP_REVIEWS`. Allowed values are `TOP_REVIEWS`, `MOST_RECENT`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "verified_purchases_only": {
+                "description": "Only return reviews by reviewers who made a verified purchase.",
+                "type": "bool, optional",
+                "default": "false"
+            },
+            "page_size": {
+                "description": "Number of reviews to return per page. Allowed values range from `1` to `20`. Default is `10`.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "page": {
+                "description": "Page number of results to return. Default is `1`.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "star_rating": {
+                "description": "Filter reviews by star rating. Default is `ALL`. Allowed values are `ALL`, `5_STARS`, `4_STARS`, `3_STARS`, `2_STARS`, `1_STARS`, `POSITIVE`, `CRITICAL`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "images_or_videos_only": {
+                "description": "Only return reviews containing images and/or videos.",
+                "type": "bool, optional",
+                "default": "false"
+            },
+            "country": {
+                "description": "Marketplace country, language, and currency. Default is `US`. Allowed values are `US`, `AU`, `BR`, `CA`, `CN`, `FR`, `DE`, `IN`, `IT`, `MX`, `NL`, `SG`, `ES`, `TR`, `AE`, `GB`, `JP`.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "stores",
+        "description": "Fetches a list of all IKEA stores in a specified country.",
+        "parameters": {
+            "countrycode": {
+                "description": "The two-letter country code representing the country for which to fetch the list of stores.",
+                "type": "str",
+                "default": "us"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "stores_list",
+        "description": "Returns a list of stores near the provided geographic location.",
+        "parameters": {
+            "longitude": {
+                "description": "The longitude of the geographic location.",
+                "type": "int",
+                "default": "-118.2487"
+            },
+            "latitude": {
+                "description": "The latitude of the geographic location.",
+                "type": "int",
+                "default": "33.9733"
+            },
+            "radius": {
+                "description": "The radius in miles to search for stores around the geographic location. Defaults to 25.",
+                "type": "int, optional",
+                "default": "25"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_awesome_product_details",
+        "description": "Fetches detailed information about a product using a given product ID from the Amazon Data Scraper API.",
+        "parameters": {
+            "productid": {
+                "description": "The unique identifier for the product to retrieve details for.",
+                "type": "str",
+                "default": "B00K3OM3PS"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "getproductsku",
+        "description": "Fetches price information for a product identified by its SKU from the RapidAPI price tracker service.",
+        "parameters": {
+            "product_sku": {
+                "description": "The SKU (Stock Keeping Unit) of the product to retrieve price information for.",
+                "type": "str",
+                "default": "PLID12183283"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_stores",
+        "description": "Fetches a list of stores from the \"Get Promo Codes\" API.",
+        "parameters": {
+            "page": {
+                "description": "The page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_description",
+        "description": "Fetches the detailed description of an AliExpress item using its item ID.",
+        "parameters": {
+            "itemid": {
+                "description": "The ID of the AliExpress item.",
+                "type": "int",
+                "default": "3256804591426248"
+            },
+            "locale": {
+                "description": "The locale for displaying titles and content in the selected language. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "products_search_by_barcode",
+        "description": "Search for a product in the Kohl's database using its UPC barcode.",
+        "parameters": {
+            "upc": {
+                "description": "The Universal Product Code of the product to be searched.",
+                "type": "str",
+                "default": "194574942221"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_categorization",
+        "description": "Categorizes a product based on its title and optional price using the Toolbench RapidAPI service.",
+        "parameters": {
+            "title": {
+                "description": "The title of the product to be categorized.",
+                "type": "str",
+                "default": "Abstract Egghead Plus Size Female Mannequin - Matte White Item "
+            },
+            "price": {
+                "description": "The price of the product. Default is 200.",
+                "type": "int, optional",
+                "default": "200"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "stores_get_details",
+        "description": "Fetch detailed information for a specific store location.",
+        "parameters": {
+            "location_id": {
+                "description": "The identifier for the store location, often obtained from the stores list endpoint.",
+                "type": "int",
+                "default": "911"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "navigations_get_tabs",
+        "description": "Fetches navigation tabs for a given language, country, and currency using the unofficial SHEIN API.",
+        "parameters": {
+            "language": {
+                "description": "The 2-letter language code. Defaults to 'en'.",
+                "type": "str",
+                "default": "en"
+            },
+            "country": {
+                "description": "The 2-letter country code. Defaults to 'US'.",
+                "type": "str",
+                "default": "US"
+            },
+            "currency": {
+                "description": "The 3-letter currency code. Defaults to 'USD'.",
+                "type": "str",
+                "default": "USD"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "countries_detail",
+        "description": "Fetch detailed information of a country from the unofficial Shein API.",
+        "parameters": {
+            "region": {
+                "description": "The region code to fetch details for a specific country. Default is 'US'.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_amazon_product_details",
+        "description": "Fetches the general product description of a specified Amazon product.",
+        "parameters": {
+            "productid": {
+                "description": "The unique identifier of the Amazon product.",
+                "type": "str",
+                "default": "B08L5NP6NG"
+            },
+            "api_key": {
+                "description": "An API key for accessing the Amazon data scraper service. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_comments_from_product_id",
+        "description": "Retrieve comments for a given product ID from the Trendyol API.",
+        "parameters": {
+            "product_id": {
+                "description": "The unique identifier for the product whose comments are to be retrieved.",
+                "type": "str",
+                "default": "685539438"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_amazon_search_results",
+        "description": "Fetches Amazon search results for a given query using the Toolbench RapidAPI Key.",
+        "parameters": {
+            "searchquery": {
+                "description": "The search term to query on Amazon.",
+                "type": "str",
+                "default": "mac"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_product_detail",
+        "description": "Fetch product details by item ID from the Yiwugo product data API.",
+        "parameters": {
+            "item_id": {
+                "description": "The unique identifier of the product.",
+                "type": "int",
+                "default": "930783722"
+            },
+            "lan": {
+                "description": "The language code for the data source, where 'en' is for English and 'cn' is for Chinese. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "search_autocomplete",
+        "description": "Fetches product autocompletion suggestions based on a search keyword.",
+        "parameters": {
+            "q": {
+                "description": "The search keyword for which to get autocompletion suggestions.",
+                "type": "str",
+                "default": "tv"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "search_by_keyword",
+        "description": "Searches for products using a specified keyword on the 1688 platform through the Taobao-Tmall Product Detail API.",
+        "parameters": {
+            "keyword": {
+                "description": "The search keyword to look for products.",
+                "type": "str",
+                "default": "\u6d77\u4e45\u6c34\u74f6"
+            },
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "navigations_get_node_content",
+        "description": "Fetches the content of a node in a navigation hierarchy.",
+        "parameters": {
+            "is_id": {
+                "description": "The 'id' field value returned from the /navigations/get-root endpoint.",
+                "type": "int",
+                "default": "26066300130"
+            },
+            "cat_id": {
+                "description": "The 'cat_id' field value returned from the /navigations/get-tabs endpoint.",
+                "type": "int",
+                "default": "2026"
+            },
+            "language": {
+                "description": "The 2-letter language code (default is 'en').",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "currency": {
+                "description": "The 3-letter currency code (default is 'USD').",
+                "type": "str, optional",
+                "default": "USD"
+            },
+            "country": {
+                "description": "The 2-letter country code (default is 'US').",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "tmall_search_by_keyword",
+        "description": "Searches for products on Tmall by keyword.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the search results to retrieve.",
+                "type": "int",
+                "default": "1"
+            },
+            "keyword": {
+                "description": "The keyword to search for products.",
+                "type": "str",
+                "default": "\u6d77\u4e45\u6c34\u74f6"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_details",
+        "description": "Fetch product details from the given URL using the Axesso Kaufland Data Service API.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the product to look up.",
+                "type": "str",
+                "default": "https://www.kaufland.de/product/349303242/"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_brandlist_by_siteid_zappos_1_6pm_2",
+        "description": "Retrieve the brand list from the Zappos or 6pm websites by site ID using the RapidAPI.",
+        "parameters": {
+            "siteid": {
+                "description": "The site ID to fetch the brand list from (1 for Zappos, 2 for 6pm).",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_category_list",
+        "description": "Fetches the list of Amazon product categories for a specified country or marketplace.",
+        "parameters": {
+            "country": {
+                "description": "Sets the marketplace country, language, and currency.",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "getbarcode",
+        "description": "Retrieves price information based on a barcode from the South Africa Price Tracker API.",
+        "parameters": {
+            "barcode": {
+                "description": "The barcode of the product to look up.",
+                "type": "str",
+                "default": "6009175611701"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_comments_with_product_id",
+        "description": "Retrieve comments for a given product ID from the specified API.",
+        "parameters": {
+            "product_id": {
+                "description": "The ID of the product for which to retrieve comments.",
+                "type": "str",
+                "default": "493611399"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "amazonproductreviews",
+        "description": "Retrieves product reviews from Amazon using the provided API key, domain, and product ASIN.",
+        "parameters": {
+            "pagenum": {
+                "description": "The page number of reviews to retrieve. Each page contains 10 reviews.",
+                "type": "int",
+                "default": "1"
+            },
+            "domain": {
+                "description": "The Amazon domain to query reviews from (e.g., 'amazon.com', 'amazon.in', 'amazon.co.uk').",
+                "type": "str",
+                "default": "amazon.com"
+            },
+            "asin": {
+                "description": "The Amazon Standard Identification Number (ASIN) of the product to retrieve reviews for.",
+                "type": "str",
+                "default": "B01H6GUCCQ"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_all_brands",
+        "description": "Fetches all available brands from the iHerb Product Data API for a given page number.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve brands from.",
+                "type": "int",
+                "default": 1
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "zappos_search_product",
+        "description": "Searches for products on Zappos using the given keyword and various optional parameters for sorting and pagination.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term to use for finding products on Zappos.",
+                "type": "str",
+                "default": "crocs body"
+            },
+            "sort": {
+                "description": "The sorting criteria for the search results. Possible values are 'best_seller', 'relevance', 'low_to_high', 'high_to_low', 'customer_rating', 'new_arrivals', and 'brand_name'. Defaults to 'new_arrivals'.",
+                "type": "str, optional",
+                "default": "new_arrivals"
+            },
+            "page": {
+                "description": "The page number for pagination of search results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "search_shops",
+        "description": "Search for shops using a specified keyword.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for shops.",
+                "type": "str",
+                "default": ""
+            },
+            "lan": {
+                "description": "The language of the website to search (default is None). For instance, \"en\" for English or \"cn\" for Chinese.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number of search results (default is 1).",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "pagesize": {
+                "description": "The number of results per page (default is 10).",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_price_by_styleids_and_siteid_zappos_1_6pm_2",
+        "description": "Fetch the price information for specific style IDs and site ID from the Zappos API.",
+        "parameters": {
+            "siteid": {
+                "description": "The site ID for which the price information is requested.",
+                "type": "int",
+                "default": "1"
+            },
+            "styleids": {
+                "description": "The style IDs for which the price information is requested.",
+                "type": "int",
+                "default": "15651"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_offers",
+        "description": "Fetch all offers available for a specific product, given its product ID, and optional country and language preferences.",
+        "parameters": {
+            "product_id": {
+                "description": "The ID of the product for which to fetch offers.",
+                "type": "str",
+                "default": "11577822456427762145"
+            },
+            "country": {
+                "description": "Country code of the region/country to return offers for. Default is 'us'. Valid values can be found at https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "language": {
+                "description": "The language of the results. Default is 'en'. Valid values can be found at https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_fulfillment",
+        "description": "Fetches product fulfillment information from Target's API based on provided parameters.",
+        "parameters": {
+            "tcin": {
+                "description": "Target product ID.",
+                "type": "str",
+                "default": "51952757"
+            },
+            "accept": {
+                "description": "Content types that are acceptable for the response (default is 'application/json').",
+                "type": "str, optional",
+                "default": "application/json"
+            },
+            "cache_control": {
+                "description": "Cache control settings (default is 'no-cache').",
+                "type": "str, optional",
+                "default": "no-cache"
+            },
+            "authority": {
+                "description": "Authority hosting the API (default is 'redsky.target.com').",
+                "type": "str, optional",
+                "default": "redsky.target.com"
+            },
+            "accept_language": {
+                "description": "List of acceptable languages for the response (default is 'en-US,en;q=0.9').",
+                "type": "str, optional",
+                "default": "en-US,en;q=0.9"
+            },
+            "zip": {
+                "description": "The zipcode of the user's search location (default is '94611').",
+                "type": "str, optional",
+                "default": "94611"
+            },
+            "state": {
+                "description": "State code of the user's location (default is 'CA').",
+                "type": "str, optional",
+                "default": "CA"
+            },
+            "longitude": {
+                "description": "User's longitude information (default is '-122.200').",
+                "type": "str, optional",
+                "default": "-122.200"
+            },
+            "store_id": {
+                "description": "The ID of the Target store from which the fulfillment information is being retrieved (default is '3330').",
+                "type": "str, optional",
+                "default": "3330"
+            },
+            "latitude": {
+                "description": "User's latitude information (default is '37.820').",
+                "type": "str, optional",
+                "default": "37.820"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "tax_rate",
+        "description": "Retrieve the tax rate for a given zip code using the Toolbench RapidAPI service.",
+        "parameters": {
+            "zipcode": {
+                "description": "The zip code for which to retrieve the tax rate.",
+                "type": "str",
+                "default": "90210"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_product_s_offers",
+        "description": "Fetches the offers for a given product from the Amazon Data Scraper API.",
+        "parameters": {
+            "productid": {
+                "description": "The unique identifier for the product whose offers you want to retrieve.",
+                "type": "str",
+                "default": "B00K3OM3PS"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "taobao_search_by_keyword",
+        "description": "Search for products on Taobao using a specified keyword and return the search results.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve from the search results.",
+                "type": "int",
+                "default": "1"
+            },
+            "keyword": {
+                "description": "The search keyword to use for querying products.",
+                "type": "str",
+                "default": "\u6d77\u4e45\u6c34\u74f6"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "search_for_a_product",
+        "description": "Searches for a product by name using the RapidAPI service.",
+        "parameters": {
+            "q": {
+                "description": "The product name or search query.",
+                "type": "str",
+                "default": "iphone"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "shopify_store_products",
+        "description": "Retrieve all products from a Shopify store using the specified API.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve products from.",
+                "type": "int",
+                "default": "1"
+            },
+            "url": {
+                "description": "The base URL of the Shopify store.",
+                "type": "str",
+                "default": "https://row.gymshark.com"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_product_s_reviews",
+        "description": "Fetches reviews for a specified product using the Amazon Data Scraper API.",
+        "parameters": {
+            "productid": {
+                "description": "The unique identifier of the product whose reviews are to be fetched.",
+                "type": "str",
+                "default": "B00K3OM3PS"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_shipping_detail",
+        "description": "Retrieve detailed shipping information for a specific Aliexpress item.",
+        "parameters": {
+            "itemid": {
+                "description": "The Aliexpress product ID.",
+                "type": "int",
+                "default": "3256804591426248"
+            },
+            "quantity": {
+                "description": "The quantity of the item to consider for shipping. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "sellerid": {
+                "description": "The ID of the seller. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "ext": {
+                "description": "Additional parameter obtained from one of the Item Detail Endpoints for more accurate shipping options. Defaults to a predefined value.",
+                "type": "str, optional",
+                "default": "bVkg9vW8ihgAMt4XYtZhMB3rnoY6MGI8Sk1gfrl4IGWuBdZZb0gRv5vgI1r5DIn8Rj7mxVzOKbKpyHkmBItRm_k2dtJ1j_gHLTu5zNN9jXHeQploYHEajpnygmD_xKGbi9I_HzxO8TtoIpwdvl5ZfH6o_x5qCBy5D1cUo6t7LoDhx7UTHmFDiCHY0PpHokfJ"
+            },
+            "locale": {
+                "description": "Locale parameter for displaying titles and other content in the selected language. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Region parameter to accurately get shipping costs and other promotions for a specific geographic location. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "Currency parameter for displaying the product price in the selected currency. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_store_info",
+        "description": "Fetches detailed store information from AliExpress using the given seller ID and optional locale, region, and currency parameters.",
+        "parameters": {
+            "sellerid": {
+                "description": "The ID of the AliExpress seller whose store information is requested.",
+                "type": "str",
+                "default": "231651707"
+            },
+            "locale": {
+                "description": "The locale to display the titles and other content in the selected language.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region to accurately get the shipping costs and other promo/deals for a specific geo-location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency to display the product price in the selected currency.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "product_data",
+        "description": "Fetches detailed information about a specific product from the Ecommerce Product API.",
+        "parameters": {
+            "product": {
+                "description": "The name of the product to retrieve information for.",
+                "type": "str",
+                "default": "phone"
+            },
+            "page": {
+                "description": "The page number for paginated results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "fetch_company_details",
+        "description": "Fetch company details by company name using the Toolbench RapidAPI.",
+        "parameters": {
+            "query": {
+                "description": "The company name to search for.",
+                "type": "str",
+                "default": "saharsh"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "search_product",
+        "description": "This function searches for a product using the Tokopedia API based on the given query and act parameters.",
+        "parameters": {
+            "query": {
+                "description": "The search query string for the product to be searched.",
+                "type": "str",
+                "default": "Celana Jeans"
+            },
+            "act": {
+                "description": "The action parameter to specify the type of search.",
+                "type": "str",
+                "default": "search"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "get_images_by_productid_siteid_zappos_1_6pm_2",
+        "description": "Fetch images for a given product ID and site ID from the Zappos API.",
+        "parameters": {
+            "siteid": {
+                "description": "The site ID (1 for Zappos, 2 for 6pm).",
+                "type": "int",
+                "default": "1"
+            },
+            "productid": {
+                "description": "The product ID for which images are to be fetched.",
+                "type": "int",
+                "default": "8609549"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "zappos_product_detail_by_product_id",
+        "description": "Fetches real-time product information from Zappos by product ID.",
+        "parameters": {
+            "product_id": {
+                "description": "The ID of the product to be fetched.",
+                "type": "int",
+                "default": "9098084"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_detail_2",
+        "description": "Fetch detailed information for a specific AliExpress item.",
+        "parameters": {
+            "itemid": {
+                "description": "The AliExpress product ID.",
+                "type": "int",
+                "default": "3256804591426248"
+            },
+            "currency": {
+                "description": "The currency in which to display the product price. Valid values are listed in the '**Currency List**' at the '**Base**' group endpoints.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region to accurately get shipping costs and other promotions specific to a geographic location. Valid values are listed in the '**Country List**' at the '**Base**' group endpoints.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "locale": {
+                "description": "The locale to display titles and other content in the selected language. Valid values are listed in the '**Locale List**' at the '**Base**' group endpoints.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "bestbuyproductdata",
+        "description": "Fetches product data from Best Buy based on the search keyword and page number.",
+        "parameters": {
+            "keyword": {
+                "description": "The search term to look for products, e.g., \"iphone\", \"ps5\", \"sony tv\".",
+                "type": "str",
+                "default": "iphone"
+            },
+            "page": {
+                "description": "The page number to retrieve, starting from 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "nearby_stores",
+        "description": "Fetches a list of stores near a specified ZIP code from the RapidAPI Target API.",
+        "parameters": {
+            "place": {
+                "description": "The ZIP code or address around which to search for stores.",
+                "type": "str",
+                "default": "10010"
+            },
+            "within": {
+                "description": "The radius of the search area in miles. Defaults to '100'.",
+                "type": "str, optional",
+                "default": "100"
+            },
+            "limit": {
+                "description": "The maximum number of store results to return. Defaults to '20'.",
+                "type": "str, optional",
+                "default": "20"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_detail_simple",
+        "description": "Fetches and returns the details of a single item from AliExpress.",
+        "parameters": {
+            "itemid": {
+                "description": "The AliExpress product ID.",
+                "type": "int",
+                "default": "3256804591426248"
+            },
+            "locale": {
+                "description": "The locale to display the titles and other content in the selected language. Only supported values from AliExpress are accepted.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency to display the product price. Only supported values from AliExpress are accepted.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region to accurately get the shipping costs and other promotions for a specific geo-location. Only supported values from AliExpress are accepted.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "products_v2_list",
+        "description": "Fetches a list of products from the ASOS store with various filtering and sorting options.",
+        "parameters": {
+            "store": {
+                "description": "The store identifier obtained from the countries/list API.",
+                "type": "str",
+                "default": "US"
+            },
+            "offset": {
+                "description": "The offset to skip already viewed products.",
+                "type": "int",
+                "default": "0"
+            },
+            "categoryid": {
+                "description": "The category identifier from the categories/list API.",
+                "type": "int",
+                "default": "4209"
+            },
+            "limit": {
+                "description": "The number of items per page.",
+                "type": "int",
+                "default": "48"
+            },
+            "attribute_1046": {
+                "description": "Filter by style, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pricemin": {
+                "description": "Minimum price filter.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country code; default is 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "attribute_10147": {
+                "description": "Filter by leather/non-leather, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Sorting option, one of 'pricedesc', 'priceasc', or 'freshness'; default is 'freshness'.",
+                "type": "str, optional",
+                "default": "freshness"
+            },
+            "q": {
+                "description": "Search query for products by name (do not use with categoryId).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "base_colour": {
+                "description": "Filter by color, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "range": {
+                "description": "Filter by sale/new season, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "attribute_1047": {
+                "description": "Filter by product type, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "Currency code obtained from countries/list API; default is 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            },
+            "attribute_10155": {
+                "description": "Filter by range, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pricemax": {
+                "description": "Maximum price filter.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sizeschema": {
+                "description": "Size schema identifier obtained from countries/list API; default is 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "brand": {
+                "description": "Filter by brand, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "size": {
+                "description": "Filter by size, multiple values separated by comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language code; default is 'en-US'.",
+                "type": "str, optional",
+                "default": "en-US"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_store_item_search",
+        "description": "Searches for items in an AliExpress store.",
+        "parameters": {
+            "sellerid": {
+                "description": "The seller's ID on AliExpress.",
+                "type": "str",
+                "default": "231651707"
+            },
+            "storeid": {
+                "description": "The store's ID on AliExpress.",
+                "type": "str",
+                "default": "1102051418"
+            },
+            "sort": {
+                "description": "The sorting order of the items. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number for pagination. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "pagesize": {
+                "description": "The number of items to display per page. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region to accurately get shipping costs and other deals. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "locale": {
+                "description": "The locale to display the titles and content in the selected language. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency to display the product price in. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_search",
+        "description": "Searches for items on AliExpress based on various filters and criteria.",
+        "parameters": {
+            "brandid": {
+                "description": "The brand ID to filter items by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "catid": {
+                "description": "The category ID to filter items by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "The search query. Defaults to 'iphone'.",
+                "type": "str, optional",
+                "default": "iphone"
+            },
+            "page": {
+                "description": "The page number of the search results. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "loc": {
+                "description": "The location to filter items by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "locale": {
+                "description": "The locale to display titles and content in the selected language. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "endprice": {
+                "description": "The upper price limit to filter items by. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The sort order of the search results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "attr": {
+                "description": "The attributes to filter items by, separated by semicolons. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "startprice": {
+                "description": "The lower price limit to filter items by. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "The region to get accurate shipping costs and promotions. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency to display the product prices in. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_detail_3",
+        "description": "Fetch detailed information about a specific AliExpress item.",
+        "parameters": {
+            "itemid": {
+                "description": "Aliexpress product ID.",
+                "type": "int",
+                "default": "3256804591426248"
+            },
+            "currency": {
+                "description": "Currency for displaying the product price. Only supported currencies are accepted.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Region for accurate shipping costs and promotions. Only supported regions are accepted.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "locale": {
+                "description": "Locale for displaying titles and content in the desired language. Only supported locales are accepted.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "keyword_search",
+        "description": "Retrieves search results for a given keyword from the Otto e-commerce site using the RapidAPI Axesso service.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the search results to retrieve.",
+                "type": "int",
+                "default": "1"
+            },
+            "keyword": {
+                "description": "The search term to look for in the Otto database.",
+                "type": "str",
+                "default": "Laptop"
+            },
+            "sortby": {
+                "description": "The sorting criteria for the search results (default is 'topseller').",
+                "type": "str, optional",
+                "default": "topseller"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "navigations_get_root",
+        "description": "Fetches the root categories related to a specified tab from the navigations endpoint.",
+        "parameters": {
+            "channeltype": {
+                "description": "The value of the 'id' field returned in the /navigations/get-tabs endpoint.",
+                "type": "int",
+                "default": "2"
+            },
+            "currency": {
+                "description": "The 3-letter currency code. Defaults to 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            },
+            "country": {
+                "description": "The 2-letter country code. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "language": {
+                "description": "The 2-letter language code. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "eCommerce"
+    },
+    {
+        "name": "aliexpress_item_search_2",
+        "description": "Searches for items on AliExpress with various filtering options and returns the results.",
+        "parameters": {
+            "endprice": {
+                "description": "Maximum price of the items to be searched.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Sorting option for the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "brandid": {
+                "description": "Brand ID(s). Multiple IDs can be separated with a comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "attr": {
+                "description": "Attribute(s) for filtering results. Multiple values are separated with semicolons.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "startprice": {
+                "description": "Minimum price of the items to be searched.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "locale": {
+                "description": "Locale for displaying titles and other content in the selected language.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "switches": {
+                "description": "Additional filter switches. Multiple values can be separated with a comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "catid": {
+                "description": "Category ID(s). Multiple IDs can be separated with a comma.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "Search query. Defaults to 'iphone'.",
+                "type": "str, optional",
+                "default": "iphone"
+            },
+            "loc": {
+                "description": "Location for filtering the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "Currency for displaying the product prices.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Region for getting accurate shipping costs and promotions.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "eCommerce"
+    }
+]

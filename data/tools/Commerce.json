@@ -1,0 +1,361 @@
+[
+    {
+        "name": "product_id",
+        "description": "Fetches product details from the AliExpress API using the provided product ID and optional parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the product to fetch details for.",
+                "type": "int",
+                "default": "4000886597329"
+            },
+            "locale": {
+                "description": "The locale to be used for the request (e.g., 'en_US').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "The currency for price conversion (e.g., 'USD').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "The country for regional adjustments (e.g., 'US').",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "product_by_id",
+        "description": "Fetches detailed information about a specific product from the AliExpress API using the provided product ID.",
+        "parameters": {
+            "product_id": {
+                "description": "The unique identifier for the product on AliExpress.",
+                "type": "int",
+                "default": "32841070485"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "getproductbycategory",
+        "description": "Retrieves products from a given category using the Toolbench RapidAPI.",
+        "parameters": {
+            "category": {
+                "description": "The category of the product to search for.",
+                "type": "str",
+                "default": "Phones"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "feedbacks_id",
+        "description": "Fetches feedbacks for a given product ID from the AliExpress unofficial API.",
+        "parameters": {
+            "is_id": {
+                "description": "The product ID for which feedbacks are to be fetched.",
+                "type": "int",
+                "default": "4000886597329"
+            },
+            "withpictures": {
+                "description": "Indicates whether to include feedbacks with pictures (1 by default).",
+                "type": "int, optional",
+                "default": 1
+            },
+            "page": {
+                "description": "Specifies the page number of feedback results to fetch (1 by default).",
+                "type": "int, optional",
+                "default": 1
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "search_on_ebay",
+        "description": "Searches for items on eBay using the provided search query and RapidAPI key.",
+        "parameters": {
+            "searchquery": {
+                "description": "The search term used to look for items on eBay.",
+                "type": "str",
+                "default": "iphone"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "search_for_creators",
+        "description": "Search for creators on Patreon using the given search query.",
+        "parameters": {
+            "search_query": {
+                "description": "The search term used to query creators on Patreon.",
+                "type": "str",
+                "default": "adnr studios"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "listoforders",
+        "description": "Executes an HTTP GET request to the Ecombr marketplace API for seller orders with the provided parameters and returns the response.",
+        "parameters": {
+            "token": {
+                "description": "Authentication token for the Ecombr API.",
+                "type": "str",
+                "default": ""
+            },
+            "cache_control": {
+                "description": "Value for the Cache-Control header.",
+                "type": "str",
+                "default": "no-cache"
+            },
+            "e_mail": {
+                "description": "Email address associated with the seller account.",
+                "type": "str",
+                "default": ""
+            },
+            "content_type": {
+                "description": "Value for the Content-Type header.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "secret": {
+                "description": "Secret key for additional authentication.",
+                "type": "str",
+                "default": ""
+            },
+            "status": {
+                "description": "Status of the orders to filter.",
+                "type": "str",
+                "default": ""
+            },
+            "action": {
+                "description": "The action to be performed on the orders.",
+                "type": "str",
+                "default": "orders_list"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "getproductbyname",
+        "description": "Fetches product information for a specific brand from the products database via the Cartify API.",
+        "parameters": {
+            "brand": {
+                "description": "The name of the brand to filter products by.",
+                "type": "str",
+                "default": "iPhone"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "smart_phones",
+        "description": "Fetches data of smart phones from the Amazon API using optional brand filtering.",
+        "parameters": {
+            "name_brand": {
+                "description": "The brand name to filter the smart phones. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "headphones",
+        "description": "This function retrieves information about headphones from the Amazon API using optional brand filtering.",
+        "parameters": {
+            "name_brand": {
+                "description": "The brand name to filter headphones by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "getthelistofcountriesregistered",
+        "description": "Fetches a list of countries registered on the ecombr.com marketplace using the provided API credentials and parameters.",
+        "parameters": {
+            "action": {
+                "description": "The specific action to be executed by the API.",
+                "type": "str",
+                "default": "countries"
+            },
+            "content_type": {
+                "description": "The content type of the API request.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "cache_control": {
+                "description": "The cache control settings for the API request.",
+                "type": "str",
+                "default": "no-cache"
+            },
+            "secret": {
+                "description": "The secret key for authenticating the API request.",
+                "type": "str",
+                "default": ""
+            },
+            "token": {
+                "description": "The token for validating the API request.",
+                "type": "str",
+                "default": ""
+            },
+            "e_mail": {
+                "description": "The email associated with the API account.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "laptops",
+        "description": "Retrieves information about laptops from the Amazon API using optional brand name filtering.",
+        "parameters": {
+            "name_brand": {
+                "description": "The brand name to filter the laptops by. If not provided, all laptop brands will be considered.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "products_id",
+        "description": "Fetches product information from AliExpress using the given product ID and various optional filters.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the product on AliExpress.",
+                "type": "int",
+                "default": "200000783"
+            },
+            "page": {
+                "description": "The page number for paginated results. Default is 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "currency": {
+                "description": "The currency code to use for the prices.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The sorting order for the search results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pricemax": {
+                "description": "The maximum price limit for filtering. Default is 100.",
+                "type": "int, optional",
+                "default": 100
+            },
+            "country": {
+                "description": "The country code for filtering the products based on shipping.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pricemin": {
+                "description": "The minimum price limit for filtering. Default is 20.",
+                "type": "int, optional",
+                "default": 20
+            },
+            "issale": {
+                "description": "Filter to show only products on sale.",
+                "type": "bool, optional",
+                "default": 0
+            },
+            "locale": {
+                "description": "The locale code for the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "isfreeship": {
+                "description": "Filter to show only products with free shipping.",
+                "type": "bool, optional",
+                "default": 0
+            },
+            "isfavorite": {
+                "description": "Filter to show only favorite products.",
+                "type": "bool, optional",
+                "default": 0
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "shipping_id",
+        "description": "Fetches shipping information from the AliExpress Unofficial API for a given shipping ID and optional parameters such as count, locale, country, and currency.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the shipping information to fetch.",
+                "type": "int",
+                "default": "4000886597329"
+            },
+            "count": {
+                "description": "The count of shipping records to fetch. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "locale": {
+                "description": "Locale for the shipping information. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country for the shipping information. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "currency": {
+                "description": "Currency for the shipping information. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "hot_products",
+        "description": "Fetch hot products from AliExpress based on a search term and optional maximum price.",
+        "parameters": {
+            "search_value": {
+                "description": "The search term used to find hot products on AliExpress.",
+                "type": "str",
+                "default": "xiaomi"
+            },
+            "max_price": {
+                "description": "The maximum price for the product searches. Defaults to 10000.",
+                "type": "int, optional",
+                "default": 10000
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "gst",
+        "description": "Verifies a GST (Goods and Services Tax) number using the GST Advance API.",
+        "parameters": {
+            "gst": {
+                "description": "The GST number to be verified.",
+                "type": "str",
+                "default": "24AEAPS9376R2ZI"
+            }
+        },
+        "domain": "Commerce"
+    },
+    {
+        "name": "bcaa",
+        "description": "Fetches Branched-Chain Amino Acids (BCAA) product details from Amazon API.",
+        "parameters": {
+            "product_name_brand": {
+                "description": "Name or brand of the BCAA product to look up. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Commerce"
+    }
+]

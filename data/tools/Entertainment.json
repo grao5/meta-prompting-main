@@ -1,0 +1,2739 @@
+[
+    {
+        "name": "get_animes",
+        "description": "Retrieves a list of animes based on specified search criteria and filters from the RapidAPI Anime API.",
+        "parameters": {
+            "year_greater": {
+                "description": "Find animes released after the specified year.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "media_type": {
+                "description": "Filter by media type (e.g., music, tv, ona, ova, movie, special).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "studio": {
+                "description": "Filter by studio name.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "year_less": {
+                "description": "Find animes released before the specified year.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "nsfw": {
+                "description": "Include NSFW content if set.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "status": {
+                "description": "Filter by anime status (e.g., currently_airing, finished_airing, not_yet_aired).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "Search for animes by title in English or Japanese.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "genre": {
+                "description": "Filter by genre.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Specify sort order, True for ascending and False for descending.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "offset": {
+                "description": "Number of results to skip.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "season": {
+                "description": "Filter by season.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "Specify the fields to return (e.g., id, title, main_picture, etc.).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "year_equal": {
+                "description": "Filter by animes released in the specified year.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "source": {
+                "description": "Filter by source material (e.g., manga, visual_novel, novel, etc.).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "order": {
+                "description": "Order results by a specific field.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "list_titles",
+        "description": "Fetches a listing of titles that match specified parameters from the Watchmode API.",
+        "parameters": {
+            "genres": {
+                "description": "Filter results to only include certain genre(s). Pass in a single genre ID or multiple comma-separated IDs. Default is '4,9'.",
+                "type": "str",
+                "default": "4,9"
+            },
+            "limit": {
+                "description": "Set how many titles to return per page. Default and maximum is 250.",
+                "type": "int",
+                "default": "250"
+            },
+            "source_ids": {
+                "description": "Filter the results to titles available on specific sources by passing individual IDs or multiple comma-separated IDs. Default is '23,206'. Note: Only a single region can be set if this is populated.",
+                "type": "str",
+                "default": "23,206"
+            },
+            "source_types": {
+                "description": "Filter results to only include titles available on specific types of sources (e.g., subscription, free). Default is 'sub,free'. Note: Only a single region can be set if this is populated.",
+                "type": "str",
+                "default": "sub,free"
+            },
+            "types": {
+                "description": "Filter results to only include titles available on specific types of sources (e.g., subscription, free). Default is 'sub,free'. Note: Only a single region can be set if this is populated.",
+                "type": "str",
+                "default": "movie,tv_series"
+            },
+            "regions": {
+                "description": "Filter results to only include sources active in specific regions. Currently supported regions: US, GB, CA, AU. Default is 'US'. Note: Only a single region can be set if source_ids or source_types are populated.",
+                "type": "str",
+                "default": "US"
+            },
+            "sort_by": {
+                "description": "Sort order of results. Possible values include: relevance_desc, relevance_asc, popularity_desc, popularity_asc, release_date_desc, release_date_asc, title_desc, title_asc. Default is 'relevance_desc'.",
+                "type": "str",
+                "default": "relevance_desc"
+            },
+            "page": {
+                "description": "Set the page of results to return. Default is 1.",
+                "type": "int",
+                "default": "1"
+            },
+            "network_ids": {
+                "description": "Filter results to titles that originally aired on specific TV networks by passing individual IDs or multiple comma-separated IDs. Default is '1,8,12'.",
+                "type": "str",
+                "default": "1,8,12"
+            },
+            "release_date_start": {
+                "description": "Filter results to only include titles released on or after a specific date. Format: YYYYMMDD. Default is 20010101.",
+                "type": "int",
+                "default": "20010101"
+            },
+            "release_date_end": {
+                "description": "Filter results to only include titles released on or before a specific date. Format: YYYYMMDD. Default is 20201211.",
+                "type": "int",
+                "default": "20201211"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "choice_endpoint",
+        "description": "Sends a GET request to the Rock-Paper-Scissors API with the user's choice and returns the API's response.",
+        "parameters": {
+            "choice": {
+                "description": "The user's selection, either \"rock\", \"paper\", or \"scissors\".",
+                "type": "str",
+                "default": "rock"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "autocomplete_search",
+        "description": "Search for titles and/or people by name or partial name, useful for building an autocomplete feature. The results include a `result_type` field indicating whether the result is a title or a person, along with an `image_url` for movie posters or headshots.",
+        "parameters": {
+            "search_value": {
+                "description": "The phrase to search for, which can be a full title or person name, or a partial phrase. For example, searching for \"The sha\" will find the movie \"The Shawshank Redemption\".",
+                "type": "str",
+                "default": "Breaking Bad"
+            },
+            "search_type": {
+                "description": "Determines the type of search results. 1 includes titles and people (default), 2 includes titles only, 3 includes movies only, 4 includes TV shows only, and 5 includes people only.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_random_challange",
+        "description": "Fetch a random challenge from the specified API, with an option to specify the type of challenge.",
+        "parameters": {
+            "type": {
+                "description": "The type of challenge to fetch. Options are 'funny', 'dirty', 'sport'. Defaults to 'funny'.",
+                "type": "str, optional",
+                "default": "funny"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "canvas_genres_list",
+        "description": "Fetches a list of genres in the canvas category from the Webtoon API.",
+        "parameters": {
+            "language": {
+                "description": "The language in which to return the genres. Acceptable values are 'en', 'zh-hant', 'de', 'fr', 'es', 'th', and 'id'. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_status_cat_image",
+        "description": "Fetches an image of a cat corresponding to the provided HTTP status code.",
+        "parameters": {
+            "status": {
+                "description": "The HTTP status code for which to fetch the cat image. Common codes are 200, 404, 500, etc.",
+                "type": "str",
+                "default": "200"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "downloadminecraftjarchecksum",
+        "description": "Fetches the SHA-1 checksum of a specified Minecraft version JAR file from the Nitroxenon Minecraft Forge API.",
+        "parameters": {
+            "minecraftversion": {
+                "description": "The version of Minecraft to fetch the JAR checksum for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "downloadoptimize",
+        "description": "Downloads the specified OptiFine version using the provided RapidAPI key.",
+        "parameters": {
+            "optifineversion": {
+                "description": "The version of OptiFine to be downloaded.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "getpercentage",
+        "description": "Calculates and returns the love compatibility percentage between two names using the Love Calculator API.",
+        "parameters": {
+            "sname": {
+                "description": "The second name to be used in the compatibility calculation.",
+                "type": "str",
+                "default": "Alice"
+            },
+            "fname": {
+                "description": "The first name to be used in the compatibility calculation.",
+                "type": "str",
+                "default": "John"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "listpornstars",
+        "description": "Fetch a list of pornstars based on various filtering criteria.",
+        "parameters": {
+            "max_rank": {
+                "description": "Maximum rank of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_rank": {
+                "description": "Minimum rank of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_waist": {
+                "description": "Maximum waist measurement of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_cup_size": {
+                "description": "Maximum cup size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_cup_size": {
+                "description": "Minimum cup size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_weight": {
+                "description": "Minimum weight of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_weight": {
+                "description": "Maximum weight of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_age": {
+                "description": "Maximum age of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "ethnicity": {
+                "description": "Ethnicity of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_age": {
+                "description": "Minimum age of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "nationality": {
+                "description": "Nationality of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "tattoos": {
+                "description": "Tattoo status of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "eyes": {
+                "description": "Eye color of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hair": {
+                "description": "Hair color of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Page number for paginated results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_waist": {
+                "description": "Minimum waist measurement of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date_of_birth": {
+                "description": "Date of birth of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_by_tmdb_id",
+        "description": "Fetches movie or TV show information based on a given TMDb ID.",
+        "parameters": {
+            "tm": {
+                "description": "A valid TMDb ID for the movie or TV show.",
+                "type": "int",
+                "default": "578"
+            },
+            "m": {
+                "description": "A valid TMDb ID for the movie or TV show.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "titles_with_changed_episodes",
+        "description": "Retrieve a listing of titles that have changes to their episodes (new episodes, episode details changed, etc.) within a specified date range.",
+        "parameters": {
+            "end_date": {
+                "description": "The end date for the date range to include changes, in the format YYYYMMDD or YYYYMMDDHHMMSS. Hours are in 24-hour format and in Eastern Standard Time. Leading zeros must be used for single-digit values.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "start_date": {
+                "description": "The start date for the date range to include changes, in the format YYYYMMDD or YYYYMMDDHHMMSS. Hours are in 24-hour format and in Eastern Standard Time. Leading zeros must be used for single-digit values.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page of results to return. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "limit": {
+                "description": "The maximum number of results to return per page. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "originals_episodes_get_likes",
+        "description": "Retrieves the number of likes for a specific episode of an original series from Webtoon.",
+        "parameters": {
+            "titleno": {
+                "description": "The title number of the original series, obtained from the Webtoon titles list or titles-by-rank endpoints.",
+                "type": "int",
+                "default": "2113"
+            },
+            "episodeno": {
+                "description": "The episode number of the specific episode, obtained from the Webtoon episodes list endpoint.",
+                "type": "int",
+                "default": "1"
+            },
+            "language": {
+                "description": "The language code for the response. One of the following: 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_books_by_name",
+        "description": "Search for books by name using the provided RapidAPI key.",
+        "parameters": {
+            "book_name": {
+                "description": "The name of the book to search for, with spaces replaced by '+'.",
+                "type": "str",
+                "default": "the+walking+dead"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "canvas_search",
+        "description": "Performs a search for webtoon comics based on a query term or phrase.",
+        "parameters": {
+            "query": {
+                "description": "The search term or phrase for querying comics.",
+                "type": "str",
+                "default": "boy friend"
+            },
+            "language": {
+                "description": "The language code for results. Defaults to 'en'. Accepted values are 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "pagesize": {
+                "description": "The number of results to return per page. Maximum is 20. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "startindex": {
+                "description": "The starting index for the search results. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "artists_search",
+        "description": "Search the SongMeanings database for artist names and aliases using various query parameters.",
+        "parameters": {
+            "q": {
+                "description": "The query string used to search for artist names and aliases.",
+                "type": "str",
+                "default": ""
+            },
+            "page": {
+                "description": "The starting page of results. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "page_size": {
+                "description": "The number of results returned per page. Defaults to '25'.",
+                "type": "str, optional",
+                "default": "25"
+            },
+            "matchmode": {
+                "description": "The mode by which matching occurs. Defaults to 'extended'.",
+                "type": "str, optional",
+                "default": "extended"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "new_titles",
+        "description": "Fetches a listing of new title IDs added to Watchmode within a specific date range.",
+        "parameters": {
+            "page": {
+                "description": "Specifies the page of results to return. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "types": {
+                "description": "Filters results to include specific types of titles. Acceptable values are: 'movie', 'tv_series', 'tv_special', 'tv_miniseries', 'short_film'. Multiple types can be passed as a comma-delimited string. Defaults to 'movie,tv_series'.",
+                "type": "str, optional",
+                "default": "movie,tv_series"
+            },
+            "limit": {
+                "description": "Specifies the number of titles to return per page. The default and maximum is 250. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "end_date": {
+                "description": "Sets the end date to include changes from a specific date range. The format is YYYYMMDD (e.g., 20210101 for January 1st, 2021). If not specified, the API returns changes since the beginning of yesterday.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "start_date": {
+                "description": "Sets the start date to include changes from a specific date range. The format is YYYYMMDD (e.g., 20210101 for January 1st, 2021). If not specified, the API returns changes since the beginning of yesterday.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_channels",
+        "description": "Retrieve a list of radio channels based on various filtering parameters.",
+        "parameters": {
+            "keyword": {
+                "description": "Filter channels by keyword. Default is 'a'. Set to an empty string if no filtering by keyword is needed.",
+                "type": "str",
+                "default": "a"
+            },
+            "genre_id": {
+                "description": "Filter channels by genre ID. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "city_id": {
+                "description": "Filter channels by city ID. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "country_id": {
+                "description": "Filter channels by country ID. Default is 50.",
+                "type": "int",
+                "default": "50"
+            },
+            "page": {
+                "description": "The page number for pagination. Default is 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "generate_avatar",
+        "description": "Generates an avatar and returns it to the client based on the provided parameters.",
+        "parameters": {
+            "randomizer": {
+                "description": "Bypasses caching to return random images. Any value can be used (default is 'anything').",
+                "type": "str, optional",
+                "default": "anything"
+            },
+            "name": {
+                "description": "The name for the avatar. Only the first character will be displayed (default is 'John').",
+                "type": "str, optional",
+                "default": "John"
+            },
+            "bg_color": {
+                "description": "HEX code for the background color of the avatar, without the '#' (default is 'FF2029').",
+                "type": "str, optional",
+                "default": "FF2029"
+            },
+            "text_color": {
+                "description": "HEX code for the avatar's text color, without the '#' (default is '000000').",
+                "type": "str, optional",
+                "default": "000000"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_birthday_draws",
+        "description": "Fetches lottery draw results for a given birthday date (in 'mm-dd' format) and returns related statistics and potentially a lucky number.",
+        "parameters": {
+            "date": {
+                "description": "The birthday date in 'mm-dd' format for which to fetch the lottery draw results.",
+                "type": "str",
+                "default": "01-21"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "google_fake_autocomplete",
+        "description": "Generate a fake Google autocomplete suggestion using three input texts.",
+        "parameters": {
+            "text1": {
+                "description": "The first text input for the autocomplete query.",
+                "type": "str",
+                "default": "Search"
+            },
+            "text3": {
+                "description": "The third text input for the autocomplete query.",
+                "type": "str",
+                "default": "search autocomplete 2"
+            },
+            "text2": {
+                "description": "The second text input for the autocomplete query.",
+                "type": "str",
+                "default": "search autocomplete 1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "originals_episodes_get_info",
+        "description": "Fetch information and photo links for a specific episode of a Webtoon Original.",
+        "parameters": {
+            "episodeno": {
+                "description": "The episode number. It corresponds to the `episodeNo` field returned by the `/originals/episodes/list` endpoint.",
+                "type": "int",
+                "default": "1"
+            },
+            "titleno": {
+                "description": "The title number. It corresponds to the `titleNo` field returned by the `/originals/titles/list` or `/originals/titles/list-by-rank` endpoint.",
+                "type": "int",
+                "default": "2113"
+            },
+            "language": {
+                "description": "The language code for the response. Defaults to 'en'. Accepted values are 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "downloadminecraftjson",
+        "description": "Downloads the Minecraft JSON configuration file for a specified version.",
+        "parameters": {
+            "minecraftversion": {
+                "description": "The version of Minecraft for which to download the JSON configuration file.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_by_imdb_id",
+        "description": "Fetch movie or TV show information by IMDb ID using the specified RapidAPI key.",
+        "parameters": {
+            "i": {
+                "description": "A valid IMDb ID for the movie or TV show.",
+                "type": "str",
+                "default": "tt0073195"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "v1_riddles",
+        "description": "Retrieves random riddles from the API Ninjas Riddles API endpoint.",
+        "parameters": {
+            "limit": {
+                "description": "The number of riddles to return. Must be between 1 and 20. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "chapters_list_paginated",
+        "description": "Fetches a paginated list of chapters for a specific webtoon from a specified provider.",
+        "parameters": {
+            "provider": {
+                "description": "The slug identifying the webtoon provider. Refer to /providers for the list of providers.",
+                "type": "str",
+                "default": "cosmic"
+            },
+            "webtoon": {
+                "description": "The slug identifying the webtoon. Refer to /webtoons for the list of webtoons.",
+                "type": "str",
+                "default": "eleceed"
+            },
+            "limit": {
+                "description": "The number of results to return per page, between 1 and 20.",
+                "type": "int",
+                "default": "10"
+            },
+            "page": {
+                "description": "The page number to fetch.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_match",
+        "description": "Calculates the match percentage between two names using the Love Calculator API.",
+        "parameters": {
+            "fname": {
+                "description": "The first name for the love match calculation.",
+                "type": "str",
+                "default": "oliver m"
+            },
+            "sname": {
+                "description": "The second name for the love match calculation.",
+                "type": "str",
+                "default": "chloe p"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "cinemas",
+        "description": "Fetches a list of cinemas based on the specified brand using the RapidAPI service.",
+        "parameters": {
+            "brand": {
+                "description": "The brand of the cinema to filter the results. Default is 'hoyts'.",
+                "type": "str",
+                "default": "hoyts"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "chart_by_id",
+        "description": "Get an IMDb chart given a specific chart ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID representing the type of IMDb chart to retrieve (e.g., 'boxoffice', 'moviemeter', 'top').",
+                "type": "str",
+                "default": "boxoffice"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "upvote_riddle",
+        "description": "Registers an upvote for a riddle using the Riddlie API. This function sends a GET request to the Riddlie API to upvote a riddle identified by `is_id`. The upvote helps in better serving the riddles in the future.",
+        "parameters": {
+            "is_id": {
+                "description": "The identifier of the riddle to upvote.",
+                "type": "str",
+                "default": "63bdef027183b71946b64ee6"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "lines_line_abs",
+        "description": "Fetches poems that contain a specific line using the Thundercomb Poetry DB API.",
+        "parameters": {
+            "line": {
+                "description": "The exact line to search for in poems.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_all_users_paged_by_hundreds",
+        "description": "Fetches a list of users from a specified page, with each page containing up to one hundred users, using the provided RapidAPI key.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve the users from.",
+                "type": "int",
+                "default": "0"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "riddle_by_id",
+        "description": "Fetches a riddle by its ID from the Riddlie API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the riddle to fetch.",
+                "type": "str",
+                "default": "63bdef0283b194664ee6c121"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "v1_hobbies",
+        "description": "Fetches a random hobby and a Wikipedia link detailing the hobby from the Hobbies by API Ninjas API.",
+        "parameters": {
+            "category": {
+                "description": "The category of hobbies to fetch. Possible values are 'general', 'sports_and_outdoors',",
+                "type": "str",
+                "default": "general"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_user_dialog_string",
+        "description": "Fetches the dialog string for a given user from the Waifu API.",
+        "parameters": {
+            "user_id": {
+                "description": "A unique identifier for the user.",
+                "type": "str",
+                "default": "sample_user_id"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "match_embed_link",
+        "description": "Generates a live stream link for a given football match using the provided RapidAPI key.",
+        "parameters": {
+            "matchid": {
+                "description": "The unique identifier for the football match.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "drawing_by_date",
+        "description": "Fetches the winning Fantasy 5 number set for a specific drawing date.",
+        "parameters": {
+            "date": {
+                "description": "The date of the drawing in the format MM-DD-YYYY.",
+                "type": "str",
+                "default": "01-01-2023"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "titles_with_changed_sources",
+        "description": "Fetches a listing of titles that have changed their streaming sources within a specified date range.",
+        "parameters": {
+            "start_date": {
+                "description": "Start date to include changes from a specific date range. Format is YYYYMMDD (e.g., 20210101 for January 1st, 2021), or YYYYMMDDHHMMSS for more granular results (e.g., 20210101123459 for January 1st, 2021 12:24pm and 59 seconds). Hours are in 24-hour format and in Eastern Standard Time. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Number of titles to return per page. Default is 50, maximum is 250.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "end_date": {
+                "description": "End date to include changes from a specific date range. Format is YYYYMMDD (e.g., 20210101 for January 1st, 2021), or YYYYMMDDHHMMSS for more granular results (e.g., 20210101123459 for January 1st, 2021 12:24pm and 59 seconds). Hours are in 24-hour format and in Eastern Standard Time. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "regions": {
+                "description": "2-character region code (e.g., US) for the country to get titles with changed sources from. Defaults to 'US,CA'.",
+                "type": "str, optional",
+                "default": "US,CA"
+            },
+            "types": {
+                "description": "Filter result to include only certain types of titles. Pass a single type or multiple types comma delimited. Possible values: 'movie', 'tv_series', 'tv_special', 'tv_miniseries', 'short_film'. Defaults to 'movie,tv_series'.",
+                "type": "str, optional",
+                "default": "movie,tv_series"
+            },
+            "page": {
+                "description": "Page of results to return. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "flag_riddle",
+        "description": "Flags a riddle for further review using the specified criteria.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the riddle to be flagged.",
+                "type": "str",
+                "default": "63bdef027183b71946b64ee6"
+            },
+            "flag": {
+                "description": "The type of flag to be applied to the riddle (default is 0).",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "fetch_latest",
+        "description": "Fetch the latest updated manga from the server based on specified genres and page number.",
+        "parameters": {
+            "genres": {
+                "description": "A comma-separated list of genres to filter the manga by (e.g., 'Harem,Fantasy'). Defaults to 'Harem,Fantasy'.",
+                "type": "str, optional",
+                "default": "Harem,Fantasy"
+            },
+            "page": {
+                "description": "The page number to fetch, starting from '1'. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "v1_jokes",
+        "description": "Fetches a set number of jokes from the API Ninjas Jokes API endpoint.",
+        "parameters": {
+            "limit": {
+                "description": "The number of jokes to return, with a valid range of 1 to 30. Defaults to None, which returns a single joke.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "a_chapter_by_its_slug",
+        "description": "Fetches information for a specified chapter of a webtoon from a given provider.",
+        "parameters": {
+            "slug": {
+                "description": "The slug identifier for the chapter. See /chapters for the chapter list.",
+                "type": "str",
+                "default": "the-world-after-the-fall-chapter-64"
+            },
+            "provider": {
+                "description": "The slug identifier for the webtoon provider. See /providers for the provider list.",
+                "type": "str",
+                "default": "flame"
+            },
+            "webtoon": {
+                "description": "The slug identifier for the webtoon. See /webtoons for the webtoon list.",
+                "type": "str",
+                "default": "the-world-after-the-fall"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_anime_detail",
+        "description": "Fetches detailed information about a specific anime using its ID via the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The MyAnimeList ID of the anime.",
+                "type": "str",
+                "default": "5114"
+            },
+            "fields": {
+                "description": "Comma-separated list of specific fields to retrieve data for. Available fields include '*', 'id', 'title', 'main_picture', 'start_date', 'end_data', 'synopsis', 'mean', 'rank', 'popularity', 'num_list_users', 'num_scoring_users', 'status', 'genres', 'num_episodes', 'source', 'studios', 'volume', 'chapter', 'light_novel', 'media_type', 'mal_id', 'broadcast', 'statistics', 'related_manga', 'related_anime', 'season', 'year', 'title_english', 'title_japanese', and 'synonyms'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "originals_genres_list",
+        "description": "Retrieves a list of genres in the originals category from the Webtoon API.",
+        "parameters": {
+            "language": {
+                "description": "The language of the genre names to be retrieved. Must be one of the following: 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'. Default is 'en'.",
+                "type": "str",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "originals_titles_get_recommend",
+        "description": "Fetches recommended comics similar to a given comic title number.",
+        "parameters": {
+            "titleno": {
+                "description": "The title number for which recommendations are to be fetched. This corresponds to the `titleNo` field returned by the `/originals/titles/list` or `/originals/titles/list-by-rank` endpoints of the Webtoon API.",
+                "type": "int",
+                "default": "3211"
+            },
+            "language": {
+                "description": "The language preference for the recommendations. Defaults to 'en'. Accepted values include 'en', 'zh-hant', 'de', 'fr', 'es', 'th', and 'id'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_ascii_by_id",
+        "description": "Retrieves a previously generated ASCII image using its unique identifier.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the ASCII image.",
+                "type": "str",
+                "default": "2"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "fetch_manga",
+        "description": "Fetch a list of manga from the Mangaverse API based on specified page number and genres.",
+        "parameters": {
+            "page": {
+                "description": "The page number to fetch, default is '1'.",
+                "type": "str",
+                "default": "1"
+            },
+            "genres": {
+                "description": "A comma-separated string of genres to filter manga by, default is 'Harem,Fantasy'.",
+                "type": "str",
+                "default": "Harem,Fantasy"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "v1_celebrity",
+        "description": "Fetches information about celebrities using the API Ninjas Celebrity API.",
+        "parameters": {
+            "name": {
+                "description": "Name of the celebrity you wish to search for. This field is case-insensitive. Default is 'Michael Jordan'.",
+                "type": "str, optional",
+                "default": "Michael Jordan"
+            },
+            "min_height": {
+                "description": "Minimum height of celebrities in meters (e.g. '1.65'). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_net_worth": {
+                "description": "Minimum net worth of celebrities. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "nationality": {
+                "description": "Nationality of celebrities, specified as an ISO 3166 Alpha-2 country code (e.g. 'US'). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_net_worth": {
+                "description": "Maximum net worth of celebrities. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_height": {
+                "description": "Maximum height of celebrities in meters (e.g. '1.80'). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "jokes",
+        "description": "Fetches jokes from the Jokester API, optionally filtered by category.",
+        "parameters": {
+            "category": {
+                "description": "Category to filter jokes by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "title_cast_crew",
+        "description": "Fetches and returns the cast and crew information of a given title from the Watchmode API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the title. This can be the Watchmode ID, IMDB ID, or a TMDB type and ID combination.",
+                "type": "str",
+                "default": "3173903"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "query_joke_using_id",
+        "description": "Fetches an anime joke using the provided joke ID from the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the joke to be fetched.",
+                "type": "int",
+                "default": "4"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_jokes_by_specific_category",
+        "description": "Fetches a collection of jokes from a specific category with pagination and sorting options.",
+        "parameters": {
+            "limit": {
+                "description": "Number of jokes to retrieve per page.",
+                "type": "int",
+                "default": 100
+            },
+            "page": {
+                "description": "Page number to retrieve.",
+                "type": "int",
+                "default": 1
+            },
+            "category": {
+                "description": "The category of jokes to fetch.",
+                "type": "str",
+                "default": "Women"
+            },
+            "sortby": {
+                "description": "Sorting criteria in the format `field:order`, e.g., `score:desc` for descending order by score.",
+                "type": "str, optional",
+                "default": "score:desc"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "downloadminecraftjar",
+        "description": "Downloads the Minecraft .jar file for a specified version.",
+        "parameters": {
+            "minecraftversion": {
+                "description": "The version of Minecraft for which to download the .jar file.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_types",
+        "description": "Fetches available types for a specified period from the horoscopes API.",
+        "parameters": {
+            "period": {
+                "description": "The time period for which to retrieve the available types (e.g., daily, weekly, monthly).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_movie_id_by_title",
+        "description": "Retrieves the ID of a movie or actor by its title using the Cinema API.",
+        "parameters": {
+            "category": {
+                "description": "Category of the search, either 'movies' or 'actors'.",
+                "type": "str",
+                "default": "movies"
+            },
+            "title": {
+                "description": "The title of the movie or the name of the actor to search for.",
+                "type": "str",
+                "default": "Titanic"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_random_joke_by_category",
+        "description": "Fetches a random joke from a specified category using the World of Jokes API.",
+        "parameters": {
+            "category": {
+                "description": "The category of joke to fetch, based on the categories available in the jokes API.",
+                "type": "str",
+                "default": "Political"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_the_awarded_books_of_a_year",
+        "description": "Retrieves the list of awarded books for a specific year, including details such as the book's name, winning category, and cover image.",
+        "parameters": {
+            "year": {
+                "description": "The year for which to retrieve the list of awarded books.",
+                "type": "str",
+                "default": "2021"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "pet_pet",
+        "description": "Generates a 'Pet Pet' meme GIF from a given image URL using the Memeados API.",
+        "parameters": {
+            "image": {
+                "description": "The URL of the image to be used for generating the meme.",
+                "type": "str",
+                "default": "https://i.pravatar.cc/300"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "flame",
+        "description": "Calculates the FLAMES relationship compatibility score for two given names using the Flames Love Calculator API.",
+        "parameters": {
+            "sname": {
+                "description": "The second name to be used in the compatibility calculation.",
+                "type": "str",
+                "default": "Shefali"
+            },
+            "fname": {
+                "description": "The first name to be used in the compatibility calculation.",
+                "type": "str",
+                "default": "Rahul"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "author_author",
+        "description": "Fetches all poems from Poetry DB written by a specific poet.",
+        "parameters": {
+            "author": {
+                "description": "The poet's name or a part of the poet's name.",
+                "type": "str",
+                "default": "None"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_user_metadata",
+        "description": "Fetches metadata for a specified user from the Waifu API.",
+        "parameters": {
+            "user_id": {
+                "description": "The unique identifier of the user whose metadata is to be fetched.",
+                "type": "str",
+                "default": "sample_user_id"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_by_trakt_tv_id",
+        "description": "Fetches movie or TV show information from the RapidAPI MDB List service based on a given Trakt.tv ID.",
+        "parameters": {
+            "t": {
+                "description": "A valid Trakt.tv ID representing the movie or TV show.",
+                "type": "str",
+                "default": "457"
+            },
+            "m": {
+                "description": "The media type, either 'movie' or 'show'. Defaults to 'movie' if not specified.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "dad_jokes_search",
+        "description": "Searches for dad jokes containing the given keyword using the RapidAPI Dad Jokes API.",
+        "parameters": {
+            "text": {
+                "description": "The keyword to search for in the jokes. Default is 'dad'.",
+                "type": "str",
+                "default": "dad"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_jokes",
+        "description": "Search for jokes based on specified criteria.",
+        "parameters": {
+            "number": {
+                "description": "The number of results to retrieve between 1 and 10. Defaults to 3.",
+                "type": "int, optional",
+                "default": 3
+            },
+            "exclude_tags": {
+                "description": "A comma-separated list of tags that the joke must not have. Defaults to 'nsfw'.",
+                "type": "str, optional",
+                "default": "nsfw"
+            },
+            "max_length": {
+                "description": "The maximum number of characters in the joke. Defaults to 200.",
+                "type": "int, optional",
+                "default": 200
+            },
+            "include_tags": {
+                "description": "A comma-separated list of tags that the joke must have. Defaults to 'one_liner'.",
+                "type": "str, optional",
+                "default": "one_liner"
+            },
+            "keywords": {
+                "description": "A comma-separated list of keywords to search for in jokes. Defaults to 'rocket'.",
+                "type": "str, optional",
+                "default": "rocket"
+            },
+            "min_rating": {
+                "description": "The minimum rating between 0 and 10 that the result should have. Defaults to 7.",
+                "type": "int, optional",
+                "default": 7
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_wisdom_quotes_by_topic",
+        "description": "Fetches wisdom quotes related to a specific topic using the RapidAPI service.",
+        "parameters": {
+            "topic": {
+                "description": "The topic to retrieve wisdom quotes about.",
+                "type": "str",
+                "default": "Anger"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "shakespeare",
+        "description": "Translates the given text to Shakespearean style English using the FunTranslations API.",
+        "parameters": {
+            "x_funtranslations_api_secret": {
+                "description": "API key for the FunTranslations service. Obtain one at http://funtranslations.com/api/shakespeare.",
+                "type": "str",
+                "default": ""
+            },
+            "text": {
+                "description": "The text to convert to Shakespearean style English.",
+                "type": "str",
+                "default": "You asked Mr. Weasely to do magic!"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_wisdom_quotes_by_page",
+        "description": "Retrieves wisdom quotes from a specified page using the Toolbench RapidAPI.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve quotes from.",
+                "type": "str",
+                "default": "12"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "drawings_between_dates",
+        "description": "Fetches all Cash4Life winning number sets between two specified dates.",
+        "parameters": {
+            "date1": {
+                "description": "The beginning date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2023-01-01"
+            },
+            "date2": {
+                "description": "The end date in the format 'YYYY-MM-DD'.",
+                "type": "str",
+                "default": "2023-01-05"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_jokes",
+        "description": "Fetches a collection of jokes based on the specified limit, page number, and sorting criteria from the RapidAPI 'World of Jokes' API.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of jokes to retrieve per request.",
+                "type": "int",
+                "default": 100
+            },
+            "page": {
+                "description": "The page number to retrieve, useful for pagination.",
+                "type": "int",
+                "default": 1
+            },
+            "sortby": {
+                "description": "The sorting criteria in the format `field:order`, where `order` can be 'asc' for ascending or 'desc' for descending. Defaults to 'score:desc'.",
+                "type": "str, optional",
+                "default": "score:desc"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "praise",
+        "description": "Send a praise message for a person using HumorAPI.",
+        "parameters": {
+            "reason": {
+                "description": "The reason for the praise.",
+                "type": "str",
+                "default": "you did it again"
+            },
+            "name": {
+                "description": "The name of the person to be praised.",
+                "type": "str",
+                "default": "Alex"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_result_by_date",
+        "description": "Fetches the draws result for a specific date from the Euro Millions API.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch the draws result in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2011-03-18"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "cinemas_id_showtimes",
+        "description": "Fetches the showtimes for a specified cinema and optionally filters by a given film.",
+        "parameters": {
+            "is_id": {
+                "description": "The cinema identifier.",
+                "type": "str",
+                "default": ""
+            },
+            "filmid": {
+                "description": "The film identifier to filter showtimes. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "v1_dadjokes",
+        "description": "Fetch one or more random dad jokes from the API Ninjas Dad Jokes API endpoint.",
+        "parameters": {
+            "limit": {
+                "description": "The number of jokes to return. Must be a string representing a number between 1 and 10. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_memes",
+        "description": "Search for memes based on specified criteria.",
+        "parameters": {
+            "media_type": {
+                "description": "The type of content to search for. Can be 'image', 'video', or specific formats such as 'jpg', 'png', 'gif', or 'mp4'. Defaults to 'image'.",
+                "type": "str",
+                "default": "image"
+            },
+            "keywords_in_image": {
+                "description": "Whether the keywords should be found in the meme's image. Defaults to None.",
+                "type": "bool",
+                "default": "false"
+            },
+            "keywords": {
+                "description": "A comma-separated list of keywords to search for. Defaults to 'rocket'.",
+                "type": "str",
+                "default": "rocket"
+            },
+            "min_rating": {
+                "description": "The minimum rating the results should have, between 0 and 10. Defaults to 3.",
+                "type": "int",
+                "default": "3"
+            },
+            "number": {
+                "description": "The number of results to retrieve, between 1 and 10. Defaults to 3.",
+                "type": "int",
+                "default": 3
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "produce_mixy_words_list",
+        "description": "Generates a list of random words based on the specified amount and difficulty level by querying the Mixy Word Guess API.",
+        "parameters": {
+            "amount": {
+                "description": "The number of words to generate. Valid values are integers between 1 and 100. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "difficulty": {
+                "description": "The difficulty level of the words. Valid values are \"easy\", \"medium\", and \"hard\". Default is 'easy'.",
+                "type": "str, optional",
+                "default": "easy"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "comments_get",
+        "description": "Fetch comments for a specific song from the database.",
+        "parameters": {
+            "artist_name": {
+                "description": "The name of the artist.",
+                "type": "str",
+                "default": ""
+            },
+            "lyric_title": {
+                "description": "The title of the song, track, or lyric.",
+                "type": "str",
+                "default": ""
+            },
+            "sm_lid": {
+                "description": "The song's lyric ID. If provided, this bypasses `artist_name` and `lyric_title`. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "parent_id": {
+                "description": "When specified, the method will return any replies for the parent comment. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "type": {
+                "description": "The type of comments to return. Defaults to 'all'.",
+                "type": "str, optional",
+                "default": "all"
+            },
+            "page": {
+                "description": "The starting page of comments. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "page_size": {
+                "description": "The number of comments returned per page. Defaults to '25'.",
+                "type": "str, optional",
+                "default": "25"
+            },
+            "page_order": {
+                "description": "The field to order the comments by (e.g., 'date' or 'rating'). Defaults to 'date'.",
+                "type": "str, optional",
+                "default": "date"
+            },
+            "page_sort": {
+                "description": "The order of sorting (ascending or descending, 'asc' or 'desc'). Defaults to 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "sponge_bob",
+        "description": "Generates a Sponge Bob meme with the given text using the Memeados API.",
+        "parameters": {
+            "text": {
+                "description": "The text to be included in the Sponge Bob meme.",
+                "type": "str",
+                "default": "Example test"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "api_v1_beyblades_id",
+        "description": "Fetches details of a Beyblade based on its ID using the Beyblade API v1.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the Beyblade to retrieve.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "movie_details",
+        "description": "Returns detailed information about a specific movie from the YTS API, including optional data such as cast information and images.",
+        "parameters": {
+            "movie_id": {
+                "description": "The YTS ID of the movie. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "imdb_id": {
+                "description": "The IMDB ID of the movie in YTS. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "with_cast": {
+                "description": "If set to True, includes additional information about the movie's cast in the response. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            },
+            "with_images": {
+                "description": "If set to True, includes URLs of related images in the response. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_joke_of_the_day_by_category",
+        "description": "Fetches the joke of the day from a specified category using the World of Jokes API.",
+        "parameters": {
+            "category": {
+                "description": "The category of joke to be fetched.",
+                "type": "str",
+                "default": "Money"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_anime_by_id",
+        "description": "Retrieves detailed information about an anime given its unique identifier using the Toolbench RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the anime.",
+                "type": "int",
+                "default": "19"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_extra_character_details",
+        "description": "Fetch additional details about a character using the provided character ID and RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the character for which details are being fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "retrievepornstar",
+        "description": "Retrieve information about a specific pornstar based on the given criteria.",
+        "parameters": {
+            "is_id": {
+                "description": "A unique identifier for the pornstar.",
+                "type": "str",
+                "default": ""
+            },
+            "ethnicity": {
+                "description": "The ethnicity of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_weight": {
+                "description": "The minimum weight of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_cup_size": {
+                "description": "The maximum cup size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "nationality": {
+                "description": "The nationality of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_waist": {
+                "description": "The minimum waist size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "hair": {
+                "description": "The hair color of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_age": {
+                "description": "The maximum age of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_age": {
+                "description": "The minimum age of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_cup_size": {
+                "description": "The minimum cup size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date_of_birth": {
+                "description": "The birth date of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "eyes": {
+                "description": "The eye color of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_waist": {
+                "description": "The maximum waist size of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "The name of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "tattoos": {
+                "description": "Whether the pornstar has tattoos.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "max_weight": {
+                "description": "The maximum weight of the pornstar.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "update_level",
+        "description": "Updates the difficulty level of a specific riddle using the Riddle API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the riddle to be updated.",
+                "type": "str",
+                "default": "63bdef027183b71946b64ee6"
+            },
+            "level": {
+                "description": "The suggested difficulty level of the riddle. Can be \"0\" (Easy), \"1\" (Medium), or \"2\" (Hard). Defaults to \"1\".",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "title_title",
+        "description": "Fetches all poems from Poetry DB that match the specified title.",
+        "parameters": {
+            "title": {
+                "description": "The title of the poem, or part of the title, to search for in the Poetry DB.",
+                "type": "str",
+                "default": "Sonnet 18"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "linecount_linecount",
+        "description": "Fetches all poems from the Poetry DB with a specific number of lines.",
+        "parameters": {
+            "linecount": {
+                "description": "The number of lines in each poem to be fetched.",
+                "type": "int",
+                "default": "14"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_horoscope_multilingual",
+        "description": "Fetches horoscope information in the specified language for a given sign, period, and type.",
+        "parameters": {
+            "language": {
+                "description": "The language for the horoscope. Supported languages are:",
+                "type": "str",
+                "default": ""
+            },
+            "period": {
+                "description": "The period for which the horoscope is requested (e.g., 'daily', 'weekly').",
+                "type": "str",
+                "default": ""
+            },
+            "sign": {
+                "description": "The astrological sign for which the horoscope is requested (e.g., 'aries', 'taurus').",
+                "type": "str",
+                "default": ""
+            },
+            "type": {
+                "description": "The type of horoscope information to be fetched, depending on the period. Use the **Get Types** method to get available types for the selected period.",
+                "type": "str",
+                "default": "general"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_quote_by_id",
+        "description": "Fetches quote information by ID from the RapidAPI Quotes API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the quote to retrieve.",
+                "type": "str",
+                "default": "10"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "songs",
+        "description": "Fetches a list of songs from JSR/JSRF using the specified parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of items to return in the response. Default is '5'.",
+                "type": "str",
+                "default": "5"
+            },
+            "sortby": {
+                "description": "The field by which to sort the results. Possible values include fields on the document, e.g., 'name', 'stats'. Default is 'name'.",
+                "type": "str",
+                "default": "name"
+            },
+            "orderby": {
+                "description": "The order in which to sort the results. Possible values are 'asc' for ascending and 'desc' for descending. The `sortby` parameter must be present for this to take effect. Default is 'asc'.",
+                "type": "str",
+                "default": "asc"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "canvas_titles_get_recommend",
+        "description": "Retrieves similar comic recommendations from the Webtoon API.",
+        "parameters": {
+            "titleno": {
+                "description": "The value of the `titleNo` field returned from the `/canvas/titles/list`, `/canvas/search`, or `/canvas/home` endpoint.",
+                "type": "int",
+                "default": "300138"
+            },
+            "language": {
+                "description": "The language code for the response. One of the following: 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "people_id",
+        "description": "Fetches and returns information about a person from the TVmaze API using the given person ID and RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the person to retrieve information for from the TVmaze API.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_weekly_popular_books_by_genre",
+        "description": "Retrieve the most popular books from the past week based on a specified genre.",
+        "parameters": {
+            "genre": {
+                "description": "The genre of books to retrieve.",
+                "type": "str",
+                "default": "horror"
+            },
+            "number_results": {
+                "description": "The number of results to return. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "lines_line",
+        "description": "Fetches all poems from Poetry DB that contain a specific line or part of the line.",
+        "parameters": {
+            "line": {
+                "description": "The line or part of a line to search for in the poems.",
+                "type": "str",
+                "default": "Shall I Compare Thee"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_for_joke",
+        "description": "Fetch a joke based on the provided search text.",
+        "parameters": {
+            "q": {
+                "description": "The search query text to find jokes. Defaults to 'Did you hear about the butcher who backed'.",
+                "type": "str",
+                "default": "Did you hear about the butcher who backed"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "users_favorite_get",
+        "description": "Retrieve a user's favorite items from the SongMeanings API based on the specified type.",
+        "parameters": {
+            "sm_uid": {
+                "description": "The user ID for which to retrieve favorites.",
+                "type": "str",
+                "default": ""
+            },
+            "type": {
+                "description": "The type of favorites to retrieve; can be 'artists' or 'lyrics'. Defaults to 'lyrics'.",
+                "type": "str, optional",
+                "default": "lyrics"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "elhighlights",
+        "description": "Fetches football highlights from a specified API endpoint.",
+        "parameters": {
+            "url": {
+                "description": "The API endpoint URL for fetching highlights. Defaults to 'https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp'.",
+                "type": "str",
+                "default": "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_quotes_by_character_name",
+        "description": "Fetch quotes from the Anime Quotes API for a given character name.",
+        "parameters": {
+            "name": {
+                "description": "The name of the character for whom to fetch quotes.",
+                "type": "str",
+                "default": "Naruto"
+            },
+            "page": {
+                "description": "The page number to retrieve, used for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "api_v1_beyblades",
+        "description": "Fetches a list of Beyblades from the API with optional offset and limit parameters.",
+        "parameters": {
+            "offset": {
+                "description": "The number of Beyblades to skip.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of Beyblades to retrieve.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_author_information_by_id",
+        "description": "Fetch a variety of information about an author using their ID.",
+        "parameters": {
+            "author_id": {
+                "description": "The unique identifier of the author.",
+                "type": "str",
+                "default": "239579"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_specific_insult",
+        "description": "Fetches a specific insult using the provided insult ID and RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "The UUID for the specific insult to be retrieved.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_manga",
+        "description": "Retrieves manga details using the MangaVerse API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the manga to retrieve. Default is '647fed35c71c2c9122b318f8'.",
+                "type": "str",
+                "default": "647fed35c71c2c9122b318f8"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_movie_reviews_by_id",
+        "description": "Fetches a complete list of movie reviews associated with a given movie ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The movie ID for which reviews need to be fetched. The ID can be obtained from the Get Movie By ID endpoint.",
+                "type": "str",
+                "default": "tt0120338"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "title_title_abs",
+        "description": "Retrieves all poems with a specific title using the Thundercomb Poetry DB API.",
+        "parameters": {
+            "title": {
+                "description": "The exact title of the poem.",
+                "type": "str",
+                "default": "Sonnet 18: Shall I compare thee to a summer's day?"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_random_quotes",
+        "description": "Fetches multiple random quotes from a specified category or from multiple categories if 'all' is specified.",
+        "parameters": {
+            "count": {
+                "description": "The number of random quotes to retrieve.",
+                "type": "int",
+                "default": "2"
+            },
+            "category": {
+                "description": "The category from which to fetch quotes. Use 'all' to fetch from multiple categories.",
+                "type": "str",
+                "default": "all"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "graffiti_tags",
+        "description": "Fetches and returns a list of graffiti tags based on provided sorting and limiting parameters from the Jet Set Radio API.",
+        "parameters": {
+            "orderby": {
+                "description": "Determines the order of the returned tags. Possible values are 'asc' for ascending and 'desc' for descending. Default is 'asc'.",
+                "type": "str",
+                "default": "asc"
+            },
+            "limit": {
+                "description": "Limits the number of items returned in the response. Default is '5'.",
+                "type": "str",
+                "default": "5"
+            },
+            "sortby": {
+                "description": "Specifies the field by which the tags will be sorted. Examples include 'name' and 'stats'. Default is 'name'.",
+                "type": "str",
+                "default": "name"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "fetch_chapters",
+        "description": "Fetches the list of chapters for a given manga ID from the Mangaverse API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the manga for which chapters need to be fetched. Defaults to '6486b7547ae7cb74845df856'.",
+                "type": "str, optional",
+                "default": "6486b7547ae7cb74845df856"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_4d_results",
+        "description": "Fetches the 4D lottery results for a specific date and company.",
+        "parameters": {
+            "version": {
+                "description": "The version of the 4D results API to use.",
+                "type": "str",
+                "default": "v1"
+            },
+            "date": {
+                "description": "The date for which the 4D results are to be fetched, in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2020-01-29"
+            },
+            "company": {
+                "description": "The lottery company for which the results are to be fetched. Options include:",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "show_movie",
+        "description": "Retrieves information about a specific movie show using the RapidAPI service.",
+        "parameters": {
+            "show_slug": {
+                "description": "The slug identifier for the show.",
+                "type": "str",
+                "default": ""
+            },
+            "is_id": {
+                "description": "The ID of the specific video of the show.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "lyrics_get",
+        "description": "Fetches lyrics and related data for a specific song using the SongMeanings API.",
+        "parameters": {
+            "sm_lid": {
+                "description": "SongMeanings Lyric ID. When specified, this parameter will bypass any other lyric identification parameters.",
+                "type": "str",
+                "default": ""
+            },
+            "lyric_title": {
+                "description": "The title of the song or track.",
+                "type": "str",
+                "default": ""
+            },
+            "artist_name": {
+                "description": "The name of the artist.",
+                "type": "str",
+                "default": ""
+            },
+            "format": {
+                "description": "The desired output format (either 'xml' or 'json').",
+                "type": "str",
+                "default": ""
+            },
+            "spotify_id": {
+                "description": "The Spotify ID of the song. If specified, a match will attempt to be made via this ID. The API will also require `lyric_title` and `artist_name` as backup attempts if this parameter is used. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "count": {
+                "description": "Used to track and report any offline cached views of lyrics. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "fetch_images",
+        "description": "Fetches images from the Mangaverse API based on the provided chapter ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The chapter ID to fetch images for. Defaults to '6486b7937ae7cb74845df888' if not provided.",
+                "type": "str",
+                "default": "6486b7937ae7cb74845df888"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "canvas_episodes_get_info",
+        "description": "Retrieves episode information and photo links from the Webtoon API.",
+        "parameters": {
+            "episodeno": {
+                "description": "The ID of the episode as returned from the `.../canvas/episodes/list` endpoint.",
+                "type": "int",
+                "default": "1"
+            },
+            "titleno": {
+                "description": "The ID of the title as returned from the `.../canvas/titles/list` or `.../canvas/search` endpoint.",
+                "type": "int",
+                "default": "300138"
+            },
+            "language": {
+                "description": "The language code for the response. Default is 'en'. Accepted values are {'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'}.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_free_games",
+        "description": "Fetches the current list of free games from the Epic Games Store based on the specified locale and country.",
+        "parameters": {
+            "locale": {
+                "description": "The locale code for the desired language (e.g., 'en-US').",
+                "type": "str",
+                "default": "en"
+            },
+            "country": {
+                "description": "The country code to filter the games (e.g., 'US').",
+                "type": "str",
+                "default": "US"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "riddle_by_keyword",
+        "description": "Fetches one random riddle based on a given keyword using the Toolbench RapidAPI service.",
+        "parameters": {
+            "keyword": {
+                "description": "The subject or keyword to get a riddle for.",
+                "type": "str",
+                "default": "cat"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_gifs",
+        "description": "Search for gifs based on a query using the Humor API.",
+        "parameters": {
+            "query": {
+                "description": "The search query to find matching gifs.",
+                "type": "str",
+                "default": "cat"
+            },
+            "number": {
+                "description": "The number of results to retrieve, between 1 and 10. Defaults to 3.",
+                "type": "int, optional",
+                "default": 3
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_by_tvdb_id",
+        "description": "Fetches TV Show information from the MDB List API using the given TVDB ID.",
+        "parameters": {
+            "tv": {
+                "description": "The TVDB ID of the TV Show to fetch information for.",
+                "type": "int",
+                "default": "273181"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "show_all_series",
+        "description": "Fetches and returns all series information for a given show slug from the VOD App RapidAPI.",
+        "parameters": {
+            "show_slug": {
+                "description": "The unique identifier for the show.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_manga_by_id",
+        "description": "Fetches Manga information by its ID from the Anime, Manga, and Novels API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the Manga to fetch information for.",
+                "type": "int",
+                "default": "3674"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "send_a_word_to_check",
+        "description": "Sends a word to an API to check if it is vulgar and returns information about the word.",
+        "parameters": {
+            "content_type": {
+                "description": "The type of content to be specified in the query.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "word": {
+                "description": "The word to be checked for vulgarity.",
+                "type": "str",
+                "default": "chimpo"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "jsr_characters",
+        "description": "Fetches a list of characters from the Jet Set Radio API with optional filtering, sorting, and ordering parameters.",
+        "parameters": {
+            "limit": {
+                "description": "Specifies the maximum number of items to be returned. Default is '5'.",
+                "type": "str",
+                "default": "5"
+            },
+            "sortby": {
+                "description": "The field by which to sort the characters. Default is 'name'. Possible values include any field on the document, such as 'name' or 'stats'.",
+                "type": "str",
+                "default": "name"
+            },
+            "orderby": {
+                "description": "The order in which to sort the characters. Default is 'asc'. Possible values are 'asc' for ascending and 'desc' for descending. Must be used in conjunction with 'sortby'.",
+                "type": "str",
+                "default": "asc"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_videos_by_channel",
+        "description": "Fetches the last 30 videos from a specified YouTube channel using the Toolbench RapidAPI.",
+        "parameters": {
+            "cid": {
+                "description": "The channel ID of the YouTube channel.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "drakelikehate",
+        "description": "Generate a \"Drake Likes and Hates\" meme by sending specified texts to the Memeados RapidAPI and receiving the generated meme data.",
+        "parameters": {
+            "text2": {
+                "description": "The text to be displayed in the \"hate\" section of the meme.",
+                "type": "str",
+                "default": "This text is liked."
+            },
+            "text1": {
+                "description": "The text to be displayed in the \"like\" section of the meme.",
+                "type": "str",
+                "default": "This text is hated"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "jsrf_character_by_id",
+        "description": "Fetch a single character by ID from the Jet Set Radio API.",
+        "parameters": {
+            "characterid": {
+                "description": "The unique identifier of the character.",
+                "type": "str",
+                "default": "643c71888cabe0dcede868a3"
+            },
+            "limit": {
+                "description": "The maximum number of items to return. Defaults to '5'.",
+                "type": "str, optional",
+                "default": "5"
+            },
+            "orderby": {
+                "description": "The order in which to return results. Possible values are 'asc' (ascending, default) and 'desc' (descending).",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "sortby": {
+                "description": "The field by which to sort the results, such as 'name' or 'stats'. Defaults to 'name'.",
+                "type": "str, optional",
+                "default": "name"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_random_fact",
+        "description": "Fetches a random fact based on the specified type and optional parameters.",
+        "parameters": {
+            "type": {
+                "description": "The category of the fact. Must be one of \"trivia\", \"math\", \"date\", or \"year\".",
+                "type": "str",
+                "default": "trivia"
+            },
+            "min": {
+                "description": "The minimum number, inclusive. Defaults to '10'.",
+                "type": "str, optional",
+                "default": "10"
+            },
+            "max": {
+                "description": "The maximum number, inclusive. Defaults to '20'.",
+                "type": "str, optional",
+                "default": "20"
+            },
+            "fragment": {
+                "description": "Whether to return the fact as a sentence fragment. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            },
+            "json": {
+                "description": "Specify 'True' to return the result as JSON instead of plaintext. Defaults to 'True'.",
+                "type": "str, optional",
+                "default": true
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "random_joke",
+        "description": "Fetches a random joke from the Humor API based on specified criteria.",
+        "parameters": {
+            "keywords": {
+                "description": "A comma-separated list of keywords to filter the jokes (default is 'rocket').",
+                "type": "str",
+                "default": "rocket"
+            },
+            "include_tags": {
+                "description": "A comma-separated list of tags that the joke must have (default is 'one_liner').",
+                "type": "str",
+                "default": "one_liner"
+            },
+            "min_rating": {
+                "description": "The minimum rating of the joke between 0 and 10 (default is 7).",
+                "type": "int",
+                "default": 7
+            },
+            "max_length": {
+                "description": "The maximum length of the joke in characters (default is 200).",
+                "type": "int",
+                "default": 200
+            },
+            "exclude_tags": {
+                "description": "A comma-separated list of tags that the joke must not have (default is 'nsfw').",
+                "type": "str",
+                "default": "nsfw"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_records",
+        "description": "Fetch Guinness World Records for a given search term using the RapidAPI service.",
+        "parameters": {
+            "term": {
+                "description": "The search term to find Guinness World Records.",
+                "type": "str",
+                "default": "push ups"
+            },
+            "pagenum": {
+                "description": "Page number of the results to fetch. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "maxresults": {
+                "description": "Maximum number of results to return. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "insult",
+        "description": "Generate an insult for a person based on a given reason using the Humor API.",
+        "parameters": {
+            "reason": {
+                "description": "The reason for the insult.",
+                "type": "str",
+                "default": "you did it again"
+            },
+            "name": {
+                "description": "The name of the person to insult.",
+                "type": "str",
+                "default": "Alex"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "app_news",
+        "description": "Fetch the latest news for a specific app from the Steam API.",
+        "parameters": {
+            "limit": {
+                "description": "The number of news articles to retrieve.",
+                "type": "int",
+                "default": "10"
+            },
+            "appid": {
+                "description": "The Steam app ID for which to fetch the news.",
+                "type": "int",
+                "default": "730"
+            },
+            "contentlength": {
+                "description": "The maximum length of the news content. Defaults to 300.",
+                "type": "int, optional",
+                "default": "300"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "check_user_exists",
+        "description": "Checks if a user exists on the Waifu service by user ID using the Toolbench RapidAPI key.",
+        "parameters": {
+            "user_id": {
+                "description": "The unique identifier of the user to check.",
+                "type": "str",
+                "default": "sample_user_id"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "jsrf_characters",
+        "description": "Fetches a list of JSRF (Jet Set Radio Future) characters based on given parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of items to return in the response. Default is '5'.",
+                "type": "str, optional",
+                "default": "5"
+            },
+            "orderby": {
+                "description": "The order in which to sort items. Possible values are 'asc' (ascending) and 'desc' (descending). Default is 'asc'. This parameter has an effect only if `sortby` is also provided.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "sortby": {
+                "description": "The field by which to sort the items. Possible values include any field on the document such as 'name' or 'stats'. Default is 'name'.",
+                "type": "str, optional",
+                "default": "name"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "letters",
+        "description": "Finds possible words from the given Boggle board letters using the RapidAPI Codebox Boggle endpoint.",
+        "parameters": {
+            "letters": {
+                "description": "A string representing the letters on the Boggle board.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_novel_by_id",
+        "description": "Fetches a novel's details from the Anime, Manga, and Novels API using a given novel ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the novel to fetch.",
+                "type": "str",
+                "default": "3"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_quotes_by_anime_title",
+        "description": "Fetches quotes from a specified anime title using the Anime Quotes API.",
+        "parameters": {
+            "title": {
+                "description": "The title of the anime for which to fetch quotes. Defaults to 'Fairy Tail'.",
+                "type": "str",
+                "default": "Fairy Tail"
+            },
+            "page": {
+                "description": "The page number for pagination. Defaults to '1'.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "youtube_emb_link",
+        "description": "Fetches YouTube embed link information using the given URL and RapidAPI key.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the YouTube video to fetch information for. Defaults to 'https://www.youtube.com/embed/OA9zy0BLm9g'.",
+                "type": "str",
+                "default": "https://www.youtube.com/embed/OA9zy0BLm9g"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "person",
+        "description": "Retrieve details about a specific person (e.g., actor, director) using their unique ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the person whose details are being fetched.",
+                "type": "int",
+                "default": "7110004"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "rate_word",
+        "description": "Rates the funniness of a given word using the HumorAPI.",
+        "parameters": {
+            "word": {
+                "description": "The word to be rated.",
+                "type": "str",
+                "default": "cookie"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_cast_by_id",
+        "description": "Retrieves the full cast list for a given movie, including images and roles, using the Cinema API.",
+        "parameters": {
+            "is_id": {
+                "description": "The movie ID for which to retrieve the cast information.",
+                "type": "str",
+                "default": "tt0120338"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "title_streaming_sources",
+        "description": "Fetches the streaming sources for a given title and provides direct links to watch the title on different platforms. Streaming sources are limited to the USA for free plans.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the title. This can be a Watchmode ID, an IMDB ID, or a TMDB type and ID combination.",
+                "type": "str",
+                "default": "3173903"
+            },
+            "regions": {
+                "description": "A comma-separated list of 2-character country codes to filter the streaming source results. Defaults to 'US'.",
+                "type": "str, optional",
+                "default": "US"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "novels",
+        "description": "Fetches information about novels from the RapidAPI service.",
+        "parameters": {
+            "pagesize": {
+                "description": "The number of items to return per page. Defaults to '2'.",
+                "type": "str, optional",
+                "default": "2"
+            },
+            "page": {
+                "description": "The page number to retrieve. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "manga",
+        "description": "Fetches manga information from a specified API using pagination and a provided API key.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "pagesize": {
+                "description": "The number of items per page. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "search_manga",
+        "description": "Search for manga using the Mangaverse API based on a given text.",
+        "parameters": {
+            "text": {
+                "description": "The text to search for in manga titles and subtitles. Defaults to 'isekai'.",
+                "type": "str",
+                "default": "isekai"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_book_information_by_book_id",
+        "description": "Fetches detailed information about a book from an external API using the book's ID.",
+        "parameters": {
+            "book_id": {
+                "description": "The unique identifier for the book to retrieve information about.",
+                "type": "str",
+                "default": "56597885"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "getrecentanimes",
+        "description": "Fetches the recent animes from the GoGoAnime API for a given page number.",
+        "parameters": {
+            "pagenumber": {
+                "description": "The page number to fetch recent animes from.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "get_horoscope_english_only",
+        "description": "Fetches horoscope information in English based on the provided astrological sign, period, and type.",
+        "parameters": {
+            "sign": {
+                "description": "The astrological sign for which to fetch the horoscope (e.g., 'aries', 'taurus').",
+                "type": "str",
+                "default": ""
+            },
+            "period": {
+                "description": "The period for the horoscope (e.g., 'daily', 'weekly', 'monthly').",
+                "type": "str",
+                "default": ""
+            },
+            "type": {
+                "description": "The type of horoscope, which depends on the selected period. Use the appropriate method to get available types for the selected period.",
+                "type": "str",
+                "default": "general"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "originals_episodes_list",
+        "description": "Fetches a list of episodes for a specified comic title from the Webtoon Originals API.",
+        "parameters": {
+            "titleno": {
+                "description": "The title number of the comic, obtained from endpoints like .../originals/titles/list or .../originals/titles/list-by-rank.",
+                "type": "int",
+                "default": "2113"
+            },
+            "language": {
+                "description": "The language code for the episodes. One of the following: 'en', 'zh-hant', 'de', 'fr', 'es', 'th', 'id'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "pagesize": {
+                "description": "The number of episodes to fetch per page. Maximum is 20. Defaults to 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "startindex": {
+                "description": "The starting index for paging. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Entertainment"
+    },
+    {
+        "name": "global_achievement_percentages_for_app",
+        "description": "Retrieve the global achievement percentages for a specific Steam app.",
+        "parameters": {
+            "appid": {
+                "description": "The Steam application ID for which to retrieve achievement percentages.",
+                "type": "int",
+                "default": "730"
+            }
+        },
+        "domain": "Entertainment"
+    }
+]

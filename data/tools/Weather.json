@@ -1,0 +1,1643 @@
+[
+    {
+        "name": "time_zone_api",
+        "description": "Fetches up-to-date time zone and local time information as JSON based on a given query parameter.",
+        "parameters": {
+            "q": {
+                "description": "Query parameter to fetch time zone data.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "availability",
+        "description": "Checks if a given URL is archived and currently accessible in the Wayback Machine.",
+        "parameters": {
+            "url": {
+                "description": "The URL to check for availability in the Wayback Machine.",
+                "type": "str",
+                "default": "http://mashape.com"
+            },
+            "timestamp": {
+                "description": "The timestamp to look up in Wayback. If not specified, the most recent available capture is returned. The format of the timestamp is 1-14 digits (YYYYMMDDhhmmss). Defaults to '20090101'.",
+                "type": "str, optional",
+                "default": "20090101"
+            },
+            "callback": {
+                "description": "An optional callback to produce a JSONP response. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_individual_news_from_source",
+        "description": "Fetch LGBTQ+ related news from a specific newspaper using the newspaper's ID.",
+        "parameters": {
+            "newspaperid": {
+                "description": "The unique identifier of the newspaper from which to retrieve news.",
+                "type": "str",
+                "default": "gaytimes"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "getforecastweather",
+        "description": "Fetches weather forecast data for a specified city using the OpenWeatherMap API.",
+        "parameters": {
+            "q": {
+                "description": "The city name for which the weather forecast is requested.",
+                "type": "str",
+                "default": ""
+            },
+            "cnt": {
+                "description": "The number of timestamps to return in the response. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "units": {
+                "description": "Units of measurement. Options are 'imperial' for Fahrenheit, 'metric' for Celsius, and 'standard' for Kelvin. Defaults to 'standard'.",
+                "type": "str, optional",
+                "default": "standard"
+            },
+            "lang": {
+                "description": "Language for the output. Translation applies to city name and description fields. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_weather_updates",
+        "description": "Fetches weather updates for a given city using the RapidAPI Weather API.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve weather information.",
+                "type": "str",
+                "default": "London"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "now",
+        "description": "Fetches the current time for a specified time zone using the RapidAPI date calculator service.",
+        "parameters": {
+            "tzname": {
+                "description": "The name of the time zone for which to fetch the current time. Defaults to 'UTC'.",
+                "type": "str",
+                "default": "UTC"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_hourly_forecast",
+        "description": "Retrieves the hourly weather forecast for a specified city using the RapidAPI Cloud Cast service.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve the hourly weather forecast.",
+                "type": "str",
+                "default": "New York"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "weather_report",
+        "description": "Fetches the weather report of a specified city using the Toolbench RapidAPI.",
+        "parameters": {
+            "cityname": {
+                "description": "Name of the city for which the weather report is to be fetched.",
+                "type": "str",
+                "default": "mumbai"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "reverse_geocoding",
+        "description": "Translates location coordinates into human-readable addresses using the Reverse Geocoding API.",
+        "parameters": {
+            "query": {
+                "description": "The location coordinates to be translated into a readable address.",
+                "type": "str",
+                "default": "40.7624284 -73.973794"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "alerts_active_zone_zoneid",
+        "description": "Fetches a list of active weather alerts for a specified zone ID using the National Weather Service API.",
+        "parameters": {
+            "zoneid": {
+                "description": "A valid zone ID for which to fetch the active alerts. Example: 'ILZ081'.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "daily_forecast_5_days",
+        "description": "Fetch a 5-day daily weather forecast for the specified geographic coordinates.",
+        "parameters": {
+            "longitude": {
+                "description": "The longitude of the location for which the forecast is to be retrieved.",
+                "type": "str",
+                "default": "103.86"
+            },
+            "latitude": {
+                "description": "The latitude of the location for which the forecast is to be retrieved.",
+                "type": "str",
+                "default": "1.28"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "ski_weather_api",
+        "description": "Fetches ski weather forecasts from the World Weather Online API for a specified location.",
+        "parameters": {
+            "q": {
+                "description": "The location query (e.g., city name, latitude/longitude).",
+                "type": "str",
+                "default": "45.45,6.7"
+            },
+            "tp": {
+                "description": "Time period for the weather forecast (e.g., '3 hourly'). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language code for the weather forecast (default is 'en' for English).",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "format": {
+                "description": "The response format, such as 'json' or 'xml'. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "num_of_days": {
+                "description": "The number of days for the weather forecast, with a maximum of 7 days. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_station_information",
+        "description": "Get information about a NOAA tide station using its ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The station ID to retrieve information for.",
+                "type": "str",
+                "default": "8570283"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "current",
+        "description": "Fetch the current weather information for a specified location using the Foreca Weather API.",
+        "parameters": {
+            "location": {
+                "description": "The location for which the current weather is to be retrieved.",
+                "type": "str",
+                "default": "102643743"
+            },
+            "windunit": {
+                "description": "The unit for wind speed in the response. Default is 'MS'.",
+                "type": "str, optional",
+                "default": "MS"
+            },
+            "alt": {
+                "description": "The altitude in meters. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "lang": {
+                "description": "The language for the response, specified using ISO 639-1 codes. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "tz": {
+                "description": "The time zone for the response, specified using IANA time zone database names. Default is 'Europe/London'.",
+                "type": "str, optional",
+                "default": "Europe/London"
+            },
+            "tempunit": {
+                "description": "The unit for temperature in the response. Default is 'C'.",
+                "type": "str, optional",
+                "default": "C"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "xyz_map_tiles_for_ocean_conditions",
+        "description": "Fetches ocean condition tiles based on the specified variable and datetime using Wavebase API.",
+        "parameters": {
+            "variable": {
+                "description": "The ocean variable to fetch (e.g., 'VHM0' for wave significant height).",
+                "type": "str",
+                "default": "VHM0"
+            },
+            "datetime": {
+                "description": "The datetime for the desired observation, in the format 'YYYYMMDDHH'.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "air_quality_forecast",
+        "description": "Returns an air quality forecast for a given location.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude of the location for which the air quality forecast is to be retrieved.",
+                "type": "int",
+                "default": "35.779"
+            },
+            "lon": {
+                "description": "The longitude of the location for which the air quality forecast is to be retrieved.",
+                "type": "int",
+                "default": "-78.638"
+            },
+            "hours": {
+                "description": "The number of hours for which the forecast is to be retrieved (default is 72).",
+                "type": "int",
+                "default": "72"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "weather_statistics",
+        "description": "Fetches the average weather statistics for a specified location for the next 30 days.",
+        "parameters": {
+            "units": {
+                "description": "Unit system to be used. Available values are:",
+                "type": "str",
+                "default": "auto"
+            },
+            "place_id": {
+                "description": "Identifier of a place. If not provided, the location can be specified using `lat` and `lon`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lon": {
+                "description": "Longitude in the format 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4. Defaults to '-122.42282'.",
+                "type": "str, optional",
+                "default": "-122.42282"
+            },
+            "lat": {
+                "description": "Latitude in the format 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4. Defaults to '37.81021'.",
+                "type": "str, optional",
+                "default": "37.81021"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "by_geographic_coordinates",
+        "description": "Fetches weather data based on geographic coordinates.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the geographic coordinates.",
+                "type": "int",
+                "default": "139"
+            },
+            "lat": {
+                "description": "Latitude of the geographic coordinates.",
+                "type": "int",
+                "default": "35"
+            },
+            "units": {
+                "description": "Units of measurement. Options are 'standard', 'metric', and 'imperial'. Defaults to 'standard' if not specified.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language for the output. Defaults to the API's default language if not specified.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "search_autocomplete_api",
+        "description": "Search or Autocomplete API returns matching cities and towns based on the query.",
+        "parameters": {
+            "q": {
+                "description": "Query parameter used to obtain matching locations. Supported formats include:",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "ip_lookup_api",
+        "description": "Fetches detailed information for a given IP address using the WeatherAPI.",
+        "parameters": {
+            "q": {
+                "description": "The IP address to look up. Can also be 'auto:ip' to auto-detect the IP address.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "hourly_forecast",
+        "description": "Fetches the hourly weather forecast for a specified ski resort.",
+        "parameters": {
+            "resort": {
+                "description": "The name of the ski resort for which the forecast is to be fetched.",
+                "type": "str",
+                "default": "Jackson Hole"
+            },
+            "el": {
+                "description": "Specifies a part of the mountain. Accepted values are 'top', 'mid', and 'bot'. Default is 'top'.",
+                "type": "str, optional",
+                "default": "top"
+            },
+            "units": {
+                "description": "Specifies desired units. Accepted values are 'i' (imperial) and 'm' (metric). Default is 'i'.",
+                "type": "str, optional",
+                "default": "i"
+            },
+            "c": {
+                "description": "Limits the result to the current day only. Default is None.",
+                "type": "bool, optional",
+                "default": "false"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "nowcast",
+        "description": "Fetches a 3-hour weather forecast in 15-minute time steps for a given location.",
+        "parameters": {
+            "location": {
+                "description": "The geographic location for which the forecast is requested.",
+                "type": "str",
+                "default": "102643743"
+            },
+            "dataset": {
+                "description": "The set of weather variables to include in the response (default is 'full').",
+                "type": "str",
+                "default": "full"
+            },
+            "windunit": {
+                "description": "The unit for wind speed in the response, such as 'MS' (meters per second) (default is 'MS').",
+                "type": "str",
+                "default": "MS"
+            },
+            "tz": {
+                "description": "The time zone for the response, using IANA time zone database names (default is 'Europe/London').",
+                "type": "str",
+                "default": "Europe/London"
+            },
+            "tempunit": {
+                "description": "The unit for temperature in the response, such as 'C' (Celsius) (default is 'C').",
+                "type": "str",
+                "default": "C"
+            },
+            "alt": {
+                "description": "The altitude of the location in meters (default is 0).",
+                "type": "int",
+                "default": "0"
+            },
+            "periods": {
+                "description": "The number of 15-minute time steps to include, with a maximum of 12 (default is 8).",
+                "type": "int",
+                "default": "8"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "local_weather_api",
+        "description": "Fetches local weather data using the World Weather Online API.",
+        "parameters": {
+            "q": {
+                "description": "Location query (city name, town name, or geographic coordinates).",
+                "type": "str",
+                "default": "40.73,-73"
+            },
+            "tp": {
+                "description": "Time interval between weather updates (e.g., '1' for hourly updates). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "aqi": {
+                "description": "Whether to include Air Quality Index data ('yes' or 'no'). Defaults to 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "format": {
+                "description": "Response format (e.g., 'json' or 'xml'). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language for the output. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "alerts": {
+                "description": "Whether to include weather alerts ('yes' or 'no'). Defaults to 'no'.",
+                "type": "str, optional",
+                "default": "no"
+            },
+            "num_of_days": {
+                "description": "Number of days for the weather forecast. Defaults to 3.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_current_weather",
+        "description": "Retrieves the current weather for a specified city using the Cloud Cast API.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve the weather.",
+                "type": "str",
+                "default": "New York"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "air_quality_history",
+        "description": "Fetches the past 24 hours of air quality observations for a specified geographic location.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the location for which to retrieve air quality data.",
+                "type": "int",
+                "default": "35.779"
+            },
+            "lon": {
+                "description": "Longitude of the location for which to retrieve air quality data.",
+                "type": "int",
+                "default": "-78.638"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_wind_speed",
+        "description": "Fetches the current wind speed for a specified city using the Toolbench RapidAPI service.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve wind speed information.",
+                "type": "str",
+                "default": "New York"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "current_air_quality",
+        "description": "Fetches the current air quality conditions for a given location specified by its longitude and latitude.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the location for which to retrieve air quality data.",
+                "type": "str",
+                "default": "-73.00597"
+            },
+            "lat": {
+                "description": "Latitude of the location for which to retrieve air quality data.",
+                "type": "str",
+                "default": "40.71427"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "v1_airquality",
+        "description": "Fetches air quality data from the API Ninjas Air Quality API based on provided location parameters.",
+        "parameters": {
+            "zip": {
+                "description": "ZIP code of the desired location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Name of the country.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "city": {
+                "description": "Name of the city. Defaults to 'Seattle'.",
+                "type": "str, optional",
+                "default": "Seattle"
+            },
+            "lon": {
+                "description": "Longitude of the desired location. Must be used in conjunction with `lat`.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "state": {
+                "description": "US state (United States only).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lat": {
+                "description": "Latitude of the desired location. Must be used in conjunction with `lon`.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "daily",
+        "description": "Fetches the daily weather forecast for the next 21 days using Meteosource's AI technology.",
+        "parameters": {
+            "language": {
+                "description": "The language of text summaries. Available options are:",
+                "type": "str",
+                "default": "en"
+            },
+            "units": {
+                "description": "The unit system for the forecast data. Available options are:",
+                "type": "str",
+                "default": "auto"
+            },
+            "lon": {
+                "description": "Longitude in various formats like 12E, 12.3E, 12.3, or 13W, 13.2W, -13.4. Alternatively, use the `place_id` parameter. Defaults to '-122.42282'.",
+                "type": "str",
+                "default": "-122.42282"
+            },
+            "place_id": {
+                "description": "Identifier of a place obtained from Location endpoints. Alternatively, use `lat` and `lon` parameters. Defaults to None.",
+                "type": "str",
+                "default": ""
+            },
+            "lat": {
+                "description": "Latitude in various formats like 12N, 12.3N, 12.3, or 13S, 13.2S, -13.4. Alternatively, use the `place_id` parameter. Defaults to '37.81021'.",
+                "type": "str",
+                "default": "37.81021"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "nearest_place",
+        "description": "Searches for the nearest named place (village, town, or city) from given GPS coordinates.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude in formats like \"12E\", \"12.3E\", \"12.3\", \"13W\", \"13.2W\", or \"-13.4\".",
+                "type": "str",
+                "default": "-122.42282"
+            },
+            "lat": {
+                "description": "Latitude in formats like \"12N\", \"12.3N\", \"12.3\", \"13S\", \"13.2S\", or \"-13.4\".",
+                "type": "str",
+                "default": "37.81021"
+            },
+            "language": {
+                "description": "The language for the place names. Available options are:",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "rapidapigethourlyforecastbylocationname",
+        "description": "Fetches the hourly weather forecast for a given location using the RapidAPI service.",
+        "parameters": {
+            "locationname": {
+                "description": "The name of the location for which to retrieve the hourly weather forecast.",
+                "type": "str",
+                "default": "Berlin"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "rapidapigetforecasthourlybycoordinates",
+        "description": "Gets hourly weather forecast information for given geographical coordinates using the RapidAPI service.",
+        "parameters": {
+            "latitude": {
+                "description": "The latitude of the geographical location.",
+                "type": "int",
+                "default": 46.95828
+            },
+            "longitude": {
+                "description": "The longitude of the geographical location.",
+                "type": "int",
+                "default": 10.87152
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_5_day_3_hour_forecast_data",
+        "description": "Fetches the 5-day weather forecast data with 3-hour intervals for a specified location.",
+        "parameters": {
+            "q": {
+                "description": "The location query in the format \"{city name},{country code}\". The city name and country code should be divided by a comma, and the country code should follow ISO 3166 standards. Defaults to 'dallas,us'.",
+                "type": "str",
+                "default": "dallas,us"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "hourly_forecast_48_hours",
+        "description": "Fetches a 48-hour weather forecast for the specified latitude and longitude coordinates.",
+        "parameters": {
+            "latitude": {
+                "description": "The latitude coordinate for the forecast location.",
+                "type": "str",
+                "default": "-22.95"
+            },
+            "longitude": {
+                "description": "The longitude coordinate for the forecast location.",
+                "type": "str",
+                "default": "-43.21"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "air_quality_forecasts",
+        "description": "Fetches hourly air quality forecast for a specified city.",
+        "parameters": {
+            "country": {
+                "description": "The country where the city is located.",
+                "type": "str",
+                "default": "netherlands"
+            },
+            "city": {
+                "description": "The city for which the air quality forecast is required.",
+                "type": "str",
+                "default": "amsterdam"
+            },
+            "lat": {
+                "description": "Latitude of the city. Defaults to '52.377956'.",
+                "type": "str, optional",
+                "default": "52.377956"
+            },
+            "lon": {
+                "description": "Longitude of the city. Defaults to '4.897070'.",
+                "type": "str, optional",
+                "default": "4.897070"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "alerts_parameters",
+        "description": "Fetches a list of weather alerts from the National Weather Service API, with optional filtering parameters.",
+        "parameters": {
+            "start": {
+                "description": "Start time in ISO8601 format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "end": {
+                "description": "End time in ISO8601 format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "status": {
+                "description": "Event status (e.g., alert, update, cancel).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "zone_type": {
+                "description": "Zone type (e.g., land, marine).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "active": {
+                "description": "Active alerts indicator (1 for active, 0 for inactive).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "type": {
+                "description": "Zone type (e.g., land, marine).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "point": {
+                "description": "Geographic point in \"latitude,longitude\" format.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "state": {
+                "description": "State or marine code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "zone": {
+                "description": "Zone ID for forecast or county.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "urgency": {
+                "description": "Urgency of the alert (e.g., expected, immediate).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Region code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "certainty": {
+                "description": "Certainty of the event (e.g., likely, observed).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "severity": {
+                "description": "Severity of the event (e.g., minor, moderate, severe).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of results (integer).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "defaultroot",
+        "description": "Fetches cat facts from the MeowFacts API based on the provided parameters.",
+        "parameters": {
+            "count": {
+                "description": "The number of cat facts to return. If not specified, a default number of facts will be returned.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "factid": {
+                "description": "An optional ID to retrieve a specific cat fact. If not specified, random facts will be returned.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "The locale in which to retrieve the cat facts. Defaults to 'eng' (English).",
+                "type": "str, optional",
+                "default": "eng"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "alerts_active_region_region",
+        "description": "Fetches a list of active weather alerts for a specific region from the National Weather Service API in CAP-ATOM format.",
+        "parameters": {
+            "region": {
+                "description": "A valid region code for which to retrieve active alerts. Refer to the API documentation for a list of valid region codes.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "realtime_weather_api",
+        "description": "Fetches current weather information based on the provided query parameter.",
+        "parameters": {
+            "q": {
+                "description": "Query parameter used to specify the location for which weather data is required. It can be in various formats such as:",
+                "type": "str",
+                "default": "53.1,-0.13"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_forecastdata_by_lat_lon",
+        "description": "Fetches a 14-day weather forecast for a given location specified by latitude and longitude.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the location.",
+                "type": "int",
+                "default": "51.5"
+            },
+            "lon": {
+                "description": "Longitude of the location.",
+                "type": "int",
+                "default": "-0.6"
+            },
+            "lang": {
+                "description": "Language for the forecast data. Defaults to 'en'. It can be one of [en, de, nl, fr, pl, gr, it, cn, ru, cz, pt, es].",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "location_info",
+        "description": "Retrieve metadata for a specified location using the Foreca Weather API.",
+        "parameters": {
+            "location": {
+                "description": "The location for which to retrieve metadata.",
+                "type": "str",
+                "default": "101275339"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "forecast_weather_api",
+        "description": "Fetches weather forecast and alerts from a weather API.",
+        "parameters": {
+            "q": {
+                "description": "Query parameter to specify the location. It can be:",
+                "type": "str",
+                "default": "London"
+            },
+            "days": {
+                "description": "Number of days of weather forecast required, with a default of 3 days.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "dt": {
+                "description": "Specific date for the forecast in 'yyyy-MM-dd' format. Must be between today and the next 10 days.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Desired language for the 'condition:text' field in the response.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "getweatherforecast",
+        "description": "Fetches the weather forecast for a given location over a specified number of days.",
+        "parameters": {
+            "location": {
+                "description": "The name of the city or location for which to retrieve the weather forecast.",
+                "type": "str",
+                "default": "London"
+            },
+            "days": {
+                "description": "The number of days of forecast data to retrieve. Defaults to 3. The range of days is from 1 to 16.",
+                "type": "int, optional",
+                "default": "3"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "alerts",
+        "description": "Fetches severe weather alerts for a specified location using GPS coordinates or place ID.",
+        "parameters": {
+            "place_id": {
+                "description": "Identifier of a place obtained from the 'Location' endpoints. If provided, it takes precedence over lat and lon.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lat": {
+                "description": "Latitude of the location, with defaults to '45.74846'. This can be in formats like 12N, 12.3N, -13.4. Ignored if place_id is provided.",
+                "type": "str, optional",
+                "default": "45.74846"
+            },
+            "lon": {
+                "description": "Longitude of the location, with defaults to '4.84671'. This can be in formats like 12E, 12.3E, -13.4. Ignored if place_id is provided.",
+                "type": "str, optional",
+                "default": "4.84671"
+            },
+            "language": {
+                "description": "Language of text summaries. Supported languages are:",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "timezone": {
+                "description": "Timezone for date fields in the response. Default is 'auto', which uses the local timezone of the location. Format follows the tzinfo database (e.g., 'Europe/Prague', 'UTC').",
+                "type": "str, optional",
+                "default": "auto"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "sports_api",
+        "description": "Fetches a listing of all upcoming sports events for football, cricket, and golf in JSON format using the weatherapi-com RapidAPI service.",
+        "parameters": {
+            "q": {
+                "description": "The location query to search for sports events.",
+                "type": "str",
+                "default": "London"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "astronomy_api",
+        "description": "Fetches astronomical data including sunrise, sunset, moonrise, moonset, moon phase, and illumination in JSON format based on the provided query parameters.",
+        "parameters": {
+            "q": {
+                "description": "The query parameter for retrieving data. It supports various formats such as:",
+                "type": "str",
+                "default": "London"
+            },
+            "dt": {
+                "description": "The date for which to retrieve the astronomical data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "news_list",
+        "description": "Fetch a list of the latest news articles based on the given performance ID.",
+        "parameters": {
+            "performanceid": {
+                "description": "The ID used to filter news articles, obtained from endpoints like auto-complete, get-summary, or get-movers.",
+                "type": "str",
+                "default": "0P0000OQN8"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_humidty",
+        "description": "Fetches the humidity data for a specified city using the Toolbench RapidAPI.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city to get the humidity information for.",
+                "type": "str",
+                "default": "New York"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "latest_observations",
+        "description": "Fetches the latest weather observations for a given location using the Foreca Weather API.",
+        "parameters": {
+            "location": {
+                "description": "The location for which to fetch the latest weather observations.",
+                "type": "str",
+                "default": "102643743"
+            },
+            "lang": {
+                "description": "The language in which the results should be returned. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "v1_weather",
+        "description": "Fetches weather information from the API Ninjas Weather API endpoint.",
+        "parameters": {
+            "country": {
+                "description": "The country name.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lon": {
+                "description": "The longitude of the desired location. Must be supplied with the `lat` parameter.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "zip": {
+                "description": "The 5-digit zip code (United States only).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "state": {
+                "description": "The US state (United States only).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "city": {
+                "description": "The city name. Defaults to 'Seattle'.",
+                "type": "str, optional",
+                "default": "Seattle"
+            },
+            "lat": {
+                "description": "The latitude of the desired location. Must be supplied with the `lon` parameter.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "points_point_forecast",
+        "description": "Fetches weather forecast data for a specific geographic point using the National Weather Service API.",
+        "parameters": {
+            "point": {
+                "description": "Geographic coordinate in the format 'latitude,longitude' (EPSG:4326).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "by_city_name",
+        "description": "Fetch weather data from the RapidWeather API by city name.",
+        "parameters": {
+            "q": {
+                "description": "City name, state code, and country code divided by commas (e.g., \"London,UK\").",
+                "type": "str",
+                "default": "London,UK"
+            },
+            "units": {
+                "description": "Units of measurement. Either \"standard\", \"metric\", or \"imperial\".",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language code to get the output in a specific language.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "three_hourly",
+        "description": "Fetches a three-hourly weather forecast for a given location up to 14 days, with optional historical data and various configurable parameters.",
+        "parameters": {
+            "location": {
+                "description": "The location for which to fetch the weather forecast.",
+                "type": "str",
+                "default": "102643743"
+            },
+            "history": {
+                "description": "Whether to include 24 hours of past data. Defaults to None.",
+                "type": "bool, optional",
+                "default": "0"
+            },
+            "tz": {
+                "description": "Time zone in the response, specified using IANA time zone database names. Defaults to 'Europe/London'.",
+                "type": "str, optional",
+                "default": "Europe/London"
+            },
+            "dataset": {
+                "description": "The variable set to use in the response. Defaults to 'full'.",
+                "type": "str, optional",
+                "default": "full"
+            },
+            "tempunit": {
+                "description": "The temperature unit in the response (e.g., 'C' for Celsius). Defaults to 'C'.",
+                "type": "str, optional",
+                "default": "C"
+            },
+            "alt": {
+                "description": "The altitude in meters. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "periods": {
+                "description": "The number of time steps in the response, with a default of 8 and a maximum of 12. Defaults to 8.",
+                "type": "int, optional",
+                "default": "8"
+            },
+            "windunit": {
+                "description": "The wind speed unit in the response (e.g., 'MS' for meters per second). Defaults to 'MS'.",
+                "type": "str, optional",
+                "default": "MS"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_tides_for_a_station",
+        "description": "Retrieves tide information for a specified station ID on a given date using the RapidAPI NOAA Tides service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the tide station to get information for.",
+                "type": "str",
+                "default": "9411340"
+            },
+            "date": {
+                "description": "The date for which to retrieve tide information in YYYYMMDD format. Defaults to '20220625'.",
+                "type": "str, optional",
+                "default": "20220625"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "zones_type_zoneid_forecast",
+        "description": "Fetches the forecast data for a given zone type and zone ID using the National Weather Service API.",
+        "parameters": {
+            "type": {
+                "description": "A valid zone type (e.g., public, coastal, fire).",
+                "type": "str",
+                "default": ""
+            },
+            "zoneid": {
+                "description": "The ID of the zone for which to fetch the forecast.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "historical_weather",
+        "description": "Fetch historical weather data for a specific date and location within the past 8 years.",
+        "parameters": {
+            "date": {
+                "description": "The UTC day of the data in the past in `YYYY-MM-DD` format.",
+                "type": "str",
+                "default": "2021-08-24"
+            },
+            "lat": {
+                "description": "Latitude in the following format: `12N`, `12.3N`, `12.3`, `13S`, `13.2S`, `-13.4`. If not provided, `place_id` must be specified. Default is '37.81021'.",
+                "type": "str, optional",
+                "default": "37.81021"
+            },
+            "place_id": {
+                "description": "Identifier of a place. If not provided, `lat` and `lon` must be specified. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "units": {
+                "description": "Unit system to be used. Available values are:",
+                "type": "str, optional",
+                "default": "auto"
+            },
+            "lon": {
+                "description": "Longitude in the following format: `12E`, `12.3E`, `12.3`, `13W`, `13.2W`, `-13.4`. If not provided, `place_id` must be specified. Default is '-122.42282'.",
+                "type": "str, optional",
+                "default": "-122.42282"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "rapidapigetforecastsummarybycoordinates",
+        "description": "Fetches the weather forecast summary for the given geographical coordinates using RapidAPI.",
+        "parameters": {
+            "longitude": {
+                "description": "The longitude of the geographical location for which to get the forecast summary.",
+                "type": "int",
+                "default": 10.87152
+            },
+            "latitude": {
+                "description": "The latitude of the geographical location for which to get the forecast summary.",
+                "type": "int",
+                "default": 46.95828
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "points_point",
+        "description": "Fetches forecast information for a given geographical point from the National Weather Service.",
+        "parameters": {
+            "point": {
+                "description": "Latitude and longitude in the format 'EPSG:4326 latitude, EPSG:4326 longitude'.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "hourly",
+        "description": "Fetch hourly weather forecast for a specified location over the next 5 days using AI technology.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude in formats like '12E', '12.3E', or '-13.4'. This parameter is optional if `place_id` is provided.",
+                "type": "str",
+                "default": "-122.42282"
+            },
+            "lat": {
+                "description": "Latitude in formats like '12N', '12.3N', or '-13.4'. This parameter is optional if `place_id` is provided.",
+                "type": "str",
+                "default": "37.81021"
+            },
+            "language": {
+                "description": "Language for the text summaries. Options are 'en' (English), 'es' (Spanish), 'fr' (French), 'de' (German), 'pl' (Polish), 'cs' (Czech).",
+                "type": "str",
+                "default": "en"
+            },
+            "place_id": {
+                "description": "Identifier of a place. If provided, it overrides `lat` and `lon`.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "units": {
+                "description": "Unit system to be used. Options are 'auto', 'metric', 'us', 'uk', 'ca'. Default is 'auto'.",
+                "type": "str",
+                "default": "auto"
+            },
+            "timezone": {
+                "description": "Timezone for the date fields. Can be a tzinfo database string like 'Europe/Prague', 'UTC', or 'auto' to use the local timezone of the location. Default is 'auto'.",
+                "type": "str",
+                "default": "auto"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_the_forecast",
+        "description": "Fetches the weather forecast for the specified city using the RapidAPI Cloud Cast service.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve the weather forecast.",
+                "type": "str",
+                "default": "New York"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "ocean_conditions_closest_to_latitude_longitude",
+        "description": "Search for current and predicted ocean conditions closest to a specified latitude and longitude.",
+        "parameters": {
+            "latitude": {
+                "description": "The latitude coordinate of the location.",
+                "type": "int",
+                "default": "52.8"
+            },
+            "longitude": {
+                "description": "The longitude coordinate of the location.",
+                "type": "int",
+                "default": "-4.07"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "stations_stationid",
+        "description": "Fetch metadata about a specified weather station using the station ID.",
+        "parameters": {
+            "stationid": {
+                "description": "The ID of the weather station.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "find_places",
+        "description": "Searches for places by name to obtain a place_id for use with Weather Forecast Endpoints and retrieves detailed geographical information (e.g., country, region, elevation, timezone) for a given location.",
+        "parameters": {
+            "text": {
+                "description": "Name of the place to search.",
+                "type": "str",
+                "default": "fishermans wharf"
+            },
+            "language": {
+                "description": "Language in which the place names will be returned. Available options include:",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "air_quality_measurements",
+        "description": "Fetches current air quality measurements per hour for a given city using the Toolbench RapidAPI.",
+        "parameters": {
+            "country": {
+                "description": "The country in which the city is located.",
+                "type": "str",
+                "default": "netherlands"
+            },
+            "city": {
+                "description": "The city for which the air quality measurements are to be fetched.",
+                "type": "str",
+                "default": "amsterdam"
+            },
+            "lon": {
+                "description": "The longitude coordinate of the city. Defaults to '4.897070'.",
+                "type": "str, optional",
+                "default": "4.897070"
+            },
+            "lat": {
+                "description": "The latitude coordinate of the city. Defaults to '52.377956'.",
+                "type": "str, optional",
+                "default": "52.377956"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "retrieve_the_hardiness_zone",
+        "description": "Fetch the USDA Plant Hardiness Zone for the given ZIP code using the Toolbench API.",
+        "parameters": {
+            "zipcode": {
+                "description": "The ZIP code for which to retrieve the hardiness zone.",
+                "type": "str",
+                "default": "90210"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "products_types_typeid_locations",
+        "description": "Fetches a list of locations that have issued products for a given product type.",
+        "parameters": {
+            "typeid": {
+                "description": "The ID of a valid product type.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "current_snow_conditions",
+        "description": "Fetches the current snow conditions for a specified ski resort.",
+        "parameters": {
+            "resort": {
+                "description": "The name of the ski resort to retrieve snow conditions for.",
+                "type": "str",
+                "default": "Jackson Hole"
+            },
+            "units": {
+                "description": "The unit system to use for the conditions. Accepted values are 'i' (imperial) and 'm' (metric). Defaults to 'i'.",
+                "type": "str, optional",
+                "default": "i"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "classification",
+        "description": "Gets the K\u00f6ppen climate classification code for the given longitude and latitude coordinates.",
+        "parameters": {
+            "lon": {
+                "description": "The longitude coordinate.",
+                "type": "str",
+                "default": "-60.069"
+            },
+            "lat": {
+                "description": "The latitude coordinate.",
+                "type": "str",
+                "default": "-3.198"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "zones_type_zoneid",
+        "description": "Fetches metadata for a specific zone using the National Weather Service API.",
+        "parameters": {
+            "type": {
+                "description": "A valid zone type (e.g., forecast zone).",
+                "type": "str",
+                "default": ""
+            },
+            "zoneid": {
+                "description": "The ID of the specific zone.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_weather",
+        "description": "Fetch weather information including current, hourly, and daily data for a specific location.",
+        "parameters": {
+            "version": {
+                "description": "The version of the API to be used.",
+                "type": "str",
+                "default": "v1"
+            },
+            "lng": {
+                "description": "Geographical coordinate of the location (longitude).",
+                "type": "int",
+                "default": "-73.999257"
+            },
+            "lat": {
+                "description": "Geographical coordinate of the location (latitude).",
+                "type": "int",
+                "default": "40.723558"
+            },
+            "unit": {
+                "description": "Unit of temperature ('F' for Fahrenheit, 'C' for Celsius, or default 'K' for Kelvin). Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "one_call_api",
+        "description": "Fetch weather data from the One Call API for given geographical coordinates.",
+        "parameters": {
+            "lon": {
+                "description": "Longitude of the location.",
+                "type": "int",
+                "default": "94.04"
+            },
+            "lat": {
+                "description": "Latitude of the location.",
+                "type": "int",
+                "default": "33.44"
+            },
+            "lang": {
+                "description": "Language for the weather data. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "units": {
+                "description": "Units of measurement ('standard', 'metric', 'imperial'). Default is None; 'standard' units will be applied by default.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "exclude": {
+                "description": "Parts of the weather data to exclude from the API response, specified as a comma-delimited list. Possible values include 'current', 'minutely', 'hourly', 'daily', 'alerts'. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "minutely",
+        "description": "Fetches minute-by-minute precipitation forecast for the next 60 minutes, updated in real-time using AI nowcasting models.",
+        "parameters": {
+            "place_id": {
+                "description": "Identifier of a place. Used to specify the location. If not provided, use `lat` and `lon`. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "timezone": {
+                "description": "Timezone for the date fields. If not specified, local timezone of the forecast location will be used. Formats like 'Europe/Prague' or 'UTC' can be used, or 'auto' to use local timezone. Defaults to 'auto'.",
+                "type": "str, optional",
+                "default": "auto"
+            },
+            "lat": {
+                "description": "Latitude of the location. Specify in formats like '12N', '12.3N', '12.3', or '-13.4'. Defaults to '37.81021'.",
+                "type": "str, optional",
+                "default": "37.81021"
+            },
+            "language": {
+                "description": "Language for text summaries. Available languages are 'en' (default), 'es', 'fr', 'de', 'pl', 'cs'. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "units": {
+                "description": "Unit system to be used. Values can be 'auto' (default), 'metric', 'us', 'uk', 'ca'. Defaults to 'auto'.",
+                "type": "str, optional",
+                "default": "auto"
+            },
+            "lon": {
+                "description": "Longitude of the location. Specify in formats like '12E', '12.3E', '12.3', or '-13.4'. Defaults to '-122.42282'.",
+                "type": "str, optional",
+                "default": "-122.42282"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "alerts_active_area_area",
+        "description": "Retrieves a list of active weather alerts for a specified area using the National Weather Service API. The data is returned in CAP-ATOM format.",
+        "parameters": {
+            "area": {
+                "description": "A valid area for which to retrieve active alerts. Refer to the counts endpoint for a list of valid areas.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "products_types_typeid",
+        "description": "Returns a list of products for a given product type ID by making a request to the National Weather Service API.",
+        "parameters": {
+            "typeid": {
+                "description": "An ID representing a valid product type.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "points_point_forecast_hourly",
+        "description": "Fetches hourly weather forecast data for a given geographical point using the RapidAPI service.",
+        "parameters": {
+            "point": {
+                "description": "A string specifying the geographical point in the format \"latitude,longitude\".",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "historical_weather_record",
+        "description": "Fetches historical weather records for a specified location within a given time range.",
+        "parameters": {
+            "location": {
+                "description": "The address or latitude, longitude of the location. Addresses can be full or partial (city, state, zip code). If using coordinates, the format should be latitude,longitude (decimal degrees).",
+                "type": "str",
+                "default": "Washington,DC,USA"
+            },
+            "enddatetime": {
+                "description": "The end date and time for the data request in ISO format (yyyy-MM-ddTHH:mm:ss) using the location's time zone.",
+                "type": "str",
+                "default": "2019-01-03T00:00:00"
+            },
+            "startdatetime": {
+                "description": "The start date and time for the data request in ISO format (yyyy-MM-ddTHH:mm:ss) using the location's time zone.",
+                "type": "str",
+                "default": "2019-01-01T00:00:00"
+            },
+            "aggregatehours": {
+                "description": "The interval between weather history data points in the output. Supported values are 1 (hourly) or 24 (daily).",
+                "type": "int",
+                "default": "24"
+            },
+            "unitgroup": {
+                "description": "The unit system for the output data. Supported values are 'us', 'uk', or 'metric'.",
+                "type": "str",
+                "default": "us"
+            },
+            "contenttype": {
+                "description": "The format of the output data. Supported values are 'json' or 'csv'. Default is 'csv'.",
+                "type": "str, optional",
+                "default": "csv"
+            },
+            "dayendtime": {
+                "description": "Filters the output to records within the specified end time of the day (format: HH:mm:ss). Default is '17:00:00'.",
+                "type": "str, optional",
+                "default": "17:00:00"
+            },
+            "daystarttime": {
+                "description": "Filters the output to records within the specified start time of the day (format: HH:mm:ss). Default is '08:00:00'.",
+                "type": "str, optional",
+                "default": "8:00:00"
+            },
+            "shortcolumnnames": {
+                "description": "If True, returns shorter, abbreviated column names. If False, returns descriptive column names. Useful for programmatic use.",
+                "type": "bool, optional",
+                "default": "0"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "get_climate_data_by_lat_lon_or_key",
+        "description": "Fetch climate data for a specific location by latitude and longitude or by city key.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the location. Defaults to 45.",
+                "type": "int, optional",
+                "default": "45"
+            },
+            "lon": {
+                "description": "Longitude of the location. Defaults to -70.",
+                "type": "int, optional",
+                "default": "-70"
+            },
+            "key": {
+                "description": "City key from a list of cities. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language of the response. Can be one of ['en', 'de', 'nl', 'fr', 'pl', 'gr', 'it', 'cn', 'ru', 'cz', 'pt', 'es']. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Weather"
+    },
+    {
+        "name": "rapidapigetforecastsummarybylocationname",
+        "description": "Fetches the weather forecast summary for a given location name using the RapidAPI Forecast service.",
+        "parameters": {
+            "locationname": {
+                "description": "The name of the location for which to retrieve the forecast summary.",
+                "type": "str",
+                "default": "Berlin"
+            }
+        },
+        "domain": "Weather"
+    }
+]

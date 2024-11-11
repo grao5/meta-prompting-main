@@ -1,0 +1,474 @@
+[
+    {
+        "name": "getpeople",
+        "description": "Fetch a list of Power BI influencers from a specified page using the given API key.",
+        "parameters": {
+            "page": {
+                "description": "The page number to request the list of influencers from.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_checker",
+        "description": "Checks whether the provided email is valid or disposable using the RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be verified.",
+                "type": "str",
+                "default": "rahul@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "get_emails",
+        "description": "Retrieve emails from a given URL using the Toolbench RapidAPI service.",
+        "parameters": {
+            "url": {
+                "description": "The URL from which to extract email addresses.",
+                "type": "str",
+                "default": "https://google.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "validate_email",
+        "description": "Validate an email address using the \"Validate Email\" API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": "hello@apitier.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "role_account",
+        "description": "Check if a given domain has a role-based email account using the Fast Email Verifier API.",
+        "parameters": {
+            "domain": {
+                "description": "The domain name to check for role-based email accounts.",
+                "type": "str",
+                "default": "domain.org"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "getusers",
+        "description": "Fetches user information from the RapidAPI user-demo service, optionally filtered by email and name.",
+        "parameters": {
+            "email": {
+                "description": "Email address to filter the users.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name to filter the users.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "mailcheck",
+        "description": "Checks if an email domain is valid or a disposable/temporary address.",
+        "parameters": {
+            "domain": {
+                "description": "The email or domain to check for validity. It is recommended to enter just the domain for user privacy.",
+                "type": "str",
+                "default": "mailinator.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email",
+        "description": "Validates the given email address using the RapidAPI email validation service.",
+        "parameters": {
+            "email": {
+                "description": "The email address that needs to be validated.",
+                "type": "str",
+                "default": "example@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "readmail",
+        "description": "Fetches mail data from the provided mail ID using the Toolbench RapidAPI service.",
+        "parameters": {
+            "mailid": {
+                "description": "The ID of the mail to retrieve.",
+                "type": "str",
+                "default": "null"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "emailverification",
+        "description": "Verifies an email address using the Fast Email Verifier API.",
+        "parameters": {
+            "emailsimple": {
+                "description": "The email address to be verified. Defaults to 'mbavazijoshua@gmail.com'.",
+                "type": "str",
+                "default": "mbavazijoshua@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "verify_email",
+        "description": "Verify the validity of an email address using the RapidAPI email verification service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be verified.",
+                "type": "str",
+                "default": "test@example.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "freedomain",
+        "description": "Checks whether a domain is available for free using the Fast Email Verifier API.",
+        "parameters": {
+            "domain": {
+                "description": "The domain name to be checked for availability.",
+                "type": "str",
+                "default": "domain.org"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "get_the_mx_records",
+        "description": "Fetches the MX (Mail Exchange) records for a given email address using the RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address for which to retrieve MX records.",
+                "type": "str",
+                "default": "example@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "bouncer_email_checker",
+        "description": "Validates an email address using the Bouncer Email Checker API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": "example@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "inbox",
+        "description": "Fetches the inbox messages for a given temporary email address using the Toolbench RapidAPI.",
+        "parameters": {
+            "email": {
+                "description": "The temporary email address for which to fetch the inbox messages.",
+                "type": "str",
+                "default": "example@mx.getmailet.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "validate_domain_or_email_address",
+        "description": "Validates whether the given input is a disposable domain or email address using the RapidAPI Disposable Email Validation service.",
+        "parameters": {
+            "validate": {
+                "description": "The domain or email address to be validated.",
+                "type": "str",
+                "default": "badactor@spam4.me"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_validate",
+        "description": "Validate a single email address in real-time using the Toolbench RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_verifier",
+        "description": "Verifies the validity of an email address using the Toolbench RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be verified.",
+                "type": "str",
+                "default": "hello@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "check_for_disposable_emails",
+        "description": "Checks if the given email address is disposable or temporary using the Email Existence Validator API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to check for disposability.",
+                "type": "str",
+                "default": "example@besttempmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "domain",
+        "description": "Checks if a given domain is disposable using the Mailcheck API.",
+        "parameters": {
+            "domain": {
+                "description": "The domain to check for disposability.",
+                "type": "str",
+                "default": "example.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "getteam",
+        "description": "Fetches the details of an NHL team based on the provided team ID, with optional query parameters to expand the response and specify the season.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the team.",
+                "type": "int",
+                "default": 28
+            },
+            "expand": {
+                "description": "Additional data to expand in the response. Defaults to 'team.roster'.",
+                "type": "str, optional",
+                "default": "team.roster"
+            },
+            "season": {
+                "description": "The specific season for which to return team data. Defaults to 20172018.",
+                "type": "int, optional",
+                "default": 20172018
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "getgroups",
+        "description": "Fetches the WhatsApp groups associated with the provided phone ID using the Maytapi API.",
+        "parameters": {
+            "phone_id": {
+                "description": "The ID of the phone whose WhatsApp groups are to be fetched.",
+                "type": "str",
+                "default": "12"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "validate",
+        "description": "Validates a given phone number from any country using the RapidAPI phone number validation service.",
+        "parameters": {
+            "number": {
+                "description": "The phone number to validate.",
+                "type": "str",
+                "default": "94887799"
+            },
+            "country": {
+                "description": "The ISO 3166-1 alpha-2 country code in capital letters. This is optional if `number` is in E.164 format. Defaults to 'UY'.",
+                "type": "str, optional",
+                "default": "UY"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "validate_email_address",
+        "description": "Validate if an email address is deliverable and working using the Toolbench RapidAPI service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": "test@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "verify_the_existence_of_email",
+        "description": "Verifies the existence of an email address using the Email Existence Validator API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to verify.",
+                "type": "str",
+                "default": "username@example.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_validate_regex",
+        "description": "Validates an email address using the Email Validator API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be validated.",
+                "type": "str",
+                "default": "test@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_endpoint",
+        "description": "Queries an email bounce detection API to check the deliverability status of an email address.",
+        "parameters": {
+            "email_string": {
+                "description": "The email address to be checked.",
+                "type": "str",
+                "default": "mike.2023@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "disposable_domain_and_suggest_domain",
+        "description": "Checks if the given domain is disposable and provides a suggested alternative domain.",
+        "parameters": {
+            "domain": {
+                "description": "The domain to be checked.",
+                "type": "str",
+                "default": "domain.org"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "get_status",
+        "description": "Retrieve the delivery status report for a given message ID using the provided API key.",
+        "parameters": {
+            "msg_id": {
+                "description": "The unique identifier of the SMS message. This can be obtained by setting the parameter `JSON`, `return_msg_id` or `details` to `1` when sending the SMS via the API. It can also be retrieved from the message journal in the user area.",
+                "type": "int",
+                "default": ""
+            },
+            "p": {
+                "description": "The API Key for authentication.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "normalize",
+        "description": "Normalizes the given email address using the RapidAPI email utilities service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be normalized.",
+                "type": "str",
+                "default": "cognitive.camp@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "emailverifications",
+        "description": "Verifies a list of email addresses using the Fast Email Verifier API.",
+        "parameters": {
+            "emailsimple": {
+                "description": "Comma-separated list of email addresses to verify. Default is 'mbavazijoshua@gmail.com,apisolution@gmail.com'.",
+                "type": "str",
+                "default": "mbavazijoshua@gmail.com,apisolution@gmail.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "verify_an_email",
+        "description": "Verifies a single email address using the Blaze Verify API. If a verification request takes longer than the specified timeout, retries are allowed for up to 5 minutes. The verification result is returned once available.",
+        "parameters": {
+            "email": {
+                "description": "The email address to be verified.",
+                "type": "str",
+                "default": ""
+            },
+            "accept_all": {
+                "description": "Whether to perform an accept-all check, which can increase response time. Default is False.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "smtp": {
+                "description": "Whether to include the SMTP step in the verification, which can also increase response time. Default is True.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "timeout": {
+                "description": "The timeout in seconds to wait for a response. Minimum is 2, and maximum is 30. Default is 5.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "check_email",
+        "description": "Validates an email address using the RapidAPI Email Checker and Validator service.",
+        "parameters": {
+            "email": {
+                "description": "The email address to validate.",
+                "type": "str",
+                "default": "marod29733@lubde.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "v1_verify",
+        "description": "Validates an email address using the QuickEmailVerification API.",
+        "parameters": {
+            "email": {
+                "description": "The email address to validate.",
+                "type": "str",
+                "default": "youremail@domain.com"
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "gettoken",
+        "description": "Generates and retrieves a token for the given user ID using the specified RapidAPI key.",
+        "parameters": {
+            "userid": {
+                "description": "The user ID for which the token is to be generated.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Email"
+    },
+    {
+        "name": "email_validation",
+        "description": "Validates whether a given email domain is disposable using the RapidAPI service.",
+        "parameters": {
+            "domain": {
+                "description": "The email domain to be validated.",
+                "type": "str",
+                "default": "gmail.com"
+            }
+        },
+        "domain": "Email"
+    }
+]

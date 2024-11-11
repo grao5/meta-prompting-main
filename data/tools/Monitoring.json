@@ -1,0 +1,307 @@
+[
+    {
+        "name": "camelizer_get_prices",
+        "description": "Retrieves the latest prices, and the historical highest and lowest prices of a product from Amazon using its ASIN code.",
+        "parameters": {
+            "asin": {
+                "description": "The ASIN number of a product from Amazon, formatted as a string (e.g., 'B08QB93S6R').",
+                "type": "str",
+                "default": ""
+            },
+            "locale": {
+                "description": "The locale code to specify the Amazon region. Defaults to 'us'. Options include 'au', 'ca', 'fr', 'de', 'it', 'es', 'uk', 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_advisories_by_vendor",
+        "description": "Fetch advisories from CISA.gov for a specified vendor and provide information on current security issues, vulnerabilities, and exploits.",
+        "parameters": {
+            "vendorid": {
+                "description": "The vendor ID for which to fetch advisories.",
+                "type": "str",
+                "default": "Siemens"
+            },
+            "limit": {
+                "description": "The maximum number of advisories to retrieve. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            },
+            "info": {
+                "description": "Additional information flag. If set, includes more details in the response.",
+                "type": "bool, optional",
+                "default": "true"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "check_email_server",
+        "description": "Checks the status of an email server for a given domain using the Toolbench RapidAPI.",
+        "parameters": {
+            "domain": {
+                "description": "The domain of the email server to check.",
+                "type": "str",
+                "default": "microsoft.com"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_daily_domains",
+        "description": "Fetches the daily list of domains containing the specified keyword that were registered in the past day.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword used to search for newly registered domains. The keyword should not contain any domain name.",
+                "type": "str",
+                "default": "Google"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "searchdomain",
+        "description": "Fetches webpage data from the \"pages-hosted-on-domain\" API based on the provided filters and parameters.",
+        "parameters": {
+            "matchtype": {
+                "description": "The type of match to be used. Default is 'prefix'.",
+                "type": "str",
+                "default": "prefix"
+            },
+            "collapse": {
+                "description": "The field to be collapsed. Default is 'urlkey'.",
+                "type": "str",
+                "default": "urlkey"
+            },
+            "url": {
+                "description": "The URL to search for. Default is 'httpsimage.com'.",
+                "type": "str",
+                "default": "httpsimage.com"
+            },
+            "fl": {
+                "description": "The fields to include in the response. Default is 'timestamp:4,original,urlkey'.",
+                "type": "str",
+                "default": "timestamp:4,original,urlkey"
+            },
+            "limit": {
+                "description": "The maximum number of results to return. Default is 100000.",
+                "type": "int",
+                "default": "100000"
+            },
+            "filter": {
+                "description": "The filter to apply to the results. Default is 'statuscode:200'.",
+                "type": "str",
+                "default": "statuscode:200"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_all_advisories",
+        "description": "Fetches all advisories providing timely information about current security issues, vulnerabilities, and exploits from CISA.gov.",
+        "parameters": {
+            "info": {
+                "description": "Flag to include additional information in the advisories. Defaults to None.",
+                "type": "bool, optional",
+                "default": "true"
+            },
+            "limit": {
+                "description": "The number of advisories to return. Defaults to 2.",
+                "type": "int, optional",
+                "default": "2"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_current_count",
+        "description": "This function retrieves the current count from a specified API without increasing it. It allows customization through various parameters including `clabel`, `color`, and `idv`. The function makes a GET request to the API and returns the response in JSON format if possible, otherwise, it returns the response text.",
+        "parameters": {
+            "clabel": {
+                "description": "A label used to specify a category. Defaults to 'blue'.",
+                "type": "str",
+                "default": "blue"
+            },
+            "color": {
+                "description": "A color value for the request. Defaults to 'red'.",
+                "type": "str",
+                "default": "red"
+            },
+            "idv": {
+                "description": "An identifier for the request. Defaults to 'sample'.",
+                "type": "str",
+                "default": "sample"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_count_and_increase_by_one",
+        "description": "Sends a GET request to the specified counter API, optionally including parameters for ID, label, and color, ",
+        "parameters": {
+            "is_id": {
+                "description": "An ID to include in the request query. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "clabel": {
+                "description": "A label to include in the request query. Default is 'blue'.",
+                "type": "str, optional",
+                "default": "blue"
+            },
+            "color": {
+                "description": "A color to include in the request query. Default is 'red'.",
+                "type": "str, optional",
+                "default": "red"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "example",
+        "description": "Fetch an example phone number for a specified country and type using the Veriphone API.",
+        "parameters": {
+            "country_code": {
+                "description": "The country code in 2-letter ISO format (e.g., 'US', 'RU'). If absent or invalid, the country will be inferred from the IP address. Default is 'GB'.",
+                "type": "str, optional",
+                "default": "GB"
+            },
+            "type": {
+                "description": "The type of example phone number to return. Options include 'fixed_line', 'mobile', 'premium_rate', 'shared_cost', 'toll_free', and 'voip'. Default is 'mobile'.",
+                "type": "str, optional",
+                "default": "mobile"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "scan_headers",
+        "description": "Scans the headers of a web page for the given domain using the Scan Web Headers API.",
+        "parameters": {
+            "domain": {
+                "description": "The domain of the web page to be scanned.",
+                "type": "str",
+                "default": "www.google.com"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "get_by_decade",
+        "description": "Fetches world population data for a specified decade using the RapidAPI service.",
+        "parameters": {
+            "decade": {
+                "description": "The decade for which to fetch population data. Defaults to 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "camelizer_get_price_chart",
+        "description": "Fetches a price history chart of a specified product from Amazon using the Camelizer API.",
+        "parameters": {
+            "asin": {
+                "description": "The ASIN (Amazon Standard Identification Number) of a product from Amazon. Example: 'B08QB93S6R'.",
+                "type": "str",
+                "default": ""
+            },
+            "lang": {
+                "description": "The language for the chart. One of the following: 'en', 'fr', 'de', 'it', 'es'. Default is 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "tp": {
+                "description": "The time period for the price history. One of the following: '1m', '3m', '6m', '1y', 'all'. Default is '3m'.",
+                "type": "str, optional",
+                "default": "3m"
+            },
+            "w": {
+                "description": "The width of the chart in pixels. Default is 720.",
+                "type": "int, optional",
+                "default": "720"
+            },
+            "h": {
+                "description": "The height of the chart in pixels. Default is 480.",
+                "type": "int, optional",
+                "default": "480"
+            },
+            "country": {
+                "description": "The country-specific Amazon site. One of the following: 'au', 'ca', 'fr', 'de', 'it', 'es', 'uk', 'us'. Default is 'us'.",
+                "type": "str, optional",
+                "default": "us"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "soil_data_by_lat_lng",
+        "description": "Fetches the latest soil data readings for a specified latitude and longitude.",
+        "parameters": {
+            "lng": {
+                "description": "Longitude of the location.",
+                "type": "int",
+                "default": "78.96"
+            },
+            "lat": {
+                "description": "Latitude of the location.",
+                "type": "int",
+                "default": "20.59"
+            },
+            "pollutants": {
+                "description": "Specific pollutants to filter the data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Maximum number of records to retrieve. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "soil_history_data",
+        "description": "Fetches historical soil data for a given location and date range using the Ambee API.",
+        "parameters": {
+            "lng": {
+                "description": "Longitude of the location.",
+                "type": "int",
+                "default": "78.96"
+            },
+            "lat": {
+                "description": "Latitude of the location.",
+                "type": "int",
+                "default": "20.59"
+            },
+            "startdate": {
+                "description": "The start date for the soil data in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "'YYYY-MM-DD hh:mm:ss'"
+            },
+            "enddate": {
+                "description": "The end date for the soil data in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "YYYY-MM-DD hh:mm:ss''"
+            }
+        },
+        "domain": "Monitoring"
+    },
+    {
+        "name": "getcertdetails",
+        "description": "Gets the certificate details of a given domain using the RapidAPI service.",
+        "parameters": {
+            "domainname": {
+                "description": "The domain name for which to retrieve the certificate details.",
+                "type": "str",
+                "default": "google.com"
+            }
+        },
+        "domain": "Monitoring"
+    }
+]

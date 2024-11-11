@@ -1,0 +1,2018 @@
+[
+    {
+        "name": "get_ip_location",
+        "description": "Retrieves the latitude and longitude coordinates of a given IP address using the ip-api.com API.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to locate.",
+                "type": "str"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "facilities_lookup",
+        "description": "Fetch a list of facilities in Cameroon based on provided query parameters.",
+        "parameters": {
+            "type": {
+                "description": "The type of facility to search for (e.g., hospital, bank, college). Refer to the OpenStreetMap Map features for more options.",
+                "type": "str",
+                "default": "hospital"
+            },
+            "region": {
+                "description": "The region where the facility is located.",
+                "type": "str",
+                "default": "littoral"
+            },
+            "city": {
+                "description": "The city where the facility is located. Default is 'douala'.",
+                "type": "str, optional",
+                "default": "douala"
+            },
+            "limit": {
+                "description": "The maximum number of facilities to return. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "api_v1_addresses",
+        "description": "Fetches address information using the provided postcode and house number from the RapidAPI Address Validation API.",
+        "parameters": {
+            "postcode": {
+                "description": "The postcode of the address.",
+                "type": "str",
+                "default": "3021GS"
+            },
+            "housenumber": {
+                "description": "The house number of the address.",
+                "type": "int",
+                "default": "288"
+            },
+            "housenumbersuffix": {
+                "description": "The suffix of the house number. Defaults to 'B'.",
+                "type": "str, optional",
+                "default": "B"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_geocoding",
+        "description": "Fetch complete, readable place information in the preferred language based on provided latitude and longitude.",
+        "parameters": {
+            "version": {
+                "description": "Version of the geocoding API to use.",
+                "type": "str",
+                "default": "v1"
+            },
+            "lat": {
+                "description": "Latitude in decimal degrees (WGS84).",
+                "type": "int",
+                "default": "37.422213"
+            },
+            "lng": {
+                "description": "Longitude in decimal degrees (WGS84).",
+                "type": "int",
+                "default": "-122.084058"
+            },
+            "lang": {
+                "description": "Preferred language of the content. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "directions_between_2_locations",
+        "description": "Fetches the route information between two geographical locations including distance, duration, and steps.",
+        "parameters": {
+            "start_lon": {
+                "description": "Longitude of the starting point (required).",
+                "type": "int",
+                "default": "-16.0755888102153"
+            },
+            "end_lon": {
+                "description": "Longitude of the ending point (required).",
+                "type": "int",
+                "default": "-17.447938"
+            },
+            "end_lat": {
+                "description": "Latitude of the ending point (required).",
+                "type": "int",
+                "default": "14.693425"
+            },
+            "start_lat": {
+                "description": "Latitude of the starting point (required).",
+                "type": "int",
+                "default": "14.14129815"
+            },
+            "distance_unit": {
+                "description": "Unit of distance measurement, valid options are 'km' (default) and 'mi'.",
+                "type": "str, optional",
+                "default": "km"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "income_by_zipcode",
+        "description": "Fetches income data for a given zipcode using the Toolbench RapidAPI.",
+        "parameters": {
+            "zip": {
+                "description": "Zipcode for which the income data is to be retrieved.",
+                "type": "str",
+                "default": "2818"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "find_by_address",
+        "description": "Fetch addresses from the \"Find By Address\" API using the provided search term.",
+        "parameters": {
+            "query": {
+                "description": "The search term used to find addresses. Defaults to 'Farringdon Road'.",
+                "type": "str",
+                "default": "Farringdon Road"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "measure_distance",
+        "description": "Calculates the distance between two geographic locations specified by their latitude and longitude coordinates, with an optional unit of measurement.",
+        "parameters": {
+            "lon2": {
+                "description": "Longitude of the second location.",
+                "type": "int",
+                "default": "10.103167361330975"
+            },
+            "lat2": {
+                "description": "Latitude of the second location.",
+                "type": "int",
+                "default": "36.81395975"
+            },
+            "lon1": {
+                "description": "Longitude of the first location.",
+                "type": "int",
+                "default": "10.7603483"
+            },
+            "lat1": {
+                "description": "Latitude of the first location.",
+                "type": "int",
+                "default": "34.797783"
+            },
+            "unit": {
+                "description": "Unit of distance measurement. Valid options are \"km\" (default), \"mi\", \"ft\", and \"yd\".",
+                "type": "str, optional",
+                "default": "km"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "postcodes_postcode",
+        "description": "Fetches addresses for a given UK postcode using the RapidAPI UK Postcode API.",
+        "parameters": {
+            "postcode": {
+                "description": "The UK postcode to look up addresses for.",
+                "type": "str",
+                "default": "PL11DN"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "search_restaurants_by_town",
+        "description": "Search for restaurants within a specified town or city using the Wyre Data API.",
+        "parameters": {
+            "town": {
+                "description": "The name of the town or city to search for restaurants.",
+                "type": "str",
+                "default": "hambleton"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_place_by_id",
+        "description": "Returns a single Place identified by an ID.",
+        "parameters": {
+            "is_id": {
+                "description": "ID of the Place.",
+                "type": "str",
+                "default": "US"
+            },
+            "language": {
+                "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, the \"localizedName\" property will be null. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "continents",
+        "description": "Fetches and returns a list of continents of the world localized to the requested language, with various filtering options.",
+        "parameters": {
+            "fields": {
+                "description": "Specifies the fields to return for each continent. Options include 'iso_a2', 'iso_a3', 'continent_code', 'dial_code', 'currency_code', 'currency_num_code', 'currency'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "continent_code": {
+                "description": "Filters the results based on the 2-letter continent code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Two-letter ISO 639-2 language code to localize the continent names.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Filter results to contain the given continent name in the chosen language.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "find_by_postcode",
+        "description": "Fetch addresses for a given UK postcode using the \"Find By PostCode\" API.",
+        "parameters": {
+            "postcode": {
+                "description": "The UK postcode for which to retrieve addresses.",
+                "type": "str",
+                "default": "PL11DN"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "geocode",
+        "description": "Fetches geographical coordinates (latitude, longitude) and city name of a given address in Uganda using the Toolbench RapidAPI.",
+        "parameters": {
+            "address": {
+                "description": "The address in Uganda to be geocoded.",
+                "type": "str",
+                "default": "Nansana"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "search_restaurants_by_local_authority",
+        "description": "Fetches all restaurants within a specified local authority using the Wyre Data API.",
+        "parameters": {
+            "localauthority": {
+                "description": "The name of the local authority to search for restaurants in.",
+                "type": "str",
+                "default": "wyre"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_a_list_of_states",
+        "description": "Retrieves a list of 3-letter state abbreviations for a given Australian postcode using the RapidAPI service.",
+        "parameters": {
+            "postcode": {
+                "description": "A valid Australian postcode to retrieve state information for.",
+                "type": "int",
+                "default": "2000"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_ip_data",
+        "description": "Fetch location-related data for a given IP address using the APIIP.net service.",
+        "parameters": {
+            "callback": {
+                "description": "JSONP callback function name as per the APIIP.net documentation. Default is 'FUNCTION_NAME'.",
+                "type": "str",
+                "default": "FUNCTION_NAME"
+            },
+            "ip": {
+                "description": "IPv4 or IPv6 address, or a comma-separated list of such addresses (limit: 50). Default is '67.250.186.196'.",
+                "type": "str",
+                "default": "67.250.186.196"
+            },
+            "language": {
+                "description": "2-letter language code to customize the response language. Default is 'es'.",
+                "type": "str",
+                "default": "es"
+            },
+            "fields": {
+                "description": "Comma-separated list of response fields to retrieve specific data according to the APIIP.net documentation. Default is 'city,capital'.",
+                "type": "str",
+                "default": "city,capital"
+            },
+            "output": {
+                "description": "Format of the API response, either 'json' or 'xml'. Default is 'xml'.",
+                "type": "str",
+                "default": "xml"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "zipcode_by_city",
+        "description": "Retrieves the zip code(s) of a given city using the GeoSource API.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which to retrieve zip code(s). The city must be in the supported countries list (44 countries).",
+                "type": "str",
+                "default": "Brussels"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "v1_iplookup",
+        "description": "Performs an IP address lookup using the API Ninjas IP Lookup API.",
+        "parameters": {
+            "address": {
+                "description": "The IP address to query. Must be in the format A.B.C.D (e.g., 73.9.149.180).",
+                "type": "str",
+                "default": "24.48.0.3"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "measure_distance_reverse",
+        "description": "Calculates the distance between two addresses in Cameroon using the specified unit of measurement.",
+        "parameters": {
+            "stop_address": {
+                "description": "The destination address for which the distance needs to be calculated.",
+                "type": "str",
+                "default": "Bonamoussadi, Douala"
+            },
+            "start_address": {
+                "description": "The starting address for which the distance needs to be calculated.",
+                "type": "str",
+                "default": "Molyko, Buea"
+            },
+            "unit": {
+                "description": "The unit of distance measurement. Valid options are 'km' (default), 'mi', 'ft', and 'yd'.",
+                "type": "str",
+                "default": "km"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_all_data_on_an_establishment_by_restaurant",
+        "description": "Fetches all data on an establishment by restaurant name using the Wyre Data API.",
+        "parameters": {
+            "restaurant": {
+                "description": "The name or identifier of the restaurant.",
+                "type": "str",
+                "default": "Shovels Inn"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "code_postal_par_code",
+        "description": "Fetches information associated with a given postal code in New Caledonia using the RapidAPI service.",
+        "parameters": {
+            "code": {
+                "description": "The postal code for which to retrieve information.",
+                "type": "str",
+                "default": "98827"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "v1_worldtime",
+        "description": "Fetches the current date and time from the API Ninjas World Time API for a specified location.",
+        "parameters": {
+            "timezone": {
+                "description": "Timezone of the desired location (e.g., 'Europe/London').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lon": {
+                "description": "Longitude of the desired location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lat": {
+                "description": "Latitude of the desired location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "state": {
+                "description": "US state name or 2-letter abbreviation (for United States cities only).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country name or 2-letter country code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "city": {
+                "description": "City name.",
+                "type": "str, optional, default 'London'",
+                "default": "London"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "search_by_centre_zip_and_radius",
+        "description": "Performs a radius search to find locations within a specified radius of a given ZIP code using the RapidAPI service.",
+        "parameters": {
+            "zip": {
+                "description": "The ZIP code around which to search for locations.",
+                "type": "str",
+                "default": "90210"
+            },
+            "radius": {
+                "description": "The radius (in miles) within which to search for locations around the given ZIP code.",
+                "type": "int",
+                "default": "10"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "iplookup",
+        "description": "Perform an IP lookup using the RapidAPI IP Lookup service.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to lookup.",
+                "type": "str",
+                "default": "161.97.149.190"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "statessearchinradius",
+        "description": "Fetch the boundaries of U.S. states within a given radius from a specified central point (latitude and longitude) in GeoJSON format.",
+        "parameters": {
+            "latitude": {
+                "description": "Latitude of the central point around which to search for state boundaries.",
+                "type": "int",
+                "default": ""
+            },
+            "radius": {
+                "description": "Radius in miles around the central point within which to search. Minimum value is 1 mile, and maximum value is 50 miles.",
+                "type": "int",
+                "default": ""
+            },
+            "longitude": {
+                "description": "Longitude of the central point around which to search for state boundaries.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_autocomplete",
+        "description": "Fetches address autocomplete predictions based on a given keyword and optional parameters such as geodetic system, coordinate unit, and API key.",
+        "parameters": {
+            "word": {
+                "description": "Address string for which the autocomplete predictions are sought. It must be between 2 to 50 characters.",
+                "type": "str",
+                "default": "\u3068\u3046k"
+            },
+            "datum": {
+                "description": "Geodetic system of latitude and longitude. Default is 'wgs84'. Other option is 'tokyo' for Old Japan Geodetic System.",
+                "type": "str, optional",
+                "default": "wgs84"
+            },
+            "coord_unit": {
+                "description": "The unit of latitude and longitude included in the output data. Default is 'degree'. Other option is 'millisec' for milliseconds.",
+                "type": "str, optional",
+                "default": "degree"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_geocoding_with_videos",
+        "description": "Fetches detailed place information and related YouTube videos based on the provided geographic coordinates.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude in decimal degrees (WGS84).",
+                "type": "int",
+                "default": "37.422213"
+            },
+            "lng": {
+                "description": "Longitude in decimal degrees (WGS84).",
+                "type": "int",
+                "default": "-122.084058"
+            },
+            "version": {
+                "description": "API version to be used for the request.",
+                "type": "str",
+                "default": "v1"
+            },
+            "lang": {
+                "description": "Preferred language of the content. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "tz_lookup_by_location",
+        "description": "Fetches time zone information for a given geographic location using Stadia Maps Time Zone API.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude component of a geographic location.",
+                "type": "int",
+                "default": "37.4666405"
+            },
+            "lng": {
+                "description": "The longitude component of a geographic location.",
+                "type": "int",
+                "default": "-85.89465"
+            },
+            "timestamp": {
+                "description": "The UNIX timestamp for which the time zone data is to be fetched. Defaults to 1589932800.",
+                "type": "int, optional",
+                "default": "1589932800"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "reversegeocode",
+        "description": "Obtain the human-readable address for a given geographical location.",
+        "parameters": {
+            "location": {
+                "description": "The latitude and longitude coordinates (comma-separated) for which to obtain the address.",
+                "type": "str",
+                "default": "37.7879493,-122.3961974"
+            },
+            "language": {
+                "description": "The language in which to return results. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "nearby_arcgis",
+        "description": "Returns nearby places of a specified type sorted by distance from the origin coordinates in ascending order using the ArcGIS API.",
+        "parameters": {
+            "lng": {
+                "description": "Longitude of the origin point.",
+                "type": "int",
+                "default": "-123.0413988"
+            },
+            "lat": {
+                "description": "Latitude of the origin point.",
+                "type": "int",
+                "default": "49.2803703"
+            },
+            "radius": {
+                "description": "Search radius in meters. Defaults to 500. Maximum is 50,000.",
+                "type": "int, optional",
+                "default": "500"
+            },
+            "type": {
+                "description": "Type of places to search for. Defaults to 'coffee shop'.",
+                "type": "str, optional",
+                "default": "coffee shop"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "nearby_superchargers",
+        "description": "Fetches nearby Tesla superchargers within a specified radius around given coordinates.",
+        "parameters": {
+            "lng": {
+                "description": "Longitude of the center point to search for superchargers.",
+                "type": "int",
+                "default": "-122.348906"
+            },
+            "lat": {
+                "description": "Latitude of the center point to search for superchargers.",
+                "type": "int",
+                "default": "47.619957"
+            },
+            "radius": {
+                "description": "Radius in kilometers to search within, default is 20 km.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "findbypincode",
+        "description": "Fetches information for a given Indian pincode using the Toolbench RapidAPI.",
+        "parameters": {
+            "pincode": {
+                "description": "The pincode for which information needs to be fetched.",
+                "type": "int",
+                "default": 518345
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_elevation",
+        "description": "Gets the elevation for specified latitude and longitude using the Toolbench RapidAPI service.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the location for which the elevation is required.",
+                "type": "int",
+                "default": "57.081937"
+            },
+            "lng": {
+                "description": "Longitude of the location for which the elevation is required.",
+                "type": "int",
+                "default": "-2.246567"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "v1_city",
+        "description": "Fetches city data from the API Ninjas City API endpoint with various filtering criteria.",
+        "parameters": {
+            "max_lat": {
+                "description": "Maximum latitude coordinate.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_population": {
+                "description": "Minimum city population.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_lon": {
+                "description": "Minimum longitude coordinate.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country filter. Must be an ISO-3166 alpha-2 code (default is 'US').",
+                "type": "str, optional",
+                "default": "US"
+            },
+            "max_population": {
+                "description": "Maximum city population.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_lat": {
+                "description": "Minimum latitude coordinate.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Name of the city to search for (default is 'New York').",
+                "type": "str, optional",
+                "default": "New York"
+            },
+            "max_lon": {
+                "description": "Maximum longitude coordinate.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Number of results to return. Must be between 1 and 30 (default is 1).",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_time_zones",
+        "description": "Fetch a list of time zones based on certain search criteria.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the time zone to filter by. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "keyword": {
+                "description": "The keyword to search for in the time zones. Defaults to 'asia'.",
+                "type": "str, optional",
+                "default": "asia"
+            },
+            "page": {
+                "description": "The page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "perpage": {
+                "description": "The number of records per page for pagination. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_district_capital_by_name",
+        "description": "Retrieves the capital of a district in Ghana given the district name.",
+        "parameters": {
+            "name": {
+                "description": "The name of the district whose capital is to be retrieved.",
+                "type": "str",
+                "default": "accra"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "datum_conversion",
+        "description": "Converts latitude and longitude from one geodetic system to another using the Navitime Geocoding API.",
+        "parameters": {
+            "coord": {
+                "description": "Latitude and longitude before conversion. Supports millisecond and degree notation.",
+                "type": "str",
+                "default": "35.624822,139.742121"
+            },
+            "after_datum": {
+                "description": "The target geodetic system for conversion. Options are 'wgs84' for World Geodetic System (default) and 'tokyo' for Old Japan Geodetic System.",
+                "type": "str",
+                "default": "wgs84"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "is_a_coordinate_water",
+        "description": "Determines if a given coordinate on Earth is water based on the provided longitude and latitude.",
+        "parameters": {
+            "longitude": {
+                "description": "The longitude of the coordinate to check.",
+                "type": "int",
+                "default": "-70.2652276"
+            },
+            "latitude": {
+                "description": "The latitude of the coordinate to check.",
+                "type": "int",
+                "default": "41.9029192"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "country_by_iso_code",
+        "description": "Fetches information about a country using its 2-letter ISO code, localized to a specified language.",
+        "parameters": {
+            "iso_code": {
+                "description": "The 2-letter ISO country code.",
+                "type": "str",
+                "default": "US"
+            },
+            "fields": {
+                "description": "A comma-delimited list of fields to include in the response. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "The 2-letter ISO language code for localizing the country name. Defaults to 'en'.",
+                "type": "str, optional",
+                "default": "en"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_states",
+        "description": "Fetches a list of states based on various search parameters.",
+        "parameters": {
+            "keyword": {
+                "description": "A keyword to search for states. Defaults to 'asia'.",
+                "type": "str, optional",
+                "default": "asia"
+            },
+            "perpage": {
+                "description": "The number of results to return per page. Defaults to 50.",
+                "type": "int, optional",
+                "default": "50"
+            },
+            "city_id": {
+                "description": "A city ID to find associated states. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "is_id": {
+                "description": "A specific state ID to search for. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The number of results to return per page. Defaults to 50.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "search_php",
+        "description": "Search for geocoding information using the specified Geokeo Forward Geocoding API.",
+        "parameters": {
+            "api": {
+                "description": "The API key for accessing the Geokeo Forward Geocoding service.",
+                "type": "str",
+                "default": "api key from geokeo"
+            },
+            "q": {
+                "description": "The address or location query string to be geocoded.",
+                "type": "str",
+                "default": "empire state building"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "nearest_metro_station",
+        "description": "Finds the nearest Delhi Metro station to the given longitude and latitude.",
+        "parameters": {
+            "long": {
+                "description": "The longitude coordinate.",
+                "type": "str",
+                "default": "77.2122"
+            },
+            "lat": {
+                "description": "The latitude coordinate.",
+                "type": "str",
+                "default": "28.5729"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "district_detail_of_specific_division",
+        "description": "Fetches all districts and upazilas of a specified division in Bangladesh using the bdapi RapidAPI endpoint.",
+        "parameters": {
+            "division_name": {
+                "description": "The name of the division for which to retrieve district and upazila information.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "municipio_por_c_digo_postal",
+        "description": "Fetches the municipality corresponding to a given postal code using the provided RapidAPI key.",
+        "parameters": {
+            "codigo_postal": {
+                "description": "The postal code for which the municipality is to be retrieved.",
+                "type": "str",
+                "default": "32500"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_postal_codes_by_id",
+        "description": "Fetches postal codes information by given ID from the Canada Postal Codes API.",
+        "parameters": {
+            "is_id": {
+                "description": "The postal code ID to fetch information for.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "bp_par_localite",
+        "description": "Fetches postal boxes by locality in New Caledonia using the provided RapidAPI key.",
+        "parameters": {
+            "localite": {
+                "description": "The locality for which to fetch postal boxes. Defaults to 'poum'.",
+                "type": "str",
+                "default": "poum"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_ratings_by_restaurant",
+        "description": "Fetch the Food Hygiene Rating for a given restaurant using the Wyre Data API.",
+        "parameters": {
+            "restaurant": {
+                "description": "The name or identifier of the restaurant for which the rating is to be fetched.",
+                "type": "str",
+                "default": "Shovels Inn"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_place_by_ip",
+        "description": "Retrieve the place information for a given IP address.",
+        "parameters": {
+            "is_id": {
+                "description": "The IP address (IPv4 and IPv6 are supported) to look up.",
+                "type": "str",
+                "default": "200.194.51.97"
+            },
+            "language": {
+                "description": "Specifies the language (ISO 639-1) to get the",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "partenaire_par_id",
+        "description": "Fetches a partner's details by their ID from the designated API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the partner to be fetched, as provided by the API.",
+                "type": "str",
+                "default": "14"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "timezones",
+        "description": "Fetch a list of the world's time zones with various filtering options.",
+        "parameters": {
+            "offset": {
+                "description": "Filter on non-daylight savings offset in hours.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Filter as \"contains\" on timezone name in the chosen language.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "code": {
+                "description": "Filter on 3-letter non-daylight savings timezone code (not unique).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "timezone": {
+                "description": "Filter on timezone name in English.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "daylights_offset": {
+                "description": "Filter on daylight savings offset in hours.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lang": {
+                "description": "Language selection ISO 639-1 two-letter code. Overrides the Accept-Language header. Default is 'de'.",
+                "type": "str, optional",
+                "default": "de"
+            },
+            "daylights_code": {
+                "description": "Filter on daylight savings letter code (not unique).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "Select fields to return in the result. Default is 'offset,daylights_offset,daylights,daylights_code,timezone'.",
+                "type": "str, optional",
+                "default": "offset,daylights_offset,daylights,daylights_code,timezone"
+            },
+            "daylights": {
+                "description": "Filter on daylight savings/non-daylight savings time zones (`true` or `false`).",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "countiessearchinboundingbox",
+        "description": "Fetch county boundaries within a specified bounding box in GeoJSON format.",
+        "parameters": {
+            "northeast": {
+                "description": "Coordinates of the northeast corner of the bounding box (e.g., '40.81,-73.41').",
+                "type": "str",
+                "default": ""
+            },
+            "southwest": {
+                "description": "Coordinates of the southwest corner of the bounding box (e.g., '40.62,-74.73').",
+                "type": "str",
+                "default": ""
+            },
+            "intersect": {
+                "description": "Whether to include areas that intersect with the bounding box. Default is None.",
+                "type": "bool, optional",
+                "default": true
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "random_google",
+        "description": "Returns a random place of a specified type within a given radius around the provided latitude and longitude.",
+        "parameters": {
+            "lat": {
+                "description": "The latitude of the location around which to search for places.",
+                "type": "int",
+                "default": "49.2803703"
+            },
+            "lng": {
+                "description": "The longitude of the location around which to search for places.",
+                "type": "int",
+                "default": "-123.0413988"
+            },
+            "type": {
+                "description": "The type of place to search for. Default is 'cafe'.",
+                "type": "str, optional",
+                "default": "cafe"
+            },
+            "radius": {
+                "description": "The search radius in meters. Default is 500.",
+                "type": "int, optional",
+                "default": "500"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "ip_geolocation",
+        "description": "This function retrieves geolocation information for a given IP address using the Toolbench API.",
+        "parameters": {
+            "ip_address": {
+                "description": "The IP address for which to retrieve geolocation data.",
+                "type": "str",
+                "default": "187.66.247.186"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "v1_urllookup",
+        "description": "Queries the API Ninjas URL Lookup endpoint to retrieve information about a given URL.",
+        "parameters": {
+            "url": {
+                "description": "The valid URL to check. It supports schemes (e.g. http://example.com) as well as schemeless (e.g. example.com) formats.",
+                "type": "str",
+                "default": "https://example.com"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_a_list_of_suburbs",
+        "description": "Fetches all matching suburbs for the provided postcode, including state, and optionally latitude and longitude if available.",
+        "parameters": {
+            "postcode": {
+                "description": "The postcode for which to find matching suburbs.",
+                "type": "int",
+                "default": "2000"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "latest_vessel_position",
+        "description": "Fetches the latest position of a vessel based on its MMSI using the RapidAPI service.",
+        "parameters": {
+            "mmsi": {
+                "description": "The Maritime Mobile Service Identity (MMSI) of the vessel.",
+                "type": "str",
+                "default": "244110352"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "communes_par_code_commune",
+        "description": "Fetch details of a commune using its code via the RapidAPI.",
+        "parameters": {
+            "code_com": {
+                "description": "The code of the commune to retrieve details for.",
+                "type": "str",
+                "default": "98810"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "zipcodesbyids",
+        "description": "Fetches boundaries of given ZIP Codes in GeoJSON format.",
+        "parameters": {
+            "ids": {
+                "description": "Comma-separated list of ZIP Code IDs. Maximum size is 200. Example: '10021,10022,10023'.",
+                "type": "str",
+                "default": ""
+            },
+            "properties": {
+                "description": "Comma-separated list of properties to include in the response. Default values are 'zip,centroid,aland,awater'.",
+                "type": "str, optional",
+                "default": "zip,centroid,aland,awater"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "nearby_google",
+        "description": "Returns a JSON array of nearby places sorted by distance from the origin coordinates in ascending order.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the location to search nearby places.",
+                "type": "int",
+                "default": "49.283030"
+            },
+            "lng": {
+                "description": "Longitude of the location to search nearby places.",
+                "type": "int",
+                "default": "-123.118990"
+            },
+            "type": {
+                "description": "Type of place to search for. Default is 'cafe'. Only values from Google's /types are valid.",
+                "type": "str, optional",
+                "default": "cafe"
+            },
+            "radius": {
+                "description": "Search radius in meters. Default is 200. Maximum allowed is 50000.",
+                "type": "int, optional",
+                "default": "200"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "ip_locator",
+        "description": "Fetches geolocation information for a given IP address using RapidAPI.",
+        "parameters": {
+            "ip_address": {
+                "description": "The IP address for which geolocation information is to be retrieved.",
+                "type": "str",
+                "default": "92.223.89.73"
+            },
+            "format": {
+                "description": "The desired output format of the response. Supported formats are .csv, .xml, and .json.",
+                "type": "str",
+                "default": "json"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "district_detail_and_coordinates_of_specific_division",
+        "description": "Fetches detailed information about the districts, coordinates, and upazilas of a specific division from the BDAPI.",
+        "parameters": {
+            "division_name": {
+                "description": "The name of the division for which to fetch details.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "full_data",
+        "description": "Fetches data from the RapidAPI based on the provided keyword, optional full data, and API key parameters.",
+        "parameters": {
+            "keyword": {
+                "description": "The keyword to search for in the API.",
+                "type": "str",
+                "default": "email marketing"
+            },
+            "fulldata": {
+                "description": "Optional parameter to specify the type of full data. Defaults to 'digital marketing'.",
+                "type": "str, optional",
+                "default": "digital marketing"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "getpostcode",
+        "description": "Retrieve details for a given UK postcode using the RapidAPI service.",
+        "parameters": {
+            "postcode": {
+                "description": "The UK postcode to be queried.",
+                "type": "str",
+                "default": "SW1A2AA"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_autosuggest",
+        "description": "Fetches address suggestions based on a partial or complete address query using the Address Autosuggest API.",
+        "parameters": {
+            "query": {
+                "description": "The partial or complete text of the address to search for suggestions.",
+                "type": "str",
+                "default": "Bridge"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "search_single_postcode",
+        "description": "Fetches the latitude and longitude coordinates for a given UK postcode using the RapidAPI service.",
+        "parameters": {
+            "postcode": {
+                "description": "The postcode for which to fetch the latitude and longitude.",
+                "type": "str",
+                "default": "SE1 7EH"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "timezone_by_id",
+        "description": "Fetches information for a given time zone using the RapidAPI service.",
+        "parameters": {
+            "timezone": {
+                "description": "The time zone to look up.",
+                "type": "str",
+                "default": "Afrika/Dakar"
+            },
+            "fields": {
+                "description": "A comma-separated list of fields to include in the response. Defaults to 'offset,daylights_offset,daylights,daylights_code,timezone'.",
+                "type": "str, optional",
+                "default": "offset,daylights_offset,daylights,daylights_code,timezone"
+            },
+            "lang": {
+                "description": "The language code for the response, following ISO 639-1 standard. Defaults to 'de'.",
+                "type": "str, optional",
+                "default": "de"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_the_timezones",
+        "description": "Fetches the list of timezones from the specified RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the results to retrieve. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "name": {
+                "description": "The name filter to apply to the timezones. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_continent_by_id",
+        "description": "Fetches and returns continent information based on a given ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the continent to fetch information for.",
+                "type": "str",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "placessearchinradius",
+        "description": "Get places within a specified radius from a given center point in GeoJSON format.",
+        "parameters": {
+            "latitude": {
+                "description": "Latitude of the center of the search radius.",
+                "type": "int",
+                "default": ""
+            },
+            "longitude": {
+                "description": "Longitude of the center of the search radius.",
+                "type": "int",
+                "default": ""
+            },
+            "radius": {
+                "description": "Radius of the search area in miles (min value is 1, max value is 50).",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "place_details_google",
+        "description": "Fetches contact and opening hours information for a place using its Google Place ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The Google Place ID of the location to retrieve details for.",
+                "type": "str",
+                "default": "ChIJCxzX9tpwhlQRIFVwULOI2FM"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "commune_par_nom",
+        "description": "Fetch one or more communes by their name, with exact or partial matching.",
+        "parameters": {
+            "nom": {
+                "description": "The name of the commune to search for. Defaults to 'poum'.",
+                "type": "str, optional",
+                "default": "poum"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_ip_geolocation",
+        "description": "Fetches the geolocation information for a given IP address using the Toolbench RapidAPI service. If no IP address is specified, it returns the geolocation information for the client's IP address.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to get geolocation information for. Defaults to '206.71.50.230'.",
+                "type": "str",
+                "default": "206.71.50.230"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "v1_timezone",
+        "description": "Fetches the timezone name for the specified input location using the API Ninjas Timezone API.",
+        "parameters": {
+            "state": {
+                "description": "US state name or 2-letter abbreviation (for United States cities only).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "lon": {
+                "description": "Longitude of the desired location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "city": {
+                "description": "City name. Defaults to 'London'.",
+                "type": "str, optional",
+                "default": "London"
+            },
+            "lat": {
+                "description": "Latitude of the desired location.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country name or 2-letter country code.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "ip_geolocation_lookup",
+        "description": "Fetch geolocation data for a given IPv4 address using the RapidAPI IP geolocation lookup service.",
+        "parameters": {
+            "ip": {
+                "description": "The IPv4 address for which geolocation data is to be retrieved.",
+                "type": "str",
+                "default": "193.114.112.1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_the_addresses_by_ip",
+        "description": "Fetches the address information for a given IP address using the RapidAPI service.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to lookup. Default is '54.72.54.234'.",
+                "type": "str",
+                "default": "54.72.54.234"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "autocomplete_places",
+        "description": "Returns a list of places that match a given prefix and specified filter properties, useful for creating \"search as you type\" inputs.",
+        "parameters": {
+            "limit": {
+                "description": "Maximum number of places to return. Used with `skip` to paginate results. Defaults to 10, maximum is 100.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "skip": {
+                "description": "Number of places to ignore before beginning to return results. Used with `limit` to paginate results. Defaults to 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "language": {
+                "description": "Specifies a language (ISO 639-1) for the localized name of the place. If unavailable, `localizedName` property will be null.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Filters places by their country ID. Multiple values can be specified, separated by commas (e.g., 'US,CA,MX'). Defaults to 'US,CA'.",
+                "type": "str, optional",
+                "default": "US,CA"
+            },
+            "admindivision1": {
+                "description": "Filters places by their adminDivision1 ID. Multiple values can be specified, separated by commas (e.g., 'US.CA,US.DE').",
+                "type": "str, optional",
+                "default": ""
+            },
+            "accuracyradiuskm": {
+                "description": "Maximum radius in kilometers from the specified coordinates (`latitude` and `longitude`) to filter places. Defaults to 100km.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "latitude": {
+                "description": "Latitude to filter places by their location. Ignored if `longitude` is not specified.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "admindivision2": {
+                "description": "Filters places by their adminDivision2 ID. Multiple values can be specified, separated by commas.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "Query string to find places whose names start with this prefix. Defaults to 'Sea'.",
+                "type": "str, optional",
+                "default": "Sea"
+            },
+            "longitude": {
+                "description": "Longitude to filter places by their location. Ignored if `latitude` is not specified.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "type": {
+                "description": "Filters places by their type. Multiple values can be specified, separated by commas. Valid types are 'CITY', 'ADMIN_DIVISION_1', 'ADMIN_DIVISION_2', and 'COUNTRY'. Defaults to 'CITY'.",
+                "type": "str, optional",
+                "default": "CITY"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "timezone_for_location",
+        "description": "Fetch the current time for a given location and area using the World Time API.",
+        "parameters": {
+            "location": {
+                "description": "The specific location for which to fetch the time (e.g., \"London\").",
+                "type": "str",
+                "default": "London"
+            },
+            "area": {
+                "description": "The larger area or region that the location falls within (e.g., \"Europe\").",
+                "type": "str",
+                "default": "Europe"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_reverse_geocoding",
+        "description": "Reverse geocoding to obtain address information for given coordinates.",
+        "parameters": {
+            "coord": {
+                "description": "Latitude and longitude coordinates in a comma-separated format.",
+                "type": "str",
+                "default": "35.624822,139.742121"
+            },
+            "datum": {
+                "description": "Geodetic system of the latitude and longitude coordinates.",
+                "type": "str, optional",
+                "default": "wgs84"
+            },
+            "coord_unit": {
+                "description": "Unit of the latitude and longitude coordinates.",
+                "type": "str, optional",
+                "default": "degree"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "ip_address_lookup",
+        "description": "Retrieves geolocation data for a given IP address using the Toolbench RapidAPI service.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to look up.",
+                "type": "str",
+                "default": "98.207.254.136"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "searchcountries",
+        "description": "Search for countries based on a keyword, with support for pagination and sorting.",
+        "parameters": {
+            "keyword": {
+                "description": "The search keyword to find matching countries. The search is case insensitive.",
+                "type": "str",
+                "default": "uni"
+            },
+            "page": {
+                "description": "The page number for pagination.",
+                "type": "int",
+                "default": 1
+            },
+            "limit": {
+                "description": "The maximum number of results to return per page.",
+                "type": "int",
+                "default": 20
+            },
+            "sortby": {
+                "description": "The sorting criteria in the format `field:order`, e.g., `name:desc`, `alpha-2:asc`. Use `asc` for ascending order and `desc` for descending order.",
+                "type": "str",
+                "default": "name:asc"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "reverse_php",
+        "description": "Performs reverse geocoding using the specified API, longitude, and latitude.",
+        "parameters": {
+            "api": {
+                "description": "Your API key for accessing the Geokeo reverse geocoding service.",
+                "type": "str",
+                "default": "api key from geokeo"
+            },
+            "lng": {
+                "description": "The longitude coordinate for the reverse geocoding request.",
+                "type": "str",
+                "default": "-73.9856"
+            },
+            "lat": {
+                "description": "The latitude coordinate for the reverse geocoding request.",
+                "type": "str",
+                "default": "40.74842"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_country_by_id",
+        "description": "Fetches and returns data for a single country based on its identifier.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the country.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "g_olocaliser_les_partenaires",
+        "description": "Fetch all partners or partners within a specified radius around a given point.",
+        "parameters": {
+            "nearbydistance": {
+                "description": "Radius of the search area in meters. Default is '2000'.",
+                "type": "str, optional",
+                "default": "2000"
+            },
+            "nearbylon": {
+                "description": "Longitude of the center of the search area. Default is '166.448744'.",
+                "type": "str, optional",
+                "default": "166.448744"
+            },
+            "nearbylat": {
+                "description": "Latitude of the center of the search area. Default is '-22.302828'.",
+                "type": "str, optional",
+                "default": "-22.302828"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "obtener_cp",
+        "description": "Fetches the list of postal codes based on the provided postal code.",
+        "parameters": {
+            "cp": {
+                "description": "The postal code for which to fetch the corresponding list of postal codes.",
+                "type": "int",
+                "default": "64720"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_place_by_my_ip",
+        "description": "Fetches the geographical location related to the IP address of the requester.",
+        "parameters": {
+            "language": {
+                "description": "Specifies the language (ISO 639-1) code to localize the name of the place. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "traveling_salesman",
+        "description": "Solves the Traveling Salesman Problem (TSP) using the specified profile and set of coordinates, leveraging the mymappi API.",
+        "parameters": {
+            "coordinates": {
+                "description": "The coordinates of the waypoints to visit, formatted as a string.",
+                "type": "str",
+                "default": "40.427772,-3.714630;40.407348,-3.710520;40.461178,-3.676533;40.441933,-3.650275;40.434914,-3.697337;40.451737,-3.683682"
+            },
+            "apikey": {
+                "description": "The API key for accessing the mymappi service.",
+                "type": "str",
+                "default": "YOUR_API_KEY"
+            },
+            "profile": {
+                "description": "The transportation profile to use (e.g., driving, walking, cycling).",
+                "type": "str",
+                "default": "car"
+            },
+            "overview": {
+                "description": "Specifies the level of detail in the returned route geometry. Default is 'simplified'.",
+                "type": "str, optional",
+                "default": "simplified"
+            },
+            "roundtrip": {
+                "description": "Determines whether the route should be a roundtrip. Default is None.",
+                "type": "bool, optional",
+                "default": false
+            },
+            "destination": {
+                "description": "Specifies the destination waypoint. Default is 'any'.",
+                "type": "str, optional",
+                "default": "any"
+            },
+            "source": {
+                "description": "Specifies the source waypoint. Default is 'any'.",
+                "type": "str, optional",
+                "default": "any"
+            },
+            "geometries": {
+                "description": "The geometry format for the route. Default is 'polyline'.",
+                "type": "str, optional",
+                "default": "polyline"
+            },
+            "steps": {
+                "description": "Whether or not to include step-by-step directions. Default is None.",
+                "type": "bool, optional",
+                "default": true
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "placessearchinboundingbox",
+        "description": "Searches for places within a bounding box defined by the northeast and southwest coordinates in GeoJSON format.",
+        "parameters": {
+            "northeast": {
+                "description": "Coordinates of the north-east corner of the bounding box, provided as a string in the format 'latitude,longitude'.",
+                "type": "str",
+                "default": ""
+            },
+            "southwest": {
+                "description": "Coordinates of the south-west corner of the bounding box, provided as a string in the format 'latitude,longitude'.",
+                "type": "str",
+                "default": ""
+            },
+            "intersect": {
+                "description": "Whether to include areas that intersect with the bounding box. Defaults to None.",
+                "type": "bool, optional",
+                "default": true
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_code",
+        "description": "Fetches and returns address information based on the provided address code and other optional parameters.",
+        "parameters": {
+            "code": {
+                "description": "Address code. Can be specified multiple times, separated by a period.",
+                "type": "str",
+                "default": "13101001"
+            },
+            "coord_unit": {
+                "description": "The unit of latitude and longitude included in the output data. Options are 'degree' (default, decimal system of degrees) or 'millisec' (milliseconds).",
+                "type": "str, optional",
+                "default": "degree"
+            },
+            "datum": {
+                "description": "Geodetic system of latitude and longitude. Options are 'wgs84' (default, World Geodetic System) or 'tokyo' (Old Japan Geodetic System).",
+                "type": "str, optional",
+                "default": "wgs84"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "listallcountries",
+        "description": "Retrieves a list of all countries from the API with optional pagination and sorting.",
+        "parameters": {
+            "page": {
+                "description": "Page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "sortby": {
+                "description": "Sorting criteria in the format `field:order`, e.g., `name:asc` or `name:desc`. Defaults to 'name:asc'.",
+                "type": "str, optional",
+                "default": "name:asc"
+            },
+            "limit": {
+                "description": "Maximum number of results per page. Defaults to 200.",
+                "type": "int, optional",
+                "default": 200
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_inclusion",
+        "description": "Determines whether the given geographical coordinates (latitude and longitude) fall within the range specified by an address code.",
+        "parameters": {
+            "code": {
+                "description": "Address code(s). Multiple codes can be specified, separated by a period.",
+                "type": "str",
+                "default": "13"
+            },
+            "coord": {
+                "description": "Geographical coordinates in latitude and longitude format.",
+                "type": "str",
+                "default": "35.664159,139.718117"
+            },
+            "datum": {
+                "description": "Geodetic system of the provided geographical coordinates. Defaults to 'wgs84'. Accepted values are 'wgs84' (World Geodetic System) and 'tokyo' (Old Japan Geodetic System).",
+                "type": "str, optional",
+                "default": "wgs84"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "calc",
+        "description": "Calculates the distance between two geographical coordinates using the RapidAPI distance calculator.",
+        "parameters": {
+            "startlongitude": {
+                "description": "Longitude of the starting point.",
+                "type": "int",
+                "default": "-48.880964"
+            },
+            "startlatitude": {
+                "description": "Latitude of the starting point.",
+                "type": "int",
+                "default": "-26.311960"
+            },
+            "endlongitude": {
+                "description": "Longitude of the endpoint.",
+                "type": "int",
+                "default": "-48.881103"
+            },
+            "endlatitude": {
+                "description": "Latitude of the endpoint.",
+                "type": "int",
+                "default": "-26.313662"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_geolocation_data",
+        "description": "Fetches geolocation data for a given IP address using the SHW Geolocation API.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address to fetch geolocation data for.",
+                "type": "str",
+                "default": "8.8.8.8"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_district_capital_by_id",
+        "description": "Gets the capital of a district in Ghana by district ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the district.",
+                "type": "int",
+                "default": "2"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_the_continents",
+        "description": "Fetches a list of continents from the specified API endpoint.",
+        "parameters": {
+            "name": {
+                "description": "Optional continent name to filter the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Optional page number for pagination. Defaults to '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "highway_type",
+        "description": "Determines the type of road nearest to a given geographic coordinate (latitude and longitude).",
+        "parameters": {
+            "lat": {
+                "description": "The latitude of the geographic coordinate.",
+                "type": "int",
+                "default": "40.409246"
+            },
+            "lon": {
+                "description": "The longitude of the geographic coordinate.",
+                "type": "int",
+                "default": "-3.677144"
+            },
+            "apikey": {
+                "description": "The API key for accessing the service.",
+                "type": "str",
+                "default": "YOUR_API_KEY"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "snap_to_road",
+        "description": "Snaps a given geographical coordinate to the nearest road.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the geographical coordinate.",
+                "type": "int",
+                "default": "40.409246"
+            },
+            "lon": {
+                "description": "Longitude of the geographical coordinate.",
+                "type": "int",
+                "default": "-3.677144"
+            },
+            "apikey": {
+                "description": "API key for authenticating with the MyMappi service.",
+                "type": "str",
+                "default": "YOUR_API_KEY"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "getzip",
+        "description": "Fetch town information based on a provided ZIP code (Postleitzahl) using the RapidAPI.",
+        "parameters": {
+            "zip": {
+                "description": "The ZIP code for which to fetch town information.",
+                "type": "int",
+                "default": "3052"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "address_postal_code",
+        "description": "Fetch address information based on the given postal code and additional parameters.",
+        "parameters": {
+            "postal_code": {
+                "description": "Postal code string (minimum: 3 digits, maximum: 7 digits).",
+                "type": "str",
+                "default": "1510053"
+            },
+            "datum": {
+                "description": "Geodetic system of latitude and longitude (default: 'wgs84'). Possible values are 'wgs84' for World Geodetic System and 'tokyo' for Old Japan Geodetic System.",
+                "type": "str, optional",
+                "default": "wgs84"
+            },
+            "offset": {
+                "description": "Skips a given number of first data (minimum value: 0, maximum value: 2000, default: 0).",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "coord_unit": {
+                "description": "The unit of latitude and longitude in the output data. Possible values are 'degree' for decimal system of degrees (default) and 'millisec' for milliseconds.",
+                "type": "str, optional",
+                "default": "degree"
+            },
+            "limit": {
+                "description": "Limits the number of response data (minimum value: 1, maximum value: 100, default: 10).",
+                "type": "int, optional",
+                "default": "10"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_zip_info",
+        "description": "Retrieve information about a given ZIP code using the Toolbench API.",
+        "parameters": {
+            "zipcode": {
+                "description": "The ZIP code for which the information is to be retrieved.",
+                "type": "str",
+                "default": "30043"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_addresses_by_postcode",
+        "description": "Fetch a list of addresses or streets by specifying the postcodes.",
+        "parameters": {
+            "cp4": {
+                "description": "The first part of the postcode.",
+                "type": "str",
+                "default": "3750"
+            },
+            "cp3": {
+                "description": "The second part of the postcode.",
+                "type": "str",
+                "default": "016"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "ip_to_location",
+        "description": "Retrieves location details based on the provided IP address using the RapidAPI service.",
+        "parameters": {
+            "ip": {
+                "description": "The IP address for which to get location details. Defaults to '179.27.93.248'.",
+                "type": "str, optional",
+                "default": "179.27.93.248"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "find_by_udprn",
+        "description": "Fetches the address information for a given UDPRN (Unique Delivery Point Reference Number) using the 'Find By UDPRN' API.",
+        "parameters": {
+            "udprn": {
+                "description": "The Unique Delivery Point Reference Number for which the address information is to be fetched.",
+                "type": "str",
+                "default": "18911184"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "format",
+        "description": "Retrieve and return data in the specified format from the IP Geo Location and IP Reputation API.",
+        "parameters": {
+            "format": {
+                "description": "The format to display data. Can be either \"json\" or \"xml\". Defaults to \"json\".",
+                "type": "str",
+                "default": "json"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "placebynameandstate",
+        "description": "Retrieves the geographical boundaries of a place by its name and state in GeoJSON format.",
+        "parameters": {
+            "name": {
+                "description": "The full name of the place. Example: \"Madison\".",
+                "type": "str",
+                "default": "Madison"
+            },
+            "state": {
+                "description": "The state abbreviation where the place is located. Example: \"AL\".",
+                "type": "str",
+                "default": "AL"
+            }
+        },
+        "domain": "Location"
+    },
+    {
+        "name": "get_place_by_geoname_id",
+        "description": "Fetches details about a place using its Geoname ID.",
+        "parameters": {
+            "geonameid": {
+                "description": "Unique identifier given by Geonames for the place.",
+                "type": "int",
+                "default": "5391959"
+            },
+            "language": {
+                "description": "Specifies a language (ISO 639-1) to get the localized name of the place. Default is None. If translation is not available, \"localizedName\" property will be null.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Location"
+    }
+]

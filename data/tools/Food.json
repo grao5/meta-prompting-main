@@ -1,0 +1,1214 @@
+[
+    {
+        "name": "categories_list",
+        "description": "Fetches a list of categories and their recursive child categories from the Wayfair API.",
+        "parameters": {
+            "caid": {
+                "description": "The category ID for which to list categories. The default root category is 214970.",
+                "type": "int",
+                "default": "214970"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_beverage_by_there_id",
+        "description": "Retrieves beverage details by the given beverage ID from the RapidAPI Beverages and Desserts API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the beverage to retrieve.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "generate_recipe",
+        "description": "This function generates a recipe using an ingredient and a provided RapidAPI key.",
+        "parameters": {
+            "ingredient": {
+                "description": "The main ingredient to be used in the recipe. Default is 'chicken'.",
+                "type": "str",
+                "default": "chicken"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_recipe_by_id",
+        "description": "Fetches a specific recipe by its ID from the Ghana Food Recipe API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the recipe to fetch.",
+                "type": "str",
+                "default": "63c2e83b09852be5facb894a"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_recipes_details",
+        "description": "Fetches the details of a recipe by its slug using the Toolbench RapidAPI.",
+        "parameters": {
+            "slug": {
+                "description": "The unique identifier for the recipe.",
+                "type": "str",
+                "default": "articulo-13-jugos-verdes-para-adelgazar-y-quemar-grasa-71482.html"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "v1_recipe",
+        "description": "Fetch a list of recipes for a given search query using the Recipe by API Ninjas service.",
+        "parameters": {
+            "query": {
+                "description": "The search query text to find matching recipes.",
+                "type": "str",
+                "default": "italian wedding soup"
+            },
+            "offset": {
+                "description": "The number of results to offset in order to paginate through the results. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_beers_by_single_country",
+        "description": "Fetches the details of a beer from a specified country using the given beer identifier.",
+        "parameters": {
+            "beerid": {
+                "description": "The identifier of the beer to fetch details for.",
+                "type": "str",
+                "default": "italy"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "all_keto_recipes_by_category",
+        "description": "Fetches all keto recipes by category ID from the Keto Diet API.",
+        "parameters": {
+            "category": {
+                "description": "The ID of the recipe category to fetch.",
+                "type": "int",
+                "default": "2"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "filter_protein",
+        "description": "Fetches keto recipes within a specified range of protein content.",
+        "parameters": {
+            "protein_in_grams_lt": {
+                "description": "Maximum protein content in grams.",
+                "type": "int",
+                "default": "15"
+            },
+            "protein_in_grams_gt": {
+                "description": "Minimum protein content in grams.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_specific_dessert",
+        "description": "Fetch a specific dessert's details using its ID from the Pizza and Desserts API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the dessert to fetch.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_desserts_by_there_id",
+        "description": "Fetch dessert information from an API using a given dessert ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the dessert to look up.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "pastry_ingredient",
+        "description": "Retrieves a random pastry recipe that contains a specific ingredient using the Toolbench RapidAPI.",
+        "parameters": {
+            "ingredient": {
+                "description": "The specific ingredient to include in the pastry recipe.",
+                "type": "str",
+                "default": "strawberry"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "search_for_recipes",
+        "description": "Search for recipes that match provided criteria.",
+        "parameters": {
+            "maxnetcarbs": {
+                "description": "Maximum net carbs (total carbs minus fiber and sugar alcohols) per serving in grams. Default is 5.",
+                "type": "int, optional",
+                "default": "5"
+            },
+            "limit": {
+                "description": "Maximum number of results to return. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "maxcalories": {
+                "description": "Maximum calories per serving in KCal. Default is 500.",
+                "type": "int, optional",
+                "default": "500"
+            },
+            "maxpreparetime": {
+                "description": "Maximum preparation time in minutes. Default is 10.",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "excludeingredients": {
+                "description": "Semicolon-separated terms to be excluded in ingredients. Default is 'cinnamon'.",
+                "type": "str, optional",
+                "default": "cinnamon"
+            },
+            "tags": {
+                "description": "Semicolon-separated tags to filter recipes. Example tags include 'keto', 'dairy-free', etc. Default is 'keto;dairy-free'.",
+                "type": "str, optional",
+                "default": "keto;dairy-free"
+            },
+            "name": {
+                "description": "Search terms to be appeared in the recipe name. Default is 'cake'.",
+                "type": "str, optional",
+                "default": "cake"
+            },
+            "maxaddedsugar": {
+                "description": "Maximum added sugar per serving in grams. Default is 0.",
+                "type": "int, optional",
+                "default": "0"
+            },
+            "maxsugar": {
+                "description": "Maximum sugar per serving in grams. Default is 3.",
+                "type": "int, optional",
+                "default": "3"
+            },
+            "maxcooktime": {
+                "description": "Maximum cook time in minutes. Default is 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "includeingredients": {
+                "description": "Semicolon-separated terms to be included in ingredients. Default is 'egg;butter'.",
+                "type": "str, optional",
+                "default": "egg;butter"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "filter_fats",
+        "description": "Fetch keto recipes within a specified range of fat content.",
+        "parameters": {
+            "fat_in_grams_lt": {
+                "description": "The upper limit for the fat content in grams.",
+                "type": "int",
+                "default": "25"
+            },
+            "fat_in_grams_gt": {
+                "description": "The lower limit for the fat content in grams.",
+                "type": "int",
+                "default": "5"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "filter_calories",
+        "description": "Fetch keto recipes that have a calorie count within the specified range.",
+        "parameters": {
+            "calories_lt": {
+                "description": "The upper limit for calorie count.",
+                "type": "int",
+                "default": "200"
+            },
+            "calories_gt": {
+                "description": "The lower limit for calorie count.",
+                "type": "int",
+                "default": "50"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "search_keto_recipe",
+        "description": "Search for keto recipes based on a given search term using the Keto Diet API.",
+        "parameters": {
+            "search": {
+                "description": "The search term to find keto recipes.",
+                "type": "str",
+                "default": "beef"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "restaurants_v2_auto_complete",
+        "description": "Fetches restaurant suggestions based on a given term or phrase.",
+        "parameters": {
+            "text": {
+                "description": "Term or phrase to get restaurant suggestions (e.g., city, district, country name).",
+                "type": "str",
+                "default": "basara sushi"
+            },
+            "longitude": {
+                "description": "Longitude of the user's location for sorting purposes. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "latitude": {
+                "description": "Latitude of the user's location for sorting purposes. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_specific_pizza",
+        "description": "Fetches a specific pizza by its ID from the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the pizza to retrieve.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "recipe_search_and_recommendations",
+        "description": "Search for recipes and provide recommendations based on given keywords and filters.",
+        "parameters": {
+            "q": {
+                "description": "The keyword to search for in the recipe database. Defaults to 'chicken'.",
+                "type": "str",
+                "default": "chicken"
+            },
+            "r": {
+                "description": "Optional filter parameter for the search.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "detailed_food_recipe_by_id",
+        "description": "Fetch a detailed Mexican food recipe by its unique ID using the specified RapidAPI key.",
+        "parameters": {
+            "is_id": {
+                "description": "Unique identifier for the Mexican food recipe.",
+                "type": "str",
+                "default": "4"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_all_food",
+        "description": "Fetches a list of Ghanaian foods including ingredients and a short description from the specified API endpoint.",
+        "parameters": {
+            "page": {
+                "description": "The page number to request data from. Default is '?page=2'.",
+                "type": "str",
+                "default": "?page=2"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "v1_cocktail",
+        "description": "Fetches cocktail information from the API Ninjas Cocktail API based on the provided cocktail name or ingredients.",
+        "parameters": {
+            "name": {
+                "description": "The name of the cocktail to search for. This parameter supports partial matches (default is 'bloody mary').",
+                "type": "str",
+                "default": "bloody mary"
+            },
+            "ingredients": {
+                "description": "A comma-separated string of ingredients to search for. Only cocktails containing all listed ingredients will be returned (default is None).",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "drink_by_id",
+        "description": "Fetches a specific drink recipe by its ID using the Ghana Food Recipe API.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the drink recipe.",
+                "type": "str",
+                "default": "63c67c9db06a3ed9f92b2367"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "review",
+        "description": "Fetches reviews for a given recipe from the Worldwide Recipes API.",
+        "parameters": {
+            "recipe_id": {
+                "description": "The unique identifier of the recipe.",
+                "type": "str",
+                "default": "8282fe1d-1222-4da0-9d12-cfb97f50944e"
+            },
+            "offset": {
+                "description": "The offset for pagination of reviews. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "more_from_author",
+        "description": "Fetches more recipes from a specified author using the Worldwide Recipes API.",
+        "parameters": {
+            "profile_display_name": {
+                "description": "The display name of the author's profile to retrieve recipes from.",
+                "type": "str",
+                "default": "Gonna Want Seconds"
+            },
+            "canonical_term": {
+                "description": "The search term or keyword related to the author's recipes.",
+                "type": "str",
+                "default": "Rachael-Ray_s-Southwestern-Chili-Con-Queso-Pasta-Bake-1178051"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "food_api",
+        "description": "Fetches food information based on the given name.",
+        "parameters": {
+            "name": {
+                "description": "The name of the food item for which information is being retrieved.",
+                "type": "str",
+                "default": "Jab\u0142ko"
+            },
+            "lang": {
+                "description": "The language code for the search query. Defaults to 'pl'. Supported languages are \"en\", \"ru\", \"pl\", \"bg\", \"de\", \"es\", \"ua\", and \"by\".",
+                "type": "str, optional",
+                "default": "pl"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "filter_prep_time_in_minutes",
+        "description": "Fetches keto recipes from the RapidAPI that fall within the specified preparation time range.",
+        "parameters": {
+            "prep_time_in_minutes_gt": {
+                "description": "Minimum preparation time in minutes. Only recipes with a preparation time greater than this value will be included.",
+                "type": "int",
+                "default": "10"
+            },
+            "prep_time_in_minutes_lt": {
+                "description": "Maximum preparation time in minutes. Only recipes with a preparation time less than this value will be included.",
+                "type": "int",
+                "default": "30"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "v1_nutrition",
+        "description": "Fetches the nutrition information for a given food query using the API Ninjas Nutrition API.",
+        "parameters": {
+            "query": {
+                "description": "The food query for which to extract nutrition information (e.g., \"bacon and 3 eggs\").",
+                "type": "str",
+                "default": "1lb brisket with fries"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "keto_recipes_by_difficulty",
+        "description": "Fetches all keto recipes filtered by difficulty level.",
+        "parameters": {
+            "difficulty": {
+                "description": "The difficulty level of the recipes to retrieve (Easy, Medium, or Difficult).",
+                "type": "str",
+                "default": "Medium"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "menudetails",
+        "description": "Fetches menu details for a given venue from the RapidAPI endpoint.",
+        "parameters": {
+            "lang": {
+                "description": "The language code for the menu details.",
+                "type": "str",
+                "default": "zh-hans"
+            },
+            "is_id": {
+                "description": "The unique identifier for the venue.",
+                "type": "str",
+                "default": "5a76c927bb5d660001e09731"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "venuedetails",
+        "description": "Fetches detailed information about a specific venue using a given venue ID and language.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the venue for which details are to be fetched.",
+                "type": "str",
+                "default": "56c467cb7b0d464811a42017"
+            },
+            "lang": {
+                "description": "The language code for the details to be retrieved in.",
+                "type": "str",
+                "default": "zh-hans"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "related",
+        "description": "Fetch related shows for a given show identifier using the RapidAPI service.",
+        "parameters": {
+            "show_slug": {
+                "description": "The unique identifier or slug of the show for which related shows are to be fetched.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "detailed_cake_recipe_by_id",
+        "description": "This function retrieves a detailed cake recipe based on a given recipe ID from the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the cake recipe to retrieve.",
+                "type": "str",
+                "default": "5"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "dinner_ingredient",
+        "description": "Retrieves a random dinner recipe containing the specified ingredient.",
+        "parameters": {
+            "ingredient": {
+                "description": "The ingredient which the recipe should include.",
+                "type": "str",
+                "default": "chicken"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "icecream_ingredient",
+        "description": "Fetches a random ice cream recipe that includes a specified ingredient.",
+        "parameters": {
+            "ingredient": {
+                "description": "The specific ingredient to include in the ice cream recipe search.",
+                "type": "str",
+                "default": "blueberry"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "reviews_list_best",
+        "description": "Fetches the best reviews for a specific restaurant from the API.",
+        "parameters": {
+            "id_restaurant": {
+                "description": "The unique identifier of the restaurant.",
+                "type": "int",
+                "default": "522995"
+            },
+            "locale": {
+                "description": "The language code for the reviews. Defaults to 'en_US'.",
+                "type": "str, optional",
+                "default": "en_US"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "upc_api",
+        "description": "Fetches food information based on a given UPC (barcode) using the Dietagram API.",
+        "parameters": {
+            "name": {
+                "description": "The UPC (barcode) of the food item to search for. Default is '4019300005154'.",
+                "type": "str",
+                "default": "4019300005154"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "locations_auto_complete_deprecated",
+        "description": "Fetch location suggestions based on a term or phrase, with optional location-based sorting.",
+        "parameters": {
+            "text": {
+                "description": "The term or phrase to search for location suggestions (e.g., city, district, country name).",
+                "type": "str",
+                "default": "milan"
+            },
+            "latitude": {
+                "description": "The latitude of the end user's location, used for sorting purposes. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "longitude": {
+                "description": "The longitude of the end user's location, used for sorting purposes. Defaults to None.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "feeds_list_similarities",
+        "description": "Fetches a list of similar recipes based on the given parameters.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier for the recipe, typically obtained from feeds/list or feeds/search API responses.",
+                "type": "str",
+                "default": "15-Minute-Baked-Salmon-with-Lemon-9029477"
+            },
+            "limit": {
+                "description": "The number of items to return per response.",
+                "type": "int",
+                "default": "18"
+            },
+            "start": {
+                "description": "The offset for items to be ignored in the response, useful for paging.",
+                "type": "int",
+                "default": "0"
+            },
+            "apifeedtype": {
+                "description": "The type of feed to query, generally returned in feeds/list or feeds/search API responses. Default is 'moreFrom'.",
+                "type": "str, optional",
+                "default": "moreFrom"
+            },
+            "authorid": {
+                "description": "The author ID, typically returned in feeds/list or feeds/search API responses. Default is 'Yummly'.",
+                "type": "str, optional",
+                "default": "Yummly"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "side_dish_ingredient",
+        "description": "Fetches a random side dish recipe containing a specific ingredient using the Toolbench RapidAPI.",
+        "parameters": {
+            "ingredient": {
+                "description": "The specific ingredient to be included in the side dish recipe.",
+                "type": "str",
+                "default": "potato"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "list_all_categories",
+        "description": "Fetches a list of categories with various search and filter parameters.",
+        "parameters": {
+            "limit": {
+                "description": "The number of records to return. Defaults to 20.",
+                "type": "int, optional",
+                "default": 20
+            },
+            "category_group_id": {
+                "description": "The ID of the category group.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "dir": {
+                "description": "The direction of the ordering. Defaults to 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "topic": {
+                "description": "The active topic of the conversation for a full term search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number of results to start from. Defaults to 1.",
+                "type": "int, optional",
+                "default": 1
+            },
+            "order": {
+                "description": "The search field to order by. Defaults to 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "that": {
+                "description": "The previous bot output/response to match on for a partial search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "template": {
+                "description": "The raw output used to generate a response for a partial search.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pattern": {
+                "description": "The user input to match on for a partial search. Defaults to 'test'.",
+                "type": "str, optional",
+                "default": "test"
+            },
+            "is_id": {
+                "description": "The ID of the category.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "appetizer_ingredient",
+        "description": "Fetches a random appetizer recipe containing the specified ingredient using the Recipe Finder API.",
+        "parameters": {
+            "ingredient": {
+                "description": "The main ingredient to include in the appetizer recipe.",
+                "type": "str",
+                "default": "flour"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "get_food_by_id",
+        "description": "Fetches food information from a remote API using a given food ID.",
+        "parameters": {
+            "is_id": {
+                "description": "The unique identifier of the food item to retrieve information for.",
+                "type": "str",
+                "default": "63c2e83b09852be5facb894a"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "detailed_cocktail_recipe_by_id",
+        "description": "Fetches a detailed cocktail recipe by its ID from the Cocktail DB API.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the cocktail to fetch the recipe for.",
+                "type": "str",
+                "default": "45"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "mediterranean_ingredient",
+        "description": "Retrieve a random Mediterranean recipe containing a specific ingredient.",
+        "parameters": {
+            "ingredient": {
+                "description": "The name of the ingredient to be used in the recipe search.",
+                "type": "str",
+                "default": "fish"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "salad_ingredient",
+        "description": "Fetches a random salad recipe that includes the specified ingredient from the API.",
+        "parameters": {
+            "ingredient": {
+                "description": "The ingredient to be included in the salad recipe search.",
+                "type": "str",
+                "default": "cucumbers"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "recipes_by_author",
+        "description": "Fetches recipes by a given author profile from the Worldwide Recipes API.",
+        "parameters": {
+            "profile_name": {
+                "description": "The name of the author's profile to fetch recipes for.",
+                "type": "str",
+                "default": "gonna-want-seconds"
+            },
+            "q": {
+                "description": "An optional query string to filter recipes.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "start": {
+                "description": "The starting index for pagination (e.g., Page 1 = start: 0, Page 2 = start: 20).",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "bookrestaurant",
+        "description": "Books a restaurant based on the provided criteria using the RapidAPI CamRest API.",
+        "parameters": {
+            "pricerange": {
+                "description": "The desired price range for the restaurant.",
+                "type": "str",
+                "default": "moderate"
+            },
+            "area": {
+                "description": "The area in which to search for the restaurant.",
+                "type": "str",
+                "default": "elarea"
+            },
+            "food": {
+                "description": "The type of food preferred, default is 'spanish'.",
+                "type": "str, optional",
+                "default": "spanish"
+            },
+            "restaurantname": {
+                "description": "The name of the restaurant, default is 'McDonalds'.",
+                "type": "str, optional",
+                "default": "McDonalds"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "feeds_list",
+        "description": "Fetches a list of feeds from the Yummly API based on the given parameters for pagination and optional category tag.",
+        "parameters": {
+            "start": {
+                "description": "The offset of items to be skipped in the response for paging.",
+                "type": "int",
+                "default": "0"
+            },
+            "limit": {
+                "description": "The number of items to be returned per response.",
+                "type": "int",
+                "default": "24"
+            },
+            "tag": {
+                "description": "The value representing a specific category/tag to filter the feeds list. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "api_nutrition_data",
+        "description": "Fetches nutritional analysis for a given unstructured food text input.",
+        "parameters": {
+            "ingr": {
+                "description": "The unstructured food text (usually an ingredient line) to be analyzed.",
+                "type": "str",
+                "default": ""
+            },
+            "nutrition_type": {
+                "description": "Specifies the context for the food item. Defaults to 'cooking'.",
+                "type": "str, optional",
+                "default": "cooking"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "locations_v2_list",
+        "description": "Fetch a list of locations from the specified Google place ID and additional geolocation parameters using the RapidAPI service.",
+        "parameters": {
+            "google_place_id": {
+                "description": "The Google Place ID representing a specific location.",
+                "type": "str",
+                "default": "ChIJu46S-ZZhLxMROG5lkwZ3D7k"
+            },
+            "geo_text": {
+                "description": "The text description of the geographical location. Defaults to 'Roma, Metropolitan City of Rome, Italy'.",
+                "type": "str, optional",
+                "default": "Roma, Metropolitan City of Rome, Italy"
+            },
+            "geo_ref": {
+                "description": "A boolean flag for additional geolocation referencing. Defaults to None.",
+                "type": "bool, optional",
+                "default": "false"
+            },
+            "geo_type": {
+                "description": "The type of geographical entity (e.g., 'locality'). Defaults to 'locality'.",
+                "type": "str, optional",
+                "default": "locality"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "feeds_auto_complete",
+        "description": "Fetches auto-complete suggestions for food names or ingredients from the Yummly API.",
+        "parameters": {
+            "q": {
+                "description": "The food name or ingredient to get auto-complete suggestions for.",
+                "type": "str",
+                "default": "chicken soup"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "cake_ingredient",
+        "description": "Fetches a cake recipe containing a specified ingredient from the Recipe Finder API.",
+        "parameters": {
+            "ingredient": {
+                "description": "The specific ingredient to be included in the cake recipe.",
+                "type": "str",
+                "default": "lime"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "find_food_by_id",
+        "description": "Retrieves a single food item by its FDC ID using the provided RapidAPI key.",
+        "parameters": {
+            "fooid": {
+                "description": "The FDC ID of the food item.",
+                "type": "int",
+                "default": "1497465"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "restaurants_v2_list",
+        "description": "Lists restaurants based on various query parameters and filters.",
+        "parameters": {
+            "queryplacevaluecityid": {
+                "description": "The ID of the city to search for restaurants.",
+                "type": "int",
+                "default": "348156"
+            },
+            "filterpricestart": {
+                "description": "Minimum price of the meal.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "queryplacevaluecoordinateslatitude": {
+                "description": "Latitude of the geographic location to search around.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Sorting criteria, allowed values are 'quality', 'promotion', 'price', 'popularity', 'avg_rate', 'new_restaurant'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "querypromotiononly": {
+                "description": "Filter to include only promotions (True or False).",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "filterrestauranttagidlist": {
+                "description": "Filter by restaurant tags, separated by commas. Example: '387,513'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "filtersaletypetagidlist": {
+                "description": "Filter by sale type tags, separated by commas. Example: '1,3'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "filterratestart": {
+                "description": "Minimum rating of the restaurants.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "filtergroupedpromotion": {
+                "description": "Filter by grouped promotions, allowed values are '20', '25', '30', '40', '50', separated by commas.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "pagenumber": {
+                "description": "Page number for pagination (default is 1).",
+                "type": "int, optional",
+                "default": "1"
+            },
+            "queryplacevaluecoordinateslongitude": {
+                "description": "Longitude of the geographic location to search around.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "pagesize": {
+                "description": "Number of results per page (default is 10).",
+                "type": "int, optional",
+                "default": "10"
+            },
+            "filterpriceend": {
+                "description": "Maximum price of the meal.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "fetch_restaurant_information",
+        "description": "Fetches menu, location, and ratings data for a specific restaurant using the FoodieFetch API.",
+        "parameters": {
+            "query": {
+                "description": "The name of the restaurant, preferably including the full name and city.",
+                "type": "str",
+                "default": "grandamas cafe pune"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "lunch_ingredient",
+        "description": "Retrieve a random lunch recipe that contains a specific ingredient using the Recipe Finder API.",
+        "parameters": {
+            "ingredient": {
+                "description": "The name of the ingredient to include in the lunch recipe.",
+                "type": "str",
+                "default": "pork"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "feeds_search",
+        "description": "Search for recipes by name and optional filters.",
+        "parameters": {
+            "start": {
+                "description": "The offset of items to be ignored in the response for paging.",
+                "type": "int",
+                "default": "0"
+            },
+            "maxresult": {
+                "description": "The number of items returned per response.",
+                "type": "int",
+                "default": "18"
+            },
+            "fibtgmax": {
+                "description": "Maximum amount of fiber (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "camax": {
+                "description": "Maximum amount of calcium (in milligrams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "cholemax": {
+                "description": "Maximum amount of cholesterol (in milligrams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "allowedattribute": {
+                "description": "A comma-separated list of allowed attributes (typically dietary restrictions).",
+                "type": "str, optional",
+                "default": "diet-lacto-vegetarian,diet-low-fodmap"
+            },
+            "sweetmax": {
+                "description": "Maximum sweetness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "kmax": {
+                "description": "Maximum amount of potassium (in milligrams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "namax": {
+                "description": "Maximum amount of sodium (in milligrams).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "q": {
+                "description": "Query string to search for specific food or ingredient.",
+                "type": "str, optional",
+                "default": "chicken soup"
+            },
+            "enerc_kcalmax": {
+                "description": "Maximum amount of calories (in kcal).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "femax": {
+                "description": "Maximum amount of iron (in milligrams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "fat_kcalmax": {
+                "description": "Maximum amount of calories from fat (in kcal).",
+                "type": "int, optional",
+                "default": "1000"
+            },
+            "maxtotaltimeinseconds": {
+                "description": "Maximum total time to prepare the dish (in seconds).",
+                "type": "int, optional",
+                "default": "7200"
+            },
+            "piquantmax": {
+                "description": "Maximum piquant (spiciness) level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "vita_iumax": {
+                "description": "Maximum amount of vitamin A (in IU).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "vitcmax": {
+                "description": "Maximum amount of vitamin C (in milligrams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "meatymax": {
+                "description": "Maximum meatiness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "fasatmax": {
+                "description": "Maximum amount of saturated fat (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sweetmin": {
+                "description": "Minimum sweetness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "piquantmin": {
+                "description": "Minimum piquant (spiciness) level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "fatmax": {
+                "description": "Maximum amount of total fat (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sourmin": {
+                "description": "Minimum sourness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "meatymin": {
+                "description": "Minimum meatiness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sourmax": {
+                "description": "Maximum sourness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "chocdfmax": {
+                "description": "Maximum amount of carbohydrates (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "saltymin": {
+                "description": "Minimum saltiness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sugarmax": {
+                "description": "Maximum amount of sugar (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "procntmax": {
+                "description": "Maximum amount of protein (in grams).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "saltymax": {
+                "description": "Maximum saltiness level (e.g., 0 to 1).",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "search_foods_using_keywords",
+        "description": "Search for foods using the given keywords and optional filters such as brand owner, page size, and page number.",
+        "parameters": {
+            "query": {
+                "description": "The search term to query for foods.",
+                "type": "str",
+                "default": "cheese"
+            },
+            "brandowner": {
+                "description": "The brand owner of the foods. Default is 'Kar Nut Products Company'.",
+                "type": "str, optional",
+                "default": "Kar Nut Products Company"
+            },
+            "pagesize": {
+                "description": "The number of results per page. Default is '1'.",
+                "type": "str, optional",
+                "default": "1"
+            },
+            "pagenumber": {
+                "description": "The page number to retrieve. Default is '1'.",
+                "type": "str, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "search_a_grocery",
+        "description": "Searches for grocery products based on a search query using RapidAPI.",
+        "parameters": {
+            "searchquery": {
+                "description": "The search term used to find grocery products.",
+                "type": "str",
+                "default": "apple"
+            }
+        },
+        "domain": "Food"
+    },
+    {
+        "name": "filter_cook_time_in_minutes",
+        "description": "Fetches keto recipes within a specified range of cooking times using the provided API key.",
+        "parameters": {
+            "cook_time_in_minutes_tg": {
+                "description": "Minimum cooking time in minutes (greater than or equal to this value).",
+                "type": "int",
+                "default": "10"
+            },
+            "cook_time_in_minutes_lt": {
+                "description": "Maximum cooking time in minutes (less than this value).",
+                "type": "int",
+                "default": "50"
+            }
+        },
+        "domain": "Food"
+    }
+]

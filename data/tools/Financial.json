@@ -1,0 +1,1013 @@
+[
+    {
+        "name": "peers",
+        "description": "Retrieves a list of company peers given a stock symbol.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol for the company.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "web_chain_details",
+        "description": "python",
+        "parameters": {
+            "chain_slug": {
+                "description": "The slug identifier for the blockchain (e.g., 'ethereum' for Ethereum mainnet).",
+                "type": "str",
+                "default": "ethereum"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "web_candles",
+        "description": "Fetches candlestick data for a specific trading pair within a specified time range.",
+        "parameters": {
+            "time_bucket": {
+                "description": "The time bucket to use for the candle size, e.g., '1m', '5m', '1h'.",
+                "type": "str",
+                "default": "1h"
+            },
+            "pair_id": {
+                "description": "The primary key for the trading pair. For tests and demos, use id `1` which corresponds to the ETH/USDC pair on Uniswap v2.",
+                "type": "int",
+                "default": 1
+            },
+            "start": {
+                "description": "The start of the candle fetch period as an ISO 8601 formatted string. Defaults to '2020-05-18 00:00'.",
+                "type": "str, optional",
+                "default": "2020-05-18 00:00"
+            },
+            "end": {
+                "description": "The end of the candle fetch period as an ISO 8601 formatted string. Defaults to '2020-05-19 00:00'.",
+                "type": "str, optional",
+                "default": "2020-05-19 00:00"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "mini_chart",
+        "description": "Generates a TradingView mini chart image based on the specified parameters and returns the image data or error message.",
+        "parameters": {
+            "width": {
+                "description": "Width of the chart image. Must be within the valid range. Minimum: 320. Default is 800.",
+                "type": "int, optional",
+                "default": "800"
+            },
+            "format": {
+                "description": "Format of the chart image. Supported formats are 'png' and 'jpeg'. Default is 'png'.",
+                "type": "str, optional",
+                "default": "png"
+            },
+            "symbol": {
+                "description": "TradingView symbol for the chart. Examples include 'BINANCE:BTCUSDT' and 'BINANCE:BTCUSDTPERP'. Default is 'BINANCE:BTCUSDT'.",
+                "type": "str, optional",
+                "default": "BINANCE:BTCUSDT"
+            },
+            "interval": {
+                "description": "Time interval for the chart. Supported intervals are '1d', '1M', '3M', '1Y', '5Y', and 'all'. Default is '1M'.",
+                "type": "str, optional",
+                "default": "1M"
+            },
+            "theme": {
+                "description": "Color theme of the chart. Supported themes are 'light' and 'dark'. Default is 'dark'.",
+                "type": "str, optional",
+                "default": "dark"
+            },
+            "height": {
+                "description": "Height of the chart image. Must be within the valid range. Minimum: 220. Default is 400.",
+                "type": "int, optional",
+                "default": "400"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "binance_charts",
+        "description": "Fetch candlestick chart data for a specified cryptocurrency trading pair from Binance.",
+        "parameters": {
+            "symbol": {
+                "description": "Symbol for the trading pair. Example: 'BTCUSDT'",
+                "type": "str",
+                "default": "BTCUSDT"
+            },
+            "content_type": {
+                "description": "Type of content for the query. Defaults to 'application/x-www-form-urlencoded'.",
+                "type": "str, optional",
+                "default": "application/x-www-form-urlencoded"
+            },
+            "limit": {
+                "description": "Number of candles to include in the chart. Defaults to 16. Maximum is 1000.",
+                "type": "int, optional",
+                "default": "16"
+            },
+            "interval": {
+                "description": "Time interval for each candle. Defaults to '1m'. Valid intervals are:",
+                "type": "str, optional",
+                "default": "1m"
+            },
+            "lastprice": {
+                "description": "The specified last price for the chart. Defaults to 57500.",
+                "type": "int, optional",
+                "default": "57500"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "advanced_chart",
+        "description": "Fetches a real-time advanced chart image from TradingView using specified parameters.",
+        "parameters": {
+            "symbol": {
+                "description": "A valid TradingView symbol. Example: 'BINANCE:BTCUSDT', 'BINANCE:BTCUSDTPERP'. Default is 'BINANCE:BTCUSDT'.",
+                "type": "str",
+                "default": "BINANCE:BTCUSDT"
+            },
+            "studies": {
+                "description": "Indicators to be included on the chart. Supports multiple values such as 'MACD', 'RSI', 'EMA'. Default is 'MACD'.",
+                "type": "str",
+                "default": "MACD"
+            },
+            "format": {
+                "description": "The format of the chart image. Supported formats are 'png' and 'jpeg'. Default is 'png'.",
+                "type": "str",
+                "default": "png"
+            },
+            "theme": {
+                "description": "The color theme of the chart. Supported themes are 'light' and 'dark'. Default is 'dark'.",
+                "type": "str",
+                "default": "dark"
+            },
+            "interval": {
+                "description": "The interval of the chart. Supported intervals include '1m', '3m', '5m', '15m', '30m', '45m', '1h', '2h', '3h', '4h', '1d', '1w'. Default is '1d'.",
+                "type": "str",
+                "default": "1d"
+            },
+            "width": {
+                "description": "The width of the chart image. Minimum is 320. Default is 800.",
+                "type": "int",
+                "default": "800"
+            },
+            "height": {
+                "description": "The height of the chart image. Minimum is 240. Default is 600.",
+                "type": "int",
+                "default": "600"
+            },
+            "timezone": {
+                "description": "The timezone for the chart. Default is 'Etc/UTC'. Refer to comprehensive list for other values.",
+                "type": "str",
+                "default": "Etc/UTC"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "rsi_overbought",
+        "description": "Fetches a list of stocks that have the RSI (Relative Strength Index) Overbought signal using the BarPatterns RapidAPI.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve (default is 1).",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "price_probability",
+        "description": "Fetch the probabilistic outcome of a stock's price based on over 1000 forecasts.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol for which the probabilistic outcome is to be fetched.",
+                "type": "str",
+                "default": "AAPL"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "swift_codes_by_country",
+        "description": "Fetches and returns a list of SWIFT codes for a specified country using the RapidAPI service.",
+        "parameters": {
+            "country_code": {
+                "description": "Two-letter ISO country code to get the SWIFT codes for.",
+                "type": "str",
+                "default": "AU"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "days_from_date",
+        "description": "Fetches futures contracts for the date falling on the specified number of days from the given date.",
+        "parameters": {
+            "symbol": {
+                "description": "The symbol for the futures contract you are interested in.",
+                "type": "str",
+                "default": "CL"
+            },
+            "daysfrom": {
+                "description": "The number of days from the reference date (`datefrom`).",
+                "type": "int",
+                "default": "30"
+            },
+            "datefrom": {
+                "description": "The reference date in \"YYYY-MM-DD\" format from which days are counted.",
+                "type": "str",
+                "default": "2021-12-25"
+            },
+            "month": {
+                "description": "The specific month for the contract (default is 7).",
+                "type": "int, optional",
+                "default": "7"
+            },
+            "offset": {
+                "description": "The parameter for paginating results (default is None).",
+                "type": "int, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "The desired format for the response (default is 'json').",
+                "type": "str, optional",
+                "default": "json"
+            },
+            "inpast": {
+                "description": "Set to True if looking for past contracts; False for future contracts (default is None).",
+                "type": "bool, optional",
+                "default": "true"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_the_stock_history_by_exchange_code_and_stock_code",
+        "description": "Fetches the stock history for a specific stock on a given date using the exchange code and stock code.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch the stock history in YYYY-MM-DD format.",
+                "type": "str",
+                "default": "2023-02-01"
+            },
+            "exchangecode": {
+                "description": "The code representing the stock exchange (e.g., NASDAQ).",
+                "type": "str",
+                "default": "NASDAQ"
+            },
+            "stockcode": {
+                "description": "The code representing the specific stock (e.g., AAPL).",
+                "type": "str",
+                "default": "GOOG"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "web_pair_details",
+        "description": "Fetches detailed information about a trading pair from a specified blockchain using the RapidAPI service.",
+        "parameters": {
+            "chain_slug": {
+                "description": "Blockchain slug (e.g., \"ethereum\").",
+                "type": "str",
+                "default": "ethereum"
+            },
+            "pair_slug": {
+                "description": "Trading pair presentation or pool contract address. Examples include `ETH-USDC`, `eth-usdc`, `WETH-USDC`, `USDC-WETH`, or a pool contract address.",
+                "type": "str",
+                "default": "ETH-USDC"
+            },
+            "exchange_slug": {
+                "description": "Exchange path slug (e.g., 'sushiswap').",
+                "type": "str",
+                "default": "sushiswap"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_last_5_news",
+        "description": "Fetches the last 5 news articles from the financial section.",
+        "parameters": {
+            "content_type": {
+                "description": "The type of content to retrieve (e.g., 'application/json').",
+                "type": "str",
+                "default": "application/json"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_2_convert_endpoint",
+        "description": "Returns the converted amount and the exchange rate used for the conversion in JSON format by querying the currency exchange rate API.",
+        "parameters": {
+            "amount": {
+                "description": "The amount of currency to be converted.",
+                "type": "int",
+                "default": "100"
+            },
+            "is_from": {
+                "description": "The source currency symbol.",
+                "type": "str",
+                "default": "EUR"
+            },
+            "to": {
+                "description": "The target currency symbol.",
+                "type": "str",
+                "default": "USD"
+            },
+            "date": {
+                "description": "The date for the historical exchange rate. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "job_salary",
+        "description": "Fetch estimated job salaries based on job title and location using the RapidAPI Job Salary API.",
+        "parameters": {
+            "job_title": {
+                "description": "The job title for which to get the salary estimation.",
+                "type": "str",
+                "default": "nodejs developer"
+            },
+            "location": {
+                "description": "The location or area to search for the job salary estimation.",
+                "type": "str",
+                "default": "new york, usa"
+            },
+            "radius": {
+                "description": "The search radius in kilometers from the location. Defaults to '200'.",
+                "type": "str, optional",
+                "default": "200"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_4_date_endpoint",
+        "description": "Fetches the exchange rates for specified currencies on a given date.",
+        "parameters": {
+            "base": {
+                "description": "The base currency for which to get the exchange rates.",
+                "type": "str",
+                "default": "eur"
+            },
+            "symbols": {
+                "description": "A comma-separated string of target currencies to get exchange rates for.",
+                "type": "str",
+                "default": "usd"
+            },
+            "date": {
+                "description": "The date for which to fetch the exchange rates in 'YYYY-MM-DD' format. Defaults to '2023-02-01'.",
+                "type": "str, optional",
+                "default": "2023-02-01"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_the_stock_history_by_code",
+        "description": "Retrieves the stock history for a given stock code and date using the RapidAPI service.",
+        "parameters": {
+            "date": {
+                "description": "The specific date to get the stock history for, in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2023-02-01"
+            },
+            "stockcode": {
+                "description": "The stock code for which to retrieve the historical data.",
+                "type": "str",
+                "default": "GOOG"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "latest_contracts_for_symbol",
+        "description": "Retrieves the latest futures contracts for a given symbol for the next twelve months, with an optional parameter to specify a particular month.",
+        "parameters": {
+            "symbol": {
+                "description": "The symbol for which to retrieve futures contracts.",
+                "type": "str",
+                "default": "CL"
+            },
+            "month": {
+                "description": "The month for which to return the latest contract (default is 7).",
+                "type": "int, optional",
+                "default": "7"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "inverted_hammer",
+        "description": "Fetches a list of stocks that have an Inverted Hammer signal from the specified page using the provided RapidAPI key.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "macd_crossover_down",
+        "description": "Fetches a list of stocks having a MACD crossover down signal from the provided API.",
+        "parameters": {
+            "page": {
+                "description": "The page number of the results to fetch. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_calculate_investment",
+        "description": "Calculates various investment returns based on given parameters using an external API.",
+        "parameters": {
+            "rate": {
+                "description": "The annual interest rate of the investment in percentage.",
+                "type": "int",
+                "default": "6.5"
+            },
+            "principal": {
+                "description": "The initial amount of money invested.",
+                "type": "int",
+                "default": "50000.00"
+            },
+            "time": {
+                "description": "The duration of the investment in months.",
+                "type": "int",
+                "default": "36"
+            },
+            "compounding": {
+                "description": "The frequency of compounding interest. Valid options are 'yearly', 'semi-annually', 'quarterly', and 'monthly'. Default is 'yearly'.",
+                "type": "str, optional",
+                "default": "yearly"
+            },
+            "in_currency": {
+                "description": "The currency of the investment. Default is 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            },
+            "format": {
+                "description": "Whether to format the result. Valid options are 'yes' and 'no'. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "to_currency": {
+                "description": "The currency to convert the result into. Default is 'USD'.",
+                "type": "str, optional",
+                "default": "USD"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "viewoverallscreeningresult",
+        "description": "Fetches the overall screening result for a given customer and screening ID from the ClearDIL API.",
+        "parameters": {
+            "authorization": {
+                "description": "Authorization token required for the API request.",
+                "type": "str",
+                "default": "Bearer {{accessTokenUser}}"
+            },
+            "content_type": {
+                "description": "The content type for the API request, typically 'application/json'.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "customer_a_id": {
+                "description": "The customer ID for whom the screening result is being fetched.",
+                "type": "str",
+                "default": "customer_a_id"
+            },
+            "screening_a_id": {
+                "description": "The screening ID whose result is being requested.",
+                "type": "str",
+                "default": "screening_a_id"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_5_latest_endpoint",
+        "description": "Fetch the latest exchange rates for the specified currencies.",
+        "parameters": {
+            "symbols": {
+                "description": "Comma-separated list of currency codes to fetch rates for.",
+                "type": "str",
+                "default": "EUR"
+            },
+            "base": {
+                "description": "The base currency code against which exchange rates are calculated.",
+                "type": "str",
+                "default": "usd"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "rsi_oversold",
+        "description": "Fetches a list of stocks that have an RSI oversold signal from the specified API endpoint.",
+        "parameters": {
+            "page": {
+                "description": "The page number for pagination. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_currency_by_name",
+        "description": "Fetches various states of a specific currency's prices from a given API.",
+        "parameters": {
+            "coinid": {
+                "description": "The identifier of the currency to fetch prices for.",
+                "type": "str",
+                "default": "Bitcoin"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "peer_ratio_averages",
+        "description": "Fetches and returns an average of company peer ratios for trailing twelve months (TTM) data for a given company symbol.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol of the company for which to fetch peer ratio averages.",
+                "type": "str",
+                "default": "AAPL"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_3_fluctuation_endpoint",
+        "description": "Fetches the percentage change in exchange rates for specified currencies over a given time period.",
+        "parameters": {
+            "end_date": {
+                "description": "The end date for the time period of the fluctuation data.",
+                "type": "str",
+                "default": "2023-02-28"
+            },
+            "base": {
+                "description": "The base currency for which the fluctuation data is to be retrieved.",
+                "type": "str",
+                "default": "eur"
+            },
+            "start_date": {
+                "description": "The start date for the time period of the fluctuation data.",
+                "type": "str",
+                "default": "2023-01-01"
+            },
+            "symbols": {
+                "description": "Specific currencies for which the fluctuation data is to be retrieved. Defaults to 'usd'.",
+                "type": "str, optional",
+                "default": "usd"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "piercing_line",
+        "description": "Returns a list of stocks that have a Piercing Line signal from the BarPatterns API.",
+        "parameters": {
+            "page": {
+                "description": "The page number for paginated results. Defaults to 1.",
+                "type": "int",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "v1_exchangerate",
+        "description": "Retrieves the exchange rate for a given currency pair using the API Ninjas Exchange Rate API.",
+        "parameters": {
+            "pair": {
+                "description": "Currency pair to query. Must be in the form of (currency1)_(currency2) (e.g., USD_EUR).",
+                "type": "str",
+                "default": "USD_EUR"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "discounted_cash_flow_models_dcf_s",
+        "description": "Fetches the Discounted Cash Flow (DCF) model for a given stock symbol using MarketCI Analytics API.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol for which to fetch the DCF model.",
+                "type": "str",
+                "default": "AAPL"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "esg",
+        "description": "Retrieves the Environmental, Social, and Governance (ESG) score for a given company symbol using the Yahoo Finance API.",
+        "parameters": {
+            "symb": {
+                "description": "The stock symbol of the company for which the ESG score is requested.",
+                "type": "str",
+                "default": "tsla"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "bullish_engulfing",
+        "description": "Fetches a list of stocks exhibiting the Bullish Engulfing signal pattern.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_the_current_stock_by_exchange_code_and_stock_code",
+        "description": "Fetch the current stock data using the given exchange code and stock code from an API.",
+        "parameters": {
+            "stockcode": {
+                "description": "The stock code of the desired stock.",
+                "type": "str",
+                "default": "GOOG"
+            },
+            "exchangecode": {
+                "description": "The exchange code where the stock is listed.",
+                "type": "str",
+                "default": "NASDAQ"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "web_exchange_details",
+        "description": "Fetches detailed information about a specific exchange on a given blockchain using the RapidAPI Open DeFi endpoint.",
+        "parameters": {
+            "exchange_slug": {
+                "description": "The slug representing the exchange, e.g., 'sushiswap'.",
+                "type": "str",
+                "default": ""
+            },
+            "chain_slug": {
+                "description": "The slug representing the blockchain, e.g., 'ethereum'.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_latest_quote",
+        "description": "Fetch the latest real-time quote for a given trading symbol.",
+        "parameters": {
+            "tradingsymbol": {
+                "description": "The trading symbol for which to fetch the latest quote. Check the list of all supported trading symbols at [https://stockseyes.com/group/all](https://stockseyes.com/group/all).",
+                "type": "str",
+                "default": "RELIANCE"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "bullish_harami",
+        "description": "Fetches a list of stocks exhibiting the Bullish Harami candlestick pattern from the API.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve. Default is 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "web_exchanges",
+        "description": "Retrieve and sort exchanges based on specified criteria.",
+        "parameters": {
+            "sort": {
+                "description": "The sorting criteria for the output. Defaults to 'usd_volume_30d', which sorts the exchanges based on their monthly volume.",
+                "type": "str",
+                "default": "usd_volume_30d"
+            },
+            "direction": {
+                "description": "The sort order. Can be 'asc' for ascending or 'desc' for descending. Defaults to 'desc'.",
+                "type": "str",
+                "default": "desc"
+            },
+            "filter_zero_volume": {
+                "description": "If set to True, excludes exchanges with no volume in the last 30 days. Defaults to None.",
+                "type": "bool",
+                "default": false
+            },
+            "chain_slug": {
+                "description": "The blockchain slug (e.g., 'ethereum' for Ethereum mainnet). If provided, the function lists exchanges only for this chain. Defaults to None.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_economic_calendar_news_over_a_period_of_time",
+        "description": "Fetches economic calendar news within a specified time period.",
+        "parameters": {
+            "content_type": {
+                "description": "The content type for the response. Default is 'application/json'.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "time_start": {
+                "description": "The start date and time for the news fetch period in ISO 8601 format. Default is '2022-12-20 17:34:58+00:00'.",
+                "type": "str",
+                "default": "2022-12-20 17:34:58+00:00"
+            },
+            "time_finish": {
+                "description": "The end date and time for the news fetch period in ISO 8601 format. Default is '2023-02-13 19:34:58+00:00'.",
+                "type": "str",
+                "default": "2023-02-13 19:34:58+00:00"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "banks_by_country",
+        "description": "Fetches a list of banks for a specified country using the given RapidAPI key.",
+        "parameters": {
+            "country_code": {
+                "description": "Two-letter ISO country code representing the country for which the bank list is to be retrieved.",
+                "type": "str",
+                "default": "AU"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "dark_cloud_cover",
+        "description": "This function retrieves a list of stocks showing the Dark Cloud Cover pattern signal from the specified page using the RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "falling_three_methods",
+        "description": "Fetches a list of stocks having the Falling Three Methods signal from the RapidAPI BarPatterns service.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_6_timeseries_endpoint",
+        "description": "Fetches historical exchange rates for specified currencies over a given time period.",
+        "parameters": {
+            "end_date": {
+                "description": "The end date for the timeseries data in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2023-02-02"
+            },
+            "start_date": {
+                "description": "The start date for the timeseries data in 'YYYY-MM-DD' format.",
+                "type": "str",
+                "default": "2023-01-01"
+            },
+            "base": {
+                "description": "The base currency code (default is 'usd').",
+                "type": "str, optional",
+                "default": "usd"
+            },
+            "symbols": {
+                "description": "The target currency code(s) (default is 'eur').",
+                "type": "str, optional",
+                "default": "eur"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "gedetailedtinsiders",
+        "description": "Fetch detailed insider trading information for a given stock ticker.",
+        "parameters": {
+            "ticker": {
+                "description": "The stock ticker symbol for which to fetch insider trading details.",
+                "type": "str",
+                "default": "BRK.A"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "busca_por_simbolo",
+        "description": "Fetches data for a given stock symbol using the Alpha Vantage API.",
+        "parameters": {
+            "function": {
+                "description": "The type of function to be called in the API (e.g., 'TIME_SERIES_DAILY').",
+                "type": "str",
+                "default": "TIME_SERIES_DAILY"
+            },
+            "apikey": {
+                "description": "The API key for accessing Alpha Vantage API.",
+                "type": "str",
+                "default": "NMITMJSJJ77WJPCF"
+            },
+            "outputsize": {
+                "description": "The size of the data output (e.g., 'compact' or 'full').",
+                "type": "str",
+                "default": "compact"
+            },
+            "symbol": {
+                "description": "The stock symbol for which data is to be fetched.",
+                "type": "str",
+                "default": "VINO11.SA"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "peer_metrics_average",
+        "description": "Fetches the average of company peer metrics for trailing twelve months (TTM) data via RapidAPI.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol of the company for which to retrieve peer metrics.",
+                "type": "str",
+                "default": "AAPL"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "swift_code",
+        "description": "Fetches and returns the details of a specified SWIFT code using the Toolbench RapidAPI service.",
+        "parameters": {
+            "swift_code": {
+                "description": "The SWIFT code for which the details are to be retrieved.",
+                "type": "str",
+                "default": "NATAAU33033"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "price_forecasts",
+        "description": "Fetches an AI-generated price forecast for a given stock symbol over the next 3 months using the Toolbench RapidAPI.",
+        "parameters": {
+            "symbol": {
+                "description": "The stock symbol for which the price forecast is to be generated.",
+                "type": "str",
+                "default": "AAPL"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_last_5_economic_calendar_news",
+        "description": "Fetches the last 5 economic calendar news items, both actual and processed information.",
+        "parameters": {
+            "content_type": {
+                "description": "Type of content to be specified in the request header.",
+                "type": "str",
+                "default": "application/json"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "get_ohlc_history",
+        "description": "Fetches the OHLC (Open, High, Low, Close) history data for a specified currency pair.",
+        "parameters": {
+            "symbol": {
+                "description": "The currency pair symbol for which to retrieve OHLC history.",
+                "type": "str",
+                "default": "eur-usd"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "fetchaverification",
+        "description": "Fetch a verification status for a specific customer from the ClearDil API.",
+        "parameters": {
+            "authorization": {
+                "description": "Authorization token for API access.",
+                "type": "str",
+                "default": "Bearer {{accessTokenUser}}"
+            },
+            "content_type": {
+                "description": "The content type for the request header.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "verification_a_id": {
+                "description": "The ID of the verification to be fetched.",
+                "type": "str",
+                "default": "verification_a_id"
+            },
+            "customer_a_id": {
+                "description": "The ID of the customer for whom the verification is being fetched.",
+                "type": "str",
+                "default": "customer_a_id"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "fetchamatch",
+        "description": "Fetches match details from the specified screening and customer IDs using the provided API credentials.",
+        "parameters": {
+            "authorization": {
+                "description": "Authorization token for the API.",
+                "type": "str",
+                "default": "Bearer {{accessTokenUser}}"
+            },
+            "content_type": {
+                "description": "The content type for the request.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "customer_a_id": {
+                "description": "The customer ID for whom the match is being fetched.",
+                "type": "str",
+                "default": "customer_a_id"
+            },
+            "match_1_id": {
+                "description": "The ID of the match to fetch details for.",
+                "type": "str",
+                "default": "match_1_id"
+            },
+            "screening_a_id": {
+                "description": "The ID of the screening in which the match was found.",
+                "type": "str",
+                "default": "screening_a_id"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "fetchallassociationsbelongingtoamatch",
+        "description": "Fetch all associations belonging to a specific match for a given customer and screening ID.",
+        "parameters": {
+            "authorization": {
+                "description": "The authorization token for accessing the API.",
+                "type": "str",
+                "default": "Bearer {{accessTokenUser}}"
+            },
+            "content_type": {
+                "description": "The MIME type of the request.",
+                "type": "str",
+                "default": "application/json"
+            },
+            "customer_a_id": {
+                "description": "The ID of the customer.",
+                "type": "str",
+                "default": "customer_a_id"
+            },
+            "screening_a_id": {
+                "description": "The ID of the screening.",
+                "type": "str",
+                "default": "screening_a_id"
+            },
+            "match_id": {
+                "description": "The ID of the match.",
+                "type": "str",
+                "default": "match_id"
+            }
+        },
+        "domain": "Financial"
+    },
+    {
+        "name": "morning_star",
+        "description": "Fetches stocks that have the Morning Star signal from the RapidAPI service.",
+        "parameters": {
+            "page": {
+                "description": "The page number of results to retrieve. Defaults to 1.",
+                "type": "int, optional",
+                "default": "1"
+            }
+        },
+        "domain": "Financial"
+    }
+]

@@ -1,0 +1,234 @@
+[
+    {
+        "name": "followers",
+        "description": "Retrieves the list of followers for a given Instagram user.",
+        "parameters": {
+            "user_id": {
+                "description": "The ID of the Instagram user whose followers are to be retrieved.",
+                "type": "str",
+                "default": "25025320"
+            },
+            "batch_size": {
+                "description": "The number of followers to retrieve in one batch. Default is 20.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "next_cursor": {
+                "description": "A cursor for pagination to fetch the next set of followers. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "bmi",
+        "description": "Calculates the Body Mass Index (BMI) using given weight and height, optionally specifying the measurement system.",
+        "parameters": {
+            "weight": {
+                "description": "Weight of the individual.",
+                "type": "int",
+                "default": "86"
+            },
+            "height": {
+                "description": "Height of the individual.",
+                "type": "int",
+                "default": "184"
+            },
+            "system": {
+                "description": "Measurement system, either 'metric' (kg/m^2) or 'imperial' (lbs/in^2). Defaults to 'metric'.",
+                "type": "str, optional",
+                "default": "metric"
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "getpatient",
+        "description": "Fetches patient objects filtered by specified query parameters from the API.",
+        "parameters": {
+            "format": {
+                "description": "Specifies the output type. Allowed values are CSV, HTML, XML, and JSON. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "collection": {
+                "description": "A label used to name a set of images collected for a specific trial or other reason. Assigned during the data curation process. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "drug_info",
+        "description": "Fetches information about a specified drug using the RapidAPI Drug Info and Price History API.",
+        "parameters": {
+            "drug": {
+                "description": "The name of the drug to retrieve information for.",
+                "type": "str",
+                "default": "advil"
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "v1_covid19",
+        "description": "Fetches COVID-19 data from the API Ninjas COVID-19 endpoint based on the provided parameters. Either `date` or `country` must be set.",
+        "parameters": {
+            "type": {
+                "description": "Type of data to retrieve. Must be either \"cases\" or \"deaths\". If not set, \"cases\" will be used by default.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Country name (case insensitive).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "date": {
+                "description": "Date to retrieve single-day snapshot. Must be in the form of YYYY-MM-DD (e.g., 2022-01-01). Defaults to '2022-01-01'.",
+                "type": "str, optional",
+                "default": "2022-01-01"
+            },
+            "county": {
+                "description": "County name for US states (case insensitive). For United States data only. Must be used in conjunction with `country` (United States) and `region` (e.g., California).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Administrative region (also known as state or province in many countries) name (case insensitive). Must be used in conjunction with `country`. If not set, countries with data broken down by administrative regions will return separate data for each region.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "genericname",
+        "description": "This function retrieves the generic name of a given drug using the RapidAPI Drug Info and Price History API.",
+        "parameters": {
+            "drug": {
+                "description": "The brand name of the drug. Defaults to 'advil'.",
+                "type": "str, optional",
+                "default": "advil"
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "analyze",
+        "description": "Analyzes the page speed of a given URL using the specified strategy and category.",
+        "parameters": {
+            "url": {
+                "description": "The URL of the page to be analyzed.",
+                "type": "str",
+                "default": "https://google.com"
+            },
+            "strategy": {
+                "description": "The strategy to use, either 'desktop' or 'mobile'. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "category": {
+                "description": "The category for which to analyze, options include 'accessibility', 'best-practices', 'performance', 'seo', and 'pwa'. Default is 'performance'.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "getmanufacturervalues",
+        "description": "Returns a set of all manufacturer names filtered by the specified query parameters.",
+        "parameters": {
+            "format": {
+                "description": "Specifies the output type. Allowed values are 'CSV', 'HTML', 'XML', 'JSON'.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "collection": {
+                "description": "A label used to name a set of images collected for a specific trial or other reason. Assigned during the data curation process.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bodypartexamined": {
+                "description": "Standard DICOM definition (0018x0015) specifying the body part that was examined.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "modality": {
+                "description": "Standard DICOM definition (0008x0060) specifying the imaging modality.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "getmodalityvalues",
+        "description": "Fetches modality values from the TCIA API based on the specified parameters.",
+        "parameters": {
+            "collection": {
+                "description": "A label used to name a set of images collected for a specific trial or other reason. Assigned during the process of curating the data.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bodypartexamined": {
+                "description": "Entered on a per collection basis using relevant SNOMED terms.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "modality": {
+                "description": "DICOM definition for the imaging modality.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "format": {
+                "description": "Specifies the output type. Allowed values are CSV, HTML, XML, JSON.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "getbodypartvalues",
+        "description": "Gets a set of all body part names filtered by optional query parameters.",
+        "parameters": {
+            "format": {
+                "description": "Specifies the output type. Allowed values are CSV, HTML, XML, or JSON. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "collection": {
+                "description": "A label used to name a set of images collected for a specific trial or other reason. Assigned during the process of curating the data. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "bodypartexamined": {
+                "description": "A standard DICOM definition for the body part examined (0018x0015). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "modality": {
+                "description": "A standard DICOM definition for the imaging modality used (0008x0060). Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    },
+    {
+        "name": "getcollectionvalues",
+        "description": "Fetches all TCIA collection names, optionally specifying the output format.",
+        "parameters": {
+            "format": {
+                "description": "The desired output format, which can be one of 'CSV', 'HTML', 'XML', or 'JSON'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Medical"
+    }
+]

@@ -1,0 +1,1330 @@
+[
+    {
+        "name": "flights_list_by_airline",
+        "description": "Retrieve a list of flights operated by a specified airline using the RapidAPI Flight Radar service.",
+        "parameters": {
+            "airline": {
+                "description": "The ICAO code of the airline whose flights are to be listed. This value can be obtained from the 'icao' field returned by the /airlines/list or /flights/detail endpoints, or the 'operator' field from the /flights/search endpoint.",
+                "type": "str",
+                "default": "AXM"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "trim_view",
+        "description": "Fetches and returns all data associated with a specific vehicle trim using the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The ID of the vehicle trim to retrieve.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_aircraft",
+        "description": "Queries the API Ninjas Aircraft API to return a list of aircraft that match the given parameters.",
+        "parameters": {
+            "min_height": {
+                "description": "Minimum height of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_wingspan": {
+                "description": "Minimum wingspan of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "How many results to return. Must be between 1 and 30.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_height": {
+                "description": "Maximum height of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_length": {
+                "description": "Maximum length of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_length": {
+                "description": "Minimum length of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_range": {
+                "description": "Maximum range of the aircraft in nautical miles.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_range": {
+                "description": "Minimum range of the aircraft in nautical miles.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_speed": {
+                "description": "Maximum air speed in knots.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_wingspan": {
+                "description": "Maximum wingspan of the aircraft in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "engine_type": {
+                "description": "Type of engine. Must be one of: piston, propjet, jet.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_speed": {
+                "description": "Minimum air speed in knots.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "Aircraft model name. Defaults to 'G550'.",
+                "type": "str, optional",
+                "default": "G550"
+            },
+            "manufacturer": {
+                "description": "Company that designed and built the aircraft. Defaults to 'Gulfstream'.",
+                "type": "str, optional",
+                "default": "Gulfstream"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_az",
+        "description": "Fetches current or historical gas price data for Arizona.",
+        "parameters": {
+            "date": {
+                "description": "The date for historical gas price data in the format 'YYYY-MM-DD'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_directions",
+        "description": "Fetch driving directions from an origin to a destination.",
+        "parameters": {
+            "origin": {
+                "description": "The starting point specified as a free-text location query or latitude, longitude pair.",
+                "type": "str",
+                "default": "Church St & 29th St, San-Francisco, CA, USA"
+            },
+            "destination": {
+                "description": "The destination specified as a free-text location query or latitude, longitude pair.",
+                "type": "str",
+                "default": "Sunnyvale, CA, USA"
+            },
+            "avoid_routes": {
+                "description": "Route types to avoid, specified as a comma-delimited list (e.g., 'tolls,ferries').",
+                "type": "str, optional",
+                "default": "tolls,ferries"
+            },
+            "country": {
+                "description": "The country or region to use for the query, specified as a 2-letter country code.",
+                "type": "str, optional",
+                "default": "us"
+            },
+            "arrival_time": {
+                "description": "Arrival time specified as a Unix-Timestamp in destination local time",
+                "type": "int, optional",
+                "default": ""
+            },
+            "language": {
+                "description": "The language to use for the query, specified as a 2-letter language code.",
+                "type": "str, optional",
+                "default": "en"
+            },
+            "departure_time": {
+                "description": "Departure time specified as a Unix-Timestamp in origin local time",
+                "type": "int, optional",
+                "default": ""
+            },
+            "distance_units": {
+                "description": "The distance units in the response ('auto', 'km', 'mi'). Default is `None`, which",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "vehicle_attributes",
+        "description": "Fetches all available options for a given vehicle attribute using the Toolbench RapidAPI.",
+        "parameters": {
+            "attribute": {
+                "description": "The attribute options to be returned. Defaults to 'bodies.type'.",
+                "type": "str",
+                "default": "bodies.type"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_fl",
+        "description": "Fetches current or historical gas price data for Florida.",
+        "parameters": {
+            "date": {
+                "description": "Date for which to fetch historical gas price data in the format 'YYYY-MM-DD'. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_airlines",
+        "description": "Fetches airline information using the API Ninjas Airlines API given certain parameters.",
+        "parameters": {
+            "iata": {
+                "description": "International Air Transport Association (IATA) 2-character airline code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Airline name. Supports partial matching (e.g., 'United' will match 'United Airlines'). Defaults to 'Singapore Airlines'.",
+                "type": "str, optional",
+                "default": "Singapore Airlines"
+            },
+            "icao": {
+                "description": "International Civil Aviation Organization (ICAO) 3-character airline code. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_motorcycles",
+        "description": "Fetches motorcycle data from the Motorcycles API, returning up to 30 results that match the given parameters.",
+        "parameters": {
+            "model": {
+                "description": "Name of the motorcycle model. Supports partial matching (default is 'Ninja').",
+                "type": "str",
+                "default": "Ninja"
+            },
+            "offset": {
+                "description": "Number of results to offset for pagination. Default is None.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "make": {
+                "description": "Name of the manufacturer/brand. Supports partial matching (default is 'Kawasaki').",
+                "type": "str",
+                "default": "Kawasaki"
+            },
+            "year": {
+                "description": "Release year of the motorcycle model in YYYY format. Default is None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_taxi_fares",
+        "description": "Calculate taxi fares between two geographical points using the RapidAPI taxi fare calculator.",
+        "parameters": {
+            "arr_lat": {
+                "description": "Latitude of the arrival point.",
+                "type": "int",
+                "default": "52.47"
+            },
+            "arr_lng": {
+                "description": "Longitude of the arrival point.",
+                "type": "int",
+                "default": "13.63"
+            },
+            "dep_lat": {
+                "description": "Latitude of the departure point.",
+                "type": "int",
+                "default": "52.50"
+            },
+            "dep_lng": {
+                "description": "Longitude of the departure point.",
+                "type": "int",
+                "default": "13.43"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "interior_colors",
+        "description": "Fetches interior color details for a car based on various query parameters.",
+        "parameters": {
+            "model": {
+                "description": "The model of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "The name of the color.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "trim": {
+                "description": "The trim level of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number for pagination.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "direction": {
+                "description": "The sorting direction, either 'asc' or 'desc'. Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "limit": {
+                "description": "The maximum number of results to return.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "make_model_trim_id": {
+                "description": "The unique ID for make, model, and trim combination.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "The year of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "rgb": {
+                "description": "The RGB value of the color.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The field to sort by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "verbose": {
+                "description": "If 'yes', includes detailed information about make, model, and trim. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "json": {
+                "description": "A URL encoded JSON array of conditions to filter results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_id": {
+                "description": "The ID of the car make.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make": {
+                "description": "The make of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_model_id": {
+                "description": "The ID for make and model combination.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "bodies",
+        "description": "Fetches a list of vehicle bodies based on various query parameters.",
+        "parameters": {
+            "make_model_trim_id": {
+                "description": "ID representing the make, model, and trim combination.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "direction": {
+                "description": "Sorting direction, either 'asc' or 'desc'. Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "year": {
+                "description": "Year of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Pagination parameter to specify the page of results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "verbose": {
+                "description": "Includes additional details like make, model, and trim when set to 'yes'. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "json": {
+                "description": "JSON-encoded string for complex query conditions.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_id": {
+                "description": "ID of the vehicle make.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "trim": {
+                "description": "Specific trim of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "Field by which to sort the results. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "make_model_id": {
+                "description": "ID representing the make and model combination.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "Model of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make": {
+                "description": "Make of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "type": {
+                "description": "Type of the vehicle, such as SUV, Van, etc.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit on the number of results returned.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "doors": {
+                "description": "Number of doors on the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "airports_nonstop_routes_for_an_airport",
+        "description": "Fetches a list of nonstop routes for a specified airport using the RapidAPI service.",
+        "parameters": {
+            "airportiatacode": {
+                "description": "The IATA code for the airport.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "mileages",
+        "description": "Fetch mileage data from the car API based on various optional filters and sorting options.",
+        "parameters": {
+            "make_model_id": {
+                "description": "The ID of the make and model.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The number of results to limit the response to.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "make_model_trim_id": {
+                "description": "The ID of the make, model, and trim.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "trim": {
+                "description": "The trim level of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "json": {
+                "description": "An array of URL encoded JSON conditions for complex queries.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "range_highway": {
+                "description": "The range of highway mileage.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The field to sort the results by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "direction": {
+                "description": "The direction to sort by ('asc' or 'desc'). Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "range_city": {
+                "description": "The range of city mileage.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "combined_mpg": {
+                "description": "The combined miles per gallon value.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "verbose": {
+                "description": "Include make, model and trim information in the results. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "epa_highway_mpg": {
+                "description": "The EPA highway miles per gallon value.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "epa_city_mpg": {
+                "description": "The EPA city miles per gallon value.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "The car model.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "The year of the car.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_id": {
+                "description": "The ID of the car make.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make": {
+                "description": "The car make.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_train_data_mrt_id_id_get",
+        "description": "Fetch train data using MRT ID from the RapidAPI service.",
+        "parameters": {
+            "is_id": {
+                "description": "The MRT ID to fetch the train data for.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_car_versions",
+        "description": "Get the different versions of a car model using the toolbench RapidAPI.",
+        "parameters": {
+            "model": {
+                "description": "The specific model of the car.",
+                "type": "str",
+                "default": "chiron"
+            },
+            "maker": {
+                "description": "The manufacturer of the car.",
+                "type": "str",
+                "default": "bugatti"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "trims",
+        "description": "Fetch car trim details from the RapidAPI endpoint with various filter options.",
+        "parameters": {
+            "make_id": {
+                "description": "Filter results by make ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "Limit the number of results returned.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "direction": {
+                "description": "Order direction of the results, either 'asc' for ascending or 'desc' for descending. Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "sort": {
+                "description": "The field to sort results by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "year": {
+                "description": "Filter results by year.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "Filter results by model.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "Specify the page number for paginated results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "trim": {
+                "description": "Filter results by trim.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_model_id": {
+                "description": "Filter results by make model ID.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "verbose": {
+                "description": "If 'yes', includes detailed information such as year, make, model, and trim in the returned data. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "make": {
+                "description": "Filter results by make.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "json": {
+                "description": "An array of URL encoded JSON conditions for complex queries.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ar",
+        "description": "Fetches current or historical gas price data for Arkansas.",
+        "parameters": {
+            "date": {
+                "description": "A date string in the format 'YYYY-MM-DD' to query historical gas price data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_helicopter",
+        "description": "Fetches a list of helicopter specifications from the API Ninjas Helicopter API that match the given parameters.",
+        "parameters": {
+            "max_height": {
+                "description": "Maximum height of the helicopter in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "How many results to return. Must be between 1 and 30. Default is 1.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_height": {
+                "description": "Minimum height of the helicopter in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_length": {
+                "description": "Maximum length of the helicopter in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_length": {
+                "description": "Minimum length of the helicopter in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_speed": {
+                "description": "Minimum maximum air speed in knots.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "min_range": {
+                "description": "Minimum range of the helicopter in nautical miles.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_range": {
+                "description": "Maximum range of the helicopter in nautical miles.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_speed": {
+                "description": "Maximum maximum air speed in knots.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "manufacturer": {
+                "description": "Company that designed and built the helicopter. Default is 'Bell'.",
+                "type": "str, optional",
+                "default": "Bell"
+            },
+            "model": {
+                "description": "Helicopter model name. Default is '206'.",
+                "type": "str, optional",
+                "default": "206"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_car_models",
+        "description": "Fetches all car models for a specified car maker using the InfoCars API.",
+        "parameters": {
+            "maker": {
+                "description": "The name of the car maker to fetch the models for.",
+                "type": "str",
+                "default": "Bugatti"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_airline_details",
+        "description": "Fetch details for an airline based on its IATA code.",
+        "parameters": {
+            "code": {
+                "description": "The IATA code of the airline for which details are to be fetched.",
+                "type": "str",
+                "default": "LH"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "flights_list_in_boundary",
+        "description": "Fetches a list of flights within a specified geographical bounding box and returns flight information based on various optional filters.",
+        "parameters": {
+            "bl_lng": {
+                "description": "The bottom left longitude of the bounding box.",
+                "type": "int",
+                "default": "100.641975"
+            },
+            "tr_lat": {
+                "description": "The top right latitude of the bounding box.",
+                "type": "int",
+                "default": "13.771029"
+            },
+            "bl_lat": {
+                "description": "The bottom left latitude of the bounding box.",
+                "type": "int",
+                "default": "13.607884"
+            },
+            "tr_lng": {
+                "description": "The top right longitude of the bounding box.",
+                "type": "int",
+                "default": "100.861566"
+            },
+            "type": {
+                "description": "Filter by the value of the 'Code' field returned in the aircrafts/list endpoint.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "speed": {
+                "description": "Filter by speed. The format is min,max (e.g., \"0,460\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "airline": {
+                "description": "Filter by the value of the 'ICAO' field returned in the airlines/list endpoint.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "altitude": {
+                "description": "Filter by altitude. The format is min,max (e.g., \"0,48000\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "airport": {
+                "description": "Filter by the 'icao' field of the airport.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "reg": {
+                "description": "Filter by registration (e.g., \"D-AIHV\").",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of flights per response (default is 300; max is 300).",
+                "type": "int, optional",
+                "default": "300"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_dc",
+        "description": "Fetches current or historical gas price data for Washington D.C.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch historical gas price data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_vinlookup",
+        "description": "Retrieves key vehicle information including manufacturer, country of origin, and model year for a given VIN using the API Ninjas VIN Lookup API.",
+        "parameters": {
+            "vin": {
+                "description": "A valid Vehicle Identification Number (VIN), which must be a 17-character string.",
+                "type": "str",
+                "default": "JH4KA7561PC008269"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "livetraffic",
+        "description": "Retrieves information about all aircraft within a 25-nautical mile radius of the specified latitude and longitude.",
+        "parameters": {
+            "lat": {
+                "description": "Latitude of the center point (-90 to 90).",
+                "type": "int",
+                "default": ""
+            },
+            "lon": {
+                "description": "Longitude of the center point (-180 to 180). Note: Longitude in the US is typically negative.",
+                "type": "int",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "airports_direct_routes_for_an_airport",
+        "description": "Returns a list of direct routes for a given airport using the RapidAPI service.",
+        "parameters": {
+            "airportiatacode": {
+                "description": "The IATA code of the airport for which the direct routes are being queried.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_airport_details",
+        "description": "Fetches and returns detailed information about an airport specified by its IATA code.",
+        "parameters": {
+            "code": {
+                "description": "A valid three-letter IATA airport code.",
+                "type": "str",
+                "default": "DFW"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ky",
+        "description": "Fetches current or historical gas price data for Kentucky.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve gas price data in the format 'YYYY-MM-DD'. If not provided, current gas prices are returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "models",
+        "description": "Search for car models based on various criteria such as year, make, model, make_id, and more. The results can be customized using different parameters to limit, sort, and filter the data.",
+        "parameters": {
+            "limit": {
+                "description": "The maximum number of results to return.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "make_id": {
+                "description": "The ID of the car make to filter the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "year": {
+                "description": "The year to filter the car models.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number for paginated results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The field to sort the results by. Default is 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "make": {
+                "description": "The car make to filter the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "The car model to filter the results.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "direction": {
+                "description": "The direction for sorting ('asc' or 'desc'). Default is 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "verbose": {
+                "description": "Whether to include detailed information like make, model, and trim. Default is 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_al",
+        "description": "Fetch the current or historical gas price data for Alabama.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to retrieve historical gas price data in the format 'YYYY-MM-DD'. If not provided, the current gas price data is fetched.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "driving_directions",
+        "description": "Fetches driving directions and routes between specified source and destination coordinates using the Waze/Google API.",
+        "parameters": {
+            "source_coordinates": {
+                "description": "Geographic coordinates (latitude, longitude pair) of the starting point.",
+                "type": "str",
+                "default": "32.0852999,34.78176759999999"
+            },
+            "destination_coordinates": {
+                "description": "Geographic coordinates (latitude, longitude pair) of the destination.",
+                "type": "str",
+                "default": "32.7940463,34.989571"
+            },
+            "return_route_coordinates": {
+                "description": "Whether to return the route coordinate pairs. Defaults to None.",
+                "type": "bool, optional",
+                "default": ""
+            },
+            "arrival_timestamp": {
+                "description": "Unix timestamp (seconds since epoch) of the desired arrival time. Defaults to None, which returns directions for the current time.",
+                "type": "int, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "v1_airports",
+        "description": "Fetches information from the API Ninjas Airports API endpoint based on specified search criteria. At least one of the optional parameters must be provided.",
+        "parameters": {
+            "offset": {
+                "description": "Number of results to offset for pagination.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "max_elevation": {
+                "description": "Maximum airport elevation in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "region": {
+                "description": "Administrative region such as state or province within a country (e.g., California).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "min_elevation": {
+                "description": "Minimum airport elevation in feet.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "city": {
+                "description": "Airport city (e.g., London).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "country": {
+                "description": "Minimum airport elevation in feet.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "timezone": {
+                "description": "Airport timezone (e.g., Europe/London).",
+                "type": "str, optional",
+                "default": ""
+            },
+            "name": {
+                "description": "Airport name. This parameter supports partial matching (e.g., Heathrow will match London Heathrow Airport). Defaults to 'London Heathrow'.",
+                "type": "str, optional",
+                "default": "London Heathrow"
+            },
+            "icao": {
+                "description": "International Civil Aviation Organization (ICAO) 4-character airport code.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "iata": {
+                "description": "International Air Transport Association (IATA) 3-character airport code.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_airplane_details",
+        "description": "Fetches details of an airplane using the provided code.",
+        "parameters": {
+            "code": {
+                "description": "The unique identifier of the airplane to fetch details for.",
+                "type": "str",
+                "default": "777"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ga",
+        "description": "Fetches current or historical gas price data for Georgia.",
+        "parameters": {
+            "date": {
+                "description": "The date for which to fetch historical data in the format 'YYYY-MM-DD'. If not provided, the current gas price data is returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "specs_v1_tier1",
+        "description": "Fetch vehicle data based on specified query parameters using the RapidAPI Datamo endpoint.",
+        "parameters": {
+            "make": {
+                "description": "The make of the vehicle. This parameter is required.",
+                "type": "str",
+                "default": "Tesla"
+            },
+            "sortby": {
+                "description": "The field to sort the results by.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "order": {
+                "description": "The sort order of the specified field.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "The model of the vehicle.",
+                "type": "str, optional",
+                "default": "Model 3"
+            },
+            "page": {
+                "description": "The page number of the results, starting with index 1.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "per_page": {
+                "description": "The number of entries per page. Default is 10, with a maximum of 250.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "fields": {
+                "description": "Specific fields to return in the results. Leave blank to return all fields.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ca",
+        "description": "Fetches current or historical gas price data for California.",
+        "parameters": {
+            "date": {
+                "description": "Specific date for historical data in YYYY-MM-DD format. If not provided, the current gas price data is returned. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "engines",
+        "description": "Fetches engine information from a car API based on various query parameters.",
+        "parameters": {
+            "year": {
+                "description": "The year of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "direction": {
+                "description": "The direction to sort the results by, either 'asc' or 'desc'. Defaults to 'asc'.",
+                "type": "str, optional",
+                "default": "asc"
+            },
+            "valves": {
+                "description": "The number of valves in the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "valve_timing": {
+                "description": "The valve timing of the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "fuel_type": {
+                "description": "The fuel type of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "json": {
+                "description": "A JSON string for complex queries.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "model": {
+                "description": "The model of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make": {
+                "description": "The make of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_model_id": {
+                "description": "The ID of the make and model.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "trim": {
+                "description": "The trim level of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cam_type": {
+                "description": "The cam type of the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "engine_type": {
+                "description": "The type of the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "make_model_trim_id": {
+                "description": "The ID of the make, model, and trim.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "limit": {
+                "description": "The maximum number of results to return.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "drive_type": {
+                "description": "The drive type of the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "verbose": {
+                "description": "Include additional information such as make, model, and trim when 'yes'. Defaults to 'yes'.",
+                "type": "str, optional",
+                "default": "yes"
+            },
+            "make_id": {
+                "description": "The ID of the make.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "cylinders": {
+                "description": "The number of cylinders in the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "page": {
+                "description": "The page number of the results.",
+                "type": "int, optional",
+                "default": ""
+            },
+            "sort": {
+                "description": "The field to sort the results by. Defaults to 'id'.",
+                "type": "str, optional",
+                "default": "id"
+            },
+            "size": {
+                "description": "The size of the engine.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "horsepower_hp": {
+                "description": "The horsepower of the engine in HP.",
+                "type": "str, optional",
+                "default": ""
+            },
+            "transmission": {
+                "description": "The type of transmission in the vehicle.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_de",
+        "description": "Fetches current or historical gas price data for Delaware.",
+        "parameters": {
+            "date": {
+                "description": "A specific date for querying historical gas price data. If not provided, the current gas price data is returned.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_car_data",
+        "description": "Fetch specifications, pictures, and average pricing of a car based on its model, year, and maker.",
+        "parameters": {
+            "model": {
+                "description": "The model of the car.",
+                "type": "str",
+                "default": "chiron"
+            },
+            "year": {
+                "description": "The year the car was manufactured.",
+                "type": "str",
+                "default": "2021"
+            },
+            "maker": {
+                "description": "The manufacturer of the car.",
+                "type": "str",
+                "default": "bugatti"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "ar_by_city_state",
+        "description": "Fetches augmented reality (AR) data for a given city and state using the Toolbench RapidAPI.",
+        "parameters": {
+            "city": {
+                "description": "The name of the city for which AR data is requested.",
+                "type": "str",
+                "default": "San Diego"
+            },
+            "state": {
+                "description": "The name of the state for which AR data is requested.",
+                "type": "str",
+                "default": "CA"
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ia",
+        "description": "Retrieves current or historical gas price data for Iowa.",
+        "parameters": {
+            "date": {
+                "description": "Specific date for querying historical data starting from 2023-06-01. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "us_ak",
+        "description": "Fetches current or historical gas price data for Alaska.",
+        "parameters": {
+            "date": {
+                "description": "A string representing a date in 'YYYY-MM-DD' format to query historical gas price data. Defaults to None.",
+                "type": "str, optional",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "get_wagons_mrt_train_no_wagons_get",
+        "description": "Fetches the number of wagons for a given MRT train using the RapidAPI service.",
+        "parameters": {
+            "train_no": {
+                "description": "The unique identifier for the MRT train.",
+                "type": "str",
+                "default": ""
+            }
+        },
+        "domain": "Transportation"
+    },
+    {
+        "name": "alerts_and_jams",
+        "description": "Fetch real-time alerts and traffic jams from Waze in a specified geographic rectangular area.",
+        "parameters": {
+            "top_right": {
+                "description": "Latitude, longitude pair defining the top-right corner of the geographic area.",
+                "type": "str",
+                "default": "40.772787404902594,-73.76818084716798"
+            },
+            "bottom_left": {
+                "description": "Latitude, longitude pair defining the bottom-left corner of the geographic area.",
+                "type": "str",
+                "default": "40.66615391742187,-74.13732147216798"
+            },
+            "max_alerts": {
+                "description": "Maximum number of alerts to fetch. Defaults to 20. Set to 0 to avoid fetching alerts.",
+                "type": "int, optional",
+                "default": "20"
+            },
+            "max_jams": {
+                "description": "Maximum number of traffic jams to fetch. Defaults to 20. Set to 0 to avoid fetching traffic jams.",
+                "type": "int, optional",
+                "default": "20"
+            }
+        },
+        "domain": "Transportation"
+    }
+]

@@ -318,6 +318,7 @@ class MetaPromptingScaffolding:
                     entire_message_log.append(
                         {"role": "user", "content": self.error_message}
                     )
+                    
                     return self.meta_model_generate(
                         prompt_or_messages=entire_message_log,
                         stop_tokens=stop_tokens,

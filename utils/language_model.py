@@ -233,7 +233,7 @@ class xlam_LanguageModel:
     
     def __init__(
         self,
-        model_name: str,
+        model_name: str = "Salesforce/xLAM-1b-fc-r",
         device: Optional[str] = None,
         stop_tokens: Optional[List[str]] = None,
     ) -> None:
@@ -288,8 +288,9 @@ class xlam_LanguageModel:
         # Generate text
         output_sequences = self.model.generate(
             input_ids=inputs['input_ids'],
-            max_length=inputs['input_ids'].shape[1] + max_tokens,
+            max_new_tokens=inputs['input_ids'].shape[1] + max_tokens,
             temperature=temperature,
+            do_sample=True,
             top_p=top_p,
             num_return_sequences=num_return_sequences,
             pad_token_id=self.tokenizer.eos_token_id,

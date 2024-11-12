@@ -11,6 +11,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from .language_model import OpenAI_LanguageModel, xlam_LanguageModel
 from .execute_code import execute_code_with_timeout
 
+# Import the necessary dependencies at the top of the file
+from transformers import StoppingCriteria
+
 
 '''
 s
@@ -220,15 +223,14 @@ class MetaPromptingScaffolding:
                                 ] = f"{self.expert_python_message}.\n\n{current_model_message_list[-1]['content']}"
 
                             # Finally, read to call the corresponding model.
-                            model_outputs = self.language_model.generate(
+                            model_outputs = self.generate(
                                 prompt_or_messages=current_model_message_list,
-                                stop_tokens=model_stop_tokens,
-                                max_tokens=model_max_tokens,
-                                num_return_sequences=model_num_return_sequences,
+                                max_new_tokens=model_max_tokens,
                                 temperature=model_temp,
                                 top_p=model_top_p,
-                                **kwargs,
-                            )  # [0]
+                                num_return_sequences=model_num_return_sequences,
+                                **kwargs
+                            )
 
                             for _, model_output in enumerate(model_outputs):
                                 ## Special case for Expert Python
@@ -422,3 +424,205 @@ class MetaPromptingScaffolding:
         )[0]
 
         return model_output
+
+class xLAMMetaPromptingScaffolding:
+    '''
+    Mostly the same as metprompting, but for xLAM i just added the hugging face specifc params or reassigned the custom ones to huggingface
+    '''
+    def __init__(
+        self,
+        language_model: xlam_LanguageModel,
+        generator_settings: Dict[str, Any],
+        verifier_settings: Dict[str, Any],
+        summarizer_settings: Dict[str, Any],
+        error_message: str,
+        final_answer_indicator: str,
+        expert_python_message: str,
+        intermediate_feedback: str,
+        fresh_eyes: bool = False,
+        include_expert_name_in_instruction: bool = False,
+        extract_output: bool = False,
+        use_zero_shot_cot_in_expert_messages: bool = False,
+    ):
+        self.language_model = language_model
+        
+        # Settings from original class
+        self.generator_settings = generator_settings or {}
+        self.verifier_settings = verifier_settings or {}
+        self.summarizer_settings = summarizer_settings or {}
+        self.error_message = error_message
+        self.final_answer_indicator = final_answer_indicator
+        self.fresh_eyes = fresh_eyes
+        self.include_expert_name_in_instruction = include_expert_name_in_instruction
+        self.extract_output = extract_output
+        self.expert_python_message = expert_python_message
+        self.intermediate_feedback = intermediate_feedback
+        self.use_zero_shot_cot_in_expert_messages = use_zero_shot_cot_in_expert_messages
+        
+        # xLAM specific tokens
+        self.INST = "[INST]"
+        self.END_INST = "[/INST]"
+        self.triple_quotes = '"""'
+        
+    def format_prompt(self, messages):
+        # Convert messages to xLAM format
+        formatted_text = ""
+        for msg in messages:
+            if msg["role"] == "user":
+                formatted_text += f"{self.INST}{msg['content']}{self.END_INST}"
+            elif msg["role"] == "assistant":
+                formatted_text += msg["content"]
+        return formatted_text
+    
+    # def generate(
+    #     self,
+    #     prompt_or_messages,
+    #     stop_tokens=None,  # Added to match original interface
+    #     max_new_tokens=512,
+    #     temperature=0.1,
+    #     top_p=0.95,
+    #     num_return_sequences=1,
+    #     **kwargs
+    # ):
+    #     # Format the prompt
+    #     if isinstance(prompt_or_messages, list):
+    #         formatted_prompt = self.format_prompt(prompt_or_messages)
+    #     else:
+    #         formatted_prompt = f"{self.INST}{prompt_or_messages}{self.END_INST}"
+            
+    #     # Tokenize
+    #     inputs = self.tokenizer(
+    #         formatted_prompt,
+    #         return_tensors="pt",
+    #         padding=True,
+    #         truncation=True
+    #     ).to(self.model.device)
+        
+    #     # Handle stop tokens if provided
+    #     stopping_criteria = []
+    #     if stop_tokens:
+    #         from transformers import StoppingCriteria
+    #         class StopOnTokens(StoppingCriteria):
+    #             def __init__(self, stop_token_ids):
+    #                 self.stop_token_ids = stop_token_ids
+                
+    #             def __call__(self, input_ids, scores):
+    #                 for stop_id in self.stop_token_ids:
+    #                     if stop_id in input_ids[0][-1:]:
+    #                         return True
+    #                 return False
+                    
+    #         stop_token_ids = [self.tokenizer.encode(token)[-1] for token in stop_tokens]
+    #         stopping_criteria.append(StopOnTokens(stop_token_ids))
+        
+    #     # Generate
+    #     outputs = self.model.generate(
+    #         input_ids=inputs["input_ids"],
+    #         attention_mask=inputs["attention_mask"],
+    #         max_new_tokens=max_new_tokens,
+    #         do_sample=(temperature > 0),
+    #         temperature=temperature,
+    #         top_p=top_p,
+    #         num_return_sequences=num_return_sequences,
+    #         pad_token_id=self.tokenizer.pad_token_id,
+    #         eos_token_id=self.tokenizer.eos_token_id,
+    #         stopping_criteria=stopping_criteria if stopping_criteria else None,
+    #         **kwargs
+    #     )
+        
+    #     # Decode
+    #     generated_texts = []
+    #     for output in outputs:
+    #         decoded = self.tokenizer.decode(
+    #             output[len(inputs["input_ids"][0]):],
+    #             skip_special_tokens=True
+    #         )
+    #         generated_texts.append(decoded)
+            
+    #     return generated_texts[0] if num_return_sequences == 1 else generated_texts
+
+    def meta_model_generate(
+        self,
+        prompt_or_messages,
+        stop_tokens=None,
+        max_tokens=1024,
+        num_return_sequences=1,
+        temperature=0.1,
+        top_p=0.95,
+        counter=0,
+        last_answer=None,
+        original_question=None,
+        trial_num=0,
+        **kwargs
+    ):
+        """
+        Implements the meta-model generation logic similar to the original class
+        but using xLAM's generation mechanism
+        """
+        try:
+            if counter == 16:
+                return prompt_or_messages
+
+            entire_message_log = prompt_or_messages.copy()
+            
+            while True:
+                entire_message_log[-1]["content"] = f"ROUND {counter+1}:\n\n{entire_message_log[-1]['content']}"
+                
+                if counter == 14:
+                    entire_message_log[-1]["content"] += "\nThis is the last round; so, please present your final answer."
+                
+                # potential changes: stop_tokens should be removed, prompt_
+                meta_model_output = self.language_model.generate(
+                    prompt_or_messages=entire_message_log,
+                    stop_tokens=stop_tokens,
+                    max_new_tokens=max_tokens,
+                    temperature=temperature,
+                    top_p=top_p,
+                    num_return_sequences=num_return_sequences,
+                    **kwargs
+                )
+
+                # Rest of the meta_model_generate logic remains similar
+                # but adapted for xLAM's generation mechanism
+                # ... (implement the rest of the logic following the original class)
+                
+                # This is a simplified version - you'll want to implement the full logic
+                # including expert handling, fresh eyes, etc.
+                
+                if self.final_answer_indicator in meta_model_output:
+                    return entire_message_log
+                    
+                entire_message_log.append({"role": "assistant", "content": meta_model_output})
+                entire_message_log.append({"role": "user", "content": self.error_message})
+                
+                return self.meta_model_generate(
+                    prompt_or_messages=entire_message_log,
+                    stop_tokens=stop_tokens,
+                    max_tokens=max_tokens,
+                    num_return_sequences=num_return_sequences,
+                    temperature=temperature,
+                    top_p=top_p,
+                    counter=counter + 1,
+                    last_answer=last_answer,
+                    original_question=original_question,
+                    **kwargs
+                )
+
+        except Exception as e:
+            print(f"Error in meta_model_generate: {e}")
+            if trial_num >= 7:
+                return prompt_or_messages
+                
+            time.sleep(random.randint(1, 10))
+            return self.meta_model_generate(
+                prompt_or_messages=prompt_or_messages,
+                stop_tokens=stop_tokens,
+                max_tokens=max_tokens,
+                num_return_sequences=num_return_sequences,
+                temperature=temperature,
+                top_p=top_p,
+                counter=counter,
+                last_answer=last_answer,
+                trial_num=trial_num + 1,
+                **kwargs
+            )

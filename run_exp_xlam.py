@@ -23,6 +23,20 @@ python run_exp_xlam.py \
     --max_num 1
 """
 
+# These tokens are xLAM-specific and must be kept
+self.INST = "[INST]"
+self.END_INST = "[/INST]"
+
+# This formatting is essential for xLAM (basically mixtral instruct)
+def format_prompt(self, messages):
+    formatted_text = ""
+    for msg in messages:
+        if msg["role"] == "user":
+            formatted_text += f"{self.INST}{msg['content']}{self.END_INST}"
+        elif msg["role"] == "assistant":
+            formatted_text += msg["content"]
+    return formatted_text
+
 sys.setrecursionlimit(100000)
 
 # Import joblib for parallel processing
@@ -60,10 +74,10 @@ class Arguments(Tap):
     # api_key: str = "YOUR_API_KEY"
 
     # If you are using the OpenAI API, set the following parameters
-    api_type: str = None
-    api_base: str = None
-    api_version: str = None
-    api_key: str = "YOUR_API_KEY"
+    # api_type: str = None
+    # api_base: str = None
+    # api_version: str = None
+    # api_key: str = "YOUR_API_KEY"
 
     # Set the model parameters
     # model_name: str = "gpt-3.5-turbo"  # "gpt-4-32k"

@@ -23,9 +23,11 @@ python run_exp_xlam.py \
     --max_num 1
 """
 
+# Jayden - I commented this; what is the purpose of this two declaration?
+#          We don't even have the class on top of this
 # These tokens are xLAM-specific and must be kept
-self.INST = "[INST]"
-self.END_INST = "[/INST]"
+# self.INST = "[INST]"
+# self.END_INST = "[/INST]"
 
 # This formatting is essential for xLAM (basically mixtral instruct)
 def format_prompt(self, messages):
@@ -44,7 +46,7 @@ from joblib import Parallel, delayed
 
 # Import the language model and meta prompting scaffolding
 from utils.language_model import OpenAI_LanguageModel
-from utils.meta_scaffolding import MetaPromptingScaffolding
+from utils.meta_scaffolding import MetaPromptingScaffolding, xLAMMetaPromptingScaffolding
 
 
 # Task description dictionary
@@ -85,9 +87,11 @@ class Arguments(Tap):
     '''
     xlam code
     '''
-    # s
+
 
     # Optional model parameters
+    model_name: str = "Salesforce/xLAM-1b-fc-r"
+
     temperature: Optional[float] = None
     top_p: Optional[float] = None
     max_tokens: Optional[int] = None
@@ -158,16 +162,22 @@ def run_model(
 
     ## If expert prompting is enabled, generate the expert identity and append it, as well as the task description and input, to the prompt
     if expert_prompting:
-        expert_messages = [
-            {
-                "role": "user",
-                "content": f"{template_gen_expert_identity}\n\n[Instruction]:{input}\n[Agent Description]:",
-            }
-        ]
+        # expert_messages = [
+        #     {
+        #         "role": "user",
+        #         "content": f"{template_gen_expert_identity}\n\n[Instruction]:{input}\n[Agent Description]:",
+        #     }
+        # ]
+
+        # tokenizer.apply_chat_template() returns tensors which can be directly used in the generate() call as input_ids parameter
+        expert_messages = tokenizer.apply_chat_template([{
+            "role": "user",
+            "content": f"{template_gen_expert_identity}\n\n[Instruction]:{input}\n[Agent Description]:"
+        }], return_tensors="pt")        
 
         # Generate the expert identity
         expert_identity = meta_model.generate(
-            prompt_or_messages=expert_messages,
+            input_ids=expert_messages,
             max_tokens=meta_model_settings["parameters"]["max_tokens"],
             num_return_sequences=meta_model_settings["parameters"][
                 "num_return_sequences"
@@ -196,38 +206,38 @@ def run_model(
         )
 
     # Previous generate() call for meta-prompting and the corresponding output
-    # message_log = meta_model.meta_model_generate(
-    #     prompt_or_messages=messages,
-    #     max_tokens=meta_model_settings["parameters"]["max_tokens"],
-    #     temperature=meta_model_settings["parameters"]["temperature"],
-    #     top_p=meta_model_settings["parameters"]["top_p"],
-    #     num_return_sequences=meta_model_settings["parameters"]["num_return_sequences"],
-    #     counter=0,
-    #     original_question=f"{task_description}\n\n{input}",
-    # )
-    # output = message_log[-1]["content"]
+    message_log = meta_model.meta_model_generate(
+        prompt_or_messages=messages,
+        max_tokens=meta_model_settings["parameters"]["max_tokens"],
+        temperature=meta_model_settings["parameters"]["temperature"],
+        top_p=meta_model_settings["parameters"]["top_p"],
+        num_return_sequences=meta_model_settings["parameters"]["num_return_sequences"],
+        counter=0,
+        original_question=f"{task_description}\n\n{input}",
+    )
+    output = message_log[-1]["content"]
 
     # Current generate() call for xlam and the corresponding outputs
     # TODO: This is the preliminary implementation of "xlam", not "meta-prompting".
     #       This should be further modified so that the xlam follows the generation way of meta-prompting
-    final_message = {'role': 'user', 'content': messages}
-    inputs = tokenizer.apply_chat_template(final_message, add_generation_prompt=True, return_tensors="pt").to(meta_model.deivce)
-    outputs = meta_model.generate(inputs, max_new_token=512, do_sample=False, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
-    result = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
+    # final_message = {'role': 'user', 'content': messages}
+    # inputs = tokenizer.apply_chat_template(final_message, add_generation_prompt=True, return_tensors="pt").to(meta_model.deivce)
+    # outputs = meta_model.generate(inputs, max_new_token=512, do_sample=True, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
+    # result = tokenizer.decode(outputs[0][len(inputs[0]):], skip_special_tokens=True)
 
     
 
 
 
     # Print the output
-    print(f"Final output: {result}")
+    print(f"Final output: {output}")
     print(f"Target: {answers}")
     print("\n")
 
     return {
         "input": query,
         "target": answers,
-        "output": result,
+        "output": output,
     }
 
 
@@ -372,11 +382,13 @@ def main(args: Arguments) -> None:
         torch_dtype="auto",
         trust_remote_code=True
     )
+    model.config.do_sample = True
+
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
 
 
     # Set the meta model parameters
-    meta_model = MetaPromptingScaffolding(
+    meta_model = xLAMMetaPromptingScaffolding(
         language_model=model,
         fresh_eyes=args.fresh_eyes,
         generator_settings=generator_settings,

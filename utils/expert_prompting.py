@@ -10,9 +10,9 @@ class ExpertPrompting(MetaPromptingScaffolding):
     # Generate the expert's identity
     def generate_expert_identity(
         self,
-        prompt_or_messages: Union[str, List[Dict[str, str]]],
+        inputs: Union[str, List[Dict[str, str]]],
         stop_tokens: Optional[List[str]] = None,
-        max_tokens: int = 512,
+        max_new_tokens: int = 512,
         num_return_sequences: int = 1,
         temperature: float = 0.7,
         top_p: Optional[float] = None,
@@ -22,9 +22,9 @@ class ExpertPrompting(MetaPromptingScaffolding):
         Create the identity and description of the expert.
         """
         meta_model_output = self.language_model.generate(
-            prompt_or_messages=prompt_or_messages,
+            inputs=inputs,
             stop_tokens=stop_tokens,
-            max_tokens=max_tokens,
+            max_new_tokens=max_new_tokens,
             num_return_sequences=num_return_sequences,
             temperature=temperature,
             top_p=top_p,

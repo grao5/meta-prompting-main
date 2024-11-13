@@ -287,10 +287,9 @@ class xlam_LanguageModel:
 
         # Generate text
         output_sequences = self.model.generate(
-            input_ids=inputs['input_ids'],
-            max_new_tokens=inputs['input_ids'].shape[1] + max_tokens,
+            inputs=inputs,
+            max_new_tokens=max_tokens,
             temperature=temperature,
-            do_sample=True,
             top_p=top_p,
             num_return_sequences=num_return_sequences,
             pad_token_id=self.tokenizer.eos_token_id,

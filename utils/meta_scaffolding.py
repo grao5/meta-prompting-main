@@ -543,9 +543,9 @@ class xLAMMetaPromptingScaffolding:
 
     def meta_model_generate(
         self,
-        prompt_or_messages,
+        inputs,
         stop_tokens=None,
-        max_tokens=1024,
+        max_new_tokens=1024,
         num_return_sequences=1,
         temperature=0.1,
         top_p=0.95,
@@ -561,9 +561,9 @@ class xLAMMetaPromptingScaffolding:
         """
         try:
             if counter == 16:
-                return prompt_or_messages
+                return inputs
 
-            entire_message_log = prompt_or_messages.copy()
+            entire_message_log = inputs.copy()
             
             while True:
                 entire_message_log[-1]["content"] = f"ROUND {counter+1}:\n\n{entire_message_log[-1]['content']}"
@@ -573,9 +573,9 @@ class xLAMMetaPromptingScaffolding:
                 
                 # potential changes: stop_tokens should be removed, prompt_
                 meta_model_output = self.language_model.generate(
-                    prompt_or_messages=entire_message_log,
+                    inputs=entire_message_log,
                     stop_tokens=stop_tokens,
-                    max_new_tokens=max_tokens,
+                    max_new_tokens=max_new_tokens,
                     temperature=temperature,
                     top_p=top_p,
                     num_return_sequences=num_return_sequences,
@@ -596,9 +596,9 @@ class xLAMMetaPromptingScaffolding:
                 entire_message_log.append({"role": "user", "content": self.error_message})
                 
                 return self.meta_model_generate(
-                    prompt_or_messages=entire_message_log,
+                    inputs=entire_message_log,
                     stop_tokens=stop_tokens,
-                    max_tokens=max_tokens,
+                    max_new_tokens=max_new_tokens,
                     num_return_sequences=num_return_sequences,
                     temperature=temperature,
                     top_p=top_p,
@@ -611,13 +611,13 @@ class xLAMMetaPromptingScaffolding:
         except Exception as e:
             print(f"Error in meta_model_generate: {e}")
             if trial_num >= 7:
-                return prompt_or_messages
+                return inputs
                 
             time.sleep(random.randint(1, 10))
             return self.meta_model_generate(
-                prompt_or_messages=prompt_or_messages,
+                inputs=inputs,
                 stop_tokens=stop_tokens,
-                max_tokens=max_tokens,
+                max_new_tokens=max_new_tokens,
                 num_return_sequences=num_return_sequences,
                 temperature=temperature,
                 top_p=top_p,

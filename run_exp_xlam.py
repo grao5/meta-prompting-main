@@ -94,7 +94,7 @@ class Arguments(Tap):
 
     temperature: Optional[float] = None
     top_p: Optional[float] = None
-    max_tokens: Optional[int] = None
+    max_new_tokens: Optional[int] = None
     num_return_sequences: Optional[int] = None
     generator_temperature: Optional[float] = None
     generator_top_p: Optional[float] = None
@@ -177,8 +177,8 @@ def run_model(
 
         # Generate the expert identity
         expert_identity = meta_model.generate(
-            input_ids=expert_messages,
-            max_tokens=meta_model_settings["parameters"]["max_tokens"],
+            inputs=expert_messages,
+            max_new_tokens=meta_model_settings["parameters"]["max_new_tokens"],
             num_return_sequences=meta_model_settings["parameters"][
                 "num_return_sequences"
             ],
@@ -207,8 +207,8 @@ def run_model(
 
     # Previous generate() call for meta-prompting and the corresponding output
     message_log = meta_model.meta_model_generate(
-        prompt_or_messages=messages,
-        max_tokens=meta_model_settings["parameters"]["max_tokens"],
+        inputs=messages,
+        max_new_tokens=meta_model_settings["parameters"]["max_tokens"],
         temperature=meta_model_settings["parameters"]["temperature"],
         top_p=meta_model_settings["parameters"]["top_p"],
         num_return_sequences=meta_model_settings["parameters"]["num_return_sequences"],

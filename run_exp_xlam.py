@@ -98,11 +98,11 @@ class Arguments(Tap):
     num_return_sequences: Optional[int] = None
     generator_temperature: Optional[float] = None
     generator_top_p: Optional[float] = None
-    generator_max_tokens: Optional[int] = None
+    generator_max_new_tokens: Optional[int] = None
     generator_num_return_sequences: Optional[int] = None
     verifier_temperature: Optional[float] = None
     verifier_top_p: Optional[float] = None
-    verifier_max_tokens: Optional[int] = None
+    verifier_max_new_tokens: Optional[int] = None
     verifier_num_return_sequences: Optional[int] = None
 
     # Meta model prompt path (JSON file)
@@ -306,8 +306,8 @@ def main(args: Arguments) -> None:
         else meta_model_settings["parameters"]["top_p"]
     )
     meta_model_settings["parameters"]["max_tokens"] = (
-        args.max_tokens
-        if args.max_tokens is not None
+        args.max_new_tokens
+        if args.max_new_tokens is not None
         else meta_model_settings["parameters"]["max_tokens"]
     )
     meta_model_settings["parameters"]["num_return_sequences"] = (
@@ -326,8 +326,8 @@ def main(args: Arguments) -> None:
         else generator_settings["parameters"]["top_p"]
     )
     generator_settings["parameters"]["max_tokens"] = (
-        args.max_tokens
-        if args.max_tokens is not None
+        args.max_new_tokens
+        if args.max_new_tokens is not None
         else generator_settings["parameters"]["max_tokens"]
     )
     generator_settings["parameters"]["num_return_sequences"] = (
@@ -346,8 +346,8 @@ def main(args: Arguments) -> None:
         else verifier_settings["parameters"]["top_p"]
     )
     verifier_settings["parameters"]["max_tokens"] = (
-        args.max_tokens
-        if args.max_tokens is not None
+        args.max_new_tokens
+        if args.max_new_tokens is not None
         else verifier_settings["parameters"]["max_tokens"]
     )
     verifier_settings["parameters"]["num_return_sequences"] = (

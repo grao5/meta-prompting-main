@@ -113,6 +113,7 @@ class MetaPromptingScaffolding:
         **kwargs: Any,
     ) -> Tuple[str, Any]:
         try:
+
             assert self.language_model.model_type == "chat"
             assert num_return_sequences == 1
 

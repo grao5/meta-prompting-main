@@ -445,7 +445,7 @@ class xLAMMetaPromptingScaffolding:
         extract_output: bool = False,
         use_zero_shot_cot_in_expert_messages: bool = False,
     ):
-        self.language_model = language_model
+        self.language_model = xlam_LanguageModel(language_model)
         
         # Settings from original class
         self.generator_settings = generator_settings or {}
@@ -560,6 +560,9 @@ class xLAMMetaPromptingScaffolding:
         Implements the meta-model generation logic similar to the original class
         but using xLAM's generation mechanism
         """
+
+        print("A")
+
         try:
             if counter == 16:
                 return inputs
@@ -575,13 +578,15 @@ class xLAMMetaPromptingScaffolding:
                 # potential changes: stop_tokens should be removed, prompt_
                 meta_model_output = self.language_model.generate(
                     inputs=entire_message_log,
-                    stop_tokens=stop_tokens,
+                    stop_strings=stop_tokens,
                     max_new_tokens=max_new_tokens,
                     temperature=temperature,
                     top_p=top_p,
                     num_return_sequences=num_return_sequences,
                     **kwargs
                 )
+
+                print("B")
 
                 # Rest of the meta_model_generate logic remains similar
                 # but adapted for xLAM's generation mechanism
@@ -596,6 +601,8 @@ class xLAMMetaPromptingScaffolding:
                 entire_message_log.append({"role": "assistant", "content": meta_model_output})
                 entire_message_log.append({"role": "user", "content": self.error_message})
                 
+                print("C")
+
                 return self.meta_model_generate(
                     inputs=entire_message_log,
                     stop_tokens=stop_tokens,
@@ -608,7 +615,7 @@ class xLAMMetaPromptingScaffolding:
                     original_question=original_question,
                     **kwargs
                 )
-
+        
         except Exception as e:
             print(f"Error in meta_model_generate: {e}")
             if trial_num >= 7:

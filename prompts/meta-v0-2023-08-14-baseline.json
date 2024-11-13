@@ -1,7 +1,10 @@
 {
     "meta-model": {
         "message-list": [
-            "[BEGIN OF TASK INSTRUCTION]\n  TODO FOR MINGYANG  \n[END OF TASK INSTRUCTION]"
+            {
+                "role": "system", 
+                "content": "[INST]You are an AI assistant that helps people find information. Please answer the following question. Once you have determined the final answer, please present it using the format below:\n\n>> FINAL ANSWER:\n\"\"\"\n[final answer]\n\"\"\"[/INST]"
+            }
         ],
         "parameters": {
             "temperature": 0.1,

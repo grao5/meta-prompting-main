@@ -215,6 +215,9 @@ def run_model(
         counter=0,
         original_question=f"{task_description}\n\n{input}",
     )
+
+    print("B")
+
     output = message_log[-1]["content"]
 
     # Current generate() call for xlam and the corresponding outputs
@@ -389,7 +392,7 @@ def main(args: Arguments) -> None:
 
     # Set the meta model parameters
     meta_model = xLAMMetaPromptingScaffolding(
-        language_model=model,
+        language_model=args.model_name,
         fresh_eyes=args.fresh_eyes,
         generator_settings=generator_settings,
         verifier_settings=verifier_settings,

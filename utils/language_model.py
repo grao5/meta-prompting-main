@@ -21,7 +21,7 @@ class LanguageModel:
 
     def generate(
         self,
-        prompt: str,
+        inputs: str,
         max_length: int = 128,
         num_return_sequences: int = 1,
         **kwargs: Any,
@@ -261,11 +261,11 @@ class xlam_LanguageModel:
 
     def generate(
         self,
-        prompt: str,
-        max_tokens: int = 512,
-        num_return_sequences: int = 1,
+        inputs,
+        max_new_tokens: int = 512,
         temperature: float = 0.7,
         top_p: float = 1.0,
+        num_return_sequences: int = 1,
         **kwargs: Any,
     ) -> List[str]:
         """
@@ -282,13 +282,18 @@ class xlam_LanguageModel:
         Returns:
             List[str]: Generated text sequences.
         """
+
+        print("A-0")
+        
         # Encode the input prompt
-        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+        inputs = self.tokenizer.apply_chat_template(inputs, return_tensors="pt").to(self.device)     
+
+        print("A-1")
 
         # Generate text
         output_sequences = self.model.generate(
             inputs=inputs,
-            max_new_tokens=max_tokens,
+            max_new_tokens=max_new_tokens,
             temperature=temperature,
             top_p=top_p,
             num_return_sequences=num_return_sequences,
@@ -296,6 +301,8 @@ class xlam_LanguageModel:
             eos_token_id=self.tokenizer.eos_token_id,
             **kwargs,
         )
+
+        print("A-2")
 
         # Decode the generated sequences
         generated_texts = [
